@@ -1,0 +1,39 @@
+syntax = "proto3";
+package com.ctrip.flight.agg.shopping.contract.message;
+option java_package = "com.ctrip.flight.agg.shopping.contract.message";
+option java_multiple_files = true;
+
+message ErrorResultType
+{
+	int32 ErrorCode = 1 ;
+	string ErrorDesc = 2 ;
+}
+
+message MessageHeaderType
+{
+	string SessionID = 2 ;
+	string TransactionID = 3 ;
+	// SaleChannel
+	string Channel = 4 ;
+	int32 SubChannelID = 5 ;
+	string CustomerID = 6 ;
+	string ClientIP = 8 ;
+	string VID = 9 ;
+	string RequestID = 10 ;
+}
+
+message RequestHeaderType
+{
+	MessageHeaderType MessageHeader = 1 ;
+	int32 LoggingLevel = 2 ;
+	string DiagInput = 3 ;
+}
+
+message ResponseHeaderType
+{
+	MessageHeaderType MessageHeader = 1 ;
+	string ServerIP = 2 ;
+	int32 ReturnCode = 3 ;
+	string DiagOutput = 4 ;
+}
+

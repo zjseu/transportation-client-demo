@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package com.ctrip.flight.agg.shopping.contract.baggage;
+option java_package = "com.ctrip.flight.agg.shopping.contract.baggage";
+option java_multiple_files = true;
+
+message BaggageRefType {
+    // (航班/火车/巴士等) 详情索引号
+    int32 TransportRef = 1;
+    repeated PaxBaggageType PaxBaggage = 2;
+}
+
+message PaxBaggageType {
+    // 年龄组合
+    int32 AgeTypeGroup = 1;
+    // 行李额类型
+    repeated BaggageWayType BaggageWay = 2;
+}
+
+message BaggageWayType {
+    // 关联BaggageType.RefNum
+    int32 BaggageTypeRef = 1;
+    // 0=托运、1=手提
+    int32 Type = 2;
+}
+
+message BaggageType {
+    int32 RefNum = 1;
+    string BaggageDesc = 2; // 行李描述，根据请求的Language决定输出的语言类型
+    repeated BaggageDetailType BaggageDetail = 3;
+    BaggageExtensionFieldsType ExtensionFields = 4;
+    BaggageSizeType BaggageSize = 5;
+}
+
+message BaggageDetailType {
+    int32 Amount = 1;
+    string Unit = 2;
+    string Type = 3;
+}
+
+message BaggageSizeType {
+    int32 SizeLimitType = 1; // 尺寸限制类型。1：三边之和；2：长*宽*高
+    string Size = 2; // 尺寸大小(不含单位)，格式：180 或者 10*12*14
+    string Unit = 3; // 尺寸单位，格式：CM
+}
+
+message BaggageExtensionFieldsType {
+    bool ContainFreeBaggage = 1;
+}

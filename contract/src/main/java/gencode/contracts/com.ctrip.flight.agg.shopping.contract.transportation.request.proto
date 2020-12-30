@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package com.ctrip.flight.agg.shopping.contract.transportation.request;
+import "com.ctrip.flight.agg.shopping.contract.message.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.proto";
+option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.request";
+option java_multiple_files = true;
+
+message SearchRequestType {
+    com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;
+    SearchCriteriaType SearchCriteria = 2;
+    RouteSearchType RouteSearch = 3;
+}
+
+message SearchCriteriaType {
+    // 用户请求的行程信息 TODO 需要支持指定交通类型吗
+    repeated JourneyRequestType JourneyRequest = 1;
+    // 乘客信息
+    repeated PaxRequestType PaxRequest = 2;
+    // 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+    repeated string CabinCode = 3;
+    // 币种
+    string SaleCurrency = 4;
+    // 语种(Locale格式)
+    string Language = 5;
+    // 扩展结点
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType ExtensionOption = 6;
+    // 是否需要推荐位
+    bool NeedRecommendation = 7;
+    UserParameterType UserParameter = 8;
+}
+
+message JourneyRequestType {
+    // 出发日期，format: yyyy-MM-dd
+    string DepartDate = 1;
+    // 出发地点
+    LocationType DepartLocation = 2;
+    // 到达地点
+    LocationType ArriveLocation = 3;
+}
+
+message LocationType {
+    // Location的类型，1:CityCode; 2:CityID; 3:AirportCode; 4:RegionCode
+    int32 Type = 1;
+    // 地点
+    string Location = 2;
+}
+
+message UserParameterType {
+    // 携程会员等级 TODO 只对订票的人有效？
+    string MemberLevel = 1;
+    // TODO 下面几个参数是否需要放到MessageHeaderType中
+    // VisitID，访客号
+    string VisitorID = 2;
+    // mobile的deviceID
+    string DeviceID = 3;
+    // 设备系统(ios/android/其他)
+    string DevicePlatform = 4;
+}
+
+
+message PaxRequestType {
+    // 乘客类型。1: Adult; 2: Child; 4: Infant;
+    int32 AgeType = 1;
+    // 乘客人数
+    int32 Count = 2;
+}
+
+message RouteSearchType {
+    // 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+    int32 SearchMode = 1;
+    // 反查Token
+    string OfferToken = 2;
+    // 普通反查时待匹配的最大行程号
+    int32 MaxJourneyNo = 3;
+}
+

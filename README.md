@@ -9,6 +9,9 @@ Document: https://github.com/Bee2857/cerberus-client-demo/blob/master/ch-en.md
 ### 接入法兰克福服务
 Document: https://github.com/Bee2857/cerberus-client-demo/blob/master/fra-en.md
 
+### 常见调用服务Request Body Demo
+Document: RequestBodyDemo.md
+
 
 服务调用Demo见项目 *TransportationHttpClient* 
 

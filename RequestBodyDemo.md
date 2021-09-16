@@ -1,5 +1,5 @@
-# 常用Request Demo
-## 列表请求Request
+# Request Demo
+## List Search Request
 ```$xslt
 {
     "RequestHeader":{
@@ -71,7 +71,7 @@
 }
 ```
 
-## 反查请求Request
+## More Info List Request
 ```$xslt
 {
     "RequestHeader":{

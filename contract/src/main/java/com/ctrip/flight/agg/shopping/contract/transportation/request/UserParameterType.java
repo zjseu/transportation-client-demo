@@ -16,10 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UserParameterType() {
+    userID_ = "";
     memberLevel_ = "";
-    visitorID_ = "";
-    deviceID_ = "";
-    devicePlatform_ = "";
   }
 
   @java.lang.Override
@@ -49,25 +47,26 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            memberLevel_ = s;
+            userID_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            visitorID_ = s;
+            memberLevel_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder subBuilder = null;
+            if (coordinate_ != null) {
+              subBuilder = coordinate_.toBuilder();
+            }
+            coordinate_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(coordinate_);
+              coordinate_ = subBuilder.buildPartial();
+            }
 
-            deviceID_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            devicePlatform_ = s;
             break;
           }
           default: {
@@ -102,14 +101,56 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.class, com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder.class);
   }
 
-  public static final int MEMBERLEVEL_FIELD_NUMBER = 1;
+  public static final int USERID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object userID_;
+  /**
+   * <pre>
+   * 用户ID
+   * </pre>
+   *
+   * <code>string UserID = 1;</code>
+   */
+  public java.lang.String getUserID() {
+    java.lang.Object ref = userID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userID_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 用户ID
+   * </pre>
+   *
+   * <code>string UserID = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getUserIDBytes() {
+    java.lang.Object ref = userID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userID_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MEMBERLEVEL_FIELD_NUMBER = 2;
   private volatile java.lang.Object memberLevel_;
   /**
    * <pre>
-   * 携程会员等级 TODO 只对订票的人有效？
+   * 携程会员等级
    * </pre>
    *
-   * <code>string MemberLevel = 1;</code>
+   * <code>string MemberLevel = 2;</code>
    */
   public java.lang.String getMemberLevel() {
     java.lang.Object ref = memberLevel_;
@@ -125,10 +166,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 携程会员等级 TODO 只对订票的人有效？
+   * 携程会员等级
    * </pre>
    *
-   * <code>string MemberLevel = 1;</code>
+   * <code>string MemberLevel = 2;</code>
    */
   public com.google.protobuf.ByteString
       getMemberLevelBytes() {
@@ -144,132 +185,37 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VISITORID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object visitorID_;
+  public static final int COORDINATE_FIELD_NUMBER = 3;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType coordinate_;
   /**
    * <pre>
-   * TODO 下面几个参数是否需要放到MessageHeaderType中
-   * VisitID，访客号
+   * 坐标信息
    * </pre>
    *
-   * <code>string VisitorID = 2;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  public java.lang.String getVisitorID() {
-    java.lang.Object ref = visitorID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      visitorID_ = s;
-      return s;
-    }
+  public boolean hasCoordinate() {
+    return coordinate_ != null;
   }
   /**
    * <pre>
-   * TODO 下面几个参数是否需要放到MessageHeaderType中
-   * VisitID，访客号
+   * 坐标信息
    * </pre>
    *
-   * <code>string VisitorID = 2;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getVisitorIDBytes() {
-    java.lang.Object ref = visitorID_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      visitorID_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DEVICEID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deviceID_;
-  /**
-   * <pre>
-   * mobile的deviceID
-   * </pre>
-   *
-   * <code>string DeviceID = 3;</code>
-   */
-  public java.lang.String getDeviceID() {
-    java.lang.Object ref = deviceID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deviceID_ = s;
-      return s;
-    }
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType getCoordinate() {
+    return coordinate_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.getDefaultInstance() : coordinate_;
   }
   /**
    * <pre>
-   * mobile的deviceID
+   * 坐标信息
    * </pre>
    *
-   * <code>string DeviceID = 3;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDeviceIDBytes() {
-    java.lang.Object ref = deviceID_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deviceID_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DEVICEPLATFORM_FIELD_NUMBER = 4;
-  private volatile java.lang.Object devicePlatform_;
-  /**
-   * <pre>
-   * 设备系统(ios/android/其他)
-   * </pre>
-   *
-   * <code>string DevicePlatform = 4;</code>
-   */
-  public java.lang.String getDevicePlatform() {
-    java.lang.Object ref = devicePlatform_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      devicePlatform_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 设备系统(ios/android/其他)
-   * </pre>
-   *
-   * <code>string DevicePlatform = 4;</code>
-   */
-  public com.google.protobuf.ByteString
-      getDevicePlatformBytes() {
-    java.lang.Object ref = devicePlatform_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      devicePlatform_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder getCoordinateOrBuilder() {
+    return getCoordinate();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -286,17 +232,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getUserIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userID_);
+    }
     if (!getMemberLevelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, memberLevel_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memberLevel_);
     }
-    if (!getVisitorIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, visitorID_);
-    }
-    if (!getDeviceIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceID_);
-    }
-    if (!getDevicePlatformBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, devicePlatform_);
+    if (coordinate_ != null) {
+      output.writeMessage(3, getCoordinate());
     }
     unknownFields.writeTo(output);
   }
@@ -307,17 +250,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getUserIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userID_);
+    }
     if (!getMemberLevelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, memberLevel_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memberLevel_);
     }
-    if (!getVisitorIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, visitorID_);
-    }
-    if (!getDeviceIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deviceID_);
-    }
-    if (!getDevicePlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, devicePlatform_);
+    if (coordinate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getCoordinate());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -335,14 +276,15 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType other = (com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType) obj;
 
     boolean result = true;
+    result = result && getUserID()
+        .equals(other.getUserID());
     result = result && getMemberLevel()
         .equals(other.getMemberLevel());
-    result = result && getVisitorID()
-        .equals(other.getVisitorID());
-    result = result && getDeviceID()
-        .equals(other.getDeviceID());
-    result = result && getDevicePlatform()
-        .equals(other.getDevicePlatform());
+    result = result && (hasCoordinate() == other.hasCoordinate());
+    if (hasCoordinate()) {
+      result = result && getCoordinate()
+          .equals(other.getCoordinate());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -354,14 +296,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + USERID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserID().hashCode();
     hash = (37 * hash) + MEMBERLEVEL_FIELD_NUMBER;
     hash = (53 * hash) + getMemberLevel().hashCode();
-    hash = (37 * hash) + VISITORID_FIELD_NUMBER;
-    hash = (53 * hash) + getVisitorID().hashCode();
-    hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-    hash = (53 * hash) + getDeviceID().hashCode();
-    hash = (37 * hash) + DEVICEPLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getDevicePlatform().hashCode();
+    if (hasCoordinate()) {
+      hash = (37 * hash) + COORDINATE_FIELD_NUMBER;
+      hash = (53 * hash) + getCoordinate().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -495,14 +437,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      userID_ = "";
+
       memberLevel_ = "";
 
-      visitorID_ = "";
-
-      deviceID_ = "";
-
-      devicePlatform_ = "";
-
+      if (coordinateBuilder_ == null) {
+        coordinate_ = null;
+      } else {
+        coordinate_ = null;
+        coordinateBuilder_ = null;
+      }
       return this;
     }
 
@@ -529,10 +473,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType(this);
+      result.userID_ = userID_;
       result.memberLevel_ = memberLevel_;
-      result.visitorID_ = visitorID_;
-      result.deviceID_ = deviceID_;
-      result.devicePlatform_ = devicePlatform_;
+      if (coordinateBuilder_ == null) {
+        result.coordinate_ = coordinate_;
+      } else {
+        result.coordinate_ = coordinateBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -581,21 +528,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType other) {
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.getDefaultInstance()) return this;
+      if (!other.getUserID().isEmpty()) {
+        userID_ = other.userID_;
+        onChanged();
+      }
       if (!other.getMemberLevel().isEmpty()) {
         memberLevel_ = other.memberLevel_;
         onChanged();
       }
-      if (!other.getVisitorID().isEmpty()) {
-        visitorID_ = other.visitorID_;
-        onChanged();
-      }
-      if (!other.getDeviceID().isEmpty()) {
-        deviceID_ = other.deviceID_;
-        onChanged();
-      }
-      if (!other.getDevicePlatform().isEmpty()) {
-        devicePlatform_ = other.devicePlatform_;
-        onChanged();
+      if (other.hasCoordinate()) {
+        mergeCoordinate(other.getCoordinate());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -626,13 +568,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object userID_ = "";
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>string UserID = 1;</code>
+     */
+    public java.lang.String getUserID() {
+      java.lang.Object ref = userID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userID_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>string UserID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIDBytes() {
+      java.lang.Object ref = userID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>string UserID = 1;</code>
+     */
+    public Builder setUserID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>string UserID = 1;</code>
+     */
+    public Builder clearUserID() {
+      
+      userID_ = getDefaultInstance().getUserID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>string UserID = 1;</code>
+     */
+    public Builder setUserIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userID_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object memberLevel_ = "";
     /**
      * <pre>
-     * 携程会员等级 TODO 只对订票的人有效？
+     * 携程会员等级
      * </pre>
      *
-     * <code>string MemberLevel = 1;</code>
+     * <code>string MemberLevel = 2;</code>
      */
     public java.lang.String getMemberLevel() {
       java.lang.Object ref = memberLevel_;
@@ -648,10 +679,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 携程会员等级 TODO 只对订票的人有效？
+     * 携程会员等级
      * </pre>
      *
-     * <code>string MemberLevel = 1;</code>
+     * <code>string MemberLevel = 2;</code>
      */
     public com.google.protobuf.ByteString
         getMemberLevelBytes() {
@@ -668,10 +699,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 携程会员等级 TODO 只对订票的人有效？
+     * 携程会员等级
      * </pre>
      *
-     * <code>string MemberLevel = 1;</code>
+     * <code>string MemberLevel = 2;</code>
      */
     public Builder setMemberLevel(
         java.lang.String value) {
@@ -685,10 +716,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 携程会员等级 TODO 只对订票的人有效？
+     * 携程会员等级
      * </pre>
      *
-     * <code>string MemberLevel = 1;</code>
+     * <code>string MemberLevel = 2;</code>
      */
     public Builder clearMemberLevel() {
       
@@ -698,10 +729,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 携程会员等级 TODO 只对订票的人有效？
+     * 携程会员等级
      * </pre>
      *
-     * <code>string MemberLevel = 1;</code>
+     * <code>string MemberLevel = 2;</code>
      */
     public Builder setMemberLevelBytes(
         com.google.protobuf.ByteString value) {
@@ -715,276 +746,157 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object visitorID_ = "";
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType coordinate_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder> coordinateBuilder_;
     /**
      * <pre>
-     * TODO 下面几个参数是否需要放到MessageHeaderType中
-     * VisitID，访客号
+     * 坐标信息
      * </pre>
      *
-     * <code>string VisitorID = 2;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
      */
-    public java.lang.String getVisitorID() {
-      java.lang.Object ref = visitorID_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        visitorID_ = s;
-        return s;
+    public boolean hasCoordinate() {
+      return coordinateBuilder_ != null || coordinate_ != null;
+    }
+    /**
+     * <pre>
+     * 坐标信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType getCoordinate() {
+      if (coordinateBuilder_ == null) {
+        return coordinate_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.getDefaultInstance() : coordinate_;
       } else {
-        return (java.lang.String) ref;
+        return coordinateBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * TODO 下面几个参数是否需要放到MessageHeaderType中
-     * VisitID，访客号
+     * 坐标信息
      * </pre>
      *
-     * <code>string VisitorID = 2;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getVisitorIDBytes() {
-      java.lang.Object ref = visitorID_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        visitorID_ = b;
-        return b;
+    public Builder setCoordinate(com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType value) {
+      if (coordinateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        coordinate_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        coordinateBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <pre>
-     * TODO 下面几个参数是否需要放到MessageHeaderType中
-     * VisitID，访客号
-     * </pre>
-     *
-     * <code>string VisitorID = 2;</code>
-     */
-    public Builder setVisitorID(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      visitorID_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * TODO 下面几个参数是否需要放到MessageHeaderType中
-     * VisitID，访客号
-     * </pre>
-     *
-     * <code>string VisitorID = 2;</code>
-     */
-    public Builder clearVisitorID() {
-      
-      visitorID_ = getDefaultInstance().getVisitorID();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * TODO 下面几个参数是否需要放到MessageHeaderType中
-     * VisitID，访客号
-     * </pre>
-     *
-     * <code>string VisitorID = 2;</code>
-     */
-    public Builder setVisitorIDBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      visitorID_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object deviceID_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * mobile的deviceID
+     * 坐标信息
      * </pre>
      *
-     * <code>string DeviceID = 3;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
      */
-    public java.lang.String getDeviceID() {
-      java.lang.Object ref = deviceID_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceID_ = s;
-        return s;
+    public Builder setCoordinate(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder builderForValue) {
+      if (coordinateBuilder_ == null) {
+        coordinate_ = builderForValue.build();
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        coordinateBuilder_.setMessage(builderForValue.build());
       }
-    }
-    /**
-     * <pre>
-     * mobile的deviceID
-     * </pre>
-     *
-     * <code>string DeviceID = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIDBytes() {
-      java.lang.Object ref = deviceID_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * mobile的deviceID
-     * </pre>
-     *
-     * <code>string DeviceID = 3;</code>
-     */
-    public Builder setDeviceID(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deviceID_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * mobile的deviceID
-     * </pre>
-     *
-     * <code>string DeviceID = 3;</code>
-     */
-    public Builder clearDeviceID() {
-      
-      deviceID_ = getDefaultInstance().getDeviceID();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * mobile的deviceID
-     * </pre>
-     *
-     * <code>string DeviceID = 3;</code>
-     */
-    public Builder setDeviceIDBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      deviceID_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object devicePlatform_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * 设备系统(ios/android/其他)
+     * 坐标信息
      * </pre>
      *
-     * <code>string DevicePlatform = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
      */
-    public java.lang.String getDevicePlatform() {
-      java.lang.Object ref = devicePlatform_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        devicePlatform_ = s;
-        return s;
+    public Builder mergeCoordinate(com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType value) {
+      if (coordinateBuilder_ == null) {
+        if (coordinate_ != null) {
+          coordinate_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.newBuilder(coordinate_).mergeFrom(value).buildPartial();
+        } else {
+          coordinate_ = value;
+        }
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        coordinateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 坐标信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
+     */
+    public Builder clearCoordinate() {
+      if (coordinateBuilder_ == null) {
+        coordinate_ = null;
+        onChanged();
+      } else {
+        coordinate_ = null;
+        coordinateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 坐标信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder getCoordinateBuilder() {
+      
+      onChanged();
+      return getCoordinateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 坐标信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder getCoordinateOrBuilder() {
+      if (coordinateBuilder_ != null) {
+        return coordinateBuilder_.getMessageOrBuilder();
+      } else {
+        return coordinate_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.getDefaultInstance() : coordinate_;
       }
     }
     /**
      * <pre>
-     * 设备系统(ios/android/其他)
+     * 坐标信息
      * </pre>
      *
-     * <code>string DevicePlatform = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDevicePlatformBytes() {
-      java.lang.Object ref = devicePlatform_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        devicePlatform_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder> 
+        getCoordinateFieldBuilder() {
+      if (coordinateBuilder_ == null) {
+        coordinateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder>(
+                getCoordinate(),
+                getParentForChildren(),
+                isClean());
+        coordinate_ = null;
       }
-    }
-    /**
-     * <pre>
-     * 设备系统(ios/android/其他)
-     * </pre>
-     *
-     * <code>string DevicePlatform = 4;</code>
-     */
-    public Builder setDevicePlatform(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      devicePlatform_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 设备系统(ios/android/其他)
-     * </pre>
-     *
-     * <code>string DevicePlatform = 4;</code>
-     */
-    public Builder clearDevicePlatform() {
-      
-      devicePlatform_ = getDefaultInstance().getDevicePlatform();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 设备系统(ios/android/其他)
-     * </pre>
-     *
-     * <code>string DevicePlatform = 4;</code>
-     */
-    public Builder setDevicePlatformBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      devicePlatform_ = value;
-      onChanged();
-      return this;
+      return coordinateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

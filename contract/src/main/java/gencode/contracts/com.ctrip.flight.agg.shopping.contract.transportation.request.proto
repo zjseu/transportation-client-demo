@@ -13,11 +13,11 @@ message SearchRequestType {
 }
 
 message SearchCriteriaType {
-    // 用户请求的行程信息 TODO 需要支持指定交通类型吗
+    // 用户请求的行程信息
     repeated JourneyRequestType JourneyRequest = 1;
     // 乘客信息
     repeated PaxRequestType PaxRequest = 2;
-    // 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+    // 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
     repeated string CabinCode = 3;
     // 币种
     string SaleCurrency = 4;
@@ -25,9 +25,27 @@ message SearchCriteriaType {
     string Language = 5;
     // 扩展结点
     repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType ExtensionOption = 6;
-    // 是否需要推荐位
-    bool NeedRecommendation = 7;
-    UserParameterType UserParameter = 8;
+    // 用户信息
+    UserParameterType UserParameter = 7;
+    //  ABTest的Code和Version
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;
+    // 结果控制参数
+    ResultControlType ResultControl = 9;
+    // 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+    int32 IntlOrDomesticRequest = 10;
+    /**
+    * 请求场景。空:默认是主流程查询。
+    * MainProcess:主流程查询
+    * FlightXHotel:宫格机酒主流程查询
+    * FlightXHotelChangeFlight:宫格机酒更换航班查询
+    */
+    string RequestScene = 11;
+
+    // 高级搜索
+    AdvancedOptionType AdvancedOption = 12;
+
+    // 指定查询
+    SpecifiedOptionType SpecifiedOption = 13;
 }
 
 message JourneyRequestType {
@@ -46,32 +64,134 @@ message LocationType {
     string Location = 2;
 }
 
-message UserParameterType {
-    // 携程会员等级 TODO 只对订票的人有效？
-    string MemberLevel = 1;
-    // TODO 下面几个参数是否需要放到MessageHeaderType中
-    // VisitID，访客号
-    string VisitorID = 2;
-    // mobile的deviceID
-    string DeviceID = 3;
-    // 设备系统(ios/android/其他)
-    string DevicePlatform = 4;
-}
-
-
 message PaxRequestType {
     // 乘客类型。1: Adult; 2: Child; 4: Infant;
     int32 AgeType = 1;
     // 乘客人数
     int32 Count = 2;
+    // 国籍
+    string Nationality = 3;
 }
 
 message RouteSearchType {
-    // 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+    /**
+    * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+    * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+    * 2: 严格反查 (严格匹配所有行程的价格);
+    * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
+    */
     int32 SearchMode = 1;
-    // 反查Token
-    string OfferToken = 2;
-    // 普通反查时待匹配的最大行程号
-    int32 MaxJourneyNo = 3;
+    // 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
+    int32 MaxJourneyNo = 2;
+    // 该接口返回的OfferToken，反查时用
+    string OfferToken = 3;
+    // 国际agg查询接口返回的价格token，为了兼容
+    string IntlAggRouteSearchToken = 4;
 }
 
+message UserParameterType {
+    // 用户ID
+    string UserID = 1;
+    // 携程会员等级
+    string MemberLevel = 2;
+    // 坐标信息
+    CoordinateType Coordinate = 3;
+}
+
+message ResultControlType {
+    // 是否需要推荐位产品
+    bool NeedRecommendation = 1;
+    // 偏好(出票)航司
+    repeated string ValidatingCarrier = 2;
+    // 是否根据PaxRequest中的乘客类型做严格匹配。请求国内时有效。 默认false：严格匹配。
+    bool NonMatchRequestAgeType = 3;
+}
+
+message CoordinateType {
+    // 经度
+    double Longitude = 1;
+    // 纬度
+    double Latitude = 2;
+}
+
+message AdvancedOptionType {
+    // 与用户程相关的信息
+    repeated AdvancedJourneyOptionType AdvancedJourneyOption = 1;
+    // 报销凭证,不填表示不限。1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+    repeated int32 InvoiceType = 2;
+}
+
+message AdvancedJourneyOptionType {
+    int32 JourneyNo = 1;
+    // 交通工具类型，1-flight; 2-train; 4-bus
+    int32 TransportType = 2;
+    // 航组号. e.g: FM1234
+    repeated string TransportNo = 3;
+    // 出发时间范围.只支持小时范围(0到24)，如3-5，表示第一程出发时间在3:00-5:00;不填则不限出发时间
+    IntRangeType DepartTimeRange = 4;
+    // 到达时间范围.只支持小时范围(0到24)，如3-5，表示第一程到达时间在3:00-5:00;不填则不限出发时间
+    IntRangeType ArriveTimeRange = 5;
+    // 中转参数，不填表示不限.只有在TransportType=1时才有意义
+    AdvancedTransferOptionType AdvancedTransferOption = 6;
+    // 飞机信息
+    FlightAdvancedOptionType FlightAdvancedOption = 9;
+}
+
+message FlightAdvancedOptionType {
+    // 舱等。支持 Y W C F四种舱等
+    repeated string CabinCode = 1;
+    // 指定用户程的航司（默认MC/OC）
+    string Carrier = 2;
+}
+
+message AdvancedTransferOptionType {
+    // 0:不限制  1：直飞  2：中转
+    int32 TransferType = 1;
+    // 只支持一个中转时长范围,如a-b，表示中转时长在[a,b]分钟内；不填表示时长不限
+    IntRangeType TransferTimeRange = 3;
+    //表示行程包含这个中转点；不填表示中转点不限.
+    repeated LocationType TransferLocation = 4;
+}
+
+message SpecifiedOptionType {
+    // 与用户程相关的信息
+    repeated SpecifiedJourneyOptionType SpecifiedJourneyOption = 1;
+    // 调用方标识
+    int32 ClientType = 2;
+    // 指定Channel
+    repeated string BookingChannel = 3;
+    // 指定票台.与ExcludesAgencyCode二选一
+    repeated string AgencyCode = 4;
+    // 指定排除的票台
+    repeated string ExcludesAgencyCode = 5;
+    repeated string FareBasis = 6;
+    repeated string FareClass = 7;
+    repeated int32 ProductCategory = 8;
+    repeated int32 SubProductCategory = 9;
+}
+
+message SpecifiedJourneyOptionType {
+    int32 JourneyNo = 1;
+    int32 SegmentNo = 2;
+    // 交通工具类型，1-flight; 2-train; 4-bus
+    int32 TransportType = 3;
+    // 交通号. e.g: FM1234
+    string TransportNo = 4;
+    // 飞机交通类型具体指定信息
+    FlightSpecifiedOptionType FlightSpecifiedOption = 5;
+    // 出发时间。格式: yyyy-MM-dd HH:mm:ss。e.g:2021-08-30 00:00:00
+    string DepartDate = 6;
+    // 出发地
+    LocationType DepartLocation = 7;
+    // 到达地
+    LocationType ArriveLocation = 8;
+}
+
+message FlightSpecifiedOptionType {
+    // 实际承运航司
+    string OperatingCarrier = 1;
+    // 舱等。支持 Y W C F四种舱等
+    repeated string CabinCode = 5;
+    // 子仓
+    string RBD = 6;
+}

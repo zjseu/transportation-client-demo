@@ -4,10 +4,6 @@
 package com.ctrip.flight.agg.shopping.contract.transportation;
 
 /**
- * <pre>
- * 原国内契约三种返现的合并：AdditionInfoList/FloatUpList/GiftList/RebateInfo
- * </pre>
- *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.CashBackType}
  */
 public  final class CashBackType extends
@@ -109,7 +105,7 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * 类型:  1任我游 2现金  4任我行
+   * 类型, 1: 普通返现, 2: 溢价返现（高返政策返现), 3: 任我游礼品卡, 4: 任我行礼品卡, 5:里程。国际机票的返现金类型是2。
    * </pre>
    *
    * <code>int32 Type = 2;</code>
@@ -313,10 +309,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * 原国内契约三种返现的合并：AdditionInfoList/FloatUpList/GiftList/RebateInfo
-   * </pre>
-   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.CashBackType}
    */
   public static final class Builder extends
@@ -504,7 +496,7 @@ private static final long serialVersionUID = 0L;
     private int type_ ;
     /**
      * <pre>
-     * 类型:  1任我游 2现金  4任我行
+     * 类型, 1: 普通返现, 2: 溢价返现（高返政策返现), 3: 任我游礼品卡, 4: 任我行礼品卡, 5:里程。国际机票的返现金类型是2。
      * </pre>
      *
      * <code>int32 Type = 2;</code>
@@ -514,7 +506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 类型:  1任我游 2现金  4任我行
+     * 类型, 1: 普通返现, 2: 溢价返现（高返政策返现), 3: 任我游礼品卡, 4: 任我行礼品卡, 5:里程。国际机票的返现金类型是2。
      * </pre>
      *
      * <code>int32 Type = 2;</code>
@@ -527,7 +519,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 类型:  1任我游 2现金  4任我行
+     * 类型, 1: 普通返现, 2: 溢价返现（高返政策返现), 3: 任我游礼品卡, 4: 任我行礼品卡, 5:里程。国际机票的返现金类型是2。
      * </pre>
      *
      * <code>int32 Type = 2;</code>

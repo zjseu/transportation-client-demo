@@ -94,4 +94,13 @@ public interface BaggageAncillaryTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageRefTypeOrBuilder getBaggageRefOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 1: 打包; 2: 加购
+   * </pre>
+   *
+   * <code>int32 OrderWay = 3;</code>
+   */
+  int getOrderWay();
 }

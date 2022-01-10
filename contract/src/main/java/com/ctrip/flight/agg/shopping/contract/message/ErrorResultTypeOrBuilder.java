@@ -21,4 +21,48 @@ public interface ErrorResultTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getErrorDescBytes();
+
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> 
+      getDetailErrorList();
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.message.DetailErrorType getDetailError(int index);
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  int getDetailErrorCount();
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder> 
+      getDetailErrorOrBuilderList();
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder getDetailErrorOrBuilder(
+      int index);
 }

@@ -24,4 +24,22 @@ public interface PaxRequestTypeOrBuilder extends
    * <code>int32 Count = 2;</code>
    */
   int getCount();
+
+  /**
+   * <pre>
+   * 国籍
+   * </pre>
+   *
+   * <code>string Nationality = 3;</code>
+   */
+  java.lang.String getNationality();
+  /**
+   * <pre>
+   * 国籍
+   * </pre>
+   *
+   * <code>string Nationality = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getNationalityBytes();
 }

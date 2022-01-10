@@ -46,47 +46,34 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder subBuilder = null;
-            if (paxCountRange_ != null) {
-              subBuilder = paxCountRange_.toBuilder();
-            }
-            paxCountRange_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(paxCountRange_);
-              paxCountRange_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
 
             ageLimitType_ = input.readInt32();
             break;
           }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
               ageLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000002;
             }
             ageLimitRange_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.parser(), extensionRegistry));
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
               nationalityAllow_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             nationalityAllow_.add(s);
             break;
           }
-          case 42: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
               nationalityBlock_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000008;
             }
             nationalityBlock_.add(s);
             break;
@@ -106,13 +93,13 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         ageLimitRange_ = java.util.Collections.unmodifiableList(ageLimitRange_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         nationalityAllow_ = nationalityAllow_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         nationalityBlock_ = nationalityBlock_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -133,60 +120,27 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int PAXCOUNTRANGE_FIELD_NUMBER = 1;
-  private com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType paxCountRange_;
-  /**
-   * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  public boolean hasPaxCountRange() {
-    return paxCountRange_ != null;
-  }
-  /**
-   * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange() {
-    return paxCountRange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
-  }
-  /**
-   * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder() {
-    return getPaxCountRange();
-  }
-
-  public static final int AGELIMITTYPE_FIELD_NUMBER = 2;
+  public static final int AGELIMITTYPE_FIELD_NUMBER = 1;
   private int ageLimitType_;
   /**
    * <pre>
    * 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
    * </pre>
    *
-   * <code>int32 AgeLimitType = 2;</code>
+   * <code>int32 AgeLimitType = 1;</code>
    */
   public int getAgeLimitType() {
     return ageLimitType_;
   }
 
-  public static final int AGELIMITRANGE_FIELD_NUMBER = 3;
+  public static final int AGELIMITRANGE_FIELD_NUMBER = 2;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> ageLimitRange_;
   /**
    * <pre>
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getAgeLimitRangeList() {
     return ageLimitRange_;
@@ -196,7 +150,7 @@ private static final long serialVersionUID = 0L;
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
       getAgeLimitRangeOrBuilderList() {
@@ -207,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   public int getAgeLimitRangeCount() {
     return ageLimitRange_.size();
@@ -217,7 +171,7 @@ private static final long serialVersionUID = 0L;
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getAgeLimitRange(int index) {
     return ageLimitRange_.get(index);
@@ -227,21 +181,21 @@ private static final long serialVersionUID = 0L;
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getAgeLimitRangeOrBuilder(
       int index) {
     return ageLimitRange_.get(index);
   }
 
-  public static final int NATIONALITYALLOW_FIELD_NUMBER = 4;
+  public static final int NATIONALITYALLOW_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList nationalityAllow_;
   /**
    * <pre>
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   public com.google.protobuf.ProtocolStringList
       getNationalityAllowList() {
@@ -252,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   public int getNationalityAllowCount() {
     return nationalityAllow_.size();
@@ -262,7 +216,7 @@ private static final long serialVersionUID = 0L;
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   public java.lang.String getNationalityAllow(int index) {
     return nationalityAllow_.get(index);
@@ -272,21 +226,21 @@ private static final long serialVersionUID = 0L;
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   public com.google.protobuf.ByteString
       getNationalityAllowBytes(int index) {
     return nationalityAllow_.getByteString(index);
   }
 
-  public static final int NATIONALITYBLOCK_FIELD_NUMBER = 5;
+  public static final int NATIONALITYBLOCK_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList nationalityBlock_;
   /**
    * <pre>
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   public com.google.protobuf.ProtocolStringList
       getNationalityBlockList() {
@@ -297,7 +251,7 @@ private static final long serialVersionUID = 0L;
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   public int getNationalityBlockCount() {
     return nationalityBlock_.size();
@@ -307,7 +261,7 @@ private static final long serialVersionUID = 0L;
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   public java.lang.String getNationalityBlock(int index) {
     return nationalityBlock_.get(index);
@@ -317,7 +271,7 @@ private static final long serialVersionUID = 0L;
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   public com.google.protobuf.ByteString
       getNationalityBlockBytes(int index) {
@@ -338,20 +292,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (paxCountRange_ != null) {
-      output.writeMessage(1, getPaxCountRange());
-    }
     if (ageLimitType_ != 0) {
-      output.writeInt32(2, ageLimitType_);
+      output.writeInt32(1, ageLimitType_);
     }
     for (int i = 0; i < ageLimitRange_.size(); i++) {
-      output.writeMessage(3, ageLimitRange_.get(i));
+      output.writeMessage(2, ageLimitRange_.get(i));
     }
     for (int i = 0; i < nationalityAllow_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nationalityAllow_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nationalityAllow_.getRaw(i));
     }
     for (int i = 0; i < nationalityBlock_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nationalityBlock_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nationalityBlock_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -362,17 +313,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (paxCountRange_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getPaxCountRange());
-    }
     if (ageLimitType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, ageLimitType_);
+        .computeInt32Size(1, ageLimitType_);
     }
     for (int i = 0; i < ageLimitRange_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, ageLimitRange_.get(i));
+        .computeMessageSize(2, ageLimitRange_.get(i));
     }
     {
       int dataSize = 0;
@@ -406,11 +353,6 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType other = (com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType) obj;
 
     boolean result = true;
-    result = result && (hasPaxCountRange() == other.hasPaxCountRange());
-    if (hasPaxCountRange()) {
-      result = result && getPaxCountRange()
-          .equals(other.getPaxCountRange());
-    }
     result = result && (getAgeLimitType()
         == other.getAgeLimitType());
     result = result && getAgeLimitRangeList()
@@ -430,10 +372,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasPaxCountRange()) {
-      hash = (37 * hash) + PAXCOUNTRANGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPaxCountRange().hashCode();
-    }
     hash = (37 * hash) + AGELIMITTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getAgeLimitType();
     if (getAgeLimitRangeCount() > 0) {
@@ -582,24 +520,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (paxCountRangeBuilder_ == null) {
-        paxCountRange_ = null;
-      } else {
-        paxCountRange_ = null;
-        paxCountRangeBuilder_ = null;
-      }
       ageLimitType_ = 0;
 
       if (ageLimitRangeBuilder_ == null) {
         ageLimitRange_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         ageLimitRangeBuilder_.clear();
       }
       nationalityAllow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       nationalityBlock_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -628,29 +560,24 @@ private static final long serialVersionUID = 0L;
       com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType result = new com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (paxCountRangeBuilder_ == null) {
-        result.paxCountRange_ = paxCountRange_;
-      } else {
-        result.paxCountRange_ = paxCountRangeBuilder_.build();
-      }
       result.ageLimitType_ = ageLimitType_;
       if (ageLimitRangeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           ageLimitRange_ = java.util.Collections.unmodifiableList(ageLimitRange_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.ageLimitRange_ = ageLimitRange_;
       } else {
         result.ageLimitRange_ = ageLimitRangeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         nationalityAllow_ = nationalityAllow_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.nationalityAllow_ = nationalityAllow_;
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         nationalityBlock_ = nationalityBlock_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.nationalityBlock_ = nationalityBlock_;
       result.bitField0_ = to_bitField0_;
@@ -702,9 +629,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType other) {
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.PaxRestrictionType.getDefaultInstance()) return this;
-      if (other.hasPaxCountRange()) {
-        mergePaxCountRange(other.getPaxCountRange());
-      }
       if (other.getAgeLimitType() != 0) {
         setAgeLimitType(other.getAgeLimitType());
       }
@@ -712,7 +636,7 @@ private static final long serialVersionUID = 0L;
         if (!other.ageLimitRange_.isEmpty()) {
           if (ageLimitRange_.isEmpty()) {
             ageLimitRange_ = other.ageLimitRange_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAgeLimitRangeIsMutable();
             ageLimitRange_.addAll(other.ageLimitRange_);
@@ -725,7 +649,7 @@ private static final long serialVersionUID = 0L;
             ageLimitRangeBuilder_.dispose();
             ageLimitRangeBuilder_ = null;
             ageLimitRange_ = other.ageLimitRange_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             ageLimitRangeBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAgeLimitRangeFieldBuilder() : null;
@@ -737,7 +661,7 @@ private static final long serialVersionUID = 0L;
       if (!other.nationalityAllow_.isEmpty()) {
         if (nationalityAllow_.isEmpty()) {
           nationalityAllow_ = other.nationalityAllow_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNationalityAllowIsMutable();
           nationalityAllow_.addAll(other.nationalityAllow_);
@@ -747,7 +671,7 @@ private static final long serialVersionUID = 0L;
       if (!other.nationalityBlock_.isEmpty()) {
         if (nationalityBlock_.isEmpty()) {
           nationalityBlock_ = other.nationalityBlock_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureNationalityBlockIsMutable();
           nationalityBlock_.addAll(other.nationalityBlock_);
@@ -784,166 +708,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType paxCountRange_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> paxCountRangeBuilder_;
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public boolean hasPaxCountRange() {
-      return paxCountRangeBuilder_ != null || paxCountRange_ != null;
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange() {
-      if (paxCountRangeBuilder_ == null) {
-        return paxCountRange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
-      } else {
-        return paxCountRangeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public Builder setPaxCountRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
-      if (paxCountRangeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        paxCountRange_ = value;
-        onChanged();
-      } else {
-        paxCountRangeBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public Builder setPaxCountRange(
-        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
-      if (paxCountRangeBuilder_ == null) {
-        paxCountRange_ = builderForValue.build();
-        onChanged();
-      } else {
-        paxCountRangeBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public Builder mergePaxCountRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
-      if (paxCountRangeBuilder_ == null) {
-        if (paxCountRange_ != null) {
-          paxCountRange_ =
-            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.newBuilder(paxCountRange_).mergeFrom(value).buildPartial();
-        } else {
-          paxCountRange_ = value;
-        }
-        onChanged();
-      } else {
-        paxCountRangeBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public Builder clearPaxCountRange() {
-      if (paxCountRangeBuilder_ == null) {
-        paxCountRange_ = null;
-        onChanged();
-      } else {
-        paxCountRange_ = null;
-        paxCountRangeBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder getPaxCountRangeBuilder() {
-      
-      onChanged();
-      return getPaxCountRangeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder() {
-      if (paxCountRangeBuilder_ != null) {
-        return paxCountRangeBuilder_.getMessageOrBuilder();
-      } else {
-        return paxCountRange_ == null ?
-            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
-      }
-    }
-    /**
-     * <pre>
-     * 人数限制
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
-        getPaxCountRangeFieldBuilder() {
-      if (paxCountRangeBuilder_ == null) {
-        paxCountRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder>(
-                getPaxCountRange(),
-                getParentForChildren(),
-                isClean());
-        paxCountRange_ = null;
-      }
-      return paxCountRangeBuilder_;
-    }
-
     private int ageLimitType_ ;
     /**
      * <pre>
      * 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
      * </pre>
      *
-     * <code>int32 AgeLimitType = 2;</code>
+     * <code>int32 AgeLimitType = 1;</code>
      */
     public int getAgeLimitType() {
       return ageLimitType_;
@@ -953,7 +724,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
      * </pre>
      *
-     * <code>int32 AgeLimitType = 2;</code>
+     * <code>int32 AgeLimitType = 1;</code>
      */
     public Builder setAgeLimitType(int value) {
       
@@ -966,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
      * </pre>
      *
-     * <code>int32 AgeLimitType = 2;</code>
+     * <code>int32 AgeLimitType = 1;</code>
      */
     public Builder clearAgeLimitType() {
       
@@ -978,9 +749,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> ageLimitRange_ =
       java.util.Collections.emptyList();
     private void ensureAgeLimitRangeIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         ageLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>(ageLimitRange_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -992,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getAgeLimitRangeList() {
       if (ageLimitRangeBuilder_ == null) {
@@ -1006,7 +777,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public int getAgeLimitRangeCount() {
       if (ageLimitRangeBuilder_ == null) {
@@ -1020,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getAgeLimitRange(int index) {
       if (ageLimitRangeBuilder_ == null) {
@@ -1034,7 +805,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder setAgeLimitRange(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
@@ -1055,7 +826,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder setAgeLimitRange(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
@@ -1073,7 +844,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder addAgeLimitRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
       if (ageLimitRangeBuilder_ == null) {
@@ -1093,7 +864,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder addAgeLimitRange(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
@@ -1114,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder addAgeLimitRange(
         com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
@@ -1132,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder addAgeLimitRange(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
@@ -1150,7 +921,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder addAllAgeLimitRange(
         java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> values) {
@@ -1169,12 +940,12 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder clearAgeLimitRange() {
       if (ageLimitRangeBuilder_ == null) {
         ageLimitRange_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         ageLimitRangeBuilder_.clear();
@@ -1186,7 +957,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public Builder removeAgeLimitRange(int index) {
       if (ageLimitRangeBuilder_ == null) {
@@ -1203,7 +974,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder getAgeLimitRangeBuilder(
         int index) {
@@ -1214,7 +985,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getAgeLimitRangeOrBuilder(
         int index) {
@@ -1228,7 +999,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
          getAgeLimitRangeOrBuilderList() {
@@ -1243,7 +1014,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addAgeLimitRangeBuilder() {
       return getAgeLimitRangeFieldBuilder().addBuilder(
@@ -1254,7 +1025,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addAgeLimitRangeBuilder(
         int index) {
@@ -1266,7 +1037,7 @@ private static final long serialVersionUID = 0L;
      * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder> 
          getAgeLimitRangeBuilderList() {
@@ -1279,7 +1050,7 @@ private static final long serialVersionUID = 0L;
         ageLimitRangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder>(
                 ageLimitRange_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
                 isClean());
         ageLimitRange_ = null;
@@ -1289,9 +1060,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList nationalityAllow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureNationalityAllowIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         nationalityAllow_ = new com.google.protobuf.LazyStringArrayList(nationalityAllow_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1299,7 +1070,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getNationalityAllowList() {
@@ -1310,7 +1081,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public int getNationalityAllowCount() {
       return nationalityAllow_.size();
@@ -1320,7 +1091,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public java.lang.String getNationalityAllow(int index) {
       return nationalityAllow_.get(index);
@@ -1330,7 +1101,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNationalityAllowBytes(int index) {
@@ -1341,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public Builder setNationalityAllow(
         int index, java.lang.String value) {
@@ -1358,7 +1129,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public Builder addNationalityAllow(
         java.lang.String value) {
@@ -1375,7 +1146,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public Builder addAllNationalityAllow(
         java.lang.Iterable<java.lang.String> values) {
@@ -1390,11 +1161,11 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public Builder clearNationalityAllow() {
       nationalityAllow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1403,7 +1174,7 @@ private static final long serialVersionUID = 0L;
      * 国籍白名单
      * </pre>
      *
-     * <code>repeated string NationalityAllow = 4;</code>
+     * <code>repeated string NationalityAllow = 3;</code>
      */
     public Builder addNationalityAllowBytes(
         com.google.protobuf.ByteString value) {
@@ -1419,9 +1190,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList nationalityBlock_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureNationalityBlockIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         nationalityBlock_ = new com.google.protobuf.LazyStringArrayList(nationalityBlock_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
@@ -1429,7 +1200,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getNationalityBlockList() {
@@ -1440,7 +1211,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public int getNationalityBlockCount() {
       return nationalityBlock_.size();
@@ -1450,7 +1221,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public java.lang.String getNationalityBlock(int index) {
       return nationalityBlock_.get(index);
@@ -1460,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public com.google.protobuf.ByteString
         getNationalityBlockBytes(int index) {
@@ -1471,7 +1242,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public Builder setNationalityBlock(
         int index, java.lang.String value) {
@@ -1488,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public Builder addNationalityBlock(
         java.lang.String value) {
@@ -1505,7 +1276,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public Builder addAllNationalityBlock(
         java.lang.Iterable<java.lang.String> values) {
@@ -1520,11 +1291,11 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public Builder clearNationalityBlock() {
       nationalityBlock_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1533,7 +1304,7 @@ private static final long serialVersionUID = 0L;
      * 国籍黑名单
      * </pre>
      *
-     * <code>repeated string NationalityBlock = 5;</code>
+     * <code>repeated string NationalityBlock = 4;</code>
      */
     public Builder addNationalityBlockBytes(
         com.google.protobuf.ByteString value) {

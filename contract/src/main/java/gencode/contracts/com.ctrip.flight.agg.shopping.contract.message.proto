@@ -3,23 +3,18 @@ package com.ctrip.flight.agg.shopping.contract.message;
 option java_package = "com.ctrip.flight.agg.shopping.contract.message";
 option java_multiple_files = true;
 
+// 错误信息，请求成功时实体为空, 否则表示错误，其中ErrorCode标识错误原因，提示信息放入DetailErrorList
 message ErrorResultType
 {
 	int32 ErrorCode = 1 ;
 	string ErrorDesc = 2 ;
+	// 错误详情，请求失败时可能包含多个DetailError
+	repeated DetailErrorType DetailError = 3;
 }
 
-message MessageHeaderType
-{
-	string SessionID = 2 ;
-	string TransactionID = 3 ;
-	// SaleChannel
-	string Channel = 4 ;
-	int32 SubChannelID = 5 ;
-	string CustomerID = 6 ;
-	string ClientIP = 8 ;
-	string VID = 9 ;
-	string RequestID = 10 ;
+message DetailErrorType {
+	int32 Code = 1 ;
+	string Message = 2 ;
 }
 
 message RequestHeaderType
@@ -35,5 +30,24 @@ message ResponseHeaderType
 	string ServerIP = 2 ;
 	int32 ReturnCode = 3 ;
 	string DiagOutput = 4 ;
+}
+
+message MessageHeaderType {
+	// SaleChannel
+	string Channel = 1;
+	// 子渠道号
+	int32 SubChannelID = 2;
+	// 事务号
+	string TransactionID = 3;
+	// 请求ID. (对应了国内的VisitorID)
+	string RequestID = 4;
+	// 调用方IP
+	string ClientIP = 5;
+	// mobile的deviceID
+	string DeviceID = 6;
+	// 设备系统(ios/android/其他)
+	string DevicePlatform = 7;
+	// 前端会话ID
+	string SessionID = 8;
 }
 

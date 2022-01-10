@@ -9,7 +9,7 @@ public interface BaggageSizeTypeOrBuilder extends
 
   /**
    * <pre>
-   * 尺寸限制类型。1：三边之和；2：长*宽*高
+   * 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 &amp; 三边各长宽高（&amp;符号分割）
    * </pre>
    *
    * <code>int32 SizeLimitType = 1;</code>
@@ -18,7 +18,7 @@ public interface BaggageSizeTypeOrBuilder extends
 
   /**
    * <pre>
-   * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+   * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
    * </pre>
    *
    * <code>string Size = 2;</code>
@@ -26,7 +26,7 @@ public interface BaggageSizeTypeOrBuilder extends
   java.lang.String getSize();
   /**
    * <pre>
-   * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+   * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
    * </pre>
    *
    * <code>string Size = 2;</code>

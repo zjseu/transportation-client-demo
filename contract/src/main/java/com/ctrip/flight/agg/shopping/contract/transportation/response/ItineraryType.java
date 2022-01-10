@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     flyingManType_ = 0;
     interchange_ = java.util.Collections.emptyList();
     tag_ = java.util.Collections.emptyList();
+    priority_ = 0D;
   }
 
   @java.lang.Override
@@ -96,6 +97,11 @@ private static final long serialVersionUID = 0L;
             }
             tag_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 57: {
+
+            priority_ = input.readDouble();
             break;
           }
           default: {
@@ -389,6 +395,19 @@ private static final long serialVersionUID = 0L;
     return tag_.get(index);
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 7;
+  private double priority_;
+  /**
+   * <pre>
+   * 优先级, 数值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 7;</code>
+   */
+  public double getPriority() {
+    return priority_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -420,6 +439,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tag_.size(); i++) {
       output.writeMessage(6, tag_.get(i));
+    }
+    if (priority_ != 0D) {
+      output.writeDouble(7, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -454,6 +476,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, tag_.get(i));
     }
+    if (priority_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(7, priority_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -482,6 +508,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInterchangeList());
     result = result && getTagList()
         .equals(other.getTagList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getPriority())
+        == java.lang.Double.doubleToLongBits(
+            other.getPriority()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -513,6 +543,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
     }
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getPriority()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -682,6 +715,8 @@ private static final long serialVersionUID = 0L;
       } else {
         tagBuilder_.clear();
       }
+      priority_ = 0D;
+
       return this;
     }
 
@@ -748,6 +783,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.tag_ = tagBuilder_.build();
       }
+      result.priority_ = priority_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -906,6 +942,9 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.addAllMessages(other.tag_);
           }
         }
+      }
+      if (other.getPriority() != 0D) {
+        setPriority(other.getPriority());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2259,6 +2298,44 @@ private static final long serialVersionUID = 0L;
         tag_ = null;
       }
       return tagBuilder_;
+    }
+
+    private double priority_ ;
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 7;</code>
+     */
+    public double getPriority() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 7;</code>
+     */
+    public Builder setPriority(double value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 7;</code>
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

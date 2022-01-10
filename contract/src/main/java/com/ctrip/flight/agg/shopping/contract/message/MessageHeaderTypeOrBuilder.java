@@ -8,31 +8,11 @@ public interface MessageHeaderTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string SessionID = 2;</code>
-   */
-  java.lang.String getSessionID();
-  /**
-   * <code>string SessionID = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getSessionIDBytes();
-
-  /**
-   * <code>string TransactionID = 3;</code>
-   */
-  java.lang.String getTransactionID();
-  /**
-   * <code>string TransactionID = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getTransactionIDBytes();
-
-  /**
    * <pre>
    * SaleChannel
    * </pre>
    *
-   * <code>string Channel = 4;</code>
+   * <code>string Channel = 1;</code>
    */
   java.lang.String getChannel();
   /**
@@ -40,53 +20,125 @@ public interface MessageHeaderTypeOrBuilder extends
    * SaleChannel
    * </pre>
    *
-   * <code>string Channel = 4;</code>
+   * <code>string Channel = 1;</code>
    */
   com.google.protobuf.ByteString
       getChannelBytes();
 
   /**
-   * <code>int32 SubChannelID = 5;</code>
+   * <pre>
+   * 子渠道号
+   * </pre>
+   *
+   * <code>int32 SubChannelID = 2;</code>
    */
   int getSubChannelID();
 
   /**
-   * <code>string CustomerID = 6;</code>
+   * <pre>
+   * 事务号
+   * </pre>
+   *
+   * <code>string TransactionID = 3;</code>
    */
-  java.lang.String getCustomerID();
+  java.lang.String getTransactionID();
   /**
-   * <code>string CustomerID = 6;</code>
+   * <pre>
+   * 事务号
+   * </pre>
+   *
+   * <code>string TransactionID = 3;</code>
    */
   com.google.protobuf.ByteString
-      getCustomerIDBytes();
+      getTransactionIDBytes();
 
   /**
-   * <code>string ClientIP = 8;</code>
+   * <pre>
+   * 请求ID. (对应了国内的VisitorID)
+   * </pre>
+   *
+   * <code>string RequestID = 4;</code>
+   */
+  java.lang.String getRequestID();
+  /**
+   * <pre>
+   * 请求ID. (对应了国内的VisitorID)
+   * </pre>
+   *
+   * <code>string RequestID = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequestIDBytes();
+
+  /**
+   * <pre>
+   * 调用方IP
+   * </pre>
+   *
+   * <code>string ClientIP = 5;</code>
    */
   java.lang.String getClientIP();
   /**
-   * <code>string ClientIP = 8;</code>
+   * <pre>
+   * 调用方IP
+   * </pre>
+   *
+   * <code>string ClientIP = 5;</code>
    */
   com.google.protobuf.ByteString
       getClientIPBytes();
 
   /**
-   * <code>string VID = 9;</code>
+   * <pre>
+   * mobile的deviceID
+   * </pre>
+   *
+   * <code>string DeviceID = 6;</code>
    */
-  java.lang.String getVID();
+  java.lang.String getDeviceID();
   /**
-   * <code>string VID = 9;</code>
+   * <pre>
+   * mobile的deviceID
+   * </pre>
+   *
+   * <code>string DeviceID = 6;</code>
    */
   com.google.protobuf.ByteString
-      getVIDBytes();
+      getDeviceIDBytes();
 
   /**
-   * <code>string RequestID = 10;</code>
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 7;</code>
    */
-  java.lang.String getRequestID();
+  java.lang.String getDevicePlatform();
   /**
-   * <code>string RequestID = 10;</code>
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 7;</code>
    */
   com.google.protobuf.ByteString
-      getRequestIDBytes();
+      getDevicePlatformBytes();
+
+  /**
+   * <pre>
+   * 前端会话ID
+   * </pre>
+   *
+   * <code>string SessionID = 8;</code>
+   */
+  java.lang.String getSessionID();
+  /**
+   * <pre>
+   * 前端会话ID
+   * </pre>
+   *
+   * <code>string SessionID = 8;</code>
+   */
+  com.google.protobuf.ByteString
+      getSessionIDBytes();
 }

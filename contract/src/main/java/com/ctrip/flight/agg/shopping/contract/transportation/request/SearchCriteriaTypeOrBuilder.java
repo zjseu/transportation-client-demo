@@ -9,7 +9,7 @@ public interface SearchCriteriaTypeOrBuilder extends
 
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -18,7 +18,7 @@ public interface SearchCriteriaTypeOrBuilder extends
       getJourneyRequestList();
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -26,7 +26,7 @@ public interface SearchCriteriaTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType getJourneyRequest(int index);
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -34,7 +34,7 @@ public interface SearchCriteriaTypeOrBuilder extends
   int getJourneyRequestCount();
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -43,7 +43,7 @@ public interface SearchCriteriaTypeOrBuilder extends
       getJourneyRequestOrBuilderList();
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -97,7 +97,7 @@ public interface SearchCriteriaTypeOrBuilder extends
 
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -106,7 +106,7 @@ public interface SearchCriteriaTypeOrBuilder extends
       getCabinCodeList();
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -114,7 +114,7 @@ public interface SearchCriteriaTypeOrBuilder extends
   int getCabinCodeCount();
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -122,7 +122,7 @@ public interface SearchCriteriaTypeOrBuilder extends
   java.lang.String getCabinCode(int index);
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -212,23 +212,180 @@ public interface SearchCriteriaTypeOrBuilder extends
 
   /**
    * <pre>
-   * 是否需要推荐位
+   * 用户信息
    * </pre>
    *
-   * <code>bool NeedRecommendation = 7;</code>
-   */
-  boolean getNeedRecommendation();
-
-  /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   boolean hasUserParameter();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <pre>
+   * 用户信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType getUserParameter();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <pre>
+   * 用户信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterTypeOrBuilder getUserParameterOrBuilder();
+
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getAbTestOptionList();
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getAbTestOption(int index);
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  int getAbTestOptionCount();
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getAbTestOptionOrBuilderList();
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getAbTestOptionOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  boolean hasResultControl();
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType getResultControl();
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder getResultControlOrBuilder();
+
+  /**
+   * <pre>
+   * 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+   * </pre>
+   *
+   * <code>int32 IntlOrDomesticRequest = 10;</code>
+   */
+  int getIntlOrDomesticRequest();
+
+  /**
+   * <pre>
+   **
+   * 请求场景。空:默认是主流程查询。
+   * MainProcess:主流程查询
+   * FlightXHotel:宫格机酒主流程查询
+   * FlightXHotelChangeFlight:宫格机酒更换航班查询
+   * </pre>
+   *
+   * <code>string RequestScene = 11;</code>
+   */
+  java.lang.String getRequestScene();
+  /**
+   * <pre>
+   **
+   * 请求场景。空:默认是主流程查询。
+   * MainProcess:主流程查询
+   * FlightXHotel:宫格机酒主流程查询
+   * FlightXHotelChangeFlight:宫格机酒更换航班查询
+   * </pre>
+   *
+   * <code>string RequestScene = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequestSceneBytes();
+
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  boolean hasAdvancedOption();
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType getAdvancedOption();
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder getAdvancedOptionOrBuilder();
+
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  boolean hasSpecifiedOption();
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType getSpecifiedOption();
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder getSpecifiedOptionOrBuilder();
 }

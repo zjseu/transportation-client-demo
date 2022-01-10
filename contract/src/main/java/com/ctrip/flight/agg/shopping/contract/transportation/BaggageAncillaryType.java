@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private BaggageAncillaryType() {
     bundleItem_ = java.util.Collections.emptyList();
     baggageRef_ = java.util.Collections.emptyList();
+    orderWay_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.baggage.BaggageRefType.parser(), extensionRegistry));
             break;
           }
+          case 24: {
+
+            orderWay_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -100,6 +106,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType.class, com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int BUNDLEITEM_FIELD_NUMBER = 1;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.BundleItemType> bundleItem_;
   /**
@@ -210,6 +217,19 @@ private static final long serialVersionUID = 0L;
     return baggageRef_.get(index);
   }
 
+  public static final int ORDERWAY_FIELD_NUMBER = 3;
+  private int orderWay_;
+  /**
+   * <pre>
+   * 1: 打包; 2: 加购
+   * </pre>
+   *
+   * <code>int32 OrderWay = 3;</code>
+   */
+  public int getOrderWay() {
+    return orderWay_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -230,6 +250,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < baggageRef_.size(); i++) {
       output.writeMessage(2, baggageRef_.get(i));
     }
+    if (orderWay_ != 0) {
+      output.writeInt32(3, orderWay_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -246,6 +269,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < baggageRef_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, baggageRef_.get(i));
+    }
+    if (orderWay_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, orderWay_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,6 +294,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBundleItemList());
     result = result && getBaggageRefList()
         .equals(other.getBaggageRefList());
+    result = result && (getOrderWay()
+        == other.getOrderWay());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -286,6 +315,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BAGGAGEREF_FIELD_NUMBER;
       hash = (53 * hash) + getBaggageRefList().hashCode();
     }
+    hash = (37 * hash) + ORDERWAY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderWay();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +464,8 @@ private static final long serialVersionUID = 0L;
       } else {
         baggageRefBuilder_.clear();
       }
+      orderWay_ = 0;
+
       return this;
     }
 
@@ -460,6 +493,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType result = new com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (bundleItemBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           bundleItem_ = java.util.Collections.unmodifiableList(bundleItem_);
@@ -478,6 +512,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baggageRef_ = baggageRefBuilder_.build();
       }
+      result.orderWay_ = orderWay_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -577,6 +613,9 @@ private static final long serialVersionUID = 0L;
             baggageRefBuilder_.addAllMessages(other.baggageRef_);
           }
         }
+      }
+      if (other.getOrderWay() != 0) {
+        setOrderWay(other.getOrderWay());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1230,6 +1269,44 @@ private static final long serialVersionUID = 0L;
         baggageRef_ = null;
       }
       return baggageRefBuilder_;
+    }
+
+    private int orderWay_ ;
+    /**
+     * <pre>
+     * 1: 打包; 2: 加购
+     * </pre>
+     *
+     * <code>int32 OrderWay = 3;</code>
+     */
+    public int getOrderWay() {
+      return orderWay_;
+    }
+    /**
+     * <pre>
+     * 1: 打包; 2: 加购
+     * </pre>
+     *
+     * <code>int32 OrderWay = 3;</code>
+     */
+    public Builder setOrderWay(int value) {
+      
+      orderWay_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 打包; 2: 加购
+     * </pre>
+     *
+     * <code>int32 OrderWay = 3;</code>
+     */
+    public Builder clearOrderWay() {
+      
+      orderWay_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

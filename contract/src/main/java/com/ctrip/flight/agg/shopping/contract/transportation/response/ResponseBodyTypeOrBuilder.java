@@ -208,4 +208,40 @@ public interface ResponseBodyTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCompatibleDetailTokenBytes();
+
+  /**
+   * <pre>
+   * 机酒缓存Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string HotelLoadToken = 7;</code>
+   */
+  java.lang.String getHotelLoadToken();
+  /**
+   * <pre>
+   * 机酒缓存Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string HotelLoadToken = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getHotelLoadTokenBytes();
+
+  /**
+   * <pre>
+   * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+   * </pre>
+   *
+   * <code>string SearchCriteriaToken = 8;</code>
+   */
+  java.lang.String getSearchCriteriaToken();
+  /**
+   * <pre>
+   * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+   * </pre>
+   *
+   * <code>string SearchCriteriaToken = 8;</code>
+   */
+  com.google.protobuf.ByteString
+      getSearchCriteriaTokenBytes();
 }

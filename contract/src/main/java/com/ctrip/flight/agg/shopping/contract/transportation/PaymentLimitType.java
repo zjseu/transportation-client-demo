@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private PaymentLimitType() {
     prepayType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creditCardPaymentLimitRef_ = java.util.Collections.emptyList();
+    paymentDiscountRefType_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,6 +75,15 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              paymentDiscountRefType_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            paymentDiscountRefType_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -94,6 +104,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         creditCardPaymentLimitRef_ = java.util.Collections.unmodifiableList(creditCardPaymentLimitRef_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        paymentDiscountRefType_ = java.util.Collections.unmodifiableList(paymentDiscountRefType_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -192,6 +205,61 @@ private static final long serialVersionUID = 0L;
   }
   private int creditCardPaymentLimitRefMemoizedSerializedSize = -1;
 
+  public static final int PAYMENTDISCOUNTREFTYPE_FIELD_NUMBER = 3;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> paymentDiscountRefType_;
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> getPaymentDiscountRefTypeList() {
+    return paymentDiscountRefType_;
+  }
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder> 
+      getPaymentDiscountRefTypeOrBuilderList() {
+    return paymentDiscountRefType_;
+  }
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  public int getPaymentDiscountRefTypeCount() {
+    return paymentDiscountRefType_.size();
+  }
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType getPaymentDiscountRefType(int index) {
+    return paymentDiscountRefType_.get(index);
+  }
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder getPaymentDiscountRefTypeOrBuilder(
+      int index) {
+    return paymentDiscountRefType_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +284,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < creditCardPaymentLimitRef_.size(); i++) {
       output.writeInt32NoTag(creditCardPaymentLimitRef_.get(i));
+    }
+    for (int i = 0; i < paymentDiscountRefType_.size(); i++) {
+      output.writeMessage(3, paymentDiscountRefType_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -248,6 +319,10 @@ private static final long serialVersionUID = 0L;
       }
       creditCardPaymentLimitRefMemoizedSerializedSize = dataSize;
     }
+    for (int i = 0; i < paymentDiscountRefType_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, paymentDiscountRefType_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -268,6 +343,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPrepayTypeList());
     result = result && getCreditCardPaymentLimitRefList()
         .equals(other.getCreditCardPaymentLimitRefList());
+    result = result && getPaymentDiscountRefTypeList()
+        .equals(other.getPaymentDiscountRefTypeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -286,6 +363,10 @@ private static final long serialVersionUID = 0L;
     if (getCreditCardPaymentLimitRefCount() > 0) {
       hash = (37 * hash) + CREDITCARDPAYMENTLIMITREF_FIELD_NUMBER;
       hash = (53 * hash) + getCreditCardPaymentLimitRefList().hashCode();
+    }
+    if (getPaymentDiscountRefTypeCount() > 0) {
+      hash = (37 * hash) + PAYMENTDISCOUNTREFTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPaymentDiscountRefTypeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -415,6 +496,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPaymentDiscountRefTypeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -424,6 +506,12 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       creditCardPaymentLimitRef_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        paymentDiscountRefType_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        paymentDiscountRefTypeBuilder_.clear();
+      }
       return this;
     }
 
@@ -461,6 +549,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.creditCardPaymentLimitRef_ = creditCardPaymentLimitRef_;
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          paymentDiscountRefType_ = java.util.Collections.unmodifiableList(paymentDiscountRefType_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.paymentDiscountRefType_ = paymentDiscountRefType_;
+      } else {
+        result.paymentDiscountRefType_ = paymentDiscountRefTypeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -528,6 +625,32 @@ private static final long serialVersionUID = 0L;
           creditCardPaymentLimitRef_.addAll(other.creditCardPaymentLimitRef_);
         }
         onChanged();
+      }
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        if (!other.paymentDiscountRefType_.isEmpty()) {
+          if (paymentDiscountRefType_.isEmpty()) {
+            paymentDiscountRefType_ = other.paymentDiscountRefType_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePaymentDiscountRefTypeIsMutable();
+            paymentDiscountRefType_.addAll(other.paymentDiscountRefType_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.paymentDiscountRefType_.isEmpty()) {
+          if (paymentDiscountRefTypeBuilder_.isEmpty()) {
+            paymentDiscountRefTypeBuilder_.dispose();
+            paymentDiscountRefTypeBuilder_ = null;
+            paymentDiscountRefType_ = other.paymentDiscountRefType_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            paymentDiscountRefTypeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPaymentDiscountRefTypeFieldBuilder() : null;
+          } else {
+            paymentDiscountRefTypeBuilder_.addAllMessages(other.paymentDiscountRefType_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -781,6 +904,318 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> paymentDiscountRefType_ =
+      java.util.Collections.emptyList();
+    private void ensurePaymentDiscountRefTypeIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        paymentDiscountRefType_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType>(paymentDiscountRefType_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder> paymentDiscountRefTypeBuilder_;
+
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> getPaymentDiscountRefTypeList() {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(paymentDiscountRefType_);
+      } else {
+        return paymentDiscountRefTypeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public int getPaymentDiscountRefTypeCount() {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        return paymentDiscountRefType_.size();
+      } else {
+        return paymentDiscountRefTypeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType getPaymentDiscountRefType(int index) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        return paymentDiscountRefType_.get(index);
+      } else {
+        return paymentDiscountRefTypeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder setPaymentDiscountRefType(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType value) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.set(index, value);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder setPaymentDiscountRefType(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder builderForValue) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder addPaymentDiscountRefType(com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType value) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.add(value);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder addPaymentDiscountRefType(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType value) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.add(index, value);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder addPaymentDiscountRefType(
+        com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder builderForValue) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.add(builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder addPaymentDiscountRefType(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder builderForValue) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder addAllPaymentDiscountRefType(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> values) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        ensurePaymentDiscountRefTypeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, paymentDiscountRefType_);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder clearPaymentDiscountRefType() {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        paymentDiscountRefType_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public Builder removePaymentDiscountRefType(int index) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        ensurePaymentDiscountRefTypeIsMutable();
+        paymentDiscountRefType_.remove(index);
+        onChanged();
+      } else {
+        paymentDiscountRefTypeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder getPaymentDiscountRefTypeBuilder(
+        int index) {
+      return getPaymentDiscountRefTypeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder getPaymentDiscountRefTypeOrBuilder(
+        int index) {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        return paymentDiscountRefType_.get(index);  } else {
+        return paymentDiscountRefTypeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder> 
+         getPaymentDiscountRefTypeOrBuilderList() {
+      if (paymentDiscountRefTypeBuilder_ != null) {
+        return paymentDiscountRefTypeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(paymentDiscountRefType_);
+      }
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder addPaymentDiscountRefTypeBuilder() {
+      return getPaymentDiscountRefTypeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder addPaymentDiscountRefTypeBuilder(
+        int index) {
+      return getPaymentDiscountRefTypeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 支付卡让利信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder> 
+         getPaymentDiscountRefTypeBuilderList() {
+      return getPaymentDiscountRefTypeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder> 
+        getPaymentDiscountRefTypeFieldBuilder() {
+      if (paymentDiscountRefTypeBuilder_ == null) {
+        paymentDiscountRefTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder>(
+                paymentDiscountRefType_,
+                ((bitField0_ & 0x00000004) == 0x00000004),
+                getParentForChildren(),
+                isClean());
+        paymentDiscountRefType_ = null;
+      }
+      return paymentDiscountRefTypeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

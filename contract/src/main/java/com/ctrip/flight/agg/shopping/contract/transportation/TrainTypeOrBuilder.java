@@ -12,9 +12,9 @@ public interface TrainTypeOrBuilder extends
    * 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
    * </pre>
    *
-   * <code>int32 TrainType = 1;</code>
+   * <code>int32 Type = 1;</code>
    */
-  int getTrainType();
+  int getType();
 
   /**
    * <pre>

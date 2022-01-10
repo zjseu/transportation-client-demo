@@ -74,4 +74,22 @@ public interface DiscountTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DiscountLabelType DiscountLabel = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.DiscountLabelTypeOrBuilder getDiscountLabelOrBuilder();
+
+  /**
+   * <pre>
+   * 国际查询列表反查阶段，将RebateType记录成让利。
+   * </pre>
+   *
+   * <code>string RebateType = 5;</code>
+   */
+  java.lang.String getRebateType();
+  /**
+   * <pre>
+   * 国际查询列表反查阶段，将RebateType记录成让利。
+   * </pre>
+   *
+   * <code>string RebateType = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getRebateTypeBytes();
 }

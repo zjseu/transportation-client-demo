@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object compatiblePenaltyKey_;
   /**
    * <pre>
-   * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+   * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
    * </pre>
    *
    * <code>string CompatiblePenaltyKey = 3;</code>
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+   * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
    * </pre>
    *
    * <code>string CompatiblePenaltyKey = 3;</code>
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object compatiblePenaltyKey_ = "";
     /**
      * <pre>
-     * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+     * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
      * </pre>
      *
      * <code>string CompatiblePenaltyKey = 3;</code>
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+     * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
      * </pre>
      *
      * <code>string CompatiblePenaltyKey = 3;</code>
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+     * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
      * </pre>
      *
      * <code>string CompatiblePenaltyKey = 3;</code>
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+     * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
      * </pre>
      *
      * <code>string CompatiblePenaltyKey = 3;</code>
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+     * 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
      * </pre>
      *
      * <code>string CompatiblePenaltyKey = 3;</code>

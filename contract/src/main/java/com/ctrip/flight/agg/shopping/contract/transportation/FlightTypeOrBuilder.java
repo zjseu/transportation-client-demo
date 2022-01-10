@@ -215,4 +215,13 @@ public interface FlightTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightPunctualityType Punctuality = 9;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.FlightPunctualityTypeOrBuilder getPunctualityOrBuilder();
+
+  /**
+   * <pre>
+   * 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+   * </pre>
+   *
+   * <code>int32 VirtualFlightType = 10;</code>
+   */
+  int getVirtualFlightType();
 }

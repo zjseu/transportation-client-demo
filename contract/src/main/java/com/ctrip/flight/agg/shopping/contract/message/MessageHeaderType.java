@@ -16,14 +16,14 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MessageHeaderType() {
-    sessionID_ = "";
-    transactionID_ = "";
     channel_ = "";
     subChannelID_ = 0;
-    customerID_ = "";
-    clientIP_ = "";
-    vID_ = "";
+    transactionID_ = "";
     requestID_ = "";
+    clientIP_ = "";
+    deviceID_ = "";
+    devicePlatform_ = "";
+    sessionID_ = "";
   }
 
   @java.lang.Override
@@ -50,10 +50,15 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sessionID_ = s;
+            channel_ = s;
+            break;
+          }
+          case 16: {
+
+            subChannelID_ = input.readInt32();
             break;
           }
           case 26: {
@@ -65,36 +70,31 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            channel_ = s;
+            requestID_ = s;
             break;
           }
-          case 40: {
-
-            subChannelID_ = input.readInt32();
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            customerID_ = s;
-            break;
-          }
-          case 66: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             clientIP_ = s;
             break;
           }
-          case 74: {
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            vID_ = s;
+            deviceID_ = s;
             break;
           }
-          case 82: {
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            requestID_ = s;
+            devicePlatform_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sessionID_ = s;
             break;
           }
           default: {
@@ -129,82 +129,14 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType.class, com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType.Builder.class);
   }
 
-  public static final int SESSIONID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sessionID_;
-  /**
-   * <code>string SessionID = 2;</code>
-   */
-  public java.lang.String getSessionID() {
-    java.lang.Object ref = sessionID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sessionID_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string SessionID = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getSessionIDBytes() {
-    java.lang.Object ref = sessionID_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sessionID_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TRANSACTIONID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object transactionID_;
-  /**
-   * <code>string TransactionID = 3;</code>
-   */
-  public java.lang.String getTransactionID() {
-    java.lang.Object ref = transactionID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      transactionID_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string TransactionID = 3;</code>
-   */
-  public com.google.protobuf.ByteString
-      getTransactionIDBytes() {
-    java.lang.Object ref = transactionID_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      transactionID_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CHANNEL_FIELD_NUMBER = 4;
+  public static final int CHANNEL_FIELD_NUMBER = 1;
   private volatile java.lang.Object channel_;
   /**
    * <pre>
    * SaleChannel
    * </pre>
    *
-   * <code>string Channel = 4;</code>
+   * <code>string Channel = 1;</code>
    */
   public java.lang.String getChannel() {
     java.lang.Object ref = channel_;
@@ -223,7 +155,7 @@ private static final long serialVersionUID = 0L;
    * SaleChannel
    * </pre>
    *
-   * <code>string Channel = 4;</code>
+   * <code>string Channel = 1;</code>
    */
   public com.google.protobuf.ByteString
       getChannelBytes() {
@@ -239,53 +171,111 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SUBCHANNELID_FIELD_NUMBER = 5;
+  public static final int SUBCHANNELID_FIELD_NUMBER = 2;
   private int subChannelID_;
   /**
-   * <code>int32 SubChannelID = 5;</code>
+   * <pre>
+   * 子渠道号
+   * </pre>
+   *
+   * <code>int32 SubChannelID = 2;</code>
    */
   public int getSubChannelID() {
     return subChannelID_;
   }
 
-  public static final int CUSTOMERID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object customerID_;
+  public static final int TRANSACTIONID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object transactionID_;
   /**
-   * <code>string CustomerID = 6;</code>
+   * <pre>
+   * 事务号
+   * </pre>
+   *
+   * <code>string TransactionID = 3;</code>
    */
-  public java.lang.String getCustomerID() {
-    java.lang.Object ref = customerID_;
+  public java.lang.String getTransactionID() {
+    java.lang.Object ref = transactionID_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      customerID_ = s;
+      transactionID_ = s;
       return s;
     }
   }
   /**
-   * <code>string CustomerID = 6;</code>
+   * <pre>
+   * 事务号
+   * </pre>
+   *
+   * <code>string TransactionID = 3;</code>
    */
   public com.google.protobuf.ByteString
-      getCustomerIDBytes() {
-    java.lang.Object ref = customerID_;
+      getTransactionIDBytes() {
+    java.lang.Object ref = transactionID_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      customerID_ = b;
+      transactionID_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int CLIENTIP_FIELD_NUMBER = 8;
+  public static final int REQUESTID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestID_;
+  /**
+   * <pre>
+   * 请求ID. (对应了国内的VisitorID)
+   * </pre>
+   *
+   * <code>string RequestID = 4;</code>
+   */
+  public java.lang.String getRequestID() {
+    java.lang.Object ref = requestID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestID_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 请求ID. (对应了国内的VisitorID)
+   * </pre>
+   *
+   * <code>string RequestID = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRequestIDBytes() {
+    java.lang.Object ref = requestID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestID_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENTIP_FIELD_NUMBER = 5;
   private volatile java.lang.Object clientIP_;
   /**
-   * <code>string ClientIP = 8;</code>
+   * <pre>
+   * 调用方IP
+   * </pre>
+   *
+   * <code>string ClientIP = 5;</code>
    */
   public java.lang.String getClientIP() {
     java.lang.Object ref = clientIP_;
@@ -300,7 +290,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string ClientIP = 8;</code>
+   * <pre>
+   * 调用方IP
+   * </pre>
+   *
+   * <code>string ClientIP = 5;</code>
    */
   public com.google.protobuf.ByteString
       getClientIPBytes() {
@@ -316,68 +310,126 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object vID_;
+  public static final int DEVICEID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object deviceID_;
   /**
-   * <code>string VID = 9;</code>
+   * <pre>
+   * mobile的deviceID
+   * </pre>
+   *
+   * <code>string DeviceID = 6;</code>
    */
-  public java.lang.String getVID() {
-    java.lang.Object ref = vID_;
+  public java.lang.String getDeviceID() {
+    java.lang.Object ref = deviceID_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      vID_ = s;
+      deviceID_ = s;
       return s;
     }
   }
   /**
-   * <code>string VID = 9;</code>
+   * <pre>
+   * mobile的deviceID
+   * </pre>
+   *
+   * <code>string DeviceID = 6;</code>
    */
   public com.google.protobuf.ByteString
-      getVIDBytes() {
-    java.lang.Object ref = vID_;
+      getDeviceIDBytes() {
+    java.lang.Object ref = deviceID_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      vID_ = b;
+      deviceID_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int REQUESTID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object requestID_;
+  public static final int DEVICEPLATFORM_FIELD_NUMBER = 7;
+  private volatile java.lang.Object devicePlatform_;
   /**
-   * <code>string RequestID = 10;</code>
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 7;</code>
    */
-  public java.lang.String getRequestID() {
-    java.lang.Object ref = requestID_;
+  public java.lang.String getDevicePlatform() {
+    java.lang.Object ref = devicePlatform_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      requestID_ = s;
+      devicePlatform_ = s;
       return s;
     }
   }
   /**
-   * <code>string RequestID = 10;</code>
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 7;</code>
    */
   public com.google.protobuf.ByteString
-      getRequestIDBytes() {
-    java.lang.Object ref = requestID_;
+      getDevicePlatformBytes() {
+    java.lang.Object ref = devicePlatform_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      requestID_ = b;
+      devicePlatform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SESSIONID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object sessionID_;
+  /**
+   * <pre>
+   * 前端会话ID
+   * </pre>
+   *
+   * <code>string SessionID = 8;</code>
+   */
+  public java.lang.String getSessionID() {
+    java.lang.Object ref = sessionID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionID_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 前端会话ID
+   * </pre>
+   *
+   * <code>string SessionID = 8;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSessionIDBytes() {
+    java.lang.Object ref = sessionID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sessionID_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -398,29 +450,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSessionIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionID_);
+    if (!getChannelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, channel_);
+    }
+    if (subChannelID_ != 0) {
+      output.writeInt32(2, subChannelID_);
     }
     if (!getTransactionIDBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transactionID_);
     }
-    if (!getChannelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, channel_);
-    }
-    if (subChannelID_ != 0) {
-      output.writeInt32(5, subChannelID_);
-    }
-    if (!getCustomerIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, customerID_);
+    if (!getRequestIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestID_);
     }
     if (!getClientIPBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, clientIP_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, clientIP_);
     }
-    if (!getVIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, vID_);
+    if (!getDeviceIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deviceID_);
     }
-    if (!getRequestIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, requestID_);
+    if (!getDevicePlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, devicePlatform_);
+    }
+    if (!getSessionIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sessionID_);
     }
     unknownFields.writeTo(output);
   }
@@ -431,30 +483,30 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSessionIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionID_);
+    if (!getChannelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, channel_);
+    }
+    if (subChannelID_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, subChannelID_);
     }
     if (!getTransactionIDBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, transactionID_);
     }
-    if (!getChannelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, channel_);
-    }
-    if (subChannelID_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, subChannelID_);
-    }
-    if (!getCustomerIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, customerID_);
+    if (!getRequestIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestID_);
     }
     if (!getClientIPBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, clientIP_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, clientIP_);
     }
-    if (!getVIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, vID_);
+    if (!getDeviceIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deviceID_);
     }
-    if (!getRequestIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, requestID_);
+    if (!getDevicePlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, devicePlatform_);
+    }
+    if (!getSessionIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sessionID_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -472,22 +524,22 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType other = (com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType) obj;
 
     boolean result = true;
-    result = result && getSessionID()
-        .equals(other.getSessionID());
-    result = result && getTransactionID()
-        .equals(other.getTransactionID());
     result = result && getChannel()
         .equals(other.getChannel());
     result = result && (getSubChannelID()
         == other.getSubChannelID());
-    result = result && getCustomerID()
-        .equals(other.getCustomerID());
-    result = result && getClientIP()
-        .equals(other.getClientIP());
-    result = result && getVID()
-        .equals(other.getVID());
+    result = result && getTransactionID()
+        .equals(other.getTransactionID());
     result = result && getRequestID()
         .equals(other.getRequestID());
+    result = result && getClientIP()
+        .equals(other.getClientIP());
+    result = result && getDeviceID()
+        .equals(other.getDeviceID());
+    result = result && getDevicePlatform()
+        .equals(other.getDevicePlatform());
+    result = result && getSessionID()
+        .equals(other.getSessionID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -499,22 +551,22 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-    hash = (53 * hash) + getSessionID().hashCode();
-    hash = (37 * hash) + TRANSACTIONID_FIELD_NUMBER;
-    hash = (53 * hash) + getTransactionID().hashCode();
     hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + getChannel().hashCode();
     hash = (37 * hash) + SUBCHANNELID_FIELD_NUMBER;
     hash = (53 * hash) + getSubChannelID();
-    hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-    hash = (53 * hash) + getCustomerID().hashCode();
-    hash = (37 * hash) + CLIENTIP_FIELD_NUMBER;
-    hash = (53 * hash) + getClientIP().hashCode();
-    hash = (37 * hash) + VID_FIELD_NUMBER;
-    hash = (53 * hash) + getVID().hashCode();
+    hash = (37 * hash) + TRANSACTIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getTransactionID().hashCode();
     hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestID().hashCode();
+    hash = (37 * hash) + CLIENTIP_FIELD_NUMBER;
+    hash = (53 * hash) + getClientIP().hashCode();
+    hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceID().hashCode();
+    hash = (37 * hash) + DEVICEPLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getDevicePlatform().hashCode();
+    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getSessionID().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -648,21 +700,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sessionID_ = "";
-
-      transactionID_ = "";
-
       channel_ = "";
 
       subChannelID_ = 0;
 
-      customerID_ = "";
+      transactionID_ = "";
+
+      requestID_ = "";
 
       clientIP_ = "";
 
-      vID_ = "";
+      deviceID_ = "";
 
-      requestID_ = "";
+      devicePlatform_ = "";
+
+      sessionID_ = "";
 
       return this;
     }
@@ -690,14 +742,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType result = new com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType(this);
-      result.sessionID_ = sessionID_;
-      result.transactionID_ = transactionID_;
       result.channel_ = channel_;
       result.subChannelID_ = subChannelID_;
-      result.customerID_ = customerID_;
-      result.clientIP_ = clientIP_;
-      result.vID_ = vID_;
+      result.transactionID_ = transactionID_;
       result.requestID_ = requestID_;
+      result.clientIP_ = clientIP_;
+      result.deviceID_ = deviceID_;
+      result.devicePlatform_ = devicePlatform_;
+      result.sessionID_ = sessionID_;
       onBuilt();
       return result;
     }
@@ -746,14 +798,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType other) {
       if (other == com.ctrip.flight.agg.shopping.contract.message.MessageHeaderType.getDefaultInstance()) return this;
-      if (!other.getSessionID().isEmpty()) {
-        sessionID_ = other.sessionID_;
-        onChanged();
-      }
-      if (!other.getTransactionID().isEmpty()) {
-        transactionID_ = other.transactionID_;
-        onChanged();
-      }
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
         onChanged();
@@ -761,20 +805,28 @@ private static final long serialVersionUID = 0L;
       if (other.getSubChannelID() != 0) {
         setSubChannelID(other.getSubChannelID());
       }
-      if (!other.getCustomerID().isEmpty()) {
-        customerID_ = other.customerID_;
+      if (!other.getTransactionID().isEmpty()) {
+        transactionID_ = other.transactionID_;
+        onChanged();
+      }
+      if (!other.getRequestID().isEmpty()) {
+        requestID_ = other.requestID_;
         onChanged();
       }
       if (!other.getClientIP().isEmpty()) {
         clientIP_ = other.clientIP_;
         onChanged();
       }
-      if (!other.getVID().isEmpty()) {
-        vID_ = other.vID_;
+      if (!other.getDeviceID().isEmpty()) {
+        deviceID_ = other.deviceID_;
         onChanged();
       }
-      if (!other.getRequestID().isEmpty()) {
-        requestID_ = other.requestID_;
+      if (!other.getDevicePlatform().isEmpty()) {
+        devicePlatform_ = other.devicePlatform_;
+        onChanged();
+      }
+      if (!other.getSessionID().isEmpty()) {
+        sessionID_ = other.sessionID_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -806,151 +858,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sessionID_ = "";
-    /**
-     * <code>string SessionID = 2;</code>
-     */
-    public java.lang.String getSessionID() {
-      java.lang.Object ref = sessionID_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sessionID_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string SessionID = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSessionIDBytes() {
-      java.lang.Object ref = sessionID_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sessionID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string SessionID = 2;</code>
-     */
-    public Builder setSessionID(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      sessionID_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string SessionID = 2;</code>
-     */
-    public Builder clearSessionID() {
-      
-      sessionID_ = getDefaultInstance().getSessionID();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string SessionID = 2;</code>
-     */
-    public Builder setSessionIDBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      sessionID_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object transactionID_ = "";
-    /**
-     * <code>string TransactionID = 3;</code>
-     */
-    public java.lang.String getTransactionID() {
-      java.lang.Object ref = transactionID_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        transactionID_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string TransactionID = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTransactionIDBytes() {
-      java.lang.Object ref = transactionID_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        transactionID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string TransactionID = 3;</code>
-     */
-    public Builder setTransactionID(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      transactionID_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string TransactionID = 3;</code>
-     */
-    public Builder clearTransactionID() {
-      
-      transactionID_ = getDefaultInstance().getTransactionID();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string TransactionID = 3;</code>
-     */
-    public Builder setTransactionIDBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      transactionID_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object channel_ = "";
     /**
      * <pre>
      * SaleChannel
      * </pre>
      *
-     * <code>string Channel = 4;</code>
+     * <code>string Channel = 1;</code>
      */
     public java.lang.String getChannel() {
       java.lang.Object ref = channel_;
@@ -969,7 +883,7 @@ private static final long serialVersionUID = 0L;
      * SaleChannel
      * </pre>
      *
-     * <code>string Channel = 4;</code>
+     * <code>string Channel = 1;</code>
      */
     public com.google.protobuf.ByteString
         getChannelBytes() {
@@ -989,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * SaleChannel
      * </pre>
      *
-     * <code>string Channel = 4;</code>
+     * <code>string Channel = 1;</code>
      */
     public Builder setChannel(
         java.lang.String value) {
@@ -1006,7 +920,7 @@ private static final long serialVersionUID = 0L;
      * SaleChannel
      * </pre>
      *
-     * <code>string Channel = 4;</code>
+     * <code>string Channel = 1;</code>
      */
     public Builder clearChannel() {
       
@@ -1019,7 +933,7 @@ private static final long serialVersionUID = 0L;
      * SaleChannel
      * </pre>
      *
-     * <code>string Channel = 4;</code>
+     * <code>string Channel = 1;</code>
      */
     public Builder setChannelBytes(
         com.google.protobuf.ByteString value) {
@@ -1035,13 +949,21 @@ private static final long serialVersionUID = 0L;
 
     private int subChannelID_ ;
     /**
-     * <code>int32 SubChannelID = 5;</code>
+     * <pre>
+     * 子渠道号
+     * </pre>
+     *
+     * <code>int32 SubChannelID = 2;</code>
      */
     public int getSubChannelID() {
       return subChannelID_;
     }
     /**
-     * <code>int32 SubChannelID = 5;</code>
+     * <pre>
+     * 子渠道号
+     * </pre>
+     *
+     * <code>int32 SubChannelID = 2;</code>
      */
     public Builder setSubChannelID(int value) {
       
@@ -1050,7 +972,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 SubChannelID = 5;</code>
+     * <pre>
+     * 子渠道号
+     * </pre>
+     *
+     * <code>int32 SubChannelID = 2;</code>
      */
     public Builder clearSubChannelID() {
       
@@ -1059,216 +985,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object customerID_ = "";
+    private java.lang.Object transactionID_ = "";
     /**
-     * <code>string CustomerID = 6;</code>
+     * <pre>
+     * 事务号
+     * </pre>
+     *
+     * <code>string TransactionID = 3;</code>
      */
-    public java.lang.String getCustomerID() {
-      java.lang.Object ref = customerID_;
+    public java.lang.String getTransactionID() {
+      java.lang.Object ref = transactionID_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        customerID_ = s;
+        transactionID_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string CustomerID = 6;</code>
+     * <pre>
+     * 事务号
+     * </pre>
+     *
+     * <code>string TransactionID = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getCustomerIDBytes() {
-      java.lang.Object ref = customerID_;
+        getTransactionIDBytes() {
+      java.lang.Object ref = transactionID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        customerID_ = b;
+        transactionID_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string CustomerID = 6;</code>
+     * <pre>
+     * 事务号
+     * </pre>
+     *
+     * <code>string TransactionID = 3;</code>
      */
-    public Builder setCustomerID(
+    public Builder setTransactionID(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      customerID_ = value;
+      transactionID_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string CustomerID = 6;</code>
+     * <pre>
+     * 事务号
+     * </pre>
+     *
+     * <code>string TransactionID = 3;</code>
      */
-    public Builder clearCustomerID() {
+    public Builder clearTransactionID() {
       
-      customerID_ = getDefaultInstance().getCustomerID();
+      transactionID_ = getDefaultInstance().getTransactionID();
       onChanged();
       return this;
     }
     /**
-     * <code>string CustomerID = 6;</code>
+     * <pre>
+     * 事务号
+     * </pre>
+     *
+     * <code>string TransactionID = 3;</code>
      */
-    public Builder setCustomerIDBytes(
+    public Builder setTransactionIDBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      customerID_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object clientIP_ = "";
-    /**
-     * <code>string ClientIP = 8;</code>
-     */
-    public java.lang.String getClientIP() {
-      java.lang.Object ref = clientIP_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientIP_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string ClientIP = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClientIPBytes() {
-      java.lang.Object ref = clientIP_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientIP_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string ClientIP = 8;</code>
-     */
-    public Builder setClientIP(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      clientIP_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string ClientIP = 8;</code>
-     */
-    public Builder clearClientIP() {
-      
-      clientIP_ = getDefaultInstance().getClientIP();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string ClientIP = 8;</code>
-     */
-    public Builder setClientIPBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      clientIP_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object vID_ = "";
-    /**
-     * <code>string VID = 9;</code>
-     */
-    public java.lang.String getVID() {
-      java.lang.Object ref = vID_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vID_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string VID = 9;</code>
-     */
-    public com.google.protobuf.ByteString
-        getVIDBytes() {
-      java.lang.Object ref = vID_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string VID = 9;</code>
-     */
-    public Builder setVID(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      vID_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string VID = 9;</code>
-     */
-    public Builder clearVID() {
-      
-      vID_ = getDefaultInstance().getVID();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string VID = 9;</code>
-     */
-    public Builder setVIDBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      vID_ = value;
+      transactionID_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object requestID_ = "";
     /**
-     * <code>string RequestID = 10;</code>
+     * <pre>
+     * 请求ID. (对应了国内的VisitorID)
+     * </pre>
+     *
+     * <code>string RequestID = 4;</code>
      */
     public java.lang.String getRequestID() {
       java.lang.Object ref = requestID_;
@@ -1283,7 +1095,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string RequestID = 10;</code>
+     * <pre>
+     * 请求ID. (对应了国内的VisitorID)
+     * </pre>
+     *
+     * <code>string RequestID = 4;</code>
      */
     public com.google.protobuf.ByteString
         getRequestIDBytes() {
@@ -1299,7 +1115,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string RequestID = 10;</code>
+     * <pre>
+     * 请求ID. (对应了国内的VisitorID)
+     * </pre>
+     *
+     * <code>string RequestID = 4;</code>
      */
     public Builder setRequestID(
         java.lang.String value) {
@@ -1312,7 +1132,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string RequestID = 10;</code>
+     * <pre>
+     * 请求ID. (对应了国内的VisitorID)
+     * </pre>
+     *
+     * <code>string RequestID = 4;</code>
      */
     public Builder clearRequestID() {
       
@@ -1321,7 +1145,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string RequestID = 10;</code>
+     * <pre>
+     * 请求ID. (对应了国内的VisitorID)
+     * </pre>
+     *
+     * <code>string RequestID = 4;</code>
      */
     public Builder setRequestIDBytes(
         com.google.protobuf.ByteString value) {
@@ -1331,6 +1159,362 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       requestID_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientIP_ = "";
+    /**
+     * <pre>
+     * 调用方IP
+     * </pre>
+     *
+     * <code>string ClientIP = 5;</code>
+     */
+    public java.lang.String getClientIP() {
+      java.lang.Object ref = clientIP_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientIP_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 调用方IP
+     * </pre>
+     *
+     * <code>string ClientIP = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIPBytes() {
+      java.lang.Object ref = clientIP_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientIP_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 调用方IP
+     * </pre>
+     *
+     * <code>string ClientIP = 5;</code>
+     */
+    public Builder setClientIP(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      clientIP_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 调用方IP
+     * </pre>
+     *
+     * <code>string ClientIP = 5;</code>
+     */
+    public Builder clearClientIP() {
+      
+      clientIP_ = getDefaultInstance().getClientIP();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 调用方IP
+     * </pre>
+     *
+     * <code>string ClientIP = 5;</code>
+     */
+    public Builder setClientIPBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      clientIP_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deviceID_ = "";
+    /**
+     * <pre>
+     * mobile的deviceID
+     * </pre>
+     *
+     * <code>string DeviceID = 6;</code>
+     */
+    public java.lang.String getDeviceID() {
+      java.lang.Object ref = deviceID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceID_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * mobile的deviceID
+     * </pre>
+     *
+     * <code>string DeviceID = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIDBytes() {
+      java.lang.Object ref = deviceID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * mobile的deviceID
+     * </pre>
+     *
+     * <code>string DeviceID = 6;</code>
+     */
+    public Builder setDeviceID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deviceID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * mobile的deviceID
+     * </pre>
+     *
+     * <code>string DeviceID = 6;</code>
+     */
+    public Builder clearDeviceID() {
+      
+      deviceID_ = getDefaultInstance().getDeviceID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * mobile的deviceID
+     * </pre>
+     *
+     * <code>string DeviceID = 6;</code>
+     */
+    public Builder setDeviceIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deviceID_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object devicePlatform_ = "";
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 7;</code>
+     */
+    public java.lang.String getDevicePlatform() {
+      java.lang.Object ref = devicePlatform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        devicePlatform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDevicePlatformBytes() {
+      java.lang.Object ref = devicePlatform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        devicePlatform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 7;</code>
+     */
+    public Builder setDevicePlatform(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      devicePlatform_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 7;</code>
+     */
+    public Builder clearDevicePlatform() {
+      
+      devicePlatform_ = getDefaultInstance().getDevicePlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 7;</code>
+     */
+    public Builder setDevicePlatformBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      devicePlatform_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sessionID_ = "";
+    /**
+     * <pre>
+     * 前端会话ID
+     * </pre>
+     *
+     * <code>string SessionID = 8;</code>
+     */
+    public java.lang.String getSessionID() {
+      java.lang.Object ref = sessionID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionID_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 前端会话ID
+     * </pre>
+     *
+     * <code>string SessionID = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSessionIDBytes() {
+      java.lang.Object ref = sessionID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 前端会话ID
+     * </pre>
+     *
+     * <code>string SessionID = 8;</code>
+     */
+    public Builder setSessionID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sessionID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 前端会话ID
+     * </pre>
+     *
+     * <code>string SessionID = 8;</code>
+     */
+    public Builder clearSessionID() {
+      
+      sessionID_ = getDefaultInstance().getSessionID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 前端会话ID
+     * </pre>
+     *
+     * <code>string SessionID = 8;</code>
+     */
+    public Builder setSessionIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sessionID_ = value;
       onChanged();
       return this;
     }

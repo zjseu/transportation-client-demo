@@ -119,9 +119,22 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder subBuilder = null;
+            if (refundChange_ != null) {
+              subBuilder = refundChange_.toBuilder();
+            }
+            refundChange_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(refundChange_);
+              refundChange_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
               tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000200;
             }
             tag_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
@@ -145,7 +158,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         rebate_ = java.util.Collections.unmodifiableList(rebate_);
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
       }
       this.unknownFields = unknownFields.build();
@@ -430,14 +443,47 @@ private static final long serialVersionUID = 0L;
     return textRemarkRef_;
   }
 
-  public static final int TAG_FIELD_NUMBER = 9;
+  public static final int REFUNDCHANGE_FIELD_NUMBER = 9;
+  private com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType refundChange_;
+  /**
+   * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  public boolean hasRefundChange() {
+    return refundChange_ != null;
+  }
+  /**
+   * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange() {
+    return refundChange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+  }
+  /**
+   * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder() {
+    return getRefundChange();
+  }
+
+  public static final int TAG_FIELD_NUMBER = 10;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_;
   /**
    * <pre>
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
     return tag_;
@@ -447,7 +493,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
       getTagOrBuilderList() {
@@ -458,7 +504,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   public int getTagCount() {
     return tag_.size();
@@ -468,7 +514,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
     return tag_.get(index);
@@ -478,7 +524,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index) {
@@ -523,8 +569,11 @@ private static final long serialVersionUID = 0L;
     if (textRemarkRef_ != 0) {
       output.writeInt32(8, textRemarkRef_);
     }
+    if (refundChange_ != null) {
+      output.writeMessage(9, getRefundChange());
+    }
     for (int i = 0; i < tag_.size(); i++) {
-      output.writeMessage(9, tag_.get(i));
+      output.writeMessage(10, tag_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -565,9 +614,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, textRemarkRef_);
     }
+    if (refundChange_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getRefundChange());
+    }
     for (int i = 0; i < tag_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, tag_.get(i));
+        .computeMessageSize(10, tag_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -610,6 +663,11 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getTextRemarkRef()
         == other.getTextRemarkRef());
+    result = result && (hasRefundChange() == other.hasRefundChange());
+    if (hasRefundChange()) {
+      result = result && getRefundChange()
+          .equals(other.getRefundChange());
+    }
     result = result && getTagList()
         .equals(other.getTagList());
     result = result && unknownFields.equals(other.unknownFields);
@@ -647,6 +705,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TEXTREMARKREF_FIELD_NUMBER;
     hash = (53 * hash) + getTextRemarkRef();
+    if (hasRefundChange()) {
+      hash = (37 * hash) + REFUNDCHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRefundChange().hashCode();
+    }
     if (getTagCount() > 0) {
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
@@ -818,9 +880,15 @@ private static final long serialVersionUID = 0L;
       }
       textRemarkRef_ = 0;
 
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = null;
+      } else {
+        refundChange_ = null;
+        refundChangeBuilder_ = null;
+      }
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         tagBuilder_.clear();
       }
@@ -880,10 +948,15 @@ private static final long serialVersionUID = 0L;
         result.paxRestriction_ = paxRestrictionBuilder_.build();
       }
       result.textRemarkRef_ = textRemarkRef_;
+      if (refundChangeBuilder_ == null) {
+        result.refundChange_ = refundChange_;
+      } else {
+        result.refundChange_ = refundChangeBuilder_.build();
+      }
       if (tagBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           tag_ = java.util.Collections.unmodifiableList(tag_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.tag_ = tag_;
       } else {
@@ -987,11 +1060,14 @@ private static final long serialVersionUID = 0L;
       if (other.getTextRemarkRef() != 0) {
         setTextRemarkRef(other.getTextRemarkRef());
       }
+      if (other.hasRefundChange()) {
+        mergeRefundChange(other.getRefundChange());
+      }
       if (tagBuilder_ == null) {
         if (!other.tag_.isEmpty()) {
           if (tag_.isEmpty()) {
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureTagIsMutable();
             tag_.addAll(other.tag_);
@@ -1004,7 +1080,7 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.dispose();
             tagBuilder_ = null;
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             tagBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTagFieldBuilder() : null;
@@ -2068,12 +2144,165 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType refundChange_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder> refundChangeBuilder_;
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public boolean hasRefundChange() {
+      return refundChangeBuilder_ != null || refundChange_ != null;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange() {
+      if (refundChangeBuilder_ == null) {
+        return refundChange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+      } else {
+        return refundChangeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public Builder setRefundChange(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType value) {
+      if (refundChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        refundChange_ = value;
+        onChanged();
+      } else {
+        refundChangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public Builder setRefundChange(
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder builderForValue) {
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = builderForValue.build();
+        onChanged();
+      } else {
+        refundChangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public Builder mergeRefundChange(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType value) {
+      if (refundChangeBuilder_ == null) {
+        if (refundChange_ != null) {
+          refundChange_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.newBuilder(refundChange_).mergeFrom(value).buildPartial();
+        } else {
+          refundChange_ = value;
+        }
+        onChanged();
+      } else {
+        refundChangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public Builder clearRefundChange() {
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = null;
+        onChanged();
+      } else {
+        refundChange_ = null;
+        refundChangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder getRefundChangeBuilder() {
+      
+      onChanged();
+      return getRefundChangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder() {
+      if (refundChangeBuilder_ != null) {
+        return refundChangeBuilder_.getMessageOrBuilder();
+      } else {
+        return refundChange_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+      }
+    }
+    /**
+     * <pre>
+     * 退改签简体信息, 费用信息是销售币种
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder> 
+        getRefundChangeFieldBuilder() {
+      if (refundChangeBuilder_ == null) {
+        refundChangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder>(
+                getRefundChange(),
+                getParentForChildren(),
+                isClean());
+        refundChange_ = null;
+      }
+      return refundChangeBuilder_;
+    }
+
     private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_ =
       java.util.Collections.emptyList();
     private void ensureTagIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(tag_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
        }
     }
 
@@ -2085,7 +2314,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
       if (tagBuilder_ == null) {
@@ -2099,7 +2328,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public int getTagCount() {
       if (tagBuilder_ == null) {
@@ -2113,7 +2342,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
       if (tagBuilder_ == null) {
@@ -2127,7 +2356,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder setTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
@@ -2148,7 +2377,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder setTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -2166,7 +2395,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder addTag(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
       if (tagBuilder_ == null) {
@@ -2186,7 +2415,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder addTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
@@ -2207,7 +2436,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder addTag(
         com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -2225,7 +2454,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder addTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -2243,7 +2472,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder addAllTag(
         java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
@@ -2262,12 +2491,12 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder clearTag() {
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         tagBuilder_.clear();
@@ -2279,7 +2508,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public Builder removeTag(int index) {
       if (tagBuilder_ == null) {
@@ -2296,7 +2525,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getTagBuilder(
         int index) {
@@ -2307,7 +2536,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
         int index) {
@@ -2321,7 +2550,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
          getTagOrBuilderList() {
@@ -2336,7 +2565,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder() {
       return getTagFieldBuilder().addBuilder(
@@ -2347,7 +2576,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder(
         int index) {
@@ -2359,7 +2588,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
          getTagBuilderList() {
@@ -2372,7 +2601,7 @@ private static final long serialVersionUID = 0L;
         tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
                 tag_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
+                ((bitField0_ & 0x00000200) == 0x00000200),
                 getParentForChildren(),
                 isClean());
         tag_ = null;

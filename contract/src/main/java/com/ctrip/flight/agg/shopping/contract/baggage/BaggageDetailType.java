@@ -97,6 +97,10 @@ private static final long serialVersionUID = 0L;
   public static final int AMOUNT_FIELD_NUMBER = 1;
   private int amount_;
   /**
+   * <pre>
+   * -1表示不限制
+   * </pre>
+   *
    * <code>int32 Amount = 1;</code>
    */
   public int getAmount() {
@@ -106,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int UNIT_FIELD_NUMBER = 2;
   private volatile java.lang.Object unit_;
   /**
+   * <pre>
+   * PC、KG
+   * </pre>
+   *
    * <code>string Unit = 2;</code>
    */
   public java.lang.String getUnit() {
@@ -121,6 +129,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * PC、KG
+   * </pre>
+   *
    * <code>string Unit = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -140,6 +152,10 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 3;
   private volatile java.lang.Object type_;
   /**
+   * <pre>
+   * Piece、Weight
+   * </pre>
+   *
    * <code>string Type = 3;</code>
    */
   public java.lang.String getType() {
@@ -155,6 +171,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Piece、Weight
+   * </pre>
+   *
    * <code>string Type = 3;</code>
    */
   public com.google.protobuf.ByteString
@@ -510,12 +530,20 @@ private static final long serialVersionUID = 0L;
 
     private int amount_ ;
     /**
+     * <pre>
+     * -1表示不限制
+     * </pre>
+     *
      * <code>int32 Amount = 1;</code>
      */
     public int getAmount() {
       return amount_;
     }
     /**
+     * <pre>
+     * -1表示不限制
+     * </pre>
+     *
      * <code>int32 Amount = 1;</code>
      */
     public Builder setAmount(int value) {
@@ -525,6 +553,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * -1表示不限制
+     * </pre>
+     *
      * <code>int32 Amount = 1;</code>
      */
     public Builder clearAmount() {
@@ -536,6 +568,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object unit_ = "";
     /**
+     * <pre>
+     * PC、KG
+     * </pre>
+     *
      * <code>string Unit = 2;</code>
      */
     public java.lang.String getUnit() {
@@ -551,6 +587,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PC、KG
+     * </pre>
+     *
      * <code>string Unit = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -567,6 +607,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PC、KG
+     * </pre>
+     *
      * <code>string Unit = 2;</code>
      */
     public Builder setUnit(
@@ -580,6 +624,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PC、KG
+     * </pre>
+     *
      * <code>string Unit = 2;</code>
      */
     public Builder clearUnit() {
@@ -589,6 +637,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PC、KG
+     * </pre>
+     *
      * <code>string Unit = 2;</code>
      */
     public Builder setUnitBytes(
@@ -605,6 +657,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
+     * <pre>
+     * Piece、Weight
+     * </pre>
+     *
      * <code>string Type = 3;</code>
      */
     public java.lang.String getType() {
@@ -620,6 +676,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Piece、Weight
+     * </pre>
+     *
      * <code>string Type = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -636,6 +696,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Piece、Weight
+     * </pre>
+     *
      * <code>string Type = 3;</code>
      */
     public Builder setType(
@@ -649,6 +713,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Piece、Weight
+     * </pre>
+     *
      * <code>string Type = 3;</code>
      */
     public Builder clearType() {
@@ -658,6 +726,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Piece、Weight
+     * </pre>
+     *
      * <code>string Type = 3;</code>
      */
     public Builder setTypeBytes(

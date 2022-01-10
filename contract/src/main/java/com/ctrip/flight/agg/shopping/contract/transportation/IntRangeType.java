@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
   private int min_;
   /**
    * <pre>
-   * 下限，Integer.MIN_VALUE标识不限
+   * 下限，Integer.MIN_VALUE表示不限
    * </pre>
    *
    * <code>int32 Min = 1;</code>
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
     private int min_ ;
     /**
      * <pre>
-     * 下限，Integer.MIN_VALUE标识不限
+     * 下限，Integer.MIN_VALUE表示不限
      * </pre>
      *
      * <code>int32 Min = 1;</code>
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 下限，Integer.MIN_VALUE标识不限
+     * 下限，Integer.MIN_VALUE表示不限
      * </pre>
      *
      * <code>int32 Min = 1;</code>
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 下限，Integer.MIN_VALUE标识不限
+     * 下限，Integer.MIN_VALUE表示不限
      * </pre>
      *
      * <code>int32 Min = 1;</code>

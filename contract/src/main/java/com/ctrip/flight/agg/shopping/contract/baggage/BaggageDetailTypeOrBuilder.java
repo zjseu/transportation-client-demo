@@ -8,25 +8,45 @@ public interface BaggageDetailTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * -1表示不限制
+   * </pre>
+   *
    * <code>int32 Amount = 1;</code>
    */
   int getAmount();
 
   /**
+   * <pre>
+   * PC、KG
+   * </pre>
+   *
    * <code>string Unit = 2;</code>
    */
   java.lang.String getUnit();
   /**
+   * <pre>
+   * PC、KG
+   * </pre>
+   *
    * <code>string Unit = 2;</code>
    */
   com.google.protobuf.ByteString
       getUnitBytes();
 
   /**
+   * <pre>
+   * Piece、Weight
+   * </pre>
+   *
    * <code>string Type = 3;</code>
    */
   java.lang.String getType();
   /**
+   * <pre>
+   * Piece、Weight
+   * </pre>
+   *
    * <code>string Type = 3;</code>
    */
   com.google.protobuf.ByteString

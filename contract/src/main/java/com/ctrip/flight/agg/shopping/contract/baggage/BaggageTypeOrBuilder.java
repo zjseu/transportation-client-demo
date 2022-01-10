@@ -13,70 +13,52 @@ public interface BaggageTypeOrBuilder extends
   int getRefNum();
 
   /**
-   * <pre>
-   * 行李描述，根据请求的Language决定输出的语言类型
-   * </pre>
-   *
-   * <code>string BaggageDesc = 2;</code>
-   */
-  java.lang.String getBaggageDesc();
-  /**
-   * <pre>
-   * 行李描述，根据请求的Language决定输出的语言类型
-   * </pre>
-   *
-   * <code>string BaggageDesc = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getBaggageDescBytes();
-
-  /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> 
       getBaggageDetailList();
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index);
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   int getBaggageDetailCount();
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
       getBaggageDetailOrBuilderList();
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
       int index);
 
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   boolean hasExtensionFields();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder();
 
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   boolean hasBaggageSize();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize();
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder();
 }

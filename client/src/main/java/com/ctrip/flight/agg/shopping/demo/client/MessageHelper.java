@@ -9,9 +9,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * a helper for generating request object
+ *
  * @author tiantianhuang
  * @date 2019/3/4 18:28
- * 生成请求帮助类
  */
 public class MessageHelper {
 
@@ -19,7 +20,9 @@ public class MessageHelper {
 
     public static SearchRequestType buildSearchRequest(String txId) {
         MessageHeaderType.Builder messageHeaderType = MessageHeaderType.newBuilder();
-        messageHeaderType.setChannel("Mobile");
+        messageHeaderType.setChannel("Affiliate");
+        // 0 is jest for demonstration purposes. Ctrip partners have their own values.
+        messageHeaderType.setSubChannelID(0);
         messageHeaderType.setTransactionID(txId);
 
         RequestHeaderType.Builder headerType = RequestHeaderType.newBuilder();

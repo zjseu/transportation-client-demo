@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     aircraftCode_ = "";
     virtualFlightSupplier_ = "";
     stop_ = java.util.Collections.emptyList();
+    virtualFlightType_ = 0;
   }
 
   @java.lang.Override
@@ -124,6 +125,11 @@ private static final long serialVersionUID = 0L;
               punctuality_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 80: {
+
+            virtualFlightType_ = input.readInt32();
             break;
           }
           default: {
@@ -526,6 +532,19 @@ private static final long serialVersionUID = 0L;
     return getPunctuality();
   }
 
+  public static final int VIRTUALFLIGHTTYPE_FIELD_NUMBER = 10;
+  private int virtualFlightType_;
+  /**
+   * <pre>
+   * 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+   * </pre>
+   *
+   * <code>int32 VirtualFlightType = 10;</code>
+   */
+  public int getVirtualFlightType() {
+    return virtualFlightType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -567,6 +586,9 @@ private static final long serialVersionUID = 0L;
     if (punctuality_ != null) {
       output.writeMessage(9, getPunctuality());
     }
+    if (virtualFlightType_ != 0) {
+      output.writeInt32(10, virtualFlightType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -606,6 +628,10 @@ private static final long serialVersionUID = 0L;
     if (punctuality_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getPunctuality());
+    }
+    if (virtualFlightType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, virtualFlightType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -650,6 +676,8 @@ private static final long serialVersionUID = 0L;
       result = result && getPunctuality()
           .equals(other.getPunctuality());
     }
+    result = result && (getVirtualFlightType()
+        == other.getVirtualFlightType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -687,6 +715,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PUNCTUALITY_FIELD_NUMBER;
       hash = (53 * hash) + getPunctuality().hashCode();
     }
+    hash = (37 * hash) + VIRTUALFLIGHTTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getVirtualFlightType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -855,6 +885,8 @@ private static final long serialVersionUID = 0L;
         punctuality_ = null;
         punctualityBuilder_ = null;
       }
+      virtualFlightType_ = 0;
+
       return this;
     }
 
@@ -912,6 +944,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.punctuality_ = punctualityBuilder_.build();
       }
+      result.virtualFlightType_ = virtualFlightType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1015,6 +1048,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPunctuality()) {
         mergePunctuality(other.getPunctuality());
+      }
+      if (other.getVirtualFlightType() != 0) {
+        setVirtualFlightType(other.getVirtualFlightType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2260,6 +2296,44 @@ private static final long serialVersionUID = 0L;
         punctuality_ = null;
       }
       return punctualityBuilder_;
+    }
+
+    private int virtualFlightType_ ;
+    /**
+     * <pre>
+     * 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+     * </pre>
+     *
+     * <code>int32 VirtualFlightType = 10;</code>
+     */
+    public int getVirtualFlightType() {
+      return virtualFlightType_;
+    }
+    /**
+     * <pre>
+     * 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+     * </pre>
+     *
+     * <code>int32 VirtualFlightType = 10;</code>
+     */
+    public Builder setVirtualFlightType(int value) {
+      
+      virtualFlightType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+     * </pre>
+     *
+     * <code>int32 VirtualFlightType = 10;</code>
+     */
+    public Builder clearVirtualFlightType() {
+      
+      virtualFlightType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

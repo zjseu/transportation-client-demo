@@ -17,8 +17,9 @@ private static final long serialVersionUID = 0L;
   }
   private RouteSearchType() {
     searchMode_ = 0;
-    offerToken_ = "";
     maxJourneyNo_ = 0;
+    offerToken_ = "";
+    intlAggRouteSearchToken_ = "";
   }
 
   @java.lang.Override
@@ -50,15 +51,21 @@ private static final long serialVersionUID = 0L;
             searchMode_ = input.readInt32();
             break;
           }
-          case 18: {
+          case 16: {
+
+            maxJourneyNo_ = input.readInt32();
+            break;
+          }
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             offerToken_ = s;
             break;
           }
-          case 24: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            maxJourneyNo_ = input.readInt32();
+            intlAggRouteSearchToken_ = s;
             break;
           }
           default: {
@@ -97,7 +104,11 @@ private static final long serialVersionUID = 0L;
   private int searchMode_;
   /**
    * <pre>
-   * 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+   **
+   * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+   * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+   * 2: 严格反查 (严格匹配所有行程的价格);
+   * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
    * </pre>
    *
    * <code>int32 SearchMode = 1;</code>
@@ -106,14 +117,27 @@ private static final long serialVersionUID = 0L;
     return searchMode_;
   }
 
-  public static final int OFFERTOKEN_FIELD_NUMBER = 2;
+  public static final int MAXJOURNEYNO_FIELD_NUMBER = 2;
+  private int maxJourneyNo_;
+  /**
+   * <pre>
+   * 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
+   * </pre>
+   *
+   * <code>int32 MaxJourneyNo = 2;</code>
+   */
+  public int getMaxJourneyNo() {
+    return maxJourneyNo_;
+  }
+
+  public static final int OFFERTOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object offerToken_;
   /**
    * <pre>
-   * 反查Token
+   * 该接口返回的OfferToken，反查时用
    * </pre>
    *
-   * <code>string OfferToken = 2;</code>
+   * <code>string OfferToken = 3;</code>
    */
   public java.lang.String getOfferToken() {
     java.lang.Object ref = offerToken_;
@@ -129,10 +153,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 反查Token
+   * 该接口返回的OfferToken，反查时用
    * </pre>
    *
-   * <code>string OfferToken = 2;</code>
+   * <code>string OfferToken = 3;</code>
    */
   public com.google.protobuf.ByteString
       getOfferTokenBytes() {
@@ -148,17 +172,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAXJOURNEYNO_FIELD_NUMBER = 3;
-  private int maxJourneyNo_;
+  public static final int INTLAGGROUTESEARCHTOKEN_FIELD_NUMBER = 4;
+  private volatile java.lang.Object intlAggRouteSearchToken_;
   /**
    * <pre>
-   * 普通反查时待匹配的最大行程号
+   * 国际agg查询接口返回的价格token，为了兼容
    * </pre>
    *
-   * <code>int32 MaxJourneyNo = 3;</code>
+   * <code>string IntlAggRouteSearchToken = 4;</code>
    */
-  public int getMaxJourneyNo() {
-    return maxJourneyNo_;
+  public java.lang.String getIntlAggRouteSearchToken() {
+    java.lang.Object ref = intlAggRouteSearchToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      intlAggRouteSearchToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 国际agg查询接口返回的价格token，为了兼容
+   * </pre>
+   *
+   * <code>string IntlAggRouteSearchToken = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getIntlAggRouteSearchTokenBytes() {
+    java.lang.Object ref = intlAggRouteSearchToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      intlAggRouteSearchToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -178,11 +231,14 @@ private static final long serialVersionUID = 0L;
     if (searchMode_ != 0) {
       output.writeInt32(1, searchMode_);
     }
-    if (!getOfferTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, offerToken_);
-    }
     if (maxJourneyNo_ != 0) {
-      output.writeInt32(3, maxJourneyNo_);
+      output.writeInt32(2, maxJourneyNo_);
+    }
+    if (!getOfferTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, offerToken_);
+    }
+    if (!getIntlAggRouteSearchTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, intlAggRouteSearchToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -197,12 +253,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, searchMode_);
     }
-    if (!getOfferTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, offerToken_);
-    }
     if (maxJourneyNo_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, maxJourneyNo_);
+        .computeInt32Size(2, maxJourneyNo_);
+    }
+    if (!getOfferTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, offerToken_);
+    }
+    if (!getIntlAggRouteSearchTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, intlAggRouteSearchToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,10 +281,12 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getSearchMode()
         == other.getSearchMode());
-    result = result && getOfferToken()
-        .equals(other.getOfferToken());
     result = result && (getMaxJourneyNo()
         == other.getMaxJourneyNo());
+    result = result && getOfferToken()
+        .equals(other.getOfferToken());
+    result = result && getIntlAggRouteSearchToken()
+        .equals(other.getIntlAggRouteSearchToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -239,10 +300,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SEARCHMODE_FIELD_NUMBER;
     hash = (53 * hash) + getSearchMode();
-    hash = (37 * hash) + OFFERTOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getOfferToken().hashCode();
     hash = (37 * hash) + MAXJOURNEYNO_FIELD_NUMBER;
     hash = (53 * hash) + getMaxJourneyNo();
+    hash = (37 * hash) + OFFERTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getOfferToken().hashCode();
+    hash = (37 * hash) + INTLAGGROUTESEARCHTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getIntlAggRouteSearchToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,9 +441,11 @@ private static final long serialVersionUID = 0L;
       super.clear();
       searchMode_ = 0;
 
+      maxJourneyNo_ = 0;
+
       offerToken_ = "";
 
-      maxJourneyNo_ = 0;
+      intlAggRouteSearchToken_ = "";
 
       return this;
     }
@@ -409,8 +474,9 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType(this);
       result.searchMode_ = searchMode_;
-      result.offerToken_ = offerToken_;
       result.maxJourneyNo_ = maxJourneyNo_;
+      result.offerToken_ = offerToken_;
+      result.intlAggRouteSearchToken_ = intlAggRouteSearchToken_;
       onBuilt();
       return result;
     }
@@ -462,12 +528,16 @@ private static final long serialVersionUID = 0L;
       if (other.getSearchMode() != 0) {
         setSearchMode(other.getSearchMode());
       }
+      if (other.getMaxJourneyNo() != 0) {
+        setMaxJourneyNo(other.getMaxJourneyNo());
+      }
       if (!other.getOfferToken().isEmpty()) {
         offerToken_ = other.offerToken_;
         onChanged();
       }
-      if (other.getMaxJourneyNo() != 0) {
-        setMaxJourneyNo(other.getMaxJourneyNo());
+      if (!other.getIntlAggRouteSearchToken().isEmpty()) {
+        intlAggRouteSearchToken_ = other.intlAggRouteSearchToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -501,7 +571,11 @@ private static final long serialVersionUID = 0L;
     private int searchMode_ ;
     /**
      * <pre>
-     * 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+     **
+     * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+     * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+     * 2: 严格反查 (严格匹配所有行程的价格);
+     * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
      * </pre>
      *
      * <code>int32 SearchMode = 1;</code>
@@ -511,7 +585,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+     **
+     * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+     * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+     * 2: 严格反查 (严格匹配所有行程的价格);
+     * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
      * </pre>
      *
      * <code>int32 SearchMode = 1;</code>
@@ -524,7 +602,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+     **
+     * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+     * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+     * 2: 严格反查 (严格匹配所有行程的价格);
+     * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
      * </pre>
      *
      * <code>int32 SearchMode = 1;</code>
@@ -536,13 +618,51 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int maxJourneyNo_ ;
+    /**
+     * <pre>
+     * 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
+     * </pre>
+     *
+     * <code>int32 MaxJourneyNo = 2;</code>
+     */
+    public int getMaxJourneyNo() {
+      return maxJourneyNo_;
+    }
+    /**
+     * <pre>
+     * 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
+     * </pre>
+     *
+     * <code>int32 MaxJourneyNo = 2;</code>
+     */
+    public Builder setMaxJourneyNo(int value) {
+      
+      maxJourneyNo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
+     * </pre>
+     *
+     * <code>int32 MaxJourneyNo = 2;</code>
+     */
+    public Builder clearMaxJourneyNo() {
+      
+      maxJourneyNo_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object offerToken_ = "";
     /**
      * <pre>
-     * 反查Token
+     * 该接口返回的OfferToken，反查时用
      * </pre>
      *
-     * <code>string OfferToken = 2;</code>
+     * <code>string OfferToken = 3;</code>
      */
     public java.lang.String getOfferToken() {
       java.lang.Object ref = offerToken_;
@@ -558,10 +678,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 反查Token
+     * 该接口返回的OfferToken，反查时用
      * </pre>
      *
-     * <code>string OfferToken = 2;</code>
+     * <code>string OfferToken = 3;</code>
      */
     public com.google.protobuf.ByteString
         getOfferTokenBytes() {
@@ -578,10 +698,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 反查Token
+     * 该接口返回的OfferToken，反查时用
      * </pre>
      *
-     * <code>string OfferToken = 2;</code>
+     * <code>string OfferToken = 3;</code>
      */
     public Builder setOfferToken(
         java.lang.String value) {
@@ -595,10 +715,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 反查Token
+     * 该接口返回的OfferToken，反查时用
      * </pre>
      *
-     * <code>string OfferToken = 2;</code>
+     * <code>string OfferToken = 3;</code>
      */
     public Builder clearOfferToken() {
       
@@ -608,10 +728,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 反查Token
+     * 该接口返回的OfferToken，反查时用
      * </pre>
      *
-     * <code>string OfferToken = 2;</code>
+     * <code>string OfferToken = 3;</code>
      */
     public Builder setOfferTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -625,40 +745,91 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int maxJourneyNo_ ;
+    private java.lang.Object intlAggRouteSearchToken_ = "";
     /**
      * <pre>
-     * 普通反查时待匹配的最大行程号
+     * 国际agg查询接口返回的价格token，为了兼容
      * </pre>
      *
-     * <code>int32 MaxJourneyNo = 3;</code>
+     * <code>string IntlAggRouteSearchToken = 4;</code>
      */
-    public int getMaxJourneyNo() {
-      return maxJourneyNo_;
+    public java.lang.String getIntlAggRouteSearchToken() {
+      java.lang.Object ref = intlAggRouteSearchToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        intlAggRouteSearchToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * 普通反查时待匹配的最大行程号
+     * 国际agg查询接口返回的价格token，为了兼容
      * </pre>
      *
-     * <code>int32 MaxJourneyNo = 3;</code>
+     * <code>string IntlAggRouteSearchToken = 4;</code>
      */
-    public Builder setMaxJourneyNo(int value) {
-      
-      maxJourneyNo_ = value;
+    public com.google.protobuf.ByteString
+        getIntlAggRouteSearchTokenBytes() {
+      java.lang.Object ref = intlAggRouteSearchToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        intlAggRouteSearchToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 国际agg查询接口返回的价格token，为了兼容
+     * </pre>
+     *
+     * <code>string IntlAggRouteSearchToken = 4;</code>
+     */
+    public Builder setIntlAggRouteSearchToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      intlAggRouteSearchToken_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 普通反查时待匹配的最大行程号
+     * 国际agg查询接口返回的价格token，为了兼容
      * </pre>
      *
-     * <code>int32 MaxJourneyNo = 3;</code>
+     * <code>string IntlAggRouteSearchToken = 4;</code>
      */
-    public Builder clearMaxJourneyNo() {
+    public Builder clearIntlAggRouteSearchToken() {
       
-      maxJourneyNo_ = 0;
+      intlAggRouteSearchToken_ = getDefaultInstance().getIntlAggRouteSearchToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国际agg查询接口返回的价格token，为了兼容
+     * </pre>
+     *
+     * <code>string IntlAggRouteSearchToken = 4;</code>
+     */
+    public Builder setIntlAggRouteSearchTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      intlAggRouteSearchToken_ = value;
       onChanged();
       return this;
     }

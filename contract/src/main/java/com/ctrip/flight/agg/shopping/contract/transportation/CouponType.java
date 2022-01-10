@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CouponType() {
     refNum_ = 0;
-    couponType_ = "";
+    type_ = "";
     couponCode_ = "";
     discountAmount_ = 0D;
     salePrice_ = 0D;
@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            couponType_ = s;
+            type_ = s;
             break;
           }
           case 26: {
@@ -115,24 +115,24 @@ private static final long serialVersionUID = 0L;
     return refNum_;
   }
 
-  public static final int COUPONTYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object couponType_;
+  public static final int TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * 优惠券类型
    * </pre>
    *
-   * <code>string CouponType = 2;</code>
+   * <code>string Type = 2;</code>
    */
-  public java.lang.String getCouponType() {
-    java.lang.Object ref = couponType_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      couponType_ = s;
+      type_ = s;
       return s;
     }
   }
@@ -141,16 +141,16 @@ private static final long serialVersionUID = 0L;
    * 优惠券类型
    * </pre>
    *
-   * <code>string CouponType = 2;</code>
+   * <code>string Type = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getCouponTypeBytes() {
-    java.lang.Object ref = couponType_;
+      getTypeBytes() {
+    java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      couponType_ = b;
+      type_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -242,8 +242,8 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       output.writeInt32(1, refNum_);
     }
-    if (!getCouponTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, couponType_);
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
     }
     if (!getCouponCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, couponCode_);
@@ -267,8 +267,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, refNum_);
     }
-    if (!getCouponTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, couponType_);
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
     }
     if (!getCouponCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, couponCode_);
@@ -299,8 +299,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getRefNum()
         == other.getRefNum());
-    result = result && getCouponType()
-        .equals(other.getCouponType());
+    result = result && getType()
+        .equals(other.getType());
     result = result && getCouponCode()
         .equals(other.getCouponCode());
     result = result && (
@@ -324,8 +324,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REFNUM_FIELD_NUMBER;
     hash = (53 * hash) + getRefNum();
-    hash = (37 * hash) + COUPONTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getCouponType().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + COUPONCODE_FIELD_NUMBER;
     hash = (53 * hash) + getCouponCode().hashCode();
     hash = (37 * hash) + DISCOUNTAMOUNT_FIELD_NUMBER;
@@ -469,7 +469,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       refNum_ = 0;
 
-      couponType_ = "";
+      type_ = "";
 
       couponCode_ = "";
 
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.CouponType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.CouponType result = new com.ctrip.flight.agg.shopping.contract.transportation.CouponType(this);
       result.refNum_ = refNum_;
-      result.couponType_ = couponType_;
+      result.type_ = type_;
       result.couponCode_ = couponCode_;
       result.discountAmount_ = discountAmount_;
       result.salePrice_ = salePrice_;
@@ -559,8 +559,8 @@ private static final long serialVersionUID = 0L;
       if (other.getRefNum() != 0) {
         setRefNum(other.getRefNum());
       }
-      if (!other.getCouponType().isEmpty()) {
-        couponType_ = other.couponType_;
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
         onChanged();
       }
       if (!other.getCouponCode().isEmpty()) {
@@ -628,21 +628,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object couponType_ = "";
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * 优惠券类型
      * </pre>
      *
-     * <code>string CouponType = 2;</code>
+     * <code>string Type = 2;</code>
      */
-    public java.lang.String getCouponType() {
-      java.lang.Object ref = couponType_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        couponType_ = s;
+        type_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -653,16 +653,16 @@ private static final long serialVersionUID = 0L;
      * 优惠券类型
      * </pre>
      *
-     * <code>string CouponType = 2;</code>
+     * <code>string Type = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getCouponTypeBytes() {
-      java.lang.Object ref = couponType_;
+        getTypeBytes() {
+      java.lang.Object ref = type_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        couponType_ = b;
+        type_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -673,15 +673,15 @@ private static final long serialVersionUID = 0L;
      * 优惠券类型
      * </pre>
      *
-     * <code>string CouponType = 2;</code>
+     * <code>string Type = 2;</code>
      */
-    public Builder setCouponType(
+    public Builder setType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      couponType_ = value;
+      type_ = value;
       onChanged();
       return this;
     }
@@ -690,11 +690,11 @@ private static final long serialVersionUID = 0L;
      * 优惠券类型
      * </pre>
      *
-     * <code>string CouponType = 2;</code>
+     * <code>string Type = 2;</code>
      */
-    public Builder clearCouponType() {
+    public Builder clearType() {
       
-      couponType_ = getDefaultInstance().getCouponType();
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
@@ -703,16 +703,16 @@ private static final long serialVersionUID = 0L;
      * 优惠券类型
      * </pre>
      *
-     * <code>string CouponType = 2;</code>
+     * <code>string Type = 2;</code>
      */
-    public Builder setCouponTypeBytes(
+    public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      couponType_ = value;
+      type_ = value;
       onChanged();
       return this;
     }

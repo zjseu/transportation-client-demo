@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     tag_ = java.util.Collections.emptyList();
     recommendItinerary_ = java.util.Collections.emptyList();
     compatibleDetailToken_ = "";
+    hotelLoadToken_ = "";
+    searchCriteriaToken_ = "";
   }
 
   @java.lang.Override
@@ -103,6 +105,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             compatibleDetailToken_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            hotelLoadToken_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            searchCriteriaToken_ = s;
             break;
           }
           default: {
@@ -422,6 +436,90 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int HOTELLOADTOKEN_FIELD_NUMBER = 7;
+  private volatile java.lang.Object hotelLoadToken_;
+  /**
+   * <pre>
+   * 机酒缓存Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string HotelLoadToken = 7;</code>
+   */
+  public java.lang.String getHotelLoadToken() {
+    java.lang.Object ref = hotelLoadToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hotelLoadToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 机酒缓存Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string HotelLoadToken = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getHotelLoadTokenBytes() {
+    java.lang.Object ref = hotelLoadToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      hotelLoadToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SEARCHCRITERIATOKEN_FIELD_NUMBER = 8;
+  private volatile java.lang.Object searchCriteriaToken_;
+  /**
+   * <pre>
+   * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+   * </pre>
+   *
+   * <code>string SearchCriteriaToken = 8;</code>
+   */
+  public java.lang.String getSearchCriteriaToken() {
+    java.lang.Object ref = searchCriteriaToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      searchCriteriaToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+   * </pre>
+   *
+   * <code>string SearchCriteriaToken = 8;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSearchCriteriaTokenBytes() {
+    java.lang.Object ref = searchCriteriaToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      searchCriteriaToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -454,6 +552,12 @@ private static final long serialVersionUID = 0L;
     if (!getCompatibleDetailTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, compatibleDetailToken_);
     }
+    if (!getHotelLoadTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, hotelLoadToken_);
+    }
+    if (!getSearchCriteriaTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, searchCriteriaToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -485,6 +589,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCompatibleDetailTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, compatibleDetailToken_);
+    }
+    if (!getHotelLoadTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, hotelLoadToken_);
+    }
+    if (!getSearchCriteriaTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, searchCriteriaToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -520,6 +630,10 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getCompatibleDetailToken()
         .equals(other.getCompatibleDetailToken());
+    result = result && getHotelLoadToken()
+        .equals(other.getHotelLoadToken());
+    result = result && getSearchCriteriaToken()
+        .equals(other.getSearchCriteriaToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -553,6 +667,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + COMPATIBLEDETAILTOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getCompatibleDetailToken().hashCode();
+    hash = (37 * hash) + HOTELLOADTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getHotelLoadToken().hashCode();
+    hash = (37 * hash) + SEARCHCRITERIATOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchCriteriaToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -721,6 +839,10 @@ private static final long serialVersionUID = 0L;
       }
       compatibleDetailToken_ = "";
 
+      hotelLoadToken_ = "";
+
+      searchCriteriaToken_ = "";
+
       return this;
     }
 
@@ -787,6 +909,8 @@ private static final long serialVersionUID = 0L;
         result.metaData_ = metaDataBuilder_.build();
       }
       result.compatibleDetailToken_ = compatibleDetailToken_;
+      result.hotelLoadToken_ = hotelLoadToken_;
+      result.searchCriteriaToken_ = searchCriteriaToken_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -922,6 +1046,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCompatibleDetailToken().isEmpty()) {
         compatibleDetailToken_ = other.compatibleDetailToken_;
+        onChanged();
+      }
+      if (!other.getHotelLoadToken().isEmpty()) {
+        hotelLoadToken_ = other.hotelLoadToken_;
+        onChanged();
+      }
+      if (!other.getSearchCriteriaToken().isEmpty()) {
+        searchCriteriaToken_ = other.searchCriteriaToken_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2286,6 +2418,184 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       compatibleDetailToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object hotelLoadToken_ = "";
+    /**
+     * <pre>
+     * 机酒缓存Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string HotelLoadToken = 7;</code>
+     */
+    public java.lang.String getHotelLoadToken() {
+      java.lang.Object ref = hotelLoadToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hotelLoadToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 机酒缓存Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string HotelLoadToken = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHotelLoadTokenBytes() {
+      java.lang.Object ref = hotelLoadToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hotelLoadToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 机酒缓存Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string HotelLoadToken = 7;</code>
+     */
+    public Builder setHotelLoadToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      hotelLoadToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒缓存Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string HotelLoadToken = 7;</code>
+     */
+    public Builder clearHotelLoadToken() {
+      
+      hotelLoadToken_ = getDefaultInstance().getHotelLoadToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒缓存Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string HotelLoadToken = 7;</code>
+     */
+    public Builder setHotelLoadTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      hotelLoadToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object searchCriteriaToken_ = "";
+    /**
+     * <pre>
+     * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+     * </pre>
+     *
+     * <code>string SearchCriteriaToken = 8;</code>
+     */
+    public java.lang.String getSearchCriteriaToken() {
+      java.lang.Object ref = searchCriteriaToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        searchCriteriaToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+     * </pre>
+     *
+     * <code>string SearchCriteriaToken = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSearchCriteriaTokenBytes() {
+      java.lang.Object ref = searchCriteriaToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        searchCriteriaToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+     * </pre>
+     *
+     * <code>string SearchCriteriaToken = 8;</code>
+     */
+    public Builder setSearchCriteriaToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      searchCriteriaToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+     * </pre>
+     *
+     * <code>string SearchCriteriaToken = 8;</code>
+     */
+    public Builder clearSearchCriteriaToken() {
+      
+      searchCriteriaToken_ = getDefaultInstance().getSearchCriteriaToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+     * </pre>
+     *
+     * <code>string SearchCriteriaToken = 8;</code>
+     */
+    public Builder setSearchCriteriaTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      searchCriteriaToken_ = value;
       onChanged();
       return this;
     }

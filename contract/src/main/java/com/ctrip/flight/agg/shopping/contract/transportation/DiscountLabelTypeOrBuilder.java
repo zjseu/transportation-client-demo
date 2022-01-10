@@ -12,7 +12,7 @@ public interface DiscountLabelTypeOrBuilder extends
    * 个性化标签
    * </pre>
    *
-   * <code>string label = 1;</code>
+   * <code>string Label = 1;</code>
    */
   java.lang.String getLabel();
   /**
@@ -20,7 +20,7 @@ public interface DiscountLabelTypeOrBuilder extends
    * 个性化标签
    * </pre>
    *
-   * <code>string label = 1;</code>
+   * <code>string Label = 1;</code>
    */
   com.google.protobuf.ByteString
       getLabelBytes();

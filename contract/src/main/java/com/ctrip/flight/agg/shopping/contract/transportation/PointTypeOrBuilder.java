@@ -9,7 +9,7 @@ public interface PointTypeOrBuilder extends
 
   /**
    * <pre>
-   * 城市ID，可在DataLists.CityList中获取详细信息
+   * 城市ID
    * </pre>
    *
    * <code>int32 CityID = 1;</code>

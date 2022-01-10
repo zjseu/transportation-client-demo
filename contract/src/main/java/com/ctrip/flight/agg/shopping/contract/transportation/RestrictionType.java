@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     carrierAgreementID_ = "";
     groupTicket_ = 0;
     identityLimit_ = 0;
+    paxNumLimitType_ = 0;
   }
 
   @java.lang.Override
@@ -136,6 +137,24 @@ private static final long serialVersionUID = 0L;
           case 88: {
 
             identityLimit_ = input.readInt32();
+            break;
+          }
+          case 98: {
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder subBuilder = null;
+            if (paxCountRange_ != null) {
+              subBuilder = paxCountRange_.toBuilder();
+            }
+            paxCountRange_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(paxCountRange_);
+              paxCountRange_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 104: {
+
+            paxNumLimitType_ = input.readInt32();
             break;
           }
           default: {
@@ -596,6 +615,52 @@ private static final long serialVersionUID = 0L;
     return identityLimit_;
   }
 
+  public static final int PAXCOUNTRANGE_FIELD_NUMBER = 12;
+  private com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType paxCountRange_;
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  public boolean hasPaxCountRange() {
+    return paxCountRange_ != null;
+  }
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange() {
+    return paxCountRange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
+  }
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder() {
+    return getPaxCountRange();
+  }
+
+  public static final int PAXNUMLIMITTYPE_FIELD_NUMBER = 13;
+  private int paxNumLimitType_;
+  /**
+   * <pre>
+   * 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+   * </pre>
+   *
+   * <code>int32 PaxNumLimitType = 13;</code>
+   */
+  public int getPaxNumLimitType() {
+    return paxNumLimitType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -642,6 +707,12 @@ private static final long serialVersionUID = 0L;
     }
     if (identityLimit_ != 0) {
       output.writeInt32(11, identityLimit_);
+    }
+    if (paxCountRange_ != null) {
+      output.writeMessage(12, getPaxCountRange());
+    }
+    if (paxNumLimitType_ != 0) {
+      output.writeInt32(13, paxNumLimitType_);
     }
     unknownFields.writeTo(output);
   }
@@ -713,6 +784,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, identityLimit_);
     }
+    if (paxCountRange_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getPaxCountRange());
+    }
+    if (paxNumLimitType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(13, paxNumLimitType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -754,6 +833,13 @@ private static final long serialVersionUID = 0L;
         == other.getGroupTicket());
     result = result && (getIdentityLimit()
         == other.getIdentityLimit());
+    result = result && (hasPaxCountRange() == other.hasPaxCountRange());
+    if (hasPaxCountRange()) {
+      result = result && getPaxCountRange()
+          .equals(other.getPaxCountRange());
+    }
+    result = result && (getPaxNumLimitType()
+        == other.getPaxNumLimitType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -799,6 +885,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getGroupTicket();
     hash = (37 * hash) + IDENTITYLIMIT_FIELD_NUMBER;
     hash = (53 * hash) + getIdentityLimit();
+    if (hasPaxCountRange()) {
+      hash = (37 * hash) + PAXCOUNTRANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPaxCountRange().hashCode();
+    }
+    hash = (37 * hash) + PAXNUMLIMITTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getPaxNumLimitType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -958,6 +1050,14 @@ private static final long serialVersionUID = 0L;
 
       identityLimit_ = 0;
 
+      if (paxCountRangeBuilder_ == null) {
+        paxCountRange_ = null;
+      } else {
+        paxCountRange_ = null;
+        paxCountRangeBuilder_ = null;
+      }
+      paxNumLimitType_ = 0;
+
       return this;
     }
 
@@ -1021,6 +1121,12 @@ private static final long serialVersionUID = 0L;
       result.carrierAgreementID_ = carrierAgreementID_;
       result.groupTicket_ = groupTicket_;
       result.identityLimit_ = identityLimit_;
+      if (paxCountRangeBuilder_ == null) {
+        result.paxCountRange_ = paxCountRange_;
+      } else {
+        result.paxCountRange_ = paxCountRangeBuilder_.build();
+      }
+      result.paxNumLimitType_ = paxNumLimitType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1140,6 +1246,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIdentityLimit() != 0) {
         setIdentityLimit(other.getIdentityLimit());
+      }
+      if (other.hasPaxCountRange()) {
+        mergePaxCountRange(other.getPaxCountRange());
+      }
+      if (other.getPaxNumLimitType() != 0) {
+        setPaxNumLimitType(other.getPaxNumLimitType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2313,6 +2425,197 @@ private static final long serialVersionUID = 0L;
     public Builder clearIdentityLimit() {
       
       identityLimit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType paxCountRange_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> paxCountRangeBuilder_;
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public boolean hasPaxCountRange() {
+      return paxCountRangeBuilder_ != null || paxCountRange_ != null;
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange() {
+      if (paxCountRangeBuilder_ == null) {
+        return paxCountRange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
+      } else {
+        return paxCountRangeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public Builder setPaxCountRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (paxCountRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        paxCountRange_ = value;
+        onChanged();
+      } else {
+        paxCountRangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public Builder setPaxCountRange(
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (paxCountRangeBuilder_ == null) {
+        paxCountRange_ = builderForValue.build();
+        onChanged();
+      } else {
+        paxCountRangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public Builder mergePaxCountRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (paxCountRangeBuilder_ == null) {
+        if (paxCountRange_ != null) {
+          paxCountRange_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.newBuilder(paxCountRange_).mergeFrom(value).buildPartial();
+        } else {
+          paxCountRange_ = value;
+        }
+        onChanged();
+      } else {
+        paxCountRangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public Builder clearPaxCountRange() {
+      if (paxCountRangeBuilder_ == null) {
+        paxCountRange_ = null;
+        onChanged();
+      } else {
+        paxCountRange_ = null;
+        paxCountRangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder getPaxCountRangeBuilder() {
+      
+      onChanged();
+      return getPaxCountRangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder() {
+      if (paxCountRangeBuilder_ != null) {
+        return paxCountRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return paxCountRange_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance() : paxCountRange_;
+      }
+    }
+    /**
+     * <pre>
+     * 人数限制 (婴儿不算人头)
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+        getPaxCountRangeFieldBuilder() {
+      if (paxCountRangeBuilder_ == null) {
+        paxCountRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder>(
+                getPaxCountRange(),
+                getParentForChildren(),
+                isClean());
+        paxCountRange_ = null;
+      }
+      return paxCountRangeBuilder_;
+    }
+
+    private int paxNumLimitType_ ;
+    /**
+     * <pre>
+     * 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+     * </pre>
+     *
+     * <code>int32 PaxNumLimitType = 13;</code>
+     */
+    public int getPaxNumLimitType() {
+      return paxNumLimitType_;
+    }
+    /**
+     * <pre>
+     * 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+     * </pre>
+     *
+     * <code>int32 PaxNumLimitType = 13;</code>
+     */
+    public Builder setPaxNumLimitType(int value) {
+      
+      paxNumLimitType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+     * </pre>
+     *
+     * <code>int32 PaxNumLimitType = 13;</code>
+     */
+    public Builder clearPaxNumLimitType() {
+      
+      paxNumLimitType_ = 0;
       onChanged();
       return this;
     }

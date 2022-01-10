@@ -17,18 +17,18 @@ public interface CouponTypeOrBuilder extends
    * 优惠券类型
    * </pre>
    *
-   * <code>string CouponType = 2;</code>
+   * <code>string Type = 2;</code>
    */
-  java.lang.String getCouponType();
+  java.lang.String getType();
   /**
    * <pre>
    * 优惠券类型
    * </pre>
    *
-   * <code>string CouponType = 2;</code>
+   * <code>string Type = 2;</code>
    */
   com.google.protobuf.ByteString
-      getCouponTypeBytes();
+      getTypeBytes();
 
   /**
    * <pre>

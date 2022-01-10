@@ -121,7 +121,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
 
   /**
    * <pre>
-   * 航司优惠前价格，前端结合Discount和PcCode做展示用
+   * 国内航司优惠前价格，前端结合Discount和PcCode做展示用
    * </pre>
    *
    * <code>double PrePcCodePrice = 6;</code>
@@ -171,4 +171,13 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.ServiceFeeTypeOrBuilder getServiceFeeOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 机酒专享政策优惠金额（与外放最低价价差）
+   * </pre>
+   *
+   * <code>double FlightHotelDiscountAmount = 8;</code>
+   */
+  double getFlightHotelDiscountAmount();
 }

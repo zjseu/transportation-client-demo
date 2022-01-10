@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private PaxRequestType() {
     ageType_ = 0;
     count_ = 0;
+    nationality_ = "";
   }
 
   @java.lang.Override
@@ -52,6 +53,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             count_ = input.readInt32();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nationality_ = s;
             break;
           }
           default: {
@@ -112,6 +119,48 @@ private static final long serialVersionUID = 0L;
     return count_;
   }
 
+  public static final int NATIONALITY_FIELD_NUMBER = 3;
+  private volatile java.lang.Object nationality_;
+  /**
+   * <pre>
+   * 国籍
+   * </pre>
+   *
+   * <code>string Nationality = 3;</code>
+   */
+  public java.lang.String getNationality() {
+    java.lang.Object ref = nationality_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nationality_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 国籍
+   * </pre>
+   *
+   * <code>string Nationality = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getNationalityBytes() {
+    java.lang.Object ref = nationality_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nationality_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +181,9 @@ private static final long serialVersionUID = 0L;
     if (count_ != 0) {
       output.writeInt32(2, count_);
     }
+    if (!getNationalityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nationality_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +200,9 @@ private static final long serialVersionUID = 0L;
     if (count_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, count_);
+    }
+    if (!getNationalityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nationality_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +224,8 @@ private static final long serialVersionUID = 0L;
         == other.getAgeType());
     result = result && (getCount()
         == other.getCount());
+    result = result && getNationality()
+        .equals(other.getNationality());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -184,6 +241,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAgeType();
     hash = (37 * hash) + COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getCount();
+    hash = (37 * hash) + NATIONALITY_FIELD_NUMBER;
+    hash = (53 * hash) + getNationality().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +380,8 @@ private static final long serialVersionUID = 0L;
 
       count_ = 0;
 
+      nationality_ = "";
+
       return this;
     }
 
@@ -349,6 +410,7 @@ private static final long serialVersionUID = 0L;
       com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType(this);
       result.ageType_ = ageType_;
       result.count_ = count_;
+      result.nationality_ = nationality_;
       onBuilt();
       return result;
     }
@@ -402,6 +464,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCount() != 0) {
         setCount(other.getCount());
+      }
+      if (!other.getNationality().isEmpty()) {
+        nationality_ = other.nationality_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -504,6 +570,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearCount() {
       
       count_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nationality_ = "";
+    /**
+     * <pre>
+     * 国籍
+     * </pre>
+     *
+     * <code>string Nationality = 3;</code>
+     */
+    public java.lang.String getNationality() {
+      java.lang.Object ref = nationality_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nationality_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 国籍
+     * </pre>
+     *
+     * <code>string Nationality = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNationalityBytes() {
+      java.lang.Object ref = nationality_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nationality_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 国籍
+     * </pre>
+     *
+     * <code>string Nationality = 3;</code>
+     */
+    public Builder setNationality(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nationality_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国籍
+     * </pre>
+     *
+     * <code>string Nationality = 3;</code>
+     */
+    public Builder clearNationality() {
+      
+      nationality_ = getDefaultInstance().getNationality();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国籍
+     * </pre>
+     *
+     * <code>string Nationality = 3;</code>
+     */
+    public Builder setNationalityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nationality_ = value;
       onChanged();
       return this;
     }

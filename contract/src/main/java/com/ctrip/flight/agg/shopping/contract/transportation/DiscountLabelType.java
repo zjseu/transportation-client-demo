@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
    * 个性化标签
    * </pre>
    *
-   * <code>string label = 1;</code>
+   * <code>string Label = 1;</code>
    */
   public java.lang.String getLabel() {
     java.lang.Object ref = label_;
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
    * 个性化标签
    * </pre>
    *
-   * <code>string label = 1;</code>
+   * <code>string Label = 1;</code>
    */
   public com.google.protobuf.ByteString
       getLabelBytes() {
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
      * 个性化标签
      * </pre>
      *
-     * <code>string label = 1;</code>
+     * <code>string Label = 1;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
      * 个性化标签
      * </pre>
      *
-     * <code>string label = 1;</code>
+     * <code>string Label = 1;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -471,7 +471,7 @@ private static final long serialVersionUID = 0L;
      * 个性化标签
      * </pre>
      *
-     * <code>string label = 1;</code>
+     * <code>string Label = 1;</code>
      */
     public Builder setLabel(
         java.lang.String value) {
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
      * 个性化标签
      * </pre>
      *
-     * <code>string label = 1;</code>
+     * <code>string Label = 1;</code>
      */
     public Builder clearLabel() {
       
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
      * 个性化标签
      * </pre>
      *
-     * <code>string label = 1;</code>
+     * <code>string Label = 1;</code>
      */
     public Builder setLabelBytes(
         com.google.protobuf.ByteString value) {

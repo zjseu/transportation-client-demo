@@ -199,14 +199,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 138: {
-            com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder subBuilder = null;
-            if (flightProductReferencePrice_ != null) {
-              subBuilder = flightProductReferencePrice_.toBuilder();
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder subBuilder = null;
+            if (carrierPriceShow_ != null) {
+              subBuilder = carrierPriceShow_.toBuilder();
             }
-            flightProductReferencePrice_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.parser(), extensionRegistry);
+            carrierPriceShow_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(flightProductReferencePrice_);
-              flightProductReferencePrice_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(carrierPriceShow_);
+              carrierPriceShow_ = subBuilder.buildPartial();
             }
 
             break;
@@ -782,55 +782,67 @@ private static final long serialVersionUID = 0L;
   public static final int FLIGHTSUPPLIER_FIELD_NUMBER = 16;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType flightSupplier_;
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   public boolean hasFlightSupplier() {
     return flightSupplier_ != null;
   }
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType getFlightSupplier() {
     return flightSupplier_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType.getDefaultInstance() : flightSupplier_;
   }
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierTypeOrBuilder getFlightSupplierOrBuilder() {
     return getFlightSupplier();
   }
 
-  public static final int FLIGHTPRODUCTREFERENCEPRICE_FIELD_NUMBER = 17;
-  private com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType flightProductReferencePrice_;
+  public static final int CARRIERPRICESHOW_FIELD_NUMBER = 17;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType carrierPriceShow_;
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  public boolean hasFlightProductReferencePrice() {
-    return flightProductReferencePrice_ != null;
+  public boolean hasCarrierPriceShow() {
+    return carrierPriceShow_ != null;
   }
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType getFlightProductReferencePrice() {
-    return flightProductReferencePrice_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.getDefaultInstance() : flightProductReferencePrice_;
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType getCarrierPriceShow() {
+    return carrierPriceShow_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.getDefaultInstance() : carrierPriceShow_;
   }
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder getFlightProductReferencePriceOrBuilder() {
-    return getFlightProductReferencePrice();
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder getCarrierPriceShowOrBuilder() {
+    return getCarrierPriceShow();
   }
 
   public static final int GRABTICKET_FIELD_NUMBER = 18;
@@ -1088,8 +1100,8 @@ private static final long serialVersionUID = 0L;
     if (flightSupplier_ != null) {
       output.writeMessage(16, getFlightSupplier());
     }
-    if (flightProductReferencePrice_ != null) {
-      output.writeMessage(17, getFlightProductReferencePrice());
+    if (carrierPriceShow_ != null) {
+      output.writeMessage(17, getCarrierPriceShow());
     }
     if (grabTicket_ != null) {
       output.writeMessage(18, getGrabTicket());
@@ -1190,9 +1202,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getFlightSupplier());
     }
-    if (flightProductReferencePrice_ != null) {
+    if (carrierPriceShow_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, getFlightProductReferencePrice());
+        .computeMessageSize(17, getCarrierPriceShow());
     }
     if (grabTicket_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -1274,10 +1286,10 @@ private static final long serialVersionUID = 0L;
       result = result && getFlightSupplier()
           .equals(other.getFlightSupplier());
     }
-    result = result && (hasFlightProductReferencePrice() == other.hasFlightProductReferencePrice());
-    if (hasFlightProductReferencePrice()) {
-      result = result && getFlightProductReferencePrice()
-          .equals(other.getFlightProductReferencePrice());
+    result = result && (hasCarrierPriceShow() == other.hasCarrierPriceShow());
+    if (hasCarrierPriceShow()) {
+      result = result && getCarrierPriceShow()
+          .equals(other.getCarrierPriceShow());
     }
     result = result && (hasGrabTicket() == other.hasGrabTicket());
     if (hasGrabTicket()) {
@@ -1349,9 +1361,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FLIGHTSUPPLIER_FIELD_NUMBER;
       hash = (53 * hash) + getFlightSupplier().hashCode();
     }
-    if (hasFlightProductReferencePrice()) {
-      hash = (37 * hash) + FLIGHTPRODUCTREFERENCEPRICE_FIELD_NUMBER;
-      hash = (53 * hash) + getFlightProductReferencePrice().hashCode();
+    if (hasCarrierPriceShow()) {
+      hash = (37 * hash) + CARRIERPRICESHOW_FIELD_NUMBER;
+      hash = (53 * hash) + getCarrierPriceShow().hashCode();
     }
     if (hasGrabTicket()) {
       hash = (37 * hash) + GRABTICKET_FIELD_NUMBER;
@@ -1561,11 +1573,11 @@ private static final long serialVersionUID = 0L;
         flightSupplier_ = null;
         flightSupplierBuilder_ = null;
       }
-      if (flightProductReferencePriceBuilder_ == null) {
-        flightProductReferencePrice_ = null;
+      if (carrierPriceShowBuilder_ == null) {
+        carrierPriceShow_ = null;
       } else {
-        flightProductReferencePrice_ = null;
-        flightProductReferencePriceBuilder_ = null;
+        carrierPriceShow_ = null;
+        carrierPriceShowBuilder_ = null;
       }
       if (grabTicketBuilder_ == null) {
         grabTicket_ = null;
@@ -1665,10 +1677,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.flightSupplier_ = flightSupplierBuilder_.build();
       }
-      if (flightProductReferencePriceBuilder_ == null) {
-        result.flightProductReferencePrice_ = flightProductReferencePrice_;
+      if (carrierPriceShowBuilder_ == null) {
+        result.carrierPriceShow_ = carrierPriceShow_;
       } else {
-        result.flightProductReferencePrice_ = flightProductReferencePriceBuilder_.build();
+        result.carrierPriceShow_ = carrierPriceShowBuilder_.build();
       }
       if (grabTicketBuilder_ == null) {
         result.grabTicket_ = grabTicket_;
@@ -1851,8 +1863,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasFlightSupplier()) {
         mergeFlightSupplier(other.getFlightSupplier());
       }
-      if (other.hasFlightProductReferencePrice()) {
-        mergeFlightProductReferencePrice(other.getFlightProductReferencePrice());
+      if (other.hasCarrierPriceShow()) {
+        mergeCarrierPriceShow(other.getCarrierPriceShow());
       }
       if (other.hasGrabTicket()) {
         mergeGrabTicket(other.getGrabTicket());
@@ -3628,12 +3640,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierTypeOrBuilder> flightSupplierBuilder_;
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public boolean hasFlightSupplier() {
       return flightSupplierBuilder_ != null || flightSupplier_ != null;
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType getFlightSupplier() {
@@ -3644,6 +3664,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public Builder setFlightSupplier(com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType value) {
@@ -3660,6 +3684,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public Builder setFlightSupplier(
@@ -3674,6 +3702,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public Builder mergeFlightSupplier(com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType value) {
@@ -3692,6 +3724,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public Builder clearFlightSupplier() {
@@ -3706,6 +3742,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType.Builder getFlightSupplierBuilder() {
@@ -3714,6 +3754,10 @@ private static final long serialVersionUID = 0L;
       return getFlightSupplierFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierTypeOrBuilder getFlightSupplierOrBuilder() {
@@ -3725,6 +3769,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 供应商信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3741,157 +3789,157 @@ private static final long serialVersionUID = 0L;
       return flightSupplierBuilder_;
     }
 
-    private com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType flightProductReferencePrice_ = null;
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType carrierPriceShow_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder> flightProductReferencePriceBuilder_;
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder> carrierPriceShowBuilder_;
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public boolean hasFlightProductReferencePrice() {
-      return flightProductReferencePriceBuilder_ != null || flightProductReferencePrice_ != null;
+    public boolean hasCarrierPriceShow() {
+      return carrierPriceShowBuilder_ != null || carrierPriceShow_ != null;
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType getFlightProductReferencePrice() {
-      if (flightProductReferencePriceBuilder_ == null) {
-        return flightProductReferencePrice_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.getDefaultInstance() : flightProductReferencePrice_;
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType getCarrierPriceShow() {
+      if (carrierPriceShowBuilder_ == null) {
+        return carrierPriceShow_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.getDefaultInstance() : carrierPriceShow_;
       } else {
-        return flightProductReferencePriceBuilder_.getMessage();
+        return carrierPriceShowBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public Builder setFlightProductReferencePrice(com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType value) {
-      if (flightProductReferencePriceBuilder_ == null) {
+    public Builder setCarrierPriceShow(com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType value) {
+      if (carrierPriceShowBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        flightProductReferencePrice_ = value;
+        carrierPriceShow_ = value;
         onChanged();
       } else {
-        flightProductReferencePriceBuilder_.setMessage(value);
+        carrierPriceShowBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public Builder setFlightProductReferencePrice(
-        com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder builderForValue) {
-      if (flightProductReferencePriceBuilder_ == null) {
-        flightProductReferencePrice_ = builderForValue.build();
+    public Builder setCarrierPriceShow(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder builderForValue) {
+      if (carrierPriceShowBuilder_ == null) {
+        carrierPriceShow_ = builderForValue.build();
         onChanged();
       } else {
-        flightProductReferencePriceBuilder_.setMessage(builderForValue.build());
+        carrierPriceShowBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public Builder mergeFlightProductReferencePrice(com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType value) {
-      if (flightProductReferencePriceBuilder_ == null) {
-        if (flightProductReferencePrice_ != null) {
-          flightProductReferencePrice_ =
-            com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.newBuilder(flightProductReferencePrice_).mergeFrom(value).buildPartial();
+    public Builder mergeCarrierPriceShow(com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType value) {
+      if (carrierPriceShowBuilder_ == null) {
+        if (carrierPriceShow_ != null) {
+          carrierPriceShow_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.newBuilder(carrierPriceShow_).mergeFrom(value).buildPartial();
         } else {
-          flightProductReferencePrice_ = value;
+          carrierPriceShow_ = value;
         }
         onChanged();
       } else {
-        flightProductReferencePriceBuilder_.mergeFrom(value);
+        carrierPriceShowBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public Builder clearFlightProductReferencePrice() {
-      if (flightProductReferencePriceBuilder_ == null) {
-        flightProductReferencePrice_ = null;
+    public Builder clearCarrierPriceShow() {
+      if (carrierPriceShowBuilder_ == null) {
+        carrierPriceShow_ = null;
         onChanged();
       } else {
-        flightProductReferencePrice_ = null;
-        flightProductReferencePriceBuilder_ = null;
+        carrierPriceShow_ = null;
+        carrierPriceShowBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder getFlightProductReferencePriceBuilder() {
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder getCarrierPriceShowBuilder() {
       
       onChanged();
-      return getFlightProductReferencePriceFieldBuilder().getBuilder();
+      return getCarrierPriceShowFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder getFlightProductReferencePriceOrBuilder() {
-      if (flightProductReferencePriceBuilder_ != null) {
-        return flightProductReferencePriceBuilder_.getMessageOrBuilder();
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder getCarrierPriceShowOrBuilder() {
+      if (carrierPriceShowBuilder_ != null) {
+        return carrierPriceShowBuilder_.getMessageOrBuilder();
       } else {
-        return flightProductReferencePrice_ == null ?
-            com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.getDefaultInstance() : flightProductReferencePrice_;
+        return carrierPriceShow_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.getDefaultInstance() : carrierPriceShow_;
       }
     }
     /**
      * <pre>
-     * 机票Product相关的其他参考价格信息
+     * 按航司显示舱位、票面价
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder> 
-        getFlightProductReferencePriceFieldBuilder() {
-      if (flightProductReferencePriceBuilder_ == null) {
-        flightProductReferencePriceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder>(
-                getFlightProductReferencePrice(),
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder> 
+        getCarrierPriceShowFieldBuilder() {
+      if (carrierPriceShowBuilder_ == null) {
+        carrierPriceShowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder>(
+                getCarrierPriceShow(),
                 getParentForChildren(),
                 isClean());
-        flightProductReferencePrice_ = null;
+        carrierPriceShow_ = null;
       }
-      return flightProductReferencePriceBuilder_;
+      return carrierPriceShowBuilder_;
     }
 
     private com.ctrip.flight.agg.shopping.contract.transportation.GrabTicketType grabTicket_ = null;

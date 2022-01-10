@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TrainType() {
-    trainType_ = 0;
+    type_ = 0;
     remark_ = "";
   }
 
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            trainType_ = input.readInt32();
+            type_ = input.readInt32();
             break;
           }
           case 18: {
@@ -87,17 +87,17 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.TrainType.class, com.ctrip.flight.agg.shopping.contract.transportation.TrainType.Builder.class);
   }
 
-  public static final int TRAINTYPE_FIELD_NUMBER = 1;
-  private int trainType_;
+  public static final int TYPE_FIELD_NUMBER = 1;
+  private int type_;
   /**
    * <pre>
    * 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
    * </pre>
    *
-   * <code>int32 TrainType = 1;</code>
+   * <code>int32 Type = 1;</code>
    */
-  public int getTrainType() {
-    return trainType_;
+  public int getType() {
+    return type_;
   }
 
   public static final int REMARK_FIELD_NUMBER = 2;
@@ -156,8 +156,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (trainType_ != 0) {
-      output.writeInt32(1, trainType_);
+    if (type_ != 0) {
+      output.writeInt32(1, type_);
     }
     if (!getRemarkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, remark_);
@@ -171,9 +171,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (trainType_ != 0) {
+    if (type_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, trainType_);
+        .computeInt32Size(1, type_);
     }
     if (!getRemarkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, remark_);
@@ -194,8 +194,8 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.agg.shopping.contract.transportation.TrainType other = (com.ctrip.flight.agg.shopping.contract.transportation.TrainType) obj;
 
     boolean result = true;
-    result = result && (getTrainType()
-        == other.getTrainType());
+    result = result && (getType()
+        == other.getType());
     result = result && getRemark()
         .equals(other.getRemark());
     result = result && unknownFields.equals(other.unknownFields);
@@ -209,8 +209,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TRAINTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getTrainType();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType();
     hash = (37 * hash) + REMARK_FIELD_NUMBER;
     hash = (53 * hash) + getRemark().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -346,7 +346,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      trainType_ = 0;
+      type_ = 0;
 
       remark_ = "";
 
@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.TrainType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.TrainType result = new com.ctrip.flight.agg.shopping.contract.transportation.TrainType(this);
-      result.trainType_ = trainType_;
+      result.type_ = type_;
       result.remark_ = remark_;
       onBuilt();
       return result;
@@ -426,8 +426,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.TrainType other) {
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.TrainType.getDefaultInstance()) return this;
-      if (other.getTrainType() != 0) {
-        setTrainType(other.getTrainType());
+      if (other.getType() != 0) {
+        setType(other.getType());
       }
       if (!other.getRemark().isEmpty()) {
         remark_ = other.remark_;
@@ -462,27 +462,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int trainType_ ;
+    private int type_ ;
     /**
      * <pre>
      * 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
      * </pre>
      *
-     * <code>int32 TrainType = 1;</code>
+     * <code>int32 Type = 1;</code>
      */
-    public int getTrainType() {
-      return trainType_;
+    public int getType() {
+      return type_;
     }
     /**
      * <pre>
      * 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
      * </pre>
      *
-     * <code>int32 TrainType = 1;</code>
+     * <code>int32 Type = 1;</code>
      */
-    public Builder setTrainType(int value) {
+    public Builder setType(int value) {
       
-      trainType_ = value;
+      type_ = value;
       onChanged();
       return this;
     }
@@ -491,11 +491,11 @@ private static final long serialVersionUID = 0L;
      * 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
      * </pre>
      *
-     * <code>int32 TrainType = 1;</code>
+     * <code>int32 Type = 1;</code>
      */
-    public Builder clearTrainType() {
+    public Builder clearType() {
       
-      trainType_ = 0;
+      type_ = 0;
       onChanged();
       return this;
     }

@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
   private int sizeLimitType_;
   /**
    * <pre>
-   * 尺寸限制类型。1：三边之和；2：长*宽*高
+   * 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 &amp; 三边各长宽高（&amp;符号分割）
    * </pre>
    *
    * <code>int32 SizeLimitType = 1;</code>
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object size_;
   /**
    * <pre>
-   * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+   * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
    * </pre>
    *
    * <code>string Size = 2;</code>
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+   * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
    * </pre>
    *
    * <code>string Size = 2;</code>
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
     private int sizeLimitType_ ;
     /**
      * <pre>
-     * 尺寸限制类型。1：三边之和；2：长*宽*高
+     * 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 &amp; 三边各长宽高（&amp;符号分割）
      * </pre>
      *
      * <code>int32 SizeLimitType = 1;</code>
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸限制类型。1：三边之和；2：长*宽*高
+     * 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 &amp; 三边各长宽高（&amp;符号分割）
      * </pre>
      *
      * <code>int32 SizeLimitType = 1;</code>
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸限制类型。1：三边之和；2：长*宽*高
+     * 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 &amp; 三边各长宽高（&amp;符号分割）
      * </pre>
      *
      * <code>int32 SizeLimitType = 1;</code>
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object size_ = "";
     /**
      * <pre>
-     * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+     * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
      * </pre>
      *
      * <code>string Size = 2;</code>
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+     * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
      * </pre>
      *
      * <code>string Size = 2;</code>
@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+     * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
      * </pre>
      *
      * <code>string Size = 2;</code>
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+     * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
      * </pre>
      *
      * <code>string Size = 2;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 尺寸大小(不含单位)，格式：180 或者 10*12*14
+     * 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&amp;10*12*14
      * </pre>
      *
      * <code>string Size = 2;</code>

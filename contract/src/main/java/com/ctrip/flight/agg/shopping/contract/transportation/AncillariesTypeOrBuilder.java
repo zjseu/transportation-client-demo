@@ -14,24 +14,6 @@ public interface AncillariesTypeOrBuilder extends
 
   /**
    * <pre>
-   * 是否有行李额增值服务，true 包含/false不包含
-   * </pre>
-   *
-   * <code>bool HasBaggageService = 2;</code>
-   */
-  boolean getHasBaggageService();
-
-  /**
-   * <pre>
-   * 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-   * </pre>
-   *
-   * <code>bool UnFreeBaggage = 3;</code>
-   */
-  boolean getUnFreeBaggage();
-
-  /**
-   * <pre>
    * 值机服务属性(0:不支持在线购买,1:支持在线购买,2：必须在线购买)
    * </pre>
    *

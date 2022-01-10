@@ -59,4 +59,22 @@ public interface PaxBaggageTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageWayTypeOrBuilder getBaggageWayOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 行李描述，根据请求的Language决定输出的语言类型
+   * </pre>
+   *
+   * <code>string BaggageSpecifiedDesc = 3;</code>
+   */
+  java.lang.String getBaggageSpecifiedDesc();
+  /**
+   * <pre>
+   * 行李描述，根据请求的Language决定输出的语言类型
+   * </pre>
+   *
+   * <code>string BaggageSpecifiedDesc = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getBaggageSpecifiedDescBytes();
 }

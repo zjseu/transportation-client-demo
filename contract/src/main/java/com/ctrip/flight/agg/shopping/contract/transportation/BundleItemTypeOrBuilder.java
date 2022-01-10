@@ -9,7 +9,7 @@ public interface BundleItemTypeOrBuilder extends
 
   /**
    * <pre>
-   *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+   *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
    *BrandAttribute
    * </pre>
@@ -19,7 +19,7 @@ public interface BundleItemTypeOrBuilder extends
   java.lang.String getBundleType();
   /**
    * <pre>
-   *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+   *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
    *BrandAttribute
    * </pre>

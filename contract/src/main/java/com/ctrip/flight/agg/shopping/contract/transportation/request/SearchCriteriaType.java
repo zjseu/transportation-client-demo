@@ -22,7 +22,9 @@ private static final long serialVersionUID = 0L;
     saleCurrency_ = "";
     language_ = "";
     extensionOption_ = java.util.Collections.emptyList();
-    needRecommendation_ = false;
+    abTestOption_ = java.util.Collections.emptyList();
+    intlOrDomesticRequest_ = 0;
+    requestScene_ = "";
   }
 
   @java.lang.Override
@@ -97,12 +99,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
-          case 56: {
-
-            needRecommendation_ = input.readBool();
-            break;
-          }
-          case 66: {
+          case 58: {
             com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder subBuilder = null;
             if (userParameter_ != null) {
               subBuilder = userParameter_.toBuilder();
@@ -111,6 +108,65 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(userParameter_);
               userParameter_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              abTestOption_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            abTestOption_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder subBuilder = null;
+            if (resultControl_ != null) {
+              subBuilder = resultControl_.toBuilder();
+            }
+            resultControl_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(resultControl_);
+              resultControl_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 80: {
+
+            intlOrDomesticRequest_ = input.readInt32();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestScene_ = s;
+            break;
+          }
+          case 98: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder subBuilder = null;
+            if (advancedOption_ != null) {
+              subBuilder = advancedOption_.toBuilder();
+            }
+            advancedOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(advancedOption_);
+              advancedOption_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder subBuilder = null;
+            if (specifiedOption_ != null) {
+              subBuilder = specifiedOption_.toBuilder();
+            }
+            specifiedOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(specifiedOption_);
+              specifiedOption_ = subBuilder.buildPartial();
             }
 
             break;
@@ -142,6 +198,9 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         extensionOption_ = java.util.Collections.unmodifiableList(extensionOption_);
       }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        abTestOption_ = java.util.Collections.unmodifiableList(abTestOption_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -164,7 +223,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType> journeyRequest_;
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -174,7 +233,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -185,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -195,7 +254,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -205,7 +264,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+   * 用户请求的行程信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -274,7 +333,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList cabinCode_;
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -285,7 +344,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -295,7 +354,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -305,7 +364,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+   * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
    * </pre>
    *
    * <code>repeated string CabinCode = 3;</code>
@@ -454,38 +513,254 @@ private static final long serialVersionUID = 0L;
     return extensionOption_.get(index);
   }
 
-  public static final int NEEDRECOMMENDATION_FIELD_NUMBER = 7;
-  private boolean needRecommendation_;
-  /**
-   * <pre>
-   * 是否需要推荐位
-   * </pre>
-   *
-   * <code>bool NeedRecommendation = 7;</code>
-   */
-  public boolean getNeedRecommendation() {
-    return needRecommendation_;
-  }
-
-  public static final int USERPARAMETER_FIELD_NUMBER = 8;
+  public static final int USERPARAMETER_FIELD_NUMBER = 7;
   private com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType userParameter_;
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <pre>
+   * 用户信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   public boolean hasUserParameter() {
     return userParameter_ != null;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <pre>
+   * 用户信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType getUserParameter() {
     return userParameter_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.getDefaultInstance() : userParameter_;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+   * <pre>
+   * 用户信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterTypeOrBuilder getUserParameterOrBuilder() {
     return getUserParameter();
+  }
+
+  public static final int ABTESTOPTION_FIELD_NUMBER = 8;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> abTestOption_;
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getAbTestOptionList() {
+    return abTestOption_;
+  }
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getAbTestOptionOrBuilderList() {
+    return abTestOption_;
+  }
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  public int getAbTestOptionCount() {
+    return abTestOption_.size();
+  }
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getAbTestOption(int index) {
+    return abTestOption_.get(index);
+  }
+  /**
+   * <pre>
+   *  ABTest的Code和Version
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getAbTestOptionOrBuilder(
+      int index) {
+    return abTestOption_.get(index);
+  }
+
+  public static final int RESULTCONTROL_FIELD_NUMBER = 9;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType resultControl_;
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  public boolean hasResultControl() {
+    return resultControl_ != null;
+  }
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType getResultControl() {
+    return resultControl_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.getDefaultInstance() : resultControl_;
+  }
+  /**
+   * <pre>
+   * 结果控制参数
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder getResultControlOrBuilder() {
+    return getResultControl();
+  }
+
+  public static final int INTLORDOMESTICREQUEST_FIELD_NUMBER = 10;
+  private int intlOrDomesticRequest_;
+  /**
+   * <pre>
+   * 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+   * </pre>
+   *
+   * <code>int32 IntlOrDomesticRequest = 10;</code>
+   */
+  public int getIntlOrDomesticRequest() {
+    return intlOrDomesticRequest_;
+  }
+
+  public static final int REQUESTSCENE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object requestScene_;
+  /**
+   * <pre>
+   **
+   * 请求场景。空:默认是主流程查询。
+   * MainProcess:主流程查询
+   * FlightXHotel:宫格机酒主流程查询
+   * FlightXHotelChangeFlight:宫格机酒更换航班查询
+   * </pre>
+   *
+   * <code>string RequestScene = 11;</code>
+   */
+  public java.lang.String getRequestScene() {
+    java.lang.Object ref = requestScene_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestScene_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * 请求场景。空:默认是主流程查询。
+   * MainProcess:主流程查询
+   * FlightXHotel:宫格机酒主流程查询
+   * FlightXHotelChangeFlight:宫格机酒更换航班查询
+   * </pre>
+   *
+   * <code>string RequestScene = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRequestSceneBytes() {
+    java.lang.Object ref = requestScene_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestScene_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ADVANCEDOPTION_FIELD_NUMBER = 12;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType advancedOption_;
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  public boolean hasAdvancedOption() {
+    return advancedOption_ != null;
+  }
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType getAdvancedOption() {
+    return advancedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.getDefaultInstance() : advancedOption_;
+  }
+  /**
+   * <pre>
+   * 高级搜索
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder getAdvancedOptionOrBuilder() {
+    return getAdvancedOption();
+  }
+
+  public static final int SPECIFIEDOPTION_FIELD_NUMBER = 13;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType specifiedOption_;
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  public boolean hasSpecifiedOption() {
+    return specifiedOption_ != null;
+  }
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType getSpecifiedOption() {
+    return specifiedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.getDefaultInstance() : specifiedOption_;
+  }
+  /**
+   * <pre>
+   * 指定查询
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder getSpecifiedOptionOrBuilder() {
+    return getSpecifiedOption();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -520,11 +795,26 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < extensionOption_.size(); i++) {
       output.writeMessage(6, extensionOption_.get(i));
     }
-    if (needRecommendation_ != false) {
-      output.writeBool(7, needRecommendation_);
-    }
     if (userParameter_ != null) {
-      output.writeMessage(8, getUserParameter());
+      output.writeMessage(7, getUserParameter());
+    }
+    for (int i = 0; i < abTestOption_.size(); i++) {
+      output.writeMessage(8, abTestOption_.get(i));
+    }
+    if (resultControl_ != null) {
+      output.writeMessage(9, getResultControl());
+    }
+    if (intlOrDomesticRequest_ != 0) {
+      output.writeInt32(10, intlOrDomesticRequest_);
+    }
+    if (!getRequestSceneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, requestScene_);
+    }
+    if (advancedOption_ != null) {
+      output.writeMessage(12, getAdvancedOption());
+    }
+    if (specifiedOption_ != null) {
+      output.writeMessage(13, getSpecifiedOption());
     }
     unknownFields.writeTo(output);
   }
@@ -561,13 +851,32 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, extensionOption_.get(i));
     }
-    if (needRecommendation_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, needRecommendation_);
-    }
     if (userParameter_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getUserParameter());
+        .computeMessageSize(7, getUserParameter());
+    }
+    for (int i = 0; i < abTestOption_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, abTestOption_.get(i));
+    }
+    if (resultControl_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getResultControl());
+    }
+    if (intlOrDomesticRequest_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, intlOrDomesticRequest_);
+    }
+    if (!getRequestSceneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, requestScene_);
+    }
+    if (advancedOption_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getAdvancedOption());
+    }
+    if (specifiedOption_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getSpecifiedOption());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -597,12 +906,31 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguage());
     result = result && getExtensionOptionList()
         .equals(other.getExtensionOptionList());
-    result = result && (getNeedRecommendation()
-        == other.getNeedRecommendation());
     result = result && (hasUserParameter() == other.hasUserParameter());
     if (hasUserParameter()) {
       result = result && getUserParameter()
           .equals(other.getUserParameter());
+    }
+    result = result && getAbTestOptionList()
+        .equals(other.getAbTestOptionList());
+    result = result && (hasResultControl() == other.hasResultControl());
+    if (hasResultControl()) {
+      result = result && getResultControl()
+          .equals(other.getResultControl());
+    }
+    result = result && (getIntlOrDomesticRequest()
+        == other.getIntlOrDomesticRequest());
+    result = result && getRequestScene()
+        .equals(other.getRequestScene());
+    result = result && (hasAdvancedOption() == other.hasAdvancedOption());
+    if (hasAdvancedOption()) {
+      result = result && getAdvancedOption()
+          .equals(other.getAdvancedOption());
+    }
+    result = result && (hasSpecifiedOption() == other.hasSpecifiedOption());
+    if (hasSpecifiedOption()) {
+      result = result && getSpecifiedOption()
+          .equals(other.getSpecifiedOption());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -635,12 +963,29 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXTENSIONOPTION_FIELD_NUMBER;
       hash = (53 * hash) + getExtensionOptionList().hashCode();
     }
-    hash = (37 * hash) + NEEDRECOMMENDATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getNeedRecommendation());
     if (hasUserParameter()) {
       hash = (37 * hash) + USERPARAMETER_FIELD_NUMBER;
       hash = (53 * hash) + getUserParameter().hashCode();
+    }
+    if (getAbTestOptionCount() > 0) {
+      hash = (37 * hash) + ABTESTOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAbTestOptionList().hashCode();
+    }
+    if (hasResultControl()) {
+      hash = (37 * hash) + RESULTCONTROL_FIELD_NUMBER;
+      hash = (53 * hash) + getResultControl().hashCode();
+    }
+    hash = (37 * hash) + INTLORDOMESTICREQUEST_FIELD_NUMBER;
+    hash = (53 * hash) + getIntlOrDomesticRequest();
+    hash = (37 * hash) + REQUESTSCENE_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestScene().hashCode();
+    if (hasAdvancedOption()) {
+      hash = (37 * hash) + ADVANCEDOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedOption().hashCode();
+    }
+    if (hasSpecifiedOption()) {
+      hash = (37 * hash) + SPECIFIEDOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecifiedOption().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -773,6 +1118,7 @@ private static final long serialVersionUID = 0L;
         getJourneyRequestFieldBuilder();
         getPaxRequestFieldBuilder();
         getExtensionOptionFieldBuilder();
+        getAbTestOptionFieldBuilder();
       }
     }
     @java.lang.Override
@@ -802,13 +1148,39 @@ private static final long serialVersionUID = 0L;
       } else {
         extensionOptionBuilder_.clear();
       }
-      needRecommendation_ = false;
-
       if (userParameterBuilder_ == null) {
         userParameter_ = null;
       } else {
         userParameter_ = null;
         userParameterBuilder_ = null;
+      }
+      if (abTestOptionBuilder_ == null) {
+        abTestOption_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        abTestOptionBuilder_.clear();
+      }
+      if (resultControlBuilder_ == null) {
+        resultControl_ = null;
+      } else {
+        resultControl_ = null;
+        resultControlBuilder_ = null;
+      }
+      intlOrDomesticRequest_ = 0;
+
+      requestScene_ = "";
+
+      if (advancedOptionBuilder_ == null) {
+        advancedOption_ = null;
+      } else {
+        advancedOption_ = null;
+        advancedOptionBuilder_ = null;
+      }
+      if (specifiedOptionBuilder_ == null) {
+        specifiedOption_ = null;
+      } else {
+        specifiedOption_ = null;
+        specifiedOptionBuilder_ = null;
       }
       return this;
     }
@@ -872,11 +1244,36 @@ private static final long serialVersionUID = 0L;
       } else {
         result.extensionOption_ = extensionOptionBuilder_.build();
       }
-      result.needRecommendation_ = needRecommendation_;
       if (userParameterBuilder_ == null) {
         result.userParameter_ = userParameter_;
       } else {
         result.userParameter_ = userParameterBuilder_.build();
+      }
+      if (abTestOptionBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          abTestOption_ = java.util.Collections.unmodifiableList(abTestOption_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.abTestOption_ = abTestOption_;
+      } else {
+        result.abTestOption_ = abTestOptionBuilder_.build();
+      }
+      if (resultControlBuilder_ == null) {
+        result.resultControl_ = resultControl_;
+      } else {
+        result.resultControl_ = resultControlBuilder_.build();
+      }
+      result.intlOrDomesticRequest_ = intlOrDomesticRequest_;
+      result.requestScene_ = requestScene_;
+      if (advancedOptionBuilder_ == null) {
+        result.advancedOption_ = advancedOption_;
+      } else {
+        result.advancedOption_ = advancedOptionBuilder_.build();
+      }
+      if (specifiedOptionBuilder_ == null) {
+        result.specifiedOption_ = specifiedOption_;
+      } else {
+        result.specifiedOption_ = specifiedOptionBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1023,11 +1420,50 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getNeedRecommendation() != false) {
-        setNeedRecommendation(other.getNeedRecommendation());
-      }
       if (other.hasUserParameter()) {
         mergeUserParameter(other.getUserParameter());
+      }
+      if (abTestOptionBuilder_ == null) {
+        if (!other.abTestOption_.isEmpty()) {
+          if (abTestOption_.isEmpty()) {
+            abTestOption_ = other.abTestOption_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureAbTestOptionIsMutable();
+            abTestOption_.addAll(other.abTestOption_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.abTestOption_.isEmpty()) {
+          if (abTestOptionBuilder_.isEmpty()) {
+            abTestOptionBuilder_.dispose();
+            abTestOptionBuilder_ = null;
+            abTestOption_ = other.abTestOption_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            abTestOptionBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAbTestOptionFieldBuilder() : null;
+          } else {
+            abTestOptionBuilder_.addAllMessages(other.abTestOption_);
+          }
+        }
+      }
+      if (other.hasResultControl()) {
+        mergeResultControl(other.getResultControl());
+      }
+      if (other.getIntlOrDomesticRequest() != 0) {
+        setIntlOrDomesticRequest(other.getIntlOrDomesticRequest());
+      }
+      if (!other.getRequestScene().isEmpty()) {
+        requestScene_ = other.requestScene_;
+        onChanged();
+      }
+      if (other.hasAdvancedOption()) {
+        mergeAdvancedOption(other.getAdvancedOption());
+      }
+      if (other.hasSpecifiedOption()) {
+        mergeSpecifiedOption(other.getSpecifiedOption());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1073,7 +1509,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1087,7 +1523,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1101,7 +1537,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1115,7 +1551,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1136,7 +1572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1154,7 +1590,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1174,7 +1610,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1195,7 +1631,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1213,7 +1649,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1231,7 +1667,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1250,7 +1686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1267,7 +1703,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1284,7 +1720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1295,7 +1731,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1309,7 +1745,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1324,7 +1760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1335,7 +1771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1347,7 +1783,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 用户请求的行程信息 TODO 需要支持指定交通类型吗
+     * 用户请求的行程信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.JourneyRequestType JourneyRequest = 1;</code>
@@ -1692,7 +2128,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1703,7 +2139,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1713,7 +2149,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1723,7 +2159,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1734,7 +2170,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1751,7 +2187,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1768,7 +2204,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1783,7 +2219,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -1796,7 +2232,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱 TODO 其他交通工具没有这个信息
+     * 机票舱等， Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
      * </pre>
      *
      * <code>repeated string CabinCode = 3;</code>
@@ -2303,55 +2739,25 @@ private static final long serialVersionUID = 0L;
       return extensionOptionBuilder_;
     }
 
-    private boolean needRecommendation_ ;
-    /**
-     * <pre>
-     * 是否需要推荐位
-     * </pre>
-     *
-     * <code>bool NeedRecommendation = 7;</code>
-     */
-    public boolean getNeedRecommendation() {
-      return needRecommendation_;
-    }
-    /**
-     * <pre>
-     * 是否需要推荐位
-     * </pre>
-     *
-     * <code>bool NeedRecommendation = 7;</code>
-     */
-    public Builder setNeedRecommendation(boolean value) {
-      
-      needRecommendation_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 是否需要推荐位
-     * </pre>
-     *
-     * <code>bool NeedRecommendation = 7;</code>
-     */
-    public Builder clearNeedRecommendation() {
-      
-      needRecommendation_ = false;
-      onChanged();
-      return this;
-    }
-
     private com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType userParameter_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType, com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterTypeOrBuilder> userParameterBuilder_;
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public boolean hasUserParameter() {
       return userParameterBuilder_ != null || userParameter_ != null;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType getUserParameter() {
       if (userParameterBuilder_ == null) {
@@ -2361,7 +2767,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public Builder setUserParameter(com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType value) {
       if (userParameterBuilder_ == null) {
@@ -2377,7 +2787,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public Builder setUserParameter(
         com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder builderForValue) {
@@ -2391,7 +2805,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public Builder mergeUserParameter(com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType value) {
       if (userParameterBuilder_ == null) {
@@ -2409,7 +2827,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public Builder clearUserParameter() {
       if (userParameterBuilder_ == null) {
@@ -2423,7 +2845,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder getUserParameterBuilder() {
       
@@ -2431,7 +2857,11 @@ private static final long serialVersionUID = 0L;
       return getUserParameterFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterTypeOrBuilder getUserParameterOrBuilder() {
       if (userParameterBuilder_ != null) {
@@ -2442,7 +2872,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 8;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType UserParameter = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType, com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.UserParameterTypeOrBuilder> 
@@ -2456,6 +2890,924 @@ private static final long serialVersionUID = 0L;
         userParameter_ = null;
       }
       return userParameterBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> abTestOption_ =
+      java.util.Collections.emptyList();
+    private void ensureAbTestOptionIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        abTestOption_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(abTestOption_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> abTestOptionBuilder_;
+
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getAbTestOptionList() {
+      if (abTestOptionBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(abTestOption_);
+      } else {
+        return abTestOptionBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public int getAbTestOptionCount() {
+      if (abTestOptionBuilder_ == null) {
+        return abTestOption_.size();
+      } else {
+        return abTestOptionBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getAbTestOption(int index) {
+      if (abTestOptionBuilder_ == null) {
+        return abTestOption_.get(index);
+      } else {
+        return abTestOptionBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder setAbTestOption(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (abTestOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAbTestOptionIsMutable();
+        abTestOption_.set(index, value);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder setAbTestOption(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (abTestOptionBuilder_ == null) {
+        ensureAbTestOptionIsMutable();
+        abTestOption_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        abTestOptionBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder addAbTestOption(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (abTestOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAbTestOptionIsMutable();
+        abTestOption_.add(value);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder addAbTestOption(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (abTestOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAbTestOptionIsMutable();
+        abTestOption_.add(index, value);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder addAbTestOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (abTestOptionBuilder_ == null) {
+        ensureAbTestOptionIsMutable();
+        abTestOption_.add(builderForValue.build());
+        onChanged();
+      } else {
+        abTestOptionBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder addAbTestOption(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (abTestOptionBuilder_ == null) {
+        ensureAbTestOptionIsMutable();
+        abTestOption_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        abTestOptionBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder addAllAbTestOption(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
+      if (abTestOptionBuilder_ == null) {
+        ensureAbTestOptionIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, abTestOption_);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder clearAbTestOption() {
+      if (abTestOptionBuilder_ == null) {
+        abTestOption_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public Builder removeAbTestOption(int index) {
+      if (abTestOptionBuilder_ == null) {
+        ensureAbTestOptionIsMutable();
+        abTestOption_.remove(index);
+        onChanged();
+      } else {
+        abTestOptionBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getAbTestOptionBuilder(
+        int index) {
+      return getAbTestOptionFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getAbTestOptionOrBuilder(
+        int index) {
+      if (abTestOptionBuilder_ == null) {
+        return abTestOption_.get(index);  } else {
+        return abTestOptionBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+         getAbTestOptionOrBuilderList() {
+      if (abTestOptionBuilder_ != null) {
+        return abTestOptionBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(abTestOption_);
+      }
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addAbTestOptionBuilder() {
+      return getAbTestOptionFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addAbTestOptionBuilder(
+        int index) {
+      return getAbTestOptionFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *  ABTest的Code和Version
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType AbTestOption = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
+         getAbTestOptionBuilderList() {
+      return getAbTestOptionFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+        getAbTestOptionFieldBuilder() {
+      if (abTestOptionBuilder_ == null) {
+        abTestOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
+                abTestOption_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        abTestOption_ = null;
+      }
+      return abTestOptionBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType resultControl_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder> resultControlBuilder_;
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public boolean hasResultControl() {
+      return resultControlBuilder_ != null || resultControl_ != null;
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType getResultControl() {
+      if (resultControlBuilder_ == null) {
+        return resultControl_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.getDefaultInstance() : resultControl_;
+      } else {
+        return resultControlBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public Builder setResultControl(com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType value) {
+      if (resultControlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resultControl_ = value;
+        onChanged();
+      } else {
+        resultControlBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public Builder setResultControl(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder builderForValue) {
+      if (resultControlBuilder_ == null) {
+        resultControl_ = builderForValue.build();
+        onChanged();
+      } else {
+        resultControlBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public Builder mergeResultControl(com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType value) {
+      if (resultControlBuilder_ == null) {
+        if (resultControl_ != null) {
+          resultControl_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.newBuilder(resultControl_).mergeFrom(value).buildPartial();
+        } else {
+          resultControl_ = value;
+        }
+        onChanged();
+      } else {
+        resultControlBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public Builder clearResultControl() {
+      if (resultControlBuilder_ == null) {
+        resultControl_ = null;
+        onChanged();
+      } else {
+        resultControl_ = null;
+        resultControlBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder getResultControlBuilder() {
+      
+      onChanged();
+      return getResultControlFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder getResultControlOrBuilder() {
+      if (resultControlBuilder_ != null) {
+        return resultControlBuilder_.getMessageOrBuilder();
+      } else {
+        return resultControl_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.getDefaultInstance() : resultControl_;
+      }
+    }
+    /**
+     * <pre>
+     * 结果控制参数
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType ResultControl = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder> 
+        getResultControlFieldBuilder() {
+      if (resultControlBuilder_ == null) {
+        resultControlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.ResultControlTypeOrBuilder>(
+                getResultControl(),
+                getParentForChildren(),
+                isClean());
+        resultControl_ = null;
+      }
+      return resultControlBuilder_;
+    }
+
+    private int intlOrDomesticRequest_ ;
+    /**
+     * <pre>
+     * 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+     * </pre>
+     *
+     * <code>int32 IntlOrDomesticRequest = 10;</code>
+     */
+    public int getIntlOrDomesticRequest() {
+      return intlOrDomesticRequest_;
+    }
+    /**
+     * <pre>
+     * 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+     * </pre>
+     *
+     * <code>int32 IntlOrDomesticRequest = 10;</code>
+     */
+    public Builder setIntlOrDomesticRequest(int value) {
+      
+      intlOrDomesticRequest_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 请求类型，1: 国际请求; 2:国内请求。影响请求路由的选择！
+     * </pre>
+     *
+     * <code>int32 IntlOrDomesticRequest = 10;</code>
+     */
+    public Builder clearIntlOrDomesticRequest() {
+      
+      intlOrDomesticRequest_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestScene_ = "";
+    /**
+     * <pre>
+     **
+     * 请求场景。空:默认是主流程查询。
+     * MainProcess:主流程查询
+     * FlightXHotel:宫格机酒主流程查询
+     * FlightXHotelChangeFlight:宫格机酒更换航班查询
+     * </pre>
+     *
+     * <code>string RequestScene = 11;</code>
+     */
+    public java.lang.String getRequestScene() {
+      java.lang.Object ref = requestScene_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestScene_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * 请求场景。空:默认是主流程查询。
+     * MainProcess:主流程查询
+     * FlightXHotel:宫格机酒主流程查询
+     * FlightXHotelChangeFlight:宫格机酒更换航班查询
+     * </pre>
+     *
+     * <code>string RequestScene = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestSceneBytes() {
+      java.lang.Object ref = requestScene_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestScene_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * 请求场景。空:默认是主流程查询。
+     * MainProcess:主流程查询
+     * FlightXHotel:宫格机酒主流程查询
+     * FlightXHotelChangeFlight:宫格机酒更换航班查询
+     * </pre>
+     *
+     * <code>string RequestScene = 11;</code>
+     */
+    public Builder setRequestScene(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestScene_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * 请求场景。空:默认是主流程查询。
+     * MainProcess:主流程查询
+     * FlightXHotel:宫格机酒主流程查询
+     * FlightXHotelChangeFlight:宫格机酒更换航班查询
+     * </pre>
+     *
+     * <code>string RequestScene = 11;</code>
+     */
+    public Builder clearRequestScene() {
+      
+      requestScene_ = getDefaultInstance().getRequestScene();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * 请求场景。空:默认是主流程查询。
+     * MainProcess:主流程查询
+     * FlightXHotel:宫格机酒主流程查询
+     * FlightXHotelChangeFlight:宫格机酒更换航班查询
+     * </pre>
+     *
+     * <code>string RequestScene = 11;</code>
+     */
+    public Builder setRequestSceneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requestScene_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType advancedOption_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder> advancedOptionBuilder_;
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public boolean hasAdvancedOption() {
+      return advancedOptionBuilder_ != null || advancedOption_ != null;
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType getAdvancedOption() {
+      if (advancedOptionBuilder_ == null) {
+        return advancedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.getDefaultInstance() : advancedOption_;
+      } else {
+        return advancedOptionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public Builder setAdvancedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType value) {
+      if (advancedOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedOption_ = value;
+        onChanged();
+      } else {
+        advancedOptionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public Builder setAdvancedOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder builderForValue) {
+      if (advancedOptionBuilder_ == null) {
+        advancedOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        advancedOptionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public Builder mergeAdvancedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType value) {
+      if (advancedOptionBuilder_ == null) {
+        if (advancedOption_ != null) {
+          advancedOption_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.newBuilder(advancedOption_).mergeFrom(value).buildPartial();
+        } else {
+          advancedOption_ = value;
+        }
+        onChanged();
+      } else {
+        advancedOptionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public Builder clearAdvancedOption() {
+      if (advancedOptionBuilder_ == null) {
+        advancedOption_ = null;
+        onChanged();
+      } else {
+        advancedOption_ = null;
+        advancedOptionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder getAdvancedOptionBuilder() {
+      
+      onChanged();
+      return getAdvancedOptionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder getAdvancedOptionOrBuilder() {
+      if (advancedOptionBuilder_ != null) {
+        return advancedOptionBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedOption_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.getDefaultInstance() : advancedOption_;
+      }
+    }
+    /**
+     * <pre>
+     * 高级搜索
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType AdvancedOption = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder> 
+        getAdvancedOptionFieldBuilder() {
+      if (advancedOptionBuilder_ == null) {
+        advancedOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdvancedOptionTypeOrBuilder>(
+                getAdvancedOption(),
+                getParentForChildren(),
+                isClean());
+        advancedOption_ = null;
+      }
+      return advancedOptionBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType specifiedOption_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder> specifiedOptionBuilder_;
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public boolean hasSpecifiedOption() {
+      return specifiedOptionBuilder_ != null || specifiedOption_ != null;
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType getSpecifiedOption() {
+      if (specifiedOptionBuilder_ == null) {
+        return specifiedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.getDefaultInstance() : specifiedOption_;
+      } else {
+        return specifiedOptionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public Builder setSpecifiedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType value) {
+      if (specifiedOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        specifiedOption_ = value;
+        onChanged();
+      } else {
+        specifiedOptionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public Builder setSpecifiedOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder builderForValue) {
+      if (specifiedOptionBuilder_ == null) {
+        specifiedOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        specifiedOptionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public Builder mergeSpecifiedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType value) {
+      if (specifiedOptionBuilder_ == null) {
+        if (specifiedOption_ != null) {
+          specifiedOption_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.newBuilder(specifiedOption_).mergeFrom(value).buildPartial();
+        } else {
+          specifiedOption_ = value;
+        }
+        onChanged();
+      } else {
+        specifiedOptionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public Builder clearSpecifiedOption() {
+      if (specifiedOptionBuilder_ == null) {
+        specifiedOption_ = null;
+        onChanged();
+      } else {
+        specifiedOption_ = null;
+        specifiedOptionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder getSpecifiedOptionBuilder() {
+      
+      onChanged();
+      return getSpecifiedOptionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder getSpecifiedOptionOrBuilder() {
+      if (specifiedOptionBuilder_ != null) {
+        return specifiedOptionBuilder_.getMessageOrBuilder();
+      } else {
+        return specifiedOption_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.getDefaultInstance() : specifiedOption_;
+      }
+    }
+    /**
+     * <pre>
+     * 指定查询
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder> 
+        getSpecifiedOptionFieldBuilder() {
+      if (specifiedOptionBuilder_ == null) {
+        specifiedOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder>(
+                getSpecifiedOption(),
+                getParentForChildren(),
+                isClean());
+        specifiedOption_ = null;
+      }
+      return specifiedOptionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

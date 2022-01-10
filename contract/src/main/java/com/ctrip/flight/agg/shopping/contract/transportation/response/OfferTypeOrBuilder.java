@@ -115,7 +115,7 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -124,7 +124,7 @@ public interface OfferTypeOrBuilder extends
       getProductCombinationTypeList();
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -132,7 +132,7 @@ public interface OfferTypeOrBuilder extends
   int getProductCombinationTypeCount();
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -140,7 +140,7 @@ public interface OfferTypeOrBuilder extends
   java.lang.String getProductCombinationType(int index);
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -219,7 +219,7 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -228,7 +228,7 @@ public interface OfferTypeOrBuilder extends
       getBaggageAncillaryList();
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -236,7 +236,7 @@ public interface OfferTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType getBaggageAncillary(int index);
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -244,7 +244,7 @@ public interface OfferTypeOrBuilder extends
   int getBaggageAncillaryCount();
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -253,7 +253,7 @@ public interface OfferTypeOrBuilder extends
       getBaggageAncillaryOrBuilderList();
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -263,19 +263,10 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 优先级
-   * </pre>
-   *
-   * <code>int32 Priority = 8;</code>
-   */
-  int getPriority();
-
-  /**
-   * <pre>
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   java.util.List<java.lang.Integer> getPriceAttributeIDList();
   /**
@@ -283,7 +274,7 @@ public interface OfferTypeOrBuilder extends
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   int getPriceAttributeIDCount();
   /**
@@ -291,7 +282,7 @@ public interface OfferTypeOrBuilder extends
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   int getPriceAttributeID(int index);
 
@@ -300,7 +291,7 @@ public interface OfferTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
       getTagList();
@@ -309,7 +300,7 @@ public interface OfferTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
   /**
@@ -317,7 +308,7 @@ public interface OfferTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   int getTagCount();
   /**
@@ -325,7 +316,7 @@ public interface OfferTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
       getTagOrBuilderList();
@@ -334,7 +325,7 @@ public interface OfferTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);
@@ -344,7 +335,78 @@ public interface OfferTypeOrBuilder extends
    * 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
    * </pre>
    *
-   * <code>int32 RecommendedType = 11;</code>
+   * <code>int32 RecommendedType = 10;</code>
    */
   int getRecommendedType();
+
+  /**
+   * <pre>
+   * 机酒Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string TransportHotelToken = 11;</code>
+   */
+  java.lang.String getTransportHotelToken();
+  /**
+   * <pre>
+   * 机酒Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string TransportHotelToken = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getTransportHotelTokenBytes();
+
+  /**
+   * <pre>
+   * 优先级, 数值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 12;</code>
+   */
+  double getPriority();
+
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> 
+      getJourneyAttachmentList();
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType getJourneyAttachment(int index);
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  int getJourneyAttachmentCount();
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder> 
+      getJourneyAttachmentOrBuilderList();
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder getJourneyAttachmentOrBuilder(
+      int index);
 }

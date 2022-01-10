@@ -278,4 +278,38 @@ public interface RestrictionTypeOrBuilder extends
    * <code>int32 IdentityLimit = 11;</code>
    */
   int getIdentityLimit();
+
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  boolean hasPaxCountRange();
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange();
+  /**
+   * <pre>
+   * 人数限制 (婴儿不算人头)
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder();
+
+  /**
+   * <pre>
+   * 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+   * </pre>
+   *
+   * <code>int32 PaxNumLimitType = 13;</code>
+   */
+  int getPaxNumLimitType();
 }

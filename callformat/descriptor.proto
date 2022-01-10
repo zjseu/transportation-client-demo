@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package google.protobuf;
-
-message MethodOptions {
-  bool deprecated = 33;
-  bool async = 20000;
-}
-

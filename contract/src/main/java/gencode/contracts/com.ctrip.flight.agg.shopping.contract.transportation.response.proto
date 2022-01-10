@@ -29,6 +29,10 @@ message ResponseBodyType {
     // 国际Agg的SearchCriteriaToken，调国际Agg的DetailSearch接口时使用;
     // 国内Agg的ResponseToken，调国内Agg的GetProductDetails接口时使用;
     string CompatibleDetailToken = 6;
+    // 机酒缓存Token，调机酒服务时使用
+    string HotelLoadToken = 7;
+    // 对应了请求参数SearchCriteriaType, 调用本服务的DetailSearch接口时使用
+    string SearchCriteriaToken = 8;
 }
 
 message DataListsType {
@@ -52,6 +56,8 @@ message DataListsType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;
     // 文本引用信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.TextRemarkType TextRemark = 10;
+    // 让利信息
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;
 }
 
 message MetaDataType {
@@ -73,6 +79,8 @@ message ItineraryType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.InterchangeType Interchange = 5;
     // 扩展结点
     repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;
+    // 优先级, 数值越小优先级越高
+    double Priority = 7;
 }
 
 message OfferType {
@@ -82,22 +90,26 @@ message OfferType {
     repeated ProductDetailType ProductDetail = 2;
     // 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
     string OfferToken = 3;
-    // 产品组合类型
+    // 产品组合类型, 包括了单程直飞的部分信息
     repeated string ProductCombinationType = 4;
     // 绑定在Offer维度的辅营信息
     com.ctrip.flight.agg.shopping.contract.transportation.OfferPackageType OfferPackage = 5;
     // 行李信息
     repeated com.ctrip.flight.agg.shopping.contract.baggage.BaggageRefType BaggageRef = 6;
-    // 打包行李，可能会有多种规格
+    // 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
     repeated com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;
-    // 优先级
-    int32 Priority = 8;
     // 国际机票价格属性ID集合
-    repeated int32 PriceAttributeID = 9;
+    repeated int32 PriceAttributeID = 8;
     // 扩展结点
-    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;
     // 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
-    int32 RecommendedType = 11;
+    int32 RecommendedType = 10;
+    // 机酒Token，调机酒服务时使用
+    string TransportHotelToken = 11;
+    // 优先级, 数值越小优先级越高
+    double Priority = 12;
+    // 与行程有关的相关信息。List中元素的数量最多和行程数一样
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;
 }
 
 message TransportSegmentType {
@@ -127,7 +139,7 @@ message ProductDetailType {
     int32 TransportProductType = 1;
     // FlightProduct、TrainProduct、BusProduct等对应的索引号
     int32 ProductRef = 2;
-    // 退改签反查key(对应国内的RcKey)。 一期项目，调用方使用该字段分别调用国际和国内的退改签接口；二期时，会定义新的PenaltyKey字段
+    // 退改签反查key(对应国际的PenaltyKey, 国内的RcKey)
     string CompatiblePenaltyKey = 3;
 }
 
@@ -185,9 +197,10 @@ message FlightProductType {
     int32 EligibilityRemarkRef = 14;
     // 国际机票标签类信息
     repeated int32 RecommendPrdType = 15;
+    // 供应商信息
     FlightSupplierType FlightSupplier = 16;
-    // 机票Product相关的其他参考价格信息
-    FlightProductReferencePriceType FlightProductReferencePrice = 17;
+    // 按航司显示舱位、票面价
+    CarrierPriceShowType CarrierPriceShow = 17;
     // 抢票信息
     com.ctrip.flight.agg.shopping.contract.transportation.GrabTicketType GrabTicket = 18;
     // 会员注册,1：联系人注册,2：单个乘机人注册,3：多个乘机人注册
@@ -209,13 +222,6 @@ message FlightSupplierType {
     string IATANumber = 3;
     // 票台披露信息，比如代理资质：“中国国航授权代理”
     string AgentDisclosure = 4;
-}
-
-message FlightProductReferencePriceType {
-    // 按航司显示舱位、票面价
-    CarrierPriceShowType CarrierPriceShow = 1;
-    // 飞宿专享政策优惠金额（与外放最低价价差）
-    double FlightHotelDiscountAmount = 2;
 }
 
 message CarrierPriceShowType {

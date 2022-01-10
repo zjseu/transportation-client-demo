@@ -9,75 +9,62 @@ public interface UserParameterTypeOrBuilder extends
 
   /**
    * <pre>
-   * 携程会员等级 TODO 只对订票的人有效？
+   * 用户ID
    * </pre>
    *
-   * <code>string MemberLevel = 1;</code>
+   * <code>string UserID = 1;</code>
+   */
+  java.lang.String getUserID();
+  /**
+   * <pre>
+   * 用户ID
+   * </pre>
+   *
+   * <code>string UserID = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getUserIDBytes();
+
+  /**
+   * <pre>
+   * 携程会员等级
+   * </pre>
+   *
+   * <code>string MemberLevel = 2;</code>
    */
   java.lang.String getMemberLevel();
   /**
    * <pre>
-   * 携程会员等级 TODO 只对订票的人有效？
+   * 携程会员等级
    * </pre>
    *
-   * <code>string MemberLevel = 1;</code>
+   * <code>string MemberLevel = 2;</code>
    */
   com.google.protobuf.ByteString
       getMemberLevelBytes();
 
   /**
    * <pre>
-   * TODO 下面几个参数是否需要放到MessageHeaderType中
-   * VisitID，访客号
+   * 坐标信息
    * </pre>
    *
-   * <code>string VisitorID = 2;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  java.lang.String getVisitorID();
+  boolean hasCoordinate();
   /**
    * <pre>
-   * TODO 下面几个参数是否需要放到MessageHeaderType中
-   * VisitID，访客号
+   * 坐标信息
    * </pre>
    *
-   * <code>string VisitorID = 2;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getVisitorIDBytes();
-
+  com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType getCoordinate();
   /**
    * <pre>
-   * mobile的deviceID
+   * 坐标信息
    * </pre>
    *
-   * <code>string DeviceID = 3;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
-  java.lang.String getDeviceID();
-  /**
-   * <pre>
-   * mobile的deviceID
-   * </pre>
-   *
-   * <code>string DeviceID = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getDeviceIDBytes();
-
-  /**
-   * <pre>
-   * 设备系统(ios/android/其他)
-   * </pre>
-   *
-   * <code>string DevicePlatform = 4;</code>
-   */
-  java.lang.String getDevicePlatform();
-  /**
-   * <pre>
-   * 设备系统(ios/android/其他)
-   * </pre>
-   *
-   * <code>string DevicePlatform = 4;</code>
-   */
-  com.google.protobuf.ByteString
-      getDevicePlatformBytes();
+  com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder getCoordinateOrBuilder();
 }

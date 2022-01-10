@@ -20,25 +20,28 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
+ * HTTP access to ctrip flight list shopping's api
+ *
  * @author yd.yu
  * @date 2020/12/28
- * http访问携程国际机票列表查询接口
  **/
 public class TransportationHttpClient {
 
     private static CloseableHttpAsyncClient httpAsyncClient = HttpAsyncClients.createDefault();
 
-    // AppTokenManager&CerberusApp：携程合作商生产环境gateway验证用
+    /**
+     * AppTokenManager & CerberusApp：gateway validation for ctrip partner in the production environment
+     */
     private static AppTokenManager appTokenManager;
     private static CerberusApp app;
 
 
     public static void main(String[] args) {
         try {
-            // url说明详见Readme
+            // see Readme about url
             URL url = new URL("https://apiproxy.ctrip.com/apiproxy/soa2/20937/zstd-protobuf-3/search");
 
-            // 非生产环境不需要使用gateway验证
+            // No gateway validation is necessary in test environment!
             initForProd();
 
             String completeURI = app.updateRequestUri(url.getPath());
@@ -58,7 +61,7 @@ public class TransportationHttpClient {
 
                 @Override
                 public void failed(Exception e) {
-                    System.out.println("本次查询失败：");
+                    System.out.println("fail：");
                     e.printStackTrace();
                 }
 
@@ -73,7 +76,7 @@ public class TransportationHttpClient {
     }
 
     /**
-     * 携程合作商生产环境使用
+     * validate gateway for ctrip partner in the production environment
      */
     private static void initForProd() {
         try {
@@ -98,7 +101,7 @@ public class TransportationHttpClient {
     private static void processResult(HttpResponse httpResponse) {
         try {
             SearchResponseType result = null;
-            // 检验返回码
+            // status code
             int statusCode = httpResponse.getStatusLine().getStatusCode();
             if (statusCode != HttpStatus.SC_OK) {
                 System.out.println("fail");
@@ -110,9 +113,9 @@ public class TransportationHttpClient {
             }
             if (result == null || result.getResponseBody() == null
                     || result.getResponseBody().getItineraryList() == null) {
-                System.out.println("本次查询结果为空");
+                System.out.println("query result is empty");
             } else {
-                System.out.println(String.format("本次查询返回了%d个航组",
+                System.out.println(String.format("query result has %s flight group.",
                         result.getResponseBody().getItineraryList().size()));
             }
         } catch (Exception ex) {

@@ -182,10 +182,35 @@ public interface FlightPaxProductTypeOrBuilder extends
 
   /**
    * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  boolean hasRefundChange();
+  /**
+   * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange();
+  /**
+   * <pre>
+   * 退改签简体信息, 费用信息是销售币种
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder();
+
+  /**
+   * <pre>
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
       getTagList();
@@ -194,7 +219,7 @@ public interface FlightPaxProductTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
   /**
@@ -202,7 +227,7 @@ public interface FlightPaxProductTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   int getTagCount();
   /**
@@ -210,7 +235,7 @@ public interface FlightPaxProductTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
       getTagOrBuilderList();
@@ -219,7 +244,7 @@ public interface FlightPaxProductTypeOrBuilder extends
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);

@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
     iconName_ = "";
     quantity_ = 0;
     showType_ = 0;
-    giftType_ = 0;
+    type_ = 0;
     marketingCode_ = "";
     giftService_ = java.util.Collections.emptyList();
   }
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            giftType_ = input.readInt32();
+            type_ = input.readInt32();
             break;
           }
           case 58: {
@@ -222,17 +222,17 @@ private static final long serialVersionUID = 0L;
     return showType_;
   }
 
-  public static final int GIFTTYPE_FIELD_NUMBER = 6;
-  private int giftType_;
+  public static final int TYPE_FIELD_NUMBER = 6;
+  private int type_;
   /**
    * <pre>
    * 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
    * </pre>
    *
-   * <code>int32 GiftType = 6;</code>
+   * <code>int32 Type = 6;</code>
    */
-  public int getGiftType() {
-    return giftType_;
+  public int getType() {
+    return type_;
   }
 
   public static final int MARKETINGCODE_FIELD_NUMBER = 7;
@@ -361,8 +361,8 @@ private static final long serialVersionUID = 0L;
     if (showType_ != 0) {
       output.writeInt32(5, showType_);
     }
-    if (giftType_ != 0) {
-      output.writeInt32(6, giftType_);
+    if (type_ != 0) {
+      output.writeInt32(6, type_);
     }
     if (!getMarketingCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, marketingCode_);
@@ -398,9 +398,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, showType_);
     }
-    if (giftType_ != 0) {
+    if (type_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, giftType_);
+        .computeInt32Size(6, type_);
     }
     if (!getMarketingCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, marketingCode_);
@@ -435,8 +435,8 @@ private static final long serialVersionUID = 0L;
         == other.getQuantity());
     result = result && (getShowType()
         == other.getShowType());
-    result = result && (getGiftType()
-        == other.getGiftType());
+    result = result && (getType()
+        == other.getType());
     result = result && getMarketingCode()
         .equals(other.getMarketingCode());
     result = result && getGiftServiceList()
@@ -463,8 +463,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getQuantity();
     hash = (37 * hash) + SHOWTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getShowType();
-    hash = (37 * hash) + GIFTTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getGiftType();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType();
     hash = (37 * hash) + MARKETINGCODE_FIELD_NUMBER;
     hash = (53 * hash) + getMarketingCode().hashCode();
     if (getGiftServiceCount() > 0) {
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
 
       showType_ = 0;
 
-      giftType_ = 0;
+      type_ = 0;
 
       marketingCode_ = "";
 
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
       result.iconName_ = iconName_;
       result.quantity_ = quantity_;
       result.showType_ = showType_;
-      result.giftType_ = giftType_;
+      result.type_ = type_;
       result.marketingCode_ = marketingCode_;
       if (giftServiceBuilder_ == null) {
         if (((bitField0_ & 0x00000080) == 0x00000080)) {
@@ -734,8 +734,8 @@ private static final long serialVersionUID = 0L;
       if (other.getShowType() != 0) {
         setShowType(other.getShowType());
       }
-      if (other.getGiftType() != 0) {
-        setGiftType(other.getGiftType());
+      if (other.getType() != 0) {
+        setType(other.getType());
       }
       if (!other.getMarketingCode().isEmpty()) {
         marketingCode_ = other.marketingCode_;
@@ -1026,27 +1026,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int giftType_ ;
+    private int type_ ;
     /**
      * <pre>
      * 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
      * </pre>
      *
-     * <code>int32 GiftType = 6;</code>
+     * <code>int32 Type = 6;</code>
      */
-    public int getGiftType() {
-      return giftType_;
+    public int getType() {
+      return type_;
     }
     /**
      * <pre>
      * 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
      * </pre>
      *
-     * <code>int32 GiftType = 6;</code>
+     * <code>int32 Type = 6;</code>
      */
-    public Builder setGiftType(int value) {
+    public Builder setType(int value) {
       
-      giftType_ = value;
+      type_ = value;
       onChanged();
       return this;
     }
@@ -1055,11 +1055,11 @@ private static final long serialVersionUID = 0L;
      * 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
      * </pre>
      *
-     * <code>int32 GiftType = 6;</code>
+     * <code>int32 Type = 6;</code>
      */
-    public Builder clearGiftType() {
+    public Builder clearType() {
       
-      giftType_ = 0;
+      type_ = 0;
       onChanged();
       return this;
     }

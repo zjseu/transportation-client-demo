@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
   private int cityID_;
   /**
    * <pre>
-   * 城市ID，可在DataLists.CityList中获取详细信息
+   * 城市ID
    * </pre>
    *
    * <code>int32 CityID = 1;</code>
@@ -597,7 +597,7 @@ private static final long serialVersionUID = 0L;
     private int cityID_ ;
     /**
      * <pre>
-     * 城市ID，可在DataLists.CityList中获取详细信息
+     * 城市ID
      * </pre>
      *
      * <code>int32 CityID = 1;</code>
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 城市ID，可在DataLists.CityList中获取详细信息
+     * 城市ID
      * </pre>
      *
      * <code>int32 CityID = 1;</code>
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 城市ID，可在DataLists.CityList中获取详细信息
+     * 城市ID
      * </pre>
      *
      * <code>int32 CityID = 1;</code>

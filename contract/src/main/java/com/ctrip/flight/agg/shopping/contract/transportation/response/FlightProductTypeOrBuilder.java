@@ -329,42 +329,54 @@ public interface FlightProductTypeOrBuilder extends
   int getRecommendPrdType(int index);
 
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   boolean hasFlightSupplier();
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType getFlightSupplier();
   /**
+   * <pre>
+   * 供应商信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierType FlightSupplier = 16;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.FlightSupplierTypeOrBuilder getFlightSupplierOrBuilder();
 
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  boolean hasFlightProductReferencePrice();
+  boolean hasCarrierPriceShow();
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType getFlightProductReferencePrice();
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType getCarrierPriceShow();
   /**
    * <pre>
-   * 机票Product相关的其他参考价格信息
+   * 按航司显示舱位、票面价
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceType FlightProductReferencePrice = 17;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowType CarrierPriceShow = 17;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductReferencePriceTypeOrBuilder getFlightProductReferencePriceOrBuilder();
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CarrierPriceShowTypeOrBuilder getCarrierPriceShowOrBuilder();
 
   /**
    * <pre>

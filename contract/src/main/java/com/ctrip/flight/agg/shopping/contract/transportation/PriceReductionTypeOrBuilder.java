@@ -65,4 +65,13 @@ public interface PriceReductionTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCouponCodeBytes();
+
+  /**
+   * <pre>
+   * 展示人群
+   * </pre>
+   *
+   * <code>int32 SelectedGroups = 6;</code>
+   */
+  int getSelectedGroups();
 }

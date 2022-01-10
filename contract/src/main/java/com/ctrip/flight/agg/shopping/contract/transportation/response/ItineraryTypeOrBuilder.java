@@ -200,4 +200,13 @@ public interface ItineraryTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 优先级, 数值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 7;</code>
+   */
+  double getPriority();
 }

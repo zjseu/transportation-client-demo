@@ -15,6 +15,8 @@ message PaxBaggageType {
     int32 AgeTypeGroup = 1;
     // 行李额类型
     repeated BaggageWayType BaggageWay = 2;
+    // 行李描述，根据请求的Language决定输出的语言类型
+    string BaggageSpecifiedDesc = 3;
 }
 
 message BaggageWayType {
@@ -26,24 +28,30 @@ message BaggageWayType {
 
 message BaggageType {
     int32 RefNum = 1;
-    string BaggageDesc = 2; // 行李描述，根据请求的Language决定输出的语言类型
-    repeated BaggageDetailType BaggageDetail = 3;
-    BaggageExtensionFieldsType ExtensionFields = 4;
-    BaggageSizeType BaggageSize = 5;
+    repeated BaggageDetailType BaggageDetail = 2;
+    BaggageExtensionFieldsType ExtensionFields = 3;
+    BaggageSizeType BaggageSize = 4;
 }
 
 message BaggageDetailType {
+    // -1表示不限制
     int32 Amount = 1;
+    // PC、KG
     string Unit = 2;
+    // Piece、Weight
     string Type = 3;
 }
 
 message BaggageSizeType {
-    int32 SizeLimitType = 1; // 尺寸限制类型。1：三边之和；2：长*宽*高
-    string Size = 2; // 尺寸大小(不含单位)，格式：180 或者 10*12*14
-    string Unit = 3; // 尺寸单位，格式：CM
+    // 尺寸限制类型。1：三边之和；2：长*宽*高; 3: 三边之和 & 三边各长宽高（&符号分割）
+    int32 SizeLimitType = 1;
+    // 尺寸大小(不含单位)，格式：180 或者 10*12*14 或者 180&10*12*14
+    string Size = 2;
+    // 尺寸单位，格式：CM
+    string Unit = 3;
 }
 
 message BaggageExtensionFieldsType {
+    // 是否包含免费行李
     bool ContainFreeBaggage = 1;
 }

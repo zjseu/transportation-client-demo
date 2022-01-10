@@ -9,7 +9,7 @@ public interface IntRangeTypeOrBuilder extends
 
   /**
    * <pre>
-   * 下限，Integer.MIN_VALUE标识不限
+   * 下限，Integer.MIN_VALUE表示不限
    * </pre>
    *
    * <code>int32 Min = 1;</code>

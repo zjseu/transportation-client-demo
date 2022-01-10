@@ -22,10 +22,12 @@ private static final long serialVersionUID = 0L;
     productCombinationType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     baggageRef_ = java.util.Collections.emptyList();
     baggageAncillary_ = java.util.Collections.emptyList();
-    priority_ = 0;
     priceAttributeID_ = java.util.Collections.emptyList();
     tag_ = java.util.Collections.emptyList();
     recommendedType_ = 0;
+    transportHotelToken_ = "";
+    priority_ = 0D;
+    journeyAttachment_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -117,24 +119,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 64: {
-
-            priority_ = input.readInt32();
-            break;
-          }
-          case 72: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
               priceAttributeID_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000080;
             }
             priceAttributeID_.add(input.readInt32());
             break;
           }
-          case 74: {
+          case 66: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080) && input.getBytesUntilLimit() > 0) {
               priceAttributeID_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000080;
             }
             while (input.getBytesUntilLimit() > 0) {
               priceAttributeID_.add(input.readInt32());
@@ -142,18 +139,38 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case 82: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
               tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000100;
             }
             tag_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
-          case 88: {
+          case 80: {
 
             recommendedType_ = input.readInt32();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            transportHotelToken_ = s;
+            break;
+          }
+          case 97: {
+
+            priority_ = input.readDouble();
+            break;
+          }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              journeyAttachment_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            journeyAttachment_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -186,11 +203,14 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         baggageAncillary_ = java.util.Collections.unmodifiableList(baggageAncillary_);
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         priceAttributeID_ = java.util.Collections.unmodifiableList(priceAttributeID_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        journeyAttachment_ = java.util.Collections.unmodifiableList(journeyAttachment_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -366,7 +386,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList productCombinationType_;
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -377,7 +397,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -387,7 +407,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -397,7 +417,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 产品组合类型
+   * 产品组合类型, 包括了单程直飞的部分信息
    * </pre>
    *
    * <code>repeated string ProductCombinationType = 4;</code>
@@ -499,7 +519,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType> baggageAncillary_;
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -509,7 +529,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -520,7 +540,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -530,7 +550,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -540,7 +560,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 打包行李，可能会有多种规格
+   * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -550,27 +570,14 @@ private static final long serialVersionUID = 0L;
     return baggageAncillary_.get(index);
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 8;
-  private int priority_;
-  /**
-   * <pre>
-   * 优先级
-   * </pre>
-   *
-   * <code>int32 Priority = 8;</code>
-   */
-  public int getPriority() {
-    return priority_;
-  }
-
-  public static final int PRICEATTRIBUTEID_FIELD_NUMBER = 9;
+  public static final int PRICEATTRIBUTEID_FIELD_NUMBER = 8;
   private java.util.List<java.lang.Integer> priceAttributeID_;
   /**
    * <pre>
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   public java.util.List<java.lang.Integer>
       getPriceAttributeIDList() {
@@ -581,7 +588,7 @@ private static final long serialVersionUID = 0L;
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   public int getPriceAttributeIDCount() {
     return priceAttributeID_.size();
@@ -591,21 +598,21 @@ private static final long serialVersionUID = 0L;
    * 国际机票价格属性ID集合
    * </pre>
    *
-   * <code>repeated int32 PriceAttributeID = 9;</code>
+   * <code>repeated int32 PriceAttributeID = 8;</code>
    */
   public int getPriceAttributeID(int index) {
     return priceAttributeID_.get(index);
   }
   private int priceAttributeIDMemoizedSerializedSize = -1;
 
-  public static final int TAG_FIELD_NUMBER = 10;
+  public static final int TAG_FIELD_NUMBER = 9;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_;
   /**
    * <pre>
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
     return tag_;
@@ -615,7 +622,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
       getTagOrBuilderList() {
@@ -626,7 +633,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   public int getTagCount() {
     return tag_.size();
@@ -636,7 +643,7 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
     return tag_.get(index);
@@ -646,24 +653,134 @@ private static final long serialVersionUID = 0L;
    * 扩展结点
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index) {
     return tag_.get(index);
   }
 
-  public static final int RECOMMENDEDTYPE_FIELD_NUMBER = 11;
+  public static final int RECOMMENDEDTYPE_FIELD_NUMBER = 10;
   private int recommendedType_;
   /**
    * <pre>
    * 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
    * </pre>
    *
-   * <code>int32 RecommendedType = 11;</code>
+   * <code>int32 RecommendedType = 10;</code>
    */
   public int getRecommendedType() {
     return recommendedType_;
+  }
+
+  public static final int TRANSPORTHOTELTOKEN_FIELD_NUMBER = 11;
+  private volatile java.lang.Object transportHotelToken_;
+  /**
+   * <pre>
+   * 机酒Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string TransportHotelToken = 11;</code>
+   */
+  public java.lang.String getTransportHotelToken() {
+    java.lang.Object ref = transportHotelToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      transportHotelToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 机酒Token，调机酒服务时使用
+   * </pre>
+   *
+   * <code>string TransportHotelToken = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTransportHotelTokenBytes() {
+    java.lang.Object ref = transportHotelToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      transportHotelToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 12;
+  private double priority_;
+  /**
+   * <pre>
+   * 优先级, 数值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 12;</code>
+   */
+  public double getPriority() {
+    return priority_;
+  }
+
+  public static final int JOURNEYATTACHMENT_FIELD_NUMBER = 13;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> journeyAttachment_;
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> getJourneyAttachmentList() {
+    return journeyAttachment_;
+  }
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder> 
+      getJourneyAttachmentOrBuilderList() {
+    return journeyAttachment_;
+  }
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  public int getJourneyAttachmentCount() {
+    return journeyAttachment_.size();
+  }
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType getJourneyAttachment(int index) {
+    return journeyAttachment_.get(index);
+  }
+  /**
+   * <pre>
+   * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder getJourneyAttachmentOrBuilder(
+      int index) {
+    return journeyAttachment_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -702,21 +819,27 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < baggageAncillary_.size(); i++) {
       output.writeMessage(7, baggageAncillary_.get(i));
     }
-    if (priority_ != 0) {
-      output.writeInt32(8, priority_);
-    }
     if (getPriceAttributeIDList().size() > 0) {
-      output.writeUInt32NoTag(74);
+      output.writeUInt32NoTag(66);
       output.writeUInt32NoTag(priceAttributeIDMemoizedSerializedSize);
     }
     for (int i = 0; i < priceAttributeID_.size(); i++) {
       output.writeInt32NoTag(priceAttributeID_.get(i));
     }
     for (int i = 0; i < tag_.size(); i++) {
-      output.writeMessage(10, tag_.get(i));
+      output.writeMessage(9, tag_.get(i));
     }
     if (recommendedType_ != 0) {
-      output.writeInt32(11, recommendedType_);
+      output.writeInt32(10, recommendedType_);
+    }
+    if (!getTransportHotelTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, transportHotelToken_);
+    }
+    if (priority_ != 0D) {
+      output.writeDouble(12, priority_);
+    }
+    for (int i = 0; i < journeyAttachment_.size(); i++) {
+      output.writeMessage(13, journeyAttachment_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -758,10 +881,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, baggageAncillary_.get(i));
     }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, priority_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < priceAttributeID_.size(); i++) {
@@ -778,11 +897,22 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tag_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, tag_.get(i));
+        .computeMessageSize(9, tag_.get(i));
     }
     if (recommendedType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, recommendedType_);
+        .computeInt32Size(10, recommendedType_);
+    }
+    if (!getTransportHotelTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, transportHotelToken_);
+    }
+    if (priority_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(12, priority_);
+    }
+    for (int i = 0; i < journeyAttachment_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, journeyAttachment_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -817,14 +947,20 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBaggageRefList());
     result = result && getBaggageAncillaryList()
         .equals(other.getBaggageAncillaryList());
-    result = result && (getPriority()
-        == other.getPriority());
     result = result && getPriceAttributeIDList()
         .equals(other.getPriceAttributeIDList());
     result = result && getTagList()
         .equals(other.getTagList());
     result = result && (getRecommendedType()
         == other.getRecommendedType());
+    result = result && getTransportHotelToken()
+        .equals(other.getTransportHotelToken());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getPriority())
+        == java.lang.Double.doubleToLongBits(
+            other.getPriority()));
+    result = result && getJourneyAttachmentList()
+        .equals(other.getJourneyAttachmentList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -862,8 +998,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BAGGAGEANCILLARY_FIELD_NUMBER;
       hash = (53 * hash) + getBaggageAncillaryList().hashCode();
     }
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
     if (getPriceAttributeIDCount() > 0) {
       hash = (37 * hash) + PRICEATTRIBUTEID_FIELD_NUMBER;
       hash = (53 * hash) + getPriceAttributeIDList().hashCode();
@@ -874,6 +1008,15 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + RECOMMENDEDTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getRecommendedType();
+    hash = (37 * hash) + TRANSPORTHOTELTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getTransportHotelToken().hashCode();
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getPriority()));
+    if (getJourneyAttachmentCount() > 0) {
+      hash = (37 * hash) + JOURNEYATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getJourneyAttachmentList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1007,6 +1150,7 @@ private static final long serialVersionUID = 0L;
         getBaggageRefFieldBuilder();
         getBaggageAncillaryFieldBuilder();
         getTagFieldBuilder();
+        getJourneyAttachmentFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1046,18 +1190,26 @@ private static final long serialVersionUID = 0L;
       } else {
         baggageAncillaryBuilder_.clear();
       }
-      priority_ = 0;
-
       priceAttributeID_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         tagBuilder_.clear();
       }
       recommendedType_ = 0;
 
+      transportHotelToken_ = "";
+
+      priority_ = 0D;
+
+      if (journeyAttachmentBuilder_ == null) {
+        journeyAttachment_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        journeyAttachmentBuilder_.clear();
+      }
       return this;
     }
 
@@ -1133,22 +1285,32 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baggageAncillary_ = baggageAncillaryBuilder_.build();
       }
-      result.priority_ = priority_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         priceAttributeID_ = java.util.Collections.unmodifiableList(priceAttributeID_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.priceAttributeID_ = priceAttributeID_;
       if (tagBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
           tag_ = java.util.Collections.unmodifiableList(tag_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.tag_ = tag_;
       } else {
         result.tag_ = tagBuilder_.build();
       }
       result.recommendedType_ = recommendedType_;
+      result.transportHotelToken_ = transportHotelToken_;
+      result.priority_ = priority_;
+      if (journeyAttachmentBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          journeyAttachment_ = java.util.Collections.unmodifiableList(journeyAttachment_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.journeyAttachment_ = journeyAttachment_;
+      } else {
+        result.journeyAttachment_ = journeyAttachmentBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1319,13 +1481,10 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getPriority() != 0) {
-        setPriority(other.getPriority());
-      }
       if (!other.priceAttributeID_.isEmpty()) {
         if (priceAttributeID_.isEmpty()) {
           priceAttributeID_ = other.priceAttributeID_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensurePriceAttributeIDIsMutable();
           priceAttributeID_.addAll(other.priceAttributeID_);
@@ -1336,7 +1495,7 @@ private static final long serialVersionUID = 0L;
         if (!other.tag_.isEmpty()) {
           if (tag_.isEmpty()) {
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureTagIsMutable();
             tag_.addAll(other.tag_);
@@ -1349,7 +1508,7 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.dispose();
             tagBuilder_ = null;
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000100);
             tagBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTagFieldBuilder() : null;
@@ -1360,6 +1519,39 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRecommendedType() != 0) {
         setRecommendedType(other.getRecommendedType());
+      }
+      if (!other.getTransportHotelToken().isEmpty()) {
+        transportHotelToken_ = other.transportHotelToken_;
+        onChanged();
+      }
+      if (other.getPriority() != 0D) {
+        setPriority(other.getPriority());
+      }
+      if (journeyAttachmentBuilder_ == null) {
+        if (!other.journeyAttachment_.isEmpty()) {
+          if (journeyAttachment_.isEmpty()) {
+            journeyAttachment_ = other.journeyAttachment_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureJourneyAttachmentIsMutable();
+            journeyAttachment_.addAll(other.journeyAttachment_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.journeyAttachment_.isEmpty()) {
+          if (journeyAttachmentBuilder_.isEmpty()) {
+            journeyAttachmentBuilder_.dispose();
+            journeyAttachmentBuilder_ = null;
+            journeyAttachment_ = other.journeyAttachment_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            journeyAttachmentBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getJourneyAttachmentFieldBuilder() : null;
+          } else {
+            journeyAttachmentBuilder_.addAllMessages(other.journeyAttachment_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2113,7 +2305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2124,7 +2316,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2134,7 +2326,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2144,7 +2336,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2155,7 +2347,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2172,7 +2364,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2189,7 +2381,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2204,7 +2396,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2217,7 +2409,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 产品组合类型
+     * 产品组合类型, 包括了单程直飞的部分信息
      * </pre>
      *
      * <code>repeated string ProductCombinationType = 4;</code>
@@ -2713,7 +2905,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2727,7 +2919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2741,7 +2933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2755,7 +2947,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2776,7 +2968,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2794,7 +2986,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2814,7 +3006,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2835,7 +3027,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2853,7 +3045,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2871,7 +3063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2890,7 +3082,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2907,7 +3099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2924,7 +3116,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2935,7 +3127,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2949,7 +3141,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2964,7 +3156,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2975,7 +3167,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -2987,7 +3179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 打包行李，可能会有多种规格
+     * 增值行李：区分打包和加购方式，且每种方式可能有不同的规格
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.BaggageAncillaryType BaggageAncillary = 7;</code>
@@ -3011,49 +3203,11 @@ private static final long serialVersionUID = 0L;
       return baggageAncillaryBuilder_;
     }
 
-    private int priority_ ;
-    /**
-     * <pre>
-     * 优先级
-     * </pre>
-     *
-     * <code>int32 Priority = 8;</code>
-     */
-    public int getPriority() {
-      return priority_;
-    }
-    /**
-     * <pre>
-     * 优先级
-     * </pre>
-     *
-     * <code>int32 Priority = 8;</code>
-     */
-    public Builder setPriority(int value) {
-      
-      priority_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 优先级
-     * </pre>
-     *
-     * <code>int32 Priority = 8;</code>
-     */
-    public Builder clearPriority() {
-      
-      priority_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<java.lang.Integer> priceAttributeID_ = java.util.Collections.emptyList();
     private void ensurePriceAttributeIDIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
         priceAttributeID_ = new java.util.ArrayList<java.lang.Integer>(priceAttributeID_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
        }
     }
     /**
@@ -3061,7 +3215,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public java.util.List<java.lang.Integer>
         getPriceAttributeIDList() {
@@ -3072,7 +3226,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public int getPriceAttributeIDCount() {
       return priceAttributeID_.size();
@@ -3082,7 +3236,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public int getPriceAttributeID(int index) {
       return priceAttributeID_.get(index);
@@ -3092,7 +3246,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public Builder setPriceAttributeID(
         int index, int value) {
@@ -3106,7 +3260,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public Builder addPriceAttributeID(int value) {
       ensurePriceAttributeIDIsMutable();
@@ -3119,7 +3273,7 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public Builder addAllPriceAttributeID(
         java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3134,11 +3288,11 @@ private static final long serialVersionUID = 0L;
      * 国际机票价格属性ID集合
      * </pre>
      *
-     * <code>repeated int32 PriceAttributeID = 9;</code>
+     * <code>repeated int32 PriceAttributeID = 8;</code>
      */
     public Builder clearPriceAttributeID() {
       priceAttributeID_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3146,9 +3300,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_ =
       java.util.Collections.emptyList();
     private void ensureTagIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
         tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(tag_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
        }
     }
 
@@ -3160,7 +3314,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
       if (tagBuilder_ == null) {
@@ -3174,7 +3328,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public int getTagCount() {
       if (tagBuilder_ == null) {
@@ -3188,7 +3342,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
       if (tagBuilder_ == null) {
@@ -3202,7 +3356,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder setTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
@@ -3223,7 +3377,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder setTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -3241,7 +3395,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder addTag(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
       if (tagBuilder_ == null) {
@@ -3261,7 +3415,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder addTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
@@ -3282,7 +3436,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder addTag(
         com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -3300,7 +3454,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder addTag(
         int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
@@ -3318,7 +3472,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder addAllTag(
         java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
@@ -3337,12 +3491,12 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder clearTag() {
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         tagBuilder_.clear();
@@ -3354,7 +3508,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public Builder removeTag(int index) {
       if (tagBuilder_ == null) {
@@ -3371,7 +3525,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getTagBuilder(
         int index) {
@@ -3382,7 +3536,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
         int index) {
@@ -3396,7 +3550,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
          getTagOrBuilderList() {
@@ -3411,7 +3565,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder() {
       return getTagFieldBuilder().addBuilder(
@@ -3422,7 +3576,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder(
         int index) {
@@ -3434,7 +3588,7 @@ private static final long serialVersionUID = 0L;
      * 扩展结点
      * </pre>
      *
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 10;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 9;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
          getTagBuilderList() {
@@ -3447,7 +3601,7 @@ private static final long serialVersionUID = 0L;
         tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
                 tag_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000100) == 0x00000100),
                 getParentForChildren(),
                 isClean());
         tag_ = null;
@@ -3461,7 +3615,7 @@ private static final long serialVersionUID = 0L;
      * 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
      * </pre>
      *
-     * <code>int32 RecommendedType = 11;</code>
+     * <code>int32 RecommendedType = 10;</code>
      */
     public int getRecommendedType() {
       return recommendedType_;
@@ -3471,7 +3625,7 @@ private static final long serialVersionUID = 0L;
      * 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
      * </pre>
      *
-     * <code>int32 RecommendedType = 11;</code>
+     * <code>int32 RecommendedType = 10;</code>
      */
     public Builder setRecommendedType(int value) {
       
@@ -3484,13 +3638,452 @@ private static final long serialVersionUID = 0L;
      * 推荐类运价类型, 默认0：普通运价； 1: 推荐类运价； 2:普通运价+推荐类(既是普通又是推荐类，与前端展示有关)
      * </pre>
      *
-     * <code>int32 RecommendedType = 11;</code>
+     * <code>int32 RecommendedType = 10;</code>
      */
     public Builder clearRecommendedType() {
       
       recommendedType_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object transportHotelToken_ = "";
+    /**
+     * <pre>
+     * 机酒Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string TransportHotelToken = 11;</code>
+     */
+    public java.lang.String getTransportHotelToken() {
+      java.lang.Object ref = transportHotelToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        transportHotelToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 机酒Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string TransportHotelToken = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTransportHotelTokenBytes() {
+      java.lang.Object ref = transportHotelToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        transportHotelToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 机酒Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string TransportHotelToken = 11;</code>
+     */
+    public Builder setTransportHotelToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      transportHotelToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string TransportHotelToken = 11;</code>
+     */
+    public Builder clearTransportHotelToken() {
+      
+      transportHotelToken_ = getDefaultInstance().getTransportHotelToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒Token，调机酒服务时使用
+     * </pre>
+     *
+     * <code>string TransportHotelToken = 11;</code>
+     */
+    public Builder setTransportHotelTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      transportHotelToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private double priority_ ;
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public double getPriority() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public Builder setPriority(double value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 优先级, 数值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> journeyAttachment_ =
+      java.util.Collections.emptyList();
+    private void ensureJourneyAttachmentIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        journeyAttachment_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType>(journeyAttachment_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder> journeyAttachmentBuilder_;
+
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> getJourneyAttachmentList() {
+      if (journeyAttachmentBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(journeyAttachment_);
+      } else {
+        return journeyAttachmentBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public int getJourneyAttachmentCount() {
+      if (journeyAttachmentBuilder_ == null) {
+        return journeyAttachment_.size();
+      } else {
+        return journeyAttachmentBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType getJourneyAttachment(int index) {
+      if (journeyAttachmentBuilder_ == null) {
+        return journeyAttachment_.get(index);
+      } else {
+        return journeyAttachmentBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder setJourneyAttachment(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType value) {
+      if (journeyAttachmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.set(index, value);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder setJourneyAttachment(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder builderForValue) {
+      if (journeyAttachmentBuilder_ == null) {
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder addJourneyAttachment(com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType value) {
+      if (journeyAttachmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.add(value);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder addJourneyAttachment(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType value) {
+      if (journeyAttachmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.add(index, value);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder addJourneyAttachment(
+        com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder builderForValue) {
+      if (journeyAttachmentBuilder_ == null) {
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.add(builderForValue.build());
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder addJourneyAttachment(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder builderForValue) {
+      if (journeyAttachmentBuilder_ == null) {
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder addAllJourneyAttachment(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType> values) {
+      if (journeyAttachmentBuilder_ == null) {
+        ensureJourneyAttachmentIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, journeyAttachment_);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder clearJourneyAttachment() {
+      if (journeyAttachmentBuilder_ == null) {
+        journeyAttachment_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public Builder removeJourneyAttachment(int index) {
+      if (journeyAttachmentBuilder_ == null) {
+        ensureJourneyAttachmentIsMutable();
+        journeyAttachment_.remove(index);
+        onChanged();
+      } else {
+        journeyAttachmentBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder getJourneyAttachmentBuilder(
+        int index) {
+      return getJourneyAttachmentFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder getJourneyAttachmentOrBuilder(
+        int index) {
+      if (journeyAttachmentBuilder_ == null) {
+        return journeyAttachment_.get(index);  } else {
+        return journeyAttachmentBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder> 
+         getJourneyAttachmentOrBuilderList() {
+      if (journeyAttachmentBuilder_ != null) {
+        return journeyAttachmentBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(journeyAttachment_);
+      }
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder addJourneyAttachmentBuilder() {
+      return getJourneyAttachmentFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder addJourneyAttachmentBuilder(
+        int index) {
+      return getJourneyAttachmentFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 与行程有关的相关信息。List中元素的数量最多和行程数一样
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType JourneyAttachment = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder> 
+         getJourneyAttachmentBuilderList() {
+      return getJourneyAttachmentFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder> 
+        getJourneyAttachmentFieldBuilder() {
+      if (journeyAttachmentBuilder_ == null) {
+        journeyAttachmentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder>(
+                journeyAttachment_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        journeyAttachment_ = null;
+      }
+      return journeyAttachmentBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

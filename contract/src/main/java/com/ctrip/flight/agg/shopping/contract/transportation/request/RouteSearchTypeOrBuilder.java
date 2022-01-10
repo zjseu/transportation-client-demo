@@ -9,7 +9,11 @@ public interface RouteSearchTypeOrBuilder extends
 
   /**
    * <pre>
-   * 查询模式，1：普通反查；2：严格反查。默认是列表查询。
+   **
+   * 查询模式，默认0或者RouteSearchType为空表示列表查询。
+   * 1: 普通反查 (匹配前MaxJourneyNo程的航班);
+   * 2: 严格反查 (严格匹配所有行程的价格);
+   * 3: 严格反查前N程 (严格匹配前MaxJourneyNo程的价格)
    * </pre>
    *
    * <code>int32 SearchMode = 1;</code>
@@ -18,28 +22,46 @@ public interface RouteSearchTypeOrBuilder extends
 
   /**
    * <pre>
-   * 反查Token
+   * 反查时待匹配的最大行程号(SearchMode = 2时忽略该字段)
    * </pre>
    *
-   * <code>string OfferToken = 2;</code>
+   * <code>int32 MaxJourneyNo = 2;</code>
+   */
+  int getMaxJourneyNo();
+
+  /**
+   * <pre>
+   * 该接口返回的OfferToken，反查时用
+   * </pre>
+   *
+   * <code>string OfferToken = 3;</code>
    */
   java.lang.String getOfferToken();
   /**
    * <pre>
-   * 反查Token
+   * 该接口返回的OfferToken，反查时用
    * </pre>
    *
-   * <code>string OfferToken = 2;</code>
+   * <code>string OfferToken = 3;</code>
    */
   com.google.protobuf.ByteString
       getOfferTokenBytes();
 
   /**
    * <pre>
-   * 普通反查时待匹配的最大行程号
+   * 国际agg查询接口返回的价格token，为了兼容
    * </pre>
    *
-   * <code>int32 MaxJourneyNo = 3;</code>
+   * <code>string IntlAggRouteSearchToken = 4;</code>
    */
-  int getMaxJourneyNo();
+  java.lang.String getIntlAggRouteSearchToken();
+  /**
+   * <pre>
+   * 国际agg查询接口返回的价格token，为了兼容
+   * </pre>
+   *
+   * <code>string IntlAggRouteSearchToken = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getIntlAggRouteSearchTokenBytes();
 }

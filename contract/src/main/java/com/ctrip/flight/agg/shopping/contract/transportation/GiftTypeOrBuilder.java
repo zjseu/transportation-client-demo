@@ -62,9 +62,9 @@ public interface GiftTypeOrBuilder extends
    * 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
    * </pre>
    *
-   * <code>int32 GiftType = 6;</code>
+   * <code>int32 Type = 6;</code>
    */
-  int getGiftType();
+  int getType();
 
   /**
    * <pre>

@@ -4,10 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- * @author tiantianhuang
- * @date 2019/3/6 16:29
- */
 public interface ContentFormatter {
     String getContentType();
 

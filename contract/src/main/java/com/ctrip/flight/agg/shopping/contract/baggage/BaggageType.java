@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private BaggageType() {
     refNum_ = 0;
-    baggageDesc_ = "";
     baggageDetail_ = java.util.Collections.emptyList();
   }
 
@@ -51,21 +50,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            baggageDesc_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
               baggageDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000002;
             }
             baggageDetail_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.parser(), extensionRegistry));
             break;
           }
-          case 34: {
+          case 26: {
             com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder subBuilder = null;
             if (extensionFields_ != null) {
               subBuilder = extensionFields_.toBuilder();
@@ -78,7 +71,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 42: {
+          case 34: {
             com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder subBuilder = null;
             if (baggageSize_ != null) {
               subBuilder = baggageSize_.toBuilder();
@@ -106,7 +99,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         baggageDetail_ = java.util.Collections.unmodifiableList(baggageDetail_);
       }
       this.unknownFields = unknownFields.build();
@@ -136,120 +129,78 @@ private static final long serialVersionUID = 0L;
     return refNum_;
   }
 
-  public static final int BAGGAGEDESC_FIELD_NUMBER = 2;
-  private volatile java.lang.Object baggageDesc_;
-  /**
-   * <pre>
-   * 行李描述，根据请求的Language决定输出的语言类型
-   * </pre>
-   *
-   * <code>string BaggageDesc = 2;</code>
-   */
-  public java.lang.String getBaggageDesc() {
-    java.lang.Object ref = baggageDesc_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      baggageDesc_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 行李描述，根据请求的Language决定输出的语言类型
-   * </pre>
-   *
-   * <code>string BaggageDesc = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getBaggageDescBytes() {
-    java.lang.Object ref = baggageDesc_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      baggageDesc_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int BAGGAGEDETAIL_FIELD_NUMBER = 3;
+  public static final int BAGGAGEDETAIL_FIELD_NUMBER = 2;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> baggageDetail_;
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> getBaggageDetailList() {
     return baggageDetail_;
   }
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
       getBaggageDetailOrBuilderList() {
     return baggageDetail_;
   }
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public int getBaggageDetailCount() {
     return baggageDetail_.size();
   }
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index) {
     return baggageDetail_.get(index);
   }
   /**
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
       int index) {
     return baggageDetail_.get(index);
   }
 
-  public static final int EXTENSIONFIELDS_FIELD_NUMBER = 4;
+  public static final int EXTENSIONFIELDS_FIELD_NUMBER = 3;
   private com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType extensionFields_;
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public boolean hasExtensionFields() {
     return extensionFields_ != null;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields() {
     return extensionFields_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.getDefaultInstance() : extensionFields_;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder() {
     return getExtensionFields();
   }
 
-  public static final int BAGGAGESIZE_FIELD_NUMBER = 5;
+  public static final int BAGGAGESIZE_FIELD_NUMBER = 4;
   private com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType baggageSize_;
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public boolean hasBaggageSize() {
     return baggageSize_ != null;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize() {
     return baggageSize_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.getDefaultInstance() : baggageSize_;
   }
   /**
-   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder() {
     return getBaggageSize();
@@ -272,17 +223,14 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       output.writeInt32(1, refNum_);
     }
-    if (!getBaggageDescBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baggageDesc_);
-    }
     for (int i = 0; i < baggageDetail_.size(); i++) {
-      output.writeMessage(3, baggageDetail_.get(i));
+      output.writeMessage(2, baggageDetail_.get(i));
     }
     if (extensionFields_ != null) {
-      output.writeMessage(4, getExtensionFields());
+      output.writeMessage(3, getExtensionFields());
     }
     if (baggageSize_ != null) {
-      output.writeMessage(5, getBaggageSize());
+      output.writeMessage(4, getBaggageSize());
     }
     unknownFields.writeTo(output);
   }
@@ -297,20 +245,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, refNum_);
     }
-    if (!getBaggageDescBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baggageDesc_);
-    }
     for (int i = 0; i < baggageDetail_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, baggageDetail_.get(i));
+        .computeMessageSize(2, baggageDetail_.get(i));
     }
     if (extensionFields_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getExtensionFields());
+        .computeMessageSize(3, getExtensionFields());
     }
     if (baggageSize_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getBaggageSize());
+        .computeMessageSize(4, getBaggageSize());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,8 +275,6 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getRefNum()
         == other.getRefNum());
-    result = result && getBaggageDesc()
-        .equals(other.getBaggageDesc());
     result = result && getBaggageDetailList()
         .equals(other.getBaggageDetailList());
     result = result && (hasExtensionFields() == other.hasExtensionFields());
@@ -357,8 +300,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REFNUM_FIELD_NUMBER;
     hash = (53 * hash) + getRefNum();
-    hash = (37 * hash) + BAGGAGEDESC_FIELD_NUMBER;
-    hash = (53 * hash) + getBaggageDesc().hashCode();
     if (getBaggageDetailCount() > 0) {
       hash = (37 * hash) + BAGGAGEDETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getBaggageDetailList().hashCode();
@@ -507,11 +448,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       refNum_ = 0;
 
-      baggageDesc_ = "";
-
       if (baggageDetailBuilder_ == null) {
         baggageDetail_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         baggageDetailBuilder_.clear();
       }
@@ -556,11 +495,10 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.refNum_ = refNum_;
-      result.baggageDesc_ = baggageDesc_;
       if (baggageDetailBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           baggageDetail_ = java.util.Collections.unmodifiableList(baggageDetail_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.baggageDetail_ = baggageDetail_;
       } else {
@@ -628,15 +566,11 @@ private static final long serialVersionUID = 0L;
       if (other.getRefNum() != 0) {
         setRefNum(other.getRefNum());
       }
-      if (!other.getBaggageDesc().isEmpty()) {
-        baggageDesc_ = other.baggageDesc_;
-        onChanged();
-      }
       if (baggageDetailBuilder_ == null) {
         if (!other.baggageDetail_.isEmpty()) {
           if (baggageDetail_.isEmpty()) {
             baggageDetail_ = other.baggageDetail_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBaggageDetailIsMutable();
             baggageDetail_.addAll(other.baggageDetail_);
@@ -649,7 +583,7 @@ private static final long serialVersionUID = 0L;
             baggageDetailBuilder_.dispose();
             baggageDetailBuilder_ = null;
             baggageDetail_ = other.baggageDetail_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             baggageDetailBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getBaggageDetailFieldBuilder() : null;
@@ -720,101 +654,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object baggageDesc_ = "";
-    /**
-     * <pre>
-     * 行李描述，根据请求的Language决定输出的语言类型
-     * </pre>
-     *
-     * <code>string BaggageDesc = 2;</code>
-     */
-    public java.lang.String getBaggageDesc() {
-      java.lang.Object ref = baggageDesc_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baggageDesc_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 行李描述，根据请求的Language决定输出的语言类型
-     * </pre>
-     *
-     * <code>string BaggageDesc = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getBaggageDescBytes() {
-      java.lang.Object ref = baggageDesc_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        baggageDesc_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 行李描述，根据请求的Language决定输出的语言类型
-     * </pre>
-     *
-     * <code>string BaggageDesc = 2;</code>
-     */
-    public Builder setBaggageDesc(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      baggageDesc_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 行李描述，根据请求的Language决定输出的语言类型
-     * </pre>
-     *
-     * <code>string BaggageDesc = 2;</code>
-     */
-    public Builder clearBaggageDesc() {
-      
-      baggageDesc_ = getDefaultInstance().getBaggageDesc();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 行李描述，根据请求的Language决定输出的语言类型
-     * </pre>
-     *
-     * <code>string BaggageDesc = 2;</code>
-     */
-    public Builder setBaggageDescBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      baggageDesc_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> baggageDetail_ =
       java.util.Collections.emptyList();
     private void ensureBaggageDetailIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         baggageDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType>(baggageDetail_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -822,7 +667,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> baggageDetailBuilder_;
 
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> getBaggageDetailList() {
       if (baggageDetailBuilder_ == null) {
@@ -832,7 +677,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public int getBaggageDetailCount() {
       if (baggageDetailBuilder_ == null) {
@@ -842,7 +687,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index) {
       if (baggageDetailBuilder_ == null) {
@@ -852,7 +697,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder setBaggageDetail(
         int index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType value) {
@@ -869,7 +714,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder setBaggageDetail(
         int index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder builderForValue) {
@@ -883,7 +728,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType value) {
       if (baggageDetailBuilder_ == null) {
@@ -899,7 +744,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
         int index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType value) {
@@ -916,7 +761,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder builderForValue) {
@@ -930,7 +775,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
         int index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder builderForValue) {
@@ -944,7 +789,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addAllBaggageDetail(
         java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> values) {
@@ -959,12 +804,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder clearBaggageDetail() {
       if (baggageDetailBuilder_ == null) {
         baggageDetail_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         baggageDetailBuilder_.clear();
@@ -972,7 +817,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder removeBaggageDetail(int index) {
       if (baggageDetailBuilder_ == null) {
@@ -985,14 +830,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder getBaggageDetailBuilder(
         int index) {
       return getBaggageDetailFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
         int index) {
@@ -1002,7 +847,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
          getBaggageDetailOrBuilderList() {
@@ -1013,14 +858,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder addBaggageDetailBuilder() {
       return getBaggageDetailFieldBuilder().addBuilder(
           com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder addBaggageDetailBuilder(
         int index) {
@@ -1028,7 +873,7 @@ private static final long serialVersionUID = 0L;
           index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 3;</code>
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder> 
          getBaggageDetailBuilderList() {
@@ -1041,7 +886,7 @@ private static final long serialVersionUID = 0L;
         baggageDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder>(
                 baggageDetail_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
                 isClean());
         baggageDetail_ = null;
@@ -1053,13 +898,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder> extensionFieldsBuilder_;
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public boolean hasExtensionFields() {
       return extensionFieldsBuilder_ != null || extensionFields_ != null;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields() {
       if (extensionFieldsBuilder_ == null) {
@@ -1069,7 +914,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder setExtensionFields(com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType value) {
       if (extensionFieldsBuilder_ == null) {
@@ -1085,7 +930,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder setExtensionFields(
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder builderForValue) {
@@ -1099,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder mergeExtensionFields(com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType value) {
       if (extensionFieldsBuilder_ == null) {
@@ -1117,7 +962,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder clearExtensionFields() {
       if (extensionFieldsBuilder_ == null) {
@@ -1131,7 +976,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder getExtensionFieldsBuilder() {
       
@@ -1139,7 +984,7 @@ private static final long serialVersionUID = 0L;
       return getExtensionFieldsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder() {
       if (extensionFieldsBuilder_ != null) {
@@ -1150,7 +995,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 4;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder> 
@@ -1170,13 +1015,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder> baggageSizeBuilder_;
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public boolean hasBaggageSize() {
       return baggageSizeBuilder_ != null || baggageSize_ != null;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize() {
       if (baggageSizeBuilder_ == null) {
@@ -1186,7 +1031,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder setBaggageSize(com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType value) {
       if (baggageSizeBuilder_ == null) {
@@ -1202,7 +1047,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder setBaggageSize(
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder builderForValue) {
@@ -1216,7 +1061,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder mergeBaggageSize(com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType value) {
       if (baggageSizeBuilder_ == null) {
@@ -1234,7 +1079,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder clearBaggageSize() {
       if (baggageSizeBuilder_ == null) {
@@ -1248,7 +1093,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder getBaggageSizeBuilder() {
       
@@ -1256,7 +1101,7 @@ private static final long serialVersionUID = 0L;
       return getBaggageSizeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder() {
       if (baggageSizeBuilder_ != null) {
@@ -1267,7 +1112,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 5;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder> 

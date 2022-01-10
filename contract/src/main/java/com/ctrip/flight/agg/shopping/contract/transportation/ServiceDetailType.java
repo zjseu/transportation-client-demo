@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -185,7 +185,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -1095,7 +1095,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1154,7 +1154,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1168,7 +1168,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
      * </pre>
      *
      * <code>string ProductType = 1;</code>

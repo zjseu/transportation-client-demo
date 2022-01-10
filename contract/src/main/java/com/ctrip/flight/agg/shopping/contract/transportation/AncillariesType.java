@@ -17,8 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private AncillariesType() {
     refNum_ = 0;
-    hasBaggageService_ = false;
-    unFreeBaggage_ = false;
     checkInServiceStatus_ = 0;
   }
 
@@ -49,16 +47,6 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             refNum_ = input.readInt32();
-            break;
-          }
-          case 16: {
-
-            hasBaggageService_ = input.readBool();
-            break;
-          }
-          case 24: {
-
-            unFreeBaggage_ = input.readBool();
             break;
           }
           case 32: {
@@ -107,32 +95,6 @@ private static final long serialVersionUID = 0L;
     return refNum_;
   }
 
-  public static final int HASBAGGAGESERVICE_FIELD_NUMBER = 2;
-  private boolean hasBaggageService_;
-  /**
-   * <pre>
-   * 是否有行李额增值服务，true 包含/false不包含
-   * </pre>
-   *
-   * <code>bool HasBaggageService = 2;</code>
-   */
-  public boolean getHasBaggageService() {
-    return hasBaggageService_;
-  }
-
-  public static final int UNFREEBAGGAGE_FIELD_NUMBER = 3;
-  private boolean unFreeBaggage_;
-  /**
-   * <pre>
-   * 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-   * </pre>
-   *
-   * <code>bool UnFreeBaggage = 3;</code>
-   */
-  public boolean getUnFreeBaggage() {
-    return unFreeBaggage_;
-  }
-
   public static final int CHECKINSERVICESTATUS_FIELD_NUMBER = 4;
   private int checkInServiceStatus_;
   /**
@@ -163,12 +125,6 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       output.writeInt32(1, refNum_);
     }
-    if (hasBaggageService_ != false) {
-      output.writeBool(2, hasBaggageService_);
-    }
-    if (unFreeBaggage_ != false) {
-      output.writeBool(3, unFreeBaggage_);
-    }
     if (checkInServiceStatus_ != 0) {
       output.writeInt32(4, checkInServiceStatus_);
     }
@@ -184,14 +140,6 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, refNum_);
-    }
-    if (hasBaggageService_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, hasBaggageService_);
-    }
-    if (unFreeBaggage_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, unFreeBaggage_);
     }
     if (checkInServiceStatus_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -215,10 +163,6 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getRefNum()
         == other.getRefNum());
-    result = result && (getHasBaggageService()
-        == other.getHasBaggageService());
-    result = result && (getUnFreeBaggage()
-        == other.getUnFreeBaggage());
     result = result && (getCheckInServiceStatus()
         == other.getCheckInServiceStatus());
     result = result && unknownFields.equals(other.unknownFields);
@@ -234,12 +178,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REFNUM_FIELD_NUMBER;
     hash = (53 * hash) + getRefNum();
-    hash = (37 * hash) + HASBAGGAGESERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getHasBaggageService());
-    hash = (37 * hash) + UNFREEBAGGAGE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getUnFreeBaggage());
     hash = (37 * hash) + CHECKINSERVICESTATUS_FIELD_NUMBER;
     hash = (53 * hash) + getCheckInServiceStatus();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -377,10 +315,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       refNum_ = 0;
 
-      hasBaggageService_ = false;
-
-      unFreeBaggage_ = false;
-
       checkInServiceStatus_ = 0;
 
       return this;
@@ -410,8 +344,6 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.AncillariesType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.AncillariesType result = new com.ctrip.flight.agg.shopping.contract.transportation.AncillariesType(this);
       result.refNum_ = refNum_;
-      result.hasBaggageService_ = hasBaggageService_;
-      result.unFreeBaggage_ = unFreeBaggage_;
       result.checkInServiceStatus_ = checkInServiceStatus_;
       onBuilt();
       return result;
@@ -463,12 +395,6 @@ private static final long serialVersionUID = 0L;
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.AncillariesType.getDefaultInstance()) return this;
       if (other.getRefNum() != 0) {
         setRefNum(other.getRefNum());
-      }
-      if (other.getHasBaggageService() != false) {
-        setHasBaggageService(other.getHasBaggageService());
-      }
-      if (other.getUnFreeBaggage() != false) {
-        setUnFreeBaggage(other.getUnFreeBaggage());
       }
       if (other.getCheckInServiceStatus() != 0) {
         setCheckInServiceStatus(other.getCheckInServiceStatus());
@@ -524,82 +450,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearRefNum() {
       
       refNum_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private boolean hasBaggageService_ ;
-    /**
-     * <pre>
-     * 是否有行李额增值服务，true 包含/false不包含
-     * </pre>
-     *
-     * <code>bool HasBaggageService = 2;</code>
-     */
-    public boolean getHasBaggageService() {
-      return hasBaggageService_;
-    }
-    /**
-     * <pre>
-     * 是否有行李额增值服务，true 包含/false不包含
-     * </pre>
-     *
-     * <code>bool HasBaggageService = 2;</code>
-     */
-    public Builder setHasBaggageService(boolean value) {
-      
-      hasBaggageService_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 是否有行李额增值服务，true 包含/false不包含
-     * </pre>
-     *
-     * <code>bool HasBaggageService = 2;</code>
-     */
-    public Builder clearHasBaggageService() {
-      
-      hasBaggageService_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean unFreeBaggage_ ;
-    /**
-     * <pre>
-     * 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-     * </pre>
-     *
-     * <code>bool UnFreeBaggage = 3;</code>
-     */
-    public boolean getUnFreeBaggage() {
-      return unFreeBaggage_;
-    }
-    /**
-     * <pre>
-     * 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-     * </pre>
-     *
-     * <code>bool UnFreeBaggage = 3;</code>
-     */
-    public Builder setUnFreeBaggage(boolean value) {
-      
-      unFreeBaggage_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-     * </pre>
-     *
-     * <code>bool UnFreeBaggage = 3;</code>
-     */
-    public Builder clearUnFreeBaggage() {
-      
-      unFreeBaggage_ = false;
       onChanged();
       return this;
     }

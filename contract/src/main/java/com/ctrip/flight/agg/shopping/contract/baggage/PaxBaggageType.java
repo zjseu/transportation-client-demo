@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private PaxBaggageType() {
     ageTypeGroup_ = 0;
     baggageWay_ = java.util.Collections.emptyList();
+    baggageSpecifiedDesc_ = "";
   }
 
   @java.lang.Override
@@ -56,6 +57,12 @@ private static final long serialVersionUID = 0L;
             }
             baggageWay_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.baggage.BaggageWayType.parser(), extensionRegistry));
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            baggageSpecifiedDesc_ = s;
             break;
           }
           default: {
@@ -162,6 +169,48 @@ private static final long serialVersionUID = 0L;
     return baggageWay_.get(index);
   }
 
+  public static final int BAGGAGESPECIFIEDDESC_FIELD_NUMBER = 3;
+  private volatile java.lang.Object baggageSpecifiedDesc_;
+  /**
+   * <pre>
+   * 行李描述，根据请求的Language决定输出的语言类型
+   * </pre>
+   *
+   * <code>string BaggageSpecifiedDesc = 3;</code>
+   */
+  public java.lang.String getBaggageSpecifiedDesc() {
+    java.lang.Object ref = baggageSpecifiedDesc_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baggageSpecifiedDesc_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 行李描述，根据请求的Language决定输出的语言类型
+   * </pre>
+   *
+   * <code>string BaggageSpecifiedDesc = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBaggageSpecifiedDescBytes() {
+    java.lang.Object ref = baggageSpecifiedDesc_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      baggageSpecifiedDesc_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -182,6 +231,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < baggageWay_.size(); i++) {
       output.writeMessage(2, baggageWay_.get(i));
     }
+    if (!getBaggageSpecifiedDescBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, baggageSpecifiedDesc_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -198,6 +250,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < baggageWay_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, baggageWay_.get(i));
+    }
+    if (!getBaggageSpecifiedDescBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, baggageSpecifiedDesc_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,6 +274,8 @@ private static final long serialVersionUID = 0L;
         == other.getAgeTypeGroup());
     result = result && getBaggageWayList()
         .equals(other.getBaggageWayList());
+    result = result && getBaggageSpecifiedDesc()
+        .equals(other.getBaggageSpecifiedDesc());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -236,6 +293,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BAGGAGEWAY_FIELD_NUMBER;
       hash = (53 * hash) + getBaggageWayList().hashCode();
     }
+    hash = (37 * hash) + BAGGAGESPECIFIEDDESC_FIELD_NUMBER;
+    hash = (53 * hash) + getBaggageSpecifiedDesc().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +437,8 @@ private static final long serialVersionUID = 0L;
       } else {
         baggageWayBuilder_.clear();
       }
+      baggageSpecifiedDesc_ = "";
+
       return this;
     }
 
@@ -416,6 +477,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baggageWay_ = baggageWayBuilder_.build();
       }
+      result.baggageSpecifiedDesc_ = baggageSpecifiedDesc_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -493,6 +555,10 @@ private static final long serialVersionUID = 0L;
             baggageWayBuilder_.addAllMessages(other.baggageWay_);
           }
         }
+      }
+      if (!other.getBaggageSpecifiedDesc().isEmpty()) {
+        baggageSpecifiedDesc_ = other.baggageSpecifiedDesc_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -872,6 +938,95 @@ private static final long serialVersionUID = 0L;
         baggageWay_ = null;
       }
       return baggageWayBuilder_;
+    }
+
+    private java.lang.Object baggageSpecifiedDesc_ = "";
+    /**
+     * <pre>
+     * 行李描述，根据请求的Language决定输出的语言类型
+     * </pre>
+     *
+     * <code>string BaggageSpecifiedDesc = 3;</code>
+     */
+    public java.lang.String getBaggageSpecifiedDesc() {
+      java.lang.Object ref = baggageSpecifiedDesc_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baggageSpecifiedDesc_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 行李描述，根据请求的Language决定输出的语言类型
+     * </pre>
+     *
+     * <code>string BaggageSpecifiedDesc = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBaggageSpecifiedDescBytes() {
+      java.lang.Object ref = baggageSpecifiedDesc_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baggageSpecifiedDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 行李描述，根据请求的Language决定输出的语言类型
+     * </pre>
+     *
+     * <code>string BaggageSpecifiedDesc = 3;</code>
+     */
+    public Builder setBaggageSpecifiedDesc(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      baggageSpecifiedDesc_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 行李描述，根据请求的Language决定输出的语言类型
+     * </pre>
+     *
+     * <code>string BaggageSpecifiedDesc = 3;</code>
+     */
+    public Builder clearBaggageSpecifiedDesc() {
+      
+      baggageSpecifiedDesc_ = getDefaultInstance().getBaggageSpecifiedDesc();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 行李描述，根据请求的Language决定输出的语言类型
+     * </pre>
+     *
+     * <code>string BaggageSpecifiedDesc = 3;</code>
+     */
+    public Builder setBaggageSpecifiedDescBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      baggageSpecifiedDesc_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

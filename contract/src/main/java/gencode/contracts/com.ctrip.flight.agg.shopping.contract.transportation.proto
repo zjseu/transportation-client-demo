@@ -47,23 +47,21 @@ message KeyValuePairType {
 }
 
 message IntRangeType {
-    // 下限，Integer.MIN_VALUE标识不限
+    // 下限，Integer.MIN_VALUE表示不限
     int32 Min = 1;
     // 上限，Integer.MAX_VALUE表示不限
     int32 Max = 2;
 }
 
 message PaxRestrictionType {
-    // 人数限制
-    IntRangeType PaxCountRange = 1;
     // 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
-    int32 AgeLimitType = 2;
+    int32 AgeLimitType = 1;
     // 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
-    repeated IntRangeType AgeLimitRange = 3;
+    repeated IntRangeType AgeLimitRange = 2;
     // 国籍白名单
-    repeated string NationalityAllow = 4;
+    repeated string NationalityAllow = 3;
     // 国籍黑名单
-    repeated string NationalityBlock = 5;
+    repeated string NationalityBlock = 4;
 }
 
 message StopType {
@@ -92,8 +90,10 @@ message FlightPaxProductType {
     PaxRestrictionType PaxRestriction = 7;
     // 备注信息的索引
     int32 TextRemarkRef = 8;
+    // 退改签简体信息, 费用信息是销售币种
+    RefundChangeType RefundChange = 9;
     // 扩展结点
-    repeated KeyValuePairType Tag = 9;
+    repeated KeyValuePairType Tag = 10;
 }
 
 // 销售币种的价格信息
@@ -108,10 +108,12 @@ message FlightSaleCurrencyPriceDetailType {
     repeated DiscountType Discount = 4;
     // 折扣(销售价/舱等全价)
     double Rate = 5;
-    // 航司优惠前价格，前端结合Discount和PcCode做展示用
+    // 国内航司优惠前价格，前端结合Discount和PcCode做展示用
     double PrePcCodePrice = 6;
     // 服务费明细列表, 销售币种
     repeated ServiceFeeType ServiceFee= 7;
+    // 机酒专享政策优惠金额（与外放最低价价差）
+    double FlightHotelDiscountAmount = 8;
 }
 
 // 结算币种的价格信息
@@ -230,7 +232,7 @@ message FlightReferencePriceType {
     // 标准价舱位的政策信息列表
     repeated StandardPriceType StandardPrice = 1;
     // 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
-    double UpgradeCFReferencePrice = 2; // TODO 可能下掉
+    double UpgradeCFReferencePrice = 2;
 }
 
 message StandardPriceType {
@@ -271,11 +273,13 @@ message DiscountType {
     int32 ShowType = 3;
     // 让利个性化标签
     DiscountLabelType DiscountLabel = 4;
+    // 国际查询列表反查阶段，将RebateType记录成让利。
+    string RebateType = 5;
 }
 
 message DiscountLabelType {
     // 个性化标签
-    string label = 1;
+    string Label = 1;
 }
 
 message RestrictionType {
@@ -301,6 +305,10 @@ message RestrictionType {
     int32 GroupTicket = 10;
     // 身份限制信息，0:无限制; 1:Student; 2:军警残
     int32 IdentityLimit = 11;
+    // 人数限制 (婴儿不算人头)
+    IntRangeType PaxCountRange = 12;
+    // 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
+    int32 PaxNumLimitType = 13;
 }
 
 message PaymentLimitType {
@@ -308,6 +316,39 @@ message PaymentLimitType {
     repeated string PrepayType = 1;
     // 信用卡支付限制的信息索引
     repeated int32 CreditCardPaymentLimitRef = 2;
+    // 支付卡让利信息
+    repeated PaymentDiscountRefType PaymentDiscountRefType = 3;
+}
+
+message PaymentDiscountRefType {
+    // 折扣索引列表
+    repeated int32 PaymentDiscountRef = 1;
+    // 支付卡类型
+    string PaymentWay = 2;
+}
+
+message PaymentDiscountType {
+    // 索引号
+    int32 RefNum = 1;
+    // 让利总费用=所有乘客让利之和
+    double DiscountTotalFee = 2;
+    // 币种
+    string Currency = 3;
+    // 让利支付方式
+    int32 DiscountSettle = 4;
+    // 发卡行(空表示不限)
+    string BankCode = 5;
+    // 让利卡等级(空表示不限)
+    string CardLevel = 6;
+    // 让利明细
+    repeated DiscountDetailType DiscountDetail = 7;
+}
+
+message DiscountDetailType {
+    // 让利类型
+    string DiscountType = 1;
+    // 让利费用
+    double DiscountFee = 2;
 }
 
 // 限制客人使用自身信用卡支付的信息
@@ -350,7 +391,7 @@ message TransportType {
 }
 
 message PointType {
-    // 城市ID，可在DataLists.CityList中获取详细信息
+    // 城市ID
     int32 CityID = 1;
     // 机场三字码
     string AirportCode = 2;
@@ -379,6 +420,8 @@ message FlightType {
     ThroughFlightType ThroughFlight = 8;
     // 准点信息
     FlightPunctualityType Punctuality = 9;
+    // 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
+    int32 VirtualFlightType = 10;
 }
 
 message ThroughFlightType {
@@ -390,7 +433,7 @@ message ThroughFlightType {
 
 message TrainType {
     // 火车类型，1: Train(普通列车); 2: China Railway High-speed(动车); 3: China High-speed Railway(高铁); 4:InterCityTrain(城际铁路)
-    int32 TrainType = 1;
+    int32 Type = 1;
     // 备注信息
     string Remark = 2;
 }
@@ -422,10 +465,10 @@ message OfferPackageType {
 // 绑定信息类型
 message BundleItemType {
     /*
-   *产品类型: BundleItemEntity->BundleType的目前支持的取值有：
+    产品类型, 目前支持的取值有：
     GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
     BrandAttribute
-      */
+    */
     string BundleType = 1;
     // 绑定信息的索引
     int32 ProductRef = 2;
@@ -503,7 +546,7 @@ message ServicePolicyType {
 
 message ServiceDetailType {
     //国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-    //国际支持的取值：Pickup,VIPLounge,FlightTrain,FlightCar,FlightBus,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary
+    //国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
     string ProductType = 1;
     //子产品类型
     string SubProductType = 2;
@@ -535,7 +578,7 @@ message ServiceDetailType {
 message CouponType {
     int32 RefNum = 1;
     // 优惠券类型
-    string CouponType = 2;
+    string Type = 2;
     // 优惠券券码
     string CouponCode = 3;
     // 折扣金额，指购买此打包产品时总价的优惠，最终的销售价为 (机票价格+Coupon.SalePrice-Coupon.DiscountAmount)
@@ -555,7 +598,7 @@ message GiftType {
     // 展示形式(0 普通礼盒 礼盒展示在价格；1：航班礼盒,2：航线礼盒)
     int32 ShowType = 5;
     // 礼盒类型，0:未指定，此时ServiceList中包含多个服务类型，1：积分，2：保险，3：抵用券，4：其他，5：经深飞，6：休息室，8：优惠券，10：三亚航班，11：酒店住宿，12：行李直挂，13：机场餐食，来自DB
-    int32 GiftType = 6;
+    int32 Type = 6;
     // 营销Code
     string MarketingCode = 7;
     // 中转服务，此时GIftType=0。中转环节会用，用于基础类服务标识——行李直挂、一票到底、航班变无忧、行李代转运，一个礼盒中可以勾选多个类型
@@ -573,10 +616,9 @@ message GiftServiceType {
     bool Checked = 4;
 }
 
-// 原国内契约三种返现的合并：AdditionInfoList/FloatUpList/GiftList/RebateInfo
 message CashBackType {
     int32 RefNum = 1;
-    // 类型:  1任我游 2现金  4任我行
+    // 类型, 1: 普通返现, 2: 溢价返现（高返政策返现), 3: 任我游礼品卡, 4: 任我行礼品卡, 5:里程。国际机票的返现金类型是2。
     int32 Type = 2;
     // 金额
     double Amount = 3;
@@ -590,10 +632,6 @@ message CacheType {
 
 message AncillariesType {
     int32 RefNum = 1;
-    // 是否有行李额增值服务，true 包含/false不包含
-    bool HasBaggageService = 2;
-    // 有无免费行李额（True为无免费行李额；默认False，包含免费行李额，或部分无免费行李额）
-    bool UnFreeBaggage = 3;
     // 值机服务属性(0:不支持在线购买,1:支持在线购买,2：必须在线购买)
     int32 CheckInServiceStatus = 4;
 }
@@ -628,6 +666,7 @@ message PriceReductionType {
     string ForUser = 3; // 使用人群范围
     double DiscountAmount = 4; // 立减金额
     string CouponCode = 5; // 券规则code
+    int32 SelectedGroups = 6; // 展示人群
 }
 
 message MemberPrivilegeType {
@@ -682,6 +721,8 @@ message BaggageAncillaryType {
     repeated BundleItemType BundleItem = 1;
     // 行李信息
     repeated com.ctrip.flight.agg.shopping.contract.baggage.BaggageRefType BaggageRef = 2;
+    // 1: 打包; 2: 加购
+    int32 OrderWay = 3;
 }
 
 // An amount is a number of monetary
@@ -709,17 +750,25 @@ message ObFeeType {
     AmountType MaxAmount = 3;
 }
 
-//message RefundChangeType {
-//    // 是否可退票,1:不允许,2:允许,3:有条件
-//    int32 RefundType = 1;
-//    // 是否可更改,1:不允许,2:允许,3:有条件
-//    int32 ChangeType = 2;
-//    // 是否可签转,1:不允许,2:允许,3:有条件
-//    int32 EndorseType = 3;
-//    // 最小退票费，定义成引用类型，是为了区分0和空
-//    DoubleType MinRefundFee = 4;
-//    // 最小改期费，定义成引用类型，是为了区分0和空
-//    DoubleType MinChangeFee = 5;
-//}
+message RefundChangeType {
+    // 是否可退票,1:不允许,2:允许,3:有条件
+    int32 RefundType = 1;
+    // 是否可更改,1:不允许,2:允许,3:有条件
+    int32 ChangeType = 2;
+    // 是否可签转,1:不允许,2:允许,3:有条件
+    int32 EndorseType = 3;
+    // 最小退票费，定义成引用类型，是为了区分0和空
+    DoubleType MinRefundFee = 4;
+    // 最小改期费，定义成引用类型，是为了区分0和空
+    DoubleType MinChangeFee = 5;
+}
+
+// 与行程有关的相关信息
+message JourneyAttachmentType {
+    // 行程号，从1开始
+    int32 JourneyNo = 1;
+    // 国内的产品组合类型，RT/MT时有值
+    repeated string ProductCombinationType = 2;
+}
 
 

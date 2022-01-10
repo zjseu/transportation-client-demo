@@ -66,4 +66,48 @@ public interface PaymentLimitTypeOrBuilder extends
    * <code>repeated int32 CreditCardPaymentLimitRef = 2;</code>
    */
   int getCreditCardPaymentLimitRef(int index);
+
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType> 
+      getPaymentDiscountRefTypeList();
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType getPaymentDiscountRefType(int index);
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  int getPaymentDiscountRefTypeCount();
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder> 
+      getPaymentDiscountRefTypeOrBuilderList();
+  /**
+   * <pre>
+   * 支付卡让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType PaymentDiscountRefType = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder getPaymentDiscountRefTypeOrBuilder(
+      int index);
 }

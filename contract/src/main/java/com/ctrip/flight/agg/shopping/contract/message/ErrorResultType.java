@@ -4,6 +4,10 @@
 package com.ctrip.flight.agg.shopping.contract.message;
 
 /**
+ * <pre>
+ * 错误信息，请求成功时实体为空, 否则表示错误，其中ErrorCode标识错误原因，提示信息放入DetailErrorList
+ * </pre>
+ *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.ErrorResultType}
  */
 public  final class ErrorResultType extends
@@ -18,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ErrorResultType() {
     errorCode_ = 0;
     errorDesc_ = "";
+    detailError_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -55,6 +60,15 @@ private static final long serialVersionUID = 0L;
             errorDesc_ = s;
             break;
           }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              detailError_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            detailError_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -70,6 +84,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        detailError_ = java.util.Collections.unmodifiableList(detailError_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -87,6 +104,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.message.ErrorResultType.class, com.ctrip.flight.agg.shopping.contract.message.ErrorResultType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ERRORCODE_FIELD_NUMBER = 1;
   private int errorCode_;
   /**
@@ -130,6 +148,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DETAILERROR_FIELD_NUMBER = 3;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> detailError_;
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> getDetailErrorList() {
+    return detailError_;
+  }
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder> 
+      getDetailErrorOrBuilderList() {
+    return detailError_;
+  }
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  public int getDetailErrorCount() {
+    return detailError_.size();
+  }
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.message.DetailErrorType getDetailError(int index) {
+    return detailError_.get(index);
+  }
+  /**
+   * <pre>
+   * 错误详情，请求失败时可能包含多个DetailError
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder getDetailErrorOrBuilder(
+      int index) {
+    return detailError_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -150,6 +223,9 @@ private static final long serialVersionUID = 0L;
     if (!getErrorDescBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorDesc_);
     }
+    for (int i = 0; i < detailError_.size(); i++) {
+      output.writeMessage(3, detailError_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -165,6 +241,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getErrorDescBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorDesc_);
+    }
+    for (int i = 0; i < detailError_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, detailError_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -186,6 +266,8 @@ private static final long serialVersionUID = 0L;
         == other.getErrorCode());
     result = result && getErrorDesc()
         .equals(other.getErrorDesc());
+    result = result && getDetailErrorList()
+        .equals(other.getDetailErrorList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -201,6 +283,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getErrorCode();
     hash = (37 * hash) + ERRORDESC_FIELD_NUMBER;
     hash = (53 * hash) + getErrorDesc().hashCode();
+    if (getDetailErrorCount() > 0) {
+      hash = (37 * hash) + DETAILERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getDetailErrorList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -297,6 +383,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 错误信息，请求成功时实体为空, 否则表示错误，其中ErrorCode标识错误原因，提示信息放入DetailErrorList
+   * </pre>
+   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.ErrorResultType}
    */
   public static final class Builder extends
@@ -329,6 +419,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getDetailErrorFieldBuilder();
       }
     }
     @java.lang.Override
@@ -338,6 +429,12 @@ private static final long serialVersionUID = 0L;
 
       errorDesc_ = "";
 
+      if (detailErrorBuilder_ == null) {
+        detailError_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        detailErrorBuilder_.clear();
+      }
       return this;
     }
 
@@ -364,8 +461,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.message.ErrorResultType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.message.ErrorResultType result = new com.ctrip.flight.agg.shopping.contract.message.ErrorResultType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.errorCode_ = errorCode_;
       result.errorDesc_ = errorDesc_;
+      if (detailErrorBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          detailError_ = java.util.Collections.unmodifiableList(detailError_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.detailError_ = detailError_;
+      } else {
+        result.detailError_ = detailErrorBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -421,6 +530,32 @@ private static final long serialVersionUID = 0L;
         errorDesc_ = other.errorDesc_;
         onChanged();
       }
+      if (detailErrorBuilder_ == null) {
+        if (!other.detailError_.isEmpty()) {
+          if (detailError_.isEmpty()) {
+            detailError_ = other.detailError_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureDetailErrorIsMutable();
+            detailError_.addAll(other.detailError_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.detailError_.isEmpty()) {
+          if (detailErrorBuilder_.isEmpty()) {
+            detailErrorBuilder_.dispose();
+            detailErrorBuilder_ = null;
+            detailError_ = other.detailError_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            detailErrorBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getDetailErrorFieldBuilder() : null;
+          } else {
+            detailErrorBuilder_.addAllMessages(other.detailError_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -449,6 +584,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int errorCode_ ;
     /**
@@ -543,6 +679,318 @@ private static final long serialVersionUID = 0L;
       errorDesc_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> detailError_ =
+      java.util.Collections.emptyList();
+    private void ensureDetailErrorIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        detailError_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType>(detailError_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.message.DetailErrorType, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder, com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder> detailErrorBuilder_;
+
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> getDetailErrorList() {
+      if (detailErrorBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(detailError_);
+      } else {
+        return detailErrorBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public int getDetailErrorCount() {
+      if (detailErrorBuilder_ == null) {
+        return detailError_.size();
+      } else {
+        return detailErrorBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.message.DetailErrorType getDetailError(int index) {
+      if (detailErrorBuilder_ == null) {
+        return detailError_.get(index);
+      } else {
+        return detailErrorBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder setDetailError(
+        int index, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType value) {
+      if (detailErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDetailErrorIsMutable();
+        detailError_.set(index, value);
+        onChanged();
+      } else {
+        detailErrorBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder setDetailError(
+        int index, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder builderForValue) {
+      if (detailErrorBuilder_ == null) {
+        ensureDetailErrorIsMutable();
+        detailError_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        detailErrorBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder addDetailError(com.ctrip.flight.agg.shopping.contract.message.DetailErrorType value) {
+      if (detailErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDetailErrorIsMutable();
+        detailError_.add(value);
+        onChanged();
+      } else {
+        detailErrorBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder addDetailError(
+        int index, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType value) {
+      if (detailErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDetailErrorIsMutable();
+        detailError_.add(index, value);
+        onChanged();
+      } else {
+        detailErrorBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder addDetailError(
+        com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder builderForValue) {
+      if (detailErrorBuilder_ == null) {
+        ensureDetailErrorIsMutable();
+        detailError_.add(builderForValue.build());
+        onChanged();
+      } else {
+        detailErrorBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder addDetailError(
+        int index, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder builderForValue) {
+      if (detailErrorBuilder_ == null) {
+        ensureDetailErrorIsMutable();
+        detailError_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        detailErrorBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder addAllDetailError(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.message.DetailErrorType> values) {
+      if (detailErrorBuilder_ == null) {
+        ensureDetailErrorIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, detailError_);
+        onChanged();
+      } else {
+        detailErrorBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder clearDetailError() {
+      if (detailErrorBuilder_ == null) {
+        detailError_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        detailErrorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public Builder removeDetailError(int index) {
+      if (detailErrorBuilder_ == null) {
+        ensureDetailErrorIsMutable();
+        detailError_.remove(index);
+        onChanged();
+      } else {
+        detailErrorBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder getDetailErrorBuilder(
+        int index) {
+      return getDetailErrorFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder getDetailErrorOrBuilder(
+        int index) {
+      if (detailErrorBuilder_ == null) {
+        return detailError_.get(index);  } else {
+        return detailErrorBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder> 
+         getDetailErrorOrBuilderList() {
+      if (detailErrorBuilder_ != null) {
+        return detailErrorBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(detailError_);
+      }
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder addDetailErrorBuilder() {
+      return getDetailErrorFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder addDetailErrorBuilder(
+        int index) {
+      return getDetailErrorFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 错误详情，请求失败时可能包含多个DetailError
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.message.DetailErrorType DetailError = 3;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder> 
+         getDetailErrorBuilderList() {
+      return getDetailErrorFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.message.DetailErrorType, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder, com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder> 
+        getDetailErrorFieldBuilder() {
+      if (detailErrorBuilder_ == null) {
+        detailErrorBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.message.DetailErrorType, com.ctrip.flight.agg.shopping.contract.message.DetailErrorType.Builder, com.ctrip.flight.agg.shopping.contract.message.DetailErrorTypeOrBuilder>(
+                detailError_,
+                ((bitField0_ & 0x00000004) == 0x00000004),
+                getParentForChildren(),
+                isClean());
+        detailError_ = null;
+      }
+      return detailErrorBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

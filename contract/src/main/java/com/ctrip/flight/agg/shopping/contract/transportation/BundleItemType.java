@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object bundleType_;
   /**
    * <pre>
-   *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+   *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
    *BrandAttribute
    * </pre>
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+   *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
    *BrandAttribute
    * </pre>
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object bundleType_ = "";
     /**
      * <pre>
-     *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+     *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
      *BrandAttribute
      * </pre>
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+     *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
      *BrandAttribute
      * </pre>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+     *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
      *BrandAttribute
      * </pre>
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+     *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
      *BrandAttribute
      * </pre>
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *产品类型: BundleItemEntity-&gt;BundleType的目前支持的取值有：
+     *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
      *BrandAttribute
      * </pre>

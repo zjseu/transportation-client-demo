@@ -8,6 +8,10 @@ public interface BaggageExtensionFieldsTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 是否包含免费行李
+   * </pre>
+   *
    * <code>bool ContainFreeBaggage = 1;</code>
    */
   boolean getContainFreeBaggage();

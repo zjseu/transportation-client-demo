@@ -427,4 +427,48 @@ public interface DataListsTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.TextRemarkTypeOrBuilder getTextRemarkOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType> 
+      getPaymentDiscountList();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType getPaymentDiscount(int index);
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;</code>
+   */
+  int getPaymentDiscountCount();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountTypeOrBuilder> 
+      getPaymentDiscountOrBuilderList();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountTypeOrBuilder getPaymentDiscountOrBuilder(
+      int index);
 }

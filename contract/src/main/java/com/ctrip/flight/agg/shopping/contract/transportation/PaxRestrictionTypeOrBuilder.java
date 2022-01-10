@@ -9,35 +9,10 @@ public interface PaxRestrictionTypeOrBuilder extends
 
   /**
    * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  boolean hasPaxCountRange();
-  /**
-   * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getPaxCountRange();
-  /**
-   * <pre>
-   * 人数限制
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType PaxCountRange = 1;</code>
-   */
-  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getPaxCountRangeOrBuilder();
-
-  /**
-   * <pre>
    * 年龄限制类型，0:AllPassengers, 1:OnePassengerAtLeast
    * </pre>
    *
-   * <code>int32 AgeLimitType = 2;</code>
+   * <code>int32 AgeLimitType = 1;</code>
    */
   int getAgeLimitType();
 
@@ -46,7 +21,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> 
       getAgeLimitRangeList();
@@ -55,7 +30,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getAgeLimitRange(int index);
   /**
@@ -63,7 +38,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   int getAgeLimitRangeCount();
   /**
@@ -71,7 +46,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
       getAgeLimitRangeOrBuilderList();
@@ -80,7 +55,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 年龄限制。部分特殊运价可能包含多个年龄范围。国内票对应了原Restrictions.PassengerAgeLimit字段
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 3;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getAgeLimitRangeOrBuilder(
       int index);
@@ -90,7 +65,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   java.util.List<java.lang.String>
       getNationalityAllowList();
@@ -99,7 +74,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   int getNationalityAllowCount();
   /**
@@ -107,7 +82,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   java.lang.String getNationalityAllow(int index);
   /**
@@ -115,7 +90,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍白名单
    * </pre>
    *
-   * <code>repeated string NationalityAllow = 4;</code>
+   * <code>repeated string NationalityAllow = 3;</code>
    */
   com.google.protobuf.ByteString
       getNationalityAllowBytes(int index);
@@ -125,7 +100,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   java.util.List<java.lang.String>
       getNationalityBlockList();
@@ -134,7 +109,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   int getNationalityBlockCount();
   /**
@@ -142,7 +117,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   java.lang.String getNationalityBlock(int index);
   /**
@@ -150,7 +125,7 @@ public interface PaxRestrictionTypeOrBuilder extends
    * 国籍黑名单
    * </pre>
    *
-   * <code>repeated string NationalityBlock = 5;</code>
+   * <code>repeated string NationalityBlock = 4;</code>
    */
   com.google.protobuf.ByteString
       getNationalityBlockBytes(int index);

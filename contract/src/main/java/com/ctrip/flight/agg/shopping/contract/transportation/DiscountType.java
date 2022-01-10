@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private DiscountType() {
     mode_ = 0;
     showType_ = 0;
+    rebateType_ = "";
   }
 
   @java.lang.Override
@@ -82,6 +83,12 @@ private static final long serialVersionUID = 0L;
               discountLabel_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            rebateType_ = s;
             break;
           }
           default: {
@@ -208,6 +215,48 @@ private static final long serialVersionUID = 0L;
     return getDiscountLabel();
   }
 
+  public static final int REBATETYPE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object rebateType_;
+  /**
+   * <pre>
+   * 国际查询列表反查阶段，将RebateType记录成让利。
+   * </pre>
+   *
+   * <code>string RebateType = 5;</code>
+   */
+  public java.lang.String getRebateType() {
+    java.lang.Object ref = rebateType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rebateType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 国际查询列表反查阶段，将RebateType记录成让利。
+   * </pre>
+   *
+   * <code>string RebateType = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRebateTypeBytes() {
+    java.lang.Object ref = rebateType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      rebateType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +283,9 @@ private static final long serialVersionUID = 0L;
     if (discountLabel_ != null) {
       output.writeMessage(4, getDiscountLabel());
     }
+    if (!getRebateTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rebateType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -258,6 +310,9 @@ private static final long serialVersionUID = 0L;
     if (discountLabel_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDiscountLabel());
+    }
+    if (!getRebateTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rebateType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -289,6 +344,8 @@ private static final long serialVersionUID = 0L;
       result = result && getDiscountLabel()
           .equals(other.getDiscountLabel());
     }
+    result = result && getRebateType()
+        .equals(other.getRebateType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -312,6 +369,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DISCOUNTLABEL_FIELD_NUMBER;
       hash = (53 * hash) + getDiscountLabel().hashCode();
     }
+    hash = (37 * hash) + REBATETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getRebateType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -465,6 +524,8 @@ private static final long serialVersionUID = 0L;
         discountLabel_ = null;
         discountLabelBuilder_ = null;
       }
+      rebateType_ = "";
+
       return this;
     }
 
@@ -503,6 +564,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.discountLabel_ = discountLabelBuilder_.build();
       }
+      result.rebateType_ = rebateType_;
       onBuilt();
       return result;
     }
@@ -562,6 +624,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDiscountLabel()) {
         mergeDiscountLabel(other.getDiscountLabel());
+      }
+      if (!other.getRebateType().isEmpty()) {
+        rebateType_ = other.rebateType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -972,6 +1038,95 @@ private static final long serialVersionUID = 0L;
         discountLabel_ = null;
       }
       return discountLabelBuilder_;
+    }
+
+    private java.lang.Object rebateType_ = "";
+    /**
+     * <pre>
+     * 国际查询列表反查阶段，将RebateType记录成让利。
+     * </pre>
+     *
+     * <code>string RebateType = 5;</code>
+     */
+    public java.lang.String getRebateType() {
+      java.lang.Object ref = rebateType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rebateType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 国际查询列表反查阶段，将RebateType记录成让利。
+     * </pre>
+     *
+     * <code>string RebateType = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRebateTypeBytes() {
+      java.lang.Object ref = rebateType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rebateType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 国际查询列表反查阶段，将RebateType记录成让利。
+     * </pre>
+     *
+     * <code>string RebateType = 5;</code>
+     */
+    public Builder setRebateType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      rebateType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国际查询列表反查阶段，将RebateType记录成让利。
+     * </pre>
+     *
+     * <code>string RebateType = 5;</code>
+     */
+    public Builder clearRebateType() {
+      
+      rebateType_ = getDefaultInstance().getRebateType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 国际查询列表反查阶段，将RebateType记录成让利。
+     * </pre>
+     *
+     * <code>string RebateType = 5;</code>
+     */
+    public Builder setRebateTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      rebateType_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

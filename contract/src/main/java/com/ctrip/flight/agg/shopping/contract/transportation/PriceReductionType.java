@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     forUser_ = "";
     discountAmount_ = 0D;
     couponCode_ = "";
+    selectedGroups_ = 0;
   }
 
   @java.lang.Override
@@ -72,6 +73,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             couponCode_ = s;
+            break;
+          }
+          case 48: {
+
+            selectedGroups_ = input.readInt32();
             break;
           }
           default: {
@@ -225,6 +231,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SELECTEDGROUPS_FIELD_NUMBER = 6;
+  private int selectedGroups_;
+  /**
+   * <pre>
+   * 展示人群
+   * </pre>
+   *
+   * <code>int32 SelectedGroups = 6;</code>
+   */
+  public int getSelectedGroups() {
+    return selectedGroups_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -254,6 +273,9 @@ private static final long serialVersionUID = 0L;
     if (!getCouponCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, couponCode_);
     }
+    if (selectedGroups_ != 0) {
+      output.writeInt32(6, selectedGroups_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -280,6 +302,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCouponCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, couponCode_);
+    }
+    if (selectedGroups_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, selectedGroups_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -309,6 +335,8 @@ private static final long serialVersionUID = 0L;
             other.getDiscountAmount()));
     result = result && getCouponCode()
         .equals(other.getCouponCode());
+    result = result && (getSelectedGroups()
+        == other.getSelectedGroups());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -332,6 +360,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getDiscountAmount()));
     hash = (37 * hash) + COUPONCODE_FIELD_NUMBER;
     hash = (53 * hash) + getCouponCode().hashCode();
+    hash = (37 * hash) + SELECTEDGROUPS_FIELD_NUMBER;
+    hash = (53 * hash) + getSelectedGroups();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,6 +505,8 @@ private static final long serialVersionUID = 0L;
 
       couponCode_ = "";
 
+      selectedGroups_ = 0;
+
       return this;
     }
 
@@ -506,6 +538,7 @@ private static final long serialVersionUID = 0L;
       result.forUser_ = forUser_;
       result.discountAmount_ = discountAmount_;
       result.couponCode_ = couponCode_;
+      result.selectedGroups_ = selectedGroups_;
       onBuilt();
       return result;
     }
@@ -570,6 +603,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCouponCode().isEmpty()) {
         couponCode_ = other.couponCode_;
         onChanged();
+      }
+      if (other.getSelectedGroups() != 0) {
+        setSelectedGroups(other.getSelectedGroups());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -876,6 +912,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       couponCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int selectedGroups_ ;
+    /**
+     * <pre>
+     * 展示人群
+     * </pre>
+     *
+     * <code>int32 SelectedGroups = 6;</code>
+     */
+    public int getSelectedGroups() {
+      return selectedGroups_;
+    }
+    /**
+     * <pre>
+     * 展示人群
+     * </pre>
+     *
+     * <code>int32 SelectedGroups = 6;</code>
+     */
+    public Builder setSelectedGroups(int value) {
+      
+      selectedGroups_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示人群
+     * </pre>
+     *
+     * <code>int32 SelectedGroups = 6;</code>
+     */
+    public Builder clearSelectedGroups() {
+      
+      selectedGroups_ = 0;
       onChanged();
       return this;
     }

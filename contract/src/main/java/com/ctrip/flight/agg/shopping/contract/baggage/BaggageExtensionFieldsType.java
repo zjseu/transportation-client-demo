@@ -83,6 +83,10 @@ private static final long serialVersionUID = 0L;
   public static final int CONTAINFREEBAGGAGE_FIELD_NUMBER = 1;
   private boolean containFreeBaggage_;
   /**
+   * <pre>
+   * 是否包含免费行李
+   * </pre>
+   *
    * <code>bool ContainFreeBaggage = 1;</code>
    */
   public boolean getContainFreeBaggage() {
@@ -395,12 +399,20 @@ private static final long serialVersionUID = 0L;
 
     private boolean containFreeBaggage_ ;
     /**
+     * <pre>
+     * 是否包含免费行李
+     * </pre>
+     *
      * <code>bool ContainFreeBaggage = 1;</code>
      */
     public boolean getContainFreeBaggage() {
       return containFreeBaggage_;
     }
     /**
+     * <pre>
+     * 是否包含免费行李
+     * </pre>
+     *
      * <code>bool ContainFreeBaggage = 1;</code>
      */
     public Builder setContainFreeBaggage(boolean value) {
@@ -410,6 +422,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 是否包含免费行李
+     * </pre>
+     *
      * <code>bool ContainFreeBaggage = 1;</code>
      */
     public Builder clearContainFreeBaggage() {

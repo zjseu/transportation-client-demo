@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     rate_ = 0D;
     prePcCodePrice_ = 0D;
     serviceFee_ = java.util.Collections.emptyList();
+    flightHotelDiscountAmount_ = 0D;
   }
 
   @java.lang.Override
@@ -108,6 +109,11 @@ private static final long serialVersionUID = 0L;
             }
             serviceFee_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ServiceFeeType.parser(), extensionRegistry));
+            break;
+          }
+          case 65: {
+
+            flightHotelDiscountAmount_ = input.readDouble();
             break;
           }
           default: {
@@ -300,7 +306,7 @@ private static final long serialVersionUID = 0L;
   private double prePcCodePrice_;
   /**
    * <pre>
-   * 航司优惠前价格，前端结合Discount和PcCode做展示用
+   * 国内航司优惠前价格，前端结合Discount和PcCode做展示用
    * </pre>
    *
    * <code>double PrePcCodePrice = 6;</code>
@@ -364,6 +370,19 @@ private static final long serialVersionUID = 0L;
     return serviceFee_.get(index);
   }
 
+  public static final int FLIGHTHOTELDISCOUNTAMOUNT_FIELD_NUMBER = 8;
+  private double flightHotelDiscountAmount_;
+  /**
+   * <pre>
+   * 机酒专享政策优惠金额（与外放最低价价差）
+   * </pre>
+   *
+   * <code>double FlightHotelDiscountAmount = 8;</code>
+   */
+  public double getFlightHotelDiscountAmount() {
+    return flightHotelDiscountAmount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -398,6 +417,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < serviceFee_.size(); i++) {
       output.writeMessage(7, serviceFee_.get(i));
+    }
+    if (flightHotelDiscountAmount_ != 0D) {
+      output.writeDouble(8, flightHotelDiscountAmount_);
     }
     unknownFields.writeTo(output);
   }
@@ -435,6 +457,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < serviceFee_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, serviceFee_.get(i));
+    }
+    if (flightHotelDiscountAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(8, flightHotelDiscountAmount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -478,6 +504,10 @@ private static final long serialVersionUID = 0L;
             other.getPrePcCodePrice()));
     result = result && getServiceFeeList()
         .equals(other.getServiceFeeList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getFlightHotelDiscountAmount())
+        == java.lang.Double.doubleToLongBits(
+            other.getFlightHotelDiscountAmount()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -514,6 +544,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICEFEE_FIELD_NUMBER;
       hash = (53 * hash) + getServiceFeeList().hashCode();
     }
+    hash = (37 * hash) + FLIGHTHOTELDISCOUNTAMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getFlightHotelDiscountAmount()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -683,6 +716,8 @@ private static final long serialVersionUID = 0L;
       } else {
         serviceFeeBuilder_.clear();
       }
+      flightHotelDiscountAmount_ = 0D;
+
       return this;
     }
 
@@ -742,6 +777,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.serviceFee_ = serviceFeeBuilder_.build();
       }
+      result.flightHotelDiscountAmount_ = flightHotelDiscountAmount_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -857,6 +893,9 @@ private static final long serialVersionUID = 0L;
             serviceFeeBuilder_.addAllMessages(other.serviceFee_);
           }
         }
+      }
+      if (other.getFlightHotelDiscountAmount() != 0D) {
+        setFlightHotelDiscountAmount(other.getFlightHotelDiscountAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1585,7 +1624,7 @@ private static final long serialVersionUID = 0L;
     private double prePcCodePrice_ ;
     /**
      * <pre>
-     * 航司优惠前价格，前端结合Discount和PcCode做展示用
+     * 国内航司优惠前价格，前端结合Discount和PcCode做展示用
      * </pre>
      *
      * <code>double PrePcCodePrice = 6;</code>
@@ -1595,7 +1634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 航司优惠前价格，前端结合Discount和PcCode做展示用
+     * 国内航司优惠前价格，前端结合Discount和PcCode做展示用
      * </pre>
      *
      * <code>double PrePcCodePrice = 6;</code>
@@ -1608,7 +1647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 航司优惠前价格，前端结合Discount和PcCode做展示用
+     * 国内航司优惠前价格，前端结合Discount和PcCode做展示用
      * </pre>
      *
      * <code>double PrePcCodePrice = 6;</code>
@@ -1930,6 +1969,44 @@ private static final long serialVersionUID = 0L;
         serviceFee_ = null;
       }
       return serviceFeeBuilder_;
+    }
+
+    private double flightHotelDiscountAmount_ ;
+    /**
+     * <pre>
+     * 机酒专享政策优惠金额（与外放最低价价差）
+     * </pre>
+     *
+     * <code>double FlightHotelDiscountAmount = 8;</code>
+     */
+    public double getFlightHotelDiscountAmount() {
+      return flightHotelDiscountAmount_;
+    }
+    /**
+     * <pre>
+     * 机酒专享政策优惠金额（与外放最低价价差）
+     * </pre>
+     *
+     * <code>double FlightHotelDiscountAmount = 8;</code>
+     */
+    public Builder setFlightHotelDiscountAmount(double value) {
+      
+      flightHotelDiscountAmount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒专享政策优惠金额（与外放最低价价差）
+     * </pre>
+     *
+     * <code>double FlightHotelDiscountAmount = 8;</code>
+     */
+    public Builder clearFlightHotelDiscountAmount() {
+      
+      flightHotelDiscountAmount_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

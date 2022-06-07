@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private JourneyAttachmentType() {
     journeyNo_ = 0;
     productCombinationType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    transferProductType_ = "";
   }
 
   @java.lang.Override
@@ -60,6 +61,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000002;
             }
             productCombinationType_.add(s);
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            transferProductType_ = s;
             break;
           }
           default: {
@@ -156,6 +163,48 @@ private static final long serialVersionUID = 0L;
     return productCombinationType_.getByteString(index);
   }
 
+  public static final int TRANSFERPRODUCTTYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object transferProductType_;
+  /**
+   * <pre>
+   * 中转类型
+   * </pre>
+   *
+   * <code>string TransferProductType = 3;</code>
+   */
+  public java.lang.String getTransferProductType() {
+    java.lang.Object ref = transferProductType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      transferProductType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 中转类型
+   * </pre>
+   *
+   * <code>string TransferProductType = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTransferProductTypeBytes() {
+    java.lang.Object ref = transferProductType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      transferProductType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -175,6 +224,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < productCombinationType_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, productCombinationType_.getRaw(i));
+    }
+    if (!getTransferProductTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transferProductType_);
     }
     unknownFields.writeTo(output);
   }
@@ -197,6 +249,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getProductCombinationTypeList().size();
     }
+    if (!getTransferProductTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, transferProductType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -217,6 +272,8 @@ private static final long serialVersionUID = 0L;
         == other.getJourneyNo());
     result = result && getProductCombinationTypeList()
         .equals(other.getProductCombinationTypeList());
+    result = result && getTransferProductType()
+        .equals(other.getTransferProductType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -234,6 +291,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PRODUCTCOMBINATIONTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getProductCombinationTypeList().hashCode();
     }
+    hash = (37 * hash) + TRANSFERPRODUCTTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTransferProductType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -375,6 +434,8 @@ private static final long serialVersionUID = 0L;
 
       productCombinationType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      transferProductType_ = "";
+
       return this;
     }
 
@@ -409,6 +470,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.productCombinationType_ = productCombinationType_;
+      result.transferProductType_ = transferProductType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -469,6 +531,10 @@ private static final long serialVersionUID = 0L;
           ensureProductCombinationTypeIsMutable();
           productCombinationType_.addAll(other.productCombinationType_);
         }
+        onChanged();
+      }
+      if (!other.getTransferProductType().isEmpty()) {
+        transferProductType_ = other.transferProductType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -665,6 +731,95 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureProductCombinationTypeIsMutable();
       productCombinationType_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object transferProductType_ = "";
+    /**
+     * <pre>
+     * 中转类型
+     * </pre>
+     *
+     * <code>string TransferProductType = 3;</code>
+     */
+    public java.lang.String getTransferProductType() {
+      java.lang.Object ref = transferProductType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        transferProductType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 中转类型
+     * </pre>
+     *
+     * <code>string TransferProductType = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTransferProductTypeBytes() {
+      java.lang.Object ref = transferProductType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        transferProductType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 中转类型
+     * </pre>
+     *
+     * <code>string TransferProductType = 3;</code>
+     */
+    public Builder setTransferProductType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      transferProductType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 中转类型
+     * </pre>
+     *
+     * <code>string TransferProductType = 3;</code>
+     */
+    public Builder clearTransferProductType() {
+      
+      transferProductType_ = getDefaultInstance().getTransferProductType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 中转类型
+     * </pre>
+     *
+     * <code>string TransferProductType = 3;</code>
+     */
+    public Builder setTransferProductTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      transferProductType_ = value;
       onChanged();
       return this;
     }

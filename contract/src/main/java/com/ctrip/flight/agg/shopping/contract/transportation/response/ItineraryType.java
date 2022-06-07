@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     interchange_ = java.util.Collections.emptyList();
     tag_ = java.util.Collections.emptyList();
     priority_ = 0D;
+    referenceOffer_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -104,6 +105,15 @@ private static final long serialVersionUID = 0L;
             priority_ = input.readDouble();
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              referenceOffer_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            referenceOffer_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +140,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        referenceOffer_ = java.util.Collections.unmodifiableList(referenceOffer_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -408,6 +421,61 @@ private static final long serialVersionUID = 0L;
     return priority_;
   }
 
+  public static final int REFERENCEOFFER_FIELD_NUMBER = 8;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> referenceOffer_;
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> getReferenceOfferList() {
+    return referenceOffer_;
+  }
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder> 
+      getReferenceOfferOrBuilderList() {
+    return referenceOffer_;
+  }
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  public int getReferenceOfferCount() {
+    return referenceOffer_.size();
+  }
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType getReferenceOffer(int index) {
+    return referenceOffer_.get(index);
+  }
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder getReferenceOfferOrBuilder(
+      int index) {
+    return referenceOffer_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -442,6 +510,9 @@ private static final long serialVersionUID = 0L;
     }
     if (priority_ != 0D) {
       output.writeDouble(7, priority_);
+    }
+    for (int i = 0; i < referenceOffer_.size(); i++) {
+      output.writeMessage(8, referenceOffer_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -480,6 +551,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(7, priority_);
     }
+    for (int i = 0; i < referenceOffer_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, referenceOffer_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -512,6 +587,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getPriority())
         == java.lang.Double.doubleToLongBits(
             other.getPriority()));
+    result = result && getReferenceOfferList()
+        .equals(other.getReferenceOfferList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -546,6 +623,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getPriority()));
+    if (getReferenceOfferCount() > 0) {
+      hash = (37 * hash) + REFERENCEOFFER_FIELD_NUMBER;
+      hash = (53 * hash) + getReferenceOfferList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -682,6 +763,7 @@ private static final long serialVersionUID = 0L;
         getOfferFieldBuilder();
         getInterchangeFieldBuilder();
         getTagFieldBuilder();
+        getReferenceOfferFieldBuilder();
       }
     }
     @java.lang.Override
@@ -717,6 +799,12 @@ private static final long serialVersionUID = 0L;
       }
       priority_ = 0D;
 
+      if (referenceOfferBuilder_ == null) {
+        referenceOffer_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        referenceOfferBuilder_.clear();
+      }
       return this;
     }
 
@@ -784,6 +872,15 @@ private static final long serialVersionUID = 0L;
         result.tag_ = tagBuilder_.build();
       }
       result.priority_ = priority_;
+      if (referenceOfferBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          referenceOffer_ = java.util.Collections.unmodifiableList(referenceOffer_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.referenceOffer_ = referenceOffer_;
+      } else {
+        result.referenceOffer_ = referenceOfferBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -945,6 +1042,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPriority() != 0D) {
         setPriority(other.getPriority());
+      }
+      if (referenceOfferBuilder_ == null) {
+        if (!other.referenceOffer_.isEmpty()) {
+          if (referenceOffer_.isEmpty()) {
+            referenceOffer_ = other.referenceOffer_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureReferenceOfferIsMutable();
+            referenceOffer_.addAll(other.referenceOffer_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.referenceOffer_.isEmpty()) {
+          if (referenceOfferBuilder_.isEmpty()) {
+            referenceOfferBuilder_.dispose();
+            referenceOfferBuilder_ = null;
+            referenceOffer_ = other.referenceOffer_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            referenceOfferBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getReferenceOfferFieldBuilder() : null;
+          } else {
+            referenceOfferBuilder_.addAllMessages(other.referenceOffer_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2336,6 +2459,318 @@ private static final long serialVersionUID = 0L;
       priority_ = 0D;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> referenceOffer_ =
+      java.util.Collections.emptyList();
+    private void ensureReferenceOfferIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        referenceOffer_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType>(referenceOffer_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder> referenceOfferBuilder_;
+
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> getReferenceOfferList() {
+      if (referenceOfferBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(referenceOffer_);
+      } else {
+        return referenceOfferBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public int getReferenceOfferCount() {
+      if (referenceOfferBuilder_ == null) {
+        return referenceOffer_.size();
+      } else {
+        return referenceOfferBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType getReferenceOffer(int index) {
+      if (referenceOfferBuilder_ == null) {
+        return referenceOffer_.get(index);
+      } else {
+        return referenceOfferBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder setReferenceOffer(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType value) {
+      if (referenceOfferBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.set(index, value);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder setReferenceOffer(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder builderForValue) {
+      if (referenceOfferBuilder_ == null) {
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        referenceOfferBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder addReferenceOffer(com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType value) {
+      if (referenceOfferBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.add(value);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder addReferenceOffer(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType value) {
+      if (referenceOfferBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.add(index, value);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder addReferenceOffer(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder builderForValue) {
+      if (referenceOfferBuilder_ == null) {
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.add(builderForValue.build());
+        onChanged();
+      } else {
+        referenceOfferBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder addReferenceOffer(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder builderForValue) {
+      if (referenceOfferBuilder_ == null) {
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        referenceOfferBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder addAllReferenceOffer(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> values) {
+      if (referenceOfferBuilder_ == null) {
+        ensureReferenceOfferIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, referenceOffer_);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder clearReferenceOffer() {
+      if (referenceOfferBuilder_ == null) {
+        referenceOffer_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public Builder removeReferenceOffer(int index) {
+      if (referenceOfferBuilder_ == null) {
+        ensureReferenceOfferIsMutable();
+        referenceOffer_.remove(index);
+        onChanged();
+      } else {
+        referenceOfferBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder getReferenceOfferBuilder(
+        int index) {
+      return getReferenceOfferFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder getReferenceOfferOrBuilder(
+        int index) {
+      if (referenceOfferBuilder_ == null) {
+        return referenceOffer_.get(index);  } else {
+        return referenceOfferBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder> 
+         getReferenceOfferOrBuilderList() {
+      if (referenceOfferBuilder_ != null) {
+        return referenceOfferBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(referenceOffer_);
+      }
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder addReferenceOfferBuilder() {
+      return getReferenceOfferFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder addReferenceOfferBuilder(
+        int index) {
+      return getReferenceOfferFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 被正常运价引用的运价信息，如：儿童标准价
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder> 
+         getReferenceOfferBuilderList() {
+      return getReferenceOfferFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder> 
+        getReferenceOfferFieldBuilder() {
+      if (referenceOfferBuilder_ == null) {
+        referenceOfferBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder>(
+                referenceOffer_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        referenceOffer_ = null;
+      }
+      return referenceOfferBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

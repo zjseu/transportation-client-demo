@@ -92,4 +92,31 @@ public interface DiscountTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRebateTypeBytes();
+
+  /**
+   * <pre>
+   * 规则ID
+   * </pre>
+   *
+   * <code>int64 ruleId = 6;</code>
+   */
+  long getRuleId();
+
+  /**
+   * <pre>
+   * 让利展示类型附加信息
+   * </pre>
+   *
+   * <code>string ActivityMode = 7;</code>
+   */
+  java.lang.String getActivityMode();
+  /**
+   * <pre>
+   * 让利展示类型附加信息
+   * </pre>
+   *
+   * <code>string ActivityMode = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getActivityModeBytes();
 }

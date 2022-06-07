@@ -10,7 +10,7 @@ public interface ServiceDetailTypeOrBuilder extends
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -19,7 +19,7 @@ public interface ServiceDetailTypeOrBuilder extends
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -168,6 +168,7 @@ public interface ServiceDetailTypeOrBuilder extends
    *  通用券-additionProductInfoID/展示类型
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
+   * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -180,6 +181,7 @@ public interface ServiceDetailTypeOrBuilder extends
    *  通用券-additionProductInfoID/展示类型
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
+   * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -191,6 +193,7 @@ public interface ServiceDetailTypeOrBuilder extends
    *  通用券-additionProductInfoID/展示类型
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
+   * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -202,6 +205,7 @@ public interface ServiceDetailTypeOrBuilder extends
    *  通用券-additionProductInfoID/展示类型
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
+   * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -214,10 +218,109 @@ public interface ServiceDetailTypeOrBuilder extends
    *  通用券-additionProductInfoID/展示类型
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
+   * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getExtensionOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType ServiceDiscount = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType> 
+      getServiceDiscountList();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType ServiceDiscount = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType getServiceDiscount(int index);
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType ServiceDiscount = 13;</code>
+   */
+  int getServiceDiscountCount();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType ServiceDiscount = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountTypeOrBuilder> 
+      getServiceDiscountOrBuilderList();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountType ServiceDiscount = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServiceDiscountTypeOrBuilder getServiceDiscountOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 强制绑定新字段:需主动勾选 1, 默认勾选且不可取消 2, 默认勾选且可取消 3
+   * </pre>
+   *
+   * <code>int32 ForceType = 14;</code>
+   */
+  int getForceType();
+
+  /**
+   * <pre>
+   * 绑定关系，People跟人，Order跟订单
+   * </pre>
+   *
+   * <code>string BindingType = 15;</code>
+   */
+  java.lang.String getBindingType();
+  /**
+   * <pre>
+   * 绑定关系，People跟人，Order跟订单
+   * </pre>
+   *
+   * <code>string BindingType = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getBindingTypeBytes();
+
+  /**
+   * <pre>
+   * 过期时间 0表示不限
+   * </pre>
+   *
+   * <code>int32 ExpiryTime = 16;</code>
+   */
+  int getExpiryTime();
+
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 17;</code>
+   */
+  java.lang.String getExpiryTimeUnit();
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 17;</code>
+   */
+  com.google.protobuf.ByteString
+      getExpiryTimeUnitBytes();
 }

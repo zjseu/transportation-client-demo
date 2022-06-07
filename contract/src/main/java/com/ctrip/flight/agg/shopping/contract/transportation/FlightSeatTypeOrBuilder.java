@@ -102,9 +102,9 @@ public interface FlightSeatTypeOrBuilder extends
    * 航班舱位可累积里程
    * </pre>
    *
-   * <code>int32 MileageCredit = 8;</code>
+   * <code>int32 MileageCredit = 8 [deprecated = true];</code>
    */
-  int getMileageCredit();
+  @java.lang.Deprecated int getMileageCredit();
 
   /**
    * <pre>

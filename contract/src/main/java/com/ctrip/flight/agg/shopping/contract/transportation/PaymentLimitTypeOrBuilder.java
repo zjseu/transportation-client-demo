@@ -110,4 +110,29 @@ public interface PaymentLimitTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefTypeOrBuilder getPaymentDiscountRefTypeOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  boolean hasLoanPayment();
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType getLoanPayment();
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder getLoanPaymentOrBuilder();
 }

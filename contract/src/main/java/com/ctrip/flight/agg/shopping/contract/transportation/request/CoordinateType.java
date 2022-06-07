@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private CoordinateType() {
     longitude_ = 0D;
     latitude_ = 0D;
+    updateTime_ = "";
   }
 
   @java.lang.Override
@@ -52,6 +53,12 @@ private static final long serialVersionUID = 0L;
           case 17: {
 
             latitude_ = input.readDouble();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            updateTime_ = s;
             break;
           }
           default: {
@@ -112,6 +119,48 @@ private static final long serialVersionUID = 0L;
     return latitude_;
   }
 
+  public static final int UPDATETIME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object updateTime_;
+  /**
+   * <pre>
+   * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+   * </pre>
+   *
+   * <code>string UpdateTime = 3;</code>
+   */
+  public java.lang.String getUpdateTime() {
+    java.lang.Object ref = updateTime_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateTime_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+   * </pre>
+   *
+   * <code>string UpdateTime = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getUpdateTimeBytes() {
+    java.lang.Object ref = updateTime_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      updateTime_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +181,9 @@ private static final long serialVersionUID = 0L;
     if (latitude_ != 0D) {
       output.writeDouble(2, latitude_);
     }
+    if (!getUpdateTimeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, updateTime_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +200,9 @@ private static final long serialVersionUID = 0L;
     if (latitude_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, latitude_);
+    }
+    if (!getUpdateTimeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, updateTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -173,6 +228,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getLatitude())
         == java.lang.Double.doubleToLongBits(
             other.getLatitude()));
+    result = result && getUpdateTime()
+        .equals(other.getUpdateTime());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -190,6 +247,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getLatitude()));
+    hash = (37 * hash) + UPDATETIME_FIELD_NUMBER;
+    hash = (53 * hash) + getUpdateTime().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -327,6 +386,8 @@ private static final long serialVersionUID = 0L;
 
       latitude_ = 0D;
 
+      updateTime_ = "";
+
       return this;
     }
 
@@ -355,6 +416,7 @@ private static final long serialVersionUID = 0L;
       com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType(this);
       result.longitude_ = longitude_;
       result.latitude_ = latitude_;
+      result.updateTime_ = updateTime_;
       onBuilt();
       return result;
     }
@@ -408,6 +470,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getLatitude() != 0D) {
         setLatitude(other.getLatitude());
+      }
+      if (!other.getUpdateTime().isEmpty()) {
+        updateTime_ = other.updateTime_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -510,6 +576,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearLatitude() {
       
       latitude_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object updateTime_ = "";
+    /**
+     * <pre>
+     * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </pre>
+     *
+     * <code>string UpdateTime = 3;</code>
+     */
+    public java.lang.String getUpdateTime() {
+      java.lang.Object ref = updateTime_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateTime_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </pre>
+     *
+     * <code>string UpdateTime = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUpdateTimeBytes() {
+      java.lang.Object ref = updateTime_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updateTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </pre>
+     *
+     * <code>string UpdateTime = 3;</code>
+     */
+    public Builder setUpdateTime(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      updateTime_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </pre>
+     *
+     * <code>string UpdateTime = 3;</code>
+     */
+    public Builder clearUpdateTime() {
+      
+      updateTime_ = getDefaultInstance().getUpdateTime();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </pre>
+     *
+     * <code>string UpdateTime = 3;</code>
+     */
+    public Builder setUpdateTimeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      updateTime_ = value;
       onChanged();
       return this;
     }

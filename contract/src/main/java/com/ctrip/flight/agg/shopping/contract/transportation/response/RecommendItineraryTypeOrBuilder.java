@@ -49,4 +49,48 @@ public interface RecommendItineraryTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.RedirectItineraryType RedirectItinerary = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.RedirectItineraryTypeOrBuilder getRedirectItineraryOrBuilder();
+
+  /**
+   * <pre>
+   * 扩展结点
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getTagList();
+  /**
+   * <pre>
+   * 扩展结点
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
+  /**
+   * <pre>
+   * 扩展结点
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;</code>
+   */
+  int getTagCount();
+  /**
+   * <pre>
+   * 扩展结点
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList();
+  /**
+   * <pre>
+   * 扩展结点
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index);
 }

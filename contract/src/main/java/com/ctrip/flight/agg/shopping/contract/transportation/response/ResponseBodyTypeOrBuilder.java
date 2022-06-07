@@ -244,4 +244,22 @@ public interface ResponseBodyTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSearchCriteriaTokenBytes();
+
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 9;</code>
+   */
+  java.lang.String getXproductSearchKey();
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getXproductSearchKeyBytes();
 }

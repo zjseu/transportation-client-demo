@@ -24,4 +24,22 @@ public interface CoordinateTypeOrBuilder extends
    * <code>double Latitude = 2;</code>
    */
   double getLatitude();
+
+  /**
+   * <pre>
+   * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+   * </pre>
+   *
+   * <code>string UpdateTime = 3;</code>
+   */
+  java.lang.String getUpdateTime();
+  /**
+   * <pre>
+   * 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+   * </pre>
+   *
+   * <code>string UpdateTime = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getUpdateTimeBytes();
 }

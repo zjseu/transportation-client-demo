@@ -154,4 +154,48 @@ public interface FlightSettlementCurrencyPriceDetailTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.ServiceFeeTypeOrBuilder getServiceFeeOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> 
+      getTaxDetailList();
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getTaxDetail(int index);
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  int getTaxDetailCount();
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder> 
+      getTaxDetailOrBuilderList();
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder getTaxDetailOrBuilder(
+      int index);
 }

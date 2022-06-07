@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     mode_ = 0;
     showType_ = 0;
     rebateType_ = "";
+    ruleId_ = 0L;
+    activityMode_ = "";
   }
 
   @java.lang.Override
@@ -89,6 +91,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             rebateType_ = s;
+            break;
+          }
+          case 48: {
+
+            ruleId_ = input.readInt64();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            activityMode_ = s;
             break;
           }
           default: {
@@ -257,6 +270,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int RULEID_FIELD_NUMBER = 6;
+  private long ruleId_;
+  /**
+   * <pre>
+   * 规则ID
+   * </pre>
+   *
+   * <code>int64 ruleId = 6;</code>
+   */
+  public long getRuleId() {
+    return ruleId_;
+  }
+
+  public static final int ACTIVITYMODE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object activityMode_;
+  /**
+   * <pre>
+   * 让利展示类型附加信息
+   * </pre>
+   *
+   * <code>string ActivityMode = 7;</code>
+   */
+  public java.lang.String getActivityMode() {
+    java.lang.Object ref = activityMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activityMode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 让利展示类型附加信息
+   * </pre>
+   *
+   * <code>string ActivityMode = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getActivityModeBytes() {
+    java.lang.Object ref = activityMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      activityMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +354,12 @@ private static final long serialVersionUID = 0L;
     if (!getRebateTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rebateType_);
     }
+    if (ruleId_ != 0L) {
+      output.writeInt64(6, ruleId_);
+    }
+    if (!getActivityModeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, activityMode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -313,6 +387,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRebateTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rebateType_);
+    }
+    if (ruleId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, ruleId_);
+    }
+    if (!getActivityModeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, activityMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,6 +427,10 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getRebateType()
         .equals(other.getRebateType());
+    result = result && (getRuleId()
+        == other.getRuleId());
+    result = result && getActivityMode()
+        .equals(other.getActivityMode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -371,6 +456,11 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + REBATETYPE_FIELD_NUMBER;
     hash = (53 * hash) + getRebateType().hashCode();
+    hash = (37 * hash) + RULEID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRuleId());
+    hash = (37 * hash) + ACTIVITYMODE_FIELD_NUMBER;
+    hash = (53 * hash) + getActivityMode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -526,6 +616,10 @@ private static final long serialVersionUID = 0L;
       }
       rebateType_ = "";
 
+      ruleId_ = 0L;
+
+      activityMode_ = "";
+
       return this;
     }
 
@@ -565,6 +659,8 @@ private static final long serialVersionUID = 0L;
         result.discountLabel_ = discountLabelBuilder_.build();
       }
       result.rebateType_ = rebateType_;
+      result.ruleId_ = ruleId_;
+      result.activityMode_ = activityMode_;
       onBuilt();
       return result;
     }
@@ -627,6 +723,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRebateType().isEmpty()) {
         rebateType_ = other.rebateType_;
+        onChanged();
+      }
+      if (other.getRuleId() != 0L) {
+        setRuleId(other.getRuleId());
+      }
+      if (!other.getActivityMode().isEmpty()) {
+        activityMode_ = other.activityMode_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1125,6 +1228,133 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       rebateType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long ruleId_ ;
+    /**
+     * <pre>
+     * 规则ID
+     * </pre>
+     *
+     * <code>int64 ruleId = 6;</code>
+     */
+    public long getRuleId() {
+      return ruleId_;
+    }
+    /**
+     * <pre>
+     * 规则ID
+     * </pre>
+     *
+     * <code>int64 ruleId = 6;</code>
+     */
+    public Builder setRuleId(long value) {
+      
+      ruleId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 规则ID
+     * </pre>
+     *
+     * <code>int64 ruleId = 6;</code>
+     */
+    public Builder clearRuleId() {
+      
+      ruleId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activityMode_ = "";
+    /**
+     * <pre>
+     * 让利展示类型附加信息
+     * </pre>
+     *
+     * <code>string ActivityMode = 7;</code>
+     */
+    public java.lang.String getActivityMode() {
+      java.lang.Object ref = activityMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activityMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 让利展示类型附加信息
+     * </pre>
+     *
+     * <code>string ActivityMode = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActivityModeBytes() {
+      java.lang.Object ref = activityMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        activityMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 让利展示类型附加信息
+     * </pre>
+     *
+     * <code>string ActivityMode = 7;</code>
+     */
+    public Builder setActivityMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      activityMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利展示类型附加信息
+     * </pre>
+     *
+     * <code>string ActivityMode = 7;</code>
+     */
+    public Builder clearActivityMode() {
+      
+      activityMode_ = getDefaultInstance().getActivityMode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利展示类型附加信息
+     * </pre>
+     *
+     * <code>string ActivityMode = 7;</code>
+     */
+    public Builder setActivityModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      activityMode_ = value;
       onChanged();
       return this;
     }

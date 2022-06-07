@@ -56,7 +56,57 @@ public interface FlightReferencePriceTypeOrBuilder extends
    * 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
    * </pre>
    *
-   * <code>double UpgradeCFReferencePrice = 2;</code>
+   * <code>double UpgradeCFReferencePrice = 2 [deprecated = true];</code>
    */
-  double getUpgradeCFReferencePrice();
+  @java.lang.Deprecated double getUpgradeCFReferencePrice();
+
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  boolean hasYReferencePriceDetail();
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getYReferencePriceDetail();
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getYReferencePriceDetailOrBuilder();
+
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  boolean hasCFReferencePriceDetail();
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getCFReferencePriceDetail();
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getCFReferencePriceDetailOrBuilder();
 }

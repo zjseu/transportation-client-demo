@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     activeCode_ = "";
     retain_ = false;
     sceneCode_ = "";
+    productFeeDetail_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -80,6 +81,15 @@ private static final long serialVersionUID = 0L;
             sceneCode_ = s;
             break;
           }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              productFeeDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            productFeeDetail_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,6 +105,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        productFeeDetail_ = java.util.Collections.unmodifiableList(productFeeDetail_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -112,6 +125,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.ServicePolicyType.class, com.ctrip.flight.agg.shopping.contract.transportation.ServicePolicyType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int POLICYID_FIELD_NUMBER = 1;
   private long policyID_;
   /**
@@ -248,6 +262,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PRODUCTFEEDETAIL_FIELD_NUMBER = 7;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> productFeeDetail_;
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> getProductFeeDetailList() {
+    return productFeeDetail_;
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder> 
+      getProductFeeDetailOrBuilderList() {
+    return productFeeDetail_;
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  public int getProductFeeDetailCount() {
+    return productFeeDetail_.size();
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType getProductFeeDetail(int index) {
+    return productFeeDetail_.get(index);
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+      int index) {
+    return productFeeDetail_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -280,6 +349,9 @@ private static final long serialVersionUID = 0L;
     if (!getSceneCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sceneCode_);
     }
+    for (int i = 0; i < productFeeDetail_.size(); i++) {
+      output.writeMessage(7, productFeeDetail_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -311,6 +383,10 @@ private static final long serialVersionUID = 0L;
     if (!getSceneCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sceneCode_);
     }
+    for (int i = 0; i < productFeeDetail_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, productFeeDetail_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -341,6 +417,8 @@ private static final long serialVersionUID = 0L;
         == other.getRetain());
     result = result && getSceneCode()
         .equals(other.getSceneCode());
+    result = result && getProductFeeDetailList()
+        .equals(other.getProductFeeDetailList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -367,6 +445,10 @@ private static final long serialVersionUID = 0L;
         getRetain());
     hash = (37 * hash) + SCENECODE_FIELD_NUMBER;
     hash = (53 * hash) + getSceneCode().hashCode();
+    if (getProductFeeDetailCount() > 0) {
+      hash = (37 * hash) + PRODUCTFEEDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getProductFeeDetailList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -495,6 +577,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getProductFeeDetailFieldBuilder();
       }
     }
     @java.lang.Override
@@ -512,6 +595,12 @@ private static final long serialVersionUID = 0L;
 
       sceneCode_ = "";
 
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        productFeeDetailBuilder_.clear();
+      }
       return this;
     }
 
@@ -538,12 +627,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.ServicePolicyType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.ServicePolicyType result = new com.ctrip.flight.agg.shopping.contract.transportation.ServicePolicyType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.policyID_ = policyID_;
       result.marketingType_ = marketingType_;
       result.marketingAmount_ = marketingAmount_;
       result.activeCode_ = activeCode_;
       result.retain_ = retain_;
       result.sceneCode_ = sceneCode_;
+      if (productFeeDetailBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          productFeeDetail_ = java.util.Collections.unmodifiableList(productFeeDetail_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.productFeeDetail_ = productFeeDetail_;
+      } else {
+        result.productFeeDetail_ = productFeeDetailBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -612,6 +713,32 @@ private static final long serialVersionUID = 0L;
         sceneCode_ = other.sceneCode_;
         onChanged();
       }
+      if (productFeeDetailBuilder_ == null) {
+        if (!other.productFeeDetail_.isEmpty()) {
+          if (productFeeDetail_.isEmpty()) {
+            productFeeDetail_ = other.productFeeDetail_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureProductFeeDetailIsMutable();
+            productFeeDetail_.addAll(other.productFeeDetail_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.productFeeDetail_.isEmpty()) {
+          if (productFeeDetailBuilder_.isEmpty()) {
+            productFeeDetailBuilder_.dispose();
+            productFeeDetailBuilder_ = null;
+            productFeeDetail_ = other.productFeeDetail_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            productFeeDetailBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getProductFeeDetailFieldBuilder() : null;
+          } else {
+            productFeeDetailBuilder_.addAllMessages(other.productFeeDetail_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -640,6 +767,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private long policyID_ ;
     /**
@@ -969,6 +1097,318 @@ private static final long serialVersionUID = 0L;
       sceneCode_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> productFeeDetail_ =
+      java.util.Collections.emptyList();
+    private void ensureProductFeeDetailIsMutable() {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        productFeeDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType>(productFeeDetail_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder> productFeeDetailBuilder_;
+
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> getProductFeeDetailList() {
+      if (productFeeDetailBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productFeeDetail_);
+      } else {
+        return productFeeDetailBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public int getProductFeeDetailCount() {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.size();
+      } else {
+        return productFeeDetailBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType getProductFeeDetail(int index) {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.get(index);
+      } else {
+        return productFeeDetailBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder setProductFeeDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.set(index, value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder setProductFeeDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder addProductFeeDetail(com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder addProductFeeDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(index, value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder addProductFeeDetail(
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder addProductFeeDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder addAllProductFeeDetail(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> values) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, productFeeDetail_);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder clearProductFeeDetail() {
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public Builder removeProductFeeDetail(int index) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.remove(index);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder getProductFeeDetailBuilder(
+        int index) {
+      return getProductFeeDetailFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+        int index) {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.get(index);  } else {
+        return productFeeDetailBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder> 
+         getProductFeeDetailOrBuilderList() {
+      if (productFeeDetailBuilder_ != null) {
+        return productFeeDetailBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(productFeeDetail_);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder addProductFeeDetailBuilder() {
+      return getProductFeeDetailFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder addProductFeeDetailBuilder(
+        int index) {
+      return getProductFeeDetailFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder> 
+         getProductFeeDetailBuilderList() {
+      return getProductFeeDetailFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder> 
+        getProductFeeDetailFieldBuilder() {
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder>(
+                productFeeDetail_,
+                ((bitField0_ & 0x00000040) == 0x00000040),
+                getParentForChildren(),
+                isClean());
+        productFeeDetail_ = null;
+      }
+      return productFeeDetailBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

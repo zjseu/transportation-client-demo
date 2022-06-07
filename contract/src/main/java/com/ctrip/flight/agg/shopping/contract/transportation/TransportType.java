@@ -143,6 +143,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 98: {
+            com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder subBuilder = null;
+            if (bus_ != null) {
+              subBuilder = bus_.toBuilder();
+            }
+            bus_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.BusType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bus_);
+              bus_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -531,6 +544,39 @@ private static final long serialVersionUID = 0L;
     return getTrain();
   }
 
+  public static final int BUS_FIELD_NUMBER = 12;
+  private com.ctrip.flight.agg.shopping.contract.transportation.BusType bus_;
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  public boolean hasBus() {
+    return bus_ != null;
+  }
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.BusType getBus() {
+    return bus_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.BusType.getDefaultInstance() : bus_;
+  }
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder getBusOrBuilder() {
+    return getBus();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -577,6 +623,9 @@ private static final long serialVersionUID = 0L;
     }
     if (train_ != null) {
       output.writeMessage(11, getTrain());
+    }
+    if (bus_ != null) {
+      output.writeMessage(12, getBus());
     }
     unknownFields.writeTo(output);
   }
@@ -628,6 +677,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getTrain());
     }
+    if (bus_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getBus());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -678,6 +731,11 @@ private static final long serialVersionUID = 0L;
       result = result && getTrain()
           .equals(other.getTrain());
     }
+    result = result && (hasBus() == other.hasBus());
+    if (hasBus()) {
+      result = result && getBus()
+          .equals(other.getBus());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -720,6 +778,10 @@ private static final long serialVersionUID = 0L;
     if (hasTrain()) {
       hash = (37 * hash) + TRAIN_FIELD_NUMBER;
       hash = (53 * hash) + getTrain().hashCode();
+    }
+    if (hasBus()) {
+      hash = (37 * hash) + BUS_FIELD_NUMBER;
+      hash = (53 * hash) + getBus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -897,6 +959,12 @@ private static final long serialVersionUID = 0L;
         train_ = null;
         trainBuilder_ = null;
       }
+      if (busBuilder_ == null) {
+        bus_ = null;
+      } else {
+        bus_ = null;
+        busBuilder_ = null;
+      }
       return this;
     }
 
@@ -959,6 +1027,11 @@ private static final long serialVersionUID = 0L;
         result.train_ = train_;
       } else {
         result.train_ = trainBuilder_.build();
+      }
+      if (busBuilder_ == null) {
+        result.bus_ = bus_;
+      } else {
+        result.bus_ = busBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1067,6 +1140,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTrain()) {
         mergeTrain(other.getTrain());
+      }
+      if (other.hasBus()) {
+        mergeBus(other.getBus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2401,6 +2477,159 @@ private static final long serialVersionUID = 0L;
         train_ = null;
       }
       return trainBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.BusType bus_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.BusType, com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder> busBuilder_;
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public boolean hasBus() {
+      return busBuilder_ != null || bus_ != null;
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.BusType getBus() {
+      if (busBuilder_ == null) {
+        return bus_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.BusType.getDefaultInstance() : bus_;
+      } else {
+        return busBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public Builder setBus(com.ctrip.flight.agg.shopping.contract.transportation.BusType value) {
+      if (busBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bus_ = value;
+        onChanged();
+      } else {
+        busBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public Builder setBus(
+        com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder builderForValue) {
+      if (busBuilder_ == null) {
+        bus_ = builderForValue.build();
+        onChanged();
+      } else {
+        busBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public Builder mergeBus(com.ctrip.flight.agg.shopping.contract.transportation.BusType value) {
+      if (busBuilder_ == null) {
+        if (bus_ != null) {
+          bus_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.BusType.newBuilder(bus_).mergeFrom(value).buildPartial();
+        } else {
+          bus_ = value;
+        }
+        onChanged();
+      } else {
+        busBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public Builder clearBus() {
+      if (busBuilder_ == null) {
+        bus_ = null;
+        onChanged();
+      } else {
+        bus_ = null;
+        busBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder getBusBuilder() {
+      
+      onChanged();
+      return getBusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder getBusOrBuilder() {
+      if (busBuilder_ != null) {
+        return busBuilder_.getMessageOrBuilder();
+      } else {
+        return bus_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.BusType.getDefaultInstance() : bus_;
+      }
+    }
+    /**
+     * <pre>
+     * Bus类型扩展信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.BusType, com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder> 
+        getBusFieldBuilder() {
+      if (busBuilder_ == null) {
+        busBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.BusType, com.ctrip.flight.agg.shopping.contract.transportation.BusType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder>(
+                getBus(),
+                getParentForChildren(),
+                isClean());
+        bus_ = null;
+      }
+      return busBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

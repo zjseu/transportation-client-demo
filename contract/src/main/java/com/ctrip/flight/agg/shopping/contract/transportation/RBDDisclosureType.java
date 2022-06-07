@@ -23,6 +23,9 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     shortName_ = "";
     description_ = "";
+    specialClassTypeID_ = 0L;
+    extraTabName_ = "";
+    brandOrder_ = "";
   }
 
   @java.lang.Override
@@ -65,6 +68,23 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
+            break;
+          }
+          case 32: {
+
+            specialClassTypeID_ = input.readInt64();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            extraTabName_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            brandOrder_ = s;
             break;
           }
           default: {
@@ -225,6 +245,103 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SPECIALCLASSTYPEID_FIELD_NUMBER = 4;
+  private long specialClassTypeID_;
+  /**
+   * <pre>
+   * 特舱ID
+   * </pre>
+   *
+   * <code>int64 SpecialClassTypeID = 4;</code>
+   */
+  public long getSpecialClassTypeID() {
+    return specialClassTypeID_;
+  }
+
+  public static final int EXTRATABNAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object extraTabName_;
+  /**
+   * <pre>
+   * 单独标签
+   * </pre>
+   *
+   * <code>string ExtraTabName = 5;</code>
+   */
+  public java.lang.String getExtraTabName() {
+    java.lang.Object ref = extraTabName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      extraTabName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 单独标签
+   * </pre>
+   *
+   * <code>string ExtraTabName = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getExtraTabNameBytes() {
+    java.lang.Object ref = extraTabName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      extraTabName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BRANDORDER_FIELD_NUMBER = 6;
+  private volatile java.lang.Object brandOrder_;
+  /**
+   * <pre>
+   * 特舱溢价等级(品牌顺序)
+   * </pre>
+   *
+   * <code>string BrandOrder = 6;</code>
+   */
+  public java.lang.String getBrandOrder() {
+    java.lang.Object ref = brandOrder_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      brandOrder_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 特舱溢价等级(品牌顺序)
+   * </pre>
+   *
+   * <code>string BrandOrder = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBrandOrderBytes() {
+    java.lang.Object ref = brandOrder_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      brandOrder_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -248,6 +365,15 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
+    if (specialClassTypeID_ != 0L) {
+      output.writeInt64(4, specialClassTypeID_);
+    }
+    if (!getExtraTabNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extraTabName_);
+    }
+    if (!getBrandOrderBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, brandOrder_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +391,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+    }
+    if (specialClassTypeID_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, specialClassTypeID_);
+    }
+    if (!getExtraTabNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extraTabName_);
+    }
+    if (!getBrandOrderBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, brandOrder_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,6 +424,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShortName());
     result = result && getDescription()
         .equals(other.getDescription());
+    result = result && (getSpecialClassTypeID()
+        == other.getSpecialClassTypeID());
+    result = result && getExtraTabName()
+        .equals(other.getExtraTabName());
+    result = result && getBrandOrder()
+        .equals(other.getBrandOrder());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -305,6 +447,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShortName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SPECIALCLASSTYPEID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSpecialClassTypeID());
+    hash = (37 * hash) + EXTRATABNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getExtraTabName().hashCode();
+    hash = (37 * hash) + BRANDORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getBrandOrder().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -448,6 +597,12 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
+      specialClassTypeID_ = 0L;
+
+      extraTabName_ = "";
+
+      brandOrder_ = "";
+
       return this;
     }
 
@@ -477,6 +632,9 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.shortName_ = shortName_;
       result.description_ = description_;
+      result.specialClassTypeID_ = specialClassTypeID_;
+      result.extraTabName_ = extraTabName_;
+      result.brandOrder_ = brandOrder_;
       onBuilt();
       return result;
     }
@@ -535,6 +693,17 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        onChanged();
+      }
+      if (other.getSpecialClassTypeID() != 0L) {
+        setSpecialClassTypeID(other.getSpecialClassTypeID());
+      }
+      if (!other.getExtraTabName().isEmpty()) {
+        extraTabName_ = other.extraTabName_;
+        onChanged();
+      }
+      if (!other.getBrandOrder().isEmpty()) {
+        brandOrder_ = other.brandOrder_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -829,6 +998,222 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long specialClassTypeID_ ;
+    /**
+     * <pre>
+     * 特舱ID
+     * </pre>
+     *
+     * <code>int64 SpecialClassTypeID = 4;</code>
+     */
+    public long getSpecialClassTypeID() {
+      return specialClassTypeID_;
+    }
+    /**
+     * <pre>
+     * 特舱ID
+     * </pre>
+     *
+     * <code>int64 SpecialClassTypeID = 4;</code>
+     */
+    public Builder setSpecialClassTypeID(long value) {
+      
+      specialClassTypeID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 特舱ID
+     * </pre>
+     *
+     * <code>int64 SpecialClassTypeID = 4;</code>
+     */
+    public Builder clearSpecialClassTypeID() {
+      
+      specialClassTypeID_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object extraTabName_ = "";
+    /**
+     * <pre>
+     * 单独标签
+     * </pre>
+     *
+     * <code>string ExtraTabName = 5;</code>
+     */
+    public java.lang.String getExtraTabName() {
+      java.lang.Object ref = extraTabName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extraTabName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 单独标签
+     * </pre>
+     *
+     * <code>string ExtraTabName = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExtraTabNameBytes() {
+      java.lang.Object ref = extraTabName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        extraTabName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 单独标签
+     * </pre>
+     *
+     * <code>string ExtraTabName = 5;</code>
+     */
+    public Builder setExtraTabName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      extraTabName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 单独标签
+     * </pre>
+     *
+     * <code>string ExtraTabName = 5;</code>
+     */
+    public Builder clearExtraTabName() {
+      
+      extraTabName_ = getDefaultInstance().getExtraTabName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 单独标签
+     * </pre>
+     *
+     * <code>string ExtraTabName = 5;</code>
+     */
+    public Builder setExtraTabNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      extraTabName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object brandOrder_ = "";
+    /**
+     * <pre>
+     * 特舱溢价等级(品牌顺序)
+     * </pre>
+     *
+     * <code>string BrandOrder = 6;</code>
+     */
+    public java.lang.String getBrandOrder() {
+      java.lang.Object ref = brandOrder_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        brandOrder_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 特舱溢价等级(品牌顺序)
+     * </pre>
+     *
+     * <code>string BrandOrder = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBrandOrderBytes() {
+      java.lang.Object ref = brandOrder_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        brandOrder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 特舱溢价等级(品牌顺序)
+     * </pre>
+     *
+     * <code>string BrandOrder = 6;</code>
+     */
+    public Builder setBrandOrder(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      brandOrder_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 特舱溢价等级(品牌顺序)
+     * </pre>
+     *
+     * <code>string BrandOrder = 6;</code>
+     */
+    public Builder clearBrandOrder() {
+      
+      brandOrder_ = getDefaultInstance().getBrandOrder();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 特舱溢价等级(品牌顺序)
+     * </pre>
+     *
+     * <code>string BrandOrder = 6;</code>
+     */
+    public Builder setBrandOrderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      brandOrder_ = value;
       onChanged();
       return this;
     }

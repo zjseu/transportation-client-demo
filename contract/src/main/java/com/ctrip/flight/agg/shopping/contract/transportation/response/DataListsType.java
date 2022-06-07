@@ -155,6 +155,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType.parser(), extensionRegistry));
             break;
           }
+          case 98: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder subBuilder = null;
+            if (bookingReference_ != null) {
+              subBuilder = bookingReference_.toBuilder();
+            }
+            bookingReference_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bookingReference_);
+              bookingReference_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -801,6 +814,39 @@ private static final long serialVersionUID = 0L;
     return paymentDiscount_.get(index);
   }
 
+  public static final int BOOKINGREFERENCE_FIELD_NUMBER = 12;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType bookingReference_;
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  public boolean hasBookingReference() {
+    return bookingReference_ != null;
+  }
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType getBookingReference() {
+    return bookingReference_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.getDefaultInstance() : bookingReference_;
+  }
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder getBookingReferenceOrBuilder() {
+    return getBookingReference();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -847,6 +893,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < paymentDiscount_.size(); i++) {
       output.writeMessage(11, paymentDiscount_.get(i));
+    }
+    if (bookingReference_ != null) {
+      output.writeMessage(12, getBookingReference());
     }
     unknownFields.writeTo(output);
   }
@@ -901,6 +950,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, paymentDiscount_.get(i));
     }
+    if (bookingReference_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getBookingReference());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -942,6 +995,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTextRemarkList());
     result = result && getPaymentDiscountList()
         .equals(other.getPaymentDiscountList());
+    result = result && (hasBookingReference() == other.hasBookingReference());
+    if (hasBookingReference()) {
+      result = result && getBookingReference()
+          .equals(other.getBookingReference());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -996,6 +1054,10 @@ private static final long serialVersionUID = 0L;
     if (getPaymentDiscountCount() > 0) {
       hash = (37 * hash) + PAYMENTDISCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getPaymentDiscountList().hashCode();
+    }
+    if (hasBookingReference()) {
+      hash = (37 * hash) + BOOKINGREFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getBookingReference().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1206,6 +1268,12 @@ private static final long serialVersionUID = 0L;
       } else {
         paymentDiscountBuilder_.clear();
       }
+      if (bookingReferenceBuilder_ == null) {
+        bookingReference_ = null;
+      } else {
+        bookingReference_ = null;
+        bookingReferenceBuilder_ = null;
+      }
       return this;
     }
 
@@ -1328,6 +1396,11 @@ private static final long serialVersionUID = 0L;
         result.paymentDiscount_ = paymentDiscount_;
       } else {
         result.paymentDiscount_ = paymentDiscountBuilder_.build();
+      }
+      if (bookingReferenceBuilder_ == null) {
+        result.bookingReference_ = bookingReference_;
+      } else {
+        result.bookingReference_ = bookingReferenceBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1640,6 +1713,9 @@ private static final long serialVersionUID = 0L;
             paymentDiscountBuilder_.addAllMessages(other.paymentDiscount_);
           }
         }
+      }
+      if (other.hasBookingReference()) {
+        mergeBookingReference(other.getBookingReference());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4942,6 +5018,159 @@ private static final long serialVersionUID = 0L;
         paymentDiscount_ = null;
       }
       return paymentDiscountBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType bookingReference_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder> bookingReferenceBuilder_;
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public boolean hasBookingReference() {
+      return bookingReferenceBuilder_ != null || bookingReference_ != null;
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType getBookingReference() {
+      if (bookingReferenceBuilder_ == null) {
+        return bookingReference_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.getDefaultInstance() : bookingReference_;
+      } else {
+        return bookingReferenceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public Builder setBookingReference(com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType value) {
+      if (bookingReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bookingReference_ = value;
+        onChanged();
+      } else {
+        bookingReferenceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public Builder setBookingReference(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder builderForValue) {
+      if (bookingReferenceBuilder_ == null) {
+        bookingReference_ = builderForValue.build();
+        onChanged();
+      } else {
+        bookingReferenceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public Builder mergeBookingReference(com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType value) {
+      if (bookingReferenceBuilder_ == null) {
+        if (bookingReference_ != null) {
+          bookingReference_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.newBuilder(bookingReference_).mergeFrom(value).buildPartial();
+        } else {
+          bookingReference_ = value;
+        }
+        onChanged();
+      } else {
+        bookingReferenceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public Builder clearBookingReference() {
+      if (bookingReferenceBuilder_ == null) {
+        bookingReference_ = null;
+        onChanged();
+      } else {
+        bookingReference_ = null;
+        bookingReferenceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder getBookingReferenceBuilder() {
+      
+      onChanged();
+      return getBookingReferenceFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder getBookingReferenceOrBuilder() {
+      if (bookingReferenceBuilder_ != null) {
+        return bookingReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        return bookingReference_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.getDefaultInstance() : bookingReference_;
+      }
+    }
+    /**
+     * <pre>
+     * 下单用预订信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder> 
+        getBookingReferenceFieldBuilder() {
+      if (bookingReferenceBuilder_ == null) {
+        bookingReferenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder>(
+                getBookingReference(),
+                getParentForChildren(),
+                isClean());
+        bookingReference_ = null;
+      }
+      return bookingReferenceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

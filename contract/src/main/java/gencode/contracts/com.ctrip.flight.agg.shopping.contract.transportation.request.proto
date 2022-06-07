@@ -46,6 +46,9 @@ message SearchCriteriaType {
 
     // 指定查询
     SpecifiedOptionType SpecifiedOption = 13;
+
+    // 适配查询扩展
+    AdaptedOptionType AdaptedOption = 14;
 }
 
 message JourneyRequestType {
@@ -112,6 +115,8 @@ message CoordinateType {
     double Longitude = 1;
     // 纬度
     double Latitude = 2;
+    // 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
+    string UpdateTime = 3;
 }
 
 message AdvancedOptionType {
@@ -194,4 +199,18 @@ message FlightSpecifiedOptionType {
     repeated string CabinCode = 5;
     // 子仓
     string RBD = 6;
+}
+
+// 适配查询扩展
+message AdaptedOptionType {
+    // 指定X产品查询
+    repeated XProductAppointedType XProductAppointed = 1;
+}
+
+// 指定X产品查询
+message XProductAppointedType {
+    // X产品类型
+    string ProductType = 1;
+    // X产品Token
+    repeated string XToken = 2;
 }

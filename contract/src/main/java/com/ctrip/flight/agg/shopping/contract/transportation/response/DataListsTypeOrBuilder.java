@@ -471,4 +471,29 @@ public interface DataListsTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountTypeOrBuilder getPaymentDiscountOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  boolean hasBookingReference();
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType getBookingReference();
+  /**
+   * <pre>
+   * 下单用预订信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder getBookingReferenceOrBuilder();
 }

@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     ageLimitRange_ = java.util.Collections.emptyList();
     nationalityAllow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     nationalityBlock_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    maleAgeLimitRange_ = java.util.Collections.emptyList();
+    femaleAgeLimitRange_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -78,6 +80,24 @@ private static final long serialVersionUID = 0L;
             nationalityBlock_.add(s);
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              maleAgeLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            maleAgeLimitRange_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.parser(), extensionRegistry));
+            break;
+          }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              femaleAgeLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            femaleAgeLimitRange_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +121,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         nationalityBlock_ = nationalityBlock_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        maleAgeLimitRange_ = java.util.Collections.unmodifiableList(maleAgeLimitRange_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        femaleAgeLimitRange_ = java.util.Collections.unmodifiableList(femaleAgeLimitRange_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -278,6 +304,116 @@ private static final long serialVersionUID = 0L;
     return nationalityBlock_.getByteString(index);
   }
 
+  public static final int MALEAGELIMITRANGE_FIELD_NUMBER = 5;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> maleAgeLimitRange_;
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getMaleAgeLimitRangeList() {
+    return maleAgeLimitRange_;
+  }
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+      getMaleAgeLimitRangeOrBuilderList() {
+    return maleAgeLimitRange_;
+  }
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  public int getMaleAgeLimitRangeCount() {
+    return maleAgeLimitRange_.size();
+  }
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getMaleAgeLimitRange(int index) {
+    return maleAgeLimitRange_.get(index);
+  }
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getMaleAgeLimitRangeOrBuilder(
+      int index) {
+    return maleAgeLimitRange_.get(index);
+  }
+
+  public static final int FEMALEAGELIMITRANGE_FIELD_NUMBER = 6;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> femaleAgeLimitRange_;
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getFemaleAgeLimitRangeList() {
+    return femaleAgeLimitRange_;
+  }
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+      getFemaleAgeLimitRangeOrBuilderList() {
+    return femaleAgeLimitRange_;
+  }
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  public int getFemaleAgeLimitRangeCount() {
+    return femaleAgeLimitRange_.size();
+  }
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getFemaleAgeLimitRange(int index) {
+    return femaleAgeLimitRange_.get(index);
+  }
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getFemaleAgeLimitRangeOrBuilder(
+      int index) {
+    return femaleAgeLimitRange_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -303,6 +439,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < nationalityBlock_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nationalityBlock_.getRaw(i));
+    }
+    for (int i = 0; i < maleAgeLimitRange_.size(); i++) {
+      output.writeMessage(5, maleAgeLimitRange_.get(i));
+    }
+    for (int i = 0; i < femaleAgeLimitRange_.size(); i++) {
+      output.writeMessage(6, femaleAgeLimitRange_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -337,6 +479,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getNationalityBlockList().size();
     }
+    for (int i = 0; i < maleAgeLimitRange_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, maleAgeLimitRange_.get(i));
+    }
+    for (int i = 0; i < femaleAgeLimitRange_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, femaleAgeLimitRange_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -361,6 +511,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNationalityAllowList());
     result = result && getNationalityBlockList()
         .equals(other.getNationalityBlockList());
+    result = result && getMaleAgeLimitRangeList()
+        .equals(other.getMaleAgeLimitRangeList());
+    result = result && getFemaleAgeLimitRangeList()
+        .equals(other.getFemaleAgeLimitRangeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -385,6 +539,14 @@ private static final long serialVersionUID = 0L;
     if (getNationalityBlockCount() > 0) {
       hash = (37 * hash) + NATIONALITYBLOCK_FIELD_NUMBER;
       hash = (53 * hash) + getNationalityBlockList().hashCode();
+    }
+    if (getMaleAgeLimitRangeCount() > 0) {
+      hash = (37 * hash) + MALEAGELIMITRANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaleAgeLimitRangeList().hashCode();
+    }
+    if (getFemaleAgeLimitRangeCount() > 0) {
+      hash = (37 * hash) + FEMALEAGELIMITRANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getFemaleAgeLimitRangeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -515,6 +677,8 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getAgeLimitRangeFieldBuilder();
+        getMaleAgeLimitRangeFieldBuilder();
+        getFemaleAgeLimitRangeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -532,6 +696,18 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       nationalityBlock_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (maleAgeLimitRangeBuilder_ == null) {
+        maleAgeLimitRange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        maleAgeLimitRangeBuilder_.clear();
+      }
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        femaleAgeLimitRange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        femaleAgeLimitRangeBuilder_.clear();
+      }
       return this;
     }
 
@@ -580,6 +756,24 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.nationalityBlock_ = nationalityBlock_;
+      if (maleAgeLimitRangeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          maleAgeLimitRange_ = java.util.Collections.unmodifiableList(maleAgeLimitRange_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.maleAgeLimitRange_ = maleAgeLimitRange_;
+      } else {
+        result.maleAgeLimitRange_ = maleAgeLimitRangeBuilder_.build();
+      }
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          femaleAgeLimitRange_ = java.util.Collections.unmodifiableList(femaleAgeLimitRange_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.femaleAgeLimitRange_ = femaleAgeLimitRange_;
+      } else {
+        result.femaleAgeLimitRange_ = femaleAgeLimitRangeBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -677,6 +871,58 @@ private static final long serialVersionUID = 0L;
           nationalityBlock_.addAll(other.nationalityBlock_);
         }
         onChanged();
+      }
+      if (maleAgeLimitRangeBuilder_ == null) {
+        if (!other.maleAgeLimitRange_.isEmpty()) {
+          if (maleAgeLimitRange_.isEmpty()) {
+            maleAgeLimitRange_ = other.maleAgeLimitRange_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureMaleAgeLimitRangeIsMutable();
+            maleAgeLimitRange_.addAll(other.maleAgeLimitRange_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.maleAgeLimitRange_.isEmpty()) {
+          if (maleAgeLimitRangeBuilder_.isEmpty()) {
+            maleAgeLimitRangeBuilder_.dispose();
+            maleAgeLimitRangeBuilder_ = null;
+            maleAgeLimitRange_ = other.maleAgeLimitRange_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            maleAgeLimitRangeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMaleAgeLimitRangeFieldBuilder() : null;
+          } else {
+            maleAgeLimitRangeBuilder_.addAllMessages(other.maleAgeLimitRange_);
+          }
+        }
+      }
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        if (!other.femaleAgeLimitRange_.isEmpty()) {
+          if (femaleAgeLimitRange_.isEmpty()) {
+            femaleAgeLimitRange_ = other.femaleAgeLimitRange_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureFemaleAgeLimitRangeIsMutable();
+            femaleAgeLimitRange_.addAll(other.femaleAgeLimitRange_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.femaleAgeLimitRange_.isEmpty()) {
+          if (femaleAgeLimitRangeBuilder_.isEmpty()) {
+            femaleAgeLimitRangeBuilder_.dispose();
+            femaleAgeLimitRangeBuilder_ = null;
+            femaleAgeLimitRange_ = other.femaleAgeLimitRange_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            femaleAgeLimitRangeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFemaleAgeLimitRangeFieldBuilder() : null;
+          } else {
+            femaleAgeLimitRangeBuilder_.addAllMessages(other.femaleAgeLimitRange_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1316,6 +1562,630 @@ private static final long serialVersionUID = 0L;
       nationalityBlock_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> maleAgeLimitRange_ =
+      java.util.Collections.emptyList();
+    private void ensureMaleAgeLimitRangeIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        maleAgeLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>(maleAgeLimitRange_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> maleAgeLimitRangeBuilder_;
+
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getMaleAgeLimitRangeList() {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(maleAgeLimitRange_);
+      } else {
+        return maleAgeLimitRangeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public int getMaleAgeLimitRangeCount() {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        return maleAgeLimitRange_.size();
+      } else {
+        return maleAgeLimitRangeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getMaleAgeLimitRange(int index) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        return maleAgeLimitRange_.get(index);
+      } else {
+        return maleAgeLimitRangeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder setMaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.set(index, value);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder setMaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder addMaleAgeLimitRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.add(value);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder addMaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.add(index, value);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder addMaleAgeLimitRange(
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.add(builderForValue.build());
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder addMaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder addAllMaleAgeLimitRange(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> values) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        ensureMaleAgeLimitRangeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, maleAgeLimitRange_);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder clearMaleAgeLimitRange() {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        maleAgeLimitRange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public Builder removeMaleAgeLimitRange(int index) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        ensureMaleAgeLimitRangeIsMutable();
+        maleAgeLimitRange_.remove(index);
+        onChanged();
+      } else {
+        maleAgeLimitRangeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder getMaleAgeLimitRangeBuilder(
+        int index) {
+      return getMaleAgeLimitRangeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getMaleAgeLimitRangeOrBuilder(
+        int index) {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        return maleAgeLimitRange_.get(index);  } else {
+        return maleAgeLimitRangeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+         getMaleAgeLimitRangeOrBuilderList() {
+      if (maleAgeLimitRangeBuilder_ != null) {
+        return maleAgeLimitRangeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(maleAgeLimitRange_);
+      }
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addMaleAgeLimitRangeBuilder() {
+      return getMaleAgeLimitRangeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addMaleAgeLimitRangeBuilder(
+        int index) {
+      return getMaleAgeLimitRangeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder> 
+         getMaleAgeLimitRangeBuilderList() {
+      return getMaleAgeLimitRangeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+        getMaleAgeLimitRangeFieldBuilder() {
+      if (maleAgeLimitRangeBuilder_ == null) {
+        maleAgeLimitRangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder>(
+                maleAgeLimitRange_,
+                ((bitField0_ & 0x00000010) == 0x00000010),
+                getParentForChildren(),
+                isClean());
+        maleAgeLimitRange_ = null;
+      }
+      return maleAgeLimitRangeBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> femaleAgeLimitRange_ =
+      java.util.Collections.emptyList();
+    private void ensureFemaleAgeLimitRangeIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        femaleAgeLimitRange_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType>(femaleAgeLimitRange_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> femaleAgeLimitRangeBuilder_;
+
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> getFemaleAgeLimitRangeList() {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(femaleAgeLimitRange_);
+      } else {
+        return femaleAgeLimitRangeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public int getFemaleAgeLimitRangeCount() {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        return femaleAgeLimitRange_.size();
+      } else {
+        return femaleAgeLimitRangeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getFemaleAgeLimitRange(int index) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        return femaleAgeLimitRange_.get(index);
+      } else {
+        return femaleAgeLimitRangeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder setFemaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.set(index, value);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder setFemaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder addFemaleAgeLimitRange(com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.add(value);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder addFemaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType value) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.add(index, value);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder addFemaleAgeLimitRange(
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.add(builderForValue.build());
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder addFemaleAgeLimitRange(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder builderForValue) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder addAllFemaleAgeLimitRange(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> values) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        ensureFemaleAgeLimitRangeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, femaleAgeLimitRange_);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder clearFemaleAgeLimitRange() {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        femaleAgeLimitRange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public Builder removeFemaleAgeLimitRange(int index) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        ensureFemaleAgeLimitRangeIsMutable();
+        femaleAgeLimitRange_.remove(index);
+        onChanged();
+      } else {
+        femaleAgeLimitRangeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder getFemaleAgeLimitRangeBuilder(
+        int index) {
+      return getFemaleAgeLimitRangeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getFemaleAgeLimitRangeOrBuilder(
+        int index) {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        return femaleAgeLimitRange_.get(index);  } else {
+        return femaleAgeLimitRangeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+         getFemaleAgeLimitRangeOrBuilderList() {
+      if (femaleAgeLimitRangeBuilder_ != null) {
+        return femaleAgeLimitRangeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(femaleAgeLimitRange_);
+      }
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addFemaleAgeLimitRangeBuilder() {
+      return getFemaleAgeLimitRangeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder addFemaleAgeLimitRangeBuilder(
+        int index) {
+      return getFemaleAgeLimitRangeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder> 
+         getFemaleAgeLimitRangeBuilderList() {
+      return getFemaleAgeLimitRangeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+        getFemaleAgeLimitRangeFieldBuilder() {
+      if (femaleAgeLimitRangeBuilder_ == null) {
+        femaleAgeLimitRangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder>(
+                femaleAgeLimitRange_,
+                ((bitField0_ & 0x00000020) == 0x00000020),
+                getParentForChildren(),
+                isClean());
+        femaleAgeLimitRange_ = null;
+      }
+      return femaleAgeLimitRangeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

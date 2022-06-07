@@ -62,6 +62,32 @@ private static final long serialVersionUID = 0L;
             upgradeCFReferencePrice_ = input.readDouble();
             break;
           }
+          case 26: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder subBuilder = null;
+            if (yReferencePriceDetail_ != null) {
+              subBuilder = yReferencePriceDetail_.toBuilder();
+            }
+            yReferencePriceDetail_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(yReferencePriceDetail_);
+              yReferencePriceDetail_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder subBuilder = null;
+            if (cFReferencePriceDetail_ != null) {
+              subBuilder = cFReferencePriceDetail_.toBuilder();
+            }
+            cFReferencePriceDetail_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(cFReferencePriceDetail_);
+              cFReferencePriceDetail_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -160,10 +186,76 @@ private static final long serialVersionUID = 0L;
    * 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
    * </pre>
    *
-   * <code>double UpgradeCFReferencePrice = 2;</code>
+   * <code>double UpgradeCFReferencePrice = 2 [deprecated = true];</code>
    */
-  public double getUpgradeCFReferencePrice() {
+  @java.lang.Deprecated public double getUpgradeCFReferencePrice() {
     return upgradeCFReferencePrice_;
+  }
+
+  public static final int YREFERENCEPRICEDETAIL_FIELD_NUMBER = 3;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType yReferencePriceDetail_;
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  public boolean hasYReferencePriceDetail() {
+    return yReferencePriceDetail_ != null;
+  }
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getYReferencePriceDetail() {
+    return yReferencePriceDetail_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : yReferencePriceDetail_;
+  }
+  /**
+   * <pre>
+   * 经济舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getYReferencePriceDetailOrBuilder() {
+    return getYReferencePriceDetail();
+  }
+
+  public static final int CFREFERENCEPRICEDETAIL_FIELD_NUMBER = 4;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType cFReferencePriceDetail_;
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  public boolean hasCFReferencePriceDetail() {
+    return cFReferencePriceDetail_ != null;
+  }
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getCFReferencePriceDetail() {
+    return cFReferencePriceDetail_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : cFReferencePriceDetail_;
+  }
+  /**
+   * <pre>
+   * 两舱参考价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getCFReferencePriceDetailOrBuilder() {
+    return getCFReferencePriceDetail();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -186,6 +278,12 @@ private static final long serialVersionUID = 0L;
     if (upgradeCFReferencePrice_ != 0D) {
       output.writeDouble(2, upgradeCFReferencePrice_);
     }
+    if (yReferencePriceDetail_ != null) {
+      output.writeMessage(3, getYReferencePriceDetail());
+    }
+    if (cFReferencePriceDetail_ != null) {
+      output.writeMessage(4, getCFReferencePriceDetail());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -202,6 +300,14 @@ private static final long serialVersionUID = 0L;
     if (upgradeCFReferencePrice_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, upgradeCFReferencePrice_);
+    }
+    if (yReferencePriceDetail_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getYReferencePriceDetail());
+    }
+    if (cFReferencePriceDetail_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getCFReferencePriceDetail());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -225,6 +331,16 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getUpgradeCFReferencePrice())
         == java.lang.Double.doubleToLongBits(
             other.getUpgradeCFReferencePrice()));
+    result = result && (hasYReferencePriceDetail() == other.hasYReferencePriceDetail());
+    if (hasYReferencePriceDetail()) {
+      result = result && getYReferencePriceDetail()
+          .equals(other.getYReferencePriceDetail());
+    }
+    result = result && (hasCFReferencePriceDetail() == other.hasCFReferencePriceDetail());
+    if (hasCFReferencePriceDetail()) {
+      result = result && getCFReferencePriceDetail()
+          .equals(other.getCFReferencePriceDetail());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -243,6 +359,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + UPGRADECFREFERENCEPRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getUpgradeCFReferencePrice()));
+    if (hasYReferencePriceDetail()) {
+      hash = (37 * hash) + YREFERENCEPRICEDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getYReferencePriceDetail().hashCode();
+    }
+    if (hasCFReferencePriceDetail()) {
+      hash = (37 * hash) + CFREFERENCEPRICEDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getCFReferencePriceDetail().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -389,6 +513,18 @@ private static final long serialVersionUID = 0L;
       }
       upgradeCFReferencePrice_ = 0D;
 
+      if (yReferencePriceDetailBuilder_ == null) {
+        yReferencePriceDetail_ = null;
+      } else {
+        yReferencePriceDetail_ = null;
+        yReferencePriceDetailBuilder_ = null;
+      }
+      if (cFReferencePriceDetailBuilder_ == null) {
+        cFReferencePriceDetail_ = null;
+      } else {
+        cFReferencePriceDetail_ = null;
+        cFReferencePriceDetailBuilder_ = null;
+      }
       return this;
     }
 
@@ -427,6 +563,16 @@ private static final long serialVersionUID = 0L;
         result.standardPrice_ = standardPriceBuilder_.build();
       }
       result.upgradeCFReferencePrice_ = upgradeCFReferencePrice_;
+      if (yReferencePriceDetailBuilder_ == null) {
+        result.yReferencePriceDetail_ = yReferencePriceDetail_;
+      } else {
+        result.yReferencePriceDetail_ = yReferencePriceDetailBuilder_.build();
+      }
+      if (cFReferencePriceDetailBuilder_ == null) {
+        result.cFReferencePriceDetail_ = cFReferencePriceDetail_;
+      } else {
+        result.cFReferencePriceDetail_ = cFReferencePriceDetailBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -504,6 +650,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUpgradeCFReferencePrice() != 0D) {
         setUpgradeCFReferencePrice(other.getUpgradeCFReferencePrice());
+      }
+      if (other.hasYReferencePriceDetail()) {
+        mergeYReferencePriceDetail(other.getYReferencePriceDetail());
+      }
+      if (other.hasCFReferencePriceDetail()) {
+        mergeCFReferencePriceDetail(other.getCFReferencePriceDetail());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -853,9 +1005,9 @@ private static final long serialVersionUID = 0L;
      * 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
      * </pre>
      *
-     * <code>double UpgradeCFReferencePrice = 2;</code>
+     * <code>double UpgradeCFReferencePrice = 2 [deprecated = true];</code>
      */
-    public double getUpgradeCFReferencePrice() {
+    @java.lang.Deprecated public double getUpgradeCFReferencePrice() {
       return upgradeCFReferencePrice_;
     }
     /**
@@ -863,9 +1015,9 @@ private static final long serialVersionUID = 0L;
      * 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
      * </pre>
      *
-     * <code>double UpgradeCFReferencePrice = 2;</code>
+     * <code>double UpgradeCFReferencePrice = 2 [deprecated = true];</code>
      */
-    public Builder setUpgradeCFReferencePrice(double value) {
+    @java.lang.Deprecated public Builder setUpgradeCFReferencePrice(double value) {
       
       upgradeCFReferencePrice_ = value;
       onChanged();
@@ -876,13 +1028,319 @@ private static final long serialVersionUID = 0L;
      * 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
      * </pre>
      *
-     * <code>double UpgradeCFReferencePrice = 2;</code>
+     * <code>double UpgradeCFReferencePrice = 2 [deprecated = true];</code>
      */
-    public Builder clearUpgradeCFReferencePrice() {
+    @java.lang.Deprecated public Builder clearUpgradeCFReferencePrice() {
       
       upgradeCFReferencePrice_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType yReferencePriceDetail_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder> yReferencePriceDetailBuilder_;
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public boolean hasYReferencePriceDetail() {
+      return yReferencePriceDetailBuilder_ != null || yReferencePriceDetail_ != null;
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getYReferencePriceDetail() {
+      if (yReferencePriceDetailBuilder_ == null) {
+        return yReferencePriceDetail_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : yReferencePriceDetail_;
+      } else {
+        return yReferencePriceDetailBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public Builder setYReferencePriceDetail(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType value) {
+      if (yReferencePriceDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        yReferencePriceDetail_ = value;
+        onChanged();
+      } else {
+        yReferencePriceDetailBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public Builder setYReferencePriceDetail(
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder builderForValue) {
+      if (yReferencePriceDetailBuilder_ == null) {
+        yReferencePriceDetail_ = builderForValue.build();
+        onChanged();
+      } else {
+        yReferencePriceDetailBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public Builder mergeYReferencePriceDetail(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType value) {
+      if (yReferencePriceDetailBuilder_ == null) {
+        if (yReferencePriceDetail_ != null) {
+          yReferencePriceDetail_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.newBuilder(yReferencePriceDetail_).mergeFrom(value).buildPartial();
+        } else {
+          yReferencePriceDetail_ = value;
+        }
+        onChanged();
+      } else {
+        yReferencePriceDetailBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public Builder clearYReferencePriceDetail() {
+      if (yReferencePriceDetailBuilder_ == null) {
+        yReferencePriceDetail_ = null;
+        onChanged();
+      } else {
+        yReferencePriceDetail_ = null;
+        yReferencePriceDetailBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder getYReferencePriceDetailBuilder() {
+      
+      onChanged();
+      return getYReferencePriceDetailFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getYReferencePriceDetailOrBuilder() {
+      if (yReferencePriceDetailBuilder_ != null) {
+        return yReferencePriceDetailBuilder_.getMessageOrBuilder();
+      } else {
+        return yReferencePriceDetail_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : yReferencePriceDetail_;
+      }
+    }
+    /**
+     * <pre>
+     * 经济舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType YReferencePriceDetail = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder> 
+        getYReferencePriceDetailFieldBuilder() {
+      if (yReferencePriceDetailBuilder_ == null) {
+        yReferencePriceDetailBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder>(
+                getYReferencePriceDetail(),
+                getParentForChildren(),
+                isClean());
+        yReferencePriceDetail_ = null;
+      }
+      return yReferencePriceDetailBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType cFReferencePriceDetail_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder> cFReferencePriceDetailBuilder_;
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public boolean hasCFReferencePriceDetail() {
+      return cFReferencePriceDetailBuilder_ != null || cFReferencePriceDetail_ != null;
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType getCFReferencePriceDetail() {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        return cFReferencePriceDetail_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : cFReferencePriceDetail_;
+      } else {
+        return cFReferencePriceDetailBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public Builder setCFReferencePriceDetail(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType value) {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cFReferencePriceDetail_ = value;
+        onChanged();
+      } else {
+        cFReferencePriceDetailBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public Builder setCFReferencePriceDetail(
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder builderForValue) {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        cFReferencePriceDetail_ = builderForValue.build();
+        onChanged();
+      } else {
+        cFReferencePriceDetailBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public Builder mergeCFReferencePriceDetail(com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType value) {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        if (cFReferencePriceDetail_ != null) {
+          cFReferencePriceDetail_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.newBuilder(cFReferencePriceDetail_).mergeFrom(value).buildPartial();
+        } else {
+          cFReferencePriceDetail_ = value;
+        }
+        onChanged();
+      } else {
+        cFReferencePriceDetailBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public Builder clearCFReferencePriceDetail() {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        cFReferencePriceDetail_ = null;
+        onChanged();
+      } else {
+        cFReferencePriceDetail_ = null;
+        cFReferencePriceDetailBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder getCFReferencePriceDetailBuilder() {
+      
+      onChanged();
+      return getCFReferencePriceDetailFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder getCFReferencePriceDetailOrBuilder() {
+      if (cFReferencePriceDetailBuilder_ != null) {
+        return cFReferencePriceDetailBuilder_.getMessageOrBuilder();
+      } else {
+        return cFReferencePriceDetail_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.getDefaultInstance() : cFReferencePriceDetail_;
+      }
+    }
+    /**
+     * <pre>
+     * 两舱参考价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType CFReferencePriceDetail = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder> 
+        getCFReferencePriceDetailFieldBuilder() {
+      if (cFReferencePriceDetailBuilder_ == null) {
+        cFReferencePriceDetailBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReferencePriceDetailTypeOrBuilder>(
+                getCFReferencePriceDetail(),
+                getParentForChildren(),
+                isClean());
+        cFReferencePriceDetail_ = null;
+      }
+      return cFReferencePriceDetailBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

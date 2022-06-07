@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     ancillaries_ = java.util.Collections.emptyList();
     memberPrivilege_ = java.util.Collections.emptyList();
     priceReduction_ = java.util.Collections.emptyList();
+    hotel_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -126,6 +127,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType.parser(), extensionRegistry));
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              hotel_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.HotelType>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            hotel_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.HotelType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -164,6 +174,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         priceReduction_ = java.util.Collections.unmodifiableList(priceReduction_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        hotel_ = java.util.Collections.unmodifiableList(hotel_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -622,6 +635,61 @@ private static final long serialVersionUID = 0L;
     return priceReduction_.get(index);
   }
 
+  public static final int HOTEL_FIELD_NUMBER = 9;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType> hotel_;
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType> getHotelList() {
+    return hotel_;
+  }
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder> 
+      getHotelOrBuilderList() {
+    return hotel_;
+  }
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  public int getHotelCount() {
+    return hotel_.size();
+  }
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.HotelType getHotel(int index) {
+    return hotel_.get(index);
+  }
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder getHotelOrBuilder(
+      int index) {
+    return hotel_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -659,6 +727,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < priceReduction_.size(); i++) {
       output.writeMessage(8, priceReduction_.get(i));
+    }
+    for (int i = 0; i < hotel_.size(); i++) {
+      output.writeMessage(9, hotel_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -701,6 +772,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, priceReduction_.get(i));
     }
+    for (int i = 0; i < hotel_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, hotel_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -733,6 +808,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMemberPrivilegeList());
     result = result && getPriceReductionList()
         .equals(other.getPriceReductionList());
+    result = result && getHotelList()
+        .equals(other.getHotelList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -775,6 +852,10 @@ private static final long serialVersionUID = 0L;
     if (getPriceReductionCount() > 0) {
       hash = (37 * hash) + PRICEREDUCTION_FIELD_NUMBER;
       hash = (53 * hash) + getPriceReductionList().hashCode();
+    }
+    if (getHotelCount() > 0) {
+      hash = (37 * hash) + HOTEL_FIELD_NUMBER;
+      hash = (53 * hash) + getHotelList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -916,6 +997,7 @@ private static final long serialVersionUID = 0L;
         getAncillariesFieldBuilder();
         getMemberPrivilegeFieldBuilder();
         getPriceReductionFieldBuilder();
+        getHotelFieldBuilder();
       }
     }
     @java.lang.Override
@@ -968,6 +1050,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         priceReductionBuilder_.clear();
+      }
+      if (hotelBuilder_ == null) {
+        hotel_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        hotelBuilder_.clear();
       }
       return this;
     }
@@ -1067,6 +1155,15 @@ private static final long serialVersionUID = 0L;
         result.priceReduction_ = priceReduction_;
       } else {
         result.priceReduction_ = priceReductionBuilder_.build();
+      }
+      if (hotelBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          hotel_ = java.util.Collections.unmodifiableList(hotel_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.hotel_ = hotel_;
+      } else {
+        result.hotel_ = hotelBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1321,6 +1418,32 @@ private static final long serialVersionUID = 0L;
                  getPriceReductionFieldBuilder() : null;
           } else {
             priceReductionBuilder_.addAllMessages(other.priceReduction_);
+          }
+        }
+      }
+      if (hotelBuilder_ == null) {
+        if (!other.hotel_.isEmpty()) {
+          if (hotel_.isEmpty()) {
+            hotel_ = other.hotel_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureHotelIsMutable();
+            hotel_.addAll(other.hotel_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.hotel_.isEmpty()) {
+          if (hotelBuilder_.isEmpty()) {
+            hotelBuilder_.dispose();
+            hotelBuilder_ = null;
+            hotel_ = other.hotel_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            hotelBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getHotelFieldBuilder() : null;
+          } else {
+            hotelBuilder_.addAllMessages(other.hotel_);
           }
         }
       }
@@ -3848,6 +3971,318 @@ private static final long serialVersionUID = 0L;
         priceReduction_ = null;
       }
       return priceReductionBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType> hotel_ =
+      java.util.Collections.emptyList();
+    private void ensureHotelIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        hotel_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.HotelType>(hotel_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.HotelType, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder> hotelBuilder_;
+
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType> getHotelList() {
+      if (hotelBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(hotel_);
+      } else {
+        return hotelBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public int getHotelCount() {
+      if (hotelBuilder_ == null) {
+        return hotel_.size();
+      } else {
+        return hotelBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.HotelType getHotel(int index) {
+      if (hotelBuilder_ == null) {
+        return hotel_.get(index);
+      } else {
+        return hotelBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder setHotel(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.HotelType value) {
+      if (hotelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHotelIsMutable();
+        hotel_.set(index, value);
+        onChanged();
+      } else {
+        hotelBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder setHotel(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder builderForValue) {
+      if (hotelBuilder_ == null) {
+        ensureHotelIsMutable();
+        hotel_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        hotelBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder addHotel(com.ctrip.flight.agg.shopping.contract.transportation.HotelType value) {
+      if (hotelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHotelIsMutable();
+        hotel_.add(value);
+        onChanged();
+      } else {
+        hotelBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder addHotel(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.HotelType value) {
+      if (hotelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHotelIsMutable();
+        hotel_.add(index, value);
+        onChanged();
+      } else {
+        hotelBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder addHotel(
+        com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder builderForValue) {
+      if (hotelBuilder_ == null) {
+        ensureHotelIsMutable();
+        hotel_.add(builderForValue.build());
+        onChanged();
+      } else {
+        hotelBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder addHotel(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder builderForValue) {
+      if (hotelBuilder_ == null) {
+        ensureHotelIsMutable();
+        hotel_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        hotelBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder addAllHotel(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.HotelType> values) {
+      if (hotelBuilder_ == null) {
+        ensureHotelIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, hotel_);
+        onChanged();
+      } else {
+        hotelBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder clearHotel() {
+      if (hotelBuilder_ == null) {
+        hotel_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        hotelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public Builder removeHotel(int index) {
+      if (hotelBuilder_ == null) {
+        ensureHotelIsMutable();
+        hotel_.remove(index);
+        onChanged();
+      } else {
+        hotelBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder getHotelBuilder(
+        int index) {
+      return getHotelFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder getHotelOrBuilder(
+        int index) {
+      if (hotelBuilder_ == null) {
+        return hotel_.get(index);  } else {
+        return hotelBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder> 
+         getHotelOrBuilderList() {
+      if (hotelBuilder_ != null) {
+        return hotelBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(hotel_);
+      }
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder addHotelBuilder() {
+      return getHotelFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.HotelType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder addHotelBuilder(
+        int index) {
+      return getHotelFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 酒店
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder> 
+         getHotelBuilderList() {
+      return getHotelFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.HotelType, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder> 
+        getHotelFieldBuilder() {
+      if (hotelBuilder_ == null) {
+        hotelBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.HotelType, com.ctrip.flight.agg.shopping.contract.transportation.HotelType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder>(
+                hotel_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        hotel_ = null;
+      }
+      return hotelBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

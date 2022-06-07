@@ -358,4 +358,48 @@ public interface MarketingProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionTypeOrBuilder getPriceReductionOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.HotelType> 
+      getHotelList();
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.HotelType getHotel(int index);
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  int getHotelCount();
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder> 
+      getHotelOrBuilderList();
+  /**
+   * <pre>
+   * 酒店
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.HotelType Hotel = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder getHotelOrBuilder(
+      int index);
 }

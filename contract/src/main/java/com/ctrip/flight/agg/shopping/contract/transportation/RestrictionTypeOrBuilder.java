@@ -312,4 +312,22 @@ public interface RestrictionTypeOrBuilder extends
    * <code>int32 PaxNumLimitType = 13;</code>
    */
   int getPaxNumLimitType();
+
+  /**
+   * <pre>
+   * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+   * </pre>
+   *
+   * <code>string CompositionPriceRemark = 14;</code>
+   */
+  java.lang.String getCompositionPriceRemark();
+  /**
+   * <pre>
+   * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+   * </pre>
+   *
+   * <code>string CompositionPriceRemark = 14;</code>
+   */
+  com.google.protobuf.ByteString
+      getCompositionPriceRemarkBytes();
 }

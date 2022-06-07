@@ -62,6 +62,10 @@ message PaxRestrictionType {
     repeated string NationalityAllow = 3;
     // 国籍黑名单
     repeated string NationalityBlock = 4;
+    // 男性年龄限制 为空时,下发AgeLimitRange作为default.
+    repeated IntRangeType MaleAgeLimitRange = 5;
+    // 女性年龄限制 为空时,下发AgeLimitRange作为default.
+    repeated IntRangeType FemaleAgeLimitRange = 6;
 }
 
 message StopType {
@@ -94,6 +98,15 @@ message FlightPaxProductType {
     RefundChangeType RefundChange = 9;
     // 扩展结点
     repeated KeyValuePairType Tag = 10;
+    // 卡费费用
+    repeated CreditCardFeeType CreditCardFee = 11;
+}
+
+message CreditCardFeeType {
+    // 卡组织
+    string CreditCardType = 1;
+    // 销售币种加价
+    AmountType Amount = 2;
 }
 
 // 销售币种的价格信息
@@ -111,9 +124,11 @@ message FlightSaleCurrencyPriceDetailType {
     // 国内航司优惠前价格，前端结合Discount和PcCode做展示用
     double PrePcCodePrice = 6;
     // 服务费明细列表, 销售币种
-    repeated ServiceFeeType ServiceFee= 7;
+    repeated ServiceFeeType ServiceFee = 7;
     // 机酒专享政策优惠金额（与外放最低价价差）
     double FlightHotelDiscountAmount = 8;
+    // 税费详情
+    repeated TaxDetailType TaxDetail = 9;
 }
 
 // 结算币种的价格信息
@@ -133,7 +148,9 @@ message FlightSettlementCurrencyPriceDetailType {
     // 结算币种到销售币种间的汇率
     double ExchangeRate = 7;
     // 结算币种的服务费明细列表
-    repeated ServiceFeeType ServiceFee= 8;
+    repeated ServiceFeeType ServiceFee = 8;
+    // 税费详情
+    repeated TaxDetailType TaxDetail = 9;
 }
 
 message RebateType {
@@ -201,7 +218,7 @@ message FlightSeatType {
     // 库存ID(库存类产品扣减库存的依据)
     int64 StockID = 7;
     // 航班舱位可累积里程
-    int32 MileageCredit = 8;
+    int32 MileageCredit = 8 [deprecated = true];
     // 国内特别舱位信息
     RBDDisclosureType RBDDisclosure = 9;
 }
@@ -209,6 +226,8 @@ message FlightSeatType {
 message TrainSeatType {
     // 座位类型名称
     string SeatTypeName = 1;
+    // 座位类型
+    string SeatType = 2;
 }
 
 // 航班准点信息
@@ -232,7 +251,19 @@ message FlightReferencePriceType {
     // 标准价舱位的政策信息列表
     repeated StandardPriceType StandardPrice = 1;
     // 升舱参考价, 采集航班下F舱等的最低价或者全价,用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
-    double UpgradeCFReferencePrice = 2;
+    double UpgradeCFReferencePrice = 2 [deprecated = true];
+    // 经济舱参考价信息
+    ReferencePriceDetailType YReferencePriceDetail = 3;
+    // 两舱参考价信息
+    ReferencePriceDetailType CFReferencePriceDetail = 4;
+}
+
+// 参考价明细信息
+message ReferencePriceDetailType {
+    // 升舱参考价 用于给前端展示升舱产品优势价差；优势价差 = 升舱参考价-客人购买经济舱价格-升舱费用
+    double UpgradeClassReferencePrice = 1;
+    // 飞宿最低价,(机票价格+酒店价格)>飞宿最低价
+    double FlightHotelLowestPrice = 2;
 }
 
 message StandardPriceType {
@@ -252,6 +283,12 @@ message RBDDisclosureType {
     string ShortName = 2;
     // 舱位描述
     string Description = 3;
+    // 特舱ID
+    int64 SpecialClassTypeID = 4;
+    // 单独标签
+    string ExtraTabName = 5;
+    // 特舱溢价等级(品牌顺序)
+    string BrandOrder = 6;
 }
 
 message TicketingTimeLimitType {
@@ -275,6 +312,10 @@ message DiscountType {
     DiscountLabelType DiscountLabel = 4;
     // 国际查询列表反查阶段，将RebateType记录成让利。
     string RebateType = 5;
+    // 规则ID
+    int64 ruleId = 6;
+    // 让利展示类型附加信息
+    string ActivityMode = 7;
 }
 
 message DiscountLabelType {
@@ -309,6 +350,8 @@ message RestrictionType {
     IntRangeType PaxCountRange = 12;
     // 国内票人数限制类型，(0:儿童不计入总人数,1:儿童计入总人数)
     int32 PaxNumLimitType = 13;
+    // 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+    string CompositionPriceRemark = 14;
 }
 
 message PaymentLimitType {
@@ -318,13 +361,15 @@ message PaymentLimitType {
     repeated int32 CreditCardPaymentLimitRef = 2;
     // 支付卡让利信息
     repeated PaymentDiscountRefType PaymentDiscountRefType = 3;
+    // 拿去花信息
+    LoanPaymentType LoanPayment = 4;
 }
 
 message PaymentDiscountRefType {
     // 折扣索引列表
     repeated int32 PaymentDiscountRef = 1;
     // 支付卡类型
-    string PaymentWay = 2;
+    string CreditCardType = 2;
 }
 
 message PaymentDiscountType {
@@ -365,6 +410,11 @@ message CreditCardPaymentLimitType {
     ObFeeType InfantFee = 5;
 }
 
+message LoanPaymentType {
+    // code
+    string Code = 1;
+}
+
 message TransportType {
     // 索引号
     int32 RefNum = 1;
@@ -388,6 +438,8 @@ message TransportType {
     FlightType Flight = 10;
     // train类型扩展信息
     TrainType Train = 11;
+    // Bus类型扩展信息
+    BusType Bus = 12;
 }
 
 message PointType {
@@ -515,6 +567,8 @@ message MarketingProductType {
     repeated MemberPrivilegeType MemberPrivilege = 7;
     // 立减
     repeated PriceReductionType PriceReduction = 8;
+    // 酒店
+    repeated HotelType Hotel = 9;
 }
 
 message ServiceDefinitionType {
@@ -542,11 +596,13 @@ message ServicePolicyType {
     bool Retain = 5;
     // BI场景化推荐Code
     string SceneCode = 6;
+    // 营销信息
+    repeated ProductFeeDetailType ProductFeeDetail = 7;
 }
 
 message ServiceDetailType {
     //国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-    //国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService
+    //国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
     string ProductType = 1;
     //子产品类型
     string SubProductType = 2;
@@ -572,7 +628,50 @@ message ServiceDetailType {
     //  通用券-additionProductInfoID/展示类型
     //  巴士-邻近城市ID
     //  接送机-接送类型/验证码/车的类型
+    // 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
     repeated KeyValuePairType Extension = 12;
+    // 折扣相关：机票、X 一般不应该两种折扣项一起出现
+    repeated ServiceDiscountType ServiceDiscount = 13;
+    // 强制绑定新字段:需主动勾选 1, 默认勾选且不可取消 2, 默认勾选且可取消 3
+    int32 ForceType = 14;
+    // 绑定关系，People跟人，Order跟订单
+    string BindingType = 15;
+    // 过期时间 0表示不限
+    int32 ExpiryTime = 16;
+    // 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+    string ExpiryTimeUnit = 17;
+}
+
+message ProductFeeDetailType {
+    // 对应的乘客类型组，可表示多个乘客类型。1: Adult; 2: Child; 4: Infant;
+    int32 AgeTypeGroup = 1;
+    //营销金额
+    double MarketingAmount = 2;
+    //透传X前置接口的policyToken/对应国内X产品倒查key
+    string ServiceToken = 3;
+}
+
+message ServiceDiscountType {
+    // 优惠金额的折扣项：1 机票、2 X产品
+    int32 Item = 1;
+    // 折扣金额
+    double DiscountAmount = 2;
+    // 乘客类型, 1: Adult; 2: Child; 4: Infant
+    int32 AgeType = 3;
+    // 打折卡折扣模式
+    int32 DiscountMode = 4;
+    // 打折卡折扣比例
+    double DiscountRate = 5;
+    // 使用次数限制
+    int32 LimitTimes = 6;
+    // 优惠总上限
+    double TotalDiscountAmount = 7;
+    // 单次优惠下限
+    double SingleMinDiscountAmount = 8;
+    // 单次优惠上限
+    double SingleMaxDiscountAmount = 9;
+    // 折扣周期 与使用次数限制相关联 标识周期内的使用次数限制
+    int32 Period = 10;
 }
 
 message CouponType {
@@ -769,6 +868,35 @@ message JourneyAttachmentType {
     int32 JourneyNo = 1;
     // 国内的产品组合类型，RT/MT时有值
     repeated string ProductCombinationType = 2;
+    // 中转类型
+    string TransferProductType = 3;
 }
 
+message HotelType {
+    int32 RefNum = 1;
+    // 酒店ID
+    int64 HotelID = 2;
+    // 房间运价XToken
+    repeated RoomType Room = 3;
+}
 
+message RoomType {
+    // 房间ID
+    int64 RoomID = 1;
+    // 房型ID
+    int64 RoomCategoryID = 2;
+    // 房间运价XToken
+    string XToken = 3;
+}
+
+message TaxDetailType {
+    // 类型，1：机建 2：燃油
+    int32 Type = 1;
+    // 金额
+    AmountType Amount = 2;
+}
+
+message BusType {
+    // 国内使用字段：回传linkedUrl
+    string PassBackLinkedUrl = 1;
+}

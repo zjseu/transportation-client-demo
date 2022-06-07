@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     redirectSegment_ = java.util.Collections.emptyList();
     salePrice_ = 0D;
     interchange_ = java.util.Collections.emptyList();
+    productAttributes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -68,6 +69,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.InterchangeType.parser(), extensionRegistry));
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              productAttributes_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            productAttributes_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +98,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         interchange_ = java.util.Collections.unmodifiableList(interchange_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        productAttributes_ = java.util.Collections.unmodifiableList(productAttributes_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -230,6 +243,61 @@ private static final long serialVersionUID = 0L;
     return interchange_.get(index);
   }
 
+  public static final int PRODUCTATTRIBUTES_FIELD_NUMBER = 4;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> productAttributes_;
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> getProductAttributesList() {
+    return productAttributes_;
+  }
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder> 
+      getProductAttributesOrBuilderList() {
+    return productAttributes_;
+  }
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  public int getProductAttributesCount() {
+    return productAttributes_.size();
+  }
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType getProductAttributes(int index) {
+    return productAttributes_.get(index);
+  }
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder getProductAttributesOrBuilder(
+      int index) {
+    return productAttributes_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -253,6 +321,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < interchange_.size(); i++) {
       output.writeMessage(3, interchange_.get(i));
     }
+    for (int i = 0; i < productAttributes_.size(); i++) {
+      output.writeMessage(4, productAttributes_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -273,6 +344,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < interchange_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, interchange_.get(i));
+    }
+    for (int i = 0; i < productAttributes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, productAttributes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,6 +373,8 @@ private static final long serialVersionUID = 0L;
             other.getSalePrice()));
     result = result && getInterchangeList()
         .equals(other.getInterchangeList());
+    result = result && getProductAttributesList()
+        .equals(other.getProductAttributesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -319,6 +396,10 @@ private static final long serialVersionUID = 0L;
     if (getInterchangeCount() > 0) {
       hash = (37 * hash) + INTERCHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getInterchangeList().hashCode();
+    }
+    if (getProductAttributesCount() > 0) {
+      hash = (37 * hash) + PRODUCTATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getProductAttributesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -450,6 +531,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getRedirectSegmentFieldBuilder();
         getInterchangeFieldBuilder();
+        getProductAttributesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -468,6 +550,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         interchangeBuilder_.clear();
+      }
+      if (productAttributesBuilder_ == null) {
+        productAttributes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        productAttributesBuilder_.clear();
       }
       return this;
     }
@@ -515,6 +603,15 @@ private static final long serialVersionUID = 0L;
         result.interchange_ = interchange_;
       } else {
         result.interchange_ = interchangeBuilder_.build();
+      }
+      if (productAttributesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          productAttributes_ = java.util.Collections.unmodifiableList(productAttributes_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.productAttributes_ = productAttributes_;
+      } else {
+        result.productAttributes_ = productAttributesBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -617,6 +714,32 @@ private static final long serialVersionUID = 0L;
                  getInterchangeFieldBuilder() : null;
           } else {
             interchangeBuilder_.addAllMessages(other.interchange_);
+          }
+        }
+      }
+      if (productAttributesBuilder_ == null) {
+        if (!other.productAttributes_.isEmpty()) {
+          if (productAttributes_.isEmpty()) {
+            productAttributes_ = other.productAttributes_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureProductAttributesIsMutable();
+            productAttributes_.addAll(other.productAttributes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.productAttributes_.isEmpty()) {
+          if (productAttributesBuilder_.isEmpty()) {
+            productAttributesBuilder_.dispose();
+            productAttributesBuilder_ = null;
+            productAttributes_ = other.productAttributes_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            productAttributesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getProductAttributesFieldBuilder() : null;
+          } else {
+            productAttributesBuilder_.addAllMessages(other.productAttributes_);
           }
         }
       }
@@ -1310,6 +1433,318 @@ private static final long serialVersionUID = 0L;
         interchange_ = null;
       }
       return interchangeBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> productAttributes_ =
+      java.util.Collections.emptyList();
+    private void ensureProductAttributesIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        productAttributes_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType>(productAttributes_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder> productAttributesBuilder_;
+
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> getProductAttributesList() {
+      if (productAttributesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productAttributes_);
+      } else {
+        return productAttributesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public int getProductAttributesCount() {
+      if (productAttributesBuilder_ == null) {
+        return productAttributes_.size();
+      } else {
+        return productAttributesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType getProductAttributes(int index) {
+      if (productAttributesBuilder_ == null) {
+        return productAttributes_.get(index);
+      } else {
+        return productAttributesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder setProductAttributes(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType value) {
+      if (productAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductAttributesIsMutable();
+        productAttributes_.set(index, value);
+        onChanged();
+      } else {
+        productAttributesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder setProductAttributes(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder builderForValue) {
+      if (productAttributesBuilder_ == null) {
+        ensureProductAttributesIsMutable();
+        productAttributes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productAttributesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder addProductAttributes(com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType value) {
+      if (productAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductAttributesIsMutable();
+        productAttributes_.add(value);
+        onChanged();
+      } else {
+        productAttributesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder addProductAttributes(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType value) {
+      if (productAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductAttributesIsMutable();
+        productAttributes_.add(index, value);
+        onChanged();
+      } else {
+        productAttributesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder addProductAttributes(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder builderForValue) {
+      if (productAttributesBuilder_ == null) {
+        ensureProductAttributesIsMutable();
+        productAttributes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        productAttributesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder addProductAttributes(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder builderForValue) {
+      if (productAttributesBuilder_ == null) {
+        ensureProductAttributesIsMutable();
+        productAttributes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productAttributesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder addAllProductAttributes(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> values) {
+      if (productAttributesBuilder_ == null) {
+        ensureProductAttributesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, productAttributes_);
+        onChanged();
+      } else {
+        productAttributesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder clearProductAttributes() {
+      if (productAttributesBuilder_ == null) {
+        productAttributes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        productAttributesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public Builder removeProductAttributes(int index) {
+      if (productAttributesBuilder_ == null) {
+        ensureProductAttributesIsMutable();
+        productAttributes_.remove(index);
+        onChanged();
+      } else {
+        productAttributesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder getProductAttributesBuilder(
+        int index) {
+      return getProductAttributesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder getProductAttributesOrBuilder(
+        int index) {
+      if (productAttributesBuilder_ == null) {
+        return productAttributes_.get(index);  } else {
+        return productAttributesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder> 
+         getProductAttributesOrBuilderList() {
+      if (productAttributesBuilder_ != null) {
+        return productAttributesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(productAttributes_);
+      }
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder addProductAttributesBuilder() {
+      return getProductAttributesFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder addProductAttributesBuilder(
+        int index) {
+      return getProductAttributesFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 推荐产品属性
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder> 
+         getProductAttributesBuilderList() {
+      return getProductAttributesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder> 
+        getProductAttributesFieldBuilder() {
+      if (productAttributesBuilder_ == null) {
+        productAttributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder>(
+                productAttributes_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        productAttributes_ = null;
+      }
+      return productAttributesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

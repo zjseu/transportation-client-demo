@@ -133,7 +133,7 @@ public interface FlightProductTypeOrBuilder extends
 
   /**
    * <pre>
-   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
    * </pre>
    *
    * <code>int32 InvoiceType = 6;</code>
@@ -507,5 +507,267 @@ public interface FlightProductTypeOrBuilder extends
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 22;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  boolean hasPolicyKey();
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType getPolicyKey();
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder getPolicyKeyOrBuilder();
+
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  boolean hasMultiSegmentRestriction();
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType getMultiSegmentRestriction();
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder getMultiSegmentRestrictionOrBuilder();
+
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  boolean hasGreenFlying();
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType getGreenFlying();
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder getGreenFlyingOrBuilder();
+
+  /**
+   * <pre>
+   * 预订场景信息的Ref
+   * </pre>
+   *
+   * <code>int32 BookingSceneSpecifiedRef = 26;</code>
+   */
+  int getBookingSceneSpecifiedRef();
+
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  boolean hasPata();
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PataType getPata();
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder getPataOrBuilder();
+
+  /**
+   * <pre>
+   * 无证件标识 0:不支持无证件 1:支持无证件
+   * </pre>
+   *
+   * <code>int32 NoIdentityCardInd = 28;</code>
+   */
+  int getNoIdentityCardInd();
+
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  boolean hasMemberRegister();
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister();
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder();
+
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  boolean hasPremiumProduct();
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType getPremiumProduct();
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder getPremiumProductOrBuilder();
+
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  boolean hasBilling();
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType getBilling();
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder getBillingOrBuilder();
+
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  boolean hasPreferentialProduct();
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType getPreferentialProduct();
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder getPreferentialProductOrBuilder();
+
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> 
+      getMileageCreditList();
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType getMileageCredit(int index);
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  int getMileageCreditCount();
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder> 
+      getMileageCreditOrBuilderList();
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder getMileageCreditOrBuilder(
       int index);
 }

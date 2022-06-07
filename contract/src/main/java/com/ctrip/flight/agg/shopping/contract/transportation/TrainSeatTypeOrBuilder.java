@@ -24,4 +24,22 @@ public interface TrainSeatTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSeatTypeNameBytes();
+
+  /**
+   * <pre>
+   * 座位类型
+   * </pre>
+   *
+   * <code>string SeatType = 2;</code>
+   */
+  java.lang.String getSeatType();
+  /**
+   * <pre>
+   * 座位类型
+   * </pre>
+   *
+   * <code>string SeatType = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getSeatTypeBytes();
 }

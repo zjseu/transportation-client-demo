@@ -28,6 +28,8 @@ private static final long serialVersionUID = 0L;
     transportHotelToken_ = "";
     priority_ = 0D;
     journeyAttachment_ = java.util.Collections.emptyList();
+    offerID_ = 0;
+    childStandardOfferRef_ = 0;
   }
 
   @java.lang.Override
@@ -171,6 +173,29 @@ private static final long serialVersionUID = 0L;
             }
             journeyAttachment_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentType.parser(), extensionRegistry));
+            break;
+          }
+          case 112: {
+
+            offerID_ = input.readInt32();
+            break;
+          }
+          case 120: {
+
+            childStandardOfferRef_ = input.readInt32();
+            break;
+          }
+          case 130: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder subBuilder = null;
+            if (upsellProduct_ != null) {
+              subBuilder = upsellProduct_.toBuilder();
+            }
+            upsellProduct_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(upsellProduct_);
+              upsellProduct_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -783,6 +808,65 @@ private static final long serialVersionUID = 0L;
     return journeyAttachment_.get(index);
   }
 
+  public static final int OFFERID_FIELD_NUMBER = 14;
+  private int offerID_;
+  /**
+   * <pre>
+   * 运价索引 每次查询唯一
+   * </pre>
+   *
+   * <code>int32 OfferID = 14;</code>
+   */
+  public int getOfferID() {
+    return offerID_;
+  }
+
+  public static final int CHILDSTANDARDOFFERREF_FIELD_NUMBER = 15;
+  private int childStandardOfferRef_;
+  /**
+   * <pre>
+   * 引用的offerId。暂时用于标识儿童标准价offer隶属于哪个Offer下
+   * </pre>
+   *
+   * <code>int32 ChildStandardOfferRef = 15;</code>
+   */
+  public int getChildStandardOfferRef() {
+    return childStandardOfferRef_;
+  }
+
+  public static final int UPSELLPRODUCT_FIELD_NUMBER = 16;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType upsellProduct_;
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  public boolean hasUpsellProduct() {
+    return upsellProduct_ != null;
+  }
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType getUpsellProduct() {
+    return upsellProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.getDefaultInstance() : upsellProduct_;
+  }
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder getUpsellProductOrBuilder() {
+    return getUpsellProduct();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -840,6 +924,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < journeyAttachment_.size(); i++) {
       output.writeMessage(13, journeyAttachment_.get(i));
+    }
+    if (offerID_ != 0) {
+      output.writeInt32(14, offerID_);
+    }
+    if (childStandardOfferRef_ != 0) {
+      output.writeInt32(15, childStandardOfferRef_);
+    }
+    if (upsellProduct_ != null) {
+      output.writeMessage(16, getUpsellProduct());
     }
     unknownFields.writeTo(output);
   }
@@ -914,6 +1007,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, journeyAttachment_.get(i));
     }
+    if (offerID_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(14, offerID_);
+    }
+    if (childStandardOfferRef_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(15, childStandardOfferRef_);
+    }
+    if (upsellProduct_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getUpsellProduct());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -961,6 +1066,15 @@ private static final long serialVersionUID = 0L;
             other.getPriority()));
     result = result && getJourneyAttachmentList()
         .equals(other.getJourneyAttachmentList());
+    result = result && (getOfferID()
+        == other.getOfferID());
+    result = result && (getChildStandardOfferRef()
+        == other.getChildStandardOfferRef());
+    result = result && (hasUpsellProduct() == other.hasUpsellProduct());
+    if (hasUpsellProduct()) {
+      result = result && getUpsellProduct()
+          .equals(other.getUpsellProduct());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1016,6 +1130,14 @@ private static final long serialVersionUID = 0L;
     if (getJourneyAttachmentCount() > 0) {
       hash = (37 * hash) + JOURNEYATTACHMENT_FIELD_NUMBER;
       hash = (53 * hash) + getJourneyAttachmentList().hashCode();
+    }
+    hash = (37 * hash) + OFFERID_FIELD_NUMBER;
+    hash = (53 * hash) + getOfferID();
+    hash = (37 * hash) + CHILDSTANDARDOFFERREF_FIELD_NUMBER;
+    hash = (53 * hash) + getChildStandardOfferRef();
+    if (hasUpsellProduct()) {
+      hash = (37 * hash) + UPSELLPRODUCT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpsellProduct().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1210,6 +1332,16 @@ private static final long serialVersionUID = 0L;
       } else {
         journeyAttachmentBuilder_.clear();
       }
+      offerID_ = 0;
+
+      childStandardOfferRef_ = 0;
+
+      if (upsellProductBuilder_ == null) {
+        upsellProduct_ = null;
+      } else {
+        upsellProduct_ = null;
+        upsellProductBuilder_ = null;
+      }
       return this;
     }
 
@@ -1310,6 +1442,13 @@ private static final long serialVersionUID = 0L;
         result.journeyAttachment_ = journeyAttachment_;
       } else {
         result.journeyAttachment_ = journeyAttachmentBuilder_.build();
+      }
+      result.offerID_ = offerID_;
+      result.childStandardOfferRef_ = childStandardOfferRef_;
+      if (upsellProductBuilder_ == null) {
+        result.upsellProduct_ = upsellProduct_;
+      } else {
+        result.upsellProduct_ = upsellProductBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1552,6 +1691,15 @@ private static final long serialVersionUID = 0L;
             journeyAttachmentBuilder_.addAllMessages(other.journeyAttachment_);
           }
         }
+      }
+      if (other.getOfferID() != 0) {
+        setOfferID(other.getOfferID());
+      }
+      if (other.getChildStandardOfferRef() != 0) {
+        setChildStandardOfferRef(other.getChildStandardOfferRef());
+      }
+      if (other.hasUpsellProduct()) {
+        mergeUpsellProduct(other.getUpsellProduct());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4084,6 +4232,235 @@ private static final long serialVersionUID = 0L;
         journeyAttachment_ = null;
       }
       return journeyAttachmentBuilder_;
+    }
+
+    private int offerID_ ;
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 14;</code>
+     */
+    public int getOfferID() {
+      return offerID_;
+    }
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 14;</code>
+     */
+    public Builder setOfferID(int value) {
+      
+      offerID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 14;</code>
+     */
+    public Builder clearOfferID() {
+      
+      offerID_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int childStandardOfferRef_ ;
+    /**
+     * <pre>
+     * 引用的offerId。暂时用于标识儿童标准价offer隶属于哪个Offer下
+     * </pre>
+     *
+     * <code>int32 ChildStandardOfferRef = 15;</code>
+     */
+    public int getChildStandardOfferRef() {
+      return childStandardOfferRef_;
+    }
+    /**
+     * <pre>
+     * 引用的offerId。暂时用于标识儿童标准价offer隶属于哪个Offer下
+     * </pre>
+     *
+     * <code>int32 ChildStandardOfferRef = 15;</code>
+     */
+    public Builder setChildStandardOfferRef(int value) {
+      
+      childStandardOfferRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 引用的offerId。暂时用于标识儿童标准价offer隶属于哪个Offer下
+     * </pre>
+     *
+     * <code>int32 ChildStandardOfferRef = 15;</code>
+     */
+    public Builder clearChildStandardOfferRef() {
+      
+      childStandardOfferRef_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType upsellProduct_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder> upsellProductBuilder_;
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public boolean hasUpsellProduct() {
+      return upsellProductBuilder_ != null || upsellProduct_ != null;
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType getUpsellProduct() {
+      if (upsellProductBuilder_ == null) {
+        return upsellProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.getDefaultInstance() : upsellProduct_;
+      } else {
+        return upsellProductBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public Builder setUpsellProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType value) {
+      if (upsellProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upsellProduct_ = value;
+        onChanged();
+      } else {
+        upsellProductBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public Builder setUpsellProduct(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder builderForValue) {
+      if (upsellProductBuilder_ == null) {
+        upsellProduct_ = builderForValue.build();
+        onChanged();
+      } else {
+        upsellProductBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public Builder mergeUpsellProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType value) {
+      if (upsellProductBuilder_ == null) {
+        if (upsellProduct_ != null) {
+          upsellProduct_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.newBuilder(upsellProduct_).mergeFrom(value).buildPartial();
+        } else {
+          upsellProduct_ = value;
+        }
+        onChanged();
+      } else {
+        upsellProductBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public Builder clearUpsellProduct() {
+      if (upsellProductBuilder_ == null) {
+        upsellProduct_ = null;
+        onChanged();
+      } else {
+        upsellProduct_ = null;
+        upsellProductBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder getUpsellProductBuilder() {
+      
+      onChanged();
+      return getUpsellProductFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder getUpsellProductOrBuilder() {
+      if (upsellProductBuilder_ != null) {
+        return upsellProductBuilder_.getMessageOrBuilder();
+      } else {
+        return upsellProduct_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.getDefaultInstance() : upsellProduct_;
+      }
+    }
+    /**
+     * <pre>
+     * Upsell促销信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder> 
+        getUpsellProductFieldBuilder() {
+      if (upsellProductBuilder_ == null) {
+        upsellProductBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder>(
+                getUpsellProduct(),
+                getParentForChildren(),
+                isClean());
+        upsellProduct_ = null;
+      }
+      return upsellProductBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

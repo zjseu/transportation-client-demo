@@ -78,4 +78,48 @@ public interface ServicePolicyTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSceneCodeBytes();
+
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType> 
+      getProductFeeDetailList();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType getProductFeeDetail(int index);
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  int getProductFeeDetailCount();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder> 
+      getProductFeeDetailOrBuilderList();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType ProductFeeDetail = 7;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+      int index);
 }

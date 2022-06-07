@@ -50,4 +50,22 @@ public interface JourneyAttachmentTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getProductCombinationTypeBytes(int index);
+
+  /**
+   * <pre>
+   * 中转类型
+   * </pre>
+   *
+   * <code>string TransferProductType = 3;</code>
+   */
+  java.lang.String getTransferProductType();
+  /**
+   * <pre>
+   * 中转类型
+   * </pre>
+   *
+   * <code>string TransferProductType = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getTransferProductTypeBytes();
 }

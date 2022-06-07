@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private PaymentDiscountRefType() {
     paymentDiscountRef_ = java.util.Collections.emptyList();
-    paymentWay_ = "";
+    creditCardType_ = "";
   }
 
   @java.lang.Override
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            paymentWay_ = s;
+            creditCardType_ = s;
             break;
           }
           default: {
@@ -142,24 +142,24 @@ private static final long serialVersionUID = 0L;
   }
   private int paymentDiscountRefMemoizedSerializedSize = -1;
 
-  public static final int PAYMENTWAY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object paymentWay_;
+  public static final int CREDITCARDTYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object creditCardType_;
   /**
    * <pre>
    * 支付卡类型
    * </pre>
    *
-   * <code>string PaymentWay = 2;</code>
+   * <code>string CreditCardType = 2;</code>
    */
-  public java.lang.String getPaymentWay() {
-    java.lang.Object ref = paymentWay_;
+  public java.lang.String getCreditCardType() {
+    java.lang.Object ref = creditCardType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      paymentWay_ = s;
+      creditCardType_ = s;
       return s;
     }
   }
@@ -168,16 +168,16 @@ private static final long serialVersionUID = 0L;
    * 支付卡类型
    * </pre>
    *
-   * <code>string PaymentWay = 2;</code>
+   * <code>string CreditCardType = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getPaymentWayBytes() {
-    java.lang.Object ref = paymentWay_;
+      getCreditCardTypeBytes() {
+    java.lang.Object ref = creditCardType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      paymentWay_ = b;
+      creditCardType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -206,8 +206,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < paymentDiscountRef_.size(); i++) {
       output.writeInt32NoTag(paymentDiscountRef_.get(i));
     }
-    if (!getPaymentWayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, paymentWay_);
+    if (!getCreditCardTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, creditCardType_);
     }
     unknownFields.writeTo(output);
   }
@@ -232,8 +232,8 @@ private static final long serialVersionUID = 0L;
       }
       paymentDiscountRefMemoizedSerializedSize = dataSize;
     }
-    if (!getPaymentWayBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, paymentWay_);
+    if (!getCreditCardTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, creditCardType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -253,8 +253,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getPaymentDiscountRefList()
         .equals(other.getPaymentDiscountRefList());
-    result = result && getPaymentWay()
-        .equals(other.getPaymentWay());
+    result = result && getCreditCardType()
+        .equals(other.getCreditCardType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -270,8 +270,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PAYMENTDISCOUNTREF_FIELD_NUMBER;
       hash = (53 * hash) + getPaymentDiscountRefList().hashCode();
     }
-    hash = (37 * hash) + PAYMENTWAY_FIELD_NUMBER;
-    hash = (53 * hash) + getPaymentWay().hashCode();
+    hash = (37 * hash) + CREDITCARDTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getCreditCardType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       paymentDiscountRef_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
-      paymentWay_ = "";
+      creditCardType_ = "";
 
       return this;
     }
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.paymentDiscountRef_ = paymentDiscountRef_;
-      result.paymentWay_ = paymentWay_;
+      result.creditCardType_ = creditCardType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -502,8 +502,8 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.getPaymentWay().isEmpty()) {
-        paymentWay_ = other.paymentWay_;
+      if (!other.getCreditCardType().isEmpty()) {
+        creditCardType_ = other.creditCardType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -630,21 +630,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object paymentWay_ = "";
+    private java.lang.Object creditCardType_ = "";
     /**
      * <pre>
      * 支付卡类型
      * </pre>
      *
-     * <code>string PaymentWay = 2;</code>
+     * <code>string CreditCardType = 2;</code>
      */
-    public java.lang.String getPaymentWay() {
-      java.lang.Object ref = paymentWay_;
+    public java.lang.String getCreditCardType() {
+      java.lang.Object ref = creditCardType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        paymentWay_ = s;
+        creditCardType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -655,16 +655,16 @@ private static final long serialVersionUID = 0L;
      * 支付卡类型
      * </pre>
      *
-     * <code>string PaymentWay = 2;</code>
+     * <code>string CreditCardType = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getPaymentWayBytes() {
-      java.lang.Object ref = paymentWay_;
+        getCreditCardTypeBytes() {
+      java.lang.Object ref = creditCardType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        paymentWay_ = b;
+        creditCardType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -675,15 +675,15 @@ private static final long serialVersionUID = 0L;
      * 支付卡类型
      * </pre>
      *
-     * <code>string PaymentWay = 2;</code>
+     * <code>string CreditCardType = 2;</code>
      */
-    public Builder setPaymentWay(
+    public Builder setCreditCardType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      paymentWay_ = value;
+      creditCardType_ = value;
       onChanged();
       return this;
     }
@@ -692,11 +692,11 @@ private static final long serialVersionUID = 0L;
      * 支付卡类型
      * </pre>
      *
-     * <code>string PaymentWay = 2;</code>
+     * <code>string CreditCardType = 2;</code>
      */
-    public Builder clearPaymentWay() {
+    public Builder clearCreditCardType() {
       
-      paymentWay_ = getDefaultInstance().getPaymentWay();
+      creditCardType_ = getDefaultInstance().getCreditCardType();
       onChanged();
       return this;
     }
@@ -705,16 +705,16 @@ private static final long serialVersionUID = 0L;
      * 支付卡类型
      * </pre>
      *
-     * <code>string PaymentWay = 2;</code>
+     * <code>string CreditCardType = 2;</code>
      */
-    public Builder setPaymentWayBytes(
+    public Builder setCreditCardTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      paymentWay_ = value;
+      creditCardType_ = value;
       onChanged();
       return this;
     }

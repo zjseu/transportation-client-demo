@@ -248,4 +248,48 @@ public interface FlightPaxProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> 
+      getCreditCardFeeList();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType getCreditCardFee(int index);
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  int getCreditCardFeeCount();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder> 
+      getCreditCardFeeOrBuilderList();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder getCreditCardFeeOrBuilder(
+      int index);
 }

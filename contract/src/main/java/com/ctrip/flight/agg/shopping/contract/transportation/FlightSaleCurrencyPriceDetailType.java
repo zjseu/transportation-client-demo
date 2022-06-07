@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     prePcCodePrice_ = 0D;
     serviceFee_ = java.util.Collections.emptyList();
     flightHotelDiscountAmount_ = 0D;
+    taxDetail_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -116,6 +117,15 @@ private static final long serialVersionUID = 0L;
             flightHotelDiscountAmount_ = input.readDouble();
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              taxDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            taxDetail_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +146,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         serviceFee_ = java.util.Collections.unmodifiableList(serviceFee_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        taxDetail_ = java.util.Collections.unmodifiableList(taxDetail_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -383,6 +396,61 @@ private static final long serialVersionUID = 0L;
     return flightHotelDiscountAmount_;
   }
 
+  public static final int TAXDETAIL_FIELD_NUMBER = 9;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> taxDetail_;
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> getTaxDetailList() {
+    return taxDetail_;
+  }
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder> 
+      getTaxDetailOrBuilderList() {
+    return taxDetail_;
+  }
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  public int getTaxDetailCount() {
+    return taxDetail_.size();
+  }
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getTaxDetail(int index) {
+    return taxDetail_.get(index);
+  }
+  /**
+   * <pre>
+   * 税费详情
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder getTaxDetailOrBuilder(
+      int index) {
+    return taxDetail_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -420,6 +488,9 @@ private static final long serialVersionUID = 0L;
     }
     if (flightHotelDiscountAmount_ != 0D) {
       output.writeDouble(8, flightHotelDiscountAmount_);
+    }
+    for (int i = 0; i < taxDetail_.size(); i++) {
+      output.writeMessage(9, taxDetail_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -461,6 +532,10 @@ private static final long serialVersionUID = 0L;
     if (flightHotelDiscountAmount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, flightHotelDiscountAmount_);
+    }
+    for (int i = 0; i < taxDetail_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, taxDetail_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -508,6 +583,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getFlightHotelDiscountAmount())
         == java.lang.Double.doubleToLongBits(
             other.getFlightHotelDiscountAmount()));
+    result = result && getTaxDetailList()
+        .equals(other.getTaxDetailList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -547,6 +624,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FLIGHTHOTELDISCOUNTAMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getFlightHotelDiscountAmount()));
+    if (getTaxDetailCount() > 0) {
+      hash = (37 * hash) + TAXDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getTaxDetailList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -681,6 +762,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getDiscountFieldBuilder();
         getServiceFeeFieldBuilder();
+        getTaxDetailFieldBuilder();
       }
     }
     @java.lang.Override
@@ -718,6 +800,12 @@ private static final long serialVersionUID = 0L;
       }
       flightHotelDiscountAmount_ = 0D;
 
+      if (taxDetailBuilder_ == null) {
+        taxDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        taxDetailBuilder_.clear();
+      }
       return this;
     }
 
@@ -778,6 +866,15 @@ private static final long serialVersionUID = 0L;
         result.serviceFee_ = serviceFeeBuilder_.build();
       }
       result.flightHotelDiscountAmount_ = flightHotelDiscountAmount_;
+      if (taxDetailBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          taxDetail_ = java.util.Collections.unmodifiableList(taxDetail_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.taxDetail_ = taxDetail_;
+      } else {
+        result.taxDetail_ = taxDetailBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -896,6 +993,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFlightHotelDiscountAmount() != 0D) {
         setFlightHotelDiscountAmount(other.getFlightHotelDiscountAmount());
+      }
+      if (taxDetailBuilder_ == null) {
+        if (!other.taxDetail_.isEmpty()) {
+          if (taxDetail_.isEmpty()) {
+            taxDetail_ = other.taxDetail_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureTaxDetailIsMutable();
+            taxDetail_.addAll(other.taxDetail_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.taxDetail_.isEmpty()) {
+          if (taxDetailBuilder_.isEmpty()) {
+            taxDetailBuilder_.dispose();
+            taxDetailBuilder_ = null;
+            taxDetail_ = other.taxDetail_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            taxDetailBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTaxDetailFieldBuilder() : null;
+          } else {
+            taxDetailBuilder_.addAllMessages(other.taxDetail_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2007,6 +2130,318 @@ private static final long serialVersionUID = 0L;
       flightHotelDiscountAmount_ = 0D;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> taxDetail_ =
+      java.util.Collections.emptyList();
+    private void ensureTaxDetailIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        taxDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType>(taxDetail_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder> taxDetailBuilder_;
+
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> getTaxDetailList() {
+      if (taxDetailBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(taxDetail_);
+      } else {
+        return taxDetailBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public int getTaxDetailCount() {
+      if (taxDetailBuilder_ == null) {
+        return taxDetail_.size();
+      } else {
+        return taxDetailBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getTaxDetail(int index) {
+      if (taxDetailBuilder_ == null) {
+        return taxDetail_.get(index);
+      } else {
+        return taxDetailBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder setTaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType value) {
+      if (taxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaxDetailIsMutable();
+        taxDetail_.set(index, value);
+        onChanged();
+      } else {
+        taxDetailBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder setTaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder builderForValue) {
+      if (taxDetailBuilder_ == null) {
+        ensureTaxDetailIsMutable();
+        taxDetail_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        taxDetailBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder addTaxDetail(com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType value) {
+      if (taxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaxDetailIsMutable();
+        taxDetail_.add(value);
+        onChanged();
+      } else {
+        taxDetailBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder addTaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType value) {
+      if (taxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaxDetailIsMutable();
+        taxDetail_.add(index, value);
+        onChanged();
+      } else {
+        taxDetailBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder addTaxDetail(
+        com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder builderForValue) {
+      if (taxDetailBuilder_ == null) {
+        ensureTaxDetailIsMutable();
+        taxDetail_.add(builderForValue.build());
+        onChanged();
+      } else {
+        taxDetailBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder addTaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder builderForValue) {
+      if (taxDetailBuilder_ == null) {
+        ensureTaxDetailIsMutable();
+        taxDetail_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        taxDetailBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder addAllTaxDetail(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType> values) {
+      if (taxDetailBuilder_ == null) {
+        ensureTaxDetailIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, taxDetail_);
+        onChanged();
+      } else {
+        taxDetailBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder clearTaxDetail() {
+      if (taxDetailBuilder_ == null) {
+        taxDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        taxDetailBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public Builder removeTaxDetail(int index) {
+      if (taxDetailBuilder_ == null) {
+        ensureTaxDetailIsMutable();
+        taxDetail_.remove(index);
+        onChanged();
+      } else {
+        taxDetailBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder getTaxDetailBuilder(
+        int index) {
+      return getTaxDetailFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder getTaxDetailOrBuilder(
+        int index) {
+      if (taxDetailBuilder_ == null) {
+        return taxDetail_.get(index);  } else {
+        return taxDetailBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder> 
+         getTaxDetailOrBuilderList() {
+      if (taxDetailBuilder_ != null) {
+        return taxDetailBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(taxDetail_);
+      }
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder addTaxDetailBuilder() {
+      return getTaxDetailFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder addTaxDetailBuilder(
+        int index) {
+      return getTaxDetailFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 税费详情
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder> 
+         getTaxDetailBuilderList() {
+      return getTaxDetailFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder> 
+        getTaxDetailFieldBuilder() {
+      if (taxDetailBuilder_ == null) {
+        taxDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder>(
+                taxDetail_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        taxDetail_ = null;
+      }
+      return taxDetailBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     groupTicket_ = 0;
     identityLimit_ = 0;
     paxNumLimitType_ = 0;
+    compositionPriceRemark_ = "";
   }
 
   @java.lang.Override
@@ -155,6 +156,12 @@ private static final long serialVersionUID = 0L;
           case 104: {
 
             paxNumLimitType_ = input.readInt32();
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            compositionPriceRemark_ = s;
             break;
           }
           default: {
@@ -661,6 +668,48 @@ private static final long serialVersionUID = 0L;
     return paxNumLimitType_;
   }
 
+  public static final int COMPOSITIONPRICEREMARK_FIELD_NUMBER = 14;
+  private volatile java.lang.Object compositionPriceRemark_;
+  /**
+   * <pre>
+   * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+   * </pre>
+   *
+   * <code>string CompositionPriceRemark = 14;</code>
+   */
+  public java.lang.String getCompositionPriceRemark() {
+    java.lang.Object ref = compositionPriceRemark_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      compositionPriceRemark_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+   * </pre>
+   *
+   * <code>string CompositionPriceRemark = 14;</code>
+   */
+  public com.google.protobuf.ByteString
+      getCompositionPriceRemarkBytes() {
+    java.lang.Object ref = compositionPriceRemark_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      compositionPriceRemark_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -713,6 +762,9 @@ private static final long serialVersionUID = 0L;
     }
     if (paxNumLimitType_ != 0) {
       output.writeInt32(13, paxNumLimitType_);
+    }
+    if (!getCompositionPriceRemarkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, compositionPriceRemark_);
     }
     unknownFields.writeTo(output);
   }
@@ -792,6 +844,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(13, paxNumLimitType_);
     }
+    if (!getCompositionPriceRemarkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, compositionPriceRemark_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -840,6 +895,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getPaxNumLimitType()
         == other.getPaxNumLimitType());
+    result = result && getCompositionPriceRemark()
+        .equals(other.getCompositionPriceRemark());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -891,6 +948,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PAXNUMLIMITTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getPaxNumLimitType();
+    hash = (37 * hash) + COMPOSITIONPRICEREMARK_FIELD_NUMBER;
+    hash = (53 * hash) + getCompositionPriceRemark().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1058,6 +1117,8 @@ private static final long serialVersionUID = 0L;
       }
       paxNumLimitType_ = 0;
 
+      compositionPriceRemark_ = "";
+
       return this;
     }
 
@@ -1127,6 +1188,7 @@ private static final long serialVersionUID = 0L;
         result.paxCountRange_ = paxCountRangeBuilder_.build();
       }
       result.paxNumLimitType_ = paxNumLimitType_;
+      result.compositionPriceRemark_ = compositionPriceRemark_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1252,6 +1314,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPaxNumLimitType() != 0) {
         setPaxNumLimitType(other.getPaxNumLimitType());
+      }
+      if (!other.getCompositionPriceRemark().isEmpty()) {
+        compositionPriceRemark_ = other.compositionPriceRemark_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2616,6 +2682,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearPaxNumLimitType() {
       
       paxNumLimitType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object compositionPriceRemark_ = "";
+    /**
+     * <pre>
+     * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+     * </pre>
+     *
+     * <code>string CompositionPriceRemark = 14;</code>
+     */
+    public java.lang.String getCompositionPriceRemark() {
+      java.lang.Object ref = compositionPriceRemark_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        compositionPriceRemark_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+     * </pre>
+     *
+     * <code>string CompositionPriceRemark = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCompositionPriceRemarkBytes() {
+      java.lang.Object ref = compositionPriceRemark_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        compositionPriceRemark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+     * </pre>
+     *
+     * <code>string CompositionPriceRemark = 14;</code>
+     */
+    public Builder setCompositionPriceRemark(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      compositionPriceRemark_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+     * </pre>
+     *
+     * <code>string CompositionPriceRemark = 14;</code>
+     */
+    public Builder clearCompositionPriceRemark() {
+      
+      compositionPriceRemark_ = getDefaultInstance().getCompositionPriceRemark();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
+     * </pre>
+     *
+     * <code>string CompositionPriceRemark = 14;</code>
+     */
+    public Builder setCompositionPriceRemarkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      compositionPriceRemark_ = value;
       onChanged();
       return this;
     }

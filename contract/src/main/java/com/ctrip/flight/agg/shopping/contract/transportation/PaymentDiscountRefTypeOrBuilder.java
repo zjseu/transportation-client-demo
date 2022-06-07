@@ -37,16 +37,16 @@ public interface PaymentDiscountRefTypeOrBuilder extends
    * 支付卡类型
    * </pre>
    *
-   * <code>string PaymentWay = 2;</code>
+   * <code>string CreditCardType = 2;</code>
    */
-  java.lang.String getPaymentWay();
+  java.lang.String getCreditCardType();
   /**
    * <pre>
    * 支付卡类型
    * </pre>
    *
-   * <code>string PaymentWay = 2;</code>
+   * <code>string CreditCardType = 2;</code>
    */
   com.google.protobuf.ByteString
-      getPaymentWayBytes();
+      getCreditCardTypeBytes();
 }

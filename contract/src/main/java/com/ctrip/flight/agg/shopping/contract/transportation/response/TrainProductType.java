@@ -79,6 +79,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 42: {
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder subBuilder = null;
+            if (refundChange_ != null) {
+              subBuilder = refundChange_.toBuilder();
+            }
+            refundChange_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(refundChange_);
+              refundChange_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -283,6 +296,39 @@ private static final long serialVersionUID = 0L;
     return tag_.get(index);
   }
 
+  public static final int REFUNDCHANGE_FIELD_NUMBER = 5;
+  private com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType refundChange_;
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  public boolean hasRefundChange() {
+    return refundChange_ != null;
+  }
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange() {
+    return refundChange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+  }
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder() {
+    return getRefundChange();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -309,6 +355,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < tag_.size(); i++) {
       output.writeMessage(4, tag_.get(i));
     }
+    if (refundChange_ != null) {
+      output.writeMessage(5, getRefundChange());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -332,6 +381,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < tag_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, tag_.get(i));
+    }
+    if (refundChange_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getRefundChange());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -357,6 +410,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPromotionTag());
     result = result && getTagList()
         .equals(other.getTagList());
+    result = result && (hasRefundChange() == other.hasRefundChange());
+    if (hasRefundChange()) {
+      result = result && getRefundChange()
+          .equals(other.getRefundChange());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -379,6 +437,10 @@ private static final long serialVersionUID = 0L;
     if (getTagCount() > 0) {
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
+    }
+    if (hasRefundChange()) {
+      hash = (37 * hash) + REFUNDCHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRefundChange().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -535,6 +597,12 @@ private static final long serialVersionUID = 0L;
       } else {
         tagBuilder_.clear();
       }
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = null;
+      } else {
+        refundChange_ = null;
+        refundChangeBuilder_ = null;
+      }
       return this;
     }
 
@@ -582,6 +650,11 @@ private static final long serialVersionUID = 0L;
         result.tag_ = tag_;
       } else {
         result.tag_ = tagBuilder_.build();
+      }
+      if (refundChangeBuilder_ == null) {
+        result.refundChange_ = refundChange_;
+      } else {
+        result.refundChange_ = refundChangeBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -690,6 +763,9 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.addAllMessages(other.tag_);
           }
         }
+      }
+      if (other.hasRefundChange()) {
+        mergeRefundChange(other.getRefundChange());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1470,6 +1546,159 @@ private static final long serialVersionUID = 0L;
         tag_ = null;
       }
       return tagBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType refundChange_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder> refundChangeBuilder_;
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public boolean hasRefundChange() {
+      return refundChangeBuilder_ != null || refundChange_ != null;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange() {
+      if (refundChangeBuilder_ == null) {
+        return refundChange_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+      } else {
+        return refundChangeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public Builder setRefundChange(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType value) {
+      if (refundChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        refundChange_ = value;
+        onChanged();
+      } else {
+        refundChangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public Builder setRefundChange(
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder builderForValue) {
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = builderForValue.build();
+        onChanged();
+      } else {
+        refundChangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public Builder mergeRefundChange(com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType value) {
+      if (refundChangeBuilder_ == null) {
+        if (refundChange_ != null) {
+          refundChange_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.newBuilder(refundChange_).mergeFrom(value).buildPartial();
+        } else {
+          refundChange_ = value;
+        }
+        onChanged();
+      } else {
+        refundChangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public Builder clearRefundChange() {
+      if (refundChangeBuilder_ == null) {
+        refundChange_ = null;
+        onChanged();
+      } else {
+        refundChange_ = null;
+        refundChangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder getRefundChangeBuilder() {
+      
+      onChanged();
+      return getRefundChangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder() {
+      if (refundChangeBuilder_ != null) {
+        return refundChangeBuilder_.getMessageOrBuilder();
+      } else {
+        return refundChange_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.getDefaultInstance() : refundChange_;
+      }
+    }
+    /**
+     * <pre>
+     * 退改签简体信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder> 
+        getRefundChangeFieldBuilder() {
+      if (refundChangeBuilder_ == null) {
+        refundChangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder>(
+                getRefundChange(),
+                getParentForChildren(),
+                isClean());
+        refundChange_ = null;
+      }
+      return refundChangeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

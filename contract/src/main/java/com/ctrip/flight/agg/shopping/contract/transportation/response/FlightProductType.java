@@ -37,6 +37,9 @@ private static final long serialVersionUID = 0L;
     pcCode_ = "";
     marketingCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tag_ = java.util.Collections.emptyList();
+    bookingSceneSpecifiedRef_ = 0;
+    noIdentityCardInd_ = 0;
+    mileageCredit_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -53,6 +56,7 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
+    int mutable_bitField1_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -253,6 +257,129 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 186: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder subBuilder = null;
+            if (policyKey_ != null) {
+              subBuilder = policyKey_.toBuilder();
+            }
+            policyKey_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(policyKey_);
+              policyKey_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 194: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder subBuilder = null;
+            if (multiSegmentRestriction_ != null) {
+              subBuilder = multiSegmentRestriction_.toBuilder();
+            }
+            multiSegmentRestriction_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(multiSegmentRestriction_);
+              multiSegmentRestriction_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 202: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder subBuilder = null;
+            if (greenFlying_ != null) {
+              subBuilder = greenFlying_.toBuilder();
+            }
+            greenFlying_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(greenFlying_);
+              greenFlying_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 208: {
+
+            bookingSceneSpecifiedRef_ = input.readInt32();
+            break;
+          }
+          case 218: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder subBuilder = null;
+            if (pata_ != null) {
+              subBuilder = pata_.toBuilder();
+            }
+            pata_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pata_);
+              pata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 224: {
+
+            noIdentityCardInd_ = input.readInt32();
+            break;
+          }
+          case 234: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder subBuilder = null;
+            if (memberRegister_ != null) {
+              subBuilder = memberRegister_.toBuilder();
+            }
+            memberRegister_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(memberRegister_);
+              memberRegister_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 242: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder subBuilder = null;
+            if (premiumProduct_ != null) {
+              subBuilder = premiumProduct_.toBuilder();
+            }
+            premiumProduct_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(premiumProduct_);
+              premiumProduct_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 250: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder subBuilder = null;
+            if (billing_ != null) {
+              subBuilder = billing_.toBuilder();
+            }
+            billing_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(billing_);
+              billing_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 258: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder subBuilder = null;
+            if (preferentialProduct_ != null) {
+              subBuilder = preferentialProduct_.toBuilder();
+            }
+            preferentialProduct_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(preferentialProduct_);
+              preferentialProduct_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 266: {
+            if (!((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+              mileageCredit_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType>();
+              mutable_bitField1_ |= 0x00000001;
+            }
+            mileageCredit_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -285,6 +412,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00200000) == 0x00200000)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
+      if (((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+        mileageCredit_ = java.util.Collections.unmodifiableList(mileageCredit_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -505,7 +635,7 @@ private static final long serialVersionUID = 0L;
   private int invoiceType_;
   /**
    * <pre>
-   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
    * </pre>
    *
    * <code>int32 InvoiceType = 6;</code>
@@ -1033,6 +1163,351 @@ private static final long serialVersionUID = 0L;
     return tag_.get(index);
   }
 
+  public static final int POLICYKEY_FIELD_NUMBER = 23;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType policyKey_;
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  public boolean hasPolicyKey() {
+    return policyKey_ != null;
+  }
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType getPolicyKey() {
+    return policyKey_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.getDefaultInstance() : policyKey_;
+  }
+  /**
+   * <pre>
+   * 政策关键信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder getPolicyKeyOrBuilder() {
+    return getPolicyKey();
+  }
+
+  public static final int MULTISEGMENTRESTRICTION_FIELD_NUMBER = 24;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType multiSegmentRestriction_;
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  public boolean hasMultiSegmentRestriction() {
+    return multiSegmentRestriction_ != null;
+  }
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType getMultiSegmentRestriction() {
+    return multiSegmentRestriction_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.getDefaultInstance() : multiSegmentRestriction_;
+  }
+  /**
+   * <pre>
+   * 多程政策的限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder getMultiSegmentRestrictionOrBuilder() {
+    return getMultiSegmentRestriction();
+  }
+
+  public static final int GREENFLYING_FIELD_NUMBER = 25;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType greenFlying_;
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  public boolean hasGreenFlying() {
+    return greenFlying_ != null;
+  }
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType getGreenFlying() {
+    return greenFlying_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.getDefaultInstance() : greenFlying_;
+  }
+  /**
+   * <pre>
+   * 绿飞权益信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder getGreenFlyingOrBuilder() {
+    return getGreenFlying();
+  }
+
+  public static final int BOOKINGSCENESPECIFIEDREF_FIELD_NUMBER = 26;
+  private int bookingSceneSpecifiedRef_;
+  /**
+   * <pre>
+   * 预订场景信息的Ref
+   * </pre>
+   *
+   * <code>int32 BookingSceneSpecifiedRef = 26;</code>
+   */
+  public int getBookingSceneSpecifiedRef() {
+    return bookingSceneSpecifiedRef_;
+  }
+
+  public static final int PATA_FIELD_NUMBER = 27;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.PataType pata_;
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  public boolean hasPata() {
+    return pata_ != null;
+  }
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PataType getPata() {
+    return pata_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.getDefaultInstance() : pata_;
+  }
+  /**
+   * <pre>
+   * 国内PATA信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder getPataOrBuilder() {
+    return getPata();
+  }
+
+  public static final int NOIDENTITYCARDIND_FIELD_NUMBER = 28;
+  private int noIdentityCardInd_;
+  /**
+   * <pre>
+   * 无证件标识 0:不支持无证件 1:支持无证件
+   * </pre>
+   *
+   * <code>int32 NoIdentityCardInd = 28;</code>
+   */
+  public int getNoIdentityCardInd() {
+    return noIdentityCardInd_;
+  }
+
+  public static final int MEMBERREGISTER_FIELD_NUMBER = 29;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType memberRegister_;
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  public boolean hasMemberRegister() {
+    return memberRegister_ != null;
+  }
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
+    return memberRegister_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance() : memberRegister_;
+  }
+  /**
+   * <pre>
+   * 会员注册信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
+    return getMemberRegister();
+  }
+
+  public static final int PREMIUMPRODUCT_FIELD_NUMBER = 30;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType premiumProduct_;
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  public boolean hasPremiumProduct() {
+    return premiumProduct_ != null;
+  }
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType getPremiumProduct() {
+    return premiumProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.getDefaultInstance() : premiumProduct_;
+  }
+  /**
+   * <pre>
+   * 溢价产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder getPremiumProductOrBuilder() {
+    return getPremiumProduct();
+  }
+
+  public static final int BILLING_FIELD_NUMBER = 31;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType billing_;
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  public boolean hasBilling() {
+    return billing_ != null;
+  }
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType getBilling() {
+    return billing_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.getDefaultInstance() : billing_;
+  }
+  /**
+   * <pre>
+   * 账单信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder getBillingOrBuilder() {
+    return getBilling();
+  }
+
+  public static final int PREFERENTIALPRODUCT_FIELD_NUMBER = 32;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType preferentialProduct_;
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  public boolean hasPreferentialProduct() {
+    return preferentialProduct_ != null;
+  }
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType getPreferentialProduct() {
+    return preferentialProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.getDefaultInstance() : preferentialProduct_;
+  }
+  /**
+   * <pre>
+   * 优惠的产品信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder getPreferentialProductOrBuilder() {
+    return getPreferentialProduct();
+  }
+
+  public static final int MILEAGECREDIT_FIELD_NUMBER = 33;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> mileageCredit_;
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> getMileageCreditList() {
+    return mileageCredit_;
+  }
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder> 
+      getMileageCreditOrBuilderList() {
+    return mileageCredit_;
+  }
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  public int getMileageCreditCount() {
+    return mileageCredit_.size();
+  }
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType getMileageCredit(int index) {
+    return mileageCredit_.get(index);
+  }
+  /**
+   * <pre>
+   * 航班舱位可累积里程积分
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder getMileageCreditOrBuilder(
+      int index) {
+    return mileageCredit_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1117,6 +1592,39 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tag_.size(); i++) {
       output.writeMessage(22, tag_.get(i));
+    }
+    if (policyKey_ != null) {
+      output.writeMessage(23, getPolicyKey());
+    }
+    if (multiSegmentRestriction_ != null) {
+      output.writeMessage(24, getMultiSegmentRestriction());
+    }
+    if (greenFlying_ != null) {
+      output.writeMessage(25, getGreenFlying());
+    }
+    if (bookingSceneSpecifiedRef_ != 0) {
+      output.writeInt32(26, bookingSceneSpecifiedRef_);
+    }
+    if (pata_ != null) {
+      output.writeMessage(27, getPata());
+    }
+    if (noIdentityCardInd_ != 0) {
+      output.writeInt32(28, noIdentityCardInd_);
+    }
+    if (memberRegister_ != null) {
+      output.writeMessage(29, getMemberRegister());
+    }
+    if (premiumProduct_ != null) {
+      output.writeMessage(30, getPremiumProduct());
+    }
+    if (billing_ != null) {
+      output.writeMessage(31, getBilling());
+    }
+    if (preferentialProduct_ != null) {
+      output.writeMessage(32, getPreferentialProduct());
+    }
+    for (int i = 0; i < mileageCredit_.size(); i++) {
+      output.writeMessage(33, mileageCredit_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1229,6 +1737,50 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, tag_.get(i));
     }
+    if (policyKey_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getPolicyKey());
+    }
+    if (multiSegmentRestriction_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getMultiSegmentRestriction());
+    }
+    if (greenFlying_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getGreenFlying());
+    }
+    if (bookingSceneSpecifiedRef_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(26, bookingSceneSpecifiedRef_);
+    }
+    if (pata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, getPata());
+    }
+    if (noIdentityCardInd_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(28, noIdentityCardInd_);
+    }
+    if (memberRegister_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(29, getMemberRegister());
+    }
+    if (premiumProduct_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(30, getPremiumProduct());
+    }
+    if (billing_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(31, getBilling());
+    }
+    if (preferentialProduct_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(32, getPreferentialProduct());
+    }
+    for (int i = 0; i < mileageCredit_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(33, mileageCredit_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1304,6 +1856,52 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMarketingCodeList());
     result = result && getTagList()
         .equals(other.getTagList());
+    result = result && (hasPolicyKey() == other.hasPolicyKey());
+    if (hasPolicyKey()) {
+      result = result && getPolicyKey()
+          .equals(other.getPolicyKey());
+    }
+    result = result && (hasMultiSegmentRestriction() == other.hasMultiSegmentRestriction());
+    if (hasMultiSegmentRestriction()) {
+      result = result && getMultiSegmentRestriction()
+          .equals(other.getMultiSegmentRestriction());
+    }
+    result = result && (hasGreenFlying() == other.hasGreenFlying());
+    if (hasGreenFlying()) {
+      result = result && getGreenFlying()
+          .equals(other.getGreenFlying());
+    }
+    result = result && (getBookingSceneSpecifiedRef()
+        == other.getBookingSceneSpecifiedRef());
+    result = result && (hasPata() == other.hasPata());
+    if (hasPata()) {
+      result = result && getPata()
+          .equals(other.getPata());
+    }
+    result = result && (getNoIdentityCardInd()
+        == other.getNoIdentityCardInd());
+    result = result && (hasMemberRegister() == other.hasMemberRegister());
+    if (hasMemberRegister()) {
+      result = result && getMemberRegister()
+          .equals(other.getMemberRegister());
+    }
+    result = result && (hasPremiumProduct() == other.hasPremiumProduct());
+    if (hasPremiumProduct()) {
+      result = result && getPremiumProduct()
+          .equals(other.getPremiumProduct());
+    }
+    result = result && (hasBilling() == other.hasBilling());
+    if (hasBilling()) {
+      result = result && getBilling()
+          .equals(other.getBilling());
+    }
+    result = result && (hasPreferentialProduct() == other.hasPreferentialProduct());
+    if (hasPreferentialProduct()) {
+      result = result && getPreferentialProduct()
+          .equals(other.getPreferentialProduct());
+    }
+    result = result && getMileageCreditList()
+        .equals(other.getMileageCreditList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1380,6 +1978,46 @@ private static final long serialVersionUID = 0L;
     if (getTagCount() > 0) {
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
+    }
+    if (hasPolicyKey()) {
+      hash = (37 * hash) + POLICYKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyKey().hashCode();
+    }
+    if (hasMultiSegmentRestriction()) {
+      hash = (37 * hash) + MULTISEGMENTRESTRICTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiSegmentRestriction().hashCode();
+    }
+    if (hasGreenFlying()) {
+      hash = (37 * hash) + GREENFLYING_FIELD_NUMBER;
+      hash = (53 * hash) + getGreenFlying().hashCode();
+    }
+    hash = (37 * hash) + BOOKINGSCENESPECIFIEDREF_FIELD_NUMBER;
+    hash = (53 * hash) + getBookingSceneSpecifiedRef();
+    if (hasPata()) {
+      hash = (37 * hash) + PATA_FIELD_NUMBER;
+      hash = (53 * hash) + getPata().hashCode();
+    }
+    hash = (37 * hash) + NOIDENTITYCARDIND_FIELD_NUMBER;
+    hash = (53 * hash) + getNoIdentityCardInd();
+    if (hasMemberRegister()) {
+      hash = (37 * hash) + MEMBERREGISTER_FIELD_NUMBER;
+      hash = (53 * hash) + getMemberRegister().hashCode();
+    }
+    if (hasPremiumProduct()) {
+      hash = (37 * hash) + PREMIUMPRODUCT_FIELD_NUMBER;
+      hash = (53 * hash) + getPremiumProduct().hashCode();
+    }
+    if (hasBilling()) {
+      hash = (37 * hash) + BILLING_FIELD_NUMBER;
+      hash = (53 * hash) + getBilling().hashCode();
+    }
+    if (hasPreferentialProduct()) {
+      hash = (37 * hash) + PREFERENTIALPRODUCT_FIELD_NUMBER;
+      hash = (53 * hash) + getPreferentialProduct().hashCode();
+    }
+    if (getMileageCreditCount() > 0) {
+      hash = (37 * hash) + MILEAGECREDIT_FIELD_NUMBER;
+      hash = (53 * hash) + getMileageCreditList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1516,6 +2154,7 @@ private static final long serialVersionUID = 0L;
         getPaxProductFieldBuilder();
         getFareRefFieldBuilder();
         getTagFieldBuilder();
+        getMileageCreditFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1597,6 +2236,64 @@ private static final long serialVersionUID = 0L;
       } else {
         tagBuilder_.clear();
       }
+      if (policyKeyBuilder_ == null) {
+        policyKey_ = null;
+      } else {
+        policyKey_ = null;
+        policyKeyBuilder_ = null;
+      }
+      if (multiSegmentRestrictionBuilder_ == null) {
+        multiSegmentRestriction_ = null;
+      } else {
+        multiSegmentRestriction_ = null;
+        multiSegmentRestrictionBuilder_ = null;
+      }
+      if (greenFlyingBuilder_ == null) {
+        greenFlying_ = null;
+      } else {
+        greenFlying_ = null;
+        greenFlyingBuilder_ = null;
+      }
+      bookingSceneSpecifiedRef_ = 0;
+
+      if (pataBuilder_ == null) {
+        pata_ = null;
+      } else {
+        pata_ = null;
+        pataBuilder_ = null;
+      }
+      noIdentityCardInd_ = 0;
+
+      if (memberRegisterBuilder_ == null) {
+        memberRegister_ = null;
+      } else {
+        memberRegister_ = null;
+        memberRegisterBuilder_ = null;
+      }
+      if (premiumProductBuilder_ == null) {
+        premiumProduct_ = null;
+      } else {
+        premiumProduct_ = null;
+        premiumProductBuilder_ = null;
+      }
+      if (billingBuilder_ == null) {
+        billing_ = null;
+      } else {
+        billing_ = null;
+        billingBuilder_ = null;
+      }
+      if (preferentialProductBuilder_ == null) {
+        preferentialProduct_ = null;
+      } else {
+        preferentialProduct_ = null;
+        preferentialProductBuilder_ = null;
+      }
+      if (mileageCreditBuilder_ == null) {
+        mileageCredit_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000001);
+      } else {
+        mileageCreditBuilder_.clear();
+      }
       return this;
     }
 
@@ -1624,6 +2321,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType(this);
       int from_bitField0_ = bitField0_;
+      int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       result.refNum_ = refNum_;
       result.validatingCarrier_ = validatingCarrier_;
@@ -1702,6 +2400,57 @@ private static final long serialVersionUID = 0L;
         result.tag_ = tag_;
       } else {
         result.tag_ = tagBuilder_.build();
+      }
+      if (policyKeyBuilder_ == null) {
+        result.policyKey_ = policyKey_;
+      } else {
+        result.policyKey_ = policyKeyBuilder_.build();
+      }
+      if (multiSegmentRestrictionBuilder_ == null) {
+        result.multiSegmentRestriction_ = multiSegmentRestriction_;
+      } else {
+        result.multiSegmentRestriction_ = multiSegmentRestrictionBuilder_.build();
+      }
+      if (greenFlyingBuilder_ == null) {
+        result.greenFlying_ = greenFlying_;
+      } else {
+        result.greenFlying_ = greenFlyingBuilder_.build();
+      }
+      result.bookingSceneSpecifiedRef_ = bookingSceneSpecifiedRef_;
+      if (pataBuilder_ == null) {
+        result.pata_ = pata_;
+      } else {
+        result.pata_ = pataBuilder_.build();
+      }
+      result.noIdentityCardInd_ = noIdentityCardInd_;
+      if (memberRegisterBuilder_ == null) {
+        result.memberRegister_ = memberRegister_;
+      } else {
+        result.memberRegister_ = memberRegisterBuilder_.build();
+      }
+      if (premiumProductBuilder_ == null) {
+        result.premiumProduct_ = premiumProduct_;
+      } else {
+        result.premiumProduct_ = premiumProductBuilder_.build();
+      }
+      if (billingBuilder_ == null) {
+        result.billing_ = billing_;
+      } else {
+        result.billing_ = billingBuilder_.build();
+      }
+      if (preferentialProductBuilder_ == null) {
+        result.preferentialProduct_ = preferentialProduct_;
+      } else {
+        result.preferentialProduct_ = preferentialProductBuilder_.build();
+      }
+      if (mileageCreditBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) == 0x00000001)) {
+          mileageCredit_ = java.util.Collections.unmodifiableList(mileageCredit_);
+          bitField1_ = (bitField1_ & ~0x00000001);
+        }
+        result.mileageCredit_ = mileageCredit_;
+      } else {
+        result.mileageCredit_ = mileageCreditBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1912,6 +2661,62 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasPolicyKey()) {
+        mergePolicyKey(other.getPolicyKey());
+      }
+      if (other.hasMultiSegmentRestriction()) {
+        mergeMultiSegmentRestriction(other.getMultiSegmentRestriction());
+      }
+      if (other.hasGreenFlying()) {
+        mergeGreenFlying(other.getGreenFlying());
+      }
+      if (other.getBookingSceneSpecifiedRef() != 0) {
+        setBookingSceneSpecifiedRef(other.getBookingSceneSpecifiedRef());
+      }
+      if (other.hasPata()) {
+        mergePata(other.getPata());
+      }
+      if (other.getNoIdentityCardInd() != 0) {
+        setNoIdentityCardInd(other.getNoIdentityCardInd());
+      }
+      if (other.hasMemberRegister()) {
+        mergeMemberRegister(other.getMemberRegister());
+      }
+      if (other.hasPremiumProduct()) {
+        mergePremiumProduct(other.getPremiumProduct());
+      }
+      if (other.hasBilling()) {
+        mergeBilling(other.getBilling());
+      }
+      if (other.hasPreferentialProduct()) {
+        mergePreferentialProduct(other.getPreferentialProduct());
+      }
+      if (mileageCreditBuilder_ == null) {
+        if (!other.mileageCredit_.isEmpty()) {
+          if (mileageCredit_.isEmpty()) {
+            mileageCredit_ = other.mileageCredit_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+          } else {
+            ensureMileageCreditIsMutable();
+            mileageCredit_.addAll(other.mileageCredit_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mileageCredit_.isEmpty()) {
+          if (mileageCreditBuilder_.isEmpty()) {
+            mileageCreditBuilder_.dispose();
+            mileageCreditBuilder_ = null;
+            mileageCredit_ = other.mileageCredit_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+            mileageCreditBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMileageCreditFieldBuilder() : null;
+          } else {
+            mileageCreditBuilder_.addAllMessages(other.mileageCredit_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1941,6 +2746,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
+    private int bitField1_;
 
     private int refNum_ ;
     /**
@@ -2603,7 +3409,7 @@ private static final long serialVersionUID = 0L;
     private int invoiceType_ ;
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>
@@ -2613,7 +3419,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>
@@ -2626,7 +3432,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 境外电子凭证
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>
@@ -4662,6 +5468,1618 @@ private static final long serialVersionUID = 0L;
         tag_ = null;
       }
       return tagBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType policyKey_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder> policyKeyBuilder_;
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public boolean hasPolicyKey() {
+      return policyKeyBuilder_ != null || policyKey_ != null;
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType getPolicyKey() {
+      if (policyKeyBuilder_ == null) {
+        return policyKey_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.getDefaultInstance() : policyKey_;
+      } else {
+        return policyKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public Builder setPolicyKey(com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType value) {
+      if (policyKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyKey_ = value;
+        onChanged();
+      } else {
+        policyKeyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public Builder setPolicyKey(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder builderForValue) {
+      if (policyKeyBuilder_ == null) {
+        policyKey_ = builderForValue.build();
+        onChanged();
+      } else {
+        policyKeyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public Builder mergePolicyKey(com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType value) {
+      if (policyKeyBuilder_ == null) {
+        if (policyKey_ != null) {
+          policyKey_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.newBuilder(policyKey_).mergeFrom(value).buildPartial();
+        } else {
+          policyKey_ = value;
+        }
+        onChanged();
+      } else {
+        policyKeyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public Builder clearPolicyKey() {
+      if (policyKeyBuilder_ == null) {
+        policyKey_ = null;
+        onChanged();
+      } else {
+        policyKey_ = null;
+        policyKeyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder getPolicyKeyBuilder() {
+      
+      onChanged();
+      return getPolicyKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder getPolicyKeyOrBuilder() {
+      if (policyKeyBuilder_ != null) {
+        return policyKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return policyKey_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.getDefaultInstance() : policyKey_;
+      }
+    }
+    /**
+     * <pre>
+     * 政策关键信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType PolicyKey = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder> 
+        getPolicyKeyFieldBuilder() {
+      if (policyKeyBuilder_ == null) {
+        policyKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyTypeOrBuilder>(
+                getPolicyKey(),
+                getParentForChildren(),
+                isClean());
+        policyKey_ = null;
+      }
+      return policyKeyBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType multiSegmentRestriction_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder> multiSegmentRestrictionBuilder_;
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public boolean hasMultiSegmentRestriction() {
+      return multiSegmentRestrictionBuilder_ != null || multiSegmentRestriction_ != null;
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType getMultiSegmentRestriction() {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        return multiSegmentRestriction_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.getDefaultInstance() : multiSegmentRestriction_;
+      } else {
+        return multiSegmentRestrictionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public Builder setMultiSegmentRestriction(com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType value) {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiSegmentRestriction_ = value;
+        onChanged();
+      } else {
+        multiSegmentRestrictionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public Builder setMultiSegmentRestriction(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder builderForValue) {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        multiSegmentRestriction_ = builderForValue.build();
+        onChanged();
+      } else {
+        multiSegmentRestrictionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public Builder mergeMultiSegmentRestriction(com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType value) {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        if (multiSegmentRestriction_ != null) {
+          multiSegmentRestriction_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.newBuilder(multiSegmentRestriction_).mergeFrom(value).buildPartial();
+        } else {
+          multiSegmentRestriction_ = value;
+        }
+        onChanged();
+      } else {
+        multiSegmentRestrictionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public Builder clearMultiSegmentRestriction() {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        multiSegmentRestriction_ = null;
+        onChanged();
+      } else {
+        multiSegmentRestriction_ = null;
+        multiSegmentRestrictionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder getMultiSegmentRestrictionBuilder() {
+      
+      onChanged();
+      return getMultiSegmentRestrictionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder getMultiSegmentRestrictionOrBuilder() {
+      if (multiSegmentRestrictionBuilder_ != null) {
+        return multiSegmentRestrictionBuilder_.getMessageOrBuilder();
+      } else {
+        return multiSegmentRestriction_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.getDefaultInstance() : multiSegmentRestriction_;
+      }
+    }
+    /**
+     * <pre>
+     * 多程政策的限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType MultiSegmentRestriction = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder> 
+        getMultiSegmentRestrictionFieldBuilder() {
+      if (multiSegmentRestrictionBuilder_ == null) {
+        multiSegmentRestrictionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionTypeOrBuilder>(
+                getMultiSegmentRestriction(),
+                getParentForChildren(),
+                isClean());
+        multiSegmentRestriction_ = null;
+      }
+      return multiSegmentRestrictionBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType greenFlying_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder> greenFlyingBuilder_;
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public boolean hasGreenFlying() {
+      return greenFlyingBuilder_ != null || greenFlying_ != null;
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType getGreenFlying() {
+      if (greenFlyingBuilder_ == null) {
+        return greenFlying_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.getDefaultInstance() : greenFlying_;
+      } else {
+        return greenFlyingBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public Builder setGreenFlying(com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType value) {
+      if (greenFlyingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        greenFlying_ = value;
+        onChanged();
+      } else {
+        greenFlyingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public Builder setGreenFlying(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder builderForValue) {
+      if (greenFlyingBuilder_ == null) {
+        greenFlying_ = builderForValue.build();
+        onChanged();
+      } else {
+        greenFlyingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public Builder mergeGreenFlying(com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType value) {
+      if (greenFlyingBuilder_ == null) {
+        if (greenFlying_ != null) {
+          greenFlying_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.newBuilder(greenFlying_).mergeFrom(value).buildPartial();
+        } else {
+          greenFlying_ = value;
+        }
+        onChanged();
+      } else {
+        greenFlyingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public Builder clearGreenFlying() {
+      if (greenFlyingBuilder_ == null) {
+        greenFlying_ = null;
+        onChanged();
+      } else {
+        greenFlying_ = null;
+        greenFlyingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder getGreenFlyingBuilder() {
+      
+      onChanged();
+      return getGreenFlyingFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder getGreenFlyingOrBuilder() {
+      if (greenFlyingBuilder_ != null) {
+        return greenFlyingBuilder_.getMessageOrBuilder();
+      } else {
+        return greenFlying_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.getDefaultInstance() : greenFlying_;
+      }
+    }
+    /**
+     * <pre>
+     * 绿飞权益信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType GreenFlying = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder> 
+        getGreenFlyingFieldBuilder() {
+      if (greenFlyingBuilder_ == null) {
+        greenFlyingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.GreenFlyingTypeOrBuilder>(
+                getGreenFlying(),
+                getParentForChildren(),
+                isClean());
+        greenFlying_ = null;
+      }
+      return greenFlyingBuilder_;
+    }
+
+    private int bookingSceneSpecifiedRef_ ;
+    /**
+     * <pre>
+     * 预订场景信息的Ref
+     * </pre>
+     *
+     * <code>int32 BookingSceneSpecifiedRef = 26;</code>
+     */
+    public int getBookingSceneSpecifiedRef() {
+      return bookingSceneSpecifiedRef_;
+    }
+    /**
+     * <pre>
+     * 预订场景信息的Ref
+     * </pre>
+     *
+     * <code>int32 BookingSceneSpecifiedRef = 26;</code>
+     */
+    public Builder setBookingSceneSpecifiedRef(int value) {
+      
+      bookingSceneSpecifiedRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预订场景信息的Ref
+     * </pre>
+     *
+     * <code>int32 BookingSceneSpecifiedRef = 26;</code>
+     */
+    public Builder clearBookingSceneSpecifiedRef() {
+      
+      bookingSceneSpecifiedRef_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.PataType pata_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PataType, com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder> pataBuilder_;
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public boolean hasPata() {
+      return pataBuilder_ != null || pata_ != null;
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PataType getPata() {
+      if (pataBuilder_ == null) {
+        return pata_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.getDefaultInstance() : pata_;
+      } else {
+        return pataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public Builder setPata(com.ctrip.flight.agg.shopping.contract.transportation.response.PataType value) {
+      if (pataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pata_ = value;
+        onChanged();
+      } else {
+        pataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public Builder setPata(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder builderForValue) {
+      if (pataBuilder_ == null) {
+        pata_ = builderForValue.build();
+        onChanged();
+      } else {
+        pataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public Builder mergePata(com.ctrip.flight.agg.shopping.contract.transportation.response.PataType value) {
+      if (pataBuilder_ == null) {
+        if (pata_ != null) {
+          pata_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.newBuilder(pata_).mergeFrom(value).buildPartial();
+        } else {
+          pata_ = value;
+        }
+        onChanged();
+      } else {
+        pataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public Builder clearPata() {
+      if (pataBuilder_ == null) {
+        pata_ = null;
+        onChanged();
+      } else {
+        pata_ = null;
+        pataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder getPataBuilder() {
+      
+      onChanged();
+      return getPataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder getPataOrBuilder() {
+      if (pataBuilder_ != null) {
+        return pataBuilder_.getMessageOrBuilder();
+      } else {
+        return pata_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.getDefaultInstance() : pata_;
+      }
+    }
+    /**
+     * <pre>
+     * 国内PATA信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PataType Pata = 27;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PataType, com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder> 
+        getPataFieldBuilder() {
+      if (pataBuilder_ == null) {
+        pataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PataType, com.ctrip.flight.agg.shopping.contract.transportation.response.PataType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PataTypeOrBuilder>(
+                getPata(),
+                getParentForChildren(),
+                isClean());
+        pata_ = null;
+      }
+      return pataBuilder_;
+    }
+
+    private int noIdentityCardInd_ ;
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 28;</code>
+     */
+    public int getNoIdentityCardInd() {
+      return noIdentityCardInd_;
+    }
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 28;</code>
+     */
+    public Builder setNoIdentityCardInd(int value) {
+      
+      noIdentityCardInd_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 28;</code>
+     */
+    public Builder clearNoIdentityCardInd() {
+      
+      noIdentityCardInd_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType memberRegister_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> memberRegisterBuilder_;
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public boolean hasMemberRegister() {
+      return memberRegisterBuilder_ != null || memberRegister_ != null;
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
+      if (memberRegisterBuilder_ == null) {
+        return memberRegister_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance() : memberRegister_;
+      } else {
+        return memberRegisterBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public Builder setMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+      if (memberRegisterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        memberRegister_ = value;
+        onChanged();
+      } else {
+        memberRegisterBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public Builder setMemberRegister(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder builderForValue) {
+      if (memberRegisterBuilder_ == null) {
+        memberRegister_ = builderForValue.build();
+        onChanged();
+      } else {
+        memberRegisterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public Builder mergeMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+      if (memberRegisterBuilder_ == null) {
+        if (memberRegister_ != null) {
+          memberRegister_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.newBuilder(memberRegister_).mergeFrom(value).buildPartial();
+        } else {
+          memberRegister_ = value;
+        }
+        onChanged();
+      } else {
+        memberRegisterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public Builder clearMemberRegister() {
+      if (memberRegisterBuilder_ == null) {
+        memberRegister_ = null;
+        onChanged();
+      } else {
+        memberRegister_ = null;
+        memberRegisterBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder getMemberRegisterBuilder() {
+      
+      onChanged();
+      return getMemberRegisterFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
+      if (memberRegisterBuilder_ != null) {
+        return memberRegisterBuilder_.getMessageOrBuilder();
+      } else {
+        return memberRegister_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance() : memberRegister_;
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
+        getMemberRegisterFieldBuilder() {
+      if (memberRegisterBuilder_ == null) {
+        memberRegisterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder>(
+                getMemberRegister(),
+                getParentForChildren(),
+                isClean());
+        memberRegister_ = null;
+      }
+      return memberRegisterBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType premiumProduct_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder> premiumProductBuilder_;
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public boolean hasPremiumProduct() {
+      return premiumProductBuilder_ != null || premiumProduct_ != null;
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType getPremiumProduct() {
+      if (premiumProductBuilder_ == null) {
+        return premiumProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.getDefaultInstance() : premiumProduct_;
+      } else {
+        return premiumProductBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public Builder setPremiumProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType value) {
+      if (premiumProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        premiumProduct_ = value;
+        onChanged();
+      } else {
+        premiumProductBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public Builder setPremiumProduct(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder builderForValue) {
+      if (premiumProductBuilder_ == null) {
+        premiumProduct_ = builderForValue.build();
+        onChanged();
+      } else {
+        premiumProductBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public Builder mergePremiumProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType value) {
+      if (premiumProductBuilder_ == null) {
+        if (premiumProduct_ != null) {
+          premiumProduct_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.newBuilder(premiumProduct_).mergeFrom(value).buildPartial();
+        } else {
+          premiumProduct_ = value;
+        }
+        onChanged();
+      } else {
+        premiumProductBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public Builder clearPremiumProduct() {
+      if (premiumProductBuilder_ == null) {
+        premiumProduct_ = null;
+        onChanged();
+      } else {
+        premiumProduct_ = null;
+        premiumProductBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder getPremiumProductBuilder() {
+      
+      onChanged();
+      return getPremiumProductFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder getPremiumProductOrBuilder() {
+      if (premiumProductBuilder_ != null) {
+        return premiumProductBuilder_.getMessageOrBuilder();
+      } else {
+        return premiumProduct_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.getDefaultInstance() : premiumProduct_;
+      }
+    }
+    /**
+     * <pre>
+     * 溢价产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType PremiumProduct = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder> 
+        getPremiumProductFieldBuilder() {
+      if (premiumProductBuilder_ == null) {
+        premiumProductBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PremiumProductTypeOrBuilder>(
+                getPremiumProduct(),
+                getParentForChildren(),
+                isClean());
+        premiumProduct_ = null;
+      }
+      return premiumProductBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType billing_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder> billingBuilder_;
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public boolean hasBilling() {
+      return billingBuilder_ != null || billing_ != null;
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType getBilling() {
+      if (billingBuilder_ == null) {
+        return billing_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.getDefaultInstance() : billing_;
+      } else {
+        return billingBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public Builder setBilling(com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType value) {
+      if (billingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billing_ = value;
+        onChanged();
+      } else {
+        billingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public Builder setBilling(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder builderForValue) {
+      if (billingBuilder_ == null) {
+        billing_ = builderForValue.build();
+        onChanged();
+      } else {
+        billingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public Builder mergeBilling(com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType value) {
+      if (billingBuilder_ == null) {
+        if (billing_ != null) {
+          billing_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.newBuilder(billing_).mergeFrom(value).buildPartial();
+        } else {
+          billing_ = value;
+        }
+        onChanged();
+      } else {
+        billingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public Builder clearBilling() {
+      if (billingBuilder_ == null) {
+        billing_ = null;
+        onChanged();
+      } else {
+        billing_ = null;
+        billingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder getBillingBuilder() {
+      
+      onChanged();
+      return getBillingFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder getBillingOrBuilder() {
+      if (billingBuilder_ != null) {
+        return billingBuilder_.getMessageOrBuilder();
+      } else {
+        return billing_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.getDefaultInstance() : billing_;
+      }
+    }
+    /**
+     * <pre>
+     * 账单信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType Billing = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder> 
+        getBillingFieldBuilder() {
+      if (billingBuilder_ == null) {
+        billingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.BillingTypeOrBuilder>(
+                getBilling(),
+                getParentForChildren(),
+                isClean());
+        billing_ = null;
+      }
+      return billingBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType preferentialProduct_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder> preferentialProductBuilder_;
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public boolean hasPreferentialProduct() {
+      return preferentialProductBuilder_ != null || preferentialProduct_ != null;
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType getPreferentialProduct() {
+      if (preferentialProductBuilder_ == null) {
+        return preferentialProduct_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.getDefaultInstance() : preferentialProduct_;
+      } else {
+        return preferentialProductBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public Builder setPreferentialProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType value) {
+      if (preferentialProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        preferentialProduct_ = value;
+        onChanged();
+      } else {
+        preferentialProductBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public Builder setPreferentialProduct(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder builderForValue) {
+      if (preferentialProductBuilder_ == null) {
+        preferentialProduct_ = builderForValue.build();
+        onChanged();
+      } else {
+        preferentialProductBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public Builder mergePreferentialProduct(com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType value) {
+      if (preferentialProductBuilder_ == null) {
+        if (preferentialProduct_ != null) {
+          preferentialProduct_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.newBuilder(preferentialProduct_).mergeFrom(value).buildPartial();
+        } else {
+          preferentialProduct_ = value;
+        }
+        onChanged();
+      } else {
+        preferentialProductBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public Builder clearPreferentialProduct() {
+      if (preferentialProductBuilder_ == null) {
+        preferentialProduct_ = null;
+        onChanged();
+      } else {
+        preferentialProduct_ = null;
+        preferentialProductBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder getPreferentialProductBuilder() {
+      
+      onChanged();
+      return getPreferentialProductFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder getPreferentialProductOrBuilder() {
+      if (preferentialProductBuilder_ != null) {
+        return preferentialProductBuilder_.getMessageOrBuilder();
+      } else {
+        return preferentialProduct_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.getDefaultInstance() : preferentialProduct_;
+      }
+    }
+    /**
+     * <pre>
+     * 优惠的产品信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType PreferentialProduct = 32;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder> 
+        getPreferentialProductFieldBuilder() {
+      if (preferentialProductBuilder_ == null) {
+        preferentialProductBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PreferentialProductTypeOrBuilder>(
+                getPreferentialProduct(),
+                getParentForChildren(),
+                isClean());
+        preferentialProduct_ = null;
+      }
+      return preferentialProductBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> mileageCredit_ =
+      java.util.Collections.emptyList();
+    private void ensureMileageCreditIsMutable() {
+      if (!((bitField1_ & 0x00000001) == 0x00000001)) {
+        mileageCredit_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType>(mileageCredit_);
+        bitField1_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder> mileageCreditBuilder_;
+
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> getMileageCreditList() {
+      if (mileageCreditBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mileageCredit_);
+      } else {
+        return mileageCreditBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public int getMileageCreditCount() {
+      if (mileageCreditBuilder_ == null) {
+        return mileageCredit_.size();
+      } else {
+        return mileageCreditBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType getMileageCredit(int index) {
+      if (mileageCreditBuilder_ == null) {
+        return mileageCredit_.get(index);
+      } else {
+        return mileageCreditBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder setMileageCredit(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType value) {
+      if (mileageCreditBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCreditIsMutable();
+        mileageCredit_.set(index, value);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder setMileageCredit(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder builderForValue) {
+      if (mileageCreditBuilder_ == null) {
+        ensureMileageCreditIsMutable();
+        mileageCredit_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mileageCreditBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder addMileageCredit(com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType value) {
+      if (mileageCreditBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCreditIsMutable();
+        mileageCredit_.add(value);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder addMileageCredit(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType value) {
+      if (mileageCreditBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCreditIsMutable();
+        mileageCredit_.add(index, value);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder addMileageCredit(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder builderForValue) {
+      if (mileageCreditBuilder_ == null) {
+        ensureMileageCreditIsMutable();
+        mileageCredit_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mileageCreditBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder addMileageCredit(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder builderForValue) {
+      if (mileageCreditBuilder_ == null) {
+        ensureMileageCreditIsMutable();
+        mileageCredit_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mileageCreditBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder addAllMileageCredit(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType> values) {
+      if (mileageCreditBuilder_ == null) {
+        ensureMileageCreditIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, mileageCredit_);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder clearMileageCredit() {
+      if (mileageCreditBuilder_ == null) {
+        mileageCredit_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000001);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public Builder removeMileageCredit(int index) {
+      if (mileageCreditBuilder_ == null) {
+        ensureMileageCreditIsMutable();
+        mileageCredit_.remove(index);
+        onChanged();
+      } else {
+        mileageCreditBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder getMileageCreditBuilder(
+        int index) {
+      return getMileageCreditFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder getMileageCreditOrBuilder(
+        int index) {
+      if (mileageCreditBuilder_ == null) {
+        return mileageCredit_.get(index);  } else {
+        return mileageCreditBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder> 
+         getMileageCreditOrBuilderList() {
+      if (mileageCreditBuilder_ != null) {
+        return mileageCreditBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mileageCredit_);
+      }
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder addMileageCreditBuilder() {
+      return getMileageCreditFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder addMileageCreditBuilder(
+        int index) {
+      return getMileageCreditFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 航班舱位可累积里程积分
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType MileageCredit = 33;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder> 
+         getMileageCreditBuilderList() {
+      return getMileageCreditFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder> 
+        getMileageCreditFieldBuilder() {
+      if (mileageCreditBuilder_ == null) {
+        mileageCreditBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder>(
+                mileageCredit_,
+                ((bitField1_ & 0x00000001) == 0x00000001),
+                getParentForChildren(),
+                isClean());
+        mileageCredit_ = null;
+      }
+      return mileageCreditBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

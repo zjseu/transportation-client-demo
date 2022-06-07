@@ -121,4 +121,29 @@ public interface TrainProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  boolean hasRefundChange();
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType getRefundChange();
+  /**
+   * <pre>
+   * 退改签简体信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder();
 }

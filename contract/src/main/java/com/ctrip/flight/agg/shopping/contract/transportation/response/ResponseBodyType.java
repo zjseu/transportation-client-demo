@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     compatibleDetailToken_ = "";
     hotelLoadToken_ = "";
     searchCriteriaToken_ = "";
+    xproductSearchKey_ = "";
   }
 
   @java.lang.Override
@@ -117,6 +118,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             searchCriteriaToken_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            xproductSearchKey_ = s;
             break;
           }
           default: {
@@ -520,6 +527,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int XPRODUCTSEARCHKEY_FIELD_NUMBER = 9;
+  private volatile java.lang.Object xproductSearchKey_;
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 9;</code>
+   */
+  public java.lang.String getXproductSearchKey() {
+    java.lang.Object ref = xproductSearchKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      xproductSearchKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 9;</code>
+   */
+  public com.google.protobuf.ByteString
+      getXproductSearchKeyBytes() {
+    java.lang.Object ref = xproductSearchKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      xproductSearchKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -557,6 +606,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSearchCriteriaTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, searchCriteriaToken_);
+    }
+    if (!getXproductSearchKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, xproductSearchKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -596,6 +648,9 @@ private static final long serialVersionUID = 0L;
     if (!getSearchCriteriaTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, searchCriteriaToken_);
     }
+    if (!getXproductSearchKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, xproductSearchKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -634,6 +689,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getHotelLoadToken());
     result = result && getSearchCriteriaToken()
         .equals(other.getSearchCriteriaToken());
+    result = result && getXproductSearchKey()
+        .equals(other.getXproductSearchKey());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -671,6 +728,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getHotelLoadToken().hashCode();
     hash = (37 * hash) + SEARCHCRITERIATOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getSearchCriteriaToken().hashCode();
+    hash = (37 * hash) + XPRODUCTSEARCHKEY_FIELD_NUMBER;
+    hash = (53 * hash) + getXproductSearchKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -843,6 +902,8 @@ private static final long serialVersionUID = 0L;
 
       searchCriteriaToken_ = "";
 
+      xproductSearchKey_ = "";
+
       return this;
     }
 
@@ -911,6 +972,7 @@ private static final long serialVersionUID = 0L;
       result.compatibleDetailToken_ = compatibleDetailToken_;
       result.hotelLoadToken_ = hotelLoadToken_;
       result.searchCriteriaToken_ = searchCriteriaToken_;
+      result.xproductSearchKey_ = xproductSearchKey_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1054,6 +1116,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSearchCriteriaToken().isEmpty()) {
         searchCriteriaToken_ = other.searchCriteriaToken_;
+        onChanged();
+      }
+      if (!other.getXproductSearchKey().isEmpty()) {
+        xproductSearchKey_ = other.xproductSearchKey_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2596,6 +2662,95 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       searchCriteriaToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object xproductSearchKey_ = "";
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 9;</code>
+     */
+    public java.lang.String getXproductSearchKey() {
+      java.lang.Object ref = xproductSearchKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        xproductSearchKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getXproductSearchKeyBytes() {
+      java.lang.Object ref = xproductSearchKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        xproductSearchKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 9;</code>
+     */
+    public Builder setXproductSearchKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      xproductSearchKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 9;</code>
+     */
+    public Builder clearXproductSearchKey() {
+      
+      xproductSearchKey_ = getDefaultInstance().getXproductSearchKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 9;</code>
+     */
+    public Builder setXproductSearchKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      xproductSearchKey_ = value;
       onChanged();
       return this;
     }

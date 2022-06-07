@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     ticketRemark_ = "";
     textRemarkRef_ = 0;
     tag_ = java.util.Collections.emptyList();
+    creditCardFee_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -140,6 +141,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              creditCardFee_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType>();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            creditCardFee_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -160,6 +170,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        creditCardFee_ = java.util.Collections.unmodifiableList(creditCardFee_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -531,6 +544,61 @@ private static final long serialVersionUID = 0L;
     return tag_.get(index);
   }
 
+  public static final int CREDITCARDFEE_FIELD_NUMBER = 11;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> creditCardFee_;
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> getCreditCardFeeList() {
+    return creditCardFee_;
+  }
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder> 
+      getCreditCardFeeOrBuilderList() {
+    return creditCardFee_;
+  }
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  public int getCreditCardFeeCount() {
+    return creditCardFee_.size();
+  }
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType getCreditCardFee(int index) {
+    return creditCardFee_.get(index);
+  }
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder getCreditCardFeeOrBuilder(
+      int index) {
+    return creditCardFee_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -574,6 +642,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tag_.size(); i++) {
       output.writeMessage(10, tag_.get(i));
+    }
+    for (int i = 0; i < creditCardFee_.size(); i++) {
+      output.writeMessage(11, creditCardFee_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -621,6 +692,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < tag_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, tag_.get(i));
+    }
+    for (int i = 0; i < creditCardFee_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, creditCardFee_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -670,6 +745,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getTagList()
         .equals(other.getTagList());
+    result = result && getCreditCardFeeList()
+        .equals(other.getCreditCardFeeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -712,6 +789,10 @@ private static final long serialVersionUID = 0L;
     if (getTagCount() > 0) {
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
+    }
+    if (getCreditCardFeeCount() > 0) {
+      hash = (37 * hash) + CREDITCARDFEE_FIELD_NUMBER;
+      hash = (53 * hash) + getCreditCardFeeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -843,6 +924,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getRebateFieldBuilder();
         getTagFieldBuilder();
+        getCreditCardFeeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -891,6 +973,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         tagBuilder_.clear();
+      }
+      if (creditCardFeeBuilder_ == null) {
+        creditCardFee_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      } else {
+        creditCardFeeBuilder_.clear();
       }
       return this;
     }
@@ -961,6 +1049,15 @@ private static final long serialVersionUID = 0L;
         result.tag_ = tag_;
       } else {
         result.tag_ = tagBuilder_.build();
+      }
+      if (creditCardFeeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          creditCardFee_ = java.util.Collections.unmodifiableList(creditCardFee_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.creditCardFee_ = creditCardFee_;
+      } else {
+        result.creditCardFee_ = creditCardFeeBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1086,6 +1183,32 @@ private static final long serialVersionUID = 0L;
                  getTagFieldBuilder() : null;
           } else {
             tagBuilder_.addAllMessages(other.tag_);
+          }
+        }
+      }
+      if (creditCardFeeBuilder_ == null) {
+        if (!other.creditCardFee_.isEmpty()) {
+          if (creditCardFee_.isEmpty()) {
+            creditCardFee_ = other.creditCardFee_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureCreditCardFeeIsMutable();
+            creditCardFee_.addAll(other.creditCardFee_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.creditCardFee_.isEmpty()) {
+          if (creditCardFeeBuilder_.isEmpty()) {
+            creditCardFeeBuilder_.dispose();
+            creditCardFeeBuilder_ = null;
+            creditCardFee_ = other.creditCardFee_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            creditCardFeeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCreditCardFeeFieldBuilder() : null;
+          } else {
+            creditCardFeeBuilder_.addAllMessages(other.creditCardFee_);
           }
         }
       }
@@ -2607,6 +2730,318 @@ private static final long serialVersionUID = 0L;
         tag_ = null;
       }
       return tagBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> creditCardFee_ =
+      java.util.Collections.emptyList();
+    private void ensureCreditCardFeeIsMutable() {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        creditCardFee_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType>(creditCardFee_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder> creditCardFeeBuilder_;
+
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> getCreditCardFeeList() {
+      if (creditCardFeeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(creditCardFee_);
+      } else {
+        return creditCardFeeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public int getCreditCardFeeCount() {
+      if (creditCardFeeBuilder_ == null) {
+        return creditCardFee_.size();
+      } else {
+        return creditCardFeeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType getCreditCardFee(int index) {
+      if (creditCardFeeBuilder_ == null) {
+        return creditCardFee_.get(index);
+      } else {
+        return creditCardFeeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder setCreditCardFee(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType value) {
+      if (creditCardFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.set(index, value);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder setCreditCardFee(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder builderForValue) {
+      if (creditCardFeeBuilder_ == null) {
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder addCreditCardFee(com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType value) {
+      if (creditCardFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.add(value);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder addCreditCardFee(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType value) {
+      if (creditCardFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.add(index, value);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder addCreditCardFee(
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder builderForValue) {
+      if (creditCardFeeBuilder_ == null) {
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.add(builderForValue.build());
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder addCreditCardFee(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder builderForValue) {
+      if (creditCardFeeBuilder_ == null) {
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder addAllCreditCardFee(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType> values) {
+      if (creditCardFeeBuilder_ == null) {
+        ensureCreditCardFeeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, creditCardFee_);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder clearCreditCardFee() {
+      if (creditCardFeeBuilder_ == null) {
+        creditCardFee_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public Builder removeCreditCardFee(int index) {
+      if (creditCardFeeBuilder_ == null) {
+        ensureCreditCardFeeIsMutable();
+        creditCardFee_.remove(index);
+        onChanged();
+      } else {
+        creditCardFeeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder getCreditCardFeeBuilder(
+        int index) {
+      return getCreditCardFeeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder getCreditCardFeeOrBuilder(
+        int index) {
+      if (creditCardFeeBuilder_ == null) {
+        return creditCardFee_.get(index);  } else {
+        return creditCardFeeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder> 
+         getCreditCardFeeOrBuilderList() {
+      if (creditCardFeeBuilder_ != null) {
+        return creditCardFeeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(creditCardFee_);
+      }
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder addCreditCardFeeBuilder() {
+      return getCreditCardFeeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder addCreditCardFeeBuilder(
+        int index) {
+      return getCreditCardFeeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 卡费费用
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType CreditCardFee = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder> 
+         getCreditCardFeeBuilderList() {
+      return getCreditCardFeeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder> 
+        getCreditCardFeeFieldBuilder() {
+      if (creditCardFeeBuilder_ == null) {
+        creditCardFeeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditCardFeeTypeOrBuilder>(
+                creditCardFee_,
+                ((bitField0_ & 0x00000400) == 0x00000400),
+                getParentForChildren(),
+                isClean());
+        creditCardFee_ = null;
+      }
+      return creditCardFeeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

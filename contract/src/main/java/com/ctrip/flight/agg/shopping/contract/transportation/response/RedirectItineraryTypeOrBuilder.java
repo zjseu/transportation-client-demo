@@ -103,4 +103,48 @@ public interface RedirectItineraryTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.InterchangeTypeOrBuilder getInterchangeOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType> 
+      getProductAttributesList();
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType getProductAttributes(int index);
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  int getProductAttributesCount();
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder> 
+      getProductAttributesOrBuilderList();
+  /**
+   * <pre>
+   * 推荐产品属性
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesType ProductAttributes = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.ProductAttributesTypeOrBuilder getProductAttributesOrBuilder(
+      int index);
 }

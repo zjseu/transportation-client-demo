@@ -388,4 +388,29 @@ public interface SearchCriteriaTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionType SpecifiedOption = 13;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.SpecifiedOptionTypeOrBuilder getSpecifiedOptionOrBuilder();
+
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  boolean hasAdaptedOption();
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType getAdaptedOption();
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder getAdaptedOptionOrBuilder();
 }

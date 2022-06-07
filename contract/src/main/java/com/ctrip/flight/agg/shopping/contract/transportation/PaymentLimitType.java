@@ -84,6 +84,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountRefType.parser(), extensionRegistry));
             break;
           }
+          case 34: {
+            com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder subBuilder = null;
+            if (loanPayment_ != null) {
+              subBuilder = loanPayment_.toBuilder();
+            }
+            loanPayment_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(loanPayment_);
+              loanPayment_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -125,6 +138,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.PaymentLimitType.class, com.ctrip.flight.agg.shopping.contract.transportation.PaymentLimitType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PREPAYTYPE_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList prepayType_;
   /**
@@ -260,6 +274,39 @@ private static final long serialVersionUID = 0L;
     return paymentDiscountRefType_.get(index);
   }
 
+  public static final int LOANPAYMENT_FIELD_NUMBER = 4;
+  private com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType loanPayment_;
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  public boolean hasLoanPayment() {
+    return loanPayment_ != null;
+  }
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType getLoanPayment() {
+    return loanPayment_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.getDefaultInstance() : loanPayment_;
+  }
+  /**
+   * <pre>
+   * 拿去花信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder getLoanPaymentOrBuilder() {
+    return getLoanPayment();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -287,6 +334,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < paymentDiscountRefType_.size(); i++) {
       output.writeMessage(3, paymentDiscountRefType_.get(i));
+    }
+    if (loanPayment_ != null) {
+      output.writeMessage(4, getLoanPayment());
     }
     unknownFields.writeTo(output);
   }
@@ -323,6 +373,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, paymentDiscountRefType_.get(i));
     }
+    if (loanPayment_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getLoanPayment());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -345,6 +399,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreditCardPaymentLimitRefList());
     result = result && getPaymentDiscountRefTypeList()
         .equals(other.getPaymentDiscountRefTypeList());
+    result = result && (hasLoanPayment() == other.hasLoanPayment());
+    if (hasLoanPayment()) {
+      result = result && getLoanPayment()
+          .equals(other.getLoanPayment());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -367,6 +426,10 @@ private static final long serialVersionUID = 0L;
     if (getPaymentDiscountRefTypeCount() > 0) {
       hash = (37 * hash) + PAYMENTDISCOUNTREFTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPaymentDiscountRefTypeList().hashCode();
+    }
+    if (hasLoanPayment()) {
+      hash = (37 * hash) + LOANPAYMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getLoanPayment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -512,6 +575,12 @@ private static final long serialVersionUID = 0L;
       } else {
         paymentDiscountRefTypeBuilder_.clear();
       }
+      if (loanPaymentBuilder_ == null) {
+        loanPayment_ = null;
+      } else {
+        loanPayment_ = null;
+        loanPaymentBuilder_ = null;
+      }
       return this;
     }
 
@@ -539,6 +608,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.PaymentLimitType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.PaymentLimitType result = new com.ctrip.flight.agg.shopping.contract.transportation.PaymentLimitType(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         prepayType_ = prepayType_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -558,6 +628,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.paymentDiscountRefType_ = paymentDiscountRefTypeBuilder_.build();
       }
+      if (loanPaymentBuilder_ == null) {
+        result.loanPayment_ = loanPayment_;
+      } else {
+        result.loanPayment_ = loanPaymentBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -651,6 +727,9 @@ private static final long serialVersionUID = 0L;
             paymentDiscountRefTypeBuilder_.addAllMessages(other.paymentDiscountRefType_);
           }
         }
+      }
+      if (other.hasLoanPayment()) {
+        mergeLoanPayment(other.getLoanPayment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1216,6 +1295,159 @@ private static final long serialVersionUID = 0L;
         paymentDiscountRefType_ = null;
       }
       return paymentDiscountRefTypeBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType loanPayment_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder> loanPaymentBuilder_;
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public boolean hasLoanPayment() {
+      return loanPaymentBuilder_ != null || loanPayment_ != null;
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType getLoanPayment() {
+      if (loanPaymentBuilder_ == null) {
+        return loanPayment_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.getDefaultInstance() : loanPayment_;
+      } else {
+        return loanPaymentBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public Builder setLoanPayment(com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType value) {
+      if (loanPaymentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        loanPayment_ = value;
+        onChanged();
+      } else {
+        loanPaymentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public Builder setLoanPayment(
+        com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder builderForValue) {
+      if (loanPaymentBuilder_ == null) {
+        loanPayment_ = builderForValue.build();
+        onChanged();
+      } else {
+        loanPaymentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public Builder mergeLoanPayment(com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType value) {
+      if (loanPaymentBuilder_ == null) {
+        if (loanPayment_ != null) {
+          loanPayment_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.newBuilder(loanPayment_).mergeFrom(value).buildPartial();
+        } else {
+          loanPayment_ = value;
+        }
+        onChanged();
+      } else {
+        loanPaymentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public Builder clearLoanPayment() {
+      if (loanPaymentBuilder_ == null) {
+        loanPayment_ = null;
+        onChanged();
+      } else {
+        loanPayment_ = null;
+        loanPaymentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder getLoanPaymentBuilder() {
+      
+      onChanged();
+      return getLoanPaymentFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder getLoanPaymentOrBuilder() {
+      if (loanPaymentBuilder_ != null) {
+        return loanPaymentBuilder_.getMessageOrBuilder();
+      } else {
+        return loanPayment_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.getDefaultInstance() : loanPayment_;
+      }
+    }
+    /**
+     * <pre>
+     * 拿去花信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder> 
+        getLoanPaymentFieldBuilder() {
+      if (loanPaymentBuilder_ == null) {
+        loanPaymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder>(
+                getLoanPayment(),
+                getParentForChildren(),
+                isClean());
+        loanPayment_ = null;
+      }
+      return loanPaymentBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

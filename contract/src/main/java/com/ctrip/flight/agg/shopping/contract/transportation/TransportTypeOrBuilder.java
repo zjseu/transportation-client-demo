@@ -231,4 +231,29 @@ public interface TransportTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TrainType Train = 11;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.TrainTypeOrBuilder getTrainOrBuilder();
+
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  boolean hasBus();
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.BusType getBus();
+  /**
+   * <pre>
+   * Bus类型扩展信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.BusType Bus = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.BusTypeOrBuilder getBusOrBuilder();
 }

@@ -171,6 +171,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder subBuilder = null;
+            if (adaptedOption_ != null) {
+              subBuilder = adaptedOption_.toBuilder();
+            }
+            adaptedOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(adaptedOption_);
+              adaptedOption_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -763,6 +776,39 @@ private static final long serialVersionUID = 0L;
     return getSpecifiedOption();
   }
 
+  public static final int ADAPTEDOPTION_FIELD_NUMBER = 14;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType adaptedOption_;
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  public boolean hasAdaptedOption() {
+    return adaptedOption_ != null;
+  }
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType getAdaptedOption() {
+    return adaptedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.getDefaultInstance() : adaptedOption_;
+  }
+  /**
+   * <pre>
+   * 适配查询扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder getAdaptedOptionOrBuilder() {
+    return getAdaptedOption();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -815,6 +861,9 @@ private static final long serialVersionUID = 0L;
     }
     if (specifiedOption_ != null) {
       output.writeMessage(13, getSpecifiedOption());
+    }
+    if (adaptedOption_ != null) {
+      output.writeMessage(14, getAdaptedOption());
     }
     unknownFields.writeTo(output);
   }
@@ -878,6 +927,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getSpecifiedOption());
     }
+    if (adaptedOption_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getAdaptedOption());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -931,6 +984,11 @@ private static final long serialVersionUID = 0L;
     if (hasSpecifiedOption()) {
       result = result && getSpecifiedOption()
           .equals(other.getSpecifiedOption());
+    }
+    result = result && (hasAdaptedOption() == other.hasAdaptedOption());
+    if (hasAdaptedOption()) {
+      result = result && getAdaptedOption()
+          .equals(other.getAdaptedOption());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -986,6 +1044,10 @@ private static final long serialVersionUID = 0L;
     if (hasSpecifiedOption()) {
       hash = (37 * hash) + SPECIFIEDOPTION_FIELD_NUMBER;
       hash = (53 * hash) + getSpecifiedOption().hashCode();
+    }
+    if (hasAdaptedOption()) {
+      hash = (37 * hash) + ADAPTEDOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptedOption().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1182,6 +1244,12 @@ private static final long serialVersionUID = 0L;
         specifiedOption_ = null;
         specifiedOptionBuilder_ = null;
       }
+      if (adaptedOptionBuilder_ == null) {
+        adaptedOption_ = null;
+      } else {
+        adaptedOption_ = null;
+        adaptedOptionBuilder_ = null;
+      }
       return this;
     }
 
@@ -1274,6 +1342,11 @@ private static final long serialVersionUID = 0L;
         result.specifiedOption_ = specifiedOption_;
       } else {
         result.specifiedOption_ = specifiedOptionBuilder_.build();
+      }
+      if (adaptedOptionBuilder_ == null) {
+        result.adaptedOption_ = adaptedOption_;
+      } else {
+        result.adaptedOption_ = adaptedOptionBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1464,6 +1537,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSpecifiedOption()) {
         mergeSpecifiedOption(other.getSpecifiedOption());
+      }
+      if (other.hasAdaptedOption()) {
+        mergeAdaptedOption(other.getAdaptedOption());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3808,6 +3884,159 @@ private static final long serialVersionUID = 0L;
         specifiedOption_ = null;
       }
       return specifiedOptionBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType adaptedOption_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder> adaptedOptionBuilder_;
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public boolean hasAdaptedOption() {
+      return adaptedOptionBuilder_ != null || adaptedOption_ != null;
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType getAdaptedOption() {
+      if (adaptedOptionBuilder_ == null) {
+        return adaptedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.getDefaultInstance() : adaptedOption_;
+      } else {
+        return adaptedOptionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public Builder setAdaptedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType value) {
+      if (adaptedOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        adaptedOption_ = value;
+        onChanged();
+      } else {
+        adaptedOptionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public Builder setAdaptedOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder builderForValue) {
+      if (adaptedOptionBuilder_ == null) {
+        adaptedOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        adaptedOptionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public Builder mergeAdaptedOption(com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType value) {
+      if (adaptedOptionBuilder_ == null) {
+        if (adaptedOption_ != null) {
+          adaptedOption_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.newBuilder(adaptedOption_).mergeFrom(value).buildPartial();
+        } else {
+          adaptedOption_ = value;
+        }
+        onChanged();
+      } else {
+        adaptedOptionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public Builder clearAdaptedOption() {
+      if (adaptedOptionBuilder_ == null) {
+        adaptedOption_ = null;
+        onChanged();
+      } else {
+        adaptedOption_ = null;
+        adaptedOptionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder getAdaptedOptionBuilder() {
+      
+      onChanged();
+      return getAdaptedOptionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder getAdaptedOptionOrBuilder() {
+      if (adaptedOptionBuilder_ != null) {
+        return adaptedOptionBuilder_.getMessageOrBuilder();
+      } else {
+        return adaptedOption_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.getDefaultInstance() : adaptedOption_;
+      }
+    }
+    /**
+     * <pre>
+     * 适配查询扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType AdaptedOption = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder> 
+        getAdaptedOptionFieldBuilder() {
+      if (adaptedOptionBuilder_ == null) {
+        adaptedOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionTypeOrBuilder>(
+                getAdaptedOption(),
+                getParentForChildren(),
+                isClean());
+        adaptedOption_ = null;
+      }
+      return adaptedOptionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -129,4 +129,92 @@ public interface PaxRestrictionTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNationalityBlockBytes(int index);
+
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> 
+      getMaleAgeLimitRangeList();
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getMaleAgeLimitRange(int index);
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  int getMaleAgeLimitRangeCount();
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+      getMaleAgeLimitRangeOrBuilderList();
+  /**
+   * <pre>
+   * 男性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType MaleAgeLimitRange = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getMaleAgeLimitRangeOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType> 
+      getFemaleAgeLimitRangeList();
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType getFemaleAgeLimitRange(int index);
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  int getFemaleAgeLimitRangeCount();
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder> 
+      getFemaleAgeLimitRangeOrBuilderList();
+  /**
+   * <pre>
+   * 女性年龄限制 为空时,下发AgeLimitRange作为default.
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType FemaleAgeLimitRange = 6;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntRangeTypeOrBuilder getFemaleAgeLimitRangeOrBuilder(
+      int index);
 }

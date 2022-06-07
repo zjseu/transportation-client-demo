@@ -60,4 +60,49 @@ public interface RBDDisclosureTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * 特舱ID
+   * </pre>
+   *
+   * <code>int64 SpecialClassTypeID = 4;</code>
+   */
+  long getSpecialClassTypeID();
+
+  /**
+   * <pre>
+   * 单独标签
+   * </pre>
+   *
+   * <code>string ExtraTabName = 5;</code>
+   */
+  java.lang.String getExtraTabName();
+  /**
+   * <pre>
+   * 单独标签
+   * </pre>
+   *
+   * <code>string ExtraTabName = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getExtraTabNameBytes();
+
+  /**
+   * <pre>
+   * 特舱溢价等级(品牌顺序)
+   * </pre>
+   *
+   * <code>string BrandOrder = 6;</code>
+   */
+  java.lang.String getBrandOrder();
+  /**
+   * <pre>
+   * 特舱溢价等级(品牌顺序)
+   * </pre>
+   *
+   * <code>string BrandOrder = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getBrandOrderBytes();
 }

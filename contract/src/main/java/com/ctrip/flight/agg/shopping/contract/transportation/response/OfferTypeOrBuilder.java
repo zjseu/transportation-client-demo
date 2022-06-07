@@ -409,4 +409,47 @@ public interface OfferTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.JourneyAttachmentTypeOrBuilder getJourneyAttachmentOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 运价索引 每次查询唯一
+   * </pre>
+   *
+   * <code>int32 OfferID = 14;</code>
+   */
+  int getOfferID();
+
+  /**
+   * <pre>
+   * 引用的offerId。暂时用于标识儿童标准价offer隶属于哪个Offer下
+   * </pre>
+   *
+   * <code>int32 ChildStandardOfferRef = 15;</code>
+   */
+  int getChildStandardOfferRef();
+
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  boolean hasUpsellProduct();
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType getUpsellProduct();
+  /**
+   * <pre>
+   * Upsell促销信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder getUpsellProductOrBuilder();
 }

@@ -323,9 +323,9 @@ private static final long serialVersionUID = 0L;
    * 航班舱位可累积里程
    * </pre>
    *
-   * <code>int32 MileageCredit = 8;</code>
+   * <code>int32 MileageCredit = 8 [deprecated = true];</code>
    */
-  public int getMileageCredit() {
+  @java.lang.Deprecated public int getMileageCredit() {
     return mileageCredit_;
   }
 
@@ -1240,9 +1240,9 @@ private static final long serialVersionUID = 0L;
      * 航班舱位可累积里程
      * </pre>
      *
-     * <code>int32 MileageCredit = 8;</code>
+     * <code>int32 MileageCredit = 8 [deprecated = true];</code>
      */
-    public int getMileageCredit() {
+    @java.lang.Deprecated public int getMileageCredit() {
       return mileageCredit_;
     }
     /**
@@ -1250,9 +1250,9 @@ private static final long serialVersionUID = 0L;
      * 航班舱位可累积里程
      * </pre>
      *
-     * <code>int32 MileageCredit = 8;</code>
+     * <code>int32 MileageCredit = 8 [deprecated = true];</code>
      */
-    public Builder setMileageCredit(int value) {
+    @java.lang.Deprecated public Builder setMileageCredit(int value) {
       
       mileageCredit_ = value;
       onChanged();
@@ -1263,9 +1263,9 @@ private static final long serialVersionUID = 0L;
      * 航班舱位可累积里程
      * </pre>
      *
-     * <code>int32 MileageCredit = 8;</code>
+     * <code>int32 MileageCredit = 8 [deprecated = true];</code>
      */
-    public Builder clearMileageCredit() {
+    @java.lang.Deprecated public Builder clearMileageCredit() {
       
       mileageCredit_ = 0;
       onChanged();

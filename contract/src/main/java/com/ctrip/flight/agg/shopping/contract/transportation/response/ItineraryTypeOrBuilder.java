@@ -209,4 +209,48 @@ public interface ItineraryTypeOrBuilder extends
    * <code>double Priority = 7;</code>
    */
   double getPriority();
+
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> 
+      getReferenceOfferList();
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType getReferenceOffer(int index);
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  int getReferenceOfferCount();
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder> 
+      getReferenceOfferOrBuilderList();
+  /**
+   * <pre>
+   * 被正常运价引用的运价信息，如：儿童标准价
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType ReferenceOffer = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder getReferenceOfferOrBuilder(
+      int index);
 }

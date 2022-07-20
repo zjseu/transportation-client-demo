@@ -5,7 +5,9 @@ option java_package = "com.ctrip.flight.agg.shopping.contract.transportation";
 option java_multiple_files = true;
 
 message FareRefType {
+    // Fare对应的PU序号
     int32 PUSequence = 1;
+    // Fare对应的FC序号
     int32 FCSequence = 2;
     // 对应的乘客类型组，可表示多个乘客类型。1: Adult; 2: Child; 4: Infant;
     int32 AgeTypeGroup = 3;
@@ -75,6 +77,12 @@ message StopType {
     int32 DurationMinutes = 2;
     // 到达时间, format: yyyy-MM-dd HH:mm:ss
     string ArriveDateTime = 3;
+    // 国内通程虚拟航班号
+    repeated string ThroughFlightNo = 4;
+    // 经停到达航站楼ID
+    int32 TerminalBuildingID = 5;
+    // 扩展信息
+    repeated KeyValuePairType Tag = 6;
 }
 
 message FlightPaxProductType {
@@ -160,7 +168,9 @@ message RebateType {
     double Amount = 2;
     // 后返币种
     string Currency = 3;
+    // 后返政策ID
     repeated int64 RebatePolicyID = 4;
+    //
     double ActualAmount = 5;
 }
 
@@ -203,9 +213,9 @@ message PaxSeatType {
 }
 
 message FlightSeatType {
-    // 运价的PUSequence
+    // 航段对应的PU序号
     int32 PUSequence = 1;
-    // 运价的FCSequence
+    // 航段对应的FC序号
     int32 FCSequence = 2;
     // 机票舱等，Y: 经济舱； W：超级经济舱； C：公务舱；F：头等舱
     string CabinCode = 3;
@@ -244,6 +254,8 @@ message FlightPunctualityType {
     int32 EstimatedArriveDelayMaxMinutes = 5;
     // 携程预测延误原因名称列表
     repeated KeyValuePairType DelayReason = 6;
+    // 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+    string VeryZhunDeptimeReadyWithDate = 7;
 }
 
 // 航班相关的其他参考价格信息
@@ -352,6 +364,8 @@ message RestrictionType {
     int32 PaxNumLimitType = 13;
     // 价格标签，买赠信息等，如M3S1:表示买三赠一,同时乘客人数必须限制为4个; STU:学生票; JGMG:价格敏感
     string CompositionPriceRemark = 14;
+    // 性别限制
+    string ApplySex = 15;
 }
 
 message PaymentLimitType {
@@ -474,6 +488,8 @@ message FlightType {
     FlightPunctualityType Punctuality = 9;
     // 虚拟航班类型，0-飞机，1-火车，2-汽车，3-水上飞机
     int32 VirtualFlightType = 10;
+    // 航班属性
+    repeated string FlightAttribute = 11;
 }
 
 message ThroughFlightType {
@@ -545,7 +561,7 @@ message DoubleType {
 message ServiceAssociationType {
     // 绑定的程号，从1开始
     int32 JourneyNo = 1;
-    // 某一程内的段号。0表示不限段号
+    // 每一程内的段号，从1开始，0表示不限段号
     int32 SegmentNo = 2;
 }
 
@@ -563,7 +579,7 @@ message MarketingProductType {
     repeated CashBackType CashBack = 5;
     // 增值服务
     repeated AncillariesType Ancillaries = 6;
-    // 定投
+    // 定向投放
     repeated MemberPrivilegeType MemberPrivilege = 7;
     // 立减
     repeated PriceReductionType PriceReduction = 8;
@@ -640,6 +656,8 @@ message ServiceDetailType {
     int32 ExpiryTime = 16;
     // 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
     string ExpiryTimeUnit = 17;
+    // 优先级
+    int32 Priority = 18;
 }
 
 message ProductFeeDetailType {
@@ -672,6 +690,8 @@ message ServiceDiscountType {
     double SingleMaxDiscountAmount = 9;
     // 折扣周期 与使用次数限制相关联 标识周期内的使用次数限制
     int32 Period = 10;
+    // 活动名称
+    string Name = 11;
 }
 
 message CouponType {
@@ -724,12 +744,16 @@ message CashBackType {
 }
 
 message CacheType {
+    // 索引号
     int32 RefNum = 1;
+    // 缓存时长
     int32 AgeInMillisecond = 2;
+    // 调试用字段
     string TraceID = 3;
 }
 
 message AncillariesType {
+    // 索引号
     int32 RefNum = 1;
     // 值机服务属性(0:不支持在线购买,1:支持在线购买,2：必须在线购买)
     int32 CheckInServiceStatus = 4;
@@ -784,7 +808,7 @@ message TextRemarkType {
 message InterchangeType {
     // 程号，从1开始
     int32 JourneyNo = 1;
-    // 每程内的段号，从1开始
+    // 每一程内的段号，从1开始
     int32 SegmentNo = 2;
     // 换乘信息是在段前还是段后， 1：段前， 2：段后
     int32 Position = 3;
@@ -870,6 +894,8 @@ message JourneyAttachmentType {
     repeated string ProductCombinationType = 2;
     // 中转类型
     string TransferProductType = 3;
+    // 下发中转组合产品维度，无法放在单程上的信息
+    repeated KeyValuePairType TransferCombinationTag = 4;
 }
 
 message HotelType {

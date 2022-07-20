@@ -74,4 +74,29 @@ public interface JourneyRequestTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType ArriveLocation = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getArriveLocationOrBuilder();
+
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  boolean hasTransferLocation();
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getTransferLocation();
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getTransferLocationOrBuilder();
 }

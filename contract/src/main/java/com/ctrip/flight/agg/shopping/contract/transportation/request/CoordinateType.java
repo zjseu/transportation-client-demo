@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
             updateTime_ = s;
             break;
           }
+          case 34: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder subBuilder = null;
+            if (location_ != null) {
+              subBuilder = location_.toBuilder();
+            }
+            location_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(location_);
+              location_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +174,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 4;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType location_;
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  public boolean hasLocation() {
+    return location_ != null;
+  }
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getLocation() {
+    return location_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : location_;
+  }
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getLocationOrBuilder() {
+    return getLocation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +230,9 @@ private static final long serialVersionUID = 0L;
     if (!getUpdateTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, updateTime_);
     }
+    if (location_ != null) {
+      output.writeMessage(4, getLocation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +252,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUpdateTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, updateTime_);
+    }
+    if (location_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getLocation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -230,6 +283,11 @@ private static final long serialVersionUID = 0L;
             other.getLatitude()));
     result = result && getUpdateTime()
         .equals(other.getUpdateTime());
+    result = result && (hasLocation() == other.hasLocation());
+    if (hasLocation()) {
+      result = result && getLocation()
+          .equals(other.getLocation());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -249,6 +307,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getLatitude()));
     hash = (37 * hash) + UPDATETIME_FIELD_NUMBER;
     hash = (53 * hash) + getUpdateTime().hashCode();
+    if (hasLocation()) {
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -388,6 +450,12 @@ private static final long serialVersionUID = 0L;
 
       updateTime_ = "";
 
+      if (locationBuilder_ == null) {
+        location_ = null;
+      } else {
+        location_ = null;
+        locationBuilder_ = null;
+      }
       return this;
     }
 
@@ -417,6 +485,11 @@ private static final long serialVersionUID = 0L;
       result.longitude_ = longitude_;
       result.latitude_ = latitude_;
       result.updateTime_ = updateTime_;
+      if (locationBuilder_ == null) {
+        result.location_ = location_;
+      } else {
+        result.location_ = locationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -474,6 +547,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getUpdateTime().isEmpty()) {
         updateTime_ = other.updateTime_;
         onChanged();
+      }
+      if (other.hasLocation()) {
+        mergeLocation(other.getLocation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -667,6 +743,159 @@ private static final long serialVersionUID = 0L;
       updateTime_ = value;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType location_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder> locationBuilder_;
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public boolean hasLocation() {
+      return locationBuilder_ != null || location_ != null;
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getLocation() {
+      if (locationBuilder_ == null) {
+        return location_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : location_;
+      } else {
+        return locationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public Builder setLocation(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType value) {
+      if (locationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        onChanged();
+      } else {
+        locationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public Builder setLocation(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder builderForValue) {
+      if (locationBuilder_ == null) {
+        location_ = builderForValue.build();
+        onChanged();
+      } else {
+        locationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public Builder mergeLocation(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType value) {
+      if (locationBuilder_ == null) {
+        if (location_ != null) {
+          location_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.newBuilder(location_).mergeFrom(value).buildPartial();
+        } else {
+          location_ = value;
+        }
+        onChanged();
+      } else {
+        locationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public Builder clearLocation() {
+      if (locationBuilder_ == null) {
+        location_ = null;
+        onChanged();
+      } else {
+        location_ = null;
+        locationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder getLocationBuilder() {
+      
+      onChanged();
+      return getLocationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getLocationOrBuilder() {
+      if (locationBuilder_ != null) {
+        return locationBuilder_.getMessageOrBuilder();
+      } else {
+        return location_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : location_;
+      }
+    }
+    /**
+     * <pre>
+     * 用户位置信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder> 
+        getLocationFieldBuilder() {
+      if (locationBuilder_ == null) {
+        locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder>(
+                getLocation(),
+                getParentForChildren(),
+                isClean());
+        location_ = null;
+      }
+      return locationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

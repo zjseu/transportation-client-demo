@@ -9,7 +9,7 @@ public interface FlightSeatTypeOrBuilder extends
 
   /**
    * <pre>
-   * 运价的PUSequence
+   * 航段对应的PU序号
    * </pre>
    *
    * <code>int32 PUSequence = 1;</code>
@@ -18,7 +18,7 @@ public interface FlightSeatTypeOrBuilder extends
 
   /**
    * <pre>
-   * 运价的FCSequence
+   * 航段对应的FC序号
    * </pre>
    *
    * <code>int32 FCSequence = 2;</code>

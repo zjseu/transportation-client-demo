@@ -69,4 +69,22 @@ public interface FlightSupplierTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAgentDisclosureBytes();
+
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 5;</code>
+   */
+  java.lang.String getAgencyLicenseUrl();
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getAgencyLicenseUrlBytes();
 }

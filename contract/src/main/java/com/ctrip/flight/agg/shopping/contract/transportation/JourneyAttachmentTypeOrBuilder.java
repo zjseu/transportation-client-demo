@@ -68,4 +68,48 @@ public interface JourneyAttachmentTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTransferProductTypeBytes();
+
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getTransferCombinationTagList();
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTransferCombinationTag(int index);
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  int getTransferCombinationTagCount();
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTransferCombinationTagOrBuilderList();
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTransferCombinationTagOrBuilder(
+      int index);
 }

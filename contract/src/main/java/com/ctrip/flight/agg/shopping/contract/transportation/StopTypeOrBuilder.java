@@ -51,4 +51,92 @@ public interface StopTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getArriveDateTimeBytes();
+
+  /**
+   * <pre>
+   * 国内通程虚拟航班号
+   * </pre>
+   *
+   * <code>repeated string ThroughFlightNo = 4;</code>
+   */
+  java.util.List<java.lang.String>
+      getThroughFlightNoList();
+  /**
+   * <pre>
+   * 国内通程虚拟航班号
+   * </pre>
+   *
+   * <code>repeated string ThroughFlightNo = 4;</code>
+   */
+  int getThroughFlightNoCount();
+  /**
+   * <pre>
+   * 国内通程虚拟航班号
+   * </pre>
+   *
+   * <code>repeated string ThroughFlightNo = 4;</code>
+   */
+  java.lang.String getThroughFlightNo(int index);
+  /**
+   * <pre>
+   * 国内通程虚拟航班号
+   * </pre>
+   *
+   * <code>repeated string ThroughFlightNo = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getThroughFlightNoBytes(int index);
+
+  /**
+   * <pre>
+   * 经停到达航站楼ID
+   * </pre>
+   *
+   * <code>int32 TerminalBuildingID = 5;</code>
+   */
+  int getTerminalBuildingID();
+
+  /**
+   * <pre>
+   * 扩展信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getTagList();
+  /**
+   * <pre>
+   * 扩展信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
+  /**
+   * <pre>
+   * 扩展信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;</code>
+   */
+  int getTagCount();
+  /**
+   * <pre>
+   * 扩展信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList();
+  /**
+   * <pre>
+   * 扩展信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 6;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index);
 }

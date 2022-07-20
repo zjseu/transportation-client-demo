@@ -7,6 +7,7 @@ option java_multiple_files = true;
 message BaggageRefType {
     // (航班/火车/巴士等) 详情索引号
     int32 TransportRef = 1;
+    // 乘客的行李信息
     repeated PaxBaggageType PaxBaggage = 2;
 }
 
@@ -27,9 +28,13 @@ message BaggageWayType {
 }
 
 message BaggageType {
+    // 索引号
     int32 RefNum = 1;
+    // 行李额
     repeated BaggageDetailType BaggageDetail = 2;
+    // 扩展节点
     BaggageExtensionFieldsType ExtensionFields = 3;
+    // 行李尺寸
     BaggageSizeType BaggageSize = 4;
 }
 

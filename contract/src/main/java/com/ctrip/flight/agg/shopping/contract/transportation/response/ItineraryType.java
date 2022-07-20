@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType> offer_;
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1463,7 +1463,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1477,7 +1477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1491,7 +1491,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1505,7 +1505,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1526,7 +1526,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1544,7 +1544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1564,7 +1564,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1585,7 +1585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1603,7 +1603,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1621,7 +1621,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1640,7 +1640,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1657,7 +1657,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1674,7 +1674,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1685,7 +1685,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1699,7 +1699,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1714,7 +1714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1725,7 +1725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -1737,7 +1737,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 出价信息
+     * 报价信息，每一个报价包含一组产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>

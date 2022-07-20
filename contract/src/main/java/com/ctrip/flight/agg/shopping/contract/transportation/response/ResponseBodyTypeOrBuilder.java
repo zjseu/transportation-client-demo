@@ -53,7 +53,7 @@ public interface ResponseBodyTypeOrBuilder extends
 
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -61,7 +61,7 @@ public interface ResponseBodyTypeOrBuilder extends
   boolean hasDataLists();
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -69,7 +69,7 @@ public interface ResponseBodyTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType getDataLists();
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -166,7 +166,7 @@ public interface ResponseBodyTypeOrBuilder extends
 
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -174,7 +174,7 @@ public interface ResponseBodyTypeOrBuilder extends
   boolean hasMetaData();
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -182,7 +182,7 @@ public interface ResponseBodyTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType getMetaData();
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>

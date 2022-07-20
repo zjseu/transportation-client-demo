@@ -96,4 +96,22 @@ public interface ServiceDiscountTypeOrBuilder extends
    * <code>int32 Period = 10;</code>
    */
   int getPeriod();
+
+  /**
+   * <pre>
+   * 活动名称
+   * </pre>
+   *
+   * <code>string Name = 11;</code>
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * 活动名称
+   * </pre>
+   *
+   * <code>string Name = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

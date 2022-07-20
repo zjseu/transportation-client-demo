@@ -8,6 +8,10 @@ public interface AncillariesTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 索引号
+   * </pre>
+   *
    * <code>int32 RefNum = 1;</code>
    */
   int getRefNum();

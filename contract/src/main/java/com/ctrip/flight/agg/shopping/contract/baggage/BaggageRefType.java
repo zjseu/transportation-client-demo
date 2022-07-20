@@ -110,12 +110,20 @@ private static final long serialVersionUID = 0L;
   public static final int PAXBAGGAGE_FIELD_NUMBER = 2;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType> paxBaggage_;
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType> getPaxBaggageList() {
     return paxBaggage_;
   }
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder> 
@@ -123,18 +131,30 @@ private static final long serialVersionUID = 0L;
     return paxBaggage_;
   }
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   public int getPaxBaggageCount() {
     return paxBaggage_.size();
   }
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType getPaxBaggage(int index) {
     return paxBaggage_.get(index);
   }
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder getPaxBaggageOrBuilder(
@@ -555,6 +575,10 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder> paxBaggageBuilder_;
 
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType> getPaxBaggageList() {
@@ -565,6 +589,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public int getPaxBaggageCount() {
@@ -575,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType getPaxBaggage(int index) {
@@ -585,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder setPaxBaggage(
@@ -602,6 +638,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder setPaxBaggage(
@@ -616,6 +656,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder addPaxBaggage(com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType value) {
@@ -632,6 +676,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder addPaxBaggage(
@@ -649,6 +697,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder addPaxBaggage(
@@ -663,6 +715,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder addPaxBaggage(
@@ -677,6 +733,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder addAllPaxBaggage(
@@ -692,6 +752,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder clearPaxBaggage() {
@@ -705,6 +769,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public Builder removePaxBaggage(int index) {
@@ -718,6 +786,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.Builder getPaxBaggageBuilder(
@@ -725,6 +797,10 @@ private static final long serialVersionUID = 0L;
       return getPaxBaggageFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder getPaxBaggageOrBuilder(
@@ -735,6 +811,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder> 
@@ -746,6 +826,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.Builder addPaxBaggageBuilder() {
@@ -753,6 +837,10 @@ private static final long serialVersionUID = 0L;
           com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.Builder addPaxBaggageBuilder(
@@ -761,6 +849,10 @@ private static final long serialVersionUID = 0L;
           index, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 乘客的行李信息
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType.Builder> 

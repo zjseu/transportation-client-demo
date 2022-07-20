@@ -9,7 +9,7 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -18,7 +18,7 @@ public interface OfferTypeOrBuilder extends
       getTransportFareMappingList();
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -26,7 +26,7 @@ public interface OfferTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType getTransportFareMapping(int index);
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -34,7 +34,7 @@ public interface OfferTypeOrBuilder extends
   int getTransportFareMappingCount();
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -43,7 +43,7 @@ public interface OfferTypeOrBuilder extends
       getTransportFareMappingOrBuilderList();
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -53,7 +53,7 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -62,7 +62,7 @@ public interface OfferTypeOrBuilder extends
       getProductDetailList();
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -70,7 +70,7 @@ public interface OfferTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType getProductDetail(int index);
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -78,7 +78,7 @@ public interface OfferTypeOrBuilder extends
   int getProductDetailCount();
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -87,7 +87,7 @@ public interface OfferTypeOrBuilder extends
       getProductDetailOrBuilderList();
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -97,7 +97,7 @@ public interface OfferTypeOrBuilder extends
 
   /**
    * <pre>
-   * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+   * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
    * </pre>
    *
    * <code>string OfferToken = 3;</code>
@@ -105,7 +105,7 @@ public interface OfferTypeOrBuilder extends
   java.lang.String getOfferToken();
   /**
    * <pre>
-   * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+   * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
    * </pre>
    *
    * <code>string OfferToken = 3;</code>

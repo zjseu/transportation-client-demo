@@ -323,4 +323,13 @@ public interface ServiceDetailTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getExpiryTimeUnitBytes();
+
+  /**
+   * <pre>
+   * 优先级
+   * </pre>
+   *
+   * <code>int32 Priority = 18;</code>
+   */
+  int getPriority();
 }

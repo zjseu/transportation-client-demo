@@ -62,7 +62,7 @@ public interface ItineraryTypeOrBuilder extends
 
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -71,7 +71,7 @@ public interface ItineraryTypeOrBuilder extends
       getOfferList();
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -79,7 +79,7 @@ public interface ItineraryTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType getOffer(int index);
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -87,7 +87,7 @@ public interface ItineraryTypeOrBuilder extends
   int getOfferCount();
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>
@@ -96,7 +96,7 @@ public interface ItineraryTypeOrBuilder extends
       getOfferOrBuilderList();
   /**
    * <pre>
-   * 出价信息
+   * 报价信息，每一个报价包含一组产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType Offer = 3;</code>

@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     identityLimit_ = 0;
     paxNumLimitType_ = 0;
     compositionPriceRemark_ = "";
+    applySex_ = "";
   }
 
   @java.lang.Override
@@ -162,6 +163,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             compositionPriceRemark_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            applySex_ = s;
             break;
           }
           default: {
@@ -710,6 +717,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPLYSEX_FIELD_NUMBER = 15;
+  private volatile java.lang.Object applySex_;
+  /**
+   * <pre>
+   * 性别限制
+   * </pre>
+   *
+   * <code>string ApplySex = 15;</code>
+   */
+  public java.lang.String getApplySex() {
+    java.lang.Object ref = applySex_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applySex_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 性别限制
+   * </pre>
+   *
+   * <code>string ApplySex = 15;</code>
+   */
+  public com.google.protobuf.ByteString
+      getApplySexBytes() {
+    java.lang.Object ref = applySex_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      applySex_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -765,6 +814,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCompositionPriceRemarkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, compositionPriceRemark_);
+    }
+    if (!getApplySexBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, applySex_);
     }
     unknownFields.writeTo(output);
   }
@@ -847,6 +899,9 @@ private static final long serialVersionUID = 0L;
     if (!getCompositionPriceRemarkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, compositionPriceRemark_);
     }
+    if (!getApplySexBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, applySex_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -897,6 +952,8 @@ private static final long serialVersionUID = 0L;
         == other.getPaxNumLimitType());
     result = result && getCompositionPriceRemark()
         .equals(other.getCompositionPriceRemark());
+    result = result && getApplySex()
+        .equals(other.getApplySex());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -950,6 +1007,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPaxNumLimitType();
     hash = (37 * hash) + COMPOSITIONPRICEREMARK_FIELD_NUMBER;
     hash = (53 * hash) + getCompositionPriceRemark().hashCode();
+    hash = (37 * hash) + APPLYSEX_FIELD_NUMBER;
+    hash = (53 * hash) + getApplySex().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1119,6 +1178,8 @@ private static final long serialVersionUID = 0L;
 
       compositionPriceRemark_ = "";
 
+      applySex_ = "";
+
       return this;
     }
 
@@ -1189,6 +1250,7 @@ private static final long serialVersionUID = 0L;
       }
       result.paxNumLimitType_ = paxNumLimitType_;
       result.compositionPriceRemark_ = compositionPriceRemark_;
+      result.applySex_ = applySex_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1317,6 +1379,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCompositionPriceRemark().isEmpty()) {
         compositionPriceRemark_ = other.compositionPriceRemark_;
+        onChanged();
+      }
+      if (!other.getApplySex().isEmpty()) {
+        applySex_ = other.applySex_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2771,6 +2837,95 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       compositionPriceRemark_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object applySex_ = "";
+    /**
+     * <pre>
+     * 性别限制
+     * </pre>
+     *
+     * <code>string ApplySex = 15;</code>
+     */
+    public java.lang.String getApplySex() {
+      java.lang.Object ref = applySex_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applySex_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 性别限制
+     * </pre>
+     *
+     * <code>string ApplySex = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getApplySexBytes() {
+      java.lang.Object ref = applySex_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applySex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 性别限制
+     * </pre>
+     *
+     * <code>string ApplySex = 15;</code>
+     */
+    public Builder setApplySex(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      applySex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 性别限制
+     * </pre>
+     *
+     * <code>string ApplySex = 15;</code>
+     */
+    public Builder clearApplySex() {
+      
+      applySex_ = getDefaultInstance().getApplySex();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 性别限制
+     * </pre>
+     *
+     * <code>string ApplySex = 15;</code>
+     */
+    public Builder setApplySexBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      applySex_ = value;
       onChanged();
       return this;
     }

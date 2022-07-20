@@ -75,6 +75,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder subBuilder = null;
+            if (transferLocation_ != null) {
+              subBuilder = transferLocation_.toBuilder();
+            }
+            transferLocation_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(transferLocation_);
+              transferLocation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -215,6 +228,39 @@ private static final long serialVersionUID = 0L;
     return getArriveLocation();
   }
 
+  public static final int TRANSFERLOCATION_FIELD_NUMBER = 4;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType transferLocation_;
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  public boolean hasTransferLocation() {
+    return transferLocation_ != null;
+  }
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getTransferLocation() {
+    return transferLocation_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : transferLocation_;
+  }
+  /**
+   * <pre>
+   * 指定中转点 仅支持国内线路
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getTransferLocationOrBuilder() {
+    return getTransferLocation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -238,6 +284,9 @@ private static final long serialVersionUID = 0L;
     if (arriveLocation_ != null) {
       output.writeMessage(3, getArriveLocation());
     }
+    if (transferLocation_ != null) {
+      output.writeMessage(4, getTransferLocation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -257,6 +306,10 @@ private static final long serialVersionUID = 0L;
     if (arriveLocation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getArriveLocation());
+    }
+    if (transferLocation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getTransferLocation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -286,6 +339,11 @@ private static final long serialVersionUID = 0L;
       result = result && getArriveLocation()
           .equals(other.getArriveLocation());
     }
+    result = result && (hasTransferLocation() == other.hasTransferLocation());
+    if (hasTransferLocation()) {
+      result = result && getTransferLocation()
+          .equals(other.getTransferLocation());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -306,6 +364,10 @@ private static final long serialVersionUID = 0L;
     if (hasArriveLocation()) {
       hash = (37 * hash) + ARRIVELOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getArriveLocation().hashCode();
+    }
+    if (hasTransferLocation()) {
+      hash = (37 * hash) + TRANSFERLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTransferLocation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -454,6 +516,12 @@ private static final long serialVersionUID = 0L;
         arriveLocation_ = null;
         arriveLocationBuilder_ = null;
       }
+      if (transferLocationBuilder_ == null) {
+        transferLocation_ = null;
+      } else {
+        transferLocation_ = null;
+        transferLocationBuilder_ = null;
+      }
       return this;
     }
 
@@ -490,6 +558,11 @@ private static final long serialVersionUID = 0L;
         result.arriveLocation_ = arriveLocation_;
       } else {
         result.arriveLocation_ = arriveLocationBuilder_.build();
+      }
+      if (transferLocationBuilder_ == null) {
+        result.transferLocation_ = transferLocation_;
+      } else {
+        result.transferLocation_ = transferLocationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -548,6 +621,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasArriveLocation()) {
         mergeArriveLocation(other.getArriveLocation());
+      }
+      if (other.hasTransferLocation()) {
+        mergeTransferLocation(other.getTransferLocation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -971,6 +1047,159 @@ private static final long serialVersionUID = 0L;
         arriveLocation_ = null;
       }
       return arriveLocationBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType transferLocation_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder> transferLocationBuilder_;
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public boolean hasTransferLocation() {
+      return transferLocationBuilder_ != null || transferLocation_ != null;
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getTransferLocation() {
+      if (transferLocationBuilder_ == null) {
+        return transferLocation_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : transferLocation_;
+      } else {
+        return transferLocationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public Builder setTransferLocation(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType value) {
+      if (transferLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transferLocation_ = value;
+        onChanged();
+      } else {
+        transferLocationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public Builder setTransferLocation(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder builderForValue) {
+      if (transferLocationBuilder_ == null) {
+        transferLocation_ = builderForValue.build();
+        onChanged();
+      } else {
+        transferLocationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public Builder mergeTransferLocation(com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType value) {
+      if (transferLocationBuilder_ == null) {
+        if (transferLocation_ != null) {
+          transferLocation_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.newBuilder(transferLocation_).mergeFrom(value).buildPartial();
+        } else {
+          transferLocation_ = value;
+        }
+        onChanged();
+      } else {
+        transferLocationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public Builder clearTransferLocation() {
+      if (transferLocationBuilder_ == null) {
+        transferLocation_ = null;
+        onChanged();
+      } else {
+        transferLocation_ = null;
+        transferLocationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder getTransferLocationBuilder() {
+      
+      onChanged();
+      return getTransferLocationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getTransferLocationOrBuilder() {
+      if (transferLocationBuilder_ != null) {
+        return transferLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return transferLocation_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.getDefaultInstance() : transferLocation_;
+      }
+    }
+    /**
+     * <pre>
+     * 指定中转点 仅支持国内线路
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType TransferLocation = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder> 
+        getTransferLocationFieldBuilder() {
+      if (transferLocationBuilder_ == null) {
+        transferLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder>(
+                getTransferLocation(),
+                getParentForChildren(),
+                isClean());
+        transferLocation_ = null;
+      }
+      return transferLocationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     singleMinDiscountAmount_ = 0D;
     singleMaxDiscountAmount_ = 0D;
     period_ = 0;
+    name_ = "";
   }
 
   @java.lang.Override
@@ -100,6 +101,12 @@ private static final long serialVersionUID = 0L;
           case 80: {
 
             period_ = input.readInt32();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           default: {
@@ -264,6 +271,48 @@ private static final long serialVersionUID = 0L;
     return period_;
   }
 
+  public static final int NAME_FIELD_NUMBER = 11;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * 活动名称
+   * </pre>
+   *
+   * <code>string Name = 11;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 活动名称
+   * </pre>
+   *
+   * <code>string Name = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -307,6 +356,9 @@ private static final long serialVersionUID = 0L;
     }
     if (period_ != 0) {
       output.writeInt32(10, period_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -357,6 +409,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, period_);
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -403,6 +458,8 @@ private static final long serialVersionUID = 0L;
             other.getSingleMaxDiscountAmount()));
     result = result && (getPeriod()
         == other.getPeriod());
+    result = result && getName()
+        .equals(other.getName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -439,6 +496,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getSingleMaxDiscountAmount()));
     hash = (37 * hash) + PERIOD_FIELD_NUMBER;
     hash = (53 * hash) + getPeriod();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -592,6 +651,8 @@ private static final long serialVersionUID = 0L;
 
       period_ = 0;
 
+      name_ = "";
+
       return this;
     }
 
@@ -628,6 +689,7 @@ private static final long serialVersionUID = 0L;
       result.singleMinDiscountAmount_ = singleMinDiscountAmount_;
       result.singleMaxDiscountAmount_ = singleMaxDiscountAmount_;
       result.period_ = period_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -705,6 +767,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPeriod() != 0) {
         setPeriod(other.getPeriod());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1111,6 +1177,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearPeriod() {
       
       period_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 活动名称
+     * </pre>
+     *
+     * <code>string Name = 11;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 活动名称
+     * </pre>
+     *
+     * <code>string Name = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 活动名称
+     * </pre>
+     *
+     * <code>string Name = 11;</code>
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动名称
+     * </pre>
+     *
+     * <code>string Name = 11;</code>
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动名称
+     * </pre>
+     *
+     * <code>string Name = 11;</code>
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
       onChanged();
       return this;
     }

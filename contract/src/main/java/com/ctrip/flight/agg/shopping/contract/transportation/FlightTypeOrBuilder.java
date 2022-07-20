@@ -224,4 +224,39 @@ public interface FlightTypeOrBuilder extends
    * <code>int32 VirtualFlightType = 10;</code>
    */
   int getVirtualFlightType();
+
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  java.util.List<java.lang.String>
+      getFlightAttributeList();
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  int getFlightAttributeCount();
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  java.lang.String getFlightAttribute(int index);
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getFlightAttributeBytes(int index);
 }

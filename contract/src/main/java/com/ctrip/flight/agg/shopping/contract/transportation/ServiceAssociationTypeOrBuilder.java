@@ -18,7 +18,7 @@ public interface ServiceAssociationTypeOrBuilder extends
 
   /**
    * <pre>
-   * 某一程内的段号。0表示不限段号
+   * 每一程内的段号，从1开始，0表示不限段号
    * </pre>
    *
    * <code>int32 SegmentNo = 2;</code>

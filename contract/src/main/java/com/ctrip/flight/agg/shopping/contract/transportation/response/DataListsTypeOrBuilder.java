@@ -9,7 +9,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -18,7 +18,7 @@ public interface DataListsTypeOrBuilder extends
       getTransportList();
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -26,7 +26,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.TransportType getTransport(int index);
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -34,7 +34,7 @@ public interface DataListsTypeOrBuilder extends
   int getTransportCount();
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -43,7 +43,7 @@ public interface DataListsTypeOrBuilder extends
       getTransportOrBuilderList();
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -53,7 +53,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -62,7 +62,7 @@ public interface DataListsTypeOrBuilder extends
       getFlightProductList();
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -70,7 +70,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType getFlightProduct(int index);
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -78,7 +78,7 @@ public interface DataListsTypeOrBuilder extends
   int getFlightProductCount();
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -87,7 +87,7 @@ public interface DataListsTypeOrBuilder extends
       getFlightProductOrBuilderList();
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -97,7 +97,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -106,7 +106,7 @@ public interface DataListsTypeOrBuilder extends
       getTrainProductList();
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -114,7 +114,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType getTrainProduct(int index);
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -122,7 +122,7 @@ public interface DataListsTypeOrBuilder extends
   int getTrainProductCount();
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -131,7 +131,7 @@ public interface DataListsTypeOrBuilder extends
       getTrainProductOrBuilderList();
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -141,7 +141,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -150,7 +150,7 @@ public interface DataListsTypeOrBuilder extends
       getBusProductList();
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -158,7 +158,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType getBusProduct(int index);
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -166,7 +166,7 @@ public interface DataListsTypeOrBuilder extends
   int getBusProductCount();
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -175,7 +175,7 @@ public interface DataListsTypeOrBuilder extends
       getBusProductOrBuilderList();
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -185,7 +185,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -194,7 +194,7 @@ public interface DataListsTypeOrBuilder extends
       getFareInfoList();
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -202,7 +202,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType getFareInfo(int index);
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -210,7 +210,7 @@ public interface DataListsTypeOrBuilder extends
   int getFareInfoCount();
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -219,7 +219,7 @@ public interface DataListsTypeOrBuilder extends
       getFareInfoOrBuilderList();
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -229,7 +229,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -238,7 +238,7 @@ public interface DataListsTypeOrBuilder extends
       getBaggageList();
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -246,7 +246,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageType getBaggage(int index);
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -254,7 +254,7 @@ public interface DataListsTypeOrBuilder extends
   int getBaggageCount();
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -263,7 +263,7 @@ public interface DataListsTypeOrBuilder extends
       getBaggageOrBuilderList();
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -273,7 +273,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -281,7 +281,7 @@ public interface DataListsTypeOrBuilder extends
   boolean hasMarketingProduct();
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -289,7 +289,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType getMarketingProduct();
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -298,7 +298,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -307,7 +307,7 @@ public interface DataListsTypeOrBuilder extends
       getCacheList();
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -315,7 +315,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.CacheType getCache(int index);
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -323,7 +323,7 @@ public interface DataListsTypeOrBuilder extends
   int getCacheCount();
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -332,7 +332,7 @@ public interface DataListsTypeOrBuilder extends
       getCacheOrBuilderList();
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -342,7 +342,7 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -351,7 +351,7 @@ public interface DataListsTypeOrBuilder extends
       getCreditCardPaymentLimitList();
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -359,7 +359,7 @@ public interface DataListsTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType getCreditCardPaymentLimit(int index);
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -367,7 +367,7 @@ public interface DataListsTypeOrBuilder extends
   int getCreditCardPaymentLimitCount();
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -376,7 +376,7 @@ public interface DataListsTypeOrBuilder extends
       getCreditCardPaymentLimitOrBuilderList();
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>

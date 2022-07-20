@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
   private int segmentNo_;
   /**
    * <pre>
-   * 每程内的段号，从1开始
+   * 每一程内的段号，从1开始
    * </pre>
    *
    * <code>int32 SegmentNo = 2;</code>
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
     private int segmentNo_ ;
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>
@@ -929,7 +929,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>

@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package com.ctrip.flight.agg.shopping.contract.transportation.detailrequest;
+import "com.ctrip.flight.agg.shopping.contract.message.proto";
+option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.detailrequest";
+option java_multiple_files = true;
+
+message DetailRequestType {
+    com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;
+    // 查询条件的Token
+    string SearchCriteriaToken = 2;
+    // 价格的Token
+    string OfferToken = 3;
+    // 国内佣金策略查询条件扩展 无特殊倒查需求的用户不需要关心
+    CommissionStrategyExtensionType CommissionStrategyExtension = 4;
+}
+
+/**
+国内佣金策略查询条件扩展 无特殊倒查需求的用户不需要关心
+ */
+message CommissionStrategyExtensionType {
+    // 查询类型：Verify-预验证 Booking-下单 Reelection-转次优 AssignAgency-指定票台（强转）
+    string AvailabilityCheckSearchType = 1;
+    // 指定需要政策替换的限制信息
+    RestrictionType Restriction = 2;
+    // 是否聚合倒查流程
+    bool PolicyCommission = 3;
+    // 价格调整信息，针对客户在预定过程中使用抵现券等操作
+    PriceAdjustmentType PriceAdjustment = 4;
+}
+
+/**
+指定需要政策替换的限制信息
+ */
+message RestrictionType {
+    // 产品维度 政策限制
+    repeated OfferRestrictionType OfferRestriction = 1;
+    // 乘客维度的限制
+    repeated PassengerRestrictionType PassengerRestriction = 2;
+}
+
+/**
+产品维度 政策限制
+ */
+message OfferRestrictionType {
+    /**
+    限制产品来源号
+    0 - 表示没有product source num限制
+    1 - 表示只大系统
+    2 - 表示只共享特价
+    3 - 表示只查大系统和查佣金（佣金是绑到大系统）
+    4 - 表示只直连
+     */
+    int32 RestrictProductSourceNum = 1;
+    // 票台号列表
+    repeated int32 RestrictAgencies = 2;
+    /**
+    票台控制类型：
+    0 - 不做任何控制，忽略SpecifiedAgencies的值
+    1 - 排除指定的票台
+    2 - 只查询指定的票台
+     */
+    int32 AgencyControlType = 3;
+    // 指定OfficeNo（For 商旅指定OfficeNo和票台）
+    string RestrictOfficeNo = 4;
+    // 报销凭证接口相关字段,透传引擎
+    int64 RestrictFlag = 5;
+}
+
+/**
+乘客维度的限制
+ */
+message PassengerRestrictionType {
+    // 乘客类型。1: Adult; 2: Child; 4: Infant;
+    int32 AgeType = 1;
+    // 证件类型
+    string IdCardType = 2;
+    // 证件号码
+    string IdCardNo = 3;
+    // 儿童是否买成人票
+    bool ApplyChildInd = 4;
+    // 生日yyyy-MM-dd
+    string Birthday = 5;
+    // 乘机人信息适用航程ID,对应Response.TransportSegmentType.JourneyNo。0表示适用所有行程
+    int32 JourneyNo = 6;
+}
+
+/**
+价格调整信息，针对客户在预定过程中使用抵现券等操作
+ */
+message PriceAdjustmentType {
+    /**
+    调价类型，1.里程抵现调价,2.普通调价,3.里程调价+普通优惠券调价
+     */
+    int32 Type = 1;
+    /**
+    价格调整金额
+     */
+    double PriceAdjustmentAmount = 2;
+}

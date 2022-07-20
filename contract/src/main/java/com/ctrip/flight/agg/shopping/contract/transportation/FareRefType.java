@@ -101,6 +101,10 @@ private static final long serialVersionUID = 0L;
   public static final int PUSEQUENCE_FIELD_NUMBER = 1;
   private int pUSequence_;
   /**
+   * <pre>
+   * Fare对应的PU序号
+   * </pre>
+   *
    * <code>int32 PUSequence = 1;</code>
    */
   public int getPUSequence() {
@@ -110,6 +114,10 @@ private static final long serialVersionUID = 0L;
   public static final int FCSEQUENCE_FIELD_NUMBER = 2;
   private int fCSequence_;
   /**
+   * <pre>
+   * Fare对应的FC序号
+   * </pre>
+   *
    * <code>int32 FCSequence = 2;</code>
    */
   public int getFCSequence() {
@@ -498,12 +506,20 @@ private static final long serialVersionUID = 0L;
 
     private int pUSequence_ ;
     /**
+     * <pre>
+     * Fare对应的PU序号
+     * </pre>
+     *
      * <code>int32 PUSequence = 1;</code>
      */
     public int getPUSequence() {
       return pUSequence_;
     }
     /**
+     * <pre>
+     * Fare对应的PU序号
+     * </pre>
+     *
      * <code>int32 PUSequence = 1;</code>
      */
     public Builder setPUSequence(int value) {
@@ -513,6 +529,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fare对应的PU序号
+     * </pre>
+     *
      * <code>int32 PUSequence = 1;</code>
      */
     public Builder clearPUSequence() {
@@ -524,12 +544,20 @@ private static final long serialVersionUID = 0L;
 
     private int fCSequence_ ;
     /**
+     * <pre>
+     * Fare对应的FC序号
+     * </pre>
+     *
      * <code>int32 FCSequence = 2;</code>
      */
     public int getFCSequence() {
       return fCSequence_;
     }
     /**
+     * <pre>
+     * Fare对应的FC序号
+     * </pre>
+     *
      * <code>int32 FCSequence = 2;</code>
      */
     public Builder setFCSequence(int value) {
@@ -539,6 +567,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fare对应的FC序号
+     * </pre>
+     *
      * <code>int32 FCSequence = 2;</code>
      */
     public Builder clearFCSequence() {

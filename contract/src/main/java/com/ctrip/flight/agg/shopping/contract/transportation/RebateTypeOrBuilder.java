@@ -53,19 +53,34 @@ public interface RebateTypeOrBuilder extends
       getCurrencyBytes();
 
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   java.util.List<java.lang.Long> getRebatePolicyIDList();
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   int getRebatePolicyIDCount();
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   long getRebatePolicyID(int index);
 
   /**
+   * <pre>
+   * </pre>
+   *
    * <code>double ActualAmount = 5;</code>
    */
   double getActualAmount();

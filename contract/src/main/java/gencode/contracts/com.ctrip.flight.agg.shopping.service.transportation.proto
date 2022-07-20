@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.ctrip.flight.agg.shopping.service.transportation;
+import "com.ctrip.flight.agg.shopping.contract.transportation.request.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.response.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.detailrequest.proto";
+
+service SearchServices {
+    rpc transportationSearch (com.ctrip.flight.agg.shopping.contract.transportation.request.SearchRequestType) returns (com.ctrip.flight.agg.shopping.contract.transportation.response.SearchResponseType) {
+        option async = true;
+    }
+
+    rpc transportationDetailSearch (com.ctrip.flight.agg.shopping.contract.transportation.detailrequest.DetailRequestType) returns (com.ctrip.flight.agg.shopping.contract.transportation.response.SearchResponseType) {
+        option async = true;
+    }
+}

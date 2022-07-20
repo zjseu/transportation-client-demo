@@ -148,6 +148,10 @@ private static final long serialVersionUID = 0L;
   public static final int JOURNEYNO_FIELD_NUMBER = 1;
   private int journeyNo_;
   /**
+   * <pre>
+   * 行程号
+   * </pre>
+   *
    * <code>int32 JourneyNo = 1;</code>
    */
   public int getJourneyNo() {
@@ -157,6 +161,10 @@ private static final long serialVersionUID = 0L;
   public static final int SEGMENTNO_FIELD_NUMBER = 2;
   private int segmentNo_;
   /**
+   * <pre>
+   * 每程内的段号
+   * </pre>
+   *
    * <code>int32 SegmentNo = 2;</code>
    */
   public int getSegmentNo() {
@@ -822,12 +830,20 @@ private static final long serialVersionUID = 0L;
 
     private int journeyNo_ ;
     /**
+     * <pre>
+     * 行程号
+     * </pre>
+     *
      * <code>int32 JourneyNo = 1;</code>
      */
     public int getJourneyNo() {
       return journeyNo_;
     }
     /**
+     * <pre>
+     * 行程号
+     * </pre>
+     *
      * <code>int32 JourneyNo = 1;</code>
      */
     public Builder setJourneyNo(int value) {
@@ -837,6 +853,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行程号
+     * </pre>
+     *
      * <code>int32 JourneyNo = 1;</code>
      */
     public Builder clearJourneyNo() {
@@ -848,12 +868,20 @@ private static final long serialVersionUID = 0L;
 
     private int segmentNo_ ;
     /**
+     * <pre>
+     * 每程内的段号
+     * </pre>
+     *
      * <code>int32 SegmentNo = 2;</code>
      */
     public int getSegmentNo() {
       return segmentNo_;
     }
     /**
+     * <pre>
+     * 每程内的段号
+     * </pre>
+     *
      * <code>int32 SegmentNo = 2;</code>
      */
     public Builder setSegmentNo(int value) {
@@ -863,6 +891,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 每程内的段号
+     * </pre>
+     *
      * <code>int32 SegmentNo = 2;</code>
      */
     public Builder clearSegmentNo() {

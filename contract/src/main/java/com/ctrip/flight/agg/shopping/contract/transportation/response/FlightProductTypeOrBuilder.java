@@ -203,6 +203,10 @@ public interface FlightProductTypeOrBuilder extends
   int getSubProductCategory();
 
   /**
+   * <pre>
+   * 缓存信息，调试用
+   * </pre>
+   *
    * <code>int32 CacheRef = 10;</code>
    */
   int getCacheRef();
@@ -770,4 +774,54 @@ public interface FlightProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditTypeOrBuilder getMileageCreditOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  boolean hasMeal();
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MealType getMeal();
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder getMealOrBuilder();
+
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  boolean hasCFCabinFeature();
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType getCFCabinFeature();
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder getCFCabinFeatureOrBuilder();
 }

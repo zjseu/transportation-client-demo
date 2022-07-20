@@ -42,4 +42,29 @@ public interface CoordinateTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUpdateTimeBytes();
+
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  boolean hasLocation();
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType getLocation();
+  /**
+   * <pre>
+   * 用户位置信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType Location = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getLocationOrBuilder();
 }

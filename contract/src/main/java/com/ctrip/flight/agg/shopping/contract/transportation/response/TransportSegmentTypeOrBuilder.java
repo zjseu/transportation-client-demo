@@ -9,7 +9,7 @@ public interface TransportSegmentTypeOrBuilder extends
 
   /**
    * <pre>
-   * 行程号，从1开始
+   * 程号，从1开始
    * </pre>
    *
    * <code>int32 JourneyNo = 1;</code>
@@ -18,7 +18,7 @@ public interface TransportSegmentTypeOrBuilder extends
 
   /**
    * <pre>
-   * 每程内的段号，从1开始
+   * 每一程内的段号，从1开始
    * </pre>
    *
    * <code>int32 SegmentNo = 2;</code>
@@ -36,7 +36,7 @@ public interface TransportSegmentTypeOrBuilder extends
 
   /**
    * <pre>
-   * 是否行程的主航段
+   * 是否行程内的主航段
    * </pre>
    *
    * <code>bool MainSegmentInd = 4;</code>

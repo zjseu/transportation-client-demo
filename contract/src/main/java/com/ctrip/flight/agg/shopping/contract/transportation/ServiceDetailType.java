@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
     bindingType_ = "";
     expiryTime_ = 0;
     expiryTimeUnit_ = "";
+    priority_ = 0;
   }
 
   @java.lang.Override
@@ -158,6 +159,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             expiryTimeUnit_ = s;
+            break;
+          }
+          case 144: {
+
+            priority_ = input.readInt32();
             break;
           }
           default: {
@@ -758,6 +764,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 18;
+  private int priority_;
+  /**
+   * <pre>
+   * 优先级
+   * </pre>
+   *
+   * <code>int32 Priority = 18;</code>
+   */
+  public int getPriority() {
+    return priority_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -822,6 +841,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getExpiryTimeUnitBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, expiryTimeUnit_);
+    }
+    if (priority_ != 0) {
+      output.writeInt32(18, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -892,6 +914,10 @@ private static final long serialVersionUID = 0L;
     if (!getExpiryTimeUnitBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, expiryTimeUnit_);
     }
+    if (priority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(18, priority_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -948,6 +974,8 @@ private static final long serialVersionUID = 0L;
         == other.getExpiryTime());
     result = result && getExpiryTimeUnit()
         .equals(other.getExpiryTimeUnit());
+    result = result && (getPriority()
+        == other.getPriority());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1001,6 +1029,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExpiryTime();
     hash = (37 * hash) + EXPIRYTIMEUNIT_FIELD_NUMBER;
     hash = (53 * hash) + getExpiryTimeUnit().hashCode();
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPriority();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1178,6 +1208,8 @@ private static final long serialVersionUID = 0L;
 
       expiryTimeUnit_ = "";
 
+      priority_ = 0;
+
       return this;
     }
 
@@ -1239,6 +1271,7 @@ private static final long serialVersionUID = 0L;
       result.bindingType_ = bindingType_;
       result.expiryTime_ = expiryTime_;
       result.expiryTimeUnit_ = expiryTimeUnit_;
+      result.priority_ = priority_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1392,6 +1425,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getExpiryTimeUnit().isEmpty()) {
         expiryTimeUnit_ = other.expiryTimeUnit_;
         onChanged();
+      }
+      if (other.getPriority() != 0) {
+        setPriority(other.getPriority());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3098,6 +3134,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       expiryTimeUnit_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int priority_ ;
+    /**
+     * <pre>
+     * 优先级
+     * </pre>
+     *
+     * <code>int32 Priority = 18;</code>
+     */
+    public int getPriority() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * 优先级
+     * </pre>
+     *
+     * <code>int32 Priority = 18;</code>
+     */
+    public Builder setPriority(int value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 优先级
+     * </pre>
+     *
+     * <code>int32 Priority = 18;</code>
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0;
       onChanged();
       return this;
     }

@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     estimatedArriveDelayMinMinutes_ = 0;
     estimatedArriveDelayMaxMinutes_ = 0;
     delayReason_ = java.util.Collections.emptyList();
+    veryZhunDeptimeReadyWithDate_ = "";
   }
 
   @java.lang.Override
@@ -86,6 +87,12 @@ private static final long serialVersionUID = 0L;
             }
             delayReason_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            veryZhunDeptimeReadyWithDate_ = s;
             break;
           }
           default: {
@@ -302,6 +309,48 @@ private static final long serialVersionUID = 0L;
     return delayReason_.get(index);
   }
 
+  public static final int VERYZHUNDEPTIMEREADYWITHDATE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object veryZhunDeptimeReadyWithDate_;
+  /**
+   * <pre>
+   * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+   * </pre>
+   *
+   * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+   */
+  public java.lang.String getVeryZhunDeptimeReadyWithDate() {
+    java.lang.Object ref = veryZhunDeptimeReadyWithDate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      veryZhunDeptimeReadyWithDate_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+   * </pre>
+   *
+   * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getVeryZhunDeptimeReadyWithDateBytes() {
+    java.lang.Object ref = veryZhunDeptimeReadyWithDate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      veryZhunDeptimeReadyWithDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -334,6 +383,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < delayReason_.size(); i++) {
       output.writeMessage(6, delayReason_.get(i));
     }
+    if (!getVeryZhunDeptimeReadyWithDateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, veryZhunDeptimeReadyWithDate_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -365,6 +417,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, delayReason_.get(i));
     }
+    if (!getVeryZhunDeptimeReadyWithDateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, veryZhunDeptimeReadyWithDate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -393,6 +448,8 @@ private static final long serialVersionUID = 0L;
         == other.getEstimatedArriveDelayMaxMinutes());
     result = result && getDelayReasonList()
         .equals(other.getDelayReasonList());
+    result = result && getVeryZhunDeptimeReadyWithDate()
+        .equals(other.getVeryZhunDeptimeReadyWithDate());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -418,6 +475,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DELAYREASON_FIELD_NUMBER;
       hash = (53 * hash) + getDelayReasonList().hashCode();
     }
+    hash = (37 * hash) + VERYZHUNDEPTIMEREADYWITHDATE_FIELD_NUMBER;
+    hash = (53 * hash) + getVeryZhunDeptimeReadyWithDate().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -572,6 +631,8 @@ private static final long serialVersionUID = 0L;
       } else {
         delayReasonBuilder_.clear();
       }
+      veryZhunDeptimeReadyWithDate_ = "";
+
       return this;
     }
 
@@ -614,6 +675,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.delayReason_ = delayReasonBuilder_.build();
       }
+      result.veryZhunDeptimeReadyWithDate_ = veryZhunDeptimeReadyWithDate_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -705,6 +767,10 @@ private static final long serialVersionUID = 0L;
             delayReasonBuilder_.addAllMessages(other.delayReason_);
           }
         }
+      }
+      if (!other.getVeryZhunDeptimeReadyWithDate().isEmpty()) {
+        veryZhunDeptimeReadyWithDate_ = other.veryZhunDeptimeReadyWithDate_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1338,6 +1404,95 @@ private static final long serialVersionUID = 0L;
         delayReason_ = null;
       }
       return delayReasonBuilder_;
+    }
+
+    private java.lang.Object veryZhunDeptimeReadyWithDate_ = "";
+    /**
+     * <pre>
+     * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+     * </pre>
+     *
+     * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+     */
+    public java.lang.String getVeryZhunDeptimeReadyWithDate() {
+      java.lang.Object ref = veryZhunDeptimeReadyWithDate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        veryZhunDeptimeReadyWithDate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+     * </pre>
+     *
+     * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVeryZhunDeptimeReadyWithDateBytes() {
+      java.lang.Object ref = veryZhunDeptimeReadyWithDate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        veryZhunDeptimeReadyWithDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+     * </pre>
+     *
+     * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+     */
+    public Builder setVeryZhunDeptimeReadyWithDate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      veryZhunDeptimeReadyWithDate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+     * </pre>
+     *
+     * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+     */
+    public Builder clearVeryZhunDeptimeReadyWithDate() {
+      
+      veryZhunDeptimeReadyWithDate_ = getDefaultInstance().getVeryZhunDeptimeReadyWithDate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+     * </pre>
+     *
+     * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+     */
+    public Builder setVeryZhunDeptimeReadyWithDateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      veryZhunDeptimeReadyWithDate_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

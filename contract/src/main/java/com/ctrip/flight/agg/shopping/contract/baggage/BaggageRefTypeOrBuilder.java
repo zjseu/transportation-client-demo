@@ -17,24 +17,44 @@ public interface BaggageRefTypeOrBuilder extends
   int getTransportRef();
 
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType> 
       getPaxBaggageList();
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType getPaxBaggage(int index);
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   int getPaxBaggageCount();
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder> 
       getPaxBaggageOrBuilderList();
   /**
+   * <pre>
+   * 乘客的行李信息
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageType PaxBaggage = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageTypeOrBuilder getPaxBaggageOrBuilder(

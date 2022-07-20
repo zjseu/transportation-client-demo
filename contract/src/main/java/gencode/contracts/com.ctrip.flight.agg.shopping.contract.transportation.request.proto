@@ -7,8 +7,11 @@ option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.req
 option java_multiple_files = true;
 
 message SearchRequestType {
+    // 请求头
     com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;
+    // 请求参数
     SearchCriteriaType SearchCriteria = 2;
+    // 反查参数
     RouteSearchType RouteSearch = 3;
 }
 
@@ -58,6 +61,8 @@ message JourneyRequestType {
     LocationType DepartLocation = 2;
     // 到达地点
     LocationType ArriveLocation = 3;
+    // 指定中转点 仅支持国内线路
+    LocationType TransferLocation = 4;
 }
 
 message LocationType {
@@ -99,6 +104,8 @@ message UserParameterType {
     string MemberLevel = 2;
     // 坐标信息
     CoordinateType Coordinate = 3;
+    // 机酒的高星用户场景使用
+    int32 FlightXHotelUserLevel = 4;
 }
 
 message ResultControlType {
@@ -117,6 +124,8 @@ message CoordinateType {
     double Latitude = 2;
     // 更新时间 format：yyyy-MM-dd'T'HH:mm:ss'Z'
     string UpdateTime = 3;
+    // 用户位置信息
+    LocationType Location = 4;
 }
 
 message AdvancedOptionType {
@@ -169,6 +178,7 @@ message SpecifiedOptionType {
     repeated string AgencyCode = 4;
     // 指定排除的票台
     repeated string ExcludesAgencyCode = 5;
+    // 指定运价基础
     repeated string FareBasis = 6;
     repeated string FareClass = 7;
     repeated int32 ProductCategory = 8;
@@ -176,7 +186,9 @@ message SpecifiedOptionType {
 }
 
 message SpecifiedJourneyOptionType {
+    // 行程号
     int32 JourneyNo = 1;
+    // 每程内的段号
     int32 SegmentNo = 2;
     // 交通工具类型，1-flight; 2-train; 4-bus
     int32 TransportType = 3;

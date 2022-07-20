@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private MultiSegmentRestrictionType() {
     multiSegmentBookingType_ = 0;
+    multiSegmentPolicyType_ = 0;
   }
 
   @java.lang.Override
@@ -50,6 +51,11 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             multiSegmentBookingType_ = input.readInt32();
+            break;
+          }
+          case 16: {
+
+            multiSegmentPolicyType_ = input.readInt32();
             break;
           }
           default: {
@@ -99,6 +105,19 @@ private static final long serialVersionUID = 0L;
     return multiSegmentBookingType_;
   }
 
+  public static final int MULTISEGMENTPOLICYTYPE_FIELD_NUMBER = 2;
+  private int multiSegmentPolicyType_;
+  /**
+   * <pre>
+   * 1：是多程/段的政策 0：非多程/段的政策
+   * </pre>
+   *
+   * <code>int32 MultiSegmentPolicyType = 2;</code>
+   */
+  public int getMultiSegmentPolicyType() {
+    return multiSegmentPolicyType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -116,6 +135,9 @@ private static final long serialVersionUID = 0L;
     if (multiSegmentBookingType_ != 0) {
       output.writeInt32(1, multiSegmentBookingType_);
     }
+    if (multiSegmentPolicyType_ != 0) {
+      output.writeInt32(2, multiSegmentPolicyType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -128,6 +150,10 @@ private static final long serialVersionUID = 0L;
     if (multiSegmentBookingType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, multiSegmentBookingType_);
+    }
+    if (multiSegmentPolicyType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, multiSegmentPolicyType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -147,6 +173,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getMultiSegmentBookingType()
         == other.getMultiSegmentBookingType());
+    result = result && (getMultiSegmentPolicyType()
+        == other.getMultiSegmentPolicyType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -160,6 +188,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MULTISEGMENTBOOKINGTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMultiSegmentBookingType();
+    hash = (37 * hash) + MULTISEGMENTPOLICYTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMultiSegmentPolicyType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -299,6 +329,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       multiSegmentBookingType_ = 0;
 
+      multiSegmentPolicyType_ = 0;
+
       return this;
     }
 
@@ -326,6 +358,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType(this);
       result.multiSegmentBookingType_ = multiSegmentBookingType_;
+      result.multiSegmentPolicyType_ = multiSegmentPolicyType_;
       onBuilt();
       return result;
     }
@@ -376,6 +409,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.getDefaultInstance()) return this;
       if (other.getMultiSegmentBookingType() != 0) {
         setMultiSegmentBookingType(other.getMultiSegmentBookingType());
+      }
+      if (other.getMultiSegmentPolicyType() != 0) {
+        setMultiSegmentPolicyType(other.getMultiSegmentPolicyType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -446,6 +482,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearMultiSegmentBookingType() {
       
       multiSegmentBookingType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int multiSegmentPolicyType_ ;
+    /**
+     * <pre>
+     * 1：是多程/段的政策 0：非多程/段的政策
+     * </pre>
+     *
+     * <code>int32 MultiSegmentPolicyType = 2;</code>
+     */
+    public int getMultiSegmentPolicyType() {
+      return multiSegmentPolicyType_;
+    }
+    /**
+     * <pre>
+     * 1：是多程/段的政策 0：非多程/段的政策
+     * </pre>
+     *
+     * <code>int32 MultiSegmentPolicyType = 2;</code>
+     */
+    public Builder setMultiSegmentPolicyType(int value) {
+      
+      multiSegmentPolicyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1：是多程/段的政策 0：非多程/段的政策
+     * </pre>
+     *
+     * <code>int32 MultiSegmentPolicyType = 2;</code>
+     */
+    public Builder clearMultiSegmentPolicyType() {
+      
+      multiSegmentPolicyType_ = 0;
       onChanged();
       return this;
     }

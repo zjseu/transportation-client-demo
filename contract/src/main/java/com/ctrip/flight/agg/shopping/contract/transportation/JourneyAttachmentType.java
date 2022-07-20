@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     journeyNo_ = 0;
     productCombinationType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     transferProductType_ = "";
+    transferCombinationTag_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -69,6 +70,15 @@ private static final long serialVersionUID = 0L;
             transferProductType_ = s;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              transferCombinationTag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            transferCombinationTag_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -86,6 +96,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         productCombinationType_ = productCombinationType_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        transferCombinationTag_ = java.util.Collections.unmodifiableList(transferCombinationTag_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -205,6 +218,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TRANSFERCOMBINATIONTAG_FIELD_NUMBER = 4;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> transferCombinationTag_;
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTransferCombinationTagList() {
+    return transferCombinationTag_;
+  }
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTransferCombinationTagOrBuilderList() {
+    return transferCombinationTag_;
+  }
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  public int getTransferCombinationTagCount() {
+    return transferCombinationTag_.size();
+  }
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTransferCombinationTag(int index) {
+    return transferCombinationTag_.get(index);
+  }
+  /**
+   * <pre>
+   * 下发中转组合产品维度，无法放在单程上的信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTransferCombinationTagOrBuilder(
+      int index) {
+    return transferCombinationTag_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -227,6 +295,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTransferProductTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transferProductType_);
+    }
+    for (int i = 0; i < transferCombinationTag_.size(); i++) {
+      output.writeMessage(4, transferCombinationTag_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -252,6 +323,10 @@ private static final long serialVersionUID = 0L;
     if (!getTransferProductTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, transferProductType_);
     }
+    for (int i = 0; i < transferCombinationTag_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, transferCombinationTag_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -274,6 +349,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductCombinationTypeList());
     result = result && getTransferProductType()
         .equals(other.getTransferProductType());
+    result = result && getTransferCombinationTagList()
+        .equals(other.getTransferCombinationTagList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -293,6 +370,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TRANSFERPRODUCTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getTransferProductType().hashCode();
+    if (getTransferCombinationTagCount() > 0) {
+      hash = (37 * hash) + TRANSFERCOMBINATIONTAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTransferCombinationTagList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,6 +506,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getTransferCombinationTagFieldBuilder();
       }
     }
     @java.lang.Override
@@ -436,6 +518,12 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       transferProductType_ = "";
 
+      if (transferCombinationTagBuilder_ == null) {
+        transferCombinationTag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        transferCombinationTagBuilder_.clear();
+      }
       return this;
     }
 
@@ -471,6 +559,15 @@ private static final long serialVersionUID = 0L;
       }
       result.productCombinationType_ = productCombinationType_;
       result.transferProductType_ = transferProductType_;
+      if (transferCombinationTagBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          transferCombinationTag_ = java.util.Collections.unmodifiableList(transferCombinationTag_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.transferCombinationTag_ = transferCombinationTag_;
+      } else {
+        result.transferCombinationTag_ = transferCombinationTagBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -536,6 +633,32 @@ private static final long serialVersionUID = 0L;
       if (!other.getTransferProductType().isEmpty()) {
         transferProductType_ = other.transferProductType_;
         onChanged();
+      }
+      if (transferCombinationTagBuilder_ == null) {
+        if (!other.transferCombinationTag_.isEmpty()) {
+          if (transferCombinationTag_.isEmpty()) {
+            transferCombinationTag_ = other.transferCombinationTag_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureTransferCombinationTagIsMutable();
+            transferCombinationTag_.addAll(other.transferCombinationTag_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.transferCombinationTag_.isEmpty()) {
+          if (transferCombinationTagBuilder_.isEmpty()) {
+            transferCombinationTagBuilder_.dispose();
+            transferCombinationTagBuilder_ = null;
+            transferCombinationTag_ = other.transferCombinationTag_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            transferCombinationTagBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTransferCombinationTagFieldBuilder() : null;
+          } else {
+            transferCombinationTagBuilder_.addAllMessages(other.transferCombinationTag_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -822,6 +945,318 @@ private static final long serialVersionUID = 0L;
       transferProductType_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> transferCombinationTag_ =
+      java.util.Collections.emptyList();
+    private void ensureTransferCombinationTagIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        transferCombinationTag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(transferCombinationTag_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> transferCombinationTagBuilder_;
+
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTransferCombinationTagList() {
+      if (transferCombinationTagBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(transferCombinationTag_);
+      } else {
+        return transferCombinationTagBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public int getTransferCombinationTagCount() {
+      if (transferCombinationTagBuilder_ == null) {
+        return transferCombinationTag_.size();
+      } else {
+        return transferCombinationTagBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTransferCombinationTag(int index) {
+      if (transferCombinationTagBuilder_ == null) {
+        return transferCombinationTag_.get(index);
+      } else {
+        return transferCombinationTagBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder setTransferCombinationTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (transferCombinationTagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.set(index, value);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder setTransferCombinationTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (transferCombinationTagBuilder_ == null) {
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder addTransferCombinationTag(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (transferCombinationTagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.add(value);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder addTransferCombinationTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (transferCombinationTagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.add(index, value);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder addTransferCombinationTag(
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (transferCombinationTagBuilder_ == null) {
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.add(builderForValue.build());
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder addTransferCombinationTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (transferCombinationTagBuilder_ == null) {
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder addAllTransferCombinationTag(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
+      if (transferCombinationTagBuilder_ == null) {
+        ensureTransferCombinationTagIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, transferCombinationTag_);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder clearTransferCombinationTag() {
+      if (transferCombinationTagBuilder_ == null) {
+        transferCombinationTag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public Builder removeTransferCombinationTag(int index) {
+      if (transferCombinationTagBuilder_ == null) {
+        ensureTransferCombinationTagIsMutable();
+        transferCombinationTag_.remove(index);
+        onChanged();
+      } else {
+        transferCombinationTagBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getTransferCombinationTagBuilder(
+        int index) {
+      return getTransferCombinationTagFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTransferCombinationTagOrBuilder(
+        int index) {
+      if (transferCombinationTagBuilder_ == null) {
+        return transferCombinationTag_.get(index);  } else {
+        return transferCombinationTagBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+         getTransferCombinationTagOrBuilderList() {
+      if (transferCombinationTagBuilder_ != null) {
+        return transferCombinationTagBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(transferCombinationTag_);
+      }
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTransferCombinationTagBuilder() {
+      return getTransferCombinationTagFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTransferCombinationTagBuilder(
+        int index) {
+      return getTransferCombinationTagFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 下发中转组合产品维度，无法放在单程上的信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType TransferCombinationTag = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
+         getTransferCombinationTagBuilderList() {
+      return getTransferCombinationTagFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+        getTransferCombinationTagFieldBuilder() {
+      if (transferCombinationTagBuilder_ == null) {
+        transferCombinationTagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
+                transferCombinationTag_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        transferCombinationTag_ = null;
+      }
+      return transferCombinationTagBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

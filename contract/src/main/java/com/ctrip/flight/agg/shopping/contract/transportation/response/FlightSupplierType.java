@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     officialName_ = "";
     iATANumber_ = "";
     agentDisclosure_ = "";
+    agencyLicenseUrl_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             agentDisclosure_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            agencyLicenseUrl_ = s;
             break;
           }
           default: {
@@ -240,6 +247,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AGENCYLICENSEURL_FIELD_NUMBER = 5;
+  private volatile java.lang.Object agencyLicenseUrl_;
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 5;</code>
+   */
+  public java.lang.String getAgencyLicenseUrl() {
+    java.lang.Object ref = agencyLicenseUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agencyLicenseUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAgencyLicenseUrlBytes() {
+    java.lang.Object ref = agencyLicenseUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      agencyLicenseUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -266,6 +315,9 @@ private static final long serialVersionUID = 0L;
     if (!getAgentDisclosureBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, agentDisclosure_);
     }
+    if (!getAgencyLicenseUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agencyLicenseUrl_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -287,6 +339,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAgentDisclosureBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, agentDisclosure_);
+    }
+    if (!getAgencyLicenseUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agencyLicenseUrl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -312,6 +367,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIATANumber());
     result = result && getAgentDisclosure()
         .equals(other.getAgentDisclosure());
+    result = result && getAgencyLicenseUrl()
+        .equals(other.getAgencyLicenseUrl());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -331,6 +388,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getIATANumber().hashCode();
     hash = (37 * hash) + AGENTDISCLOSURE_FIELD_NUMBER;
     hash = (53 * hash) + getAgentDisclosure().hashCode();
+    hash = (37 * hash) + AGENCYLICENSEURL_FIELD_NUMBER;
+    hash = (53 * hash) + getAgencyLicenseUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -472,6 +531,8 @@ private static final long serialVersionUID = 0L;
 
       agentDisclosure_ = "";
 
+      agencyLicenseUrl_ = "";
+
       return this;
     }
 
@@ -502,6 +563,7 @@ private static final long serialVersionUID = 0L;
       result.officialName_ = officialName_;
       result.iATANumber_ = iATANumber_;
       result.agentDisclosure_ = agentDisclosure_;
+      result.agencyLicenseUrl_ = agencyLicenseUrl_;
       onBuilt();
       return result;
     }
@@ -563,6 +625,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getAgentDisclosure().isEmpty()) {
         agentDisclosure_ = other.agentDisclosure_;
+        onChanged();
+      }
+      if (!other.getAgencyLicenseUrl().isEmpty()) {
+        agencyLicenseUrl_ = other.agencyLicenseUrl_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -895,6 +961,95 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       agentDisclosure_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object agencyLicenseUrl_ = "";
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 5;</code>
+     */
+    public java.lang.String getAgencyLicenseUrl() {
+      java.lang.Object ref = agencyLicenseUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agencyLicenseUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgencyLicenseUrlBytes() {
+      java.lang.Object ref = agencyLicenseUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agencyLicenseUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 5;</code>
+     */
+    public Builder setAgencyLicenseUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      agencyLicenseUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 5;</code>
+     */
+    public Builder clearAgencyLicenseUrl() {
+      
+      agencyLicenseUrl_ = getDefaultInstance().getAgencyLicenseUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 5;</code>
+     */
+    public Builder setAgencyLicenseUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      agencyLicenseUrl_ = value;
       onChanged();
       return this;
     }

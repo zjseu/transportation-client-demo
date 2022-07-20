@@ -129,18 +129,30 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSESTATUS_FIELD_NUMBER = 1;
   private com.ctrip.soa.ResponseStatusType responseStatus_;
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   public boolean hasResponseStatus() {
     return responseStatus_ != null;
   }
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   public com.ctrip.soa.ResponseStatusType getResponseStatus() {
     return responseStatus_ == null ? com.ctrip.soa.ResponseStatusType.getDefaultInstance() : responseStatus_;
   }
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   public com.ctrip.soa.ResponseStatusTypeOrBuilder getResponseStatusOrBuilder() {
@@ -150,18 +162,30 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSEHEADER_FIELD_NUMBER = 2;
   private com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType responseHeader_;
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   public boolean hasResponseHeader() {
     return responseHeader_ != null;
   }
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType getResponseHeader() {
     return responseHeader_ == null ? com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType.getDefaultInstance() : responseHeader_;
   }
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderTypeOrBuilder getResponseHeaderOrBuilder() {
@@ -171,18 +195,30 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSEBODY_FIELD_NUMBER = 3;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType responseBody_;
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   public boolean hasResponseBody() {
     return responseBody_ != null;
   }
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType getResponseBody() {
     return responseBody_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType.getDefaultInstance() : responseBody_;
   }
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyTypeOrBuilder getResponseBodyOrBuilder() {
@@ -192,18 +228,30 @@ private static final long serialVersionUID = 0L;
   public static final int ERRORRESULT_FIELD_NUMBER = 4;
   private com.ctrip.flight.agg.shopping.contract.message.ErrorResultType errorResult_;
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   public boolean hasErrorResult() {
     return errorResult_ != null;
   }
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.ErrorResultType getErrorResult() {
     return errorResult_ == null ? com.ctrip.flight.agg.shopping.contract.message.ErrorResultType.getDefaultInstance() : errorResult_;
   }
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.ErrorResultTypeOrBuilder getErrorResultOrBuilder() {
@@ -620,12 +668,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.soa.ResponseStatusType, com.ctrip.soa.ResponseStatusType.Builder, com.ctrip.soa.ResponseStatusTypeOrBuilder> responseStatusBuilder_;
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public boolean hasResponseStatus() {
       return responseStatusBuilder_ != null || responseStatus_ != null;
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public com.ctrip.soa.ResponseStatusType getResponseStatus() {
@@ -636,6 +692,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public Builder setResponseStatus(com.ctrip.soa.ResponseStatusType value) {
@@ -652,6 +712,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public Builder setResponseStatus(
@@ -666,6 +730,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public Builder mergeResponseStatus(com.ctrip.soa.ResponseStatusType value) {
@@ -684,6 +752,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public Builder clearResponseStatus() {
@@ -698,6 +770,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public com.ctrip.soa.ResponseStatusType.Builder getResponseStatusBuilder() {
@@ -706,6 +782,10 @@ private static final long serialVersionUID = 0L;
       return getResponseStatusFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     public com.ctrip.soa.ResponseStatusTypeOrBuilder getResponseStatusOrBuilder() {
@@ -717,6 +797,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 通用响应状态
+     * </pre>
+     *
      * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -737,12 +821,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType, com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType.Builder, com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderTypeOrBuilder> responseHeaderBuilder_;
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public boolean hasResponseHeader() {
       return responseHeaderBuilder_ != null || responseHeader_ != null;
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType getResponseHeader() {
@@ -753,6 +845,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public Builder setResponseHeader(com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType value) {
@@ -769,6 +865,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public Builder setResponseHeader(
@@ -783,6 +883,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public Builder mergeResponseHeader(com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType value) {
@@ -801,6 +905,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public Builder clearResponseHeader() {
@@ -815,6 +923,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType.Builder getResponseHeaderBuilder() {
@@ -823,6 +935,10 @@ private static final long serialVersionUID = 0L;
       return getResponseHeaderFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderTypeOrBuilder getResponseHeaderOrBuilder() {
@@ -834,6 +950,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 响应头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -854,12 +974,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType, com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyTypeOrBuilder> responseBodyBuilder_;
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public boolean hasResponseBody() {
       return responseBodyBuilder_ != null || responseBody_ != null;
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType getResponseBody() {
@@ -870,6 +998,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public Builder setResponseBody(com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType value) {
@@ -886,6 +1018,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public Builder setResponseBody(
@@ -900,6 +1036,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public Builder mergeResponseBody(com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType value) {
@@ -918,6 +1058,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public Builder clearResponseBody() {
@@ -932,6 +1076,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType.Builder getResponseBodyBuilder() {
@@ -940,6 +1088,10 @@ private static final long serialVersionUID = 0L;
       return getResponseBodyFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyTypeOrBuilder getResponseBodyOrBuilder() {
@@ -951,6 +1103,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 响应实体
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -971,12 +1127,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.message.ErrorResultType, com.ctrip.flight.agg.shopping.contract.message.ErrorResultType.Builder, com.ctrip.flight.agg.shopping.contract.message.ErrorResultTypeOrBuilder> errorResultBuilder_;
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public boolean hasErrorResult() {
       return errorResultBuilder_ != null || errorResult_ != null;
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ErrorResultType getErrorResult() {
@@ -987,6 +1151,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public Builder setErrorResult(com.ctrip.flight.agg.shopping.contract.message.ErrorResultType value) {
@@ -1003,6 +1171,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public Builder setErrorResult(
@@ -1017,6 +1189,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public Builder mergeErrorResult(com.ctrip.flight.agg.shopping.contract.message.ErrorResultType value) {
@@ -1035,6 +1211,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public Builder clearErrorResult() {
@@ -1049,6 +1229,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ErrorResultType.Builder getErrorResultBuilder() {
@@ -1057,6 +1241,10 @@ private static final long serialVersionUID = 0L;
       return getErrorResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.ErrorResultTypeOrBuilder getErrorResultOrBuilder() {
@@ -1068,6 +1256,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 异常信息
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

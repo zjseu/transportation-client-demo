@@ -8,56 +8,104 @@ public interface BaggageTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 索引号
+   * </pre>
+   *
    * <code>int32 RefNum = 1;</code>
    */
   int getRefNum();
 
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> 
       getBaggageDetailList();
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index);
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   int getBaggageDetailCount();
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
       getBaggageDetailOrBuilderList();
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   boolean hasExtensionFields();
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields();
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder();
 
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   boolean hasBaggageSize();
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize();
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder();

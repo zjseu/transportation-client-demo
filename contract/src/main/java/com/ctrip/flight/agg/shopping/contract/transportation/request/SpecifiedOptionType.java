@@ -415,6 +415,10 @@ private static final long serialVersionUID = 0L;
   public static final int FAREBASIS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList fareBasis_;
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   public com.google.protobuf.ProtocolStringList
@@ -422,18 +426,30 @@ private static final long serialVersionUID = 0L;
     return fareBasis_;
   }
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   public int getFareBasisCount() {
     return fareBasis_.size();
   }
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   public java.lang.String getFareBasis(int index) {
     return fareBasis_.get(index);
   }
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   public com.google.protobuf.ByteString
@@ -1885,6 +1901,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -1892,18 +1912,30 @@ private static final long serialVersionUID = 0L;
       return fareBasis_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public int getFareBasisCount() {
       return fareBasis_.size();
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public java.lang.String getFareBasis(int index) {
       return fareBasis_.get(index);
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public com.google.protobuf.ByteString
@@ -1911,6 +1943,10 @@ private static final long serialVersionUID = 0L;
       return fareBasis_.getByteString(index);
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public Builder setFareBasis(
@@ -1924,6 +1960,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public Builder addFareBasis(
@@ -1937,6 +1977,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public Builder addAllFareBasis(
@@ -1948,6 +1992,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public Builder clearFareBasis() {
@@ -1957,6 +2005,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 指定运价基础
+     * </pre>
+     *
      * <code>repeated string FareBasis = 6;</code>
      */
     public Builder addFareBasisBytes(

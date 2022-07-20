@@ -67,4 +67,13 @@ public interface UserParameterTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateType Coordinate = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.CoordinateTypeOrBuilder getCoordinateOrBuilder();
+
+  /**
+   * <pre>
+   * 机酒的高星用户场景使用
+   * </pre>
+   *
+   * <code>int32 FlightXHotelUserLevel = 4;</code>
+   */
+  int getFlightXHotelUserLevel();
 }

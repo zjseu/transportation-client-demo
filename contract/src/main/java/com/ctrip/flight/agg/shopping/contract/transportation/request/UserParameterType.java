@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private UserParameterType() {
     userID_ = "";
     memberLevel_ = "";
+    flightXHotelUserLevel_ = 0;
   }
 
   @java.lang.Override
@@ -67,6 +68,11 @@ private static final long serialVersionUID = 0L;
               coordinate_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 32: {
+
+            flightXHotelUserLevel_ = input.readInt32();
             break;
           }
           default: {
@@ -218,6 +224,19 @@ private static final long serialVersionUID = 0L;
     return getCoordinate();
   }
 
+  public static final int FLIGHTXHOTELUSERLEVEL_FIELD_NUMBER = 4;
+  private int flightXHotelUserLevel_;
+  /**
+   * <pre>
+   * 机酒的高星用户场景使用
+   * </pre>
+   *
+   * <code>int32 FlightXHotelUserLevel = 4;</code>
+   */
+  public int getFlightXHotelUserLevel() {
+    return flightXHotelUserLevel_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -241,6 +260,9 @@ private static final long serialVersionUID = 0L;
     if (coordinate_ != null) {
       output.writeMessage(3, getCoordinate());
     }
+    if (flightXHotelUserLevel_ != 0) {
+      output.writeInt32(4, flightXHotelUserLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -259,6 +281,10 @@ private static final long serialVersionUID = 0L;
     if (coordinate_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCoordinate());
+    }
+    if (flightXHotelUserLevel_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, flightXHotelUserLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -285,6 +311,8 @@ private static final long serialVersionUID = 0L;
       result = result && getCoordinate()
           .equals(other.getCoordinate());
     }
+    result = result && (getFlightXHotelUserLevel()
+        == other.getFlightXHotelUserLevel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -304,6 +332,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COORDINATE_FIELD_NUMBER;
       hash = (53 * hash) + getCoordinate().hashCode();
     }
+    hash = (37 * hash) + FLIGHTXHOTELUSERLEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getFlightXHotelUserLevel();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,6 +477,8 @@ private static final long serialVersionUID = 0L;
         coordinate_ = null;
         coordinateBuilder_ = null;
       }
+      flightXHotelUserLevel_ = 0;
+
       return this;
     }
 
@@ -480,6 +512,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.coordinate_ = coordinateBuilder_.build();
       }
+      result.flightXHotelUserLevel_ = flightXHotelUserLevel_;
       onBuilt();
       return result;
     }
@@ -538,6 +571,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCoordinate()) {
         mergeCoordinate(other.getCoordinate());
+      }
+      if (other.getFlightXHotelUserLevel() != 0) {
+        setFlightXHotelUserLevel(other.getFlightXHotelUserLevel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -897,6 +933,44 @@ private static final long serialVersionUID = 0L;
         coordinate_ = null;
       }
       return coordinateBuilder_;
+    }
+
+    private int flightXHotelUserLevel_ ;
+    /**
+     * <pre>
+     * 机酒的高星用户场景使用
+     * </pre>
+     *
+     * <code>int32 FlightXHotelUserLevel = 4;</code>
+     */
+    public int getFlightXHotelUserLevel() {
+      return flightXHotelUserLevel_;
+    }
+    /**
+     * <pre>
+     * 机酒的高星用户场景使用
+     * </pre>
+     *
+     * <code>int32 FlightXHotelUserLevel = 4;</code>
+     */
+    public Builder setFlightXHotelUserLevel(int value) {
+      
+      flightXHotelUserLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机酒的高星用户场景使用
+     * </pre>
+     *
+     * <code>int32 FlightXHotelUserLevel = 4;</code>
+     */
+    public Builder clearFlightXHotelUserLevel() {
+      
+      flightXHotelUserLevel_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -8,20 +8,36 @@ public interface CacheTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 索引号
+   * </pre>
+   *
    * <code>int32 RefNum = 1;</code>
    */
   int getRefNum();
 
   /**
+   * <pre>
+   * 缓存时长
+   * </pre>
+   *
    * <code>int32 AgeInMillisecond = 2;</code>
    */
   int getAgeInMillisecond();
 
   /**
+   * <pre>
+   * 调试用字段
+   * </pre>
+   *
    * <code>string TraceID = 3;</code>
    */
   java.lang.String getTraceID();
   /**
+   * <pre>
+   * 调试用字段
+   * </pre>
+   *
    * <code>string TraceID = 3;</code>
    */
   com.google.protobuf.ByteString

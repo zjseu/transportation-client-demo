@@ -166,19 +166,35 @@ public interface SpecifiedOptionTypeOrBuilder extends
       getExcludesAgencyCodeBytes(int index);
 
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   java.util.List<java.lang.String>
       getFareBasisList();
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   int getFareBasisCount();
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   java.lang.String getFareBasis(int index);
   /**
+   * <pre>
+   * 指定运价基础
+   * </pre>
+   *
    * <code>repeated string FareBasis = 6;</code>
    */
   com.google.protobuf.ByteString

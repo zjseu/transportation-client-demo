@@ -8,53 +8,101 @@ public interface SearchResponseTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   boolean hasResponseStatus();
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   com.ctrip.soa.ResponseStatusType getResponseStatus();
   /**
+   * <pre>
+   * 通用响应状态
+   * </pre>
+   *
    * <code>.com.ctrip.soa.ResponseStatusType ResponseStatus = 1;</code>
    */
   com.ctrip.soa.ResponseStatusTypeOrBuilder getResponseStatusOrBuilder();
 
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   boolean hasResponseHeader();
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType getResponseHeader();
   /**
+   * <pre>
+   * 响应头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;</code>
    */
   com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderTypeOrBuilder getResponseHeaderOrBuilder();
 
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   boolean hasResponseBody();
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType getResponseBody();
   /**
+   * <pre>
+   * 响应实体
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyType ResponseBody = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.ResponseBodyTypeOrBuilder getResponseBodyOrBuilder();
 
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   boolean hasErrorResult();
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.message.ErrorResultType getErrorResult();
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.message.ErrorResultTypeOrBuilder getErrorResultOrBuilder();

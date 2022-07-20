@@ -380,6 +380,32 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MileageCreditType.parser(), extensionRegistry));
             break;
           }
+          case 274: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder subBuilder = null;
+            if (meal_ != null) {
+              subBuilder = meal_.toBuilder();
+            }
+            meal_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(meal_);
+              meal_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 282: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder subBuilder = null;
+            if (cFCabinFeature_ != null) {
+              subBuilder = cFCabinFeature_.toBuilder();
+            }
+            cFCabinFeature_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(cFCabinFeature_);
+              cFCabinFeature_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -725,6 +751,10 @@ private static final long serialVersionUID = 0L;
   public static final int CACHEREF_FIELD_NUMBER = 10;
   private int cacheRef_;
   /**
+   * <pre>
+   * 缓存信息，调试用
+   * </pre>
+   *
    * <code>int32 CacheRef = 10;</code>
    */
   public int getCacheRef() {
@@ -1508,6 +1538,72 @@ private static final long serialVersionUID = 0L;
     return mileageCredit_.get(index);
   }
 
+  public static final int MEAL_FIELD_NUMBER = 34;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.MealType meal_;
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  public boolean hasMeal() {
+    return meal_ != null;
+  }
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MealType getMeal() {
+    return meal_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.getDefaultInstance() : meal_;
+  }
+  /**
+   * <pre>
+   * 餐食信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder getMealOrBuilder() {
+    return getMeal();
+  }
+
+  public static final int CFCABINFEATURE_FIELD_NUMBER = 35;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType cFCabinFeature_;
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  public boolean hasCFCabinFeature() {
+    return cFCabinFeature_ != null;
+  }
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType getCFCabinFeature() {
+    return cFCabinFeature_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.getDefaultInstance() : cFCabinFeature_;
+  }
+  /**
+   * <pre>
+   * 两舱特征信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder getCFCabinFeatureOrBuilder() {
+    return getCFCabinFeature();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1625,6 +1721,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < mileageCredit_.size(); i++) {
       output.writeMessage(33, mileageCredit_.get(i));
+    }
+    if (meal_ != null) {
+      output.writeMessage(34, getMeal());
+    }
+    if (cFCabinFeature_ != null) {
+      output.writeMessage(35, getCFCabinFeature());
     }
     unknownFields.writeTo(output);
   }
@@ -1781,6 +1883,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(33, mileageCredit_.get(i));
     }
+    if (meal_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(34, getMeal());
+    }
+    if (cFCabinFeature_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(35, getCFCabinFeature());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1902,6 +2012,16 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getMileageCreditList()
         .equals(other.getMileageCreditList());
+    result = result && (hasMeal() == other.hasMeal());
+    if (hasMeal()) {
+      result = result && getMeal()
+          .equals(other.getMeal());
+    }
+    result = result && (hasCFCabinFeature() == other.hasCFCabinFeature());
+    if (hasCFCabinFeature()) {
+      result = result && getCFCabinFeature()
+          .equals(other.getCFCabinFeature());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2018,6 +2138,14 @@ private static final long serialVersionUID = 0L;
     if (getMileageCreditCount() > 0) {
       hash = (37 * hash) + MILEAGECREDIT_FIELD_NUMBER;
       hash = (53 * hash) + getMileageCreditList().hashCode();
+    }
+    if (hasMeal()) {
+      hash = (37 * hash) + MEAL_FIELD_NUMBER;
+      hash = (53 * hash) + getMeal().hashCode();
+    }
+    if (hasCFCabinFeature()) {
+      hash = (37 * hash) + CFCABINFEATURE_FIELD_NUMBER;
+      hash = (53 * hash) + getCFCabinFeature().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2294,6 +2422,18 @@ private static final long serialVersionUID = 0L;
       } else {
         mileageCreditBuilder_.clear();
       }
+      if (mealBuilder_ == null) {
+        meal_ = null;
+      } else {
+        meal_ = null;
+        mealBuilder_ = null;
+      }
+      if (cFCabinFeatureBuilder_ == null) {
+        cFCabinFeature_ = null;
+      } else {
+        cFCabinFeature_ = null;
+        cFCabinFeatureBuilder_ = null;
+      }
       return this;
     }
 
@@ -2451,6 +2591,16 @@ private static final long serialVersionUID = 0L;
         result.mileageCredit_ = mileageCredit_;
       } else {
         result.mileageCredit_ = mileageCreditBuilder_.build();
+      }
+      if (mealBuilder_ == null) {
+        result.meal_ = meal_;
+      } else {
+        result.meal_ = mealBuilder_.build();
+      }
+      if (cFCabinFeatureBuilder_ == null) {
+        result.cFCabinFeature_ = cFCabinFeature_;
+      } else {
+        result.cFCabinFeature_ = cFCabinFeatureBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -2716,6 +2866,12 @@ private static final long serialVersionUID = 0L;
             mileageCreditBuilder_.addAllMessages(other.mileageCredit_);
           }
         }
+      }
+      if (other.hasMeal()) {
+        mergeMeal(other.getMeal());
+      }
+      if (other.hasCFCabinFeature()) {
+        mergeCFCabinFeature(other.getCFCabinFeature());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3732,12 +3888,20 @@ private static final long serialVersionUID = 0L;
 
     private int cacheRef_ ;
     /**
+     * <pre>
+     * 缓存信息，调试用
+     * </pre>
+     *
      * <code>int32 CacheRef = 10;</code>
      */
     public int getCacheRef() {
       return cacheRef_;
     }
     /**
+     * <pre>
+     * 缓存信息，调试用
+     * </pre>
+     *
      * <code>int32 CacheRef = 10;</code>
      */
     public Builder setCacheRef(int value) {
@@ -3747,6 +3911,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缓存信息，调试用
+     * </pre>
+     *
      * <code>int32 CacheRef = 10;</code>
      */
     public Builder clearCacheRef() {
@@ -7080,6 +7248,312 @@ private static final long serialVersionUID = 0L;
         mileageCredit_ = null;
       }
       return mileageCreditBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.MealType meal_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MealType, com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder> mealBuilder_;
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public boolean hasMeal() {
+      return mealBuilder_ != null || meal_ != null;
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MealType getMeal() {
+      if (mealBuilder_ == null) {
+        return meal_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.getDefaultInstance() : meal_;
+      } else {
+        return mealBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public Builder setMeal(com.ctrip.flight.agg.shopping.contract.transportation.response.MealType value) {
+      if (mealBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        meal_ = value;
+        onChanged();
+      } else {
+        mealBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public Builder setMeal(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder builderForValue) {
+      if (mealBuilder_ == null) {
+        meal_ = builderForValue.build();
+        onChanged();
+      } else {
+        mealBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public Builder mergeMeal(com.ctrip.flight.agg.shopping.contract.transportation.response.MealType value) {
+      if (mealBuilder_ == null) {
+        if (meal_ != null) {
+          meal_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.newBuilder(meal_).mergeFrom(value).buildPartial();
+        } else {
+          meal_ = value;
+        }
+        onChanged();
+      } else {
+        mealBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public Builder clearMeal() {
+      if (mealBuilder_ == null) {
+        meal_ = null;
+        onChanged();
+      } else {
+        meal_ = null;
+        mealBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder getMealBuilder() {
+      
+      onChanged();
+      return getMealFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder getMealOrBuilder() {
+      if (mealBuilder_ != null) {
+        return mealBuilder_.getMessageOrBuilder();
+      } else {
+        return meal_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.getDefaultInstance() : meal_;
+      }
+    }
+    /**
+     * <pre>
+     * 餐食信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MealType Meal = 34;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MealType, com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder> 
+        getMealFieldBuilder() {
+      if (mealBuilder_ == null) {
+        mealBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MealType, com.ctrip.flight.agg.shopping.contract.transportation.response.MealType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MealTypeOrBuilder>(
+                getMeal(),
+                getParentForChildren(),
+                isClean());
+        meal_ = null;
+      }
+      return mealBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType cFCabinFeature_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder> cFCabinFeatureBuilder_;
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public boolean hasCFCabinFeature() {
+      return cFCabinFeatureBuilder_ != null || cFCabinFeature_ != null;
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType getCFCabinFeature() {
+      if (cFCabinFeatureBuilder_ == null) {
+        return cFCabinFeature_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.getDefaultInstance() : cFCabinFeature_;
+      } else {
+        return cFCabinFeatureBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public Builder setCFCabinFeature(com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType value) {
+      if (cFCabinFeatureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cFCabinFeature_ = value;
+        onChanged();
+      } else {
+        cFCabinFeatureBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public Builder setCFCabinFeature(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder builderForValue) {
+      if (cFCabinFeatureBuilder_ == null) {
+        cFCabinFeature_ = builderForValue.build();
+        onChanged();
+      } else {
+        cFCabinFeatureBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public Builder mergeCFCabinFeature(com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType value) {
+      if (cFCabinFeatureBuilder_ == null) {
+        if (cFCabinFeature_ != null) {
+          cFCabinFeature_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.newBuilder(cFCabinFeature_).mergeFrom(value).buildPartial();
+        } else {
+          cFCabinFeature_ = value;
+        }
+        onChanged();
+      } else {
+        cFCabinFeatureBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public Builder clearCFCabinFeature() {
+      if (cFCabinFeatureBuilder_ == null) {
+        cFCabinFeature_ = null;
+        onChanged();
+      } else {
+        cFCabinFeature_ = null;
+        cFCabinFeatureBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder getCFCabinFeatureBuilder() {
+      
+      onChanged();
+      return getCFCabinFeatureFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder getCFCabinFeatureOrBuilder() {
+      if (cFCabinFeatureBuilder_ != null) {
+        return cFCabinFeatureBuilder_.getMessageOrBuilder();
+      } else {
+        return cFCabinFeature_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.getDefaultInstance() : cFCabinFeature_;
+      }
+    }
+    /**
+     * <pre>
+     * 两舱特征信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder> 
+        getCFCabinFeatureFieldBuilder() {
+      if (cFCabinFeatureBuilder_ == null) {
+        cFCabinFeatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder>(
+                getCFCabinFeature(),
+                getParentForChildren(),
+                isClean());
+        cFCabinFeature_ = null;
+      }
+      return cFCabinFeatureBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

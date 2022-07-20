@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType> transportFareMapping_;
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -269,7 +269,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 与TransportRef一一对应
+   * 行段详细信息，顺序与TransportRef一一对应
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType> productDetail_;
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -324,7 +324,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -335,7 +335,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行程组合的价格单元列表
+   * 产品详情列表，含价格等重要信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object offerToken_;
   /**
    * <pre>
-   * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+   * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
    * </pre>
    *
    * <code>string OfferToken = 3;</code>
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+   * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
    * </pre>
    *
    * <code>string OfferToken = 3;</code>
@@ -1745,7 +1745,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1759,7 +1759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1773,7 +1773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1787,7 +1787,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1826,7 +1826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1846,7 +1846,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1867,7 +1867,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1885,7 +1885,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1903,7 +1903,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1922,7 +1922,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1939,7 +1939,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1967,7 +1967,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1981,7 +1981,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -1996,7 +1996,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -2007,7 +2007,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -2019,7 +2019,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 与TransportRef一一对应
+     * 行段详细信息，顺序与TransportRef一一对应
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TransportFareMappingType TransportFareMapping = 1;</code>
@@ -2057,7 +2057,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2071,7 +2071,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2085,7 +2085,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2099,7 +2099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2120,7 +2120,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2138,7 +2138,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2158,7 +2158,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2179,7 +2179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2197,7 +2197,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2215,7 +2215,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2234,7 +2234,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2251,7 +2251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2268,7 +2268,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2279,7 +2279,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2293,7 +2293,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2308,7 +2308,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2319,7 +2319,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2331,7 +2331,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程组合的价格单元列表
+     * 产品详情列表，含价格等重要信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.ProductDetailType ProductDetail = 2;</code>
@@ -2358,7 +2358,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object offerToken_ = "";
     /**
      * <pre>
-     * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+     * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
      * </pre>
      *
      * <code>string OfferToken = 3;</code>
@@ -2377,7 +2377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+     * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
      * </pre>
      *
      * <code>string OfferToken = 3;</code>
@@ -2397,7 +2397,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+     * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
      * </pre>
      *
      * <code>string OfferToken = 3;</code>
@@ -2414,7 +2414,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+     * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
      * </pre>
      *
      * <code>string OfferToken = 3;</code>
@@ -2427,7 +2427,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+     * 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
      * </pre>
      *
      * <code>string OfferToken = 3;</code>

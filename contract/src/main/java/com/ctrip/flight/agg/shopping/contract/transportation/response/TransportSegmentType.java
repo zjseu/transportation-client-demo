@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   private int journeyNo_;
   /**
    * <pre>
-   * 行程号，从1开始
+   * 程号，从1开始
    * </pre>
    *
    * <code>int32 JourneyNo = 1;</code>
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
   private int segmentNo_;
   /**
    * <pre>
-   * 每程内的段号，从1开始
+   * 每一程内的段号，从1开始
    * </pre>
    *
    * <code>int32 SegmentNo = 2;</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   private boolean mainSegmentInd_;
   /**
    * <pre>
-   * 是否行程的主航段
+   * 是否行程内的主航段
    * </pre>
    *
    * <code>bool MainSegmentInd = 4;</code>
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
     private int journeyNo_ ;
     /**
      * <pre>
-     * 行程号，从1开始
+     * 程号，从1开始
      * </pre>
      *
      * <code>int32 JourneyNo = 1;</code>
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程号，从1开始
+     * 程号，从1开始
      * </pre>
      *
      * <code>int32 JourneyNo = 1;</code>
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行程号，从1开始
+     * 程号，从1开始
      * </pre>
      *
      * <code>int32 JourneyNo = 1;</code>
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
     private int segmentNo_ ;
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 每程内的段号，从1开始
+     * 每一程内的段号，从1开始
      * </pre>
      *
      * <code>int32 SegmentNo = 2;</code>
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
     private boolean mainSegmentInd_ ;
     /**
      * <pre>
-     * 是否行程的主航段
+     * 是否行程内的主航段
      * </pre>
      *
      * <code>bool MainSegmentInd = 4;</code>
@@ -760,7 +760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 是否行程的主航段
+     * 是否行程内的主航段
      * </pre>
      *
      * <code>bool MainSegmentInd = 4;</code>
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 是否行程的主航段
+     * 是否行程内的主航段
      * </pre>
      *
      * <code>bool MainSegmentInd = 4;</code>

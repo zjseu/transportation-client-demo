@@ -153,81 +153,87 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
       "ract.transportation.request.SpecifiedOpt" +
       "ionType\022g\n\rAdaptedOption\030\016 \001(\0132P.com.ctr" +
       "ip.flight.agg.shopping.contract.transpor" +
-      "tation.request.AdaptedOptionType\"\362\001\n\022Jou" +
+      "tation.request.AdaptedOptionType\"\331\002\n\022Jou" +
       "rneyRequestType\022\022\n\nDepartDate\030\001 \001(\t\022c\n\016D" +
       "epartLocation\030\002 \001(\0132K.com.ctrip.flight.a" +
       "gg.shopping.contract.transportation.requ" +
       "est.LocationType\022c\n\016ArriveLocation\030\003 \001(\013" +
       "2K.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.request.LocationType\".\n" +
-      "\014LocationType\022\014\n\004Type\030\001 \001(\005\022\020\n\010Location\030" +
-      "\002 \001(\t\"E\n\016PaxRequestType\022\017\n\007AgeType\030\001 \001(\005" +
-      "\022\r\n\005Count\030\002 \001(\005\022\023\n\013Nationality\030\003 \001(\t\"p\n\017" +
-      "RouteSearchType\022\022\n\nSearchMode\030\001 \001(\005\022\024\n\014M" +
-      "axJourneyNo\030\002 \001(\005\022\022\n\nOfferToken\030\003 \001(\t\022\037\n" +
-      "\027IntlAggRouteSearchToken\030\004 \001(\t\"\233\001\n\021UserP" +
-      "arameterType\022\016\n\006UserID\030\001 \001(\t\022\023\n\013MemberLe" +
-      "vel\030\002 \001(\t\022a\n\nCoordinate\030\003 \001(\0132M.com.ctri" +
-      "p.flight.agg.shopping.contract.transport" +
-      "ation.request.CoordinateType\"j\n\021ResultCo" +
-      "ntrolType\022\032\n\022NeedRecommendation\030\001 \001(\010\022\031\n" +
-      "\021ValidatingCarrier\030\002 \003(\t\022\036\n\026NonMatchRequ" +
-      "estAgeType\030\003 \001(\010\"I\n\016CoordinateType\022\021\n\tLo" +
-      "ngitude\030\001 \001(\001\022\020\n\010Latitude\030\002 \001(\001\022\022\n\nUpdat" +
-      "eTime\030\003 \001(\t\"\242\001\n\022AdvancedOptionType\022w\n\025Ad" +
-      "vancedJourneyOption\030\001 \003(\0132X.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.request.AdvancedJourneyOptionType\022\023\n\013I" +
-      "nvoiceType\030\002 \003(\005\"\210\004\n\031AdvancedJourneyOpti" +
-      "onType\022\021\n\tJourneyNo\030\001 \001(\005\022\025\n\rTransportTy" +
-      "pe\030\002 \001(\005\022\023\n\013TransportNo\030\003 \003(\t\022\\\n\017DepartT" +
-      "imeRange\030\004 \001(\0132C.com.ctrip.flight.agg.sh" +
-      "opping.contract.transportation.IntRangeT" +
-      "ype\022\\\n\017ArriveTimeRange\030\005 \001(\0132C.com.ctrip" +
-      ".flight.agg.shopping.contract.transporta" +
-      "tion.IntRangeType\022y\n\026AdvancedTransferOpt" +
-      "ion\030\006 \001(\0132Y.com.ctrip.flight.agg.shoppin" +
-      "g.contract.transportation.request.Advanc" +
-      "edTransferOptionType\022u\n\024FlightAdvancedOp" +
-      "tion\030\t \001(\0132W.com.ctrip.flight.agg.shoppi" +
-      "ng.contract.transportation.request.Fligh" +
-      "tAdvancedOptionType\">\n\030FlightAdvancedOpt" +
-      "ionType\022\021\n\tCabinCode\030\001 \003(\t\022\017\n\007Carrier\030\002 " +
-      "\001(\t\"\371\001\n\032AdvancedTransferOptionType\022\024\n\014Tr" +
-      "ansferType\030\001 \001(\005\022^\n\021TransferTimeRange\030\003 " +
-      "\001(\0132C.com.ctrip.flight.agg.shopping.cont" +
-      "ract.transportation.IntRangeType\022e\n\020Tran" +
-      "sferLocation\030\004 \003(\0132K.com.ctrip.flight.ag" +
-      "g.shopping.contract.transportation.reque" +
-      "st.LocationType\"\307\002\n\023SpecifiedOptionType\022" +
-      "y\n\026SpecifiedJourneyOption\030\001 \003(\0132Y.com.ct" +
-      "rip.flight.agg.shopping.contract.transpo" +
-      "rtation.request.SpecifiedJourneyOptionTy" +
-      "pe\022\022\n\nClientType\030\002 \001(\005\022\026\n\016BookingChannel" +
-      "\030\003 \003(\t\022\022\n\nAgencyCode\030\004 \003(\t\022\032\n\022ExcludesAg" +
-      "encyCode\030\005 \003(\t\022\021\n\tFareBasis\030\006 \003(\t\022\021\n\tFar" +
-      "eClass\030\007 \003(\t\022\027\n\017ProductCategory\030\010 \003(\005\022\032\n" +
-      "\022SubProductCategory\030\t \003(\005\"\305\003\n\032SpecifiedJ" +
-      "ourneyOptionType\022\021\n\tJourneyNo\030\001 \001(\005\022\021\n\tS" +
-      "egmentNo\030\002 \001(\005\022\025\n\rTransportType\030\003 \001(\005\022\023\n" +
-      "\013TransportNo\030\004 \001(\t\022w\n\025FlightSpecifiedOpt" +
-      "ion\030\005 \001(\0132X.com.ctrip.flight.agg.shoppin" +
-      "g.contract.transportation.request.Flight" +
-      "SpecifiedOptionType\022\022\n\nDepartDate\030\006 \001(\t\022" +
-      "c\n\016DepartLocation\030\007 \001(\0132K.com.ctrip.flig" +
+      "t.transportation.request.LocationType\022e\n" +
+      "\020TransferLocation\030\004 \001(\0132K.com.ctrip.flig" +
       "ht.agg.shopping.contract.transportation." +
-      "request.LocationType\022c\n\016ArriveLocation\030\010" +
+      "request.LocationType\".\n\014LocationType\022\014\n\004" +
+      "Type\030\001 \001(\005\022\020\n\010Location\030\002 \001(\t\"E\n\016PaxReque" +
+      "stType\022\017\n\007AgeType\030\001 \001(\005\022\r\n\005Count\030\002 \001(\005\022\023" +
+      "\n\013Nationality\030\003 \001(\t\"p\n\017RouteSearchType\022\022" +
+      "\n\nSearchMode\030\001 \001(\005\022\024\n\014MaxJourneyNo\030\002 \001(\005" +
+      "\022\022\n\nOfferToken\030\003 \001(\t\022\037\n\027IntlAggRouteSear" +
+      "chToken\030\004 \001(\t\"\272\001\n\021UserParameterType\022\016\n\006U" +
+      "serID\030\001 \001(\t\022\023\n\013MemberLevel\030\002 \001(\t\022a\n\nCoor" +
+      "dinate\030\003 \001(\0132M.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.request.Coo" +
+      "rdinateType\022\035\n\025FlightXHotelUserLevel\030\004 \001" +
+      "(\005\"j\n\021ResultControlType\022\032\n\022NeedRecommend" +
+      "ation\030\001 \001(\010\022\031\n\021ValidatingCarrier\030\002 \003(\t\022\036" +
+      "\n\026NonMatchRequestAgeType\030\003 \001(\010\"\250\001\n\016Coord" +
+      "inateType\022\021\n\tLongitude\030\001 \001(\001\022\020\n\010Latitude" +
+      "\030\002 \001(\001\022\022\n\nUpdateTime\030\003 \001(\t\022]\n\010Location\030\004" +
       " \001(\0132K.com.ctrip.flight.agg.shopping.con" +
       "tract.transportation.request.LocationTyp" +
-      "e\"U\n\031FlightSpecifiedOptionType\022\030\n\020Operat" +
-      "ingCarrier\030\001 \001(\t\022\021\n\tCabinCode\030\005 \003(\t\022\013\n\003R" +
-      "BD\030\006 \001(\t\"\204\001\n\021AdaptedOptionType\022o\n\021XProdu" +
-      "ctAppointed\030\001 \003(\0132T.com.ctrip.flight.agg" +
-      ".shopping.contract.transportation.reques" +
-      "t.XProductAppointedType\"<\n\025XProductAppoi" +
-      "ntedType\022\023\n\013ProductType\030\001 \001(\t\022\016\n\006XToken\030" +
-      "\002 \003(\tBA\n=com.ctrip.flight.agg.shopping.c" +
-      "ontract.transportation.requestP\001b\006proto3"
+      "e\"\242\001\n\022AdvancedOptionType\022w\n\025AdvancedJour" +
+      "neyOption\030\001 \003(\0132X.com.ctrip.flight.agg.s" +
+      "hopping.contract.transportation.request." +
+      "AdvancedJourneyOptionType\022\023\n\013InvoiceType" +
+      "\030\002 \003(\005\"\210\004\n\031AdvancedJourneyOptionType\022\021\n\t" +
+      "JourneyNo\030\001 \001(\005\022\025\n\rTransportType\030\002 \001(\005\022\023" +
+      "\n\013TransportNo\030\003 \003(\t\022\\\n\017DepartTimeRange\030\004" +
+      " \001(\0132C.com.ctrip.flight.agg.shopping.con" +
+      "tract.transportation.IntRangeType\022\\\n\017Arr" +
+      "iveTimeRange\030\005 \001(\0132C.com.ctrip.flight.ag" +
+      "g.shopping.contract.transportation.IntRa" +
+      "ngeType\022y\n\026AdvancedTransferOption\030\006 \001(\0132" +
+      "Y.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.request.AdvancedTransfer" +
+      "OptionType\022u\n\024FlightAdvancedOption\030\t \001(\013" +
+      "2W.com.ctrip.flight.agg.shopping.contrac" +
+      "t.transportation.request.FlightAdvancedO" +
+      "ptionType\">\n\030FlightAdvancedOptionType\022\021\n" +
+      "\tCabinCode\030\001 \003(\t\022\017\n\007Carrier\030\002 \001(\t\"\371\001\n\032Ad" +
+      "vancedTransferOptionType\022\024\n\014TransferType" +
+      "\030\001 \001(\005\022^\n\021TransferTimeRange\030\003 \001(\0132C.com." +
+      "ctrip.flight.agg.shopping.contract.trans" +
+      "portation.IntRangeType\022e\n\020TransferLocati" +
+      "on\030\004 \003(\0132K.com.ctrip.flight.agg.shopping" +
+      ".contract.transportation.request.Locatio" +
+      "nType\"\307\002\n\023SpecifiedOptionType\022y\n\026Specifi" +
+      "edJourneyOption\030\001 \003(\0132Y.com.ctrip.flight" +
+      ".agg.shopping.contract.transportation.re" +
+      "quest.SpecifiedJourneyOptionType\022\022\n\nClie" +
+      "ntType\030\002 \001(\005\022\026\n\016BookingChannel\030\003 \003(\t\022\022\n\n" +
+      "AgencyCode\030\004 \003(\t\022\032\n\022ExcludesAgencyCode\030\005" +
+      " \003(\t\022\021\n\tFareBasis\030\006 \003(\t\022\021\n\tFareClass\030\007 \003" +
+      "(\t\022\027\n\017ProductCategory\030\010 \003(\005\022\032\n\022SubProduc" +
+      "tCategory\030\t \003(\005\"\305\003\n\032SpecifiedJourneyOpti" +
+      "onType\022\021\n\tJourneyNo\030\001 \001(\005\022\021\n\tSegmentNo\030\002" +
+      " \001(\005\022\025\n\rTransportType\030\003 \001(\005\022\023\n\013Transport" +
+      "No\030\004 \001(\t\022w\n\025FlightSpecifiedOption\030\005 \001(\0132" +
+      "X.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.request.FlightSpecifiedO" +
+      "ptionType\022\022\n\nDepartDate\030\006 \001(\t\022c\n\016DepartL" +
+      "ocation\030\007 \001(\0132K.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.request.Lo" +
+      "cationType\022c\n\016ArriveLocation\030\010 \001(\0132K.com" +
+      ".ctrip.flight.agg.shopping.contract.tran" +
+      "sportation.request.LocationType\"U\n\031Fligh" +
+      "tSpecifiedOptionType\022\030\n\020OperatingCarrier" +
+      "\030\001 \001(\t\022\021\n\tCabinCode\030\005 \003(\t\022\013\n\003RBD\030\006 \001(\t\"\204" +
+      "\001\n\021AdaptedOptionType\022o\n\021XProductAppointe" +
+      "d\030\001 \003(\0132T.com.ctrip.flight.agg.shopping." +
+      "contract.transportation.request.XProduct" +
+      "AppointedType\"<\n\025XProductAppointedType\022\023" +
+      "\n\013ProductType\030\001 \001(\t\022\016\n\006XToken\030\002 \003(\tBA\n=c" +
+      "om.ctrip.flight.agg.shopping.contract.tr" +
+      "ansportation.requestP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -260,7 +266,7 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_JourneyRequestType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_JourneyRequestType_descriptor,
-        new java.lang.String[] { "DepartDate", "DepartLocation", "ArriveLocation", });
+        new java.lang.String[] { "DepartDate", "DepartLocation", "ArriveLocation", "TransferLocation", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_LocationType_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_LocationType_fieldAccessorTable = new
@@ -284,7 +290,7 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_UserParameterType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_UserParameterType_descriptor,
-        new java.lang.String[] { "UserID", "MemberLevel", "Coordinate", });
+        new java.lang.String[] { "UserID", "MemberLevel", "Coordinate", "FlightXHotelUserLevel", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_ResultControlType_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_ResultControlType_fieldAccessorTable = new
@@ -296,7 +302,7 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_CoordinateType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_CoordinateType_descriptor,
-        new java.lang.String[] { "Longitude", "Latitude", "UpdateTime", });
+        new java.lang.String[] { "Longitude", "Latitude", "UpdateTime", "Location", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_AdvancedOptionType_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_AdvancedOptionType_fieldAccessorTable = new

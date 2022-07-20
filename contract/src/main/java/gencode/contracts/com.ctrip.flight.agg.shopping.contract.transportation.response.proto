@@ -9,22 +9,26 @@ option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.res
 option java_multiple_files = true;
 
 message SearchResponseType {
+    // 通用响应状态
     com.ctrip.soa.ResponseStatusType ResponseStatus = 1;
+    // 响应头
     com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType ResponseHeader = 2;
+    // 响应实体
     ResponseBodyType ResponseBody = 3;
+    // 异常信息
     com.ctrip.flight.agg.shopping.contract.message.ErrorResultType ErrorResult = 4;
 }
 
 message ResponseBodyType {
     // 行程组合
     repeated ItineraryType Itinerary = 1;
-    // Data List definition for this message
+    // 数据集合
     DataListsType DataLists = 2;
     // 扩展结点
     repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;
     // 推荐信息
     repeated RecommendItineraryType RecommendItinerary = 4;
-    // Message wide metadata information
+    // 元数据类型
     MetaDataType MetaData = 5;
     // 国际Agg的SearchCriteriaToken，调国际Agg的DetailSearch接口时使用;
     // 国内Agg的ResponseToken，调国内Agg的GetProductDetails接口时使用;
@@ -38,23 +42,23 @@ message ResponseBodyType {
 }
 
 message DataListsType {
-    // 交通信息Ref
+    // 交通工具相关信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;
-    // 机票信息
+    // 机票产品信息
     repeated FlightProductType FlightProduct = 2;
-    // 火车信息
+    // 火车产品信息
     repeated TrainProductType TrainProduct = 3;
-    // Bus信息
+    // 巴士产品信息
     repeated BusProductType BusProduct = 4;
-    // Fare信息
+    // 机票运价信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;
-    // 行李额信息Ref
+    // 行李额信息
     repeated com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;
-    // 辅营类产品等信息Ref
+    // 辅营类产品等信息
     com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;
-    // 缓存响应Ref
+    // 缓存信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;
-    // 信用卡支付信息Ref
+    // 信用卡支付信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;
     // 文本引用信息
     repeated com.ctrip.flight.agg.shopping.contract.transportation.TextRemarkType TextRemark = 10;
@@ -75,7 +79,7 @@ message ItineraryType {
     int32 TransportTypeGroup = 1;
     // 行程、段索引
     repeated TransportSegmentType TransportSegment = 2;
-    // 出价信息
+    // 报价信息，每一个报价包含一组产品信息
     repeated OfferType Offer = 3;
     // 0:不是飞人, 1:普通飞人, 2:超级飞人
     int32 FlyingManType = 4;
@@ -90,11 +94,11 @@ message ItineraryType {
 }
 
 message OfferType {
-    // 与TransportRef一一对应
+    // 行段详细信息，顺序与TransportRef一一对应
     repeated TransportFareMappingType TransportFareMapping = 1;
-    // 行程组合的价格单元列表
+    // 产品详情列表，含价格等重要信息
     repeated ProductDetailType ProductDetail = 2;
-    // 大交通价格反查token。Agg内部解析使用，对外不保证唯一性！
+    // 服务内部为每一个offer生成一个字符串类型的token，内容为加密字符串，反查时需要回传，不保证唯一性！
     string OfferToken = 3;
     // 产品组合类型, 包括了单程直飞的部分信息
     repeated string ProductCombinationType = 4;
@@ -125,13 +129,13 @@ message OfferType {
 }
 
 message TransportSegmentType {
-    // 行程号，从1开始
+    // 程号，从1开始
     int32 JourneyNo = 1;
-    // 每程内的段号，从1开始
+    // 每一程内的段号，从1开始
     int32 SegmentNo = 2;
     // 交通工具信息的索引号
     int32 TransportRef = 3;
-    // 是否行程的主航段
+    // 是否行程内的主航段
     bool MainSegmentInd = 4;
     // 扩展结点
     repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 5;
@@ -198,6 +202,7 @@ message FlightProductType {
     OSeat = 14;
     */
     int32 SubProductCategory = 9;
+    // 缓存信息，调试用
     int32 CacheRef = 10;
     // 最晚出票时限
     com.ctrip.flight.agg.shopping.contract.transportation.TicketingTimeLimitType TicketingTimeLimit = 11;
@@ -256,6 +261,12 @@ message FlightProductType {
 
     // 航班舱位可累积里程积分
     repeated MileageCreditType MileageCredit = 33;
+
+    // 餐食信息
+    MealType Meal = 34;
+
+    // 两舱特征信息
+    CFCabinFeatureType CFCabinFeature = 35;
 }
 
 message BillingType {
@@ -290,6 +301,8 @@ message FlightSupplierType {
     string IATANumber = 3;
     // 票台披露信息，比如代理资质：“中国国航授权代理”
     string AgentDisclosure = 4;
+    // 供应商资质信息
+    string AgencyLicenseUrl = 5;
 }
 
 message CarrierPriceShowType {
@@ -347,7 +360,7 @@ message RedirectItineraryType {
 message RedirectSegmentType {
     // 程号，从1开始
     int32 JourneyNo = 1;
-    // 每程内的段号，从1开始
+    // 每一程内的段号，从1开始
     int32 SegmentNo = 2;
     // 交通工具类型，1-flight; 2-train; 4-bus
     int32 TransportType = 3;
@@ -526,6 +539,8 @@ message MultiSegmentRestrictionType {
     0:未知由下单确定,1:分开订位,2:合并订位， 当前1和2仅供中转联程使用
      */
     int32 MultiSegmentBookingType = 1;
+    // 1：是多程/段的政策 0：非多程/段的政策
+    int32 MultiSegmentPolicyType = 2;
 }
 
 message GreenFlyingType {
@@ -608,4 +623,23 @@ message MemberRegisterType {
     string RuleContent = 9;
     // 年龄范围
     repeated com.ctrip.flight.agg.shopping.contract.transportation.IntRangeType AgeLimitRange = 10;
+}
+
+message MealType {
+    // Eterm下载的餐食标识,如B:早餐,L:午餐,D:晚餐/正餐,F:供采购的食物,C:免费酒精饮料 等等
+    string MealTypeEterm = 1;
+    // 引擎封装的餐食明细类型,如1:早餐,8:午餐,3:晚餐/正餐,4:供采购的食物,2:免费酒精饮料 等等
+    int32 DisplayType = 2;
+}
+
+message CFCabinFeatureType {
+    // CF两舱权益
+    CFCabinBenefitType CFCabinBenefit = 1;
+}
+
+message CFCabinBenefitType {
+    // 规则ID，透传平台表ID
+    int64 RuleID = 1;
+    // 权益
+    repeated string Benefit = 2;
 }

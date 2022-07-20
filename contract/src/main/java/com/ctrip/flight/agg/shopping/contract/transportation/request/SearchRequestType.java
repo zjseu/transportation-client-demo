@@ -116,18 +116,30 @@ private static final long serialVersionUID = 0L;
   public static final int REQUESTHEADER_FIELD_NUMBER = 1;
   private com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType requestHeader_;
   /**
+   * <pre>
+   * 请求头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
    */
   public boolean hasRequestHeader() {
     return requestHeader_ != null;
   }
   /**
+   * <pre>
+   * 请求头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType getRequestHeader() {
     return requestHeader_ == null ? com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType.getDefaultInstance() : requestHeader_;
   }
   /**
+   * <pre>
+   * 请求头
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.message.RequestHeaderTypeOrBuilder getRequestHeaderOrBuilder() {
@@ -137,18 +149,30 @@ private static final long serialVersionUID = 0L;
   public static final int SEARCHCRITERIA_FIELD_NUMBER = 2;
   private com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType searchCriteria_;
   /**
+   * <pre>
+   * 请求参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
    */
   public boolean hasSearchCriteria() {
     return searchCriteria_ != null;
   }
   /**
+   * <pre>
+   * 请求参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType getSearchCriteria() {
     return searchCriteria_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType.getDefaultInstance() : searchCriteria_;
   }
   /**
+   * <pre>
+   * 请求参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaTypeOrBuilder getSearchCriteriaOrBuilder() {
@@ -158,18 +182,30 @@ private static final long serialVersionUID = 0L;
   public static final int ROUTESEARCH_FIELD_NUMBER = 3;
   private com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType routeSearch_;
   /**
+   * <pre>
+   * 反查参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
    */
   public boolean hasRouteSearch() {
     return routeSearch_ != null;
   }
   /**
+   * <pre>
+   * 反查参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType getRouteSearch() {
     return routeSearch_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType.getDefaultInstance() : routeSearch_;
   }
   /**
+   * <pre>
+   * 反查参数
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchTypeOrBuilder getRouteSearchOrBuilder() {
@@ -556,12 +592,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType, com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType.Builder, com.ctrip.flight.agg.shopping.contract.message.RequestHeaderTypeOrBuilder> requestHeaderBuilder_;
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public boolean hasRequestHeader() {
       return requestHeaderBuilder_ != null || requestHeader_ != null;
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType getRequestHeader() {
@@ -572,6 +616,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public Builder setRequestHeader(com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType value) {
@@ -588,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public Builder setRequestHeader(
@@ -602,6 +654,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public Builder mergeRequestHeader(com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType value) {
@@ -620,6 +676,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public Builder clearRequestHeader() {
@@ -634,6 +694,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType.Builder getRequestHeaderBuilder() {
@@ -642,6 +706,10 @@ private static final long serialVersionUID = 0L;
       return getRequestHeaderFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.message.RequestHeaderTypeOrBuilder getRequestHeaderOrBuilder() {
@@ -653,6 +721,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 请求头
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType RequestHeader = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -673,12 +745,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType, com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaTypeOrBuilder> searchCriteriaBuilder_;
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public boolean hasSearchCriteria() {
       return searchCriteriaBuilder_ != null || searchCriteria_ != null;
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType getSearchCriteria() {
@@ -689,6 +769,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public Builder setSearchCriteria(com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType value) {
@@ -705,6 +789,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public Builder setSearchCriteria(
@@ -719,6 +807,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public Builder mergeSearchCriteria(com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType value) {
@@ -737,6 +829,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public Builder clearSearchCriteria() {
@@ -751,6 +847,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType.Builder getSearchCriteriaBuilder() {
@@ -759,6 +859,10 @@ private static final long serialVersionUID = 0L;
       return getSearchCriteriaFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaTypeOrBuilder getSearchCriteriaOrBuilder() {
@@ -770,6 +874,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 请求参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.SearchCriteriaType SearchCriteria = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -790,12 +898,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType, com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchTypeOrBuilder> routeSearchBuilder_;
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public boolean hasRouteSearch() {
       return routeSearchBuilder_ != null || routeSearch_ != null;
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType getRouteSearch() {
@@ -806,6 +922,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public Builder setRouteSearch(com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType value) {
@@ -822,6 +942,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public Builder setRouteSearch(
@@ -836,6 +960,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public Builder mergeRouteSearch(com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType value) {
@@ -854,6 +982,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public Builder clearRouteSearch() {
@@ -868,6 +1000,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType.Builder getRouteSearchBuilder() {
@@ -876,6 +1012,10 @@ private static final long serialVersionUID = 0L;
       return getRouteSearchFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchTypeOrBuilder getRouteSearchOrBuilder() {
@@ -887,6 +1027,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 反查参数
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType RouteSearch = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

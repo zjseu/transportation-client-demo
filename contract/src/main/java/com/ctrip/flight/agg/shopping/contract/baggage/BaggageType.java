@@ -123,6 +123,10 @@ private static final long serialVersionUID = 0L;
   public static final int REFNUM_FIELD_NUMBER = 1;
   private int refNum_;
   /**
+   * <pre>
+   * 索引号
+   * </pre>
+   *
    * <code>int32 RefNum = 1;</code>
    */
   public int getRefNum() {
@@ -132,12 +136,20 @@ private static final long serialVersionUID = 0L;
   public static final int BAGGAGEDETAIL_FIELD_NUMBER = 2;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> baggageDetail_;
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> getBaggageDetailList() {
     return baggageDetail_;
   }
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
@@ -145,18 +157,30 @@ private static final long serialVersionUID = 0L;
     return baggageDetail_;
   }
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public int getBaggageDetailCount() {
     return baggageDetail_.size();
   }
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index) {
     return baggageDetail_.get(index);
   }
   /**
+   * <pre>
+   * 行李额
+   * </pre>
+   *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
@@ -167,18 +191,30 @@ private static final long serialVersionUID = 0L;
   public static final int EXTENSIONFIELDS_FIELD_NUMBER = 3;
   private com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType extensionFields_;
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public boolean hasExtensionFields() {
     return extensionFields_ != null;
   }
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields() {
     return extensionFields_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.getDefaultInstance() : extensionFields_;
   }
   /**
+   * <pre>
+   * 扩展节点
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder() {
@@ -188,18 +224,30 @@ private static final long serialVersionUID = 0L;
   public static final int BAGGAGESIZE_FIELD_NUMBER = 4;
   private com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType baggageSize_;
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public boolean hasBaggageSize() {
     return baggageSize_ != null;
   }
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize() {
     return baggageSize_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.getDefaultInstance() : baggageSize_;
   }
   /**
+   * <pre>
+   * 行李尺寸
+   * </pre>
+   *
    * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder() {
@@ -630,12 +678,20 @@ private static final long serialVersionUID = 0L;
 
     private int refNum_ ;
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public int getRefNum() {
       return refNum_;
     }
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public Builder setRefNum(int value) {
@@ -645,6 +701,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public Builder clearRefNum() {
@@ -667,6 +727,10 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> baggageDetailBuilder_;
 
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType> getBaggageDetailList() {
@@ -677,6 +741,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public int getBaggageDetailCount() {
@@ -687,6 +755,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType getBaggageDetail(int index) {
@@ -697,6 +769,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder setBaggageDetail(
@@ -714,6 +790,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder setBaggageDetail(
@@ -728,6 +808,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType value) {
@@ -744,6 +828,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
@@ -761,6 +849,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
@@ -775,6 +867,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addBaggageDetail(
@@ -789,6 +885,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder addAllBaggageDetail(
@@ -804,6 +904,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder clearBaggageDetail() {
@@ -817,6 +921,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public Builder removeBaggageDetail(int index) {
@@ -830,6 +938,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder getBaggageDetailBuilder(
@@ -837,6 +949,10 @@ private static final long serialVersionUID = 0L;
       return getBaggageDetailFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder getBaggageDetailOrBuilder(
@@ -847,6 +963,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailTypeOrBuilder> 
@@ -858,6 +978,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder addBaggageDetailBuilder() {
@@ -865,6 +989,10 @@ private static final long serialVersionUID = 0L;
           com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder addBaggageDetailBuilder(
@@ -873,6 +1001,10 @@ private static final long serialVersionUID = 0L;
           index, com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 行李额
+     * </pre>
+     *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType BaggageDetail = 2;</code>
      */
     public java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageDetailType.Builder> 
@@ -898,12 +1030,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder> extensionFieldsBuilder_;
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public boolean hasExtensionFields() {
       return extensionFieldsBuilder_ != null || extensionFields_ != null;
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType getExtensionFields() {
@@ -914,6 +1054,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder setExtensionFields(com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType value) {
@@ -930,6 +1074,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder setExtensionFields(
@@ -944,6 +1092,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder mergeExtensionFields(com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType value) {
@@ -962,6 +1114,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public Builder clearExtensionFields() {
@@ -976,6 +1132,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.Builder getExtensionFieldsBuilder() {
@@ -984,6 +1144,10 @@ private static final long serialVersionUID = 0L;
       return getExtensionFieldsFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsTypeOrBuilder getExtensionFieldsOrBuilder() {
@@ -995,6 +1159,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 扩展节点
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType ExtensionFields = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1015,12 +1183,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder, com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder> baggageSizeBuilder_;
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public boolean hasBaggageSize() {
       return baggageSizeBuilder_ != null || baggageSize_ != null;
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType getBaggageSize() {
@@ -1031,6 +1207,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder setBaggageSize(com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType value) {
@@ -1047,6 +1227,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder setBaggageSize(
@@ -1061,6 +1245,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder mergeBaggageSize(com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType value) {
@@ -1079,6 +1267,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public Builder clearBaggageSize() {
@@ -1093,6 +1285,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType.Builder getBaggageSizeBuilder() {
@@ -1101,6 +1297,10 @@ private static final long serialVersionUID = 0L;
       return getBaggageSizeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeTypeOrBuilder getBaggageSizeOrBuilder() {
@@ -1112,6 +1312,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 行李尺寸
+     * </pre>
+     *
      * <code>.com.ctrip.flight.agg.shopping.contract.baggage.BaggageSizeType BaggageSize = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

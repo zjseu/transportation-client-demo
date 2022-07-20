@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
   private int pUSequence_;
   /**
    * <pre>
-   * 运价的PUSequence
+   * 航段对应的PU序号
    * </pre>
    *
    * <code>int32 PUSequence = 1;</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   private int fCSequence_;
   /**
    * <pre>
-   * 运价的FCSequence
+   * 航段对应的FC序号
    * </pre>
    *
    * <code>int32 FCSequence = 2;</code>
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
     private int pUSequence_ ;
     /**
      * <pre>
-     * 运价的PUSequence
+     * 航段对应的PU序号
      * </pre>
      *
      * <code>int32 PUSequence = 1;</code>
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 运价的PUSequence
+     * 航段对应的PU序号
      * </pre>
      *
      * <code>int32 PUSequence = 1;</code>
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 运价的PUSequence
+     * 航段对应的PU序号
      * </pre>
      *
      * <code>int32 PUSequence = 1;</code>
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
     private int fCSequence_ ;
     /**
      * <pre>
-     * 运价的FCSequence
+     * 航段对应的FC序号
      * </pre>
      *
      * <code>int32 FCSequence = 2;</code>
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 运价的FCSequence
+     * 航段对应的FC序号
      * </pre>
      *
      * <code>int32 FCSequence = 2;</code>
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 运价的FCSequence
+     * 航段对应的FC序号
      * </pre>
      *
      * <code>int32 FCSequence = 2;</code>

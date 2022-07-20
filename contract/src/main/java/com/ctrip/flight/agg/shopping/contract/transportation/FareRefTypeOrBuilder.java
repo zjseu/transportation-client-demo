@@ -8,11 +8,19 @@ public interface FareRefTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Fare对应的PU序号
+   * </pre>
+   *
    * <code>int32 PUSequence = 1;</code>
    */
   int getPUSequence();
 
   /**
+   * <pre>
+   * Fare对应的FC序号
+   * </pre>
+   *
    * <code>int32 FCSequence = 2;</code>
    */
   int getFCSequence();

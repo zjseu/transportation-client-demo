@@ -273,7 +273,7 @@ public interface MarketingProductTypeOrBuilder extends
 
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -282,7 +282,7 @@ public interface MarketingProductTypeOrBuilder extends
       getMemberPrivilegeList();
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -290,7 +290,7 @@ public interface MarketingProductTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType getMemberPrivilege(int index);
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -298,7 +298,7 @@ public interface MarketingProductTypeOrBuilder extends
   int getMemberPrivilegeCount();
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -307,7 +307,7 @@ public interface MarketingProductTypeOrBuilder extends
       getMemberPrivilegeOrBuilderList();
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>

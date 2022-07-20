@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     virtualFlightSupplier_ = "";
     stop_ = java.util.Collections.emptyList();
     virtualFlightType_ = 0;
+    flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -132,6 +133,15 @@ private static final long serialVersionUID = 0L;
             virtualFlightType_ = input.readInt32();
             break;
           }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              flightAttribute_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            flightAttribute_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -149,6 +159,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         stop_ = java.util.Collections.unmodifiableList(stop_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        flightAttribute_ = flightAttribute_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -545,6 +558,51 @@ private static final long serialVersionUID = 0L;
     return virtualFlightType_;
   }
 
+  public static final int FLIGHTATTRIBUTE_FIELD_NUMBER = 11;
+  private com.google.protobuf.LazyStringList flightAttribute_;
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFlightAttributeList() {
+    return flightAttribute_;
+  }
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  public int getFlightAttributeCount() {
+    return flightAttribute_.size();
+  }
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  public java.lang.String getFlightAttribute(int index) {
+    return flightAttribute_.get(index);
+  }
+  /**
+   * <pre>
+   * 航班属性
+   * </pre>
+   *
+   * <code>repeated string FlightAttribute = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFlightAttributeBytes(int index) {
+    return flightAttribute_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -589,6 +647,9 @@ private static final long serialVersionUID = 0L;
     if (virtualFlightType_ != 0) {
       output.writeInt32(10, virtualFlightType_);
     }
+    for (int i = 0; i < flightAttribute_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, flightAttribute_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -632,6 +693,14 @@ private static final long serialVersionUID = 0L;
     if (virtualFlightType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, virtualFlightType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < flightAttribute_.size(); i++) {
+        dataSize += computeStringSizeNoTag(flightAttribute_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFlightAttributeList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -678,6 +747,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getVirtualFlightType()
         == other.getVirtualFlightType());
+    result = result && getFlightAttributeList()
+        .equals(other.getFlightAttributeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -717,6 +788,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + VIRTUALFLIGHTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getVirtualFlightType();
+    if (getFlightAttributeCount() > 0) {
+      hash = (37 * hash) + FLIGHTATTRIBUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getFlightAttributeList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -887,6 +962,8 @@ private static final long serialVersionUID = 0L;
       }
       virtualFlightType_ = 0;
 
+      flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -945,6 +1022,11 @@ private static final long serialVersionUID = 0L;
         result.punctuality_ = punctualityBuilder_.build();
       }
       result.virtualFlightType_ = virtualFlightType_;
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        flightAttribute_ = flightAttribute_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.flightAttribute_ = flightAttribute_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1051,6 +1133,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getVirtualFlightType() != 0) {
         setVirtualFlightType(other.getVirtualFlightType());
+      }
+      if (!other.flightAttribute_.isEmpty()) {
+        if (flightAttribute_.isEmpty()) {
+          flightAttribute_ = other.flightAttribute_;
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          ensureFlightAttributeIsMutable();
+          flightAttribute_.addAll(other.flightAttribute_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2332,6 +2424,136 @@ private static final long serialVersionUID = 0L;
     public Builder clearVirtualFlightType() {
       
       virtualFlightType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureFlightAttributeIsMutable() {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        flightAttribute_ = new com.google.protobuf.LazyStringArrayList(flightAttribute_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFlightAttributeList() {
+      return flightAttribute_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public int getFlightAttributeCount() {
+      return flightAttribute_.size();
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public java.lang.String getFlightAttribute(int index) {
+      return flightAttribute_.get(index);
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFlightAttributeBytes(int index) {
+      return flightAttribute_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public Builder setFlightAttribute(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFlightAttributeIsMutable();
+      flightAttribute_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public Builder addFlightAttribute(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFlightAttributeIsMutable();
+      flightAttribute_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public Builder addAllFlightAttribute(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFlightAttributeIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, flightAttribute_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public Builder clearFlightAttribute() {
+      flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航班属性
+     * </pre>
+     *
+     * <code>repeated string FlightAttribute = 11;</code>
+     */
+    public Builder addFlightAttributeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureFlightAttributeIsMutable();
+      flightAttribute_.add(value);
       onChanged();
       return this;
     }

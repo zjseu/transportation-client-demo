@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.TransportType> transport_;
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -245,7 +245,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -266,7 +266,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 交通信息Ref
+   * 交通工具相关信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType> flightProduct_;
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -311,7 +311,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 机票信息
+   * 机票产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType> trainProduct_;
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 火车信息
+   * 火车产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType> busProduct_;
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -410,7 +410,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -431,7 +431,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Bus信息
+   * 巴士产品信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType> fareInfo_;
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Fare信息
+   * 机票运价信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -510,7 +510,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.baggage.BaggageType> baggage_;
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 行李额信息Ref
+   * 行李额信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType marketingProduct_;
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 辅营类产品等信息Ref
+   * 辅营类产品等信息
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CacheType> cache_;
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -629,7 +629,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 缓存响应Ref
+   * 缓存信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType> creditCardPaymentLimit_;
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 信用卡支付信息Ref
+   * 信用卡支付信息
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -1761,7 +1761,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1775,7 +1775,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1789,7 +1789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1803,7 +1803,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1824,7 +1824,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1842,7 +1842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1862,7 +1862,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1883,7 +1883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1901,7 +1901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1919,7 +1919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1938,7 +1938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1955,7 +1955,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1972,7 +1972,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1983,7 +1983,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -1997,7 +1997,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -2012,7 +2012,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -2023,7 +2023,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -2035,7 +2035,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 交通信息Ref
+     * 交通工具相关信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TransportType Transport = 1;</code>
@@ -2073,7 +2073,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2087,7 +2087,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2101,7 +2101,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2115,7 +2115,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2136,7 +2136,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2154,7 +2154,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2174,7 +2174,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2195,7 +2195,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2213,7 +2213,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2231,7 +2231,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2250,7 +2250,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2267,7 +2267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2284,7 +2284,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2295,7 +2295,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2309,7 +2309,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2324,7 +2324,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2335,7 +2335,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2347,7 +2347,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 机票信息
+     * 机票产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.FlightProductType FlightProduct = 2;</code>
@@ -2385,7 +2385,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2399,7 +2399,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2413,7 +2413,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2427,7 +2427,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2448,7 +2448,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2466,7 +2466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2486,7 +2486,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2507,7 +2507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2525,7 +2525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2543,7 +2543,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2562,7 +2562,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2579,7 +2579,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2596,7 +2596,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2607,7 +2607,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2621,7 +2621,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2636,7 +2636,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2647,7 +2647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2659,7 +2659,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 火车信息
+     * 火车产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.TrainProductType TrainProduct = 3;</code>
@@ -2697,7 +2697,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2711,7 +2711,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2725,7 +2725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2739,7 +2739,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2760,7 +2760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2778,7 +2778,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2798,7 +2798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2819,7 +2819,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2837,7 +2837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2855,7 +2855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2874,7 +2874,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2891,7 +2891,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2908,7 +2908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2919,7 +2919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2933,7 +2933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2948,7 +2948,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2959,7 +2959,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -2971,7 +2971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Bus信息
+     * 巴士产品信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.BusProductType BusProduct = 4;</code>
@@ -3009,7 +3009,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3023,7 +3023,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3037,7 +3037,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3051,7 +3051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3072,7 +3072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3090,7 +3090,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3110,7 +3110,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3131,7 +3131,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3149,7 +3149,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3167,7 +3167,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3186,7 +3186,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3203,7 +3203,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3220,7 +3220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3231,7 +3231,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3245,7 +3245,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3260,7 +3260,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3271,7 +3271,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3283,7 +3283,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fare信息
+     * 机票运价信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareInfoType FareInfo = 5;</code>
@@ -3321,7 +3321,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3335,7 +3335,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3349,7 +3349,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3363,7 +3363,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3384,7 +3384,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3402,7 +3402,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3422,7 +3422,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3443,7 +3443,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3461,7 +3461,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3479,7 +3479,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3498,7 +3498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3515,7 +3515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3532,7 +3532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3543,7 +3543,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3557,7 +3557,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3572,7 +3572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3583,7 +3583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3595,7 +3595,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 行李额信息Ref
+     * 行李额信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.baggage.BaggageType Baggage = 6;</code>
@@ -3624,7 +3624,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType, com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductTypeOrBuilder> marketingProductBuilder_;
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3634,7 +3634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3648,7 +3648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3668,7 +3668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3686,7 +3686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3708,7 +3708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3726,7 +3726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3738,7 +3738,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3753,7 +3753,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 辅营类产品等信息Ref
+     * 辅营类产品等信息
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.MarketingProductType MarketingProduct = 7;</code>
@@ -3786,7 +3786,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3800,7 +3800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3814,7 +3814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3828,7 +3828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3849,7 +3849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3867,7 +3867,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3887,7 +3887,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3908,7 +3908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3926,7 +3926,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3944,7 +3944,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3963,7 +3963,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3980,7 +3980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -3997,7 +3997,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4008,7 +4008,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4022,7 +4022,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4037,7 +4037,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4048,7 +4048,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4060,7 +4060,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缓存响应Ref
+     * 缓存信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CacheType Cache = 8;</code>
@@ -4098,7 +4098,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4112,7 +4112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4126,7 +4126,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4140,7 +4140,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4161,7 +4161,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4179,7 +4179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4199,7 +4199,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4220,7 +4220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4238,7 +4238,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4256,7 +4256,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4275,7 +4275,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4292,7 +4292,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4309,7 +4309,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4320,7 +4320,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4334,7 +4334,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4349,7 +4349,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4360,7 +4360,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>
@@ -4372,7 +4372,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 信用卡支付信息Ref
+     * 信用卡支付信息
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditCardPaymentLimitType CreditCardPaymentLimit = 9;</code>

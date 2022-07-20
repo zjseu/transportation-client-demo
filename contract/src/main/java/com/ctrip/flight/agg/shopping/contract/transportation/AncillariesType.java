@@ -89,6 +89,10 @@ private static final long serialVersionUID = 0L;
   public static final int REFNUM_FIELD_NUMBER = 1;
   private int refNum_;
   /**
+   * <pre>
+   * 索引号
+   * </pre>
+   *
    * <code>int32 RefNum = 1;</code>
    */
   public int getRefNum() {
@@ -430,12 +434,20 @@ private static final long serialVersionUID = 0L;
 
     private int refNum_ ;
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public int getRefNum() {
       return refNum_;
     }
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public Builder setRefNum(int value) {
@@ -445,6 +457,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 索引号
+     * </pre>
+     *
      * <code>int32 RefNum = 1;</code>
      */
     public Builder clearRefNum() {

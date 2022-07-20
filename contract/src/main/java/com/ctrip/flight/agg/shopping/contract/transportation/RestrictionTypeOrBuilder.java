@@ -330,4 +330,22 @@ public interface RestrictionTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCompositionPriceRemarkBytes();
+
+  /**
+   * <pre>
+   * 性别限制
+   * </pre>
+   *
+   * <code>string ApplySex = 15;</code>
+   */
+  java.lang.String getApplySex();
+  /**
+   * <pre>
+   * 性别限制
+   * </pre>
+   *
+   * <code>string ApplySex = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getApplySexBytes();
 }

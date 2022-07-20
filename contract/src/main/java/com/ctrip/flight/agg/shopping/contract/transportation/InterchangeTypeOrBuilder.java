@@ -18,7 +18,7 @@ public interface InterchangeTypeOrBuilder extends
 
   /**
    * <pre>
-   * 每程内的段号，从1开始
+   * 每一程内的段号，从1开始
    * </pre>
    *
    * <code>int32 SegmentNo = 2;</code>

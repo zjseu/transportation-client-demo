@@ -113,4 +113,22 @@ public interface FlightPunctualityTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getDelayReasonOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+   * </pre>
+   *
+   * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+   */
+  java.lang.String getVeryZhunDeptimeReadyWithDate();
+  /**
+   * <pre>
+   * 飞常准预计起飞时间，格式为yyyy-MM-dd HH:mm, 如 2020-12-30 15:30
+   * </pre>
+   *
+   * <code>string VeryZhunDeptimeReadyWithDate = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getVeryZhunDeptimeReadyWithDateBytes();
 }

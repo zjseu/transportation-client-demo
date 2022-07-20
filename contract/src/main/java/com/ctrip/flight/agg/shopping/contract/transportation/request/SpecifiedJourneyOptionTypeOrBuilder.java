@@ -8,11 +8,19 @@ public interface SpecifiedJourneyOptionTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 行程号
+   * </pre>
+   *
    * <code>int32 JourneyNo = 1;</code>
    */
   int getJourneyNo();
 
   /**
+   * <pre>
+   * 每程内的段号
+   * </pre>
+   *
    * <code>int32 SegmentNo = 2;</code>
    */
   int getSegmentNo();

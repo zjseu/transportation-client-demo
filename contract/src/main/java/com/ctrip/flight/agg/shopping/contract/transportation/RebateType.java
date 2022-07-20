@@ -226,6 +226,10 @@ private static final long serialVersionUID = 0L;
   public static final int REBATEPOLICYID_FIELD_NUMBER = 4;
   private java.util.List<java.lang.Long> rebatePolicyID_;
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   public java.util.List<java.lang.Long>
@@ -233,12 +237,20 @@ private static final long serialVersionUID = 0L;
     return rebatePolicyID_;
   }
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   public int getRebatePolicyIDCount() {
     return rebatePolicyID_.size();
   }
   /**
+   * <pre>
+   * 后返政策ID
+   * </pre>
+   *
    * <code>repeated int64 RebatePolicyID = 4;</code>
    */
   public long getRebatePolicyID(int index) {
@@ -249,6 +261,9 @@ private static final long serialVersionUID = 0L;
   public static final int ACTUALAMOUNT_FIELD_NUMBER = 5;
   private double actualAmount_;
   /**
+   * <pre>
+   * </pre>
+   *
    * <code>double ActualAmount = 5;</code>
    */
   public double getActualAmount() {
@@ -888,6 +903,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public java.util.List<java.lang.Long>
@@ -895,18 +914,30 @@ private static final long serialVersionUID = 0L;
       return java.util.Collections.unmodifiableList(rebatePolicyID_);
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public int getRebatePolicyIDCount() {
       return rebatePolicyID_.size();
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public long getRebatePolicyID(int index) {
       return rebatePolicyID_.get(index);
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public Builder setRebatePolicyID(
@@ -917,6 +948,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public Builder addRebatePolicyID(long value) {
@@ -926,6 +961,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public Builder addAllRebatePolicyID(
@@ -937,6 +976,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 后返政策ID
+     * </pre>
+     *
      * <code>repeated int64 RebatePolicyID = 4;</code>
      */
     public Builder clearRebatePolicyID() {
@@ -948,12 +991,18 @@ private static final long serialVersionUID = 0L;
 
     private double actualAmount_ ;
     /**
+     * <pre>
+     * </pre>
+     *
      * <code>double ActualAmount = 5;</code>
      */
     public double getActualAmount() {
       return actualAmount_;
     }
     /**
+     * <pre>
+     * </pre>
+     *
      * <code>double ActualAmount = 5;</code>
      */
     public Builder setActualAmount(double value) {
@@ -963,6 +1012,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * </pre>
+     *
      * <code>double ActualAmount = 5;</code>
      */
     public Builder clearActualAmount() {

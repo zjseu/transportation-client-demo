@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType> memberPrivilege_;
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -560,7 +560,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 定投
+   * 定向投放
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3363,7 +3363,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3377,7 +3377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3391,7 +3391,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3405,7 +3405,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3426,7 +3426,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3444,7 +3444,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3464,7 +3464,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3485,7 +3485,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3503,7 +3503,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3521,7 +3521,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3540,7 +3540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3557,7 +3557,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3574,7 +3574,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3585,7 +3585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3599,7 +3599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3614,7 +3614,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3625,7 +3625,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>
@@ -3637,7 +3637,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 定投
+     * 定向投放
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MemberPrivilegeType MemberPrivilege = 7;</code>

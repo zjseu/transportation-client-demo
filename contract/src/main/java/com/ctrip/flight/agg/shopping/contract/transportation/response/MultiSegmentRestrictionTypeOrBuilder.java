@@ -17,4 +17,13 @@ public interface MultiSegmentRestrictionTypeOrBuilder extends
    * <code>int32 MultiSegmentBookingType = 1;</code>
    */
   int getMultiSegmentBookingType();
+
+  /**
+   * <pre>
+   * 1：是多程/段的政策 0：非多程/段的政策
+   * </pre>
+   *
+   * <code>int32 MultiSegmentPolicyType = 2;</code>
+   */
+  int getMultiSegmentPolicyType();
 }

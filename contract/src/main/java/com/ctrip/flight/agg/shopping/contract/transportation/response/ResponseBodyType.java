@@ -227,7 +227,7 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType dataLists_;
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Data List definition for this message
+   * 数据集合
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType metaData_;
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -380,7 +380,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Message wide metadata information
+   * 元数据类型
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -1469,7 +1469,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType, com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsTypeOrBuilder> dataListsBuilder_;
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1479,7 +1479,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1493,7 +1493,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1513,7 +1513,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1531,7 +1531,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1553,7 +1553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1571,7 +1571,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -1598,7 +1598,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data List definition for this message
+     * 数据集合
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.DataListsType DataLists = 2;</code>
@@ -2246,7 +2246,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType, com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataTypeOrBuilder> metaDataBuilder_;
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2256,7 +2256,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2270,7 +2270,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2290,7 +2290,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2308,7 +2308,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2330,7 +2330,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2348,7 +2348,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2360,7 +2360,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>
@@ -2375,7 +2375,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Message wide metadata information
+     * 元数据类型
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MetaDataType MetaData = 5;</code>

@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private BaggageExtensionFieldsType() {
     containFreeBaggage_ = false;
+    baggageGLB_ = "";
+    baggageCN_ = "";
   }
 
   @java.lang.Override
@@ -46,6 +48,18 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             containFreeBaggage_ = input.readBool();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            baggageGLB_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            baggageCN_ = s;
             break;
           }
           default: {
@@ -93,6 +107,90 @@ private static final long serialVersionUID = 0L;
     return containFreeBaggage_;
   }
 
+  public static final int BAGGAGEGLB_FIELD_NUMBER = 2;
+  private volatile java.lang.Object baggageGLB_;
+  /**
+   * <pre>
+   * baggage 多语言描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageGLB = 2;</code>
+   */
+  public java.lang.String getBaggageGLB() {
+    java.lang.Object ref = baggageGLB_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baggageGLB_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * baggage 多语言描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageGLB = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBaggageGLBBytes() {
+    java.lang.Object ref = baggageGLB_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      baggageGLB_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BAGGAGECN_FIELD_NUMBER = 3;
+  private volatile java.lang.Object baggageCN_;
+  /**
+   * <pre>
+   * baggage 中文描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageCN = 3;</code>
+   */
+  public java.lang.String getBaggageCN() {
+    java.lang.Object ref = baggageCN_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baggageCN_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * baggage 中文描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageCN = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBaggageCNBytes() {
+    java.lang.Object ref = baggageCN_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      baggageCN_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -110,6 +208,12 @@ private static final long serialVersionUID = 0L;
     if (containFreeBaggage_ != false) {
       output.writeBool(1, containFreeBaggage_);
     }
+    if (!getBaggageGLBBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baggageGLB_);
+    }
+    if (!getBaggageCNBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, baggageCN_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -122,6 +226,12 @@ private static final long serialVersionUID = 0L;
     if (containFreeBaggage_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, containFreeBaggage_);
+    }
+    if (!getBaggageGLBBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baggageGLB_);
+    }
+    if (!getBaggageCNBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, baggageCN_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,6 +251,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getContainFreeBaggage()
         == other.getContainFreeBaggage());
+    result = result && getBaggageGLB()
+        .equals(other.getBaggageGLB());
+    result = result && getBaggageCN()
+        .equals(other.getBaggageCN());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -155,6 +269,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CONTAINFREEBAGGAGE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getContainFreeBaggage());
+    hash = (37 * hash) + BAGGAGEGLB_FIELD_NUMBER;
+    hash = (53 * hash) + getBaggageGLB().hashCode();
+    hash = (37 * hash) + BAGGAGECN_FIELD_NUMBER;
+    hash = (53 * hash) + getBaggageCN().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -290,6 +408,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       containFreeBaggage_ = false;
 
+      baggageGLB_ = "";
+
+      baggageCN_ = "";
+
       return this;
     }
 
@@ -317,6 +439,8 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType result = new com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType(this);
       result.containFreeBaggage_ = containFreeBaggage_;
+      result.baggageGLB_ = baggageGLB_;
+      result.baggageCN_ = baggageCN_;
       onBuilt();
       return result;
     }
@@ -367,6 +491,14 @@ private static final long serialVersionUID = 0L;
       if (other == com.ctrip.flight.agg.shopping.contract.baggage.BaggageExtensionFieldsType.getDefaultInstance()) return this;
       if (other.getContainFreeBaggage() != false) {
         setContainFreeBaggage(other.getContainFreeBaggage());
+      }
+      if (!other.getBaggageGLB().isEmpty()) {
+        baggageGLB_ = other.baggageGLB_;
+        onChanged();
+      }
+      if (!other.getBaggageCN().isEmpty()) {
+        baggageCN_ = other.baggageCN_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -431,6 +563,184 @@ private static final long serialVersionUID = 0L;
     public Builder clearContainFreeBaggage() {
       
       containFreeBaggage_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object baggageGLB_ = "";
+    /**
+     * <pre>
+     * baggage 多语言描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageGLB = 2;</code>
+     */
+    public java.lang.String getBaggageGLB() {
+      java.lang.Object ref = baggageGLB_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baggageGLB_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * baggage 多语言描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageGLB = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBaggageGLBBytes() {
+      java.lang.Object ref = baggageGLB_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baggageGLB_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * baggage 多语言描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageGLB = 2;</code>
+     */
+    public Builder setBaggageGLB(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      baggageGLB_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * baggage 多语言描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageGLB = 2;</code>
+     */
+    public Builder clearBaggageGLB() {
+      
+      baggageGLB_ = getDefaultInstance().getBaggageGLB();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * baggage 多语言描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageGLB = 2;</code>
+     */
+    public Builder setBaggageGLBBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      baggageGLB_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object baggageCN_ = "";
+    /**
+     * <pre>
+     * baggage 中文描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageCN = 3;</code>
+     */
+    public java.lang.String getBaggageCN() {
+      java.lang.Object ref = baggageCN_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baggageCN_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * baggage 中文描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageCN = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBaggageCNBytes() {
+      java.lang.Object ref = baggageCN_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baggageCN_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * baggage 中文描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageCN = 3;</code>
+     */
+    public Builder setBaggageCN(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      baggageCN_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * baggage 中文描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageCN = 3;</code>
+     */
+    public Builder clearBaggageCN() {
+      
+      baggageCN_ = getDefaultInstance().getBaggageCN();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * baggage 中文描述 仅detailsearch时下发
+     * </pre>
+     *
+     * <code>string BaggageCN = 3;</code>
+     */
+    public Builder setBaggageCNBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      baggageCN_ = value;
       onChanged();
       return this;
     }

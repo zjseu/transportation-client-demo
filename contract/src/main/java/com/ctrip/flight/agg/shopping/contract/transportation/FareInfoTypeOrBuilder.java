@@ -198,4 +198,22 @@ public interface FareInfoTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFareClassBytes();
+
+  /**
+   * <pre>
+   * 公布私有
+   * </pre>
+   *
+   * <code>bool PrivateTariff = 15;</code>
+   */
+  boolean getPrivateTariff();
+
+  /**
+   * <pre>
+   * G16运价区域
+   * </pre>
+   *
+   * <code>int32 G16FareClassTariffNo = 17;</code>
+   */
+  int getG16FareClassTariffNo();
 }

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     stop_ = java.util.Collections.emptyList();
     virtualFlightType_ = 0;
     flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    stopoverCount_ = 0;
   }
 
   @java.lang.Override
@@ -140,6 +141,11 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000400;
             }
             flightAttribute_.add(s);
+            break;
+          }
+          case 96: {
+
+            stopoverCount_ = input.readInt32();
             break;
           }
           default: {
@@ -603,6 +609,19 @@ private static final long serialVersionUID = 0L;
     return flightAttribute_.getByteString(index);
   }
 
+  public static final int STOPOVERCOUNT_FIELD_NUMBER = 12;
+  private int stopoverCount_;
+  /**
+   * <pre>
+   * 经停数量
+   * </pre>
+   *
+   * <code>int32 StopoverCount = 12;</code>
+   */
+  public int getStopoverCount() {
+    return stopoverCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -649,6 +668,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < flightAttribute_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, flightAttribute_.getRaw(i));
+    }
+    if (stopoverCount_ != 0) {
+      output.writeInt32(12, stopoverCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -702,6 +724,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getFlightAttributeList().size();
     }
+    if (stopoverCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, stopoverCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -749,6 +775,8 @@ private static final long serialVersionUID = 0L;
         == other.getVirtualFlightType());
     result = result && getFlightAttributeList()
         .equals(other.getFlightAttributeList());
+    result = result && (getStopoverCount()
+        == other.getStopoverCount());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -792,6 +820,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FLIGHTATTRIBUTE_FIELD_NUMBER;
       hash = (53 * hash) + getFlightAttributeList().hashCode();
     }
+    hash = (37 * hash) + STOPOVERCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getStopoverCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -964,6 +994,8 @@ private static final long serialVersionUID = 0L;
 
       flightAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
+      stopoverCount_ = 0;
+
       return this;
     }
 
@@ -1027,6 +1059,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.flightAttribute_ = flightAttribute_;
+      result.stopoverCount_ = stopoverCount_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1143,6 +1176,9 @@ private static final long serialVersionUID = 0L;
           flightAttribute_.addAll(other.flightAttribute_);
         }
         onChanged();
+      }
+      if (other.getStopoverCount() != 0) {
+        setStopoverCount(other.getStopoverCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2554,6 +2590,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureFlightAttributeIsMutable();
       flightAttribute_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int stopoverCount_ ;
+    /**
+     * <pre>
+     * 经停数量
+     * </pre>
+     *
+     * <code>int32 StopoverCount = 12;</code>
+     */
+    public int getStopoverCount() {
+      return stopoverCount_;
+    }
+    /**
+     * <pre>
+     * 经停数量
+     * </pre>
+     *
+     * <code>int32 StopoverCount = 12;</code>
+     */
+    public Builder setStopoverCount(int value) {
+      
+      stopoverCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 经停数量
+     * </pre>
+     *
+     * <code>int32 StopoverCount = 12;</code>
+     */
+    public Builder clearStopoverCount() {
+      
+      stopoverCount_ = 0;
       onChanged();
       return this;
     }

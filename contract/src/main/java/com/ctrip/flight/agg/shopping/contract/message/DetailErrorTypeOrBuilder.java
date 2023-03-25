@@ -8,15 +8,27 @@ public interface DetailErrorTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 错误Code
+   * </pre>
+   *
    * <code>int32 Code = 1;</code>
    */
   int getCode();
 
   /**
+   * <pre>
+   * 错误描述
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    */
   java.lang.String getMessage();
   /**
+   * <pre>
+   * 错误描述
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    */
   com.google.protobuf.ByteString

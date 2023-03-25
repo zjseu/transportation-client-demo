@@ -40,6 +40,8 @@ private static final long serialVersionUID = 0L;
     bookingSceneSpecifiedRef_ = 0;
     noIdentityCardInd_ = 0;
     mileageCredit_ = java.util.Collections.emptyList();
+    memberRegisters_ = java.util.Collections.emptyList();
+    applySuccessRate_ = 0D;
   }
 
   @java.lang.Override
@@ -406,6 +408,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 290: {
+            if (!((mutable_bitField1_ & 0x00000008) == 0x00000008)) {
+              memberRegisters_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType>();
+              mutable_bitField1_ |= 0x00000008;
+            }
+            memberRegisters_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.parser(), extensionRegistry));
+            break;
+          }
+          case 297: {
+
+            applySuccessRate_ = input.readDouble();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -441,6 +457,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
         mileageCredit_ = java.util.Collections.unmodifiableList(mileageCredit_);
+      }
+      if (((mutable_bitField1_ & 0x00000008) == 0x00000008)) {
+        memberRegisters_ = java.util.Collections.unmodifiableList(memberRegisters_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1355,32 +1374,32 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType memberRegister_;
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  public boolean hasMemberRegister() {
+  @java.lang.Deprecated public boolean hasMemberRegister() {
     return memberRegister_ != null;
   }
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
+  @java.lang.Deprecated public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
     return memberRegister_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance() : memberRegister_;
   }
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
+  @java.lang.Deprecated public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
     return getMemberRegister();
   }
 
@@ -1604,6 +1623,74 @@ private static final long serialVersionUID = 0L;
     return getCFCabinFeature();
   }
 
+  public static final int MEMBERREGISTERS_FIELD_NUMBER = 36;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> memberRegisters_;
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> getMemberRegistersList() {
+    return memberRegisters_;
+  }
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
+      getMemberRegistersOrBuilderList() {
+    return memberRegisters_;
+  }
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  public int getMemberRegistersCount() {
+    return memberRegisters_.size();
+  }
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegisters(int index) {
+    return memberRegisters_.get(index);
+  }
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegistersOrBuilder(
+      int index) {
+    return memberRegisters_.get(index);
+  }
+
+  public static final int APPLYSUCCESSRATE_FIELD_NUMBER = 37;
+  private double applySuccessRate_;
+  /**
+   * <pre>
+   * SuccessRate
+   * </pre>
+   *
+   * <code>double ApplySuccessRate = 37;</code>
+   */
+  public double getApplySuccessRate() {
+    return applySuccessRate_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1727,6 +1814,12 @@ private static final long serialVersionUID = 0L;
     }
     if (cFCabinFeature_ != null) {
       output.writeMessage(35, getCFCabinFeature());
+    }
+    for (int i = 0; i < memberRegisters_.size(); i++) {
+      output.writeMessage(36, memberRegisters_.get(i));
+    }
+    if (applySuccessRate_ != 0D) {
+      output.writeDouble(37, applySuccessRate_);
     }
     unknownFields.writeTo(output);
   }
@@ -1891,6 +1984,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(35, getCFCabinFeature());
     }
+    for (int i = 0; i < memberRegisters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(36, memberRegisters_.get(i));
+    }
+    if (applySuccessRate_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(37, applySuccessRate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2022,6 +2123,12 @@ private static final long serialVersionUID = 0L;
       result = result && getCFCabinFeature()
           .equals(other.getCFCabinFeature());
     }
+    result = result && getMemberRegistersList()
+        .equals(other.getMemberRegistersList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getApplySuccessRate())
+        == java.lang.Double.doubleToLongBits(
+            other.getApplySuccessRate()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2147,6 +2254,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CFCABINFEATURE_FIELD_NUMBER;
       hash = (53 * hash) + getCFCabinFeature().hashCode();
     }
+    if (getMemberRegistersCount() > 0) {
+      hash = (37 * hash) + MEMBERREGISTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMemberRegistersList().hashCode();
+    }
+    hash = (37 * hash) + APPLYSUCCESSRATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getApplySuccessRate()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2283,6 +2397,7 @@ private static final long serialVersionUID = 0L;
         getFareRefFieldBuilder();
         getTagFieldBuilder();
         getMileageCreditFieldBuilder();
+        getMemberRegistersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -2434,6 +2549,14 @@ private static final long serialVersionUID = 0L;
         cFCabinFeature_ = null;
         cFCabinFeatureBuilder_ = null;
       }
+      if (memberRegistersBuilder_ == null) {
+        memberRegisters_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000008);
+      } else {
+        memberRegistersBuilder_.clear();
+      }
+      applySuccessRate_ = 0D;
+
       return this;
     }
 
@@ -2602,6 +2725,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.cFCabinFeature_ = cFCabinFeatureBuilder_.build();
       }
+      if (memberRegistersBuilder_ == null) {
+        if (((bitField1_ & 0x00000008) == 0x00000008)) {
+          memberRegisters_ = java.util.Collections.unmodifiableList(memberRegisters_);
+          bitField1_ = (bitField1_ & ~0x00000008);
+        }
+        result.memberRegisters_ = memberRegisters_;
+      } else {
+        result.memberRegisters_ = memberRegistersBuilder_.build();
+      }
+      result.applySuccessRate_ = applySuccessRate_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2872,6 +3005,35 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCFCabinFeature()) {
         mergeCFCabinFeature(other.getCFCabinFeature());
+      }
+      if (memberRegistersBuilder_ == null) {
+        if (!other.memberRegisters_.isEmpty()) {
+          if (memberRegisters_.isEmpty()) {
+            memberRegisters_ = other.memberRegisters_;
+            bitField1_ = (bitField1_ & ~0x00000008);
+          } else {
+            ensureMemberRegistersIsMutable();
+            memberRegisters_.addAll(other.memberRegisters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.memberRegisters_.isEmpty()) {
+          if (memberRegistersBuilder_.isEmpty()) {
+            memberRegistersBuilder_.dispose();
+            memberRegistersBuilder_ = null;
+            memberRegisters_ = other.memberRegisters_;
+            bitField1_ = (bitField1_ & ~0x00000008);
+            memberRegistersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMemberRegistersFieldBuilder() : null;
+          } else {
+            memberRegistersBuilder_.addAllMessages(other.memberRegisters_);
+          }
+        }
+      }
+      if (other.getApplySuccessRate() != 0D) {
+        setApplySuccessRate(other.getApplySuccessRate());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6331,22 +6493,22 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> memberRegisterBuilder_;
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public boolean hasMemberRegister() {
+    @java.lang.Deprecated public boolean hasMemberRegister() {
       return memberRegisterBuilder_ != null || memberRegister_ != null;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
+    @java.lang.Deprecated public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister() {
       if (memberRegisterBuilder_ == null) {
         return memberRegister_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance() : memberRegister_;
       } else {
@@ -6355,12 +6517,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public Builder setMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+    @java.lang.Deprecated public Builder setMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
       if (memberRegisterBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6375,12 +6537,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public Builder setMemberRegister(
+    @java.lang.Deprecated public Builder setMemberRegister(
         com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder builderForValue) {
       if (memberRegisterBuilder_ == null) {
         memberRegister_ = builderForValue.build();
@@ -6393,12 +6555,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public Builder mergeMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+    @java.lang.Deprecated public Builder mergeMemberRegister(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
       if (memberRegisterBuilder_ == null) {
         if (memberRegister_ != null) {
           memberRegister_ =
@@ -6415,12 +6577,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public Builder clearMemberRegister() {
+    @java.lang.Deprecated public Builder clearMemberRegister() {
       if (memberRegisterBuilder_ == null) {
         memberRegister_ = null;
         onChanged();
@@ -6433,24 +6595,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder getMemberRegisterBuilder() {
+    @java.lang.Deprecated public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder getMemberRegisterBuilder() {
       
       onChanged();
       return getMemberRegisterFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
+    @java.lang.Deprecated public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder() {
       if (memberRegisterBuilder_ != null) {
         return memberRegisterBuilder_.getMessageOrBuilder();
       } else {
@@ -6460,10 +6622,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 会员注册信息
+     * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
@@ -7554,6 +7716,356 @@ private static final long serialVersionUID = 0L;
         cFCabinFeature_ = null;
       }
       return cFCabinFeatureBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> memberRegisters_ =
+      java.util.Collections.emptyList();
+    private void ensureMemberRegistersIsMutable() {
+      if (!((bitField1_ & 0x00000008) == 0x00000008)) {
+        memberRegisters_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType>(memberRegisters_);
+        bitField1_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> memberRegistersBuilder_;
+
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> getMemberRegistersList() {
+      if (memberRegistersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(memberRegisters_);
+      } else {
+        return memberRegistersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public int getMemberRegistersCount() {
+      if (memberRegistersBuilder_ == null) {
+        return memberRegisters_.size();
+      } else {
+        return memberRegistersBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegisters(int index) {
+      if (memberRegistersBuilder_ == null) {
+        return memberRegisters_.get(index);
+      } else {
+        return memberRegistersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder setMemberRegisters(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+      if (memberRegistersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.set(index, value);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder setMemberRegisters(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder builderForValue) {
+      if (memberRegistersBuilder_ == null) {
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        memberRegistersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder addMemberRegisters(com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+      if (memberRegistersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.add(value);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder addMemberRegisters(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType value) {
+      if (memberRegistersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.add(index, value);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder addMemberRegisters(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder builderForValue) {
+      if (memberRegistersBuilder_ == null) {
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        memberRegistersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder addMemberRegisters(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder builderForValue) {
+      if (memberRegistersBuilder_ == null) {
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        memberRegistersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder addAllMemberRegisters(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> values) {
+      if (memberRegistersBuilder_ == null) {
+        ensureMemberRegistersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, memberRegisters_);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder clearMemberRegisters() {
+      if (memberRegistersBuilder_ == null) {
+        memberRegisters_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000008);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public Builder removeMemberRegisters(int index) {
+      if (memberRegistersBuilder_ == null) {
+        ensureMemberRegistersIsMutable();
+        memberRegisters_.remove(index);
+        onChanged();
+      } else {
+        memberRegistersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder getMemberRegistersBuilder(
+        int index) {
+      return getMemberRegistersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegistersOrBuilder(
+        int index) {
+      if (memberRegistersBuilder_ == null) {
+        return memberRegisters_.get(index);  } else {
+        return memberRegistersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
+         getMemberRegistersOrBuilderList() {
+      if (memberRegistersBuilder_ != null) {
+        return memberRegistersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(memberRegisters_);
+      }
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder addMemberRegistersBuilder() {
+      return getMemberRegistersFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder addMemberRegistersBuilder(
+        int index) {
+      return getMemberRegistersFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 会员注册信息列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder> 
+         getMemberRegistersBuilderList() {
+      return getMemberRegistersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
+        getMemberRegistersFieldBuilder() {
+      if (memberRegistersBuilder_ == null) {
+        memberRegistersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder>(
+                memberRegisters_,
+                ((bitField1_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        memberRegisters_ = null;
+      }
+      return memberRegistersBuilder_;
+    }
+
+    private double applySuccessRate_ ;
+    /**
+     * <pre>
+     * SuccessRate
+     * </pre>
+     *
+     * <code>double ApplySuccessRate = 37;</code>
+     */
+    public double getApplySuccessRate() {
+      return applySuccessRate_;
+    }
+    /**
+     * <pre>
+     * SuccessRate
+     * </pre>
+     *
+     * <code>double ApplySuccessRate = 37;</code>
+     */
+    public Builder setApplySuccessRate(double value) {
+      
+      applySuccessRate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * SuccessRate
+     * </pre>
+     *
+     * <code>double ApplySuccessRate = 37;</code>
+     */
+    public Builder clearApplySuccessRate() {
+      
+      applySuccessRate_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

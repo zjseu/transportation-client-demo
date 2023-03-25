@@ -402,4 +402,180 @@ public interface MarketingProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.HotelTypeOrBuilder getHotelOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> 
+      getFloatUpList();
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType getFloatUp(int index);
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  int getFloatUpCount();
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder> 
+      getFloatUpOrBuilderList();
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder getFloatUpOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> 
+      getCreditPointsList();
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType getCreditPoints(int index);
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  int getCreditPointsCount();
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder> 
+      getCreditPointsOrBuilderList();
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder getCreditPointsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> 
+      getMileageCashList();
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType getMileageCash(int index);
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  int getMileageCashCount();
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder> 
+      getMileageCashOrBuilderList();
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder getMileageCashOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> 
+      getAdvertList();
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.AdvertType getAdvert(int index);
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  int getAdvertCount();
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder> 
+      getAdvertOrBuilderList();
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder getAdvertOrBuilder(
+      int index);
 }

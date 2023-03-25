@@ -135,4 +135,13 @@ public interface PaymentLimitTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentType LoanPayment = 4;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.LoanPaymentTypeOrBuilder getLoanPaymentOrBuilder();
+
+  /**
+   * <pre>
+   * 0：无限制 1：限制持卡人=乘机人
+   * </pre>
+   *
+   * <code>int32 CardHolderLimit = 5;</code>
+   */
+  int getCardHolderLimit();
 }

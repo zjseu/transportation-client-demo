@@ -12,26 +12,37 @@ message ErrorResultType
 	repeated DetailErrorType DetailError = 3;
 }
 
+// 错误详细
 message DetailErrorType {
+	// 错误Code
 	int32 Code = 1 ;
+	// 错误描述
 	string Message = 2 ;
 }
 
+// 请求头类型
 message RequestHeaderType
 {
 	MessageHeaderType MessageHeader = 1 ;
+	// 调试参数
 	int32 LoggingLevel = 2 ;
+	// 输入消息，调试用
 	string DiagInput = 3 ;
 }
 
+// 响应头类型
 message ResponseHeaderType
 {
 	MessageHeaderType MessageHeader = 1 ;
+	// 服务器IP
 	string ServerIP = 2 ;
+	// 结果Code
 	int32 ReturnCode = 3 ;
+	// 调试信息
 	string DiagOutput = 4 ;
 }
 
+// 通用消息头类型
 message MessageHeaderType {
 	// SaleChannel
 	string Channel = 1;
@@ -49,5 +60,19 @@ message MessageHeaderType {
 	string DevicePlatform = 7;
 	// 前端会话ID
 	string SessionID = 8;
+	// 客户端版本
+	string ClientVersion = 9;
+	// 设备类型 desktop/mobile/tablet
+	string DeviceType = 10;
+	// 平台类型 app/web
+	string PlatformType = 11;
+	// 设备操作系统版本号；eg:15.0.2
+	string DevicePlatformVersion = 12;
+	// ClientID app使用
+	string ClientID = 13;
+	// 分销商编号
+	string AID = 15;
+	// 分销商子编号
+	string SID = 16;
 }
 

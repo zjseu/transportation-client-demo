@@ -452,4 +452,60 @@ public interface OfferTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductType UpsellProduct = 16;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.UpsellProductTypeOrBuilder getUpsellProductOrBuilder();
+
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  boolean hasProductComposition();
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType getProductComposition();
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder getProductCompositionOrBuilder();
+
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  boolean hasOfferComparison();
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType getOfferComparison();
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder getOfferComparisonOrBuilder();
 }

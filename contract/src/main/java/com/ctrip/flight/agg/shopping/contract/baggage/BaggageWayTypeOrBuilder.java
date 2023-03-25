@@ -18,7 +18,7 @@ public interface BaggageWayTypeOrBuilder extends
 
   /**
    * <pre>
-   * 0=托运、1=手提
+   * 0=托运、1=手提、2=打包、3=加购、4=随身
    * </pre>
    *
    * <code>int32 Type = 2;</code>

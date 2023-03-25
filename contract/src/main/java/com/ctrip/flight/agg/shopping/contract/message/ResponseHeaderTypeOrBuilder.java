@@ -21,25 +21,45 @@ public interface ResponseHeaderTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.message.MessageHeaderTypeOrBuilder getMessageHeaderOrBuilder();
 
   /**
+   * <pre>
+   * 服务器IP
+   * </pre>
+   *
    * <code>string ServerIP = 2;</code>
    */
   java.lang.String getServerIP();
   /**
+   * <pre>
+   * 服务器IP
+   * </pre>
+   *
    * <code>string ServerIP = 2;</code>
    */
   com.google.protobuf.ByteString
       getServerIPBytes();
 
   /**
+   * <pre>
+   * 结果Code
+   * </pre>
+   *
    * <code>int32 ReturnCode = 3;</code>
    */
   int getReturnCode();
 
   /**
+   * <pre>
+   * 调试信息
+   * </pre>
+   *
    * <code>string DiagOutput = 4;</code>
    */
   java.lang.String getDiagOutput();
   /**
+   * <pre>
+   * 调试信息
+   * </pre>
+   *
    * <code>string DiagOutput = 4;</code>
    */
   com.google.protobuf.ByteString

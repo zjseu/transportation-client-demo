@@ -79,6 +79,20 @@ message PaxRequestType {
     int32 Count = 2;
     // 国籍
     string Nationality = 3;
+    // 乘机人明细
+    repeated PaxDetailType PaxDetail = 4;
+}
+
+// 乘机人明细
+message PaxDetailType {
+    // 年龄
+    int32 Age = 1;
+    // 性别
+    string Sex = 2;
+    // 证件类型
+    string IdentityType = 3;
+    // 证件号码
+    string IdentityNumber = 4;
 }
 
 message RouteSearchType {
@@ -95,6 +109,8 @@ message RouteSearchType {
     string OfferToken = 3;
     // 国际agg查询接口返回的价格token，为了兼容
     string IntlAggRouteSearchToken = 4;
+    // 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+    repeated SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;
 }
 
 message UserParameterType {
@@ -115,6 +131,8 @@ message ResultControlType {
     repeated string ValidatingCarrier = 2;
     // 是否根据PaxRequest中的乘客类型做严格匹配。请求国内时有效。 默认false：严格匹配。
     bool NonMatchRequestAgeType = 3;
+    // 0:不进行行程拆分，1：按Journey拆分行程返回offer
+    int32 SeparateJourneyType = 4;
 }
 
 message CoordinateType {
@@ -183,6 +201,8 @@ message SpecifiedOptionType {
     repeated string FareClass = 7;
     repeated int32 ProductCategory = 8;
     repeated int32 SubProductCategory = 9;
+    // 0:普通指定，1：指定无报价航班
+    int32 SpecifiedType = 10;
 }
 
 message SpecifiedJourneyOptionType {
@@ -217,6 +237,8 @@ message FlightSpecifiedOptionType {
 message AdaptedOptionType {
     // 指定X产品查询
     repeated XProductAppointedType XProductAppointed = 1;
+    // 国内混政策严格反差回传token
+    repeated CombinationPolicyType CombinationPolicy = 2;
 }
 
 // 指定X产品查询
@@ -225,4 +247,20 @@ message XProductAppointedType {
     string ProductType = 1;
     // X产品Token
     repeated string XToken = 2;
+}
+
+// 严格反查国内混政策产品时需要传入
+message CombinationPolicyType {
+    // 行程号
+    int32 JourneyNo = 1;
+    // 混政策token
+    string PolicyToken = 2;
+}
+
+// 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+message SeparateJourneyOfferTokenType {
+    // 行程号
+    int32 JourneyNo = 1;
+    // 该行程的offertoken
+    string OfferToken = 2;
 }

@@ -348,4 +348,29 @@ public interface RestrictionTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getApplySexBytes();
+
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  boolean hasTakeChildInfantNumLimit();
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType getTakeChildInfantNumLimit();
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder getTakeChildInfantNumLimitOrBuilder();
 }

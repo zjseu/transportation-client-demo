@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     fareClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     productCategory_ = java.util.Collections.emptyList();
     subProductCategory_ = java.util.Collections.emptyList();
+    specifiedType_ = 0;
   }
 
   @java.lang.Override
@@ -150,6 +151,11 @@ private static final long serialVersionUID = 0L;
               subProductCategory_.add(input.readInt32());
             }
             input.popLimit(limit);
+            break;
+          }
+          case 80: {
+
+            specifiedType_ = input.readInt32();
             break;
           }
           default: {
@@ -532,6 +538,19 @@ private static final long serialVersionUID = 0L;
   }
   private int subProductCategoryMemoizedSerializedSize = -1;
 
+  public static final int SPECIFIEDTYPE_FIELD_NUMBER = 10;
+  private int specifiedType_;
+  /**
+   * <pre>
+   * 0:普通指定，1：指定无报价航班
+   * </pre>
+   *
+   * <code>int32 SpecifiedType = 10;</code>
+   */
+  public int getSpecifiedType() {
+    return specifiedType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -581,6 +600,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < subProductCategory_.size(); i++) {
       output.writeInt32NoTag(subProductCategory_.get(i));
+    }
+    if (specifiedType_ != 0) {
+      output.writeInt32(10, specifiedType_);
     }
     unknownFields.writeTo(output);
   }
@@ -667,6 +689,10 @@ private static final long serialVersionUID = 0L;
       }
       subProductCategoryMemoizedSerializedSize = dataSize;
     }
+    if (specifiedType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, specifiedType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -701,6 +727,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductCategoryList());
     result = result && getSubProductCategoryList()
         .equals(other.getSubProductCategoryList());
+    result = result && (getSpecifiedType()
+        == other.getSpecifiedType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -746,6 +774,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SUBPRODUCTCATEGORY_FIELD_NUMBER;
       hash = (53 * hash) + getSubProductCategoryList().hashCode();
     }
+    hash = (37 * hash) + SPECIFIEDTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getSpecifiedType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -902,6 +932,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000080);
       subProductCategory_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      specifiedType_ = 0;
+
       return this;
     }
 
@@ -975,6 +1007,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.subProductCategory_ = subProductCategory_;
+      result.specifiedType_ = specifiedType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1122,6 +1155,9 @@ private static final long serialVersionUID = 0L;
           subProductCategory_.addAll(other.subProductCategory_);
         }
         onChanged();
+      }
+      if (other.getSpecifiedType() != 0) {
+        setSpecifiedType(other.getSpecifiedType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2245,6 +2281,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearSubProductCategory() {
       subProductCategory_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    private int specifiedType_ ;
+    /**
+     * <pre>
+     * 0:普通指定，1：指定无报价航班
+     * </pre>
+     *
+     * <code>int32 SpecifiedType = 10;</code>
+     */
+    public int getSpecifiedType() {
+      return specifiedType_;
+    }
+    /**
+     * <pre>
+     * 0:普通指定，1：指定无报价航班
+     * </pre>
+     *
+     * <code>int32 SpecifiedType = 10;</code>
+     */
+    public Builder setSpecifiedType(int value) {
+      
+      specifiedType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0:普通指定，1：指定无报价航班
+     * </pre>
+     *
+     * <code>int32 SpecifiedType = 10;</code>
+     */
+    public Builder clearSpecifiedType() {
+      
+      specifiedType_ = 0;
       onChanged();
       return this;
     }

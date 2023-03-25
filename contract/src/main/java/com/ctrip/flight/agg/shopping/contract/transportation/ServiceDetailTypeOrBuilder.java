@@ -10,7 +10,7 @@ public interface ServiceDetailTypeOrBuilder extends
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -19,7 +19,7 @@ public interface ServiceDetailTypeOrBuilder extends
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -169,6 +169,8 @@ public interface ServiceDetailTypeOrBuilder extends
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -182,6 +184,8 @@ public interface ServiceDetailTypeOrBuilder extends
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -194,6 +198,8 @@ public interface ServiceDetailTypeOrBuilder extends
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -206,6 +212,8 @@ public interface ServiceDetailTypeOrBuilder extends
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -219,6 +227,8 @@ public interface ServiceDetailTypeOrBuilder extends
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -332,4 +342,98 @@ public interface ServiceDetailTypeOrBuilder extends
    * <code>int32 Priority = 18;</code>
    */
   int getPriority();
+
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  boolean hasServiceBaggage();
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType getServiceBaggage();
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder getServiceBaggageOrBuilder();
+
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  boolean hasServicePriceFreeze();
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType getServicePriceFreeze();
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder getServicePriceFreezeOrBuilder();
+
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getTagList();
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  int getTagCount();
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList();
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index);
 }

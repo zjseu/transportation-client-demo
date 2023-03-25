@@ -112,4 +112,29 @@ public interface JourneyAttachmentTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTransferCombinationTagOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  boolean hasDisplayedOfferAmount();
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType getDisplayedOfferAmount();
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder getDisplayedOfferAmountOrBuilder();
 }

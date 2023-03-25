@@ -171,6 +171,19 @@ private static final long serialVersionUID = 0L;
             applySex_ = s;
             break;
           }
+          case 130: {
+            com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder subBuilder = null;
+            if (takeChildInfantNumLimit_ != null) {
+              subBuilder = takeChildInfantNumLimit_.toBuilder();
+            }
+            takeChildInfantNumLimit_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(takeChildInfantNumLimit_);
+              takeChildInfantNumLimit_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -759,6 +772,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TAKECHILDINFANTNUMLIMIT_FIELD_NUMBER = 16;
+  private com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType takeChildInfantNumLimit_;
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  public boolean hasTakeChildInfantNumLimit() {
+    return takeChildInfantNumLimit_ != null;
+  }
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType getTakeChildInfantNumLimit() {
+    return takeChildInfantNumLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.getDefaultInstance() : takeChildInfantNumLimit_;
+  }
+  /**
+   * <pre>
+   * 成人携带婴童数量限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder getTakeChildInfantNumLimitOrBuilder() {
+    return getTakeChildInfantNumLimit();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -817,6 +863,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getApplySexBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, applySex_);
+    }
+    if (takeChildInfantNumLimit_ != null) {
+      output.writeMessage(16, getTakeChildInfantNumLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -902,6 +951,10 @@ private static final long serialVersionUID = 0L;
     if (!getApplySexBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, applySex_);
     }
+    if (takeChildInfantNumLimit_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getTakeChildInfantNumLimit());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -954,6 +1007,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCompositionPriceRemark());
     result = result && getApplySex()
         .equals(other.getApplySex());
+    result = result && (hasTakeChildInfantNumLimit() == other.hasTakeChildInfantNumLimit());
+    if (hasTakeChildInfantNumLimit()) {
+      result = result && getTakeChildInfantNumLimit()
+          .equals(other.getTakeChildInfantNumLimit());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1009,6 +1067,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCompositionPriceRemark().hashCode();
     hash = (37 * hash) + APPLYSEX_FIELD_NUMBER;
     hash = (53 * hash) + getApplySex().hashCode();
+    if (hasTakeChildInfantNumLimit()) {
+      hash = (37 * hash) + TAKECHILDINFANTNUMLIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getTakeChildInfantNumLimit().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1180,6 +1242,12 @@ private static final long serialVersionUID = 0L;
 
       applySex_ = "";
 
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        takeChildInfantNumLimit_ = null;
+      } else {
+        takeChildInfantNumLimit_ = null;
+        takeChildInfantNumLimitBuilder_ = null;
+      }
       return this;
     }
 
@@ -1251,6 +1319,11 @@ private static final long serialVersionUID = 0L;
       result.paxNumLimitType_ = paxNumLimitType_;
       result.compositionPriceRemark_ = compositionPriceRemark_;
       result.applySex_ = applySex_;
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        result.takeChildInfantNumLimit_ = takeChildInfantNumLimit_;
+      } else {
+        result.takeChildInfantNumLimit_ = takeChildInfantNumLimitBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1384,6 +1457,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getApplySex().isEmpty()) {
         applySex_ = other.applySex_;
         onChanged();
+      }
+      if (other.hasTakeChildInfantNumLimit()) {
+        mergeTakeChildInfantNumLimit(other.getTakeChildInfantNumLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2928,6 +3004,159 @@ private static final long serialVersionUID = 0L;
       applySex_ = value;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType takeChildInfantNumLimit_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder> takeChildInfantNumLimitBuilder_;
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public boolean hasTakeChildInfantNumLimit() {
+      return takeChildInfantNumLimitBuilder_ != null || takeChildInfantNumLimit_ != null;
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType getTakeChildInfantNumLimit() {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        return takeChildInfantNumLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.getDefaultInstance() : takeChildInfantNumLimit_;
+      } else {
+        return takeChildInfantNumLimitBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public Builder setTakeChildInfantNumLimit(com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType value) {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        takeChildInfantNumLimit_ = value;
+        onChanged();
+      } else {
+        takeChildInfantNumLimitBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public Builder setTakeChildInfantNumLimit(
+        com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder builderForValue) {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        takeChildInfantNumLimit_ = builderForValue.build();
+        onChanged();
+      } else {
+        takeChildInfantNumLimitBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public Builder mergeTakeChildInfantNumLimit(com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType value) {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        if (takeChildInfantNumLimit_ != null) {
+          takeChildInfantNumLimit_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.newBuilder(takeChildInfantNumLimit_).mergeFrom(value).buildPartial();
+        } else {
+          takeChildInfantNumLimit_ = value;
+        }
+        onChanged();
+      } else {
+        takeChildInfantNumLimitBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public Builder clearTakeChildInfantNumLimit() {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        takeChildInfantNumLimit_ = null;
+        onChanged();
+      } else {
+        takeChildInfantNumLimit_ = null;
+        takeChildInfantNumLimitBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder getTakeChildInfantNumLimitBuilder() {
+      
+      onChanged();
+      return getTakeChildInfantNumLimitFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder getTakeChildInfantNumLimitOrBuilder() {
+      if (takeChildInfantNumLimitBuilder_ != null) {
+        return takeChildInfantNumLimitBuilder_.getMessageOrBuilder();
+      } else {
+        return takeChildInfantNumLimit_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.getDefaultInstance() : takeChildInfantNumLimit_;
+      }
+    }
+    /**
+     * <pre>
+     * 成人携带婴童数量限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder> 
+        getTakeChildInfantNumLimitFieldBuilder() {
+      if (takeChildInfantNumLimitBuilder_ == null) {
+        takeChildInfantNumLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.TakeChildInfantNumLimitTypeOrBuilder>(
+                getTakeChildInfantNumLimit(),
+                getParentForChildren(),
+                isClean());
+        takeChildInfantNumLimit_ = null;
+      }
+      return takeChildInfantNumLimitBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

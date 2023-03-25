@@ -50,4 +50,48 @@ public interface AdaptedOptionTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.XProductAppointedTypeOrBuilder getXProductAppointedOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> 
+      getCombinationPolicyList();
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType getCombinationPolicy(int index);
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  int getCombinationPolicyCount();
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder> 
+      getCombinationPolicyOrBuilderList();
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder getCombinationPolicyOrBuilder(
+      int index);
 }

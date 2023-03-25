@@ -64,4 +64,48 @@ public interface RouteSearchTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIntlAggRouteSearchTokenBytes();
+
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> 
+      getSeparateJourneyOfferTokenList();
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType getSeparateJourneyOfferToken(int index);
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  int getSeparateJourneyOfferTokenCount();
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder> 
+      getSeparateJourneyOfferTokenOrBuilderList();
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder getSeparateJourneyOfferTokenOrBuilder(
+      int index);
 }

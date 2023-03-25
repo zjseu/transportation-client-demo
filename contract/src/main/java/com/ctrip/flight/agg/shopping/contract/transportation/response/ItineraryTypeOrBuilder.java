@@ -253,4 +253,48 @@ public interface ItineraryTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.OfferTypeOrBuilder getReferenceOfferOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> 
+      getMultiCombinationList();
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType getMultiCombination(int index);
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  int getMultiCombinationCount();
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder> 
+      getMultiCombinationOrBuilderList();
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder getMultiCombinationOrBuilder(
+      int index);
 }

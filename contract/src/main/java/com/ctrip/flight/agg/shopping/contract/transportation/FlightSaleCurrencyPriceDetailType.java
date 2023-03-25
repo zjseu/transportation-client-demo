@@ -27,6 +27,9 @@ private static final long serialVersionUID = 0L;
     serviceFee_ = java.util.Collections.emptyList();
     flightHotelDiscountAmount_ = 0D;
     taxDetail_ = java.util.Collections.emptyList();
+    accountPrice_ = 0D;
+    netPrice_ = 0D;
+    specialOfferDiffAmount_ = 0D;
   }
 
   @java.lang.Override
@@ -124,6 +127,21 @@ private static final long serialVersionUID = 0L;
             }
             taxDetail_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.parser(), extensionRegistry));
+            break;
+          }
+          case 81: {
+
+            accountPrice_ = input.readDouble();
+            break;
+          }
+          case 89: {
+
+            netPrice_ = input.readDouble();
+            break;
+          }
+          case 97: {
+
+            specialOfferDiffAmount_ = input.readDouble();
             break;
           }
           default: {
@@ -451,6 +469,45 @@ private static final long serialVersionUID = 0L;
     return taxDetail_.get(index);
   }
 
+  public static final int ACCOUNTPRICE_FIELD_NUMBER = 10;
+  private double accountPrice_;
+  /**
+   * <pre>
+   * 结算底价，不含后返, 等于国内的SettlementCostPrice
+   * </pre>
+   *
+   * <code>double AccountPrice = 10;</code>
+   */
+  public double getAccountPrice() {
+    return accountPrice_;
+  }
+
+  public static final int NETPRICE_FIELD_NUMBER = 11;
+  private double netPrice_;
+  /**
+   * <pre>
+   * 底价
+   * </pre>
+   *
+   * <code>double NetPrice = 11;</code>
+   */
+  public double getNetPrice() {
+    return netPrice_;
+  }
+
+  public static final int SPECIALOFFERDIFFAMOUNT_FIELD_NUMBER = 12;
+  private double specialOfferDiffAmount_;
+  /**
+   * <pre>
+   * 相对于基准运价的差价，用于权益卡等场景
+   * </pre>
+   *
+   * <code>double SpecialOfferDiffAmount = 12;</code>
+   */
+  public double getSpecialOfferDiffAmount() {
+    return specialOfferDiffAmount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -491,6 +548,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < taxDetail_.size(); i++) {
       output.writeMessage(9, taxDetail_.get(i));
+    }
+    if (accountPrice_ != 0D) {
+      output.writeDouble(10, accountPrice_);
+    }
+    if (netPrice_ != 0D) {
+      output.writeDouble(11, netPrice_);
+    }
+    if (specialOfferDiffAmount_ != 0D) {
+      output.writeDouble(12, specialOfferDiffAmount_);
     }
     unknownFields.writeTo(output);
   }
@@ -536,6 +602,18 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < taxDetail_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, taxDetail_.get(i));
+    }
+    if (accountPrice_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(10, accountPrice_);
+    }
+    if (netPrice_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(11, netPrice_);
+    }
+    if (specialOfferDiffAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(12, specialOfferDiffAmount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -585,6 +663,18 @@ private static final long serialVersionUID = 0L;
             other.getFlightHotelDiscountAmount()));
     result = result && getTaxDetailList()
         .equals(other.getTaxDetailList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getAccountPrice())
+        == java.lang.Double.doubleToLongBits(
+            other.getAccountPrice()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getNetPrice())
+        == java.lang.Double.doubleToLongBits(
+            other.getNetPrice()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getSpecialOfferDiffAmount())
+        == java.lang.Double.doubleToLongBits(
+            other.getSpecialOfferDiffAmount()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -628,6 +718,15 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TAXDETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getTaxDetailList().hashCode();
     }
+    hash = (37 * hash) + ACCOUNTPRICE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAccountPrice()));
+    hash = (37 * hash) + NETPRICE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getNetPrice()));
+    hash = (37 * hash) + SPECIALOFFERDIFFAMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSpecialOfferDiffAmount()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -806,6 +905,12 @@ private static final long serialVersionUID = 0L;
       } else {
         taxDetailBuilder_.clear();
       }
+      accountPrice_ = 0D;
+
+      netPrice_ = 0D;
+
+      specialOfferDiffAmount_ = 0D;
+
       return this;
     }
 
@@ -875,6 +980,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.taxDetail_ = taxDetailBuilder_.build();
       }
+      result.accountPrice_ = accountPrice_;
+      result.netPrice_ = netPrice_;
+      result.specialOfferDiffAmount_ = specialOfferDiffAmount_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1019,6 +1127,15 @@ private static final long serialVersionUID = 0L;
             taxDetailBuilder_.addAllMessages(other.taxDetail_);
           }
         }
+      }
+      if (other.getAccountPrice() != 0D) {
+        setAccountPrice(other.getAccountPrice());
+      }
+      if (other.getNetPrice() != 0D) {
+        setNetPrice(other.getNetPrice());
+      }
+      if (other.getSpecialOfferDiffAmount() != 0D) {
+        setSpecialOfferDiffAmount(other.getSpecialOfferDiffAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2442,6 +2559,120 @@ private static final long serialVersionUID = 0L;
         taxDetail_ = null;
       }
       return taxDetailBuilder_;
+    }
+
+    private double accountPrice_ ;
+    /**
+     * <pre>
+     * 结算底价，不含后返, 等于国内的SettlementCostPrice
+     * </pre>
+     *
+     * <code>double AccountPrice = 10;</code>
+     */
+    public double getAccountPrice() {
+      return accountPrice_;
+    }
+    /**
+     * <pre>
+     * 结算底价，不含后返, 等于国内的SettlementCostPrice
+     * </pre>
+     *
+     * <code>double AccountPrice = 10;</code>
+     */
+    public Builder setAccountPrice(double value) {
+      
+      accountPrice_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 结算底价，不含后返, 等于国内的SettlementCostPrice
+     * </pre>
+     *
+     * <code>double AccountPrice = 10;</code>
+     */
+    public Builder clearAccountPrice() {
+      
+      accountPrice_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double netPrice_ ;
+    /**
+     * <pre>
+     * 底价
+     * </pre>
+     *
+     * <code>double NetPrice = 11;</code>
+     */
+    public double getNetPrice() {
+      return netPrice_;
+    }
+    /**
+     * <pre>
+     * 底价
+     * </pre>
+     *
+     * <code>double NetPrice = 11;</code>
+     */
+    public Builder setNetPrice(double value) {
+      
+      netPrice_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 底价
+     * </pre>
+     *
+     * <code>double NetPrice = 11;</code>
+     */
+    public Builder clearNetPrice() {
+      
+      netPrice_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double specialOfferDiffAmount_ ;
+    /**
+     * <pre>
+     * 相对于基准运价的差价，用于权益卡等场景
+     * </pre>
+     *
+     * <code>double SpecialOfferDiffAmount = 12;</code>
+     */
+    public double getSpecialOfferDiffAmount() {
+      return specialOfferDiffAmount_;
+    }
+    /**
+     * <pre>
+     * 相对于基准运价的差价，用于权益卡等场景
+     * </pre>
+     *
+     * <code>double SpecialOfferDiffAmount = 12;</code>
+     */
+    public Builder setSpecialOfferDiffAmount(double value) {
+      
+      specialOfferDiffAmount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 相对于基准运价的差价，用于权益卡等场景
+     * </pre>
+     *
+     * <code>double SpecialOfferDiffAmount = 12;</code>
+     */
+    public Builder clearSpecialOfferDiffAmount() {
+      
+      specialOfferDiffAmount_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -259,4 +259,13 @@ public interface FlightTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFlightAttributeBytes(int index);
+
+  /**
+   * <pre>
+   * 经停数量
+   * </pre>
+   *
+   * <code>int32 StopoverCount = 12;</code>
+   */
+  int getStopoverCount();
 }

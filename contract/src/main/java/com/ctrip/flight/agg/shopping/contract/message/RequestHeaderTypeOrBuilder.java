@@ -21,15 +21,27 @@ public interface RequestHeaderTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.message.MessageHeaderTypeOrBuilder getMessageHeaderOrBuilder();
 
   /**
+   * <pre>
+   * 调试参数
+   * </pre>
+   *
    * <code>int32 LoggingLevel = 2;</code>
    */
   int getLoggingLevel();
 
   /**
+   * <pre>
+   * 输入消息，调试用
+   * </pre>
+   *
    * <code>string DiagInput = 3;</code>
    */
   java.lang.String getDiagInput();
   /**
+   * <pre>
+   * 输入消息，调试用
+   * </pre>
+   *
    * <code>string DiagInput = 3;</code>
    */
   com.google.protobuf.ByteString

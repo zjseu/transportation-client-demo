@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     refundType_ = 0;
     changeType_ = 0;
     endorseType_ = 0;
+    refundChangeAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -86,6 +87,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              refundChangeAttribute_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            refundChangeAttribute_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +111,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        refundChangeAttribute_ = refundChangeAttribute_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -118,6 +131,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.class, com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int REFUNDTYPE_FIELD_NUMBER = 1;
   private int refundType_;
   /**
@@ -161,7 +175,7 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.DoubleType minRefundFee_;
   /**
    * <pre>
-   * 最小退票费，定义成引用类型，是为了区分0和空
+   * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -171,7 +185,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 最小退票费，定义成引用类型，是为了区分0和空
+   * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -181,7 +195,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 最小退票费，定义成引用类型，是为了区分0和空
+   * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -194,7 +208,7 @@ private static final long serialVersionUID = 0L;
   private com.ctrip.flight.agg.shopping.contract.transportation.DoubleType minChangeFee_;
   /**
    * <pre>
-   * 最小改期费，定义成引用类型，是为了区分0和空
+   * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -204,7 +218,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 最小改期费，定义成引用类型，是为了区分0和空
+   * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -214,13 +228,58 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 最小改期费，定义成引用类型，是为了区分0和空
+   * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
    * </pre>
    *
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
    */
   public com.ctrip.flight.agg.shopping.contract.transportation.DoubleTypeOrBuilder getMinChangeFeeOrBuilder() {
     return getMinChangeFee();
+  }
+
+  public static final int REFUNDCHANGEATTRIBUTE_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList refundChangeAttribute_;
+  /**
+   * <pre>
+   * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+   * </pre>
+   *
+   * <code>repeated string RefundChangeAttribute = 6;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRefundChangeAttributeList() {
+    return refundChangeAttribute_;
+  }
+  /**
+   * <pre>
+   * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+   * </pre>
+   *
+   * <code>repeated string RefundChangeAttribute = 6;</code>
+   */
+  public int getRefundChangeAttributeCount() {
+    return refundChangeAttribute_.size();
+  }
+  /**
+   * <pre>
+   * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+   * </pre>
+   *
+   * <code>repeated string RefundChangeAttribute = 6;</code>
+   */
+  public java.lang.String getRefundChangeAttribute(int index) {
+    return refundChangeAttribute_.get(index);
+  }
+  /**
+   * <pre>
+   * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+   * </pre>
+   *
+   * <code>repeated string RefundChangeAttribute = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRefundChangeAttributeBytes(int index) {
+    return refundChangeAttribute_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -252,6 +311,9 @@ private static final long serialVersionUID = 0L;
     if (minChangeFee_ != null) {
       output.writeMessage(5, getMinChangeFee());
     }
+    for (int i = 0; i < refundChangeAttribute_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, refundChangeAttribute_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -280,6 +342,14 @@ private static final long serialVersionUID = 0L;
     if (minChangeFee_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getMinChangeFee());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < refundChangeAttribute_.size(); i++) {
+        dataSize += computeStringSizeNoTag(refundChangeAttribute_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRefundChangeAttributeList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -313,6 +383,8 @@ private static final long serialVersionUID = 0L;
       result = result && getMinChangeFee()
           .equals(other.getMinChangeFee());
     }
+    result = result && getRefundChangeAttributeList()
+        .equals(other.getRefundChangeAttributeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -337,6 +409,10 @@ private static final long serialVersionUID = 0L;
     if (hasMinChangeFee()) {
       hash = (37 * hash) + MINCHANGEFEE_FIELD_NUMBER;
       hash = (53 * hash) + getMinChangeFee().hashCode();
+    }
+    if (getRefundChangeAttributeCount() > 0) {
+      hash = (37 * hash) + REFUNDCHANGEATTRIBUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getRefundChangeAttributeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -489,6 +565,8 @@ private static final long serialVersionUID = 0L;
         minChangeFee_ = null;
         minChangeFeeBuilder_ = null;
       }
+      refundChangeAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -515,6 +593,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType result = new com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.refundType_ = refundType_;
       result.changeType_ = changeType_;
       result.endorseType_ = endorseType_;
@@ -528,6 +608,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.minChangeFee_ = minChangeFeeBuilder_.build();
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        refundChangeAttribute_ = refundChangeAttribute_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.refundChangeAttribute_ = refundChangeAttribute_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -591,6 +677,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasMinChangeFee()) {
         mergeMinChangeFee(other.getMinChangeFee());
       }
+      if (!other.refundChangeAttribute_.isEmpty()) {
+        if (refundChangeAttribute_.isEmpty()) {
+          refundChangeAttribute_ = other.refundChangeAttribute_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureRefundChangeAttributeIsMutable();
+          refundChangeAttribute_.addAll(other.refundChangeAttribute_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -619,6 +715,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int refundType_ ;
     /**
@@ -739,7 +836,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.DoubleType, com.ctrip.flight.agg.shopping.contract.transportation.DoubleType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DoubleTypeOrBuilder> minRefundFeeBuilder_;
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -749,7 +846,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -763,7 +860,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -783,7 +880,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -801,7 +898,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -823,7 +920,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -841,7 +938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -853,7 +950,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -868,7 +965,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小退票费，定义成引用类型，是为了区分0和空
+     * 最小退票费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinRefundFee = 4;</code>
@@ -892,7 +989,7 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.DoubleType, com.ctrip.flight.agg.shopping.contract.transportation.DoubleType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DoubleTypeOrBuilder> minChangeFeeBuilder_;
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -902,7 +999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -916,7 +1013,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -936,7 +1033,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -954,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -976,7 +1073,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -994,7 +1091,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -1006,7 +1103,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -1021,7 +1118,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 最小改期费，定义成引用类型，是为了区分0和空
+     * 最小改期费，-1 和 null 表示费用待确认; 请注意区分0和null
      * </pre>
      *
      * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DoubleType MinChangeFee = 5;</code>
@@ -1038,6 +1135,136 @@ private static final long serialVersionUID = 0L;
         minChangeFee_ = null;
       }
       return minChangeFeeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList refundChangeAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureRefundChangeAttributeIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        refundChangeAttribute_ = new com.google.protobuf.LazyStringArrayList(refundChangeAttribute_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRefundChangeAttributeList() {
+      return refundChangeAttribute_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public int getRefundChangeAttributeCount() {
+      return refundChangeAttribute_.size();
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public java.lang.String getRefundChangeAttribute(int index) {
+      return refundChangeAttribute_.get(index);
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRefundChangeAttributeBytes(int index) {
+      return refundChangeAttribute_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public Builder setRefundChangeAttribute(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRefundChangeAttributeIsMutable();
+      refundChangeAttribute_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public Builder addRefundChangeAttribute(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRefundChangeAttributeIsMutable();
+      refundChangeAttribute_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public Builder addAllRefundChangeAttribute(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRefundChangeAttributeIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, refundChangeAttribute_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public Builder clearRefundChangeAttribute() {
+      refundChangeAttribute_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 退改签相关类型信息,例如 NotSingleRefund:合并支付不可单退
+     * </pre>
+     *
+     * <code>repeated string RefundChangeAttribute = 6;</code>
+     */
+    public Builder addRefundChangeAttributeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureRefundChangeAttributeIsMutable();
+      refundChangeAttribute_.add(value);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

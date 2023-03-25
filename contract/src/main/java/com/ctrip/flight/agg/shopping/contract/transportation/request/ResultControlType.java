@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     needRecommendation_ = false;
     validatingCarrier_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     nonMatchRequestAgeType_ = false;
+    separateJourneyType_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,11 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             nonMatchRequestAgeType_ = input.readBool();
+            break;
+          }
+          case 32: {
+
+            separateJourneyType_ = input.readInt32();
             break;
           }
           default: {
@@ -171,6 +177,19 @@ private static final long serialVersionUID = 0L;
     return nonMatchRequestAgeType_;
   }
 
+  public static final int SEPARATEJOURNEYTYPE_FIELD_NUMBER = 4;
+  private int separateJourneyType_;
+  /**
+   * <pre>
+   * 0:不进行行程拆分，1：按Journey拆分行程返回offer
+   * </pre>
+   *
+   * <code>int32 SeparateJourneyType = 4;</code>
+   */
+  public int getSeparateJourneyType() {
+    return separateJourneyType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -193,6 +212,9 @@ private static final long serialVersionUID = 0L;
     }
     if (nonMatchRequestAgeType_ != false) {
       output.writeBool(3, nonMatchRequestAgeType_);
+    }
+    if (separateJourneyType_ != 0) {
+      output.writeInt32(4, separateJourneyType_);
     }
     unknownFields.writeTo(output);
   }
@@ -219,6 +241,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, nonMatchRequestAgeType_);
     }
+    if (separateJourneyType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, separateJourneyType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -241,6 +267,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getValidatingCarrierList());
     result = result && (getNonMatchRequestAgeType()
         == other.getNonMatchRequestAgeType());
+    result = result && (getSeparateJourneyType()
+        == other.getSeparateJourneyType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -262,6 +290,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NONMATCHREQUESTAGETYPE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getNonMatchRequestAgeType());
+    hash = (37 * hash) + SEPARATEJOURNEYTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getSeparateJourneyType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +431,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       nonMatchRequestAgeType_ = false;
 
+      separateJourneyType_ = 0;
+
       return this;
     }
 
@@ -436,6 +468,7 @@ private static final long serialVersionUID = 0L;
       }
       result.validatingCarrier_ = validatingCarrier_;
       result.nonMatchRequestAgeType_ = nonMatchRequestAgeType_;
+      result.separateJourneyType_ = separateJourneyType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -500,6 +533,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNonMatchRequestAgeType() != false) {
         setNonMatchRequestAgeType(other.getNonMatchRequestAgeType());
+      }
+      if (other.getSeparateJourneyType() != 0) {
+        setSeparateJourneyType(other.getSeparateJourneyType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -733,6 +769,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearNonMatchRequestAgeType() {
       
       nonMatchRequestAgeType_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int separateJourneyType_ ;
+    /**
+     * <pre>
+     * 0:不进行行程拆分，1：按Journey拆分行程返回offer
+     * </pre>
+     *
+     * <code>int32 SeparateJourneyType = 4;</code>
+     */
+    public int getSeparateJourneyType() {
+      return separateJourneyType_;
+    }
+    /**
+     * <pre>
+     * 0:不进行行程拆分，1：按Journey拆分行程返回offer
+     * </pre>
+     *
+     * <code>int32 SeparateJourneyType = 4;</code>
+     */
+    public Builder setSeparateJourneyType(int value) {
+      
+      separateJourneyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0:不进行行程拆分，1：按Journey拆分行程返回offer
+     * </pre>
+     *
+     * <code>int32 SeparateJourneyType = 4;</code>
+     */
+    public Builder clearSeparateJourneyType() {
+      
+      separateJourneyType_ = 0;
       onChanged();
       return this;
     }

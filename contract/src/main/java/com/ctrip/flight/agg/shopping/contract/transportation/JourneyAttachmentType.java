@@ -79,6 +79,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 42: {
+            com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder subBuilder = null;
+            if (displayedOfferAmount_ != null) {
+              subBuilder = displayedOfferAmount_.toBuilder();
+            }
+            displayedOfferAmount_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(displayedOfferAmount_);
+              displayedOfferAmount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -273,6 +286,39 @@ private static final long serialVersionUID = 0L;
     return transferCombinationTag_.get(index);
   }
 
+  public static final int DISPLAYEDOFFERAMOUNT_FIELD_NUMBER = 5;
+  private com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType displayedOfferAmount_;
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  public boolean hasDisplayedOfferAmount() {
+    return displayedOfferAmount_ != null;
+  }
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType getDisplayedOfferAmount() {
+    return displayedOfferAmount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.getDefaultInstance() : displayedOfferAmount_;
+  }
+  /**
+   * <pre>
+   * 可展示的运价金额
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder getDisplayedOfferAmountOrBuilder() {
+    return getDisplayedOfferAmount();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -298,6 +344,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < transferCombinationTag_.size(); i++) {
       output.writeMessage(4, transferCombinationTag_.get(i));
+    }
+    if (displayedOfferAmount_ != null) {
+      output.writeMessage(5, getDisplayedOfferAmount());
     }
     unknownFields.writeTo(output);
   }
@@ -327,6 +376,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, transferCombinationTag_.get(i));
     }
+    if (displayedOfferAmount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getDisplayedOfferAmount());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -351,6 +404,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTransferProductType());
     result = result && getTransferCombinationTagList()
         .equals(other.getTransferCombinationTagList());
+    result = result && (hasDisplayedOfferAmount() == other.hasDisplayedOfferAmount());
+    if (hasDisplayedOfferAmount()) {
+      result = result && getDisplayedOfferAmount()
+          .equals(other.getDisplayedOfferAmount());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -373,6 +431,10 @@ private static final long serialVersionUID = 0L;
     if (getTransferCombinationTagCount() > 0) {
       hash = (37 * hash) + TRANSFERCOMBINATIONTAG_FIELD_NUMBER;
       hash = (53 * hash) + getTransferCombinationTagList().hashCode();
+    }
+    if (hasDisplayedOfferAmount()) {
+      hash = (37 * hash) + DISPLAYEDOFFERAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayedOfferAmount().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -524,6 +586,12 @@ private static final long serialVersionUID = 0L;
       } else {
         transferCombinationTagBuilder_.clear();
       }
+      if (displayedOfferAmountBuilder_ == null) {
+        displayedOfferAmount_ = null;
+      } else {
+        displayedOfferAmount_ = null;
+        displayedOfferAmountBuilder_ = null;
+      }
       return this;
     }
 
@@ -567,6 +635,11 @@ private static final long serialVersionUID = 0L;
         result.transferCombinationTag_ = transferCombinationTag_;
       } else {
         result.transferCombinationTag_ = transferCombinationTagBuilder_.build();
+      }
+      if (displayedOfferAmountBuilder_ == null) {
+        result.displayedOfferAmount_ = displayedOfferAmount_;
+      } else {
+        result.displayedOfferAmount_ = displayedOfferAmountBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -659,6 +732,9 @@ private static final long serialVersionUID = 0L;
             transferCombinationTagBuilder_.addAllMessages(other.transferCombinationTag_);
           }
         }
+      }
+      if (other.hasDisplayedOfferAmount()) {
+        mergeDisplayedOfferAmount(other.getDisplayedOfferAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1257,6 +1333,159 @@ private static final long serialVersionUID = 0L;
         transferCombinationTag_ = null;
       }
       return transferCombinationTagBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType displayedOfferAmount_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder> displayedOfferAmountBuilder_;
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public boolean hasDisplayedOfferAmount() {
+      return displayedOfferAmountBuilder_ != null || displayedOfferAmount_ != null;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType getDisplayedOfferAmount() {
+      if (displayedOfferAmountBuilder_ == null) {
+        return displayedOfferAmount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.getDefaultInstance() : displayedOfferAmount_;
+      } else {
+        return displayedOfferAmountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public Builder setDisplayedOfferAmount(com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType value) {
+      if (displayedOfferAmountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayedOfferAmount_ = value;
+        onChanged();
+      } else {
+        displayedOfferAmountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public Builder setDisplayedOfferAmount(
+        com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder builderForValue) {
+      if (displayedOfferAmountBuilder_ == null) {
+        displayedOfferAmount_ = builderForValue.build();
+        onChanged();
+      } else {
+        displayedOfferAmountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public Builder mergeDisplayedOfferAmount(com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType value) {
+      if (displayedOfferAmountBuilder_ == null) {
+        if (displayedOfferAmount_ != null) {
+          displayedOfferAmount_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.newBuilder(displayedOfferAmount_).mergeFrom(value).buildPartial();
+        } else {
+          displayedOfferAmount_ = value;
+        }
+        onChanged();
+      } else {
+        displayedOfferAmountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public Builder clearDisplayedOfferAmount() {
+      if (displayedOfferAmountBuilder_ == null) {
+        displayedOfferAmount_ = null;
+        onChanged();
+      } else {
+        displayedOfferAmount_ = null;
+        displayedOfferAmountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder getDisplayedOfferAmountBuilder() {
+      
+      onChanged();
+      return getDisplayedOfferAmountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder getDisplayedOfferAmountOrBuilder() {
+      if (displayedOfferAmountBuilder_ != null) {
+        return displayedOfferAmountBuilder_.getMessageOrBuilder();
+      } else {
+        return displayedOfferAmount_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.getDefaultInstance() : displayedOfferAmount_;
+      }
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType DisplayedOfferAmount = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder> 
+        getDisplayedOfferAmountFieldBuilder() {
+      if (displayedOfferAmountBuilder_ == null) {
+        displayedOfferAmountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DisplayedOfferAmountTypeOrBuilder>(
+                getDisplayedOfferAmount(),
+                getParentForChildren(),
+                isClean());
+        displayedOfferAmount_ = null;
+      }
+      return displayedOfferAmountBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

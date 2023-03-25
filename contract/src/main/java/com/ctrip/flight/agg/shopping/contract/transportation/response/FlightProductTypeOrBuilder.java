@@ -633,28 +633,28 @@ public interface FlightProductTypeOrBuilder extends
 
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  boolean hasMemberRegister();
+  @java.lang.Deprecated boolean hasMemberRegister();
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister();
+  @java.lang.Deprecated com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegister();
   /**
    * <pre>
-   * 会员注册信息
+   * 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29;</code>
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegister = 29 [deprecated = true];</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder();
+  @java.lang.Deprecated com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegisterOrBuilder();
 
   /**
    * <pre>
@@ -824,4 +824,57 @@ public interface FlightProductTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureType CFCabinFeature = 35;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.CFCabinFeatureTypeOrBuilder getCFCabinFeatureOrBuilder();
+
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType> 
+      getMemberRegistersList();
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType getMemberRegisters(int index);
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  int getMemberRegistersCount();
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder> 
+      getMemberRegistersOrBuilderList();
+  /**
+   * <pre>
+   * 会员注册信息列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterType MemberRegisters = 36;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MemberRegisterTypeOrBuilder getMemberRegistersOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * SuccessRate
+   * </pre>
+   *
+   * <code>double ApplySuccessRate = 37;</code>
+   */
+  double getApplySuccessRate();
 }

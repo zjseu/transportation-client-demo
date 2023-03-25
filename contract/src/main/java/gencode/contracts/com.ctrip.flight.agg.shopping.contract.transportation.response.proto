@@ -91,6 +91,8 @@ message ItineraryType {
     double Priority = 7;
     // 被正常运价引用的运价信息，如：儿童标准价
     repeated OfferType ReferenceOffer = 8;
+    // 不同offer 混合预定关系（国内混舱预定）
+    repeated MultiCombinationType MultiCombination = 9;
 }
 
 message OfferType {
@@ -126,6 +128,12 @@ message OfferType {
     int32 ChildStandardOfferRef = 15;
     // Upsell促销信息
     UpsellProductType UpsellProduct = 16;
+    // 可展示的运价金额 已确认目前没人用,直接删除
+    // DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+    // 产品组合关系
+    com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;
+    // 比价信息
+    com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;
 }
 
 message TransportSegmentType {
@@ -247,8 +255,8 @@ message FlightProductType {
     // 无证件标识 0:不支持无证件 1:支持无证件
     int32 NoIdentityCardInd = 28;
 
-    // 会员注册信息
-    MemberRegisterType MemberRegister = 29;
+    // 会员注册信息【请使用MemberRegisters列表，该字段即将废弃】
+    MemberRegisterType MemberRegister = 29 [deprecated = true];
 
     // 溢价产品信息
     PremiumProductType PremiumProduct = 30;
@@ -267,6 +275,12 @@ message FlightProductType {
 
     // 两舱特征信息
     CFCabinFeatureType CFCabinFeature = 35;
+
+    // 会员注册信息列表
+    repeated MemberRegisterType MemberRegisters = 36;
+
+    // SuccessRate
+    double ApplySuccessRate = 37;
 }
 
 message BillingType {
@@ -378,6 +392,12 @@ message RedirectSegmentType {
     string ArriveDateTime = 9;
     // 航班号/火车号等
     string TransportNo = 10;
+    // 出发站台 可能为空
+    string DepartTerminal = 11;
+    // 到达站台 可能为空
+    string ArriveTerminal = 12;
+    // 机票信息 可能为空
+    FlightType Flight = 13;
 }
 
 // 推荐产品属性
@@ -642,4 +662,25 @@ message CFCabinBenefitType {
     int64 RuleID = 1;
     // 权益
     repeated string Benefit = 2;
+}
+
+// 不同offer 混合预定类型
+message MultiCombinationType {
+    // 严格反查时需要回传
+    string PolicyToken = 1;
+    // 可用混舱组合关系 如：OfferA成人 组合OfferB儿童、婴儿
+    repeated CombinationUnitType CombinationUnit = 2;
+    // 组合tag标签
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 3;
+    // 可展示的运价金额
+    DisplayedOfferAmountType DisplayedOfferAmount = 4;
+}
+
+message CombinationUnitType {
+    // 可组合的offerid引用
+    int32 OfferRef = 1;
+    // 可组合乘客类型, 1: Adult; 2: Child; 4: Infant
+    int32 AgeType = 2;
+    // 可用人数
+    int32 Count = 3;
 }

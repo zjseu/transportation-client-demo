@@ -4,6 +4,10 @@
 package com.ctrip.flight.agg.shopping.contract.message;
 
 /**
+ * <pre>
+ * 错误详细
+ * </pre>
+ *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.DetailErrorType}
  */
 public  final class DetailErrorType extends
@@ -90,6 +94,10 @@ private static final long serialVersionUID = 0L;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_;
   /**
+   * <pre>
+   * 错误Code
+   * </pre>
+   *
    * <code>int32 Code = 1;</code>
    */
   public int getCode() {
@@ -99,6 +107,10 @@ private static final long serialVersionUID = 0L;
   public static final int MESSAGE_FIELD_NUMBER = 2;
   private volatile java.lang.Object message_;
   /**
+   * <pre>
+   * 错误描述
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    */
   public java.lang.String getMessage() {
@@ -114,6 +126,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 错误描述
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -297,6 +313,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 错误详细
+   * </pre>
+   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.DetailErrorType}
    */
   public static final class Builder extends
@@ -452,12 +472,20 @@ private static final long serialVersionUID = 0L;
 
     private int code_ ;
     /**
+     * <pre>
+     * 错误Code
+     * </pre>
+     *
      * <code>int32 Code = 1;</code>
      */
     public int getCode() {
       return code_;
     }
     /**
+     * <pre>
+     * 错误Code
+     * </pre>
+     *
      * <code>int32 Code = 1;</code>
      */
     public Builder setCode(int value) {
@@ -467,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 错误Code
+     * </pre>
+     *
      * <code>int32 Code = 1;</code>
      */
     public Builder clearCode() {
@@ -478,6 +510,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object message_ = "";
     /**
+     * <pre>
+     * 错误描述
+     * </pre>
+     *
      * <code>string Message = 2;</code>
      */
     public java.lang.String getMessage() {
@@ -493,6 +529,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 错误描述
+     * </pre>
+     *
      * <code>string Message = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -509,6 +549,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 错误描述
+     * </pre>
+     *
      * <code>string Message = 2;</code>
      */
     public Builder setMessage(
@@ -522,6 +566,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 错误描述
+     * </pre>
+     *
      * <code>string Message = 2;</code>
      */
     public Builder clearMessage() {
@@ -531,6 +579,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 错误描述
+     * </pre>
+     *
      * <code>string Message = 2;</code>
      */
     public Builder setMessageBytes(

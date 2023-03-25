@@ -29,6 +29,10 @@ private static final long serialVersionUID = 0L;
     memberPrivilege_ = java.util.Collections.emptyList();
     priceReduction_ = java.util.Collections.emptyList();
     hotel_ = java.util.Collections.emptyList();
+    floatUp_ = java.util.Collections.emptyList();
+    creditPoints_ = java.util.Collections.emptyList();
+    mileageCash_ = java.util.Collections.emptyList();
+    advert_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -136,6 +140,42 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.HotelType.parser(), extensionRegistry));
             break;
           }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              floatUp_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType>();
+              mutable_bitField0_ |= 0x00000200;
+            }
+            floatUp_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.parser(), extensionRegistry));
+            break;
+          }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              creditPoints_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType>();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            creditPoints_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.parser(), extensionRegistry));
+            break;
+          }
+          case 98: {
+            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              mileageCash_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType>();
+              mutable_bitField0_ |= 0x00000800;
+            }
+            mileageCash_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.parser(), extensionRegistry));
+            break;
+          }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              advert_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            advert_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -177,6 +217,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         hotel_ = java.util.Collections.unmodifiableList(hotel_);
+      }
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        floatUp_ = java.util.Collections.unmodifiableList(floatUp_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        creditPoints_ = java.util.Collections.unmodifiableList(creditPoints_);
+      }
+      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+        mileageCash_ = java.util.Collections.unmodifiableList(mileageCash_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        advert_ = java.util.Collections.unmodifiableList(advert_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -690,6 +742,226 @@ private static final long serialVersionUID = 0L;
     return hotel_.get(index);
   }
 
+  public static final int FLOATUP_FIELD_NUMBER = 10;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> floatUp_;
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> getFloatUpList() {
+    return floatUp_;
+  }
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder> 
+      getFloatUpOrBuilderList() {
+    return floatUp_;
+  }
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  public int getFloatUpCount() {
+    return floatUp_.size();
+  }
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType getFloatUp(int index) {
+    return floatUp_.get(index);
+  }
+  /**
+   * <pre>
+   * 价格上浮调整
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder getFloatUpOrBuilder(
+      int index) {
+    return floatUp_.get(index);
+  }
+
+  public static final int CREDITPOINTS_FIELD_NUMBER = 11;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> creditPoints_;
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> getCreditPointsList() {
+    return creditPoints_;
+  }
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder> 
+      getCreditPointsOrBuilderList() {
+    return creditPoints_;
+  }
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  public int getCreditPointsCount() {
+    return creditPoints_.size();
+  }
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType getCreditPoints(int index) {
+    return creditPoints_.get(index);
+  }
+  /**
+   * <pre>
+   * 积分抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder getCreditPointsOrBuilder(
+      int index) {
+    return creditPoints_.get(index);
+  }
+
+  public static final int MILEAGECASH_FIELD_NUMBER = 12;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> mileageCash_;
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> getMileageCashList() {
+    return mileageCash_;
+  }
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder> 
+      getMileageCashOrBuilderList() {
+    return mileageCash_;
+  }
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  public int getMileageCashCount() {
+    return mileageCash_.size();
+  }
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType getMileageCash(int index) {
+    return mileageCash_.get(index);
+  }
+  /**
+   * <pre>
+   * 航司里程抵现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder getMileageCashOrBuilder(
+      int index) {
+    return mileageCash_.get(index);
+  }
+
+  public static final int ADVERT_FIELD_NUMBER = 13;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> advert_;
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> getAdvertList() {
+    return advert_;
+  }
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder> 
+      getAdvertOrBuilderList() {
+    return advert_;
+  }
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  public int getAdvertCount() {
+    return advert_.size();
+  }
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.AdvertType getAdvert(int index) {
+    return advert_.get(index);
+  }
+  /**
+   * <pre>
+   * 广告x产品营销
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder getAdvertOrBuilder(
+      int index) {
+    return advert_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -730,6 +1002,18 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < hotel_.size(); i++) {
       output.writeMessage(9, hotel_.get(i));
+    }
+    for (int i = 0; i < floatUp_.size(); i++) {
+      output.writeMessage(10, floatUp_.get(i));
+    }
+    for (int i = 0; i < creditPoints_.size(); i++) {
+      output.writeMessage(11, creditPoints_.get(i));
+    }
+    for (int i = 0; i < mileageCash_.size(); i++) {
+      output.writeMessage(12, mileageCash_.get(i));
+    }
+    for (int i = 0; i < advert_.size(); i++) {
+      output.writeMessage(13, advert_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -776,6 +1060,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, hotel_.get(i));
     }
+    for (int i = 0; i < floatUp_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, floatUp_.get(i));
+    }
+    for (int i = 0; i < creditPoints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, creditPoints_.get(i));
+    }
+    for (int i = 0; i < mileageCash_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, mileageCash_.get(i));
+    }
+    for (int i = 0; i < advert_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, advert_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -810,6 +1110,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPriceReductionList());
     result = result && getHotelList()
         .equals(other.getHotelList());
+    result = result && getFloatUpList()
+        .equals(other.getFloatUpList());
+    result = result && getCreditPointsList()
+        .equals(other.getCreditPointsList());
+    result = result && getMileageCashList()
+        .equals(other.getMileageCashList());
+    result = result && getAdvertList()
+        .equals(other.getAdvertList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -856,6 +1164,22 @@ private static final long serialVersionUID = 0L;
     if (getHotelCount() > 0) {
       hash = (37 * hash) + HOTEL_FIELD_NUMBER;
       hash = (53 * hash) + getHotelList().hashCode();
+    }
+    if (getFloatUpCount() > 0) {
+      hash = (37 * hash) + FLOATUP_FIELD_NUMBER;
+      hash = (53 * hash) + getFloatUpList().hashCode();
+    }
+    if (getCreditPointsCount() > 0) {
+      hash = (37 * hash) + CREDITPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCreditPointsList().hashCode();
+    }
+    if (getMileageCashCount() > 0) {
+      hash = (37 * hash) + MILEAGECASH_FIELD_NUMBER;
+      hash = (53 * hash) + getMileageCashList().hashCode();
+    }
+    if (getAdvertCount() > 0) {
+      hash = (37 * hash) + ADVERT_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -998,6 +1322,10 @@ private static final long serialVersionUID = 0L;
         getMemberPrivilegeFieldBuilder();
         getPriceReductionFieldBuilder();
         getHotelFieldBuilder();
+        getFloatUpFieldBuilder();
+        getCreditPointsFieldBuilder();
+        getMileageCashFieldBuilder();
+        getAdvertFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1056,6 +1384,30 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         hotelBuilder_.clear();
+      }
+      if (floatUpBuilder_ == null) {
+        floatUp_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      } else {
+        floatUpBuilder_.clear();
+      }
+      if (creditPointsBuilder_ == null) {
+        creditPoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      } else {
+        creditPointsBuilder_.clear();
+      }
+      if (mileageCashBuilder_ == null) {
+        mileageCash_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      } else {
+        mileageCashBuilder_.clear();
+      }
+      if (advertBuilder_ == null) {
+        advert_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        advertBuilder_.clear();
       }
       return this;
     }
@@ -1164,6 +1516,42 @@ private static final long serialVersionUID = 0L;
         result.hotel_ = hotel_;
       } else {
         result.hotel_ = hotelBuilder_.build();
+      }
+      if (floatUpBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          floatUp_ = java.util.Collections.unmodifiableList(floatUp_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.floatUp_ = floatUp_;
+      } else {
+        result.floatUp_ = floatUpBuilder_.build();
+      }
+      if (creditPointsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          creditPoints_ = java.util.Collections.unmodifiableList(creditPoints_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.creditPoints_ = creditPoints_;
+      } else {
+        result.creditPoints_ = creditPointsBuilder_.build();
+      }
+      if (mileageCashBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          mileageCash_ = java.util.Collections.unmodifiableList(mileageCash_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.mileageCash_ = mileageCash_;
+      } else {
+        result.mileageCash_ = mileageCashBuilder_.build();
+      }
+      if (advertBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          advert_ = java.util.Collections.unmodifiableList(advert_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.advert_ = advert_;
+      } else {
+        result.advert_ = advertBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1444,6 +1832,110 @@ private static final long serialVersionUID = 0L;
                  getHotelFieldBuilder() : null;
           } else {
             hotelBuilder_.addAllMessages(other.hotel_);
+          }
+        }
+      }
+      if (floatUpBuilder_ == null) {
+        if (!other.floatUp_.isEmpty()) {
+          if (floatUp_.isEmpty()) {
+            floatUp_ = other.floatUp_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureFloatUpIsMutable();
+            floatUp_.addAll(other.floatUp_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.floatUp_.isEmpty()) {
+          if (floatUpBuilder_.isEmpty()) {
+            floatUpBuilder_.dispose();
+            floatUpBuilder_ = null;
+            floatUp_ = other.floatUp_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            floatUpBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFloatUpFieldBuilder() : null;
+          } else {
+            floatUpBuilder_.addAllMessages(other.floatUp_);
+          }
+        }
+      }
+      if (creditPointsBuilder_ == null) {
+        if (!other.creditPoints_.isEmpty()) {
+          if (creditPoints_.isEmpty()) {
+            creditPoints_ = other.creditPoints_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureCreditPointsIsMutable();
+            creditPoints_.addAll(other.creditPoints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.creditPoints_.isEmpty()) {
+          if (creditPointsBuilder_.isEmpty()) {
+            creditPointsBuilder_.dispose();
+            creditPointsBuilder_ = null;
+            creditPoints_ = other.creditPoints_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            creditPointsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCreditPointsFieldBuilder() : null;
+          } else {
+            creditPointsBuilder_.addAllMessages(other.creditPoints_);
+          }
+        }
+      }
+      if (mileageCashBuilder_ == null) {
+        if (!other.mileageCash_.isEmpty()) {
+          if (mileageCash_.isEmpty()) {
+            mileageCash_ = other.mileageCash_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureMileageCashIsMutable();
+            mileageCash_.addAll(other.mileageCash_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mileageCash_.isEmpty()) {
+          if (mileageCashBuilder_.isEmpty()) {
+            mileageCashBuilder_.dispose();
+            mileageCashBuilder_ = null;
+            mileageCash_ = other.mileageCash_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            mileageCashBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMileageCashFieldBuilder() : null;
+          } else {
+            mileageCashBuilder_.addAllMessages(other.mileageCash_);
+          }
+        }
+      }
+      if (advertBuilder_ == null) {
+        if (!other.advert_.isEmpty()) {
+          if (advert_.isEmpty()) {
+            advert_ = other.advert_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureAdvertIsMutable();
+            advert_.addAll(other.advert_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.advert_.isEmpty()) {
+          if (advertBuilder_.isEmpty()) {
+            advertBuilder_.dispose();
+            advertBuilder_ = null;
+            advert_ = other.advert_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            advertBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAdvertFieldBuilder() : null;
+          } else {
+            advertBuilder_.addAllMessages(other.advert_);
           }
         }
       }
@@ -4283,6 +4775,1254 @@ private static final long serialVersionUID = 0L;
         hotel_ = null;
       }
       return hotelBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> floatUp_ =
+      java.util.Collections.emptyList();
+    private void ensureFloatUpIsMutable() {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        floatUp_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType>(floatUp_);
+        bitField0_ |= 0x00000200;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder> floatUpBuilder_;
+
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> getFloatUpList() {
+      if (floatUpBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(floatUp_);
+      } else {
+        return floatUpBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public int getFloatUpCount() {
+      if (floatUpBuilder_ == null) {
+        return floatUp_.size();
+      } else {
+        return floatUpBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType getFloatUp(int index) {
+      if (floatUpBuilder_ == null) {
+        return floatUp_.get(index);
+      } else {
+        return floatUpBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder setFloatUp(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType value) {
+      if (floatUpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFloatUpIsMutable();
+        floatUp_.set(index, value);
+        onChanged();
+      } else {
+        floatUpBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder setFloatUp(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder builderForValue) {
+      if (floatUpBuilder_ == null) {
+        ensureFloatUpIsMutable();
+        floatUp_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        floatUpBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder addFloatUp(com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType value) {
+      if (floatUpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFloatUpIsMutable();
+        floatUp_.add(value);
+        onChanged();
+      } else {
+        floatUpBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder addFloatUp(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType value) {
+      if (floatUpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFloatUpIsMutable();
+        floatUp_.add(index, value);
+        onChanged();
+      } else {
+        floatUpBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder addFloatUp(
+        com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder builderForValue) {
+      if (floatUpBuilder_ == null) {
+        ensureFloatUpIsMutable();
+        floatUp_.add(builderForValue.build());
+        onChanged();
+      } else {
+        floatUpBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder addFloatUp(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder builderForValue) {
+      if (floatUpBuilder_ == null) {
+        ensureFloatUpIsMutable();
+        floatUp_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        floatUpBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder addAllFloatUp(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType> values) {
+      if (floatUpBuilder_ == null) {
+        ensureFloatUpIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, floatUp_);
+        onChanged();
+      } else {
+        floatUpBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder clearFloatUp() {
+      if (floatUpBuilder_ == null) {
+        floatUp_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        floatUpBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public Builder removeFloatUp(int index) {
+      if (floatUpBuilder_ == null) {
+        ensureFloatUpIsMutable();
+        floatUp_.remove(index);
+        onChanged();
+      } else {
+        floatUpBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder getFloatUpBuilder(
+        int index) {
+      return getFloatUpFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder getFloatUpOrBuilder(
+        int index) {
+      if (floatUpBuilder_ == null) {
+        return floatUp_.get(index);  } else {
+        return floatUpBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder> 
+         getFloatUpOrBuilderList() {
+      if (floatUpBuilder_ != null) {
+        return floatUpBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(floatUp_);
+      }
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder addFloatUpBuilder() {
+      return getFloatUpFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder addFloatUpBuilder(
+        int index) {
+      return getFloatUpFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 价格上浮调整
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType FloatUp = 10;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder> 
+         getFloatUpBuilderList() {
+      return getFloatUpFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder> 
+        getFloatUpFieldBuilder() {
+      if (floatUpBuilder_ == null) {
+        floatUpBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FloatUpTypeOrBuilder>(
+                floatUp_,
+                ((bitField0_ & 0x00000200) == 0x00000200),
+                getParentForChildren(),
+                isClean());
+        floatUp_ = null;
+      }
+      return floatUpBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> creditPoints_ =
+      java.util.Collections.emptyList();
+    private void ensureCreditPointsIsMutable() {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        creditPoints_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType>(creditPoints_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder> creditPointsBuilder_;
+
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> getCreditPointsList() {
+      if (creditPointsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(creditPoints_);
+      } else {
+        return creditPointsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public int getCreditPointsCount() {
+      if (creditPointsBuilder_ == null) {
+        return creditPoints_.size();
+      } else {
+        return creditPointsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType getCreditPoints(int index) {
+      if (creditPointsBuilder_ == null) {
+        return creditPoints_.get(index);
+      } else {
+        return creditPointsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder setCreditPoints(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType value) {
+      if (creditPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditPointsIsMutable();
+        creditPoints_.set(index, value);
+        onChanged();
+      } else {
+        creditPointsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder setCreditPoints(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder builderForValue) {
+      if (creditPointsBuilder_ == null) {
+        ensureCreditPointsIsMutable();
+        creditPoints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditPointsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder addCreditPoints(com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType value) {
+      if (creditPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditPointsIsMutable();
+        creditPoints_.add(value);
+        onChanged();
+      } else {
+        creditPointsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder addCreditPoints(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType value) {
+      if (creditPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditPointsIsMutable();
+        creditPoints_.add(index, value);
+        onChanged();
+      } else {
+        creditPointsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder addCreditPoints(
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder builderForValue) {
+      if (creditPointsBuilder_ == null) {
+        ensureCreditPointsIsMutable();
+        creditPoints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        creditPointsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder addCreditPoints(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder builderForValue) {
+      if (creditPointsBuilder_ == null) {
+        ensureCreditPointsIsMutable();
+        creditPoints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditPointsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder addAllCreditPoints(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType> values) {
+      if (creditPointsBuilder_ == null) {
+        ensureCreditPointsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, creditPoints_);
+        onChanged();
+      } else {
+        creditPointsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder clearCreditPoints() {
+      if (creditPointsBuilder_ == null) {
+        creditPoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        creditPointsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public Builder removeCreditPoints(int index) {
+      if (creditPointsBuilder_ == null) {
+        ensureCreditPointsIsMutable();
+        creditPoints_.remove(index);
+        onChanged();
+      } else {
+        creditPointsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder getCreditPointsBuilder(
+        int index) {
+      return getCreditPointsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder getCreditPointsOrBuilder(
+        int index) {
+      if (creditPointsBuilder_ == null) {
+        return creditPoints_.get(index);  } else {
+        return creditPointsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder> 
+         getCreditPointsOrBuilderList() {
+      if (creditPointsBuilder_ != null) {
+        return creditPointsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(creditPoints_);
+      }
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder addCreditPointsBuilder() {
+      return getCreditPointsFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder addCreditPointsBuilder(
+        int index) {
+      return getCreditPointsFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 积分抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType CreditPoints = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder> 
+         getCreditPointsBuilderList() {
+      return getCreditPointsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder> 
+        getCreditPointsFieldBuilder() {
+      if (creditPointsBuilder_ == null) {
+        creditPointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.CreditPointsTypeOrBuilder>(
+                creditPoints_,
+                ((bitField0_ & 0x00000400) == 0x00000400),
+                getParentForChildren(),
+                isClean());
+        creditPoints_ = null;
+      }
+      return creditPointsBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> mileageCash_ =
+      java.util.Collections.emptyList();
+    private void ensureMileageCashIsMutable() {
+      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        mileageCash_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType>(mileageCash_);
+        bitField0_ |= 0x00000800;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder> mileageCashBuilder_;
+
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> getMileageCashList() {
+      if (mileageCashBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mileageCash_);
+      } else {
+        return mileageCashBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public int getMileageCashCount() {
+      if (mileageCashBuilder_ == null) {
+        return mileageCash_.size();
+      } else {
+        return mileageCashBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType getMileageCash(int index) {
+      if (mileageCashBuilder_ == null) {
+        return mileageCash_.get(index);
+      } else {
+        return mileageCashBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder setMileageCash(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType value) {
+      if (mileageCashBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCashIsMutable();
+        mileageCash_.set(index, value);
+        onChanged();
+      } else {
+        mileageCashBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder setMileageCash(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder builderForValue) {
+      if (mileageCashBuilder_ == null) {
+        ensureMileageCashIsMutable();
+        mileageCash_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mileageCashBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder addMileageCash(com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType value) {
+      if (mileageCashBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCashIsMutable();
+        mileageCash_.add(value);
+        onChanged();
+      } else {
+        mileageCashBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder addMileageCash(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType value) {
+      if (mileageCashBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMileageCashIsMutable();
+        mileageCash_.add(index, value);
+        onChanged();
+      } else {
+        mileageCashBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder addMileageCash(
+        com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder builderForValue) {
+      if (mileageCashBuilder_ == null) {
+        ensureMileageCashIsMutable();
+        mileageCash_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mileageCashBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder addMileageCash(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder builderForValue) {
+      if (mileageCashBuilder_ == null) {
+        ensureMileageCashIsMutable();
+        mileageCash_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mileageCashBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder addAllMileageCash(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType> values) {
+      if (mileageCashBuilder_ == null) {
+        ensureMileageCashIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, mileageCash_);
+        onChanged();
+      } else {
+        mileageCashBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder clearMileageCash() {
+      if (mileageCashBuilder_ == null) {
+        mileageCash_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        mileageCashBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public Builder removeMileageCash(int index) {
+      if (mileageCashBuilder_ == null) {
+        ensureMileageCashIsMutable();
+        mileageCash_.remove(index);
+        onChanged();
+      } else {
+        mileageCashBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder getMileageCashBuilder(
+        int index) {
+      return getMileageCashFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder getMileageCashOrBuilder(
+        int index) {
+      if (mileageCashBuilder_ == null) {
+        return mileageCash_.get(index);  } else {
+        return mileageCashBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder> 
+         getMileageCashOrBuilderList() {
+      if (mileageCashBuilder_ != null) {
+        return mileageCashBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mileageCash_);
+      }
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder addMileageCashBuilder() {
+      return getMileageCashFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder addMileageCashBuilder(
+        int index) {
+      return getMileageCashFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 航司里程抵现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType MileageCash = 12;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder> 
+         getMileageCashBuilderList() {
+      return getMileageCashFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder> 
+        getMileageCashFieldBuilder() {
+      if (mileageCashBuilder_ == null) {
+        mileageCashBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.MileageCashTypeOrBuilder>(
+                mileageCash_,
+                ((bitField0_ & 0x00000800) == 0x00000800),
+                getParentForChildren(),
+                isClean());
+        mileageCash_ = null;
+      }
+      return mileageCashBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> advert_ =
+      java.util.Collections.emptyList();
+    private void ensureAdvertIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        advert_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType>(advert_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.AdvertType, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder> advertBuilder_;
+
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> getAdvertList() {
+      if (advertBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(advert_);
+      } else {
+        return advertBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public int getAdvertCount() {
+      if (advertBuilder_ == null) {
+        return advert_.size();
+      } else {
+        return advertBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.AdvertType getAdvert(int index) {
+      if (advertBuilder_ == null) {
+        return advert_.get(index);
+      } else {
+        return advertBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder setAdvert(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType value) {
+      if (advertBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdvertIsMutable();
+        advert_.set(index, value);
+        onChanged();
+      } else {
+        advertBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder setAdvert(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder builderForValue) {
+      if (advertBuilder_ == null) {
+        ensureAdvertIsMutable();
+        advert_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        advertBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder addAdvert(com.ctrip.flight.agg.shopping.contract.transportation.AdvertType value) {
+      if (advertBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdvertIsMutable();
+        advert_.add(value);
+        onChanged();
+      } else {
+        advertBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder addAdvert(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType value) {
+      if (advertBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdvertIsMutable();
+        advert_.add(index, value);
+        onChanged();
+      } else {
+        advertBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder addAdvert(
+        com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder builderForValue) {
+      if (advertBuilder_ == null) {
+        ensureAdvertIsMutable();
+        advert_.add(builderForValue.build());
+        onChanged();
+      } else {
+        advertBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder addAdvert(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder builderForValue) {
+      if (advertBuilder_ == null) {
+        ensureAdvertIsMutable();
+        advert_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        advertBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder addAllAdvert(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.AdvertType> values) {
+      if (advertBuilder_ == null) {
+        ensureAdvertIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, advert_);
+        onChanged();
+      } else {
+        advertBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder clearAdvert() {
+      if (advertBuilder_ == null) {
+        advert_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        advertBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public Builder removeAdvert(int index) {
+      if (advertBuilder_ == null) {
+        ensureAdvertIsMutable();
+        advert_.remove(index);
+        onChanged();
+      } else {
+        advertBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder getAdvertBuilder(
+        int index) {
+      return getAdvertFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder getAdvertOrBuilder(
+        int index) {
+      if (advertBuilder_ == null) {
+        return advert_.get(index);  } else {
+        return advertBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder> 
+         getAdvertOrBuilderList() {
+      if (advertBuilder_ != null) {
+        return advertBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(advert_);
+      }
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder addAdvertBuilder() {
+      return getAdvertFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder addAdvertBuilder(
+        int index) {
+      return getAdvertFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 广告x产品营销
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.AdvertType Advert = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder> 
+         getAdvertBuilderList() {
+      return getAdvertFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.AdvertType, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder> 
+        getAdvertFieldBuilder() {
+      if (advertBuilder_ == null) {
+        advertBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.AdvertType, com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder>(
+                advert_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        advert_ = null;
+      }
+      return advertBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

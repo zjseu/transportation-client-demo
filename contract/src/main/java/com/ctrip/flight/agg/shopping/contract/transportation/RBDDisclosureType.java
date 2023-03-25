@@ -26,6 +26,9 @@ private static final long serialVersionUID = 0L;
     specialClassTypeID_ = 0L;
     extraTabName_ = "";
     brandOrder_ = "";
+    availableServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    groundServiceLevel_ = "";
+    airServiceLevel_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +90,27 @@ private static final long serialVersionUID = 0L;
             brandOrder_ = s;
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              availableServices_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            availableServices_.add(s);
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            groundServiceLevel_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            airServiceLevel_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +126,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        availableServices_ = availableServices_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -119,6 +146,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType.class, com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -342,6 +370,143 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AVAILABLESERVICES_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList availableServices_;
+  /**
+   * <pre>
+   *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+   *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+   *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+   * </pre>
+   *
+   * <code>repeated string AvailableServices = 7;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAvailableServicesList() {
+    return availableServices_;
+  }
+  /**
+   * <pre>
+   *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+   *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+   *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+   * </pre>
+   *
+   * <code>repeated string AvailableServices = 7;</code>
+   */
+  public int getAvailableServicesCount() {
+    return availableServices_.size();
+  }
+  /**
+   * <pre>
+   *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+   *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+   *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+   * </pre>
+   *
+   * <code>repeated string AvailableServices = 7;</code>
+   */
+  public java.lang.String getAvailableServices(int index) {
+    return availableServices_.get(index);
+  }
+  /**
+   * <pre>
+   *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+   *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+   *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+   * </pre>
+   *
+   * <code>repeated string AvailableServices = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAvailableServicesBytes(int index) {
+    return availableServices_.getByteString(index);
+  }
+
+  public static final int GROUNDSERVICELEVEL_FIELD_NUMBER = 8;
+  private volatile java.lang.Object groundServiceLevel_;
+  /**
+   * <pre>
+   * 地面服务等级
+   * </pre>
+   *
+   * <code>string GroundServiceLevel = 8;</code>
+   */
+  public java.lang.String getGroundServiceLevel() {
+    java.lang.Object ref = groundServiceLevel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groundServiceLevel_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 地面服务等级
+   * </pre>
+   *
+   * <code>string GroundServiceLevel = 8;</code>
+   */
+  public com.google.protobuf.ByteString
+      getGroundServiceLevelBytes() {
+    java.lang.Object ref = groundServiceLevel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      groundServiceLevel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AIRSERVICELEVEL_FIELD_NUMBER = 9;
+  private volatile java.lang.Object airServiceLevel_;
+  /**
+   * <pre>
+   * 空中服务等级
+   * </pre>
+   *
+   * <code>string AirServiceLevel = 9;</code>
+   */
+  public java.lang.String getAirServiceLevel() {
+    java.lang.Object ref = airServiceLevel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      airServiceLevel_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 空中服务等级
+   * </pre>
+   *
+   * <code>string AirServiceLevel = 9;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAirServiceLevelBytes() {
+    java.lang.Object ref = airServiceLevel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      airServiceLevel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -374,6 +539,15 @@ private static final long serialVersionUID = 0L;
     if (!getBrandOrderBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, brandOrder_);
     }
+    for (int i = 0; i < availableServices_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, availableServices_.getRaw(i));
+    }
+    if (!getGroundServiceLevelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, groundServiceLevel_);
+    }
+    if (!getAirServiceLevelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, airServiceLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -401,6 +575,20 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBrandOrderBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, brandOrder_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < availableServices_.size(); i++) {
+        dataSize += computeStringSizeNoTag(availableServices_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAvailableServicesList().size();
+    }
+    if (!getGroundServiceLevelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, groundServiceLevel_);
+    }
+    if (!getAirServiceLevelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, airServiceLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -430,6 +618,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExtraTabName());
     result = result && getBrandOrder()
         .equals(other.getBrandOrder());
+    result = result && getAvailableServicesList()
+        .equals(other.getAvailableServicesList());
+    result = result && getGroundServiceLevel()
+        .equals(other.getGroundServiceLevel());
+    result = result && getAirServiceLevel()
+        .equals(other.getAirServiceLevel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -454,6 +648,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExtraTabName().hashCode();
     hash = (37 * hash) + BRANDORDER_FIELD_NUMBER;
     hash = (53 * hash) + getBrandOrder().hashCode();
+    if (getAvailableServicesCount() > 0) {
+      hash = (37 * hash) + AVAILABLESERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableServicesList().hashCode();
+    }
+    hash = (37 * hash) + GROUNDSERVICELEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getGroundServiceLevel().hashCode();
+    hash = (37 * hash) + AIRSERVICELEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getAirServiceLevel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -603,6 +805,12 @@ private static final long serialVersionUID = 0L;
 
       brandOrder_ = "";
 
+      availableServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      groundServiceLevel_ = "";
+
+      airServiceLevel_ = "";
+
       return this;
     }
 
@@ -629,12 +837,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType result = new com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.shortName_ = shortName_;
       result.description_ = description_;
       result.specialClassTypeID_ = specialClassTypeID_;
       result.extraTabName_ = extraTabName_;
       result.brandOrder_ = brandOrder_;
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        availableServices_ = availableServices_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.availableServices_ = availableServices_;
+      result.groundServiceLevel_ = groundServiceLevel_;
+      result.airServiceLevel_ = airServiceLevel_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -706,6 +924,24 @@ private static final long serialVersionUID = 0L;
         brandOrder_ = other.brandOrder_;
         onChanged();
       }
+      if (!other.availableServices_.isEmpty()) {
+        if (availableServices_.isEmpty()) {
+          availableServices_ = other.availableServices_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureAvailableServicesIsMutable();
+          availableServices_.addAll(other.availableServices_);
+        }
+        onChanged();
+      }
+      if (!other.getGroundServiceLevel().isEmpty()) {
+        groundServiceLevel_ = other.groundServiceLevel_;
+        onChanged();
+      }
+      if (!other.getAirServiceLevel().isEmpty()) {
+        airServiceLevel_ = other.airServiceLevel_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -734,6 +970,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1214,6 +1451,332 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       brandOrder_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList availableServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAvailableServicesIsMutable() {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        availableServices_ = new com.google.protobuf.LazyStringArrayList(availableServices_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAvailableServicesList() {
+      return availableServices_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public int getAvailableServicesCount() {
+      return availableServices_.size();
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public java.lang.String getAvailableServices(int index) {
+      return availableServices_.get(index);
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAvailableServicesBytes(int index) {
+      return availableServices_.getByteString(index);
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public Builder setAvailableServices(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAvailableServicesIsMutable();
+      availableServices_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public Builder addAvailableServices(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAvailableServicesIsMutable();
+      availableServices_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public Builder addAllAvailableServices(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAvailableServicesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, availableServices_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public Builder clearAvailableServices() {
+      availableServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *特殊舱位可享受服务信息，格式 优先值机，优先安检，优先安检
+     *1:优先升舱,2:优先值机,3:优先安检,4:优先登机,
+     *5:头等舱服务休息室,6:商务舱服务休息室,7:经济舱服务休息室,8:里程累积,9:前排座位,10:餐食服务
+     * </pre>
+     *
+     * <code>repeated string AvailableServices = 7;</code>
+     */
+    public Builder addAvailableServicesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAvailableServicesIsMutable();
+      availableServices_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object groundServiceLevel_ = "";
+    /**
+     * <pre>
+     * 地面服务等级
+     * </pre>
+     *
+     * <code>string GroundServiceLevel = 8;</code>
+     */
+    public java.lang.String getGroundServiceLevel() {
+      java.lang.Object ref = groundServiceLevel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groundServiceLevel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 地面服务等级
+     * </pre>
+     *
+     * <code>string GroundServiceLevel = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroundServiceLevelBytes() {
+      java.lang.Object ref = groundServiceLevel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groundServiceLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 地面服务等级
+     * </pre>
+     *
+     * <code>string GroundServiceLevel = 8;</code>
+     */
+    public Builder setGroundServiceLevel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      groundServiceLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 地面服务等级
+     * </pre>
+     *
+     * <code>string GroundServiceLevel = 8;</code>
+     */
+    public Builder clearGroundServiceLevel() {
+      
+      groundServiceLevel_ = getDefaultInstance().getGroundServiceLevel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 地面服务等级
+     * </pre>
+     *
+     * <code>string GroundServiceLevel = 8;</code>
+     */
+    public Builder setGroundServiceLevelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      groundServiceLevel_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object airServiceLevel_ = "";
+    /**
+     * <pre>
+     * 空中服务等级
+     * </pre>
+     *
+     * <code>string AirServiceLevel = 9;</code>
+     */
+    public java.lang.String getAirServiceLevel() {
+      java.lang.Object ref = airServiceLevel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        airServiceLevel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 空中服务等级
+     * </pre>
+     *
+     * <code>string AirServiceLevel = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAirServiceLevelBytes() {
+      java.lang.Object ref = airServiceLevel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        airServiceLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 空中服务等级
+     * </pre>
+     *
+     * <code>string AirServiceLevel = 9;</code>
+     */
+    public Builder setAirServiceLevel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      airServiceLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 空中服务等级
+     * </pre>
+     *
+     * <code>string AirServiceLevel = 9;</code>
+     */
+    public Builder clearAirServiceLevel() {
+      
+      airServiceLevel_ = getDefaultInstance().getAirServiceLevel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 空中服务等级
+     * </pre>
+     *
+     * <code>string AirServiceLevel = 9;</code>
+     */
+    public Builder setAirServiceLevelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      airServiceLevel_ = value;
       onChanged();
       return this;
     }

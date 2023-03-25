@@ -224,4 +224,31 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder getTaxDetailOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 结算底价，不含后返, 等于国内的SettlementCostPrice
+   * </pre>
+   *
+   * <code>double AccountPrice = 10;</code>
+   */
+  double getAccountPrice();
+
+  /**
+   * <pre>
+   * 底价
+   * </pre>
+   *
+   * <code>double NetPrice = 11;</code>
+   */
+  double getNetPrice();
+
+  /**
+   * <pre>
+   * 相对于基准运价的差价，用于权益卡等场景
+   * </pre>
+   *
+   * <code>double SpecialOfferDiffAmount = 12;</code>
+   */
+  double getSpecialOfferDiffAmount();
 }

@@ -36,7 +36,7 @@ public interface BaggageDetailTypeOrBuilder extends
 
   /**
    * <pre>
-   * Piece、Weight
+   * Piece、Weight、TotalWeight
    * </pre>
    *
    * <code>string Type = 3;</code>
@@ -44,11 +44,20 @@ public interface BaggageDetailTypeOrBuilder extends
   java.lang.String getType();
   /**
    * <pre>
-   * Piece、Weight
+   * Piece、Weight、TotalWeight
    * </pre>
    *
    * <code>string Type = 3;</code>
    */
   com.google.protobuf.ByteString
       getTypeBytes();
+
+  /**
+   * <pre>
+   * 支持浮点的确切数量 -1表示不限制
+   * </pre>
+   *
+   * <code>double ExactAmount = 4;</code>
+   */
+  double getExactAmount();
 }

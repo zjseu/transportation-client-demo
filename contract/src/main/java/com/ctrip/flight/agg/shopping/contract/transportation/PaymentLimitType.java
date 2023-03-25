@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     prepayType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creditCardPaymentLimitRef_ = java.util.Collections.emptyList();
     paymentDiscountRefType_ = java.util.Collections.emptyList();
+    cardHolderLimit_ = 0;
   }
 
   @java.lang.Override
@@ -95,6 +96,11 @@ private static final long serialVersionUID = 0L;
               loanPayment_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 40: {
+
+            cardHolderLimit_ = input.readInt32();
             break;
           }
           default: {
@@ -307,6 +313,19 @@ private static final long serialVersionUID = 0L;
     return getLoanPayment();
   }
 
+  public static final int CARDHOLDERLIMIT_FIELD_NUMBER = 5;
+  private int cardHolderLimit_;
+  /**
+   * <pre>
+   * 0：无限制 1：限制持卡人=乘机人
+   * </pre>
+   *
+   * <code>int32 CardHolderLimit = 5;</code>
+   */
+  public int getCardHolderLimit() {
+    return cardHolderLimit_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -337,6 +356,9 @@ private static final long serialVersionUID = 0L;
     }
     if (loanPayment_ != null) {
       output.writeMessage(4, getLoanPayment());
+    }
+    if (cardHolderLimit_ != 0) {
+      output.writeInt32(5, cardHolderLimit_);
     }
     unknownFields.writeTo(output);
   }
@@ -377,6 +399,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getLoanPayment());
     }
+    if (cardHolderLimit_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, cardHolderLimit_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -404,6 +430,8 @@ private static final long serialVersionUID = 0L;
       result = result && getLoanPayment()
           .equals(other.getLoanPayment());
     }
+    result = result && (getCardHolderLimit()
+        == other.getCardHolderLimit());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -431,6 +459,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LOANPAYMENT_FIELD_NUMBER;
       hash = (53 * hash) + getLoanPayment().hashCode();
     }
+    hash = (37 * hash) + CARDHOLDERLIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + getCardHolderLimit();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -581,6 +611,8 @@ private static final long serialVersionUID = 0L;
         loanPayment_ = null;
         loanPaymentBuilder_ = null;
       }
+      cardHolderLimit_ = 0;
+
       return this;
     }
 
@@ -633,6 +665,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.loanPayment_ = loanPaymentBuilder_.build();
       }
+      result.cardHolderLimit_ = cardHolderLimit_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -730,6 +763,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasLoanPayment()) {
         mergeLoanPayment(other.getLoanPayment());
+      }
+      if (other.getCardHolderLimit() != 0) {
+        setCardHolderLimit(other.getCardHolderLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1448,6 +1484,44 @@ private static final long serialVersionUID = 0L;
         loanPayment_ = null;
       }
       return loanPaymentBuilder_;
+    }
+
+    private int cardHolderLimit_ ;
+    /**
+     * <pre>
+     * 0：无限制 1：限制持卡人=乘机人
+     * </pre>
+     *
+     * <code>int32 CardHolderLimit = 5;</code>
+     */
+    public int getCardHolderLimit() {
+      return cardHolderLimit_;
+    }
+    /**
+     * <pre>
+     * 0：无限制 1：限制持卡人=乘机人
+     * </pre>
+     *
+     * <code>int32 CardHolderLimit = 5;</code>
+     */
+    public Builder setCardHolderLimit(int value) {
+      
+      cardHolderLimit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0：无限制 1：限制持卡人=乘机人
+     * </pre>
+     *
+     * <code>int32 CardHolderLimit = 5;</code>
+     */
+    public Builder clearCardHolderLimit() {
+      
+      cardHolderLimit_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

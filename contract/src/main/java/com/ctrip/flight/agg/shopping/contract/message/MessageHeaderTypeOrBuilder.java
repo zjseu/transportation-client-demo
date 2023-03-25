@@ -141,4 +141,130 @@ public interface MessageHeaderTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSessionIDBytes();
+
+  /**
+   * <pre>
+   * 客户端版本
+   * </pre>
+   *
+   * <code>string ClientVersion = 9;</code>
+   */
+  java.lang.String getClientVersion();
+  /**
+   * <pre>
+   * 客户端版本
+   * </pre>
+   *
+   * <code>string ClientVersion = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getClientVersionBytes();
+
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 10;</code>
+   */
+  java.lang.String getDeviceType();
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 10;</code>
+   */
+  com.google.protobuf.ByteString
+      getDeviceTypeBytes();
+
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 11;</code>
+   */
+  java.lang.String getPlatformType();
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getPlatformTypeBytes();
+
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 12;</code>
+   */
+  java.lang.String getDevicePlatformVersion();
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getDevicePlatformVersionBytes();
+
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 13;</code>
+   */
+  java.lang.String getClientID();
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 13;</code>
+   */
+  com.google.protobuf.ByteString
+      getClientIDBytes();
+
+  /**
+   * <pre>
+   * 分销商编号
+   * </pre>
+   *
+   * <code>string AID = 15;</code>
+   */
+  java.lang.String getAID();
+  /**
+   * <pre>
+   * 分销商编号
+   * </pre>
+   *
+   * <code>string AID = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getAIDBytes();
+
+  /**
+   * <pre>
+   * 分销商子编号
+   * </pre>
+   *
+   * <code>string SID = 16;</code>
+   */
+  java.lang.String getSID();
+  /**
+   * <pre>
+   * 分销商子编号
+   * </pre>
+   *
+   * <code>string SID = 16;</code>
+   */
+  com.google.protobuf.ByteString
+      getSIDBytes();
 }

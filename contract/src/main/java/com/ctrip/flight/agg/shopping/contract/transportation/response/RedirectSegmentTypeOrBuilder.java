@@ -141,4 +141,65 @@ public interface RedirectSegmentTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTransportNoBytes();
+
+  /**
+   * <pre>
+   * 出发站台 可能为空
+   * </pre>
+   *
+   * <code>string DepartTerminal = 11;</code>
+   */
+  java.lang.String getDepartTerminal();
+  /**
+   * <pre>
+   * 出发站台 可能为空
+   * </pre>
+   *
+   * <code>string DepartTerminal = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getDepartTerminalBytes();
+
+  /**
+   * <pre>
+   * 到达站台 可能为空
+   * </pre>
+   *
+   * <code>string ArriveTerminal = 12;</code>
+   */
+  java.lang.String getArriveTerminal();
+  /**
+   * <pre>
+   * 到达站台 可能为空
+   * </pre>
+   *
+   * <code>string ArriveTerminal = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getArriveTerminalBytes();
+
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  boolean hasFlight();
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FlightType getFlight();
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder getFlightOrBuilder();
 }

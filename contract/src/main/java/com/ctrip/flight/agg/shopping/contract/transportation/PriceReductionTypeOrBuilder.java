@@ -74,4 +74,75 @@ public interface PriceReductionTypeOrBuilder extends
    * <code>int32 SelectedGroups = 6;</code>
    */
   int getSelectedGroups();
+
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> 
+      getReductionAmountList();
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType getReductionAmount(int index);
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  int getReductionAmountCount();
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder> 
+      getReductionAmountOrBuilderList();
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder getReductionAmountOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 立减模式: 0表示按订单维度立减，1表示按人数进行立减
+   * </pre>
+   *
+   * <code>int32 ReductionMode = 8;</code>
+   */
+  int getReductionMode();
+
+  /**
+   * <pre>
+   * 展示模式: 0表示按原立减展示，1表示按划线价展示
+   * </pre>
+   *
+   * <code>int32 ShowType = 9;</code>
+   */
+  int getShowType();
+
+  /**
+   * <pre>
+   * 立减信息来源：0 无含义 1：sc automated agora立减
+   * </pre>
+   *
+   * <code>int32 SourceType = 10;</code>
+   */
+  int getSourceType();
 }

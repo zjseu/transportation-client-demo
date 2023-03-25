@@ -42,4 +42,48 @@ public interface PaxRequestTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNationalityBytes();
+
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> 
+      getPaxDetailList();
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType getPaxDetail(int index);
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  int getPaxDetailCount();
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder> 
+      getPaxDetailOrBuilderList();
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder getPaxDetailOrBuilder(
+      int index);
 }

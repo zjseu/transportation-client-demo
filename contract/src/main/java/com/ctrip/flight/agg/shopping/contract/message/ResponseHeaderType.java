@@ -4,6 +4,10 @@
 package com.ctrip.flight.agg.shopping.contract.message;
 
 /**
+ * <pre>
+ * 响应头类型
+ * </pre>
+ *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType}
  */
 public  final class ResponseHeaderType extends
@@ -131,6 +135,10 @@ private static final long serialVersionUID = 0L;
   public static final int SERVERIP_FIELD_NUMBER = 2;
   private volatile java.lang.Object serverIP_;
   /**
+   * <pre>
+   * 服务器IP
+   * </pre>
+   *
    * <code>string ServerIP = 2;</code>
    */
   public java.lang.String getServerIP() {
@@ -146,6 +154,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 服务器IP
+   * </pre>
+   *
    * <code>string ServerIP = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -165,6 +177,10 @@ private static final long serialVersionUID = 0L;
   public static final int RETURNCODE_FIELD_NUMBER = 3;
   private int returnCode_;
   /**
+   * <pre>
+   * 结果Code
+   * </pre>
+   *
    * <code>int32 ReturnCode = 3;</code>
    */
   public int getReturnCode() {
@@ -174,6 +190,10 @@ private static final long serialVersionUID = 0L;
   public static final int DIAGOUTPUT_FIELD_NUMBER = 4;
   private volatile java.lang.Object diagOutput_;
   /**
+   * <pre>
+   * 调试信息
+   * </pre>
+   *
    * <code>string DiagOutput = 4;</code>
    */
   public java.lang.String getDiagOutput() {
@@ -189,6 +209,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 调试信息
+   * </pre>
+   *
    * <code>string DiagOutput = 4;</code>
    */
   public com.google.protobuf.ByteString
@@ -398,6 +422,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 响应头类型
+   * </pre>
+   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.ResponseHeaderType}
    */
   public static final class Builder extends
@@ -691,6 +719,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serverIP_ = "";
     /**
+     * <pre>
+     * 服务器IP
+     * </pre>
+     *
      * <code>string ServerIP = 2;</code>
      */
     public java.lang.String getServerIP() {
@@ -706,6 +738,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 服务器IP
+     * </pre>
+     *
      * <code>string ServerIP = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -722,6 +758,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 服务器IP
+     * </pre>
+     *
      * <code>string ServerIP = 2;</code>
      */
     public Builder setServerIP(
@@ -735,6 +775,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 服务器IP
+     * </pre>
+     *
      * <code>string ServerIP = 2;</code>
      */
     public Builder clearServerIP() {
@@ -744,6 +788,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 服务器IP
+     * </pre>
+     *
      * <code>string ServerIP = 2;</code>
      */
     public Builder setServerIPBytes(
@@ -760,12 +808,20 @@ private static final long serialVersionUID = 0L;
 
     private int returnCode_ ;
     /**
+     * <pre>
+     * 结果Code
+     * </pre>
+     *
      * <code>int32 ReturnCode = 3;</code>
      */
     public int getReturnCode() {
       return returnCode_;
     }
     /**
+     * <pre>
+     * 结果Code
+     * </pre>
+     *
      * <code>int32 ReturnCode = 3;</code>
      */
     public Builder setReturnCode(int value) {
@@ -775,6 +831,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 结果Code
+     * </pre>
+     *
      * <code>int32 ReturnCode = 3;</code>
      */
     public Builder clearReturnCode() {
@@ -786,6 +846,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object diagOutput_ = "";
     /**
+     * <pre>
+     * 调试信息
+     * </pre>
+     *
      * <code>string DiagOutput = 4;</code>
      */
     public java.lang.String getDiagOutput() {
@@ -801,6 +865,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 调试信息
+     * </pre>
+     *
      * <code>string DiagOutput = 4;</code>
      */
     public com.google.protobuf.ByteString
@@ -817,6 +885,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 调试信息
+     * </pre>
+     *
      * <code>string DiagOutput = 4;</code>
      */
     public Builder setDiagOutput(
@@ -830,6 +902,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 调试信息
+     * </pre>
+     *
      * <code>string DiagOutput = 4;</code>
      */
     public Builder clearDiagOutput() {
@@ -839,6 +915,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 调试信息
+     * </pre>
+     *
      * <code>string DiagOutput = 4;</code>
      */
     public Builder setDiagOutputBytes(

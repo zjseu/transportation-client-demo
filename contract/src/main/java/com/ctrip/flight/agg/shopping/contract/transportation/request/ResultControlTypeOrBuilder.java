@@ -59,4 +59,13 @@ public interface ResultControlTypeOrBuilder extends
    * <code>bool NonMatchRequestAgeType = 3;</code>
    */
   boolean getNonMatchRequestAgeType();
+
+  /**
+   * <pre>
+   * 0:不进行行程拆分，1：按Journey拆分行程返回offer
+   * </pre>
+   *
+   * <code>int32 SeparateJourneyType = 4;</code>
+   */
+  int getSeparateJourneyType();
 }

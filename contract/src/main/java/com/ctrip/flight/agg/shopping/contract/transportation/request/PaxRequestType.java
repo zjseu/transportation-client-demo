@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     ageType_ = 0;
     count_ = 0;
     nationality_ = "";
+    paxDetail_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -61,6 +62,15 @@ private static final long serialVersionUID = 0L;
             nationality_ = s;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              paxDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            paxDetail_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -76,6 +86,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        paxDetail_ = java.util.Collections.unmodifiableList(paxDetail_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -93,6 +106,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType.class, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AGETYPE_FIELD_NUMBER = 1;
   private int ageType_;
   /**
@@ -161,6 +175,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PAXDETAIL_FIELD_NUMBER = 4;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> paxDetail_;
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> getPaxDetailList() {
+    return paxDetail_;
+  }
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder> 
+      getPaxDetailOrBuilderList() {
+    return paxDetail_;
+  }
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  public int getPaxDetailCount() {
+    return paxDetail_.size();
+  }
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType getPaxDetail(int index) {
+    return paxDetail_.get(index);
+  }
+  /**
+   * <pre>
+   * 乘机人明细
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder getPaxDetailOrBuilder(
+      int index) {
+    return paxDetail_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (!getNationalityBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nationality_);
     }
+    for (int i = 0; i < paxDetail_.size(); i++) {
+      output.writeMessage(4, paxDetail_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +275,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNationalityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nationality_);
+    }
+    for (int i = 0; i < paxDetail_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, paxDetail_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,6 +302,8 @@ private static final long serialVersionUID = 0L;
         == other.getCount());
     result = result && getNationality()
         .equals(other.getNationality());
+    result = result && getPaxDetailList()
+        .equals(other.getPaxDetailList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -243,6 +321,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCount();
     hash = (37 * hash) + NATIONALITY_FIELD_NUMBER;
     hash = (53 * hash) + getNationality().hashCode();
+    if (getPaxDetailCount() > 0) {
+      hash = (37 * hash) + PAXDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getPaxDetailList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -371,6 +453,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPaxDetailFieldBuilder();
       }
     }
     @java.lang.Override
@@ -382,6 +465,12 @@ private static final long serialVersionUID = 0L;
 
       nationality_ = "";
 
+      if (paxDetailBuilder_ == null) {
+        paxDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        paxDetailBuilder_.clear();
+      }
       return this;
     }
 
@@ -408,9 +497,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.PaxRequestType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.ageType_ = ageType_;
       result.count_ = count_;
       result.nationality_ = nationality_;
+      if (paxDetailBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          paxDetail_ = java.util.Collections.unmodifiableList(paxDetail_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.paxDetail_ = paxDetail_;
+      } else {
+        result.paxDetail_ = paxDetailBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -469,6 +570,32 @@ private static final long serialVersionUID = 0L;
         nationality_ = other.nationality_;
         onChanged();
       }
+      if (paxDetailBuilder_ == null) {
+        if (!other.paxDetail_.isEmpty()) {
+          if (paxDetail_.isEmpty()) {
+            paxDetail_ = other.paxDetail_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePaxDetailIsMutable();
+            paxDetail_.addAll(other.paxDetail_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.paxDetail_.isEmpty()) {
+          if (paxDetailBuilder_.isEmpty()) {
+            paxDetailBuilder_.dispose();
+            paxDetailBuilder_ = null;
+            paxDetail_ = other.paxDetail_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            paxDetailBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPaxDetailFieldBuilder() : null;
+          } else {
+            paxDetailBuilder_.addAllMessages(other.paxDetail_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -497,6 +624,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int ageType_ ;
     /**
@@ -661,6 +789,318 @@ private static final long serialVersionUID = 0L;
       nationality_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> paxDetail_ =
+      java.util.Collections.emptyList();
+    private void ensurePaxDetailIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        paxDetail_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType>(paxDetail_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder> paxDetailBuilder_;
+
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> getPaxDetailList() {
+      if (paxDetailBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(paxDetail_);
+      } else {
+        return paxDetailBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public int getPaxDetailCount() {
+      if (paxDetailBuilder_ == null) {
+        return paxDetail_.size();
+      } else {
+        return paxDetailBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType getPaxDetail(int index) {
+      if (paxDetailBuilder_ == null) {
+        return paxDetail_.get(index);
+      } else {
+        return paxDetailBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder setPaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType value) {
+      if (paxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaxDetailIsMutable();
+        paxDetail_.set(index, value);
+        onChanged();
+      } else {
+        paxDetailBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder setPaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder builderForValue) {
+      if (paxDetailBuilder_ == null) {
+        ensurePaxDetailIsMutable();
+        paxDetail_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paxDetailBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder addPaxDetail(com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType value) {
+      if (paxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaxDetailIsMutable();
+        paxDetail_.add(value);
+        onChanged();
+      } else {
+        paxDetailBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder addPaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType value) {
+      if (paxDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaxDetailIsMutable();
+        paxDetail_.add(index, value);
+        onChanged();
+      } else {
+        paxDetailBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder addPaxDetail(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder builderForValue) {
+      if (paxDetailBuilder_ == null) {
+        ensurePaxDetailIsMutable();
+        paxDetail_.add(builderForValue.build());
+        onChanged();
+      } else {
+        paxDetailBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder addPaxDetail(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder builderForValue) {
+      if (paxDetailBuilder_ == null) {
+        ensurePaxDetailIsMutable();
+        paxDetail_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        paxDetailBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder addAllPaxDetail(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType> values) {
+      if (paxDetailBuilder_ == null) {
+        ensurePaxDetailIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, paxDetail_);
+        onChanged();
+      } else {
+        paxDetailBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder clearPaxDetail() {
+      if (paxDetailBuilder_ == null) {
+        paxDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        paxDetailBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public Builder removePaxDetail(int index) {
+      if (paxDetailBuilder_ == null) {
+        ensurePaxDetailIsMutable();
+        paxDetail_.remove(index);
+        onChanged();
+      } else {
+        paxDetailBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder getPaxDetailBuilder(
+        int index) {
+      return getPaxDetailFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder getPaxDetailOrBuilder(
+        int index) {
+      if (paxDetailBuilder_ == null) {
+        return paxDetail_.get(index);  } else {
+        return paxDetailBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder> 
+         getPaxDetailOrBuilderList() {
+      if (paxDetailBuilder_ != null) {
+        return paxDetailBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(paxDetail_);
+      }
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder addPaxDetailBuilder() {
+      return getPaxDetailFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder addPaxDetailBuilder(
+        int index) {
+      return getPaxDetailFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 乘机人明细
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType PaxDetail = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder> 
+         getPaxDetailBuilderList() {
+      return getPaxDetailFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder> 
+        getPaxDetailFieldBuilder() {
+      if (paxDetailBuilder_ == null) {
+        paxDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.PaxDetailTypeOrBuilder>(
+                paxDetail_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        paxDetail_ = null;
+      }
+      return paxDetailBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

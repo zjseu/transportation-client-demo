@@ -15,4 +15,40 @@ public interface BaggageExtensionFieldsTypeOrBuilder extends
    * <code>bool ContainFreeBaggage = 1;</code>
    */
   boolean getContainFreeBaggage();
+
+  /**
+   * <pre>
+   * baggage 多语言描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageGLB = 2;</code>
+   */
+  java.lang.String getBaggageGLB();
+  /**
+   * <pre>
+   * baggage 多语言描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageGLB = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getBaggageGLBBytes();
+
+  /**
+   * <pre>
+   * baggage 中文描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageCN = 3;</code>
+   */
+  java.lang.String getBaggageCN();
+  /**
+   * <pre>
+   * baggage 中文描述 仅detailsearch时下发
+   * </pre>
+   *
+   * <code>string BaggageCN = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getBaggageCNBytes();
 }

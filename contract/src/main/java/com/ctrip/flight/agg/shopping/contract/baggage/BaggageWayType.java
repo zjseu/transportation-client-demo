@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * 0=托运、1=手提
+   * 0=托运、1=手提、2=打包、3=加购、4=随身
    * </pre>
    *
    * <code>int32 Type = 2;</code>
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
     private int type_ ;
     /**
      * <pre>
-     * 0=托运、1=手提
+     * 0=托运、1=手提、2=打包、3=加购、4=随身
      * </pre>
      *
      * <code>int32 Type = 2;</code>
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 0=托运、1=手提
+     * 0=托运、1=手提、2=打包、3=加购、4=随身
      * </pre>
      *
      * <code>int32 Type = 2;</code>
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 0=托运、1=手提
+     * 0=托运、1=手提、2=打包、3=加购、4=随身
      * </pre>
      *
      * <code>int32 Type = 2;</code>

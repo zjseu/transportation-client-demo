@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     maxJourneyNo_ = 0;
     offerToken_ = "";
     intlAggRouteSearchToken_ = "";
+    separateJourneyOfferToken_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -68,6 +69,15 @@ private static final long serialVersionUID = 0L;
             intlAggRouteSearchToken_ = s;
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              separateJourneyOfferToken_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            separateJourneyOfferToken_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,6 +93,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        separateJourneyOfferToken_ = java.util.Collections.unmodifiableList(separateJourneyOfferToken_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -100,6 +113,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType.class, com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SEARCHMODE_FIELD_NUMBER = 1;
   private int searchMode_;
   /**
@@ -214,6 +228,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SEPARATEJOURNEYOFFERTOKEN_FIELD_NUMBER = 5;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> separateJourneyOfferToken_;
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> getSeparateJourneyOfferTokenList() {
+    return separateJourneyOfferToken_;
+  }
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder> 
+      getSeparateJourneyOfferTokenOrBuilderList() {
+    return separateJourneyOfferToken_;
+  }
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  public int getSeparateJourneyOfferTokenCount() {
+    return separateJourneyOfferToken_.size();
+  }
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType getSeparateJourneyOfferToken(int index) {
+    return separateJourneyOfferToken_.get(index);
+  }
+  /**
+   * <pre>
+   * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder getSeparateJourneyOfferTokenOrBuilder(
+      int index) {
+    return separateJourneyOfferToken_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -240,6 +309,9 @@ private static final long serialVersionUID = 0L;
     if (!getIntlAggRouteSearchTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, intlAggRouteSearchToken_);
     }
+    for (int i = 0; i < separateJourneyOfferToken_.size(); i++) {
+      output.writeMessage(5, separateJourneyOfferToken_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -262,6 +334,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIntlAggRouteSearchTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, intlAggRouteSearchToken_);
+    }
+    for (int i = 0; i < separateJourneyOfferToken_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, separateJourneyOfferToken_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -287,6 +363,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOfferToken());
     result = result && getIntlAggRouteSearchToken()
         .equals(other.getIntlAggRouteSearchToken());
+    result = result && getSeparateJourneyOfferTokenList()
+        .equals(other.getSeparateJourneyOfferTokenList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -306,6 +384,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOfferToken().hashCode();
     hash = (37 * hash) + INTLAGGROUTESEARCHTOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getIntlAggRouteSearchToken().hashCode();
+    if (getSeparateJourneyOfferTokenCount() > 0) {
+      hash = (37 * hash) + SEPARATEJOURNEYOFFERTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getSeparateJourneyOfferTokenList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -434,6 +516,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getSeparateJourneyOfferTokenFieldBuilder();
       }
     }
     @java.lang.Override
@@ -447,6 +530,12 @@ private static final long serialVersionUID = 0L;
 
       intlAggRouteSearchToken_ = "";
 
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        separateJourneyOfferToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        separateJourneyOfferTokenBuilder_.clear();
+      }
       return this;
     }
 
@@ -473,10 +562,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.RouteSearchType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.searchMode_ = searchMode_;
       result.maxJourneyNo_ = maxJourneyNo_;
       result.offerToken_ = offerToken_;
       result.intlAggRouteSearchToken_ = intlAggRouteSearchToken_;
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          separateJourneyOfferToken_ = java.util.Collections.unmodifiableList(separateJourneyOfferToken_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.separateJourneyOfferToken_ = separateJourneyOfferToken_;
+      } else {
+        result.separateJourneyOfferToken_ = separateJourneyOfferTokenBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -539,6 +640,32 @@ private static final long serialVersionUID = 0L;
         intlAggRouteSearchToken_ = other.intlAggRouteSearchToken_;
         onChanged();
       }
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        if (!other.separateJourneyOfferToken_.isEmpty()) {
+          if (separateJourneyOfferToken_.isEmpty()) {
+            separateJourneyOfferToken_ = other.separateJourneyOfferToken_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureSeparateJourneyOfferTokenIsMutable();
+            separateJourneyOfferToken_.addAll(other.separateJourneyOfferToken_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.separateJourneyOfferToken_.isEmpty()) {
+          if (separateJourneyOfferTokenBuilder_.isEmpty()) {
+            separateJourneyOfferTokenBuilder_.dispose();
+            separateJourneyOfferTokenBuilder_ = null;
+            separateJourneyOfferToken_ = other.separateJourneyOfferToken_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            separateJourneyOfferTokenBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSeparateJourneyOfferTokenFieldBuilder() : null;
+          } else {
+            separateJourneyOfferTokenBuilder_.addAllMessages(other.separateJourneyOfferToken_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -567,6 +694,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int searchMode_ ;
     /**
@@ -832,6 +960,318 @@ private static final long serialVersionUID = 0L;
       intlAggRouteSearchToken_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> separateJourneyOfferToken_ =
+      java.util.Collections.emptyList();
+    private void ensureSeparateJourneyOfferTokenIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        separateJourneyOfferToken_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType>(separateJourneyOfferToken_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder> separateJourneyOfferTokenBuilder_;
+
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> getSeparateJourneyOfferTokenList() {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(separateJourneyOfferToken_);
+      } else {
+        return separateJourneyOfferTokenBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public int getSeparateJourneyOfferTokenCount() {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        return separateJourneyOfferToken_.size();
+      } else {
+        return separateJourneyOfferTokenBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType getSeparateJourneyOfferToken(int index) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        return separateJourneyOfferToken_.get(index);
+      } else {
+        return separateJourneyOfferTokenBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder setSeparateJourneyOfferToken(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType value) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.set(index, value);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder setSeparateJourneyOfferToken(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder builderForValue) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder addSeparateJourneyOfferToken(com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType value) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.add(value);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder addSeparateJourneyOfferToken(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType value) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.add(index, value);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder addSeparateJourneyOfferToken(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder builderForValue) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.add(builderForValue.build());
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder addSeparateJourneyOfferToken(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder builderForValue) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder addAllSeparateJourneyOfferToken(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType> values) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        ensureSeparateJourneyOfferTokenIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, separateJourneyOfferToken_);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder clearSeparateJourneyOfferToken() {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        separateJourneyOfferToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public Builder removeSeparateJourneyOfferToken(int index) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        ensureSeparateJourneyOfferTokenIsMutable();
+        separateJourneyOfferToken_.remove(index);
+        onChanged();
+      } else {
+        separateJourneyOfferTokenBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder getSeparateJourneyOfferTokenBuilder(
+        int index) {
+      return getSeparateJourneyOfferTokenFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder getSeparateJourneyOfferTokenOrBuilder(
+        int index) {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        return separateJourneyOfferToken_.get(index);  } else {
+        return separateJourneyOfferTokenBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder> 
+         getSeparateJourneyOfferTokenOrBuilderList() {
+      if (separateJourneyOfferTokenBuilder_ != null) {
+        return separateJourneyOfferTokenBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(separateJourneyOfferToken_);
+      }
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder addSeparateJourneyOfferTokenBuilder() {
+      return getSeparateJourneyOfferTokenFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder addSeparateJourneyOfferTokenBuilder(
+        int index) {
+      return getSeparateJourneyOfferTokenFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 分程查询时指定每一程的offertoken进行严格反查 仅严格反查生效
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType SeparateJourneyOfferToken = 5;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder> 
+         getSeparateJourneyOfferTokenBuilderList() {
+      return getSeparateJourneyOfferTokenFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder> 
+        getSeparateJourneyOfferTokenFieldBuilder() {
+      if (separateJourneyOfferTokenBuilder_ == null) {
+        separateJourneyOfferTokenBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.SeparateJourneyOfferTokenTypeOrBuilder>(
+                separateJourneyOfferToken_,
+                ((bitField0_ & 0x00000010) == 0x00000010),
+                getParentForChildren(),
+                isClean());
+        separateJourneyOfferToken_ = null;
+      }
+      return separateJourneyOfferTokenBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -22,6 +22,10 @@ private static final long serialVersionUID = 0L;
     discountAmount_ = 0D;
     couponCode_ = "";
     selectedGroups_ = 0;
+    reductionAmount_ = java.util.Collections.emptyList();
+    reductionMode_ = 0;
+    showType_ = 0;
+    sourceType_ = 0;
   }
 
   @java.lang.Override
@@ -80,6 +84,30 @@ private static final long serialVersionUID = 0L;
             selectedGroups_ = input.readInt32();
             break;
           }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              reductionAmount_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            reductionAmount_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.parser(), extensionRegistry));
+            break;
+          }
+          case 64: {
+
+            reductionMode_ = input.readInt32();
+            break;
+          }
+          case 72: {
+
+            showType_ = input.readInt32();
+            break;
+          }
+          case 80: {
+
+            sourceType_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,6 +123,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        reductionAmount_ = java.util.Collections.unmodifiableList(reductionAmount_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -112,6 +143,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType.class, com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int REFNUM_FIELD_NUMBER = 1;
   private int refNum_;
   /**
@@ -244,6 +276,100 @@ private static final long serialVersionUID = 0L;
     return selectedGroups_;
   }
 
+  public static final int REDUCTIONAMOUNT_FIELD_NUMBER = 7;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> reductionAmount_;
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> getReductionAmountList() {
+    return reductionAmount_;
+  }
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder> 
+      getReductionAmountOrBuilderList() {
+    return reductionAmount_;
+  }
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  public int getReductionAmountCount() {
+    return reductionAmount_.size();
+  }
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType getReductionAmount(int index) {
+    return reductionAmount_.get(index);
+  }
+  /**
+   * <pre>
+   * 立减金额(按乘客类型) 当立减模式为1时赋值
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder getReductionAmountOrBuilder(
+      int index) {
+    return reductionAmount_.get(index);
+  }
+
+  public static final int REDUCTIONMODE_FIELD_NUMBER = 8;
+  private int reductionMode_;
+  /**
+   * <pre>
+   * 立减模式: 0表示按订单维度立减，1表示按人数进行立减
+   * </pre>
+   *
+   * <code>int32 ReductionMode = 8;</code>
+   */
+  public int getReductionMode() {
+    return reductionMode_;
+  }
+
+  public static final int SHOWTYPE_FIELD_NUMBER = 9;
+  private int showType_;
+  /**
+   * <pre>
+   * 展示模式: 0表示按原立减展示，1表示按划线价展示
+   * </pre>
+   *
+   * <code>int32 ShowType = 9;</code>
+   */
+  public int getShowType() {
+    return showType_;
+  }
+
+  public static final int SOURCETYPE_FIELD_NUMBER = 10;
+  private int sourceType_;
+  /**
+   * <pre>
+   * 立减信息来源：0 无含义 1：sc automated agora立减
+   * </pre>
+   *
+   * <code>int32 SourceType = 10;</code>
+   */
+  public int getSourceType() {
+    return sourceType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -276,6 +402,18 @@ private static final long serialVersionUID = 0L;
     if (selectedGroups_ != 0) {
       output.writeInt32(6, selectedGroups_);
     }
+    for (int i = 0; i < reductionAmount_.size(); i++) {
+      output.writeMessage(7, reductionAmount_.get(i));
+    }
+    if (reductionMode_ != 0) {
+      output.writeInt32(8, reductionMode_);
+    }
+    if (showType_ != 0) {
+      output.writeInt32(9, showType_);
+    }
+    if (sourceType_ != 0) {
+      output.writeInt32(10, sourceType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -307,6 +445,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, selectedGroups_);
     }
+    for (int i = 0; i < reductionAmount_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, reductionAmount_.get(i));
+    }
+    if (reductionMode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, reductionMode_);
+    }
+    if (showType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(9, showType_);
+    }
+    if (sourceType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, sourceType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -337,6 +491,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCouponCode());
     result = result && (getSelectedGroups()
         == other.getSelectedGroups());
+    result = result && getReductionAmountList()
+        .equals(other.getReductionAmountList());
+    result = result && (getReductionMode()
+        == other.getReductionMode());
+    result = result && (getShowType()
+        == other.getShowType());
+    result = result && (getSourceType()
+        == other.getSourceType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -362,6 +524,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCouponCode().hashCode();
     hash = (37 * hash) + SELECTEDGROUPS_FIELD_NUMBER;
     hash = (53 * hash) + getSelectedGroups();
+    if (getReductionAmountCount() > 0) {
+      hash = (37 * hash) + REDUCTIONAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getReductionAmountList().hashCode();
+    }
+    hash = (37 * hash) + REDUCTIONMODE_FIELD_NUMBER;
+    hash = (53 * hash) + getReductionMode();
+    hash = (37 * hash) + SHOWTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getShowType();
+    hash = (37 * hash) + SOURCETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +662,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getReductionAmountFieldBuilder();
       }
     }
     @java.lang.Override
@@ -506,6 +679,18 @@ private static final long serialVersionUID = 0L;
       couponCode_ = "";
 
       selectedGroups_ = 0;
+
+      if (reductionAmountBuilder_ == null) {
+        reductionAmount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        reductionAmountBuilder_.clear();
+      }
+      reductionMode_ = 0;
+
+      showType_ = 0;
+
+      sourceType_ = 0;
 
       return this;
     }
@@ -533,12 +718,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType result = new com.ctrip.flight.agg.shopping.contract.transportation.PriceReductionType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.refNum_ = refNum_;
       result.promotionID_ = promotionID_;
       result.forUser_ = forUser_;
       result.discountAmount_ = discountAmount_;
       result.couponCode_ = couponCode_;
       result.selectedGroups_ = selectedGroups_;
+      if (reductionAmountBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          reductionAmount_ = java.util.Collections.unmodifiableList(reductionAmount_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.reductionAmount_ = reductionAmount_;
+      } else {
+        result.reductionAmount_ = reductionAmountBuilder_.build();
+      }
+      result.reductionMode_ = reductionMode_;
+      result.showType_ = showType_;
+      result.sourceType_ = sourceType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -607,6 +807,41 @@ private static final long serialVersionUID = 0L;
       if (other.getSelectedGroups() != 0) {
         setSelectedGroups(other.getSelectedGroups());
       }
+      if (reductionAmountBuilder_ == null) {
+        if (!other.reductionAmount_.isEmpty()) {
+          if (reductionAmount_.isEmpty()) {
+            reductionAmount_ = other.reductionAmount_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureReductionAmountIsMutable();
+            reductionAmount_.addAll(other.reductionAmount_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.reductionAmount_.isEmpty()) {
+          if (reductionAmountBuilder_.isEmpty()) {
+            reductionAmountBuilder_.dispose();
+            reductionAmountBuilder_ = null;
+            reductionAmount_ = other.reductionAmount_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            reductionAmountBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getReductionAmountFieldBuilder() : null;
+          } else {
+            reductionAmountBuilder_.addAllMessages(other.reductionAmount_);
+          }
+        }
+      }
+      if (other.getReductionMode() != 0) {
+        setReductionMode(other.getReductionMode());
+      }
+      if (other.getShowType() != 0) {
+        setShowType(other.getShowType());
+      }
+      if (other.getSourceType() != 0) {
+        setSourceType(other.getSourceType());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -635,6 +870,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int refNum_ ;
     /**
@@ -950,6 +1186,432 @@ private static final long serialVersionUID = 0L;
     public Builder clearSelectedGroups() {
       
       selectedGroups_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> reductionAmount_ =
+      java.util.Collections.emptyList();
+    private void ensureReductionAmountIsMutable() {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        reductionAmount_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType>(reductionAmount_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder> reductionAmountBuilder_;
+
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> getReductionAmountList() {
+      if (reductionAmountBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(reductionAmount_);
+      } else {
+        return reductionAmountBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public int getReductionAmountCount() {
+      if (reductionAmountBuilder_ == null) {
+        return reductionAmount_.size();
+      } else {
+        return reductionAmountBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType getReductionAmount(int index) {
+      if (reductionAmountBuilder_ == null) {
+        return reductionAmount_.get(index);
+      } else {
+        return reductionAmountBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder setReductionAmount(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType value) {
+      if (reductionAmountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReductionAmountIsMutable();
+        reductionAmount_.set(index, value);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder setReductionAmount(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder builderForValue) {
+      if (reductionAmountBuilder_ == null) {
+        ensureReductionAmountIsMutable();
+        reductionAmount_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        reductionAmountBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder addReductionAmount(com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType value) {
+      if (reductionAmountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReductionAmountIsMutable();
+        reductionAmount_.add(value);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder addReductionAmount(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType value) {
+      if (reductionAmountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReductionAmountIsMutable();
+        reductionAmount_.add(index, value);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder addReductionAmount(
+        com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder builderForValue) {
+      if (reductionAmountBuilder_ == null) {
+        ensureReductionAmountIsMutable();
+        reductionAmount_.add(builderForValue.build());
+        onChanged();
+      } else {
+        reductionAmountBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder addReductionAmount(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder builderForValue) {
+      if (reductionAmountBuilder_ == null) {
+        ensureReductionAmountIsMutable();
+        reductionAmount_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        reductionAmountBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder addAllReductionAmount(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType> values) {
+      if (reductionAmountBuilder_ == null) {
+        ensureReductionAmountIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, reductionAmount_);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder clearReductionAmount() {
+      if (reductionAmountBuilder_ == null) {
+        reductionAmount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public Builder removeReductionAmount(int index) {
+      if (reductionAmountBuilder_ == null) {
+        ensureReductionAmountIsMutable();
+        reductionAmount_.remove(index);
+        onChanged();
+      } else {
+        reductionAmountBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder getReductionAmountBuilder(
+        int index) {
+      return getReductionAmountFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder getReductionAmountOrBuilder(
+        int index) {
+      if (reductionAmountBuilder_ == null) {
+        return reductionAmount_.get(index);  } else {
+        return reductionAmountBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder> 
+         getReductionAmountOrBuilderList() {
+      if (reductionAmountBuilder_ != null) {
+        return reductionAmountBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(reductionAmount_);
+      }
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder addReductionAmountBuilder() {
+      return getReductionAmountFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder addReductionAmountBuilder(
+        int index) {
+      return getReductionAmountFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 立减金额(按乘客类型) 当立减模式为1时赋值
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType ReductionAmount = 7;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder> 
+         getReductionAmountBuilderList() {
+      return getReductionAmountFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder> 
+        getReductionAmountFieldBuilder() {
+      if (reductionAmountBuilder_ == null) {
+        reductionAmountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ReductionAmountTypeOrBuilder>(
+                reductionAmount_,
+                ((bitField0_ & 0x00000040) == 0x00000040),
+                getParentForChildren(),
+                isClean());
+        reductionAmount_ = null;
+      }
+      return reductionAmountBuilder_;
+    }
+
+    private int reductionMode_ ;
+    /**
+     * <pre>
+     * 立减模式: 0表示按订单维度立减，1表示按人数进行立减
+     * </pre>
+     *
+     * <code>int32 ReductionMode = 8;</code>
+     */
+    public int getReductionMode() {
+      return reductionMode_;
+    }
+    /**
+     * <pre>
+     * 立减模式: 0表示按订单维度立减，1表示按人数进行立减
+     * </pre>
+     *
+     * <code>int32 ReductionMode = 8;</code>
+     */
+    public Builder setReductionMode(int value) {
+      
+      reductionMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减模式: 0表示按订单维度立减，1表示按人数进行立减
+     * </pre>
+     *
+     * <code>int32 ReductionMode = 8;</code>
+     */
+    public Builder clearReductionMode() {
+      
+      reductionMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int showType_ ;
+    /**
+     * <pre>
+     * 展示模式: 0表示按原立减展示，1表示按划线价展示
+     * </pre>
+     *
+     * <code>int32 ShowType = 9;</code>
+     */
+    public int getShowType() {
+      return showType_;
+    }
+    /**
+     * <pre>
+     * 展示模式: 0表示按原立减展示，1表示按划线价展示
+     * </pre>
+     *
+     * <code>int32 ShowType = 9;</code>
+     */
+    public Builder setShowType(int value) {
+      
+      showType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示模式: 0表示按原立减展示，1表示按划线价展示
+     * </pre>
+     *
+     * <code>int32 ShowType = 9;</code>
+     */
+    public Builder clearShowType() {
+      
+      showType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int sourceType_ ;
+    /**
+     * <pre>
+     * 立减信息来源：0 无含义 1：sc automated agora立减
+     * </pre>
+     *
+     * <code>int32 SourceType = 10;</code>
+     */
+    public int getSourceType() {
+      return sourceType_;
+    }
+    /**
+     * <pre>
+     * 立减信息来源：0 无含义 1：sc automated agora立减
+     * </pre>
+     *
+     * <code>int32 SourceType = 10;</code>
+     */
+    public Builder setSourceType(int value) {
+      
+      sourceType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 立减信息来源：0 无含义 1：sc automated agora立减
+     * </pre>
+     *
+     * <code>int32 SourceType = 10;</code>
+     */
+    public Builder clearSourceType() {
+      
+      sourceType_ = 0;
       onChanged();
       return this;
     }

@@ -198,6 +198,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 138: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder subBuilder = null;
+            if (productComposition_ != null) {
+              subBuilder = productComposition_.toBuilder();
+            }
+            productComposition_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productComposition_);
+              productComposition_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 146: {
+            com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder subBuilder = null;
+            if (offerComparison_ != null) {
+              subBuilder = offerComparison_.toBuilder();
+            }
+            offerComparison_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(offerComparison_);
+              offerComparison_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -867,6 +893,78 @@ private static final long serialVersionUID = 0L;
     return getUpsellProduct();
   }
 
+  public static final int PRODUCTCOMPOSITION_FIELD_NUMBER = 17;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType productComposition_;
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  public boolean hasProductComposition() {
+    return productComposition_ != null;
+  }
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType getProductComposition() {
+    return productComposition_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.getDefaultInstance() : productComposition_;
+  }
+  /**
+   * <pre>
+   * 可展示的运价金额 已确认目前没人用,直接删除
+   * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+   * 产品组合关系
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder getProductCompositionOrBuilder() {
+    return getProductComposition();
+  }
+
+  public static final int OFFERCOMPARISON_FIELD_NUMBER = 18;
+  private com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType offerComparison_;
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  public boolean hasOfferComparison() {
+    return offerComparison_ != null;
+  }
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType getOfferComparison() {
+    return offerComparison_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.getDefaultInstance() : offerComparison_;
+  }
+  /**
+   * <pre>
+   * 比价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder getOfferComparisonOrBuilder() {
+    return getOfferComparison();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -933,6 +1031,12 @@ private static final long serialVersionUID = 0L;
     }
     if (upsellProduct_ != null) {
       output.writeMessage(16, getUpsellProduct());
+    }
+    if (productComposition_ != null) {
+      output.writeMessage(17, getProductComposition());
+    }
+    if (offerComparison_ != null) {
+      output.writeMessage(18, getOfferComparison());
     }
     unknownFields.writeTo(output);
   }
@@ -1019,6 +1123,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getUpsellProduct());
     }
+    if (productComposition_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getProductComposition());
+    }
+    if (offerComparison_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getOfferComparison());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1074,6 +1186,16 @@ private static final long serialVersionUID = 0L;
     if (hasUpsellProduct()) {
       result = result && getUpsellProduct()
           .equals(other.getUpsellProduct());
+    }
+    result = result && (hasProductComposition() == other.hasProductComposition());
+    if (hasProductComposition()) {
+      result = result && getProductComposition()
+          .equals(other.getProductComposition());
+    }
+    result = result && (hasOfferComparison() == other.hasOfferComparison());
+    if (hasOfferComparison()) {
+      result = result && getOfferComparison()
+          .equals(other.getOfferComparison());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1138,6 +1260,14 @@ private static final long serialVersionUID = 0L;
     if (hasUpsellProduct()) {
       hash = (37 * hash) + UPSELLPRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + getUpsellProduct().hashCode();
+    }
+    if (hasProductComposition()) {
+      hash = (37 * hash) + PRODUCTCOMPOSITION_FIELD_NUMBER;
+      hash = (53 * hash) + getProductComposition().hashCode();
+    }
+    if (hasOfferComparison()) {
+      hash = (37 * hash) + OFFERCOMPARISON_FIELD_NUMBER;
+      hash = (53 * hash) + getOfferComparison().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1342,6 +1472,18 @@ private static final long serialVersionUID = 0L;
         upsellProduct_ = null;
         upsellProductBuilder_ = null;
       }
+      if (productCompositionBuilder_ == null) {
+        productComposition_ = null;
+      } else {
+        productComposition_ = null;
+        productCompositionBuilder_ = null;
+      }
+      if (offerComparisonBuilder_ == null) {
+        offerComparison_ = null;
+      } else {
+        offerComparison_ = null;
+        offerComparisonBuilder_ = null;
+      }
       return this;
     }
 
@@ -1449,6 +1591,16 @@ private static final long serialVersionUID = 0L;
         result.upsellProduct_ = upsellProduct_;
       } else {
         result.upsellProduct_ = upsellProductBuilder_.build();
+      }
+      if (productCompositionBuilder_ == null) {
+        result.productComposition_ = productComposition_;
+      } else {
+        result.productComposition_ = productCompositionBuilder_.build();
+      }
+      if (offerComparisonBuilder_ == null) {
+        result.offerComparison_ = offerComparison_;
+      } else {
+        result.offerComparison_ = offerComparisonBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1700,6 +1852,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpsellProduct()) {
         mergeUpsellProduct(other.getUpsellProduct());
+      }
+      if (other.hasProductComposition()) {
+        mergeProductComposition(other.getProductComposition());
+      }
+      if (other.hasOfferComparison()) {
+        mergeOfferComparison(other.getOfferComparison());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4461,6 +4619,330 @@ private static final long serialVersionUID = 0L;
         upsellProduct_ = null;
       }
       return upsellProductBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType productComposition_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder> productCompositionBuilder_;
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public boolean hasProductComposition() {
+      return productCompositionBuilder_ != null || productComposition_ != null;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType getProductComposition() {
+      if (productCompositionBuilder_ == null) {
+        return productComposition_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.getDefaultInstance() : productComposition_;
+      } else {
+        return productCompositionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public Builder setProductComposition(com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType value) {
+      if (productCompositionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productComposition_ = value;
+        onChanged();
+      } else {
+        productCompositionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public Builder setProductComposition(
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder builderForValue) {
+      if (productCompositionBuilder_ == null) {
+        productComposition_ = builderForValue.build();
+        onChanged();
+      } else {
+        productCompositionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public Builder mergeProductComposition(com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType value) {
+      if (productCompositionBuilder_ == null) {
+        if (productComposition_ != null) {
+          productComposition_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.newBuilder(productComposition_).mergeFrom(value).buildPartial();
+        } else {
+          productComposition_ = value;
+        }
+        onChanged();
+      } else {
+        productCompositionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public Builder clearProductComposition() {
+      if (productCompositionBuilder_ == null) {
+        productComposition_ = null;
+        onChanged();
+      } else {
+        productComposition_ = null;
+        productCompositionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder getProductCompositionBuilder() {
+      
+      onChanged();
+      return getProductCompositionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder getProductCompositionOrBuilder() {
+      if (productCompositionBuilder_ != null) {
+        return productCompositionBuilder_.getMessageOrBuilder();
+      } else {
+        return productComposition_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.getDefaultInstance() : productComposition_;
+      }
+    }
+    /**
+     * <pre>
+     * 可展示的运价金额 已确认目前没人用,直接删除
+     * DisplayedOfferAmountType DisplayedOfferAmount = 17 [deprecated = true];
+     * 产品组合关系
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder> 
+        getProductCompositionFieldBuilder() {
+      if (productCompositionBuilder_ == null) {
+        productCompositionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionTypeOrBuilder>(
+                getProductComposition(),
+                getParentForChildren(),
+                isClean());
+        productComposition_ = null;
+      }
+      return productCompositionBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType offerComparison_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder> offerComparisonBuilder_;
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public boolean hasOfferComparison() {
+      return offerComparisonBuilder_ != null || offerComparison_ != null;
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType getOfferComparison() {
+      if (offerComparisonBuilder_ == null) {
+        return offerComparison_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.getDefaultInstance() : offerComparison_;
+      } else {
+        return offerComparisonBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public Builder setOfferComparison(com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType value) {
+      if (offerComparisonBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        offerComparison_ = value;
+        onChanged();
+      } else {
+        offerComparisonBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public Builder setOfferComparison(
+        com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder builderForValue) {
+      if (offerComparisonBuilder_ == null) {
+        offerComparison_ = builderForValue.build();
+        onChanged();
+      } else {
+        offerComparisonBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public Builder mergeOfferComparison(com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType value) {
+      if (offerComparisonBuilder_ == null) {
+        if (offerComparison_ != null) {
+          offerComparison_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.newBuilder(offerComparison_).mergeFrom(value).buildPartial();
+        } else {
+          offerComparison_ = value;
+        }
+        onChanged();
+      } else {
+        offerComparisonBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public Builder clearOfferComparison() {
+      if (offerComparisonBuilder_ == null) {
+        offerComparison_ = null;
+        onChanged();
+      } else {
+        offerComparison_ = null;
+        offerComparisonBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder getOfferComparisonBuilder() {
+      
+      onChanged();
+      return getOfferComparisonFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder getOfferComparisonOrBuilder() {
+      if (offerComparisonBuilder_ != null) {
+        return offerComparisonBuilder_.getMessageOrBuilder();
+      } else {
+        return offerComparison_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.getDefaultInstance() : offerComparison_;
+      }
+    }
+    /**
+     * <pre>
+     * 比价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder> 
+        getOfferComparisonFieldBuilder() {
+      if (offerComparisonBuilder_ == null) {
+        offerComparisonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder>(
+                getOfferComparison(),
+                getParentForChildren(),
+                isClean());
+        offerComparison_ = null;
+      }
+      return offerComparisonBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

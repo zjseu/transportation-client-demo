@@ -42,4 +42,48 @@ public interface ProductFeeDetailTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getServiceTokenBytes();
+
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> 
+      getServicePackageRelatedProductList();
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType getServicePackageRelatedProduct(int index);
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  int getServicePackageRelatedProductCount();
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder> 
+      getServicePackageRelatedProductOrBuilderList();
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder getServicePackageRelatedProductOrBuilder(
+      int index);
 }

@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     expiryTime_ = 0;
     expiryTimeUnit_ = "";
     priority_ = 0;
+    tag_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -166,6 +167,41 @@ private static final long serialVersionUID = 0L;
             priority_ = input.readInt32();
             break;
           }
+          case 154: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder subBuilder = null;
+            if (serviceBaggage_ != null) {
+              subBuilder = serviceBaggage_.toBuilder();
+            }
+            serviceBaggage_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(serviceBaggage_);
+              serviceBaggage_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 162: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder subBuilder = null;
+            if (servicePriceFreeze_ != null) {
+              subBuilder = servicePriceFreeze_.toBuilder();
+            }
+            servicePriceFreeze_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(servicePriceFreeze_);
+              servicePriceFreeze_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            if (!((mutable_bitField0_ & 0x00100000) == 0x00100000)) {
+              tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00100000;
+            }
+            tag_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -186,6 +222,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         serviceDiscount_ = java.util.Collections.unmodifiableList(serviceDiscount_);
+      }
+      if (((mutable_bitField0_ & 0x00100000) == 0x00100000)) {
+        tag_ = java.util.Collections.unmodifiableList(tag_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -210,7 +249,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -230,7 +269,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+   *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
    * </pre>
    *
    * <code>string ProductType = 1;</code>
@@ -533,6 +572,8 @@ private static final long serialVersionUID = 0L;
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -547,6 +588,8 @@ private static final long serialVersionUID = 0L;
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -562,6 +605,8 @@ private static final long serialVersionUID = 0L;
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -576,6 +621,8 @@ private static final long serialVersionUID = 0L;
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -590,6 +637,8 @@ private static final long serialVersionUID = 0L;
    *  巴士-邻近城市ID
    *  接送机-接送类型/验证码/车的类型
    * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -777,6 +826,127 @@ private static final long serialVersionUID = 0L;
     return priority_;
   }
 
+  public static final int SERVICEBAGGAGE_FIELD_NUMBER = 19;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType serviceBaggage_;
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  public boolean hasServiceBaggage() {
+    return serviceBaggage_ != null;
+  }
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType getServiceBaggage() {
+    return serviceBaggage_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.getDefaultInstance() : serviceBaggage_;
+  }
+  /**
+   * <pre>
+   * x产品行李额信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder getServiceBaggageOrBuilder() {
+    return getServiceBaggage();
+  }
+
+  public static final int SERVICEPRICEFREEZE_FIELD_NUMBER = 20;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType servicePriceFreeze_;
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  public boolean hasServicePriceFreeze() {
+    return servicePriceFreeze_ != null;
+  }
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType getServicePriceFreeze() {
+    return servicePriceFreeze_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.getDefaultInstance() : servicePriceFreeze_;
+  }
+  /**
+   * <pre>
+   * 锁价信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder getServicePriceFreezeOrBuilder() {
+    return getServicePriceFreeze();
+  }
+
+  public static final int TAG_FIELD_NUMBER = 21;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_;
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
+    return tag_;
+  }
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList() {
+    return tag_;
+  }
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  public int getTagCount() {
+    return tag_.size();
+  }
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
+    return tag_.get(index);
+  }
+  /**
+   * <pre>
+   * 国内x产品额外输出信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index) {
+    return tag_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -844,6 +1014,15 @@ private static final long serialVersionUID = 0L;
     }
     if (priority_ != 0) {
       output.writeInt32(18, priority_);
+    }
+    if (serviceBaggage_ != null) {
+      output.writeMessage(19, getServiceBaggage());
+    }
+    if (servicePriceFreeze_ != null) {
+      output.writeMessage(20, getServicePriceFreeze());
+    }
+    for (int i = 0; i < tag_.size(); i++) {
+      output.writeMessage(21, tag_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -918,6 +1097,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(18, priority_);
     }
+    if (serviceBaggage_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getServiceBaggage());
+    }
+    if (servicePriceFreeze_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getServicePriceFreeze());
+    }
+    for (int i = 0; i < tag_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, tag_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -976,6 +1167,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExpiryTimeUnit());
     result = result && (getPriority()
         == other.getPriority());
+    result = result && (hasServiceBaggage() == other.hasServiceBaggage());
+    if (hasServiceBaggage()) {
+      result = result && getServiceBaggage()
+          .equals(other.getServiceBaggage());
+    }
+    result = result && (hasServicePriceFreeze() == other.hasServicePriceFreeze());
+    if (hasServicePriceFreeze()) {
+      result = result && getServicePriceFreeze()
+          .equals(other.getServicePriceFreeze());
+    }
+    result = result && getTagList()
+        .equals(other.getTagList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1031,6 +1234,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExpiryTimeUnit().hashCode();
     hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getPriority();
+    if (hasServiceBaggage()) {
+      hash = (37 * hash) + SERVICEBAGGAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceBaggage().hashCode();
+    }
+    if (hasServicePriceFreeze()) {
+      hash = (37 * hash) + SERVICEPRICEFREEZE_FIELD_NUMBER;
+      hash = (53 * hash) + getServicePriceFreeze().hashCode();
+    }
+    if (getTagCount() > 0) {
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTagList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1161,6 +1376,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getExtensionFieldBuilder();
         getServiceDiscountFieldBuilder();
+        getTagFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1210,6 +1426,24 @@ private static final long serialVersionUID = 0L;
 
       priority_ = 0;
 
+      if (serviceBaggageBuilder_ == null) {
+        serviceBaggage_ = null;
+      } else {
+        serviceBaggage_ = null;
+        serviceBaggageBuilder_ = null;
+      }
+      if (servicePriceFreezeBuilder_ == null) {
+        servicePriceFreeze_ = null;
+      } else {
+        servicePriceFreeze_ = null;
+        servicePriceFreezeBuilder_ = null;
+      }
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+      } else {
+        tagBuilder_.clear();
+      }
       return this;
     }
 
@@ -1272,6 +1506,25 @@ private static final long serialVersionUID = 0L;
       result.expiryTime_ = expiryTime_;
       result.expiryTimeUnit_ = expiryTimeUnit_;
       result.priority_ = priority_;
+      if (serviceBaggageBuilder_ == null) {
+        result.serviceBaggage_ = serviceBaggage_;
+      } else {
+        result.serviceBaggage_ = serviceBaggageBuilder_.build();
+      }
+      if (servicePriceFreezeBuilder_ == null) {
+        result.servicePriceFreeze_ = servicePriceFreeze_;
+      } else {
+        result.servicePriceFreeze_ = servicePriceFreezeBuilder_.build();
+      }
+      if (tagBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) == 0x00100000)) {
+          tag_ = java.util.Collections.unmodifiableList(tag_);
+          bitField0_ = (bitField0_ & ~0x00100000);
+        }
+        result.tag_ = tag_;
+      } else {
+        result.tag_ = tagBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1429,6 +1682,38 @@ private static final long serialVersionUID = 0L;
       if (other.getPriority() != 0) {
         setPriority(other.getPriority());
       }
+      if (other.hasServiceBaggage()) {
+        mergeServiceBaggage(other.getServiceBaggage());
+      }
+      if (other.hasServicePriceFreeze()) {
+        mergeServicePriceFreeze(other.getServicePriceFreeze());
+      }
+      if (tagBuilder_ == null) {
+        if (!other.tag_.isEmpty()) {
+          if (tag_.isEmpty()) {
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+          } else {
+            ensureTagIsMutable();
+            tag_.addAll(other.tag_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tag_.isEmpty()) {
+          if (tagBuilder_.isEmpty()) {
+            tagBuilder_.dispose();
+            tagBuilder_ = null;
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+            tagBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTagFieldBuilder() : null;
+          } else {
+            tagBuilder_.addAllMessages(other.tag_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1463,7 +1748,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1483,7 +1768,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1504,7 +1789,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1522,7 +1807,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -1536,7 +1821,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      *国内目前支持的取值有：CouponProduct、VIPLounge、Specialty、InsuranceProduct、SecurityChannel、PickUp、PostCard、ServicePackage、MemberInterest、VirtualProduct、DiningCoupon、Metro、Railway
-     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard
+     *国际支持的取值：Pickup,VIPLounge,FlightBoat, FlightCar,GeneralCoupon,ServicePackage,MemberInterest,BaggageAncillary, TransferService, PriceFreeze, DiscountCard, SGR
      * </pre>
      *
      * <code>string ProductType = 1;</code>
@@ -2207,6 +2492,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2225,6 +2512,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2243,6 +2532,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2261,6 +2552,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2286,6 +2579,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2308,6 +2603,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2332,6 +2629,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2357,6 +2656,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2379,6 +2680,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2401,6 +2704,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2424,6 +2729,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2445,6 +2752,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2466,6 +2775,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2481,6 +2792,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2499,6 +2812,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2518,6 +2833,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2533,6 +2850,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -2549,6 +2868,8 @@ private static final long serialVersionUID = 0L;
      *  巴士-邻近城市ID
      *  接送机-接送类型/验证码/车的类型
      * 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     * 打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     * 打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否;1表示是
      * </pre>
      *
      * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Extension = 12;</code>
@@ -3174,6 +3495,624 @@ private static final long serialVersionUID = 0L;
       priority_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType serviceBaggage_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder> serviceBaggageBuilder_;
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public boolean hasServiceBaggage() {
+      return serviceBaggageBuilder_ != null || serviceBaggage_ != null;
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType getServiceBaggage() {
+      if (serviceBaggageBuilder_ == null) {
+        return serviceBaggage_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.getDefaultInstance() : serviceBaggage_;
+      } else {
+        return serviceBaggageBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public Builder setServiceBaggage(com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType value) {
+      if (serviceBaggageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceBaggage_ = value;
+        onChanged();
+      } else {
+        serviceBaggageBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public Builder setServiceBaggage(
+        com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder builderForValue) {
+      if (serviceBaggageBuilder_ == null) {
+        serviceBaggage_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceBaggageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public Builder mergeServiceBaggage(com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType value) {
+      if (serviceBaggageBuilder_ == null) {
+        if (serviceBaggage_ != null) {
+          serviceBaggage_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.newBuilder(serviceBaggage_).mergeFrom(value).buildPartial();
+        } else {
+          serviceBaggage_ = value;
+        }
+        onChanged();
+      } else {
+        serviceBaggageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public Builder clearServiceBaggage() {
+      if (serviceBaggageBuilder_ == null) {
+        serviceBaggage_ = null;
+        onChanged();
+      } else {
+        serviceBaggage_ = null;
+        serviceBaggageBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder getServiceBaggageBuilder() {
+      
+      onChanged();
+      return getServiceBaggageFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder getServiceBaggageOrBuilder() {
+      if (serviceBaggageBuilder_ != null) {
+        return serviceBaggageBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceBaggage_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.getDefaultInstance() : serviceBaggage_;
+      }
+    }
+    /**
+     * <pre>
+     * x产品行李额信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType ServiceBaggage = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder> 
+        getServiceBaggageFieldBuilder() {
+      if (serviceBaggageBuilder_ == null) {
+        serviceBaggageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServiceBaggageTypeOrBuilder>(
+                getServiceBaggage(),
+                getParentForChildren(),
+                isClean());
+        serviceBaggage_ = null;
+      }
+      return serviceBaggageBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType servicePriceFreeze_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder> servicePriceFreezeBuilder_;
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public boolean hasServicePriceFreeze() {
+      return servicePriceFreezeBuilder_ != null || servicePriceFreeze_ != null;
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType getServicePriceFreeze() {
+      if (servicePriceFreezeBuilder_ == null) {
+        return servicePriceFreeze_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.getDefaultInstance() : servicePriceFreeze_;
+      } else {
+        return servicePriceFreezeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public Builder setServicePriceFreeze(com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType value) {
+      if (servicePriceFreezeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        servicePriceFreeze_ = value;
+        onChanged();
+      } else {
+        servicePriceFreezeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public Builder setServicePriceFreeze(
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder builderForValue) {
+      if (servicePriceFreezeBuilder_ == null) {
+        servicePriceFreeze_ = builderForValue.build();
+        onChanged();
+      } else {
+        servicePriceFreezeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public Builder mergeServicePriceFreeze(com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType value) {
+      if (servicePriceFreezeBuilder_ == null) {
+        if (servicePriceFreeze_ != null) {
+          servicePriceFreeze_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.newBuilder(servicePriceFreeze_).mergeFrom(value).buildPartial();
+        } else {
+          servicePriceFreeze_ = value;
+        }
+        onChanged();
+      } else {
+        servicePriceFreezeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public Builder clearServicePriceFreeze() {
+      if (servicePriceFreezeBuilder_ == null) {
+        servicePriceFreeze_ = null;
+        onChanged();
+      } else {
+        servicePriceFreeze_ = null;
+        servicePriceFreezeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder getServicePriceFreezeBuilder() {
+      
+      onChanged();
+      return getServicePriceFreezeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder getServicePriceFreezeOrBuilder() {
+      if (servicePriceFreezeBuilder_ != null) {
+        return servicePriceFreezeBuilder_.getMessageOrBuilder();
+      } else {
+        return servicePriceFreeze_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.getDefaultInstance() : servicePriceFreeze_;
+      }
+    }
+    /**
+     * <pre>
+     * 锁价信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType ServicePriceFreeze = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder> 
+        getServicePriceFreezeFieldBuilder() {
+      if (servicePriceFreezeBuilder_ == null) {
+        servicePriceFreezeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePriceFreezeTypeOrBuilder>(
+                getServicePriceFreeze(),
+                getParentForChildren(),
+                isClean());
+        servicePriceFreeze_ = null;
+      }
+      return servicePriceFreezeBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_ =
+      java.util.Collections.emptyList();
+    private void ensureTagIsMutable() {
+      if (!((bitField0_ & 0x00100000) == 0x00100000)) {
+        tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(tag_);
+        bitField0_ |= 0x00100000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> tagBuilder_;
+
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
+      if (tagBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tag_);
+      } else {
+        return tagBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public int getTagCount() {
+      if (tagBuilder_ == null) {
+        return tag_.size();
+      } else {
+        return tagBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);
+      } else {
+        return tagBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.set(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder addTag(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder addTag(
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder addAllTag(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tag_);
+        onChanged();
+      } else {
+        tagBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder clearTag() {
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+        onChanged();
+      } else {
+        tagBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public Builder removeTag(int index) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.remove(index);
+        onChanged();
+      } else {
+        tagBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getTagBuilder(
+        int index) {
+      return getTagFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+        int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);  } else {
+        return tagBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+         getTagOrBuilderList() {
+      if (tagBuilder_ != null) {
+        return tagBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tag_);
+      }
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder() {
+      return getTagFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder(
+        int index) {
+      return getTagFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 国内x产品额外输出信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 21;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
+         getTagBuilderList() {
+      return getTagFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+        getTagFieldBuilder() {
+      if (tagBuilder_ == null) {
+        tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
+                tag_,
+                ((bitField0_ & 0x00100000) == 0x00100000),
+                getParentForChildren(),
+                isClean());
+        tag_ = null;
+      }
+      return tagBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

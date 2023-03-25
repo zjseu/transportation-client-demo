@@ -145,6 +145,11 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RestrictionType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TakeChildInfantNumLimitType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TakeChildInfantNumLimitType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentLimitType_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -215,6 +220,26 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferPackageType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductCompositionType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductCompositionType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CompositionPlanDefinitionType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CompositionPlanDefinitionType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductItemReferenceType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductItemReferenceType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferComparisonType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferComparisonType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BundleItemType_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -259,6 +284,11 @@ public final class ComCtripFlightAggShoppingContractTransportation {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductFeeDetailType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePackageRelatedProductType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePackageRelatedProductType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDiscountType_descriptor;
   static final 
@@ -309,6 +339,11 @@ public final class ComCtripFlightAggShoppingContractTransportation {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PriceReductionType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ReductionAmountType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ReductionAmountType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MemberPrivilegeType_descriptor;
   static final 
@@ -384,6 +419,46 @@ public final class ComCtripFlightAggShoppingContractTransportation {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BusType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DisplayedOfferAmountType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DisplayedOfferAmountType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FloatUpType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FloatUpType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditPointsType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditPointsType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceBaggageType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceBaggageType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePriceFreezeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePriceFreezeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MileageCashType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MileageCashType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertDetailType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertDetailType_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -399,388 +474,465 @@ public final class ComCtripFlightAggShoppingContractTransportation {
       "m.ctrip.flight.agg.shopping.contract.bag" +
       "gage.proto\"`\n\013FareRefType\022\022\n\nPUSequence\030" +
       "\001 \001(\005\022\022\n\nFCSequence\030\002 \001(\005\022\024\n\014AgeTypeGrou" +
-      "p\030\003 \001(\005\022\023\n\013FareInfoRef\030\004 \001(\005\"\240\002\n\014FareInf" +
+      "p\030\003 \001(\005\022\023\n\013FareInfoRef\030\004 \001(\005\"\325\002\n\014FareInf" +
       "oType\022\016\n\006RefNum\030\001 \001(\005\022\016\n\006FareID\030\002 \001(\t\022\021\n" +
       "\tFareBasis\030\003 \001(\t\022\022\n\nFareSource\030\004 \001(\005\022\024\n\014" +
       "OwnerCarrier\030\005 \001(\t\022\020\n\010FareType\030\006 \001(\005\022\023\n\013" +
       "AccountCode\030\007 \001(\t\022\030\n\020TicketDesignator\030\010 " +
       "\001(\t\022\020\n\010TourCode\030\t \001(\t\022\023\n\013Eligibility\030\n \001" +
       "(\t\022\020\n\010TariffNo\030\013 \001(\005\022\020\n\010FareRule\030\014 \001(\t\022\024" +
-      "\n\014FareTypeCode\030\r \001(\t\022\021\n\tFareClass\030\016 \001(\t\"" +
-      ".\n\020KeyValuePairType\022\013\n\003Key\030\001 \001(\t\022\r\n\005Valu" +
-      "e\030\002 \001(\t\"(\n\014IntRangeType\022\013\n\003Min\030\001 \001(\005\022\013\n\003" +
-      "Max\030\002 \001(\005\"\374\002\n\022PaxRestrictionType\022\024\n\014AgeL" +
-      "imitType\030\001 \001(\005\022Z\n\rAgeLimitRange\030\002 \003(\0132C." +
-      "com.ctrip.flight.agg.shopping.contract.t" +
-      "ransportation.IntRangeType\022\030\n\020Nationalit" +
-      "yAllow\030\003 \003(\t\022\030\n\020NationalityBlock\030\004 \003(\t\022^" +
-      "\n\021MaleAgeLimitRange\030\005 \003(\0132C.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.IntRangeType\022`\n\023FemaleAgeLimitRange\030\006 " +
-      "\003(\0132C.com.ctrip.flight.agg.shopping.cont" +
-      "ract.transportation.IntRangeType\"\333\001\n\010Sto" +
-      "pType\022\023\n\013AirportCode\030\001 \001(\t\022\027\n\017DurationMi" +
-      "nutes\030\002 \001(\005\022\026\n\016ArriveDateTime\030\003 \001(\t\022\027\n\017T" +
-      "hroughFlightNo\030\004 \003(\t\022\032\n\022TerminalBuilding" +
-      "ID\030\005 \001(\005\022T\n\003Tag\030\006 \003(\0132G.com.ctrip.flight" +
+      "\n\014FareTypeCode\030\r \001(\t\022\021\n\tFareClass\030\016 \001(\t\022" +
+      "\025\n\rPrivateTariff\030\017 \001(\010\022\034\n\024G16FareClassTa" +
+      "riffNo\030\021 \001(\005\".\n\020KeyValuePairType\022\013\n\003Key\030" +
+      "\001 \001(\t\022\r\n\005Value\030\002 \001(\t\"(\n\014IntRangeType\022\013\n\003" +
+      "Min\030\001 \001(\005\022\013\n\003Max\030\002 \001(\005\"\374\002\n\022PaxRestrictio" +
+      "nType\022\024\n\014AgeLimitType\030\001 \001(\005\022Z\n\rAgeLimitR" +
+      "ange\030\002 \003(\0132C.com.ctrip.flight.agg.shoppi" +
+      "ng.contract.transportation.IntRangeType\022" +
+      "\030\n\020NationalityAllow\030\003 \003(\t\022\030\n\020Nationality" +
+      "Block\030\004 \003(\t\022^\n\021MaleAgeLimitRange\030\005 \003(\0132C" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.IntRangeType\022`\n\023FemaleAge" +
+      "LimitRange\030\006 \003(\0132C.com.ctrip.flight.agg." +
+      "shopping.contract.transportation.IntRang" +
+      "eType\"\333\001\n\010StopType\022\023\n\013AirportCode\030\001 \001(\t\022" +
+      "\027\n\017DurationMinutes\030\002 \001(\005\022\026\n\016ArriveDateTi" +
+      "me\030\003 \001(\t\022\027\n\017ThroughFlightNo\030\004 \003(\t\022\032\n\022Ter" +
+      "minalBuildingID\030\005 \001(\005\022T\n\003Tag\030\006 \003(\0132G.com" +
+      ".ctrip.flight.agg.shopping.contract.tran" +
+      "sportation.KeyValuePairType\"\270\006\n\024FlightPa" +
+      "xProductType\022\023\n\013Eligibility\030\001 \001(\t\022\017\n\007Age" +
+      "Type\030\002 \001(\005\022y\n\027SaleCurrencyPriceDetail\030\003 " +
+      "\001(\0132X.com.ctrip.flight.agg.shopping.cont" +
+      "ract.transportation.FlightSaleCurrencyPr" +
+      "iceDetailType\022\205\001\n\035SettlementCurrencyPric" +
+      "eDetail\030\004 \001(\0132^.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.FlightSett" +
+      "lementCurrencyPriceDetailType\022Q\n\006Rebate\030" +
+      "\005 \003(\0132A.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.RebateType\022\024\n\014Tick" +
+      "etRemark\030\006 \001(\t\022a\n\016PaxRestriction\030\007 \001(\0132I" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.PaxRestrictionType\022\025\n\rTex" +
+      "tRemarkRef\030\010 \001(\005\022]\n\014RefundChange\030\t \001(\0132G" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.RefundChangeType\022T\n\003Tag\030\n" +
+      " \003(\0132G.com.ctrip.flight.agg.shopping.con" +
+      "tract.transportation.KeyValuePairType\022_\n" +
+      "\rCreditCardFee\030\013 \003(\0132H.com.ctrip.flight." +
+      "agg.shopping.contract.transportation.Cre" +
+      "ditCardFeeType\"~\n\021CreditCardFeeType\022\026\n\016C" +
+      "reditCardType\030\001 \001(\t\022Q\n\006Amount\030\002 \001(\0132A.co" +
+      "m.ctrip.flight.agg.shopping.contract.tra" +
+      "nsportation.AmountType\"\373\004\n!FlightSaleCur" +
+      "rencyPriceDetailType\022T\n\tSalePrice\030\001 \001(\0132" +
+      "A.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.AmountType\022N\n\003Tax\030\002 \001(\0132" +
+      "A.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.AmountType\022\024\n\014PublishPri" +
+      "ce\030\003 \001(\001\022U\n\010Discount\030\004 \003(\0132C.com.ctrip.f" +
+      "light.agg.shopping.contract.transportati" +
+      "on.DiscountType\022\014\n\004Rate\030\005 \001(\001\022\026\n\016PrePcCo" +
+      "dePrice\030\006 \001(\001\022Y\n\nServiceFee\030\007 \003(\0132E.com." +
+      "ctrip.flight.agg.shopping.contract.trans" +
+      "portation.ServiceFeeType\022!\n\031FlightHotelD" +
+      "iscountAmount\030\010 \001(\001\022W\n\tTaxDetail\030\t \003(\0132D" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.TaxDetailType\022\024\n\014AccountP" +
+      "rice\030\n \001(\001\022\020\n\010NetPrice\030\013 \001(\001\022\036\n\026SpecialO" +
+      "fferDiffAmount\030\014 \001(\001\"\351\003\n\'FlightSettlemen" +
+      "tCurrencyPriceDetailType\022\020\n\010Currency\030\001 \001" +
+      "(\t\022T\n\tSalePrice\030\002 \001(\0132A.com.ctrip.flight" +
+      ".agg.shopping.contract.transportation.Am" +
+      "ountType\022N\n\003Tax\030\003 \001(\0132A.com.ctrip.flight" +
+      ".agg.shopping.contract.transportation.Am" +
+      "ountType\022\024\n\014PublishPrice\030\004 \001(\001\022\024\n\014Accoun" +
+      "tPrice\030\005 \001(\001\022\020\n\010NetPrice\030\006 \001(\001\022\024\n\014Exchan" +
+      "geRate\030\007 \001(\001\022Y\n\nServiceFee\030\010 \003(\0132E.com.c" +
+      "trip.flight.agg.shopping.contract.transp" +
+      "ortation.ServiceFeeType\022W\n\tTaxDetail\030\t \003" +
+      "(\0132D.com.ctrip.flight.agg.shopping.contr" +
+      "act.transportation.TaxDetailType\"j\n\nReba" +
+      "teType\022\014\n\004Type\030\001 \001(\t\022\016\n\006Amount\030\002 \001(\001\022\020\n\010" +
+      "Currency\030\003 \001(\t\022\026\n\016RebatePolicyID\030\004 \003(\003\022\024" +
+      "\n\014ActualAmount\030\005 \001(\001\"\355\002\n\016PaxProductType\022" +
+      "\017\n\007AgeType\030\001 \001(\005\022s\n\027SaleCurrencyPriceDet" +
+      "ail\030\002 \001(\0132R.com.ctrip.flight.agg.shoppin" +
+      "g.contract.transportation.SaleCurrencyPr" +
+      "iceDetailType\022\177\n\035SettlementCurrencyPrice" +
+      "Detail\030\003 \001(\0132X.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.SettlementC" +
+      "urrencyPriceDetailType\022T\n\003Tag\030\004 \003(\0132G.co" +
+      "m.ctrip.flight.agg.shopping.contract.tra" +
+      "nsportation.KeyValuePairType\"s\n\033SaleCurr" +
+      "encyPriceDetailType\022T\n\tSalePrice\030\001 \001(\0132A" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.AmountType\"a\n!SettlementC" +
+      "urrencyPriceDetailType\022\020\n\010Currency\030\001 \001(\t" +
+      "\022\024\n\014PublishPrice\030\002 \001(\001\022\024\n\014ExchangeRate\030\003" +
+      " \001(\001\"\206\002\n\013PaxSeatType\022\024\n\014AgeTypeGroup\030\001 \001" +
+      "(\005\022\021\n\tSeatCount\030\002 \001(\005\022\032\n\022ProductDetailIn" +
+      "dex\030\003 \001(\005\022Y\n\nFlightSeat\030\004 \001(\0132E.com.ctri" +
+      "p.flight.agg.shopping.contract.transport" +
+      "ation.FlightSeatType\022W\n\tTrainSeat\030\005 \001(\0132" +
+      "D.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.TrainSeatType\"\225\002\n\016Flight" +
+      "SeatType\022\022\n\nPUSequence\030\001 \001(\005\022\022\n\nFCSequen" +
+      "ce\030\002 \001(\005\022\021\n\tCabinCode\030\003 \001(\t\022\013\n\003RBD\030\004 \001(\t" +
+      "\022\032\n\022MarketingCabinCode\030\005 \001(\t\022\022\n\nSeatSour" +
+      "ce\030\006 \001(\005\022\017\n\007StockID\030\007 \001(\003\022\031\n\rMileageCred" +
+      "it\030\010 \001(\005B\002\030\001\022_\n\rRBDDisclosure\030\t \001(\0132H.co" +
+      "m.ctrip.flight.agg.shopping.contract.tra" +
+      "nsportation.RBDDisclosureType\"7\n\rTrainSe" +
+      "atType\022\024\n\014SeatTypeName\030\001 \001(\t\022\020\n\010SeatType" +
+      "\030\002 \001(\t\"\311\002\n\025FlightPunctualityType\022 \n\030Arri" +
+      "veHistoryPunctuality\030\001 \001(\t\022\033\n\023EstimatedD" +
+      "epartTime\030\002 \001(\t\022\035\n\025EstimatedFlightStatus" +
+      "\030\003 \001(\005\022&\n\036EstimatedArriveDelayMinMinutes" +
+      "\030\004 \001(\005\022&\n\036EstimatedArriveDelayMaxMinutes" +
+      "\030\005 \001(\005\022\\\n\013DelayReason\030\006 \003(\0132G.com.ctrip." +
+      "flight.agg.shopping.contract.transportat" +
+      "ion.KeyValuePairType\022$\n\034VeryZhunDeptimeR" +
+      "eadyWithDate\030\007 \001(\t\"\201\003\n\030FlightReferencePr" +
+      "iceType\022_\n\rStandardPrice\030\001 \003(\0132H.com.ctr" +
+      "ip.flight.agg.shopping.contract.transpor" +
+      "tation.StandardPriceType\022#\n\027UpgradeCFRef" +
+      "erencePrice\030\002 \001(\001B\002\030\001\022n\n\025YReferencePrice" +
+      "Detail\030\003 \001(\0132O.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.ReferencePr" +
+      "iceDetailType\022o\n\026CFReferencePriceDetail\030" +
+      "\004 \001(\0132O.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.ReferencePriceDeta" +
+      "ilType\"^\n\030ReferencePriceDetailType\022\"\n\032Up" +
+      "gradeClassReferencePrice\030\001 \001(\001\022\036\n\026Flight" +
+      "HotelLowestPrice\030\002 \001(\001\"I\n\021StandardPriceT" +
+      "ype\022\021\n\tCabinCode\030\001 \001(\t\022\013\n\003RBD\030\002 \001(\t\022\024\n\014P" +
+      "ublishPrice\030\003 \001(\001\"\337\001\n\021RBDDisclosureType\022" +
+      "\014\n\004Name\030\001 \001(\t\022\021\n\tShortName\030\002 \001(\t\022\023\n\013Desc" +
+      "ription\030\003 \001(\t\022\032\n\022SpecialClassTypeID\030\004 \001(" +
+      "\003\022\024\n\014ExtraTabName\030\005 \001(\t\022\022\n\nBrandOrder\030\006 " +
+      "\001(\t\022\031\n\021AvailableServices\030\007 \003(\t\022\032\n\022Ground" +
+      "ServiceLevel\030\010 \001(\t\022\027\n\017AirServiceLevel\030\t " +
+      "\001(\t\"]\n\026TicketingTimeLimitType\022\025\n\rTimeLim" +
+      "itType\030\001 \001(\005\022\024\n\014LimitMinutes\030\002 \001(\005\022\026\n\016Av" +
+      "erageMinutes\030\003 \001(\005\"\234\002\n\014DiscountType\022Q\n\006A" +
+      "mount\030\001 \001(\0132A.com.ctrip.flight.agg.shopp" +
+      "ing.contract.transportation.AmountType\022\014" +
+      "\n\004Mode\030\002 \001(\005\022\020\n\010ShowType\030\003 \001(\005\022_\n\rDiscou" +
+      "ntLabel\030\004 \001(\0132H.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.DiscountLa" +
+      "belType\022\022\n\nRebateType\030\005 \001(\t\022\016\n\006ruleId\030\006 " +
+      "\001(\003\022\024\n\014ActivityMode\030\007 \001(\t\"\"\n\021DiscountLab" +
+      "elType\022\r\n\005Label\030\001 \001(\t\"\246\005\n\017RestrictionTyp" +
+      "e\022)\n!LanguageOfGovernmentIssuedPhotoID\030\001" +
+      " \003(\t\022]\n\014PaymentLimit\030\002 \001(\0132G.com.ctrip.f" +
+      "light.agg.shopping.contract.transportati" +
+      "on.PaymentLimitType\022\034\n\024CertificateTypeAl" +
+      "low\030\003 \003(\t\022\034\n\024CertificateTypeBlock\030\004 \003(\t\022" +
+      "\021\n\tIDCardNos\030\005 \001(\t\022\030\n\020CtripMemberships\030\006" +
+      " \001(\t\022\035\n\025CtripAgreementIDAllow\030\007 \003(\t\022\035\n\025C" +
+      "tripAgreementIDBlock\030\010 \003(\t\022\032\n\022CarrierAgr" +
+      "eementID\030\t \001(\t\022\023\n\013GroupTicket\030\n \001(\005\022\025\n\rI" +
+      "dentityLimit\030\013 \001(\005\022Z\n\rPaxCountRange\030\014 \001(" +
+      "\0132C.com.ctrip.flight.agg.shopping.contra" +
+      "ct.transportation.IntRangeType\022\027\n\017PaxNum" +
+      "LimitType\030\r \001(\005\022\036\n\026CompositionPriceRemar" +
+      "k\030\016 \001(\t\022\020\n\010ApplySex\030\017 \001(\t\022s\n\027TakeChildIn" +
+      "fantNumLimit\030\020 \001(\0132R.com.ctrip.flight.ag" +
+      "g.shopping.contract.transportation.TakeC" +
+      "hildInfantNumLimitType\"\265\001\n\033TakeChildInfa" +
+      "ntNumLimitType\022\023\n\013AdtAgeLimit\030\001 \001(\005\022\024\n\014M" +
+      "axChdPerAdt\030\002 \001(\005\022\024\n\014MaxInfPerAdt\030\003 \001(\005\022" +
+      "\031\n\021MaxChdForCIPerAdt\030\004 \001(\005\022\031\n\021MaxInfForC" +
+      "IPerAdt\030\005 \001(\005\022\037\n\027MinAgeForChdTravelAlone" +
+      "\030\006 \001(\005\"\256\002\n\020PaymentLimitType\022\022\n\nPrepayTyp" +
+      "e\030\001 \003(\t\022!\n\031CreditCardPaymentLimitRef\030\002 \003" +
+      "(\005\022m\n\026PaymentDiscountRefType\030\003 \003(\0132M.com" +
+      ".ctrip.flight.agg.shopping.contract.tran" +
+      "sportation.PaymentDiscountRefType\022[\n\013Loa" +
+      "nPayment\030\004 \001(\0132F.com.ctrip.flight.agg.sh" +
+      "opping.contract.transportation.LoanPayme" +
+      "ntType\022\027\n\017CardHolderLimit\030\005 \001(\005\"L\n\026Payme" +
+      "ntDiscountRefType\022\032\n\022PaymentDiscountRef\030" +
+      "\001 \003(\005\022\026\n\016CreditCardType\030\002 \001(\t\"\361\001\n\023Paymen" +
+      "tDiscountType\022\016\n\006RefNum\030\001 \001(\005\022\030\n\020Discoun" +
+      "tTotalFee\030\002 \001(\001\022\020\n\010Currency\030\003 \001(\t\022\026\n\016Dis" +
+      "countSettle\030\004 \001(\005\022\020\n\010BankCode\030\005 \001(\t\022\021\n\tC" +
+      "ardLevel\030\006 \001(\t\022a\n\016DiscountDetail\030\007 \003(\0132I" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.DiscountDetailType\"?\n\022Dis" +
+      "countDetailType\022\024\n\014DiscountType\030\001 \001(\t\022\023\n" +
+      "\013DiscountFee\030\002 \001(\001\"\301\002\n\032CreditCardPayment" +
+      "LimitType\022\016\n\006RefNum\030\001 \001(\005\022\026\n\016CreditCardT" +
+      "ype\030\002 \001(\t\022R\n\010AdultFee\030\003 \001(\0132@.com.ctrip." +
+      "flight.agg.shopping.contract.transportat" +
+      "ion.ObFeeType\022R\n\010ChildFee\030\004 \001(\0132@.com.ct" +
+      "rip.flight.agg.shopping.contract.transpo" +
+      "rtation.ObFeeType\022S\n\tInfantFee\030\005 \001(\0132@.c" +
+      "om.ctrip.flight.agg.shopping.contract.tr" +
+      "ansportation.ObFeeType\"\037\n\017LoanPaymentTyp" +
+      "e\022\014\n\004Code\030\001 \001(\t\"\200\005\n\rTransportType\022\016\n\006Ref" +
+      "Num\030\001 \001(\005\022\014\n\004Type\030\002 \001(\005\022\023\n\013TransportNo\030\003" +
+      " \001(\t\022\026\n\016DepartDateTime\030\004 \001(\t\022U\n\013DepartPo" +
+      "int\030\005 \001(\0132@.com.ctrip.flight.agg.shoppin" +
+      "g.contract.transportation.PointType\022\026\n\016A" +
+      "rriveDateTime\030\006 \001(\t\022U\n\013ArrivePoint\030\007 \001(\013" +
+      "2@.com.ctrip.flight.agg.shopping.contrac" +
+      "t.transportation.PointType\022\027\n\017DurationMi" +
+      "nutes\030\010 \001(\005\022T\n\003Tag\030\t \003(\0132G.com.ctrip.fli" +
+      "ght.agg.shopping.contract.transportation" +
+      ".KeyValuePairType\022Q\n\006Flight\030\n \001(\0132A.com." +
+      "ctrip.flight.agg.shopping.contract.trans" +
+      "portation.FlightType\022O\n\005Train\030\013 \001(\0132@.co" +
+      "m.ctrip.flight.agg.shopping.contract.tra" +
+      "nsportation.TrainType\022K\n\003Bus\030\014 \001(\0132>.com" +
+      ".ctrip.flight.agg.shopping.contract.tran" +
+      "sportation.BusType\"[\n\tPointType\022\016\n\006CityI" +
+      "D\030\001 \001(\005\022\023\n\013AirportCode\030\002 \001(\t\022\024\n\014Terminal" +
+      "Name\030\003 \001(\t\022\023\n\013StationName\030\004 \001(\t\"\345\004\n\nFlig" +
+      "htType\022\034\n\024MarketingCarrierCode\030\001 \001(\t\022\034\n\024" +
+      "OperatingCarrierCode\030\002 \001(\t\022\031\n\021OperatingF" +
+      "lightNo\030\003 \001(\t\022\024\n\014AircraftCode\030\004 \001(\t\022\035\n\025V" +
+      "irtualFlightSupplier\030\005 \001(\t\022m\n\024FlightRefe" +
+      "rencePrice\030\006 \001(\0132O.com.ctrip.flight.agg." +
+      "shopping.contract.transportation.FlightR" +
+      "eferencePriceType\022M\n\004Stop\030\007 \003(\0132?.com.ct" +
+      "rip.flight.agg.shopping.contract.transpo" +
+      "rtation.StopType\022_\n\rThroughFlight\030\010 \001(\0132" +
+      "H.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.ThroughFlightType\022a\n\013Pun" +
+      "ctuality\030\t \001(\0132L.com.ctrip.flight.agg.sh" +
+      "opping.contract.transportation.FlightPun" +
+      "ctualityType\022\031\n\021VirtualFlightType\030\n \001(\005\022" +
+      "\027\n\017FlightAttribute\030\013 \003(\t\022\025\n\rStopoverCoun" +
+      "t\030\014 \001(\005\"8\n\021ThroughFlightType\022\024\n\014Transpor" +
+      "tRef\030\001 \001(\005\022\r\n\005Extra\030\002 \001(\t\")\n\tTrainType\022\014" +
+      "\n\004Type\030\001 \001(\005\022\016\n\006Remark\030\002 \001(\t\"\216\001\n\016GrabTic" +
+      "ketType\022\025\n\rGrabTicketInd\030\001 \001(\010\022e\n\020Succes" +
+      "sRateScope\030\002 \003(\0132K.com.ctrip.flight.agg." +
+      "shopping.contract.transportation.Success" +
+      "RateScopeType\"2\n\024SuccessRateScopeType\022\014\n" +
+      "\004Name\030\001 \001(\t\022\014\n\004Rate\030\002 \001(\001\"\275\002\n\020OfferPacka" +
+      "geType\022h\n\016ExtensionField\030\001 \001(\0132P.com.ctr" +
+      "ip.flight.agg.shopping.contract.transpor" +
+      "tation.PackageExtensionFieldType\022d\n\023Extr" +
+      "aMarketingField\030\002 \003(\0132G.com.ctrip.flight" +
       ".agg.shopping.contract.transportation.Ke" +
-      "yValuePairType\"\270\006\n\024FlightPaxProductType\022" +
-      "\023\n\013Eligibility\030\001 \001(\t\022\017\n\007AgeType\030\002 \001(\005\022y\n" +
-      "\027SaleCurrencyPriceDetail\030\003 \001(\0132X.com.ctr" +
-      "ip.flight.agg.shopping.contract.transpor" +
-      "tation.FlightSaleCurrencyPriceDetailType" +
-      "\022\205\001\n\035SettlementCurrencyPriceDetail\030\004 \001(\013" +
-      "2^.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.FlightSettlementCurrenc" +
-      "yPriceDetailType\022Q\n\006Rebate\030\005 \003(\0132A.com.c" +
-      "trip.flight.agg.shopping.contract.transp" +
-      "ortation.RebateType\022\024\n\014TicketRemark\030\006 \001(" +
-      "\t\022a\n\016PaxRestriction\030\007 \001(\0132I.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.PaxRestrictionType\022\025\n\rTextRemarkRef\030\010 " +
-      "\001(\005\022]\n\014RefundChange\030\t \001(\0132G.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.RefundChangeType\022T\n\003Tag\030\n \003(\0132G.com.ct" +
-      "rip.flight.agg.shopping.contract.transpo" +
-      "rtation.KeyValuePairType\022_\n\rCreditCardFe" +
-      "e\030\013 \003(\0132H.com.ctrip.flight.agg.shopping." +
-      "contract.transportation.CreditCardFeeTyp" +
-      "e\"~\n\021CreditCardFeeType\022\026\n\016CreditCardType" +
-      "\030\001 \001(\t\022Q\n\006Amount\030\002 \001(\0132A.com.ctrip.fligh" +
-      "t.agg.shopping.contract.transportation.A" +
-      "mountType\"\263\004\n!FlightSaleCurrencyPriceDet" +
-      "ailType\022T\n\tSalePrice\030\001 \001(\0132A.com.ctrip.f" +
-      "light.agg.shopping.contract.transportati" +
-      "on.AmountType\022N\n\003Tax\030\002 \001(\0132A.com.ctrip.f" +
-      "light.agg.shopping.contract.transportati" +
-      "on.AmountType\022\024\n\014PublishPrice\030\003 \001(\001\022U\n\010D" +
-      "iscount\030\004 \003(\0132C.com.ctrip.flight.agg.sho" +
-      "pping.contract.transportation.DiscountTy" +
-      "pe\022\014\n\004Rate\030\005 \001(\001\022\026\n\016PrePcCodePrice\030\006 \001(\001" +
-      "\022Y\n\nServiceFee\030\007 \003(\0132E.com.ctrip.flight." +
-      "agg.shopping.contract.transportation.Ser" +
-      "viceFeeType\022!\n\031FlightHotelDiscountAmount" +
-      "\030\010 \001(\001\022W\n\tTaxDetail\030\t \003(\0132D.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.TaxDetailType\"\351\003\n\'FlightSettlementCurr" +
-      "encyPriceDetailType\022\020\n\010Currency\030\001 \001(\t\022T\n" +
-      "\tSalePrice\030\002 \001(\0132A.com.ctrip.flight.agg." +
-      "shopping.contract.transportation.AmountT" +
-      "ype\022N\n\003Tax\030\003 \001(\0132A.com.ctrip.flight.agg." +
-      "shopping.contract.transportation.AmountT" +
-      "ype\022\024\n\014PublishPrice\030\004 \001(\001\022\024\n\014AccountPric" +
-      "e\030\005 \001(\001\022\020\n\010NetPrice\030\006 \001(\001\022\024\n\014ExchangeRat" +
-      "e\030\007 \001(\001\022Y\n\nServiceFee\030\010 \003(\0132E.com.ctrip." +
-      "flight.agg.shopping.contract.transportat" +
-      "ion.ServiceFeeType\022W\n\tTaxDetail\030\t \003(\0132D." +
+      "yValuePairType\022Y\n\nBundleItem\030\003 \003(\0132E.com" +
+      ".ctrip.flight.agg.shopping.contract.tran" +
+      "sportation.BundleItemType\"\221\001\n\026ProductCom" +
+      "positionType\022w\n\031CompositionPlanDefinitio" +
+      "n\030\001 \003(\0132T.com.ctrip.flight.agg.shopping." +
+      "contract.transportation.CompositionPlanD" +
+      "efinitionType\"\363\001\n\035CompositionPlanDefinit" +
+      "ionType\022m\n\024ProductItemReference\030\001 \003(\0132O." +
       "com.ctrip.flight.agg.shopping.contract.t" +
-      "ransportation.TaxDetailType\"j\n\nRebateTyp" +
-      "e\022\014\n\004Type\030\001 \001(\t\022\016\n\006Amount\030\002 \001(\001\022\020\n\010Curre" +
-      "ncy\030\003 \001(\t\022\026\n\016RebatePolicyID\030\004 \003(\003\022\024\n\014Act" +
-      "ualAmount\030\005 \001(\001\"\355\002\n\016PaxProductType\022\017\n\007Ag" +
-      "eType\030\001 \001(\005\022s\n\027SaleCurrencyPriceDetail\030\002" +
-      " \001(\0132R.com.ctrip.flight.agg.shopping.con" +
-      "tract.transportation.SaleCurrencyPriceDe" +
-      "tailType\022\177\n\035SettlementCurrencyPriceDetai" +
-      "l\030\003 \001(\0132X.com.ctrip.flight.agg.shopping." +
-      "contract.transportation.SettlementCurren" +
-      "cyPriceDetailType\022T\n\003Tag\030\004 \003(\0132G.com.ctr" +
-      "ip.flight.agg.shopping.contract.transpor" +
-      "tation.KeyValuePairType\"s\n\033SaleCurrencyP" +
-      "riceDetailType\022T\n\tSalePrice\030\001 \001(\0132A.com." +
-      "ctrip.flight.agg.shopping.contract.trans" +
-      "portation.AmountType\"a\n!SettlementCurren" +
-      "cyPriceDetailType\022\020\n\010Currency\030\001 \001(\t\022\024\n\014P" +
-      "ublishPrice\030\002 \001(\001\022\024\n\014ExchangeRate\030\003 \001(\001\"" +
-      "\206\002\n\013PaxSeatType\022\024\n\014AgeTypeGroup\030\001 \001(\005\022\021\n" +
-      "\tSeatCount\030\002 \001(\005\022\032\n\022ProductDetailIndex\030\003" +
-      " \001(\005\022Y\n\nFlightSeat\030\004 \001(\0132E.com.ctrip.fli" +
-      "ght.agg.shopping.contract.transportation" +
-      ".FlightSeatType\022W\n\tTrainSeat\030\005 \001(\0132D.com" +
-      ".ctrip.flight.agg.shopping.contract.tran" +
-      "sportation.TrainSeatType\"\225\002\n\016FlightSeatT" +
-      "ype\022\022\n\nPUSequence\030\001 \001(\005\022\022\n\nFCSequence\030\002 " +
-      "\001(\005\022\021\n\tCabinCode\030\003 \001(\t\022\013\n\003RBD\030\004 \001(\t\022\032\n\022M" +
-      "arketingCabinCode\030\005 \001(\t\022\022\n\nSeatSource\030\006 " +
-      "\001(\005\022\017\n\007StockID\030\007 \001(\003\022\031\n\rMileageCredit\030\010 " +
-      "\001(\005B\002\030\001\022_\n\rRBDDisclosure\030\t \001(\0132H.com.ctr" +
-      "ip.flight.agg.shopping.contract.transpor" +
-      "tation.RBDDisclosureType\"7\n\rTrainSeatTyp" +
-      "e\022\024\n\014SeatTypeName\030\001 \001(\t\022\020\n\010SeatType\030\002 \001(" +
-      "\t\"\311\002\n\025FlightPunctualityType\022 \n\030ArriveHis" +
-      "toryPunctuality\030\001 \001(\t\022\033\n\023EstimatedDepart" +
-      "Time\030\002 \001(\t\022\035\n\025EstimatedFlightStatus\030\003 \001(" +
-      "\005\022&\n\036EstimatedArriveDelayMinMinutes\030\004 \001(" +
-      "\005\022&\n\036EstimatedArriveDelayMaxMinutes\030\005 \001(" +
-      "\005\022\\\n\013DelayReason\030\006 \003(\0132G.com.ctrip.fligh" +
-      "t.agg.shopping.contract.transportation.K" +
-      "eyValuePairType\022$\n\034VeryZhunDeptimeReadyW" +
-      "ithDate\030\007 \001(\t\"\201\003\n\030FlightReferencePriceTy" +
-      "pe\022_\n\rStandardPrice\030\001 \003(\0132H.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.StandardPriceType\022#\n\027UpgradeCFReferenc" +
-      "ePrice\030\002 \001(\001B\002\030\001\022n\n\025YReferencePriceDetai" +
-      "l\030\003 \001(\0132O.com.ctrip.flight.agg.shopping." +
-      "contract.transportation.ReferencePriceDe" +
-      "tailType\022o\n\026CFReferencePriceDetail\030\004 \001(\013" +
-      "2O.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.ReferencePriceDetailTyp" +
-      "e\"^\n\030ReferencePriceDetailType\022\"\n\032Upgrade" +
-      "ClassReferencePrice\030\001 \001(\001\022\036\n\026FlightHotel" +
-      "LowestPrice\030\002 \001(\001\"I\n\021StandardPriceType\022\021" +
-      "\n\tCabinCode\030\001 \001(\t\022\013\n\003RBD\030\002 \001(\t\022\024\n\014Publis" +
-      "hPrice\030\003 \001(\001\"\217\001\n\021RBDDisclosureType\022\014\n\004Na" +
-      "me\030\001 \001(\t\022\021\n\tShortName\030\002 \001(\t\022\023\n\013Descripti" +
-      "on\030\003 \001(\t\022\032\n\022SpecialClassTypeID\030\004 \001(\003\022\024\n\014" +
-      "ExtraTabName\030\005 \001(\t\022\022\n\nBrandOrder\030\006 \001(\t\"]" +
-      "\n\026TicketingTimeLimitType\022\025\n\rTimeLimitTyp" +
-      "e\030\001 \001(\005\022\024\n\014LimitMinutes\030\002 \001(\005\022\026\n\016Average" +
-      "Minutes\030\003 \001(\005\"\234\002\n\014DiscountType\022Q\n\006Amount" +
-      "\030\001 \001(\0132A.com.ctrip.flight.agg.shopping.c" +
-      "ontract.transportation.AmountType\022\014\n\004Mod" +
-      "e\030\002 \001(\005\022\020\n\010ShowType\030\003 \001(\005\022_\n\rDiscountLab" +
-      "el\030\004 \001(\0132H.com.ctrip.flight.agg.shopping" +
-      ".contract.transportation.DiscountLabelTy" +
-      "pe\022\022\n\nRebateType\030\005 \001(\t\022\016\n\006ruleId\030\006 \001(\003\022\024" +
-      "\n\014ActivityMode\030\007 \001(\t\"\"\n\021DiscountLabelTyp" +
-      "e\022\r\n\005Label\030\001 \001(\t\"\261\004\n\017RestrictionType\022)\n!" +
-      "LanguageOfGovernmentIssuedPhotoID\030\001 \003(\t\022" +
-      "]\n\014PaymentLimit\030\002 \001(\0132G.com.ctrip.flight" +
-      ".agg.shopping.contract.transportation.Pa" +
-      "ymentLimitType\022\034\n\024CertificateTypeAllow\030\003" +
-      " \003(\t\022\034\n\024CertificateTypeBlock\030\004 \003(\t\022\021\n\tID" +
-      "CardNos\030\005 \001(\t\022\030\n\020CtripMemberships\030\006 \001(\t\022" +
-      "\035\n\025CtripAgreementIDAllow\030\007 \003(\t\022\035\n\025CtripA" +
-      "greementIDBlock\030\010 \003(\t\022\032\n\022CarrierAgreemen" +
-      "tID\030\t \001(\t\022\023\n\013GroupTicket\030\n \001(\005\022\025\n\rIdenti" +
-      "tyLimit\030\013 \001(\005\022Z\n\rPaxCountRange\030\014 \001(\0132C.c" +
-      "om.ctrip.flight.agg.shopping.contract.tr" +
-      "ansportation.IntRangeType\022\027\n\017PaxNumLimit" +
-      "Type\030\r \001(\005\022\036\n\026CompositionPriceRemark\030\016 \001" +
-      "(\t\022\020\n\010ApplySex\030\017 \001(\t\"\225\002\n\020PaymentLimitTyp" +
-      "e\022\022\n\nPrepayType\030\001 \003(\t\022!\n\031CreditCardPayme" +
-      "ntLimitRef\030\002 \003(\005\022m\n\026PaymentDiscountRefTy" +
-      "pe\030\003 \003(\0132M.com.ctrip.flight.agg.shopping" +
-      ".contract.transportation.PaymentDiscount" +
-      "RefType\022[\n\013LoanPayment\030\004 \001(\0132F.com.ctrip" +
-      ".flight.agg.shopping.contract.transporta" +
-      "tion.LoanPaymentType\"L\n\026PaymentDiscountR" +
-      "efType\022\032\n\022PaymentDiscountRef\030\001 \003(\005\022\026\n\016Cr" +
-      "editCardType\030\002 \001(\t\"\361\001\n\023PaymentDiscountTy" +
-      "pe\022\016\n\006RefNum\030\001 \001(\005\022\030\n\020DiscountTotalFee\030\002" +
-      " \001(\001\022\020\n\010Currency\030\003 \001(\t\022\026\n\016DiscountSettle" +
-      "\030\004 \001(\005\022\020\n\010BankCode\030\005 \001(\t\022\021\n\tCardLevel\030\006 " +
-      "\001(\t\022a\n\016DiscountDetail\030\007 \003(\0132I.com.ctrip." +
-      "flight.agg.shopping.contract.transportat" +
-      "ion.DiscountDetailType\"?\n\022DiscountDetail" +
-      "Type\022\024\n\014DiscountType\030\001 \001(\t\022\023\n\013DiscountFe" +
-      "e\030\002 \001(\001\"\301\002\n\032CreditCardPaymentLimitType\022\016" +
-      "\n\006RefNum\030\001 \001(\005\022\026\n\016CreditCardType\030\002 \001(\t\022R" +
-      "\n\010AdultFee\030\003 \001(\0132@.com.ctrip.flight.agg." +
-      "shopping.contract.transportation.ObFeeTy" +
-      "pe\022R\n\010ChildFee\030\004 \001(\0132@.com.ctrip.flight." +
-      "agg.shopping.contract.transportation.ObF" +
-      "eeType\022S\n\tInfantFee\030\005 \001(\0132@.com.ctrip.fl" +
-      "ight.agg.shopping.contract.transportatio" +
-      "n.ObFeeType\"\037\n\017LoanPaymentType\022\014\n\004Code\030\001" +
-      " \001(\t\"\200\005\n\rTransportType\022\016\n\006RefNum\030\001 \001(\005\022\014" +
-      "\n\004Type\030\002 \001(\005\022\023\n\013TransportNo\030\003 \001(\t\022\026\n\016Dep" +
-      "artDateTime\030\004 \001(\t\022U\n\013DepartPoint\030\005 \001(\0132@" +
-      ".com.ctrip.flight.agg.shopping.contract." +
-      "transportation.PointType\022\026\n\016ArriveDateTi" +
-      "me\030\006 \001(\t\022U\n\013ArrivePoint\030\007 \001(\0132@.com.ctri" +
-      "p.flight.agg.shopping.contract.transport" +
-      "ation.PointType\022\027\n\017DurationMinutes\030\010 \001(\005" +
-      "\022T\n\003Tag\030\t \003(\0132G.com.ctrip.flight.agg.sho" +
-      "pping.contract.transportation.KeyValuePa" +
-      "irType\022Q\n\006Flight\030\n \001(\0132A.com.ctrip.fligh" +
-      "t.agg.shopping.contract.transportation.F" +
-      "lightType\022O\n\005Train\030\013 \001(\0132@.com.ctrip.fli" +
-      "ght.agg.shopping.contract.transportation" +
-      ".TrainType\022K\n\003Bus\030\014 \001(\0132>.com.ctrip.flig" +
+      "ransportation.ProductItemReferenceType\022c" +
+      "\n\017OfferComparison\030\002 \001(\0132J.com.ctrip.flig" +
       "ht.agg.shopping.contract.transportation." +
-      "BusType\"[\n\tPointType\022\016\n\006CityID\030\001 \001(\005\022\023\n\013" +
-      "AirportCode\030\002 \001(\t\022\024\n\014TerminalName\030\003 \001(\t\022" +
-      "\023\n\013StationName\030\004 \001(\t\"\316\004\n\nFlightType\022\034\n\024M" +
-      "arketingCarrierCode\030\001 \001(\t\022\034\n\024OperatingCa" +
-      "rrierCode\030\002 \001(\t\022\031\n\021OperatingFlightNo\030\003 \001" +
-      "(\t\022\024\n\014AircraftCode\030\004 \001(\t\022\035\n\025VirtualFligh" +
-      "tSupplier\030\005 \001(\t\022m\n\024FlightReferencePrice\030" +
-      "\006 \001(\0132O.com.ctrip.flight.agg.shopping.co" +
-      "ntract.transportation.FlightReferencePri" +
-      "ceType\022M\n\004Stop\030\007 \003(\0132?.com.ctrip.flight." +
-      "agg.shopping.contract.transportation.Sto" +
-      "pType\022_\n\rThroughFlight\030\010 \001(\0132H.com.ctrip" +
-      ".flight.agg.shopping.contract.transporta" +
-      "tion.ThroughFlightType\022a\n\013Punctuality\030\t " +
-      "\001(\0132L.com.ctrip.flight.agg.shopping.cont" +
-      "ract.transportation.FlightPunctualityTyp" +
-      "e\022\031\n\021VirtualFlightType\030\n \001(\005\022\027\n\017FlightAt" +
-      "tribute\030\013 \003(\t\"8\n\021ThroughFlightType\022\024\n\014Tr" +
-      "ansportRef\030\001 \001(\005\022\r\n\005Extra\030\002 \001(\t\")\n\tTrain" +
-      "Type\022\014\n\004Type\030\001 \001(\005\022\016\n\006Remark\030\002 \001(\t\"\216\001\n\016G" +
-      "rabTicketType\022\025\n\rGrabTicketInd\030\001 \001(\010\022e\n\020" +
-      "SuccessRateScope\030\002 \003(\0132K.com.ctrip.fligh" +
-      "t.agg.shopping.contract.transportation.S" +
-      "uccessRateScopeType\"2\n\024SuccessRateScopeT" +
-      "ype\022\014\n\004Name\030\001 \001(\t\022\014\n\004Rate\030\002 \001(\001\"\275\002\n\020Offe" +
-      "rPackageType\022h\n\016ExtensionField\030\001 \001(\0132P.c" +
-      "om.ctrip.flight.agg.shopping.contract.tr" +
-      "ansportation.PackageExtensionFieldType\022d" +
-      "\n\023ExtraMarketingField\030\002 \003(\0132G.com.ctrip." +
-      "flight.agg.shopping.contract.transportat" +
-      "ion.KeyValuePairType\022Y\n\nBundleItem\030\003 \003(\013" +
-      "2E.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.BundleItemType\"\357\002\n\016Bund" +
-      "leItemType\022\022\n\nBundleType\030\001 \001(\t\022\022\n\nProduc" +
-      "tRef\030\002 \001(\005\022i\n\022ServiceAssociation\030\003 \003(\0132M" +
-      ".com.ctrip.flight.agg.shopping.contract." +
-      "transportation.ServiceAssociationType\022\024\n" +
-      "\014AgeTypeGroup\030\004 \001(\005\022^\n\022ProductDetailInde" +
-      "x\030\005 \001(\0132B.com.ctrip.flight.agg.shopping." +
-      "contract.transportation.IntegerType\022T\n\003T" +
-      "ag\030\006 \003(\0132G.com.ctrip.flight.agg.shopping" +
-      ".contract.transportation.KeyValuePairTyp" +
-      "e\"\034\n\013IntegerType\022\r\n\005Value\030\001 \001(\005\"\033\n\nDoubl" +
-      "eType\022\r\n\005Value\030\001 \001(\001\">\n\026ServiceAssociati" +
-      "onType\022\021\n\tJourneyNo\030\001 \001(\005\022\021\n\tSegmentNo\030\002" +
-      " \001(\005\"\321\006\n\024MarketingProductType\022g\n\021Service" +
-      "Definition\030\001 \003(\0132L.com.ctrip.flight.agg." +
-      "shopping.contract.transportation.Service" +
-      "DefinitionType\022Q\n\006Coupon\030\002 \003(\0132A.com.ctr" +
+      "OfferComparisonType\"<\n\030ProductItemRefere" +
+      "nceType\022\022\n\nProductRef\030\001 \003(\t\022\014\n\004Type\030\002 \001(" +
+      "\t\"2\n\023OfferComparisonType\022\033\n\023Recommendati" +
+      "onLevel\030\001 \001(\005\"\357\002\n\016BundleItemType\022\022\n\nBund" +
+      "leType\030\001 \001(\t\022\022\n\nProductRef\030\002 \001(\005\022i\n\022Serv" +
+      "iceAssociation\030\003 \003(\0132M.com.ctrip.flight." +
+      "agg.shopping.contract.transportation.Ser" +
+      "viceAssociationType\022\024\n\014AgeTypeGroup\030\004 \001(" +
+      "\005\022^\n\022ProductDetailIndex\030\005 \001(\0132B.com.ctri" +
+      "p.flight.agg.shopping.contract.transport" +
+      "ation.IntegerType\022T\n\003Tag\030\006 \003(\0132G.com.ctr" +
       "ip.flight.agg.shopping.contract.transpor" +
-      "tation.CouponType\022M\n\004Gift\030\003 \003(\0132?.com.ct" +
+      "tation.KeyValuePairType\"\034\n\013IntegerType\022\r" +
+      "\n\005Value\030\001 \001(\005\"\033\n\nDoubleType\022\r\n\005Value\030\001 \001" +
+      "(\001\">\n\026ServiceAssociationType\022\021\n\tJourneyN" +
+      "o\030\001 \001(\005\022\021\n\tSegmentNo\030\002 \001(\005\"\265\t\n\024Marketing" +
+      "ProductType\022g\n\021ServiceDefinition\030\001 \003(\0132L" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.ServiceDefinitionType\022Q\n\006" +
+      "Coupon\030\002 \003(\0132A.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.CouponType\022" +
+      "M\n\004Gift\030\003 \003(\0132?.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.GiftType\022a" +
+      "\n\016BrandAttribute\030\004 \003(\0132I.com.ctrip.fligh" +
+      "t.agg.shopping.contract.transportation.B" +
+      "randAttributeType\022U\n\010CashBack\030\005 \003(\0132C.co" +
+      "m.ctrip.flight.agg.shopping.contract.tra" +
+      "nsportation.CashBackType\022[\n\013Ancillaries\030" +
+      "\006 \003(\0132F.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.AncillariesType\022c\n" +
+      "\017MemberPrivilege\030\007 \003(\0132J.com.ctrip.fligh" +
+      "t.agg.shopping.contract.transportation.M" +
+      "emberPrivilegeType\022a\n\016PriceReduction\030\010 \003" +
+      "(\0132I.com.ctrip.flight.agg.shopping.contr" +
+      "act.transportation.PriceReductionType\022O\n" +
+      "\005Hotel\030\t \003(\0132@.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.HotelType\022S" +
+      "\n\007FloatUp\030\n \003(\0132B.com.ctrip.flight.agg.s" +
+      "hopping.contract.transportation.FloatUpT" +
+      "ype\022]\n\014CreditPoints\030\013 \003(\0132G.com.ctrip.fl" +
+      "ight.agg.shopping.contract.transportatio" +
+      "n.CreditPointsType\022[\n\013MileageCash\030\014 \003(\0132" +
+      "F.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.MileageCashType\022Q\n\006Adver" +
+      "t\030\r \003(\0132A.com.ctrip.flight.agg.shopping." +
+      "contract.transportation.AdvertType\"\236\002\n\025S" +
+      "erviceDefinitionType\022\016\n\006RefNum\030\001 \001(\005\022_\n\r" +
+      "ServicePolicy\030\002 \001(\0132H.com.ctrip.flight.a" +
+      "gg.shopping.contract.transportation.Serv" +
+      "icePolicyType\022_\n\rServiceDetail\030\003 \001(\0132H.c" +
+      "om.ctrip.flight.agg.shopping.contract.tr" +
+      "ansportation.ServiceDetailType\022\035\n\025Servic" +
+      "eDefinitionRefs\030\004 \003(\005\022\024\n\014ServiceToken\030\005 " +
+      "\001(\t\"\232\002\n\021ServicePolicyType\022\020\n\010PolicyID\030\001 " +
+      "\001(\003\022\025\n\rMarketingType\030\002 \001(\005\022\027\n\017MarketingA" +
+      "mount\030\003 \001(\001\022\022\n\nActiveCode\030\004 \001(\t\022\016\n\006Retai" +
+      "n\030\005 \001(\010\022\021\n\tSceneCode\030\006 \001(\t\022e\n\020ProductFee" +
+      "Detail\030\007 \003(\0132K.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.ProductFeeD" +
+      "etailType\022\021\n\tSceneType\030\010 \001(\t\022\022\n\nSelectFl" +
+      "ag\030\t \001(\005\"\271\006\n\021ServiceDetailType\022\023\n\013Produc" +
+      "tType\030\001 \001(\t\022\026\n\016SubProductType\030\002 \001(\t\022\021\n\tP" +
+      "roductID\030\003 \001(\t\022\024\n\014PublishPrice\030\004 \001(\001\022\021\n\t" +
+      "SalePrice\030\005 \001(\001\022\023\n\013MarketPrice\030\006 \001(\001\022\014\n\004" +
+      "Name\030\007 \001(\t\022\021\n\tShortName\030\010 \001(\t\022\r\n\005Count\030\t" +
+      " \001(\005\022\026\n\016CancellableInd\030\n \001(\010\022\023\n\013ProductC" +
+      "ode\030\013 \001(\t\022Z\n\tExtension\030\014 \003(\0132G.com.ctrip" +
+      ".flight.agg.shopping.contract.transporta" +
+      "tion.KeyValuePairType\022c\n\017ServiceDiscount" +
+      "\030\r \003(\0132J.com.ctrip.flight.agg.shopping.c" +
+      "ontract.transportation.ServiceDiscountTy" +
+      "pe\022\021\n\tForceType\030\016 \001(\005\022\023\n\013BindingType\030\017 \001" +
+      "(\t\022\022\n\nExpiryTime\030\020 \001(\005\022\026\n\016ExpiryTimeUnit" +
+      "\030\021 \001(\t\022\020\n\010Priority\030\022 \001(\005\022a\n\016ServiceBagga" +
+      "ge\030\023 \001(\0132I.com.ctrip.flight.agg.shopping" +
+      ".contract.transportation.ServiceBaggageT" +
+      "ype\022i\n\022ServicePriceFreeze\030\024 \001(\0132M.com.ct" +
       "rip.flight.agg.shopping.contract.transpo" +
-      "rtation.GiftType\022a\n\016BrandAttribute\030\004 \003(\013" +
-      "2I.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.BrandAttributeType\022U\n\010C" +
-      "ashBack\030\005 \003(\0132C.com.ctrip.flight.agg.sho" +
-      "pping.contract.transportation.CashBackTy" +
-      "pe\022[\n\013Ancillaries\030\006 \003(\0132F.com.ctrip.flig" +
-      "ht.agg.shopping.contract.transportation." +
-      "AncillariesType\022c\n\017MemberPrivilege\030\007 \003(\013" +
-      "2J.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.MemberPrivilegeType\022a\n\016" +
-      "PriceReduction\030\010 \003(\0132I.com.ctrip.flight." +
-      "agg.shopping.contract.transportation.Pri" +
-      "ceReductionType\022O\n\005Hotel\030\t \003(\0132@.com.ctr" +
-      "ip.flight.agg.shopping.contract.transpor" +
-      "tation.HotelType\"\236\002\n\025ServiceDefinitionTy" +
-      "pe\022\016\n\006RefNum\030\001 \001(\005\022_\n\rServicePolicy\030\002 \001(" +
-      "\0132H.com.ctrip.flight.agg.shopping.contra" +
-      "ct.transportation.ServicePolicyType\022_\n\rS" +
-      "erviceDetail\030\003 \001(\0132H.com.ctrip.flight.ag" +
-      "g.shopping.contract.transportation.Servi" +
-      "ceDetailType\022\035\n\025ServiceDefinitionRefs\030\004 " +
-      "\003(\005\022\024\n\014ServiceToken\030\005 \001(\t\"\363\001\n\021ServicePol" +
-      "icyType\022\020\n\010PolicyID\030\001 \001(\003\022\025\n\rMarketingTy" +
-      "pe\030\002 \001(\005\022\027\n\017MarketingAmount\030\003 \001(\001\022\022\n\nAct" +
-      "iveCode\030\004 \001(\t\022\016\n\006Retain\030\005 \001(\010\022\021\n\tSceneCo" +
-      "de\030\006 \001(\t\022e\n\020ProductFeeDetail\030\007 \003(\0132K.com" +
-      ".ctrip.flight.agg.shopping.contract.tran" +
-      "sportation.ProductFeeDetailType\"\225\004\n\021Serv" +
-      "iceDetailType\022\023\n\013ProductType\030\001 \001(\t\022\026\n\016Su" +
-      "bProductType\030\002 \001(\t\022\021\n\tProductID\030\003 \001(\t\022\024\n" +
-      "\014PublishPrice\030\004 \001(\001\022\021\n\tSalePrice\030\005 \001(\001\022\023" +
-      "\n\013MarketPrice\030\006 \001(\001\022\014\n\004Name\030\007 \001(\t\022\021\n\tSho" +
-      "rtName\030\010 \001(\t\022\r\n\005Count\030\t \001(\005\022\026\n\016Cancellab" +
-      "leInd\030\n \001(\010\022\023\n\013ProductCode\030\013 \001(\t\022Z\n\tExte" +
-      "nsion\030\014 \003(\0132G.com.ctrip.flight.agg.shopp" +
-      "ing.contract.transportation.KeyValuePair" +
-      "Type\022c\n\017ServiceDiscount\030\r \003(\0132J.com.ctri" +
-      "p.flight.agg.shopping.contract.transport" +
-      "ation.ServiceDiscountType\022\021\n\tForceType\030\016" +
-      " \001(\005\022\023\n\013BindingType\030\017 \001(\t\022\022\n\nExpiryTime\030" +
-      "\020 \001(\005\022\026\n\016ExpiryTimeUnit\030\021 \001(\t\022\020\n\010Priorit" +
-      "y\030\022 \001(\005\"[\n\024ProductFeeDetailType\022\024\n\014AgeTy" +
-      "peGroup\030\001 \001(\005\022\027\n\017MarketingAmount\030\002 \001(\001\022\024" +
-      "\n\014ServiceToken\030\003 \001(\t\"\211\002\n\023ServiceDiscount" +
-      "Type\022\014\n\004Item\030\001 \001(\005\022\026\n\016DiscountAmount\030\002 \001" +
-      "(\001\022\017\n\007AgeType\030\003 \001(\005\022\024\n\014DiscountMode\030\004 \001(" +
-      "\005\022\024\n\014DiscountRate\030\005 \001(\001\022\022\n\nLimitTimes\030\006 " +
-      "\001(\005\022\033\n\023TotalDiscountAmount\030\007 \001(\001\022\037\n\027Sing" +
-      "leMinDiscountAmount\030\010 \001(\001\022\037\n\027SingleMaxDi" +
-      "scountAmount\030\t \001(\001\022\016\n\006Period\030\n \001(\005\022\014\n\004Na" +
-      "me\030\013 \001(\t\"i\n\nCouponType\022\016\n\006RefNum\030\001 \001(\005\022\014" +
-      "\n\004Type\030\002 \001(\t\022\022\n\nCouponCode\030\003 \001(\t\022\026\n\016Disc" +
-      "ountAmount\030\004 \001(\001\022\021\n\tSalePrice\030\005 \001(\001\"\342\001\n\010" +
-      "GiftType\022\016\n\006RefNum\030\001 \001(\005\022\016\n\006GiftID\030\002 \001(\003" +
-      "\022\020\n\010IconName\030\003 \001(\t\022\020\n\010Quantity\030\004 \001(\005\022\020\n\010" +
-      "ShowType\030\005 \001(\005\022\014\n\004Type\030\006 \001(\005\022\025\n\rMarketin" +
-      "gCode\030\007 \001(\t\022[\n\013GiftService\030\010 \003(\0132F.com.c" +
-      "trip.flight.agg.shopping.contract.transp" +
-      "ortation.GiftServiceType\"_\n\017GiftServiceT" +
-      "ype\022\021\n\tServiceID\030\001 \001(\003\022\023\n\013ServiceName\030\002 " +
-      "\001(\t\022\023\n\013ServiceType\030\003 \001(\005\022\017\n\007Checked\030\004 \001(" +
-      "\010\"<\n\014CashBackType\022\016\n\006RefNum\030\001 \001(\005\022\014\n\004Typ" +
-      "e\030\002 \001(\005\022\016\n\006Amount\030\003 \001(\001\"F\n\tCacheType\022\016\n\006" +
-      "RefNum\030\001 \001(\005\022\030\n\020AgeInMillisecond\030\002 \001(\005\022\017" +
-      "\n\007TraceID\030\003 \001(\t\"?\n\017AncillariesType\022\016\n\006Re" +
-      "fNum\030\001 \001(\005\022\034\n\024CheckInServiceStatus\030\004 \001(\005" +
-      "\"M\n\031PackageExtensionFieldType\022\031\n\021Product" +
-      "ActionMode\030\001 \001(\005\022\025\n\rProductRemark\030\002 \001(\t\"" +
-      "\351\001\n\022BrandAttributeType\022\016\n\006RefNum\030\001 \001(\005\022\014" +
-      "\n\004Type\030\002 \001(\005\022\021\n\tBrandName\030\003 \001(\t\022\021\n\tBrand" +
-      "Tier\030\004 \001(\005\022^\n\rServiceDetail\030\005 \003(\0132G.com." +
-      "ctrip.flight.agg.shopping.contract.trans" +
-      "portation.KeyValuePairType\022\027\n\017ServiceDet" +
-      "ailID\030\006 \003(\005\022\026\n\016CtripBrandTier\030\007 \001(\005\"\216\001\n\022" +
-      "PriceReductionType\022\016\n\006RefNum\030\001 \001(\005\022\023\n\013Pr" +
-      "omotionID\030\002 \001(\003\022\017\n\007ForUser\030\003 \001(\t\022\026\n\016Disc" +
-      "ountAmount\030\004 \001(\001\022\022\n\nCouponCode\030\005 \001(\t\022\026\n\016" +
-      "SelectedGroups\030\006 \001(\005\"K\n\023MemberPrivilegeT" +
-      "ype\022\016\n\006RefNum\030\001 \001(\005\022\023\n\013PromotionID\030\002 \001(\003" +
-      "\022\017\n\007ForUser\030\003 \001(\t\".\n\016TextRemarkType\022\016\n\006R" +
-      "efNum\030\001 \001(\005\022\014\n\004Text\030\002 \001(\t\"\341\001\n\017Interchang" +
-      "eType\022\021\n\tJourneyNo\030\001 \001(\005\022\021\n\tSegmentNo\030\002 " +
-      "\001(\005\022\020\n\010Position\030\003 \001(\005\022e\n\020InterchangeRout" +
-      "e\030\004 \003(\0132K.com.ctrip.flight.agg.shopping." +
-      "contract.transportation.InterchangeRoute" +
-      "Type\022\025\n\rTextRemarkRef\030\005 \001(\005\022\030\n\020CheckInRe" +
-      "markRef\030\006 \001(\005\"{\n\024InterchangeRouteType\022c\n" +
-      "\017InterchangeStep\030\001 \003(\0132J.com.ctrip.fligh" +
-      "t.agg.shopping.contract.transportation.I" +
-      "nterchangeStepType\"t\n\023InterchangeStepTyp" +
-      "e\022\023\n\013VehicleType\030\001 \001(\005\022\027\n\017DurationMinute" +
-      "s\030\002 \001(\005\022\020\n\010Distance\030\003 \001(\001\022\r\n\005Price\030\004 \001(\001" +
-      "\022\016\n\006Remark\030\005 \001(\t\"\327\001\n\024BaggageAncillaryTyp" +
-      "e\022Y\n\nBundleItem\030\001 \003(\0132E.com.ctrip.flight" +
-      ".agg.shopping.contract.transportation.Bu" +
-      "ndleItemType\022R\n\nBaggageRef\030\002 \003(\0132>.com.c" +
-      "trip.flight.agg.shopping.contract.baggag" +
-      "e.BaggageRefType\022\020\n\010OrderWay\030\003 \001(\005\"*\n\nAm" +
-      "ountType\022\r\n\005Value\030\001 \001(\001\022\r\n\005Payee\030\002 \001(\005\"u" +
-      "\n\016ServiceFeeType\022\020\n\010Category\030\001 \001(\005\022Q\n\006Am" +
-      "ount\030\002 \001(\0132A.com.ctrip.flight.agg.shoppi" +
-      "ng.contract.transportation.AmountType\"\311\001" +
-      "\n\tObFeeType\022\020\n\010Currency\030\001 \001(\t\022T\n\tMinAmou" +
-      "nt\030\002 \001(\0132A.com.ctrip.flight.agg.shopping" +
-      ".contract.transportation.AmountType\022T\n\tM" +
-      "axAmount\030\003 \001(\0132A.com.ctrip.flight.agg.sh" +
-      "opping.contract.transportation.AmountTyp" +
-      "e\"\201\002\n\020RefundChangeType\022\022\n\nRefundType\030\001 \001" +
-      "(\005\022\022\n\nChangeType\030\002 \001(\005\022\023\n\013EndorseType\030\003 " +
-      "\001(\005\022W\n\014MinRefundFee\030\004 \001(\0132A.com.ctrip.fl" +
+      "rtation.ServicePriceFreezeType\022T\n\003Tag\030\025 " +
+      "\003(\0132G.com.ctrip.flight.agg.shopping.cont" +
+      "ract.transportation.KeyValuePairType\"\332\001\n" +
+      "\024ProductFeeDetailType\022\024\n\014AgeTypeGroup\030\001 " +
+      "\001(\005\022\027\n\017MarketingAmount\030\002 \001(\001\022\024\n\014ServiceT" +
+      "oken\030\003 \001(\t\022}\n\034ServicePackageRelatedProdu" +
+      "ct\030\004 \003(\0132W.com.ctrip.flight.agg.shopping" +
+      ".contract.transportation.ServicePackageR" +
+      "elatedProductType\"^\n ServicePackageRelat" +
+      "edProductType\022\023\n\013ProductType\030\001 \001(\t\022\026\n\016Su" +
+      "bProductType\030\002 \001(\005\022\r\n\005Token\030\003 \001(\t\"\211\002\n\023Se" +
+      "rviceDiscountType\022\014\n\004Item\030\001 \001(\005\022\026\n\016Disco" +
+      "untAmount\030\002 \001(\001\022\017\n\007AgeType\030\003 \001(\005\022\024\n\014Disc" +
+      "ountMode\030\004 \001(\005\022\024\n\014DiscountRate\030\005 \001(\001\022\022\n\n" +
+      "LimitTimes\030\006 \001(\005\022\033\n\023TotalDiscountAmount\030" +
+      "\007 \001(\001\022\037\n\027SingleMinDiscountAmount\030\010 \001(\001\022\037" +
+      "\n\027SingleMaxDiscountAmount\030\t \001(\001\022\016\n\006Perio" +
+      "d\030\n \001(\005\022\014\n\004Name\030\013 \001(\t\"i\n\nCouponType\022\016\n\006R" +
+      "efNum\030\001 \001(\005\022\014\n\004Type\030\002 \001(\t\022\022\n\nCouponCode\030" +
+      "\003 \001(\t\022\026\n\016DiscountAmount\030\004 \001(\001\022\021\n\tSalePri" +
+      "ce\030\005 \001(\001\"\342\001\n\010GiftType\022\016\n\006RefNum\030\001 \001(\005\022\016\n" +
+      "\006GiftID\030\002 \001(\003\022\020\n\010IconName\030\003 \001(\t\022\020\n\010Quant" +
+      "ity\030\004 \001(\005\022\020\n\010ShowType\030\005 \001(\005\022\014\n\004Type\030\006 \001(" +
+      "\005\022\025\n\rMarketingCode\030\007 \001(\t\022[\n\013GiftService\030" +
+      "\010 \003(\0132F.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.GiftServiceType\"_\n" +
+      "\017GiftServiceType\022\021\n\tServiceID\030\001 \001(\003\022\023\n\013S" +
+      "erviceName\030\002 \001(\t\022\023\n\013ServiceType\030\003 \001(\005\022\017\n" +
+      "\007Checked\030\004 \001(\010\"<\n\014CashBackType\022\016\n\006RefNum" +
+      "\030\001 \001(\005\022\014\n\004Type\030\002 \001(\005\022\016\n\006Amount\030\003 \001(\001\"F\n\t" +
+      "CacheType\022\016\n\006RefNum\030\001 \001(\005\022\030\n\020AgeInMillis" +
+      "econd\030\002 \001(\005\022\017\n\007TraceID\030\003 \001(\t\"?\n\017Ancillar" +
+      "iesType\022\016\n\006RefNum\030\001 \001(\005\022\034\n\024CheckInServic" +
+      "eStatus\030\004 \001(\005\"M\n\031PackageExtensionFieldTy" +
+      "pe\022\031\n\021ProductActionMode\030\001 \001(\005\022\025\n\rProduct" +
+      "Remark\030\002 \001(\t\"\351\001\n\022BrandAttributeType\022\016\n\006R" +
+      "efNum\030\001 \001(\005\022\014\n\004Type\030\002 \001(\005\022\021\n\tBrandName\030\003" +
+      " \001(\t\022\021\n\tBrandTier\030\004 \001(\005\022^\n\rServiceDetail" +
+      "\030\005 \003(\0132G.com.ctrip.flight.agg.shopping.c" +
+      "ontract.transportation.KeyValuePairType\022" +
+      "\027\n\017ServiceDetailID\030\006 \003(\005\022\026\n\016CtripBrandTi" +
+      "er\030\007 \001(\005\"\260\002\n\022PriceReductionType\022\016\n\006RefNu" +
+      "m\030\001 \001(\005\022\023\n\013PromotionID\030\002 \001(\003\022\017\n\007ForUser\030" +
+      "\003 \001(\t\022\026\n\016DiscountAmount\030\004 \001(\001\022\022\n\nCouponC" +
+      "ode\030\005 \001(\t\022\026\n\016SelectedGroups\030\006 \001(\005\022c\n\017Red" +
+      "uctionAmount\030\007 \003(\0132J.com.ctrip.flight.ag" +
+      "g.shopping.contract.transportation.Reduc" +
+      "tionAmountType\022\025\n\rReductionMode\030\010 \001(\005\022\020\n" +
+      "\010ShowType\030\t \001(\005\022\022\n\nSourceType\030\n \001(\005\"6\n\023R" +
+      "eductionAmountType\022\017\n\007AgeType\030\001 \001(\005\022\016\n\006A" +
+      "mount\030\002 \001(\001\"K\n\023MemberPrivilegeType\022\016\n\006Re" +
+      "fNum\030\001 \001(\005\022\023\n\013PromotionID\030\002 \001(\003\022\017\n\007ForUs" +
+      "er\030\003 \001(\t\".\n\016TextRemarkType\022\016\n\006RefNum\030\001 \001" +
+      "(\005\022\014\n\004Text\030\002 \001(\t\"\341\001\n\017InterchangeType\022\021\n\t" +
+      "JourneyNo\030\001 \001(\005\022\021\n\tSegmentNo\030\002 \001(\005\022\020\n\010Po" +
+      "sition\030\003 \001(\005\022e\n\020InterchangeRoute\030\004 \003(\0132K" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.InterchangeRouteType\022\025\n\rT" +
+      "extRemarkRef\030\005 \001(\005\022\030\n\020CheckInRemarkRef\030\006" +
+      " \001(\005\"{\n\024InterchangeRouteType\022c\n\017Intercha",
+      "ngeStep\030\001 \003(\0132J.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.Interchang" +
+      "eStepType\"t\n\023InterchangeStepType\022\023\n\013Vehi" +
+      "cleType\030\001 \001(\005\022\027\n\017DurationMinutes\030\002 \001(\005\022\020" +
+      "\n\010Distance\030\003 \001(\001\022\r\n\005Price\030\004 \001(\001\022\016\n\006Remar" +
+      "k\030\005 \001(\t\"\327\001\n\024BaggageAncillaryType\022Y\n\nBund" +
+      "leItem\030\001 \003(\0132E.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.BundleItemT" +
+      "ype\022R\n\nBaggageRef\030\002 \003(\0132>.com.ctrip.flig" +
+      "ht.agg.shopping.contract.baggage.Baggage" +
+      "RefType\022\020\n\010OrderWay\030\003 \001(\005\"*\n\nAmountType\022" +
+      "\r\n\005Value\030\001 \001(\001\022\r\n\005Payee\030\002 \001(\005\"u\n\016Service" +
+      "FeeType\022\020\n\010Category\030\001 \001(\005\022Q\n\006Amount\030\002 \001(" +
+      "\0132A.com.ctrip.flight.agg.shopping.contra" +
+      "ct.transportation.AmountType\"\311\001\n\tObFeeTy" +
+      "pe\022\020\n\010Currency\030\001 \001(\t\022T\n\tMinAmount\030\002 \001(\0132" +
+      "A.com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.AmountType\022T\n\tMaxAmount\030" +
+      "\003 \001(\0132A.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.AmountType\"\240\002\n\020Ref" +
+      "undChangeType\022\022\n\nRefundType\030\001 \001(\005\022\022\n\nCha" +
+      "ngeType\030\002 \001(\005\022\023\n\013EndorseType\030\003 \001(\005\022W\n\014Mi" +
+      "nRefundFee\030\004 \001(\0132A.com.ctrip.flight.agg." +
+      "shopping.contract.transportation.DoubleT" +
+      "ype\022W\n\014MinChangeFee\030\005 \001(\0132A.com.ctrip.fl" +
       "ight.agg.shopping.contract.transportatio" +
-      "n.DoubleType\022W\n\014MinChangeFee\030\005 \001(\0132A.com" +
-      ".ctrip.flight.agg.shopping.contract.tran" +
-      "sportation.DoubleType\"\320\001\n\025JourneyAttachm" +
-      "entType\022\021\n\tJourneyNo\030\001 \001(\005\022\036\n\026ProductCom" +
-      "binationType\030\002 \003(\t\022\033\n\023TransferProductTyp" +
-      "e\030\003 \001(\t\022g\n\026TransferCombinationTag\030\004 \003(\0132" +
-      "G.com.ctrip.flight.agg.shopping.contract" +
-      ".transportation.KeyValuePairType\"{\n\tHote" +
-      "lType\022\016\n\006RefNum\030\001 \001(\005\022\017\n\007HotelID\030\002 \001(\003\022M" +
-      "\n\004Room\030\003 \003(\0132?.com.ctrip.flight.agg.shop" +
-      "ping.contract.transportation.RoomType\"B\n" +
-      "\010RoomType\022\016\n\006RoomID\030\001 \001(\003\022\026\n\016RoomCategor" +
-      "yID\030\002 \001(\003\022\016\n\006XToken\030\003 \001(\t\"p\n\rTaxDetailTy" +
-      "pe\022\014\n\004Type\030\001 \001(\005\022Q\n\006Amount\030\002 \001(\0132A.com.c" +
-      "trip.flight.agg.shopping.contract.transp" +
-      "ortation.AmountType\"$\n\007BusType\022\031\n\021PassBa" +
-      "ckLinkedUrl\030\001 \001(\tB9\n5com.ctrip.flight.ag" +
-      "g.shopping.contract.transportationP\001b\006pr" +
-      "oto3"
+      "n.DoubleType\022\035\n\025RefundChangeAttribute\030\006 " +
+      "\003(\t\"\277\002\n\025JourneyAttachmentType\022\021\n\tJourney" +
+      "No\030\001 \001(\005\022\036\n\026ProductCombinationType\030\002 \003(\t" +
+      "\022\033\n\023TransferProductType\030\003 \001(\t\022g\n\026Transfe" +
+      "rCombinationTag\030\004 \003(\0132G.com.ctrip.flight" +
+      ".agg.shopping.contract.transportation.Ke" +
+      "yValuePairType\022m\n\024DisplayedOfferAmount\030\005" +
+      " \001(\0132O.com.ctrip.flight.agg.shopping.con" +
+      "tract.transportation.DisplayedOfferAmoun" +
+      "tType\"{\n\tHotelType\022\016\n\006RefNum\030\001 \001(\005\022\017\n\007Ho" +
+      "telID\030\002 \001(\003\022M\n\004Room\030\003 \003(\0132?.com.ctrip.fl" +
+      "ight.agg.shopping.contract.transportatio" +
+      "n.RoomType\"B\n\010RoomType\022\016\n\006RoomID\030\001 \001(\003\022\026" +
+      "\n\016RoomCategoryID\030\002 \001(\003\022\016\n\006XToken\030\003 \001(\t\"p" +
+      "\n\rTaxDetailType\022\014\n\004Type\030\001 \001(\005\022Q\n\006Amount\030" +
+      "\002 \001(\0132A.com.ctrip.flight.agg.shopping.co" +
+      "ntract.transportation.AmountType\"$\n\007BusT" +
+      "ype\022\031\n\021PassBackLinkedUrl\030\001 \001(\t\"S\n\030Displa" +
+      "yedOfferAmountType\022\034\n\024AverageDisplayAmou" +
+      "nt\030\001 \001(\001\022\031\n\021AverageSaleAmount\030\002 \001(\001\"d\n\013F" +
+      "loatUpType\022\016\n\006RefNum\030\001 \001(\005\022\017\n\007Product\030\002 " +
+      "\001(\005\022\016\n\006Amount\030\003 \001(\001\022\016\n\006Remark\030\004 \001(\t\022\024\n\014D" +
+      "eliveryCode\030\005 \001(\005\"Z\n\020CreditPointsType\022\016\n" +
+      "\006RefNum\030\001 \001(\005\022\016\n\006Points\030\002 \001(\005\022\022\n\nCashAmo" +
+      "unt\030\003 \001(\001\022\022\n\nActivityID\030\004 \001(\003\"(\n\022Service" +
+      "BaggageType\022\022\n\nPaidWeight\030\001 \001(\001\"@\n\026Servi" +
+      "cePriceFreezeType\022\025\n\rServiceCharge\030\001 \001(\001" +
+      "\022\017\n\007Deposit\030\002 \001(\001\"x\n\017MileageCashType\022\016\n\006" +
+      "RefNum\030\001 \001(\005\022\021\n\tMileageID\030\002 \001(\005\022\020\n\010ShowT" +
+      "ype\030\003 \001(\005\022\021\n\tMaxAmount\030\004 \001(\005\022\035\n\025NewMembe" +
+      "rDiscountFlag\030\005 \001(\005\"{\n\nAdvertType\022\016\n\006Ref" +
+      "Num\030\001 \001(\005\022]\n\014AdvertDetail\030\002 \003(\0132G.com.ct" +
+      "rip.flight.agg.shopping.contract.transpo" +
+      "rtation.AdvertDetailType\"{\n\020AdvertDetail" +
+      "Type\022\023\n\013ProductType\030\001 \001(\t\022\026\n\016SubProductT" +
+      "ype\030\002 \001(\t\022\021\n\tProductID\030\003 \001(\t\022\021\n\tSalePric" +
+      "e\030\004 \001(\001\022\024\n\014PublishPrice\030\005 \001(\001B9\n5com.ctr" +
+      "ip.flight.agg.shopping.contract.transpor" +
+      "tationP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -806,7 +958,7 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareInfoType_descriptor,
-        new java.lang.String[] { "RefNum", "FareID", "FareBasis", "FareSource", "OwnerCarrier", "FareType", "AccountCode", "TicketDesignator", "TourCode", "Eligibility", "TariffNo", "FareRule", "FareTypeCode", "FareClass", });
+        new java.lang.String[] { "RefNum", "FareID", "FareBasis", "FareSource", "OwnerCarrier", "FareType", "AccountCode", "TicketDesignator", "TourCode", "Eligibility", "TariffNo", "FareRule", "FareTypeCode", "FareClass", "PrivateTariff", "G16FareClassTariffNo", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_KeyValuePairType_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_KeyValuePairType_fieldAccessorTable = new
@@ -848,7 +1000,7 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightSaleCurrencyPriceDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightSaleCurrencyPriceDetailType_descriptor,
-        new java.lang.String[] { "SalePrice", "Tax", "PublishPrice", "Discount", "Rate", "PrePcCodePrice", "ServiceFee", "FlightHotelDiscountAmount", "TaxDetail", });
+        new java.lang.String[] { "SalePrice", "Tax", "PublishPrice", "Discount", "Rate", "PrePcCodePrice", "ServiceFee", "FlightHotelDiscountAmount", "TaxDetail", "AccountPrice", "NetPrice", "SpecialOfferDiffAmount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightSettlementCurrencyPriceDetailType_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightSettlementCurrencyPriceDetailType_fieldAccessorTable = new
@@ -926,7 +1078,7 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RBDDisclosureType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RBDDisclosureType_descriptor,
-        new java.lang.String[] { "Name", "ShortName", "Description", "SpecialClassTypeID", "ExtraTabName", "BrandOrder", });
+        new java.lang.String[] { "Name", "ShortName", "Description", "SpecialClassTypeID", "ExtraTabName", "BrandOrder", "AvailableServices", "GroundServiceLevel", "AirServiceLevel", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TicketingTimeLimitType_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TicketingTimeLimitType_fieldAccessorTable = new
@@ -950,295 +1102,385 @@ public final class ComCtripFlightAggShoppingContractTransportation {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RestrictionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RestrictionType_descriptor,
-        new java.lang.String[] { "LanguageOfGovernmentIssuedPhotoID", "PaymentLimit", "CertificateTypeAllow", "CertificateTypeBlock", "IDCardNos", "CtripMemberships", "CtripAgreementIDAllow", "CtripAgreementIDBlock", "CarrierAgreementID", "GroupTicket", "IdentityLimit", "PaxCountRange", "PaxNumLimitType", "CompositionPriceRemark", "ApplySex", });
-    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentLimitType_descriptor =
+        new java.lang.String[] { "LanguageOfGovernmentIssuedPhotoID", "PaymentLimit", "CertificateTypeAllow", "CertificateTypeBlock", "IDCardNos", "CtripMemberships", "CtripAgreementIDAllow", "CtripAgreementIDBlock", "CarrierAgreementID", "GroupTicket", "IdentityLimit", "PaxCountRange", "PaxNumLimitType", "CompositionPriceRemark", "ApplySex", "TakeChildInfantNumLimit", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TakeChildInfantNumLimitType_descriptor =
       getDescriptor().getMessageTypes().get(26);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TakeChildInfantNumLimitType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TakeChildInfantNumLimitType_descriptor,
+        new java.lang.String[] { "AdtAgeLimit", "MaxChdPerAdt", "MaxInfPerAdt", "MaxChdForCIPerAdt", "MaxInfForCIPerAdt", "MinAgeForChdTravelAlone", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentLimitType_descriptor =
+      getDescriptor().getMessageTypes().get(27);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentLimitType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentLimitType_descriptor,
-        new java.lang.String[] { "PrepayType", "CreditCardPaymentLimitRef", "PaymentDiscountRefType", "LoanPayment", });
+        new java.lang.String[] { "PrepayType", "CreditCardPaymentLimitRef", "PaymentDiscountRefType", "LoanPayment", "CardHolderLimit", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountRefType_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountRefType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountRefType_descriptor,
         new java.lang.String[] { "PaymentDiscountRef", "CreditCardType", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountType_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PaymentDiscountType_descriptor,
         new java.lang.String[] { "RefNum", "DiscountTotalFee", "Currency", "DiscountSettle", "BankCode", "CardLevel", "DiscountDetail", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DiscountDetailType_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DiscountDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DiscountDetailType_descriptor,
         new java.lang.String[] { "DiscountType", "DiscountFee", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditCardPaymentLimitType_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditCardPaymentLimitType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditCardPaymentLimitType_descriptor,
         new java.lang.String[] { "RefNum", "CreditCardType", "AdultFee", "ChildFee", "InfantFee", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_LoanPaymentType_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_LoanPaymentType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_LoanPaymentType_descriptor,
         new java.lang.String[] { "Code", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TransportType_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TransportType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TransportType_descriptor,
         new java.lang.String[] { "RefNum", "Type", "TransportNo", "DepartDateTime", "DepartPoint", "ArriveDateTime", "ArrivePoint", "DurationMinutes", "Tag", "Flight", "Train", "Bus", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PointType_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PointType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PointType_descriptor,
         new java.lang.String[] { "CityID", "AirportCode", "TerminalName", "StationName", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightType_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FlightType_descriptor,
-        new java.lang.String[] { "MarketingCarrierCode", "OperatingCarrierCode", "OperatingFlightNo", "AircraftCode", "VirtualFlightSupplier", "FlightReferencePrice", "Stop", "ThroughFlight", "Punctuality", "VirtualFlightType", "FlightAttribute", });
+        new java.lang.String[] { "MarketingCarrierCode", "OperatingCarrierCode", "OperatingFlightNo", "AircraftCode", "VirtualFlightSupplier", "FlightReferencePrice", "Stop", "ThroughFlight", "Punctuality", "VirtualFlightType", "FlightAttribute", "StopoverCount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ThroughFlightType_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ThroughFlightType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ThroughFlightType_descriptor,
         new java.lang.String[] { "TransportRef", "Extra", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TrainType_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TrainType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TrainType_descriptor,
         new java.lang.String[] { "Type", "Remark", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GrabTicketType_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GrabTicketType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GrabTicketType_descriptor,
         new java.lang.String[] { "GrabTicketInd", "SuccessRateScope", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_SuccessRateScopeType_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_SuccessRateScopeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_SuccessRateScopeType_descriptor,
         new java.lang.String[] { "Name", "Rate", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferPackageType_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferPackageType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferPackageType_descriptor,
         new java.lang.String[] { "ExtensionField", "ExtraMarketingField", "BundleItem", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductCompositionType_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductCompositionType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductCompositionType_descriptor,
+        new java.lang.String[] { "CompositionPlanDefinition", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CompositionPlanDefinitionType_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CompositionPlanDefinitionType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CompositionPlanDefinitionType_descriptor,
+        new java.lang.String[] { "ProductItemReference", "OfferComparison", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductItemReferenceType_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductItemReferenceType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductItemReferenceType_descriptor,
+        new java.lang.String[] { "ProductRef", "Type", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferComparisonType_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferComparisonType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_OfferComparisonType_descriptor,
+        new java.lang.String[] { "RecommendationLevel", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BundleItemType_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BundleItemType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BundleItemType_descriptor,
         new java.lang.String[] { "BundleType", "ProductRef", "ServiceAssociation", "AgeTypeGroup", "ProductDetailIndex", "Tag", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_IntegerType_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_IntegerType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_IntegerType_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DoubleType_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DoubleType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DoubleType_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceAssociationType_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceAssociationType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceAssociationType_descriptor,
         new java.lang.String[] { "JourneyNo", "SegmentNo", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MarketingProductType_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MarketingProductType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MarketingProductType_descriptor,
-        new java.lang.String[] { "ServiceDefinition", "Coupon", "Gift", "BrandAttribute", "CashBack", "Ancillaries", "MemberPrivilege", "PriceReduction", "Hotel", });
+        new java.lang.String[] { "ServiceDefinition", "Coupon", "Gift", "BrandAttribute", "CashBack", "Ancillaries", "MemberPrivilege", "PriceReduction", "Hotel", "FloatUp", "CreditPoints", "MileageCash", "Advert", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDefinitionType_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDefinitionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDefinitionType_descriptor,
         new java.lang.String[] { "RefNum", "ServicePolicy", "ServiceDetail", "ServiceDefinitionRefs", "ServiceToken", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePolicyType_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePolicyType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePolicyType_descriptor,
-        new java.lang.String[] { "PolicyID", "MarketingType", "MarketingAmount", "ActiveCode", "Retain", "SceneCode", "ProductFeeDetail", });
+        new java.lang.String[] { "PolicyID", "MarketingType", "MarketingAmount", "ActiveCode", "Retain", "SceneCode", "ProductFeeDetail", "SceneType", "SelectFlag", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDetailType_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDetailType_descriptor,
-        new java.lang.String[] { "ProductType", "SubProductType", "ProductID", "PublishPrice", "SalePrice", "MarketPrice", "Name", "ShortName", "Count", "CancellableInd", "ProductCode", "Extension", "ServiceDiscount", "ForceType", "BindingType", "ExpiryTime", "ExpiryTimeUnit", "Priority", });
+        new java.lang.String[] { "ProductType", "SubProductType", "ProductID", "PublishPrice", "SalePrice", "MarketPrice", "Name", "ShortName", "Count", "CancellableInd", "ProductCode", "Extension", "ServiceDiscount", "ForceType", "BindingType", "ExpiryTime", "ExpiryTimeUnit", "Priority", "ServiceBaggage", "ServicePriceFreeze", "Tag", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductFeeDetailType_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductFeeDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ProductFeeDetailType_descriptor,
-        new java.lang.String[] { "AgeTypeGroup", "MarketingAmount", "ServiceToken", });
+        new java.lang.String[] { "AgeTypeGroup", "MarketingAmount", "ServiceToken", "ServicePackageRelatedProduct", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePackageRelatedProductType_descriptor =
+      getDescriptor().getMessageTypes().get(54);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePackageRelatedProductType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePackageRelatedProductType_descriptor,
+        new java.lang.String[] { "ProductType", "SubProductType", "Token", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDiscountType_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDiscountType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceDiscountType_descriptor,
         new java.lang.String[] { "Item", "DiscountAmount", "AgeType", "DiscountMode", "DiscountRate", "LimitTimes", "TotalDiscountAmount", "SingleMinDiscountAmount", "SingleMaxDiscountAmount", "Period", "Name", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CouponType_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CouponType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CouponType_descriptor,
         new java.lang.String[] { "RefNum", "Type", "CouponCode", "DiscountAmount", "SalePrice", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftType_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftType_descriptor,
         new java.lang.String[] { "RefNum", "GiftID", "IconName", "Quantity", "ShowType", "Type", "MarketingCode", "GiftService", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftServiceType_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftServiceType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_GiftServiceType_descriptor,
         new java.lang.String[] { "ServiceID", "ServiceName", "ServiceType", "Checked", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CashBackType_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CashBackType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CashBackType_descriptor,
         new java.lang.String[] { "RefNum", "Type", "Amount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CacheType_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CacheType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CacheType_descriptor,
         new java.lang.String[] { "RefNum", "AgeInMillisecond", "TraceID", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AncillariesType_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AncillariesType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AncillariesType_descriptor,
         new java.lang.String[] { "RefNum", "CheckInServiceStatus", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PackageExtensionFieldType_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PackageExtensionFieldType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PackageExtensionFieldType_descriptor,
         new java.lang.String[] { "ProductActionMode", "ProductRemark", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BrandAttributeType_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BrandAttributeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BrandAttributeType_descriptor,
         new java.lang.String[] { "RefNum", "Type", "BrandName", "BrandTier", "ServiceDetail", "ServiceDetailID", "CtripBrandTier", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PriceReductionType_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PriceReductionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_PriceReductionType_descriptor,
-        new java.lang.String[] { "RefNum", "PromotionID", "ForUser", "DiscountAmount", "CouponCode", "SelectedGroups", });
+        new java.lang.String[] { "RefNum", "PromotionID", "ForUser", "DiscountAmount", "CouponCode", "SelectedGroups", "ReductionAmount", "ReductionMode", "ShowType", "SourceType", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ReductionAmountType_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ReductionAmountType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ReductionAmountType_descriptor,
+        new java.lang.String[] { "AgeType", "Amount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MemberPrivilegeType_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MemberPrivilegeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MemberPrivilegeType_descriptor,
         new java.lang.String[] { "RefNum", "PromotionID", "ForUser", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TextRemarkType_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TextRemarkType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TextRemarkType_descriptor,
         new java.lang.String[] { "RefNum", "Text", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeType_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeType_descriptor,
         new java.lang.String[] { "JourneyNo", "SegmentNo", "Position", "InterchangeRoute", "TextRemarkRef", "CheckInRemarkRef", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeRouteType_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeRouteType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeRouteType_descriptor,
         new java.lang.String[] { "InterchangeStep", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeStepType_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeStepType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_InterchangeStepType_descriptor,
         new java.lang.String[] { "VehicleType", "DurationMinutes", "Distance", "Price", "Remark", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BaggageAncillaryType_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BaggageAncillaryType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BaggageAncillaryType_descriptor,
         new java.lang.String[] { "BundleItem", "BaggageRef", "OrderWay", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AmountType_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AmountType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AmountType_descriptor,
         new java.lang.String[] { "Value", "Payee", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceFeeType_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceFeeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceFeeType_descriptor,
         new java.lang.String[] { "Category", "Amount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ObFeeType_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ObFeeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ObFeeType_descriptor,
         new java.lang.String[] { "Currency", "MinAmount", "MaxAmount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RefundChangeType_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RefundChangeType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RefundChangeType_descriptor,
-        new java.lang.String[] { "RefundType", "ChangeType", "EndorseType", "MinRefundFee", "MinChangeFee", });
+        new java.lang.String[] { "RefundType", "ChangeType", "EndorseType", "MinRefundFee", "MinChangeFee", "RefundChangeAttribute", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_JourneyAttachmentType_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_JourneyAttachmentType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_JourneyAttachmentType_descriptor,
-        new java.lang.String[] { "JourneyNo", "ProductCombinationType", "TransferProductType", "TransferCombinationTag", });
+        new java.lang.String[] { "JourneyNo", "ProductCombinationType", "TransferProductType", "TransferCombinationTag", "DisplayedOfferAmount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_HotelType_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_HotelType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_HotelType_descriptor,
         new java.lang.String[] { "RefNum", "HotelID", "Room", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RoomType_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RoomType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_RoomType_descriptor,
         new java.lang.String[] { "RoomID", "RoomCategoryID", "XToken", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_descriptor,
         new java.lang.String[] { "Type", "Amount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BusType_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BusType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_BusType_descriptor,
         new java.lang.String[] { "PassBackLinkedUrl", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DisplayedOfferAmountType_descriptor =
+      getDescriptor().getMessageTypes().get(81);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DisplayedOfferAmountType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_DisplayedOfferAmountType_descriptor,
+        new java.lang.String[] { "AverageDisplayAmount", "AverageSaleAmount", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FloatUpType_descriptor =
+      getDescriptor().getMessageTypes().get(82);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FloatUpType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FloatUpType_descriptor,
+        new java.lang.String[] { "RefNum", "Product", "Amount", "Remark", "DeliveryCode", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditPointsType_descriptor =
+      getDescriptor().getMessageTypes().get(83);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditPointsType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_CreditPointsType_descriptor,
+        new java.lang.String[] { "RefNum", "Points", "CashAmount", "ActivityID", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceBaggageType_descriptor =
+      getDescriptor().getMessageTypes().get(84);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceBaggageType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServiceBaggageType_descriptor,
+        new java.lang.String[] { "PaidWeight", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePriceFreezeType_descriptor =
+      getDescriptor().getMessageTypes().get(85);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePriceFreezeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_ServicePriceFreezeType_descriptor,
+        new java.lang.String[] { "ServiceCharge", "Deposit", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MileageCashType_descriptor =
+      getDescriptor().getMessageTypes().get(86);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MileageCashType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_MileageCashType_descriptor,
+        new java.lang.String[] { "RefNum", "MileageID", "ShowType", "MaxAmount", "NewMemberDiscountFlag", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertType_descriptor =
+      getDescriptor().getMessageTypes().get(87);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertType_descriptor,
+        new java.lang.String[] { "RefNum", "AdvertDetail", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertDetailType_descriptor =
+      getDescriptor().getMessageTypes().get(88);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertDetailType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_AdvertDetailType_descriptor,
+        new java.lang.String[] { "ProductType", "SubProductType", "ProductID", "SalePrice", "PublishPrice", });
     com.ctrip.flight.agg.shopping.contract.baggage.ComCtripFlightAggShoppingContractBaggage.getDescriptor();
   }
 

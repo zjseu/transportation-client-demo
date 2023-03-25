@@ -63,13 +63,17 @@ public final class ComCtripFlightAggShoppingContractMessage {
       "ageHeader\030\001 \001(\0132A.com.ctrip.flight.agg.s" +
       "hopping.contract.message.MessageHeaderTy" +
       "pe\022\020\n\010ServerIP\030\002 \001(\t\022\022\n\nReturnCode\030\003 \001(\005" +
-      "\022\022\n\nDiagOutput\030\004 \001(\t\"\263\001\n\021MessageHeaderTy" +
+      "\022\022\n\nDiagOutput\030\004 \001(\t\"\277\002\n\021MessageHeaderTy" +
       "pe\022\017\n\007Channel\030\001 \001(\t\022\024\n\014SubChannelID\030\002 \001(" +
       "\005\022\025\n\rTransactionID\030\003 \001(\t\022\021\n\tRequestID\030\004 " +
       "\001(\t\022\020\n\010ClientIP\030\005 \001(\t\022\020\n\010DeviceID\030\006 \001(\t\022" +
       "\026\n\016DevicePlatform\030\007 \001(\t\022\021\n\tSessionID\030\010 \001" +
-      "(\tB2\n.com.ctrip.flight.agg.shopping.cont" +
-      "ract.messageP\001b\006proto3"
+      "(\t\022\025\n\rClientVersion\030\t \001(\t\022\022\n\nDeviceType\030" +
+      "\n \001(\t\022\024\n\014PlatformType\030\013 \001(\t\022\035\n\025DevicePla" +
+      "tformVersion\030\014 \001(\t\022\020\n\010ClientID\030\r \001(\t\022\013\n\003" +
+      "AID\030\017 \001(\t\022\013\n\003SID\030\020 \001(\tB2\n.com.ctrip.flig" +
+      "ht.agg.shopping.contract.messageP\001b\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -112,7 +116,7 @@ public final class ComCtripFlightAggShoppingContractMessage {
     internal_static_com_ctrip_flight_agg_shopping_contract_message_MessageHeaderType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_message_MessageHeaderType_descriptor,
-        new java.lang.String[] { "Channel", "SubChannelID", "TransactionID", "RequestID", "ClientIP", "DeviceID", "DevicePlatform", "SessionID", });
+        new java.lang.String[] { "Channel", "SubChannelID", "TransactionID", "RequestID", "ClientIP", "DeviceID", "DevicePlatform", "SessionID", "ClientVersion", "DeviceType", "PlatformType", "DevicePlatformVersion", "ClientID", "AID", "SID", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

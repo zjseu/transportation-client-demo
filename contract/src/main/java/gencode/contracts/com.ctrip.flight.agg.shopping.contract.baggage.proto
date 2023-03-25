@@ -23,7 +23,7 @@ message PaxBaggageType {
 message BaggageWayType {
     // 关联BaggageType.RefNum
     int32 BaggageTypeRef = 1;
-    // 0=托运、1=手提
+    // 0=托运、1=手提、2=打包、3=加购、4=随身
     int32 Type = 2;
 }
 
@@ -43,8 +43,10 @@ message BaggageDetailType {
     int32 Amount = 1;
     // PC、KG
     string Unit = 2;
-    // Piece、Weight
+    // Piece、Weight、TotalWeight
     string Type = 3;
+    // 支持浮点的确切数量 -1表示不限制
+    double ExactAmount = 4;
 }
 
 message BaggageSizeType {
@@ -59,4 +61,8 @@ message BaggageSizeType {
 message BaggageExtensionFieldsType {
     // 是否包含免费行李
     bool ContainFreeBaggage = 1;
+    // baggage 多语言描述 仅detailsearch时下发
+    string BaggageGLB = 2;
+    // baggage 中文描述 仅detailsearch时下发
+    string BaggageCN = 3;
 }

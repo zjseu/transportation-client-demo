@@ -76,13 +76,15 @@ public final class ComCtripFlightAggShoppingContractBaggage {
       "ght.agg.shopping.contract.baggage.Baggag" +
       "eExtensionFieldsType\022T\n\013BaggageSize\030\004 \001(" +
       "\0132?.com.ctrip.flight.agg.shopping.contra" +
-      "ct.baggage.BaggageSizeType\"?\n\021BaggageDet" +
+      "ct.baggage.BaggageSizeType\"T\n\021BaggageDet" +
       "ailType\022\016\n\006Amount\030\001 \001(\005\022\014\n\004Unit\030\002 \001(\t\022\014\n" +
-      "\004Type\030\003 \001(\t\"D\n\017BaggageSizeType\022\025\n\rSizeLi" +
-      "mitType\030\001 \001(\005\022\014\n\004Size\030\002 \001(\t\022\014\n\004Unit\030\003 \001(" +
-      "\t\"8\n\032BaggageExtensionFieldsType\022\032\n\022Conta" +
-      "inFreeBaggage\030\001 \001(\010B2\n.com.ctrip.flight." +
-      "agg.shopping.contract.baggageP\001b\006proto3"
+      "\004Type\030\003 \001(\t\022\023\n\013ExactAmount\030\004 \001(\001\"D\n\017Bagg" +
+      "ageSizeType\022\025\n\rSizeLimitType\030\001 \001(\005\022\014\n\004Si" +
+      "ze\030\002 \001(\t\022\014\n\004Unit\030\003 \001(\t\"_\n\032BaggageExtensi" +
+      "onFieldsType\022\032\n\022ContainFreeBaggage\030\001 \001(\010" +
+      "\022\022\n\nBaggageGLB\030\002 \001(\t\022\021\n\tBaggageCN\030\003 \001(\tB" +
+      "2\n.com.ctrip.flight.agg.shopping.contrac" +
+      "t.baggageP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -125,7 +127,7 @@ public final class ComCtripFlightAggShoppingContractBaggage {
     internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageDetailType_descriptor,
-        new java.lang.String[] { "Amount", "Unit", "Type", });
+        new java.lang.String[] { "Amount", "Unit", "Type", "ExactAmount", });
     internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageSizeType_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageSizeType_fieldAccessorTable = new
@@ -137,7 +139,7 @@ public final class ComCtripFlightAggShoppingContractBaggage {
     internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageExtensionFieldsType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_baggage_BaggageExtensionFieldsType_descriptor,
-        new java.lang.String[] { "ContainFreeBaggage", });
+        new java.lang.String[] { "ContainFreeBaggage", "BaggageGLB", "BaggageCN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

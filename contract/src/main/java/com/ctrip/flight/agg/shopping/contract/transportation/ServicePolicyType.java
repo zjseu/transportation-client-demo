@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     retain_ = false;
     sceneCode_ = "";
     productFeeDetail_ = java.util.Collections.emptyList();
+    sceneType_ = "";
+    selectFlag_ = 0;
   }
 
   @java.lang.Override
@@ -88,6 +90,17 @@ private static final long serialVersionUID = 0L;
             }
             productFeeDetail_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.parser(), extensionRegistry));
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sceneType_ = s;
+            break;
+          }
+          case 72: {
+
+            selectFlag_ = input.readInt32();
             break;
           }
           default: {
@@ -317,6 +330,61 @@ private static final long serialVersionUID = 0L;
     return productFeeDetail_.get(index);
   }
 
+  public static final int SCENETYPE_FIELD_NUMBER = 8;
+  private volatile java.lang.Object sceneType_;
+  /**
+   * <pre>
+   * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+   * </pre>
+   *
+   * <code>string SceneType = 8;</code>
+   */
+  public java.lang.String getSceneType() {
+    java.lang.Object ref = sceneType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sceneType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+   * </pre>
+   *
+   * <code>string SceneType = 8;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSceneTypeBytes() {
+    java.lang.Object ref = sceneType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sceneType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SELECTFLAG_FIELD_NUMBER = 9;
+  private int selectFlag_;
+  /**
+   * <pre>
+   * 是否多选[CanMultiCheck]，0：单选，1：多选
+   * </pre>
+   *
+   * <code>int32 SelectFlag = 9;</code>
+   */
+  public int getSelectFlag() {
+    return selectFlag_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -351,6 +419,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < productFeeDetail_.size(); i++) {
       output.writeMessage(7, productFeeDetail_.get(i));
+    }
+    if (!getSceneTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sceneType_);
+    }
+    if (selectFlag_ != 0) {
+      output.writeInt32(9, selectFlag_);
     }
     unknownFields.writeTo(output);
   }
@@ -387,6 +461,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, productFeeDetail_.get(i));
     }
+    if (!getSceneTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sceneType_);
+    }
+    if (selectFlag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(9, selectFlag_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -419,6 +500,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSceneCode());
     result = result && getProductFeeDetailList()
         .equals(other.getProductFeeDetailList());
+    result = result && getSceneType()
+        .equals(other.getSceneType());
+    result = result && (getSelectFlag()
+        == other.getSelectFlag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -449,6 +534,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PRODUCTFEEDETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getProductFeeDetailList().hashCode();
     }
+    hash = (37 * hash) + SCENETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getSceneType().hashCode();
+    hash = (37 * hash) + SELECTFLAG_FIELD_NUMBER;
+    hash = (53 * hash) + getSelectFlag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -601,6 +690,10 @@ private static final long serialVersionUID = 0L;
       } else {
         productFeeDetailBuilder_.clear();
       }
+      sceneType_ = "";
+
+      selectFlag_ = 0;
+
       return this;
     }
 
@@ -644,6 +737,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.productFeeDetail_ = productFeeDetailBuilder_.build();
       }
+      result.sceneType_ = sceneType_;
+      result.selectFlag_ = selectFlag_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -738,6 +833,13 @@ private static final long serialVersionUID = 0L;
             productFeeDetailBuilder_.addAllMessages(other.productFeeDetail_);
           }
         }
+      }
+      if (!other.getSceneType().isEmpty()) {
+        sceneType_ = other.sceneType_;
+        onChanged();
+      }
+      if (other.getSelectFlag() != 0) {
+        setSelectFlag(other.getSelectFlag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1409,6 +1511,133 @@ private static final long serialVersionUID = 0L;
         productFeeDetail_ = null;
       }
       return productFeeDetailBuilder_;
+    }
+
+    private java.lang.Object sceneType_ = "";
+    /**
+     * <pre>
+     * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+     * </pre>
+     *
+     * <code>string SceneType = 8;</code>
+     */
+    public java.lang.String getSceneType() {
+      java.lang.Object ref = sceneType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sceneType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+     * </pre>
+     *
+     * <code>string SceneType = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSceneTypeBytes() {
+      java.lang.Object ref = sceneType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sceneType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+     * </pre>
+     *
+     * <code>string SceneType = 8;</code>
+     */
+    public Builder setSceneType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sceneType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+     * </pre>
+     *
+     * <code>string SceneType = 8;</code>
+     */
+    public Builder clearSceneType() {
+      
+      sceneType_ = getDefaultInstance().getSceneType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+     * </pre>
+     *
+     * <code>string SceneType = 8;</code>
+     */
+    public Builder setSceneTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sceneType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int selectFlag_ ;
+    /**
+     * <pre>
+     * 是否多选[CanMultiCheck]，0：单选，1：多选
+     * </pre>
+     *
+     * <code>int32 SelectFlag = 9;</code>
+     */
+    public int getSelectFlag() {
+      return selectFlag_;
+    }
+    /**
+     * <pre>
+     * 是否多选[CanMultiCheck]，0：单选，1：多选
+     * </pre>
+     *
+     * <code>int32 SelectFlag = 9;</code>
+     */
+    public Builder setSelectFlag(int value) {
+      
+      selectFlag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否多选[CanMultiCheck]，0：单选，1：多选
+     * </pre>
+     *
+     * <code>int32 SelectFlag = 9;</code>
+     */
+    public Builder clearSelectFlag() {
+      
+      selectFlag_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private AdaptedOptionType() {
     xProductAppointed_ = java.util.Collections.emptyList();
+    combinationPolicy_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -56,6 +57,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.XProductAppointedType.parser(), extensionRegistry));
             break;
           }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              combinationPolicy_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            combinationPolicy_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -73,6 +83,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         xProductAppointed_ = java.util.Collections.unmodifiableList(xProductAppointed_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        combinationPolicy_ = java.util.Collections.unmodifiableList(combinationPolicy_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -146,6 +159,61 @@ private static final long serialVersionUID = 0L;
     return xProductAppointed_.get(index);
   }
 
+  public static final int COMBINATIONPOLICY_FIELD_NUMBER = 2;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> combinationPolicy_;
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> getCombinationPolicyList() {
+    return combinationPolicy_;
+  }
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder> 
+      getCombinationPolicyOrBuilderList() {
+    return combinationPolicy_;
+  }
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  public int getCombinationPolicyCount() {
+    return combinationPolicy_.size();
+  }
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType getCombinationPolicy(int index) {
+    return combinationPolicy_.get(index);
+  }
+  /**
+   * <pre>
+   * 国内混政策严格反差回传token
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder getCombinationPolicyOrBuilder(
+      int index) {
+    return combinationPolicy_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -163,6 +231,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < xProductAppointed_.size(); i++) {
       output.writeMessage(1, xProductAppointed_.get(i));
     }
+    for (int i = 0; i < combinationPolicy_.size(); i++) {
+      output.writeMessage(2, combinationPolicy_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -175,6 +246,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < xProductAppointed_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, xProductAppointed_.get(i));
+    }
+    for (int i = 0; i < combinationPolicy_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, combinationPolicy_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +269,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getXProductAppointedList()
         .equals(other.getXProductAppointedList());
+    result = result && getCombinationPolicyList()
+        .equals(other.getCombinationPolicyList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -208,6 +285,10 @@ private static final long serialVersionUID = 0L;
     if (getXProductAppointedCount() > 0) {
       hash = (37 * hash) + XPRODUCTAPPOINTED_FIELD_NUMBER;
       hash = (53 * hash) + getXProductAppointedList().hashCode();
+    }
+    if (getCombinationPolicyCount() > 0) {
+      hash = (37 * hash) + COMBINATIONPOLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getCombinationPolicyList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -342,6 +423,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getXProductAppointedFieldBuilder();
+        getCombinationPolicyFieldBuilder();
       }
     }
     @java.lang.Override
@@ -352,6 +434,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         xProductAppointedBuilder_.clear();
+      }
+      if (combinationPolicyBuilder_ == null) {
+        combinationPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        combinationPolicyBuilder_.clear();
       }
       return this;
     }
@@ -388,6 +476,15 @@ private static final long serialVersionUID = 0L;
         result.xProductAppointed_ = xProductAppointed_;
       } else {
         result.xProductAppointed_ = xProductAppointedBuilder_.build();
+      }
+      if (combinationPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          combinationPolicy_ = java.util.Collections.unmodifiableList(combinationPolicy_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.combinationPolicy_ = combinationPolicy_;
+      } else {
+        result.combinationPolicy_ = combinationPolicyBuilder_.build();
       }
       onBuilt();
       return result;
@@ -460,6 +557,32 @@ private static final long serialVersionUID = 0L;
                  getXProductAppointedFieldBuilder() : null;
           } else {
             xProductAppointedBuilder_.addAllMessages(other.xProductAppointed_);
+          }
+        }
+      }
+      if (combinationPolicyBuilder_ == null) {
+        if (!other.combinationPolicy_.isEmpty()) {
+          if (combinationPolicy_.isEmpty()) {
+            combinationPolicy_ = other.combinationPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCombinationPolicyIsMutable();
+            combinationPolicy_.addAll(other.combinationPolicy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.combinationPolicy_.isEmpty()) {
+          if (combinationPolicyBuilder_.isEmpty()) {
+            combinationPolicyBuilder_.dispose();
+            combinationPolicyBuilder_ = null;
+            combinationPolicy_ = other.combinationPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            combinationPolicyBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCombinationPolicyFieldBuilder() : null;
+          } else {
+            combinationPolicyBuilder_.addAllMessages(other.combinationPolicy_);
           }
         }
       }
@@ -803,6 +926,318 @@ private static final long serialVersionUID = 0L;
         xProductAppointed_ = null;
       }
       return xProductAppointedBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> combinationPolicy_ =
+      java.util.Collections.emptyList();
+    private void ensureCombinationPolicyIsMutable() {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        combinationPolicy_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType>(combinationPolicy_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder> combinationPolicyBuilder_;
+
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> getCombinationPolicyList() {
+      if (combinationPolicyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(combinationPolicy_);
+      } else {
+        return combinationPolicyBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public int getCombinationPolicyCount() {
+      if (combinationPolicyBuilder_ == null) {
+        return combinationPolicy_.size();
+      } else {
+        return combinationPolicyBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType getCombinationPolicy(int index) {
+      if (combinationPolicyBuilder_ == null) {
+        return combinationPolicy_.get(index);
+      } else {
+        return combinationPolicyBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder setCombinationPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType value) {
+      if (combinationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.set(index, value);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder setCombinationPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder builderForValue) {
+      if (combinationPolicyBuilder_ == null) {
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder addCombinationPolicy(com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType value) {
+      if (combinationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.add(value);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder addCombinationPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType value) {
+      if (combinationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.add(index, value);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder addCombinationPolicy(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder builderForValue) {
+      if (combinationPolicyBuilder_ == null) {
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder addCombinationPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder builderForValue) {
+      if (combinationPolicyBuilder_ == null) {
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder addAllCombinationPolicy(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType> values) {
+      if (combinationPolicyBuilder_ == null) {
+        ensureCombinationPolicyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, combinationPolicy_);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder clearCombinationPolicy() {
+      if (combinationPolicyBuilder_ == null) {
+        combinationPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public Builder removeCombinationPolicy(int index) {
+      if (combinationPolicyBuilder_ == null) {
+        ensureCombinationPolicyIsMutable();
+        combinationPolicy_.remove(index);
+        onChanged();
+      } else {
+        combinationPolicyBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder getCombinationPolicyBuilder(
+        int index) {
+      return getCombinationPolicyFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder getCombinationPolicyOrBuilder(
+        int index) {
+      if (combinationPolicyBuilder_ == null) {
+        return combinationPolicy_.get(index);  } else {
+        return combinationPolicyBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder> 
+         getCombinationPolicyOrBuilderList() {
+      if (combinationPolicyBuilder_ != null) {
+        return combinationPolicyBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(combinationPolicy_);
+      }
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder addCombinationPolicyBuilder() {
+      return getCombinationPolicyFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder addCombinationPolicyBuilder(
+        int index) {
+      return getCombinationPolicyFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 国内混政策严格反差回传token
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType CombinationPolicy = 2;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder> 
+         getCombinationPolicyBuilderList() {
+      return getCombinationPolicyFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder> 
+        getCombinationPolicyFieldBuilder() {
+      if (combinationPolicyBuilder_ == null) {
+        combinationPolicyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder>(
+                combinationPolicy_,
+                ((bitField0_ & 0x00000002) == 0x00000002),
+                getParentForChildren(),
+                isClean());
+        combinationPolicy_ = null;
+      }
+      return combinationPolicyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

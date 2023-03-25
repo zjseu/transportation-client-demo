@@ -30,6 +30,8 @@ private static final long serialVersionUID = 0L;
     fareRule_ = "";
     fareTypeCode_ = "";
     fareClass_ = "";
+    privateTariff_ = false;
+    g16FareClassTariffNo_ = 0;
   }
 
   @java.lang.Override
@@ -134,6 +136,16 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             fareClass_ = s;
+            break;
+          }
+          case 120: {
+
+            privateTariff_ = input.readBool();
+            break;
+          }
+          case 136: {
+
+            g16FareClassTariffNo_ = input.readInt32();
             break;
           }
           default: {
@@ -616,6 +628,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PRIVATETARIFF_FIELD_NUMBER = 15;
+  private boolean privateTariff_;
+  /**
+   * <pre>
+   * 公布私有
+   * </pre>
+   *
+   * <code>bool PrivateTariff = 15;</code>
+   */
+  public boolean getPrivateTariff() {
+    return privateTariff_;
+  }
+
+  public static final int G16FARECLASSTARIFFNO_FIELD_NUMBER = 17;
+  private int g16FareClassTariffNo_;
+  /**
+   * <pre>
+   * G16运价区域
+   * </pre>
+   *
+   * <code>int32 G16FareClassTariffNo = 17;</code>
+   */
+  public int getG16FareClassTariffNo() {
+    return g16FareClassTariffNo_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -672,6 +710,12 @@ private static final long serialVersionUID = 0L;
     if (!getFareClassBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, fareClass_);
     }
+    if (privateTariff_ != false) {
+      output.writeBool(15, privateTariff_);
+    }
+    if (g16FareClassTariffNo_ != 0) {
+      output.writeInt32(17, g16FareClassTariffNo_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -727,6 +771,14 @@ private static final long serialVersionUID = 0L;
     if (!getFareClassBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, fareClass_);
     }
+    if (privateTariff_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, privateTariff_);
+    }
+    if (g16FareClassTariffNo_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(17, g16FareClassTariffNo_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -771,6 +823,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFareTypeCode());
     result = result && getFareClass()
         .equals(other.getFareClass());
+    result = result && (getPrivateTariff()
+        == other.getPrivateTariff());
+    result = result && (getG16FareClassTariffNo()
+        == other.getG16FareClassTariffNo());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -810,6 +866,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFareTypeCode().hashCode();
     hash = (37 * hash) + FARECLASS_FIELD_NUMBER;
     hash = (53 * hash) + getFareClass().hashCode();
+    hash = (37 * hash) + PRIVATETARIFF_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPrivateTariff());
+    hash = (37 * hash) + G16FARECLASSTARIFFNO_FIELD_NUMBER;
+    hash = (53 * hash) + getG16FareClassTariffNo();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -971,6 +1032,10 @@ private static final long serialVersionUID = 0L;
 
       fareClass_ = "";
 
+      privateTariff_ = false;
+
+      g16FareClassTariffNo_ = 0;
+
       return this;
     }
 
@@ -1011,6 +1076,8 @@ private static final long serialVersionUID = 0L;
       result.fareRule_ = fareRule_;
       result.fareTypeCode_ = fareTypeCode_;
       result.fareClass_ = fareClass_;
+      result.privateTariff_ = privateTariff_;
+      result.g16FareClassTariffNo_ = g16FareClassTariffNo_;
       onBuilt();
       return result;
     }
@@ -1110,6 +1177,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getFareClass().isEmpty()) {
         fareClass_ = other.fareClass_;
         onChanged();
+      }
+      if (other.getPrivateTariff() != false) {
+        setPrivateTariff(other.getPrivateTariff());
+      }
+      if (other.getG16FareClassTariffNo() != 0) {
+        setG16FareClassTariffNo(other.getG16FareClassTariffNo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2118,6 +2191,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       fareClass_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean privateTariff_ ;
+    /**
+     * <pre>
+     * 公布私有
+     * </pre>
+     *
+     * <code>bool PrivateTariff = 15;</code>
+     */
+    public boolean getPrivateTariff() {
+      return privateTariff_;
+    }
+    /**
+     * <pre>
+     * 公布私有
+     * </pre>
+     *
+     * <code>bool PrivateTariff = 15;</code>
+     */
+    public Builder setPrivateTariff(boolean value) {
+      
+      privateTariff_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 公布私有
+     * </pre>
+     *
+     * <code>bool PrivateTariff = 15;</code>
+     */
+    public Builder clearPrivateTariff() {
+      
+      privateTariff_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int g16FareClassTariffNo_ ;
+    /**
+     * <pre>
+     * G16运价区域
+     * </pre>
+     *
+     * <code>int32 G16FareClassTariffNo = 17;</code>
+     */
+    public int getG16FareClassTariffNo() {
+      return g16FareClassTariffNo_;
+    }
+    /**
+     * <pre>
+     * G16运价区域
+     * </pre>
+     *
+     * <code>int32 G16FareClassTariffNo = 17;</code>
+     */
+    public Builder setG16FareClassTariffNo(int value) {
+      
+      g16FareClassTariffNo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * G16运价区域
+     * </pre>
+     *
+     * <code>int32 G16FareClassTariffNo = 17;</code>
+     */
+    public Builder clearG16FareClassTariffNo() {
+      
+      g16FareClassTariffNo_ = 0;
       onChanged();
       return this;
     }

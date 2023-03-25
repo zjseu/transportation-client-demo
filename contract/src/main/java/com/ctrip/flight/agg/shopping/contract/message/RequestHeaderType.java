@@ -4,6 +4,10 @@
 package com.ctrip.flight.agg.shopping.contract.message;
 
 /**
+ * <pre>
+ * 请求头类型
+ * </pre>
+ *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType}
  */
 public  final class RequestHeaderType extends
@@ -124,6 +128,10 @@ private static final long serialVersionUID = 0L;
   public static final int LOGGINGLEVEL_FIELD_NUMBER = 2;
   private int loggingLevel_;
   /**
+   * <pre>
+   * 调试参数
+   * </pre>
+   *
    * <code>int32 LoggingLevel = 2;</code>
    */
   public int getLoggingLevel() {
@@ -133,6 +141,10 @@ private static final long serialVersionUID = 0L;
   public static final int DIAGINPUT_FIELD_NUMBER = 3;
   private volatile java.lang.Object diagInput_;
   /**
+   * <pre>
+   * 输入消息，调试用
+   * </pre>
+   *
    * <code>string DiagInput = 3;</code>
    */
   public java.lang.String getDiagInput() {
@@ -148,6 +160,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 输入消息，调试用
+   * </pre>
+   *
    * <code>string DiagInput = 3;</code>
    */
   public com.google.protobuf.ByteString
@@ -347,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 请求头类型
+   * </pre>
+   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.message.RequestHeaderType}
    */
   public static final class Builder extends
@@ -633,12 +653,20 @@ private static final long serialVersionUID = 0L;
 
     private int loggingLevel_ ;
     /**
+     * <pre>
+     * 调试参数
+     * </pre>
+     *
      * <code>int32 LoggingLevel = 2;</code>
      */
     public int getLoggingLevel() {
       return loggingLevel_;
     }
     /**
+     * <pre>
+     * 调试参数
+     * </pre>
+     *
      * <code>int32 LoggingLevel = 2;</code>
      */
     public Builder setLoggingLevel(int value) {
@@ -648,6 +676,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 调试参数
+     * </pre>
+     *
      * <code>int32 LoggingLevel = 2;</code>
      */
     public Builder clearLoggingLevel() {
@@ -659,6 +691,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object diagInput_ = "";
     /**
+     * <pre>
+     * 输入消息，调试用
+     * </pre>
+     *
      * <code>string DiagInput = 3;</code>
      */
     public java.lang.String getDiagInput() {
@@ -674,6 +710,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 输入消息，调试用
+     * </pre>
+     *
      * <code>string DiagInput = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -690,6 +730,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 输入消息，调试用
+     * </pre>
+     *
      * <code>string DiagInput = 3;</code>
      */
     public Builder setDiagInput(
@@ -703,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 输入消息，调试用
+     * </pre>
+     *
      * <code>string DiagInput = 3;</code>
      */
     public Builder clearDiagInput() {
@@ -712,6 +760,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 输入消息，调试用
+     * </pre>
+     *
      * <code>string DiagInput = 3;</code>
      */
     public Builder setDiagInputBytes(

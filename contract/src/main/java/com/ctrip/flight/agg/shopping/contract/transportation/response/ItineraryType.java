@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     tag_ = java.util.Collections.emptyList();
     priority_ = 0D;
     referenceOffer_ = java.util.Collections.emptyList();
+    multiCombination_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -114,6 +115,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.OfferType.parser(), extensionRegistry));
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              multiCombination_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            multiCombination_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -143,6 +153,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         referenceOffer_ = java.util.Collections.unmodifiableList(referenceOffer_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        multiCombination_ = java.util.Collections.unmodifiableList(multiCombination_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -476,6 +489,61 @@ private static final long serialVersionUID = 0L;
     return referenceOffer_.get(index);
   }
 
+  public static final int MULTICOMBINATION_FIELD_NUMBER = 9;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> multiCombination_;
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> getMultiCombinationList() {
+    return multiCombination_;
+  }
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder> 
+      getMultiCombinationOrBuilderList() {
+    return multiCombination_;
+  }
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  public int getMultiCombinationCount() {
+    return multiCombination_.size();
+  }
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType getMultiCombination(int index) {
+    return multiCombination_.get(index);
+  }
+  /**
+   * <pre>
+   * 不同offer 混合预定关系（国内混舱预定）
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder getMultiCombinationOrBuilder(
+      int index) {
+    return multiCombination_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -513,6 +581,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < referenceOffer_.size(); i++) {
       output.writeMessage(8, referenceOffer_.get(i));
+    }
+    for (int i = 0; i < multiCombination_.size(); i++) {
+      output.writeMessage(9, multiCombination_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -555,6 +626,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, referenceOffer_.get(i));
     }
+    for (int i = 0; i < multiCombination_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, multiCombination_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -589,6 +664,8 @@ private static final long serialVersionUID = 0L;
             other.getPriority()));
     result = result && getReferenceOfferList()
         .equals(other.getReferenceOfferList());
+    result = result && getMultiCombinationList()
+        .equals(other.getMultiCombinationList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -626,6 +703,10 @@ private static final long serialVersionUID = 0L;
     if (getReferenceOfferCount() > 0) {
       hash = (37 * hash) + REFERENCEOFFER_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceOfferList().hashCode();
+    }
+    if (getMultiCombinationCount() > 0) {
+      hash = (37 * hash) + MULTICOMBINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiCombinationList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -764,6 +845,7 @@ private static final long serialVersionUID = 0L;
         getInterchangeFieldBuilder();
         getTagFieldBuilder();
         getReferenceOfferFieldBuilder();
+        getMultiCombinationFieldBuilder();
       }
     }
     @java.lang.Override
@@ -804,6 +886,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         referenceOfferBuilder_.clear();
+      }
+      if (multiCombinationBuilder_ == null) {
+        multiCombination_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        multiCombinationBuilder_.clear();
       }
       return this;
     }
@@ -880,6 +968,15 @@ private static final long serialVersionUID = 0L;
         result.referenceOffer_ = referenceOffer_;
       } else {
         result.referenceOffer_ = referenceOfferBuilder_.build();
+      }
+      if (multiCombinationBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          multiCombination_ = java.util.Collections.unmodifiableList(multiCombination_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.multiCombination_ = multiCombination_;
+      } else {
+        result.multiCombination_ = multiCombinationBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1066,6 +1163,32 @@ private static final long serialVersionUID = 0L;
                  getReferenceOfferFieldBuilder() : null;
           } else {
             referenceOfferBuilder_.addAllMessages(other.referenceOffer_);
+          }
+        }
+      }
+      if (multiCombinationBuilder_ == null) {
+        if (!other.multiCombination_.isEmpty()) {
+          if (multiCombination_.isEmpty()) {
+            multiCombination_ = other.multiCombination_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureMultiCombinationIsMutable();
+            multiCombination_.addAll(other.multiCombination_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.multiCombination_.isEmpty()) {
+          if (multiCombinationBuilder_.isEmpty()) {
+            multiCombinationBuilder_.dispose();
+            multiCombinationBuilder_ = null;
+            multiCombination_ = other.multiCombination_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            multiCombinationBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMultiCombinationFieldBuilder() : null;
+          } else {
+            multiCombinationBuilder_.addAllMessages(other.multiCombination_);
           }
         }
       }
@@ -2771,6 +2894,318 @@ private static final long serialVersionUID = 0L;
         referenceOffer_ = null;
       }
       return referenceOfferBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> multiCombination_ =
+      java.util.Collections.emptyList();
+    private void ensureMultiCombinationIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        multiCombination_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType>(multiCombination_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder> multiCombinationBuilder_;
+
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> getMultiCombinationList() {
+      if (multiCombinationBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(multiCombination_);
+      } else {
+        return multiCombinationBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public int getMultiCombinationCount() {
+      if (multiCombinationBuilder_ == null) {
+        return multiCombination_.size();
+      } else {
+        return multiCombinationBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType getMultiCombination(int index) {
+      if (multiCombinationBuilder_ == null) {
+        return multiCombination_.get(index);
+      } else {
+        return multiCombinationBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder setMultiCombination(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType value) {
+      if (multiCombinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMultiCombinationIsMutable();
+        multiCombination_.set(index, value);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder setMultiCombination(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder builderForValue) {
+      if (multiCombinationBuilder_ == null) {
+        ensureMultiCombinationIsMutable();
+        multiCombination_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        multiCombinationBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder addMultiCombination(com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType value) {
+      if (multiCombinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMultiCombinationIsMutable();
+        multiCombination_.add(value);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder addMultiCombination(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType value) {
+      if (multiCombinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMultiCombinationIsMutable();
+        multiCombination_.add(index, value);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder addMultiCombination(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder builderForValue) {
+      if (multiCombinationBuilder_ == null) {
+        ensureMultiCombinationIsMutable();
+        multiCombination_.add(builderForValue.build());
+        onChanged();
+      } else {
+        multiCombinationBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder addMultiCombination(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder builderForValue) {
+      if (multiCombinationBuilder_ == null) {
+        ensureMultiCombinationIsMutable();
+        multiCombination_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        multiCombinationBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder addAllMultiCombination(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType> values) {
+      if (multiCombinationBuilder_ == null) {
+        ensureMultiCombinationIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, multiCombination_);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder clearMultiCombination() {
+      if (multiCombinationBuilder_ == null) {
+        multiCombination_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public Builder removeMultiCombination(int index) {
+      if (multiCombinationBuilder_ == null) {
+        ensureMultiCombinationIsMutable();
+        multiCombination_.remove(index);
+        onChanged();
+      } else {
+        multiCombinationBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder getMultiCombinationBuilder(
+        int index) {
+      return getMultiCombinationFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder getMultiCombinationOrBuilder(
+        int index) {
+      if (multiCombinationBuilder_ == null) {
+        return multiCombination_.get(index);  } else {
+        return multiCombinationBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder> 
+         getMultiCombinationOrBuilderList() {
+      if (multiCombinationBuilder_ != null) {
+        return multiCombinationBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(multiCombination_);
+      }
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder addMultiCombinationBuilder() {
+      return getMultiCombinationFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder addMultiCombinationBuilder(
+        int index) {
+      return getMultiCombinationFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 不同offer 混合预定关系（国内混舱预定）
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType MultiCombination = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder> 
+         getMultiCombinationBuilderList() {
+      return getMultiCombinationFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder> 
+        getMultiCombinationFieldBuilder() {
+      if (multiCombinationBuilder_ == null) {
+        multiCombinationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiCombinationTypeOrBuilder>(
+                multiCombination_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        multiCombination_ = null;
+      }
+      return multiCombinationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

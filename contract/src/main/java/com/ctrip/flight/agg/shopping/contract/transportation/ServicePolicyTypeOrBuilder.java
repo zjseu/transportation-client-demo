@@ -122,4 +122,31 @@ public interface ServicePolicyTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+   * </pre>
+   *
+   * <code>string SceneType = 8;</code>
+   */
+  java.lang.String getSceneType();
+  /**
+   * <pre>
+   * X产品场景字段, 如 中间页行李额:MiddlePageBaggage
+   * </pre>
+   *
+   * <code>string SceneType = 8;</code>
+   */
+  com.google.protobuf.ByteString
+      getSceneTypeBytes();
+
+  /**
+   * <pre>
+   * 是否多选[CanMultiCheck]，0：单选，1：多选
+   * </pre>
+   *
+   * <code>int32 SelectFlag = 9;</code>
+   */
+  int getSelectFlag();
 }

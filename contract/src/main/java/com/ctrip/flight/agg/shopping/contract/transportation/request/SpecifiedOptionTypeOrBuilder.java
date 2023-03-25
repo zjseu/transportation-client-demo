@@ -244,4 +244,13 @@ public interface SpecifiedOptionTypeOrBuilder extends
    * <code>repeated int32 SubProductCategory = 9;</code>
    */
   int getSubProductCategory(int index);
+
+  /**
+   * <pre>
+   * 0:普通指定，1：指定无报价航班
+   * </pre>
+   *
+   * <code>int32 SpecifiedType = 10;</code>
+   */
+  int getSpecifiedType();
 }

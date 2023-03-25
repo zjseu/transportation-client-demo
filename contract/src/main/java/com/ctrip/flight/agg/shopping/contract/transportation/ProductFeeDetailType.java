@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     ageTypeGroup_ = 0;
     marketingAmount_ = 0D;
     serviceToken_ = "";
+    servicePackageRelatedProduct_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -61,6 +62,15 @@ private static final long serialVersionUID = 0L;
             serviceToken_ = s;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              servicePackageRelatedProduct_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            servicePackageRelatedProduct_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -76,6 +86,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        servicePackageRelatedProduct_ = java.util.Collections.unmodifiableList(servicePackageRelatedProduct_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -93,6 +106,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.class, com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AGETYPEGROUP_FIELD_NUMBER = 1;
   private int ageTypeGroup_;
   /**
@@ -161,6 +175,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SERVICEPACKAGERELATEDPRODUCT_FIELD_NUMBER = 4;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> servicePackageRelatedProduct_;
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> getServicePackageRelatedProductList() {
+    return servicePackageRelatedProduct_;
+  }
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder> 
+      getServicePackageRelatedProductOrBuilderList() {
+    return servicePackageRelatedProduct_;
+  }
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  public int getServicePackageRelatedProductCount() {
+    return servicePackageRelatedProduct_.size();
+  }
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType getServicePackageRelatedProduct(int index) {
+    return servicePackageRelatedProduct_.get(index);
+  }
+  /**
+   * <pre>
+   * 服务包关联产品
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder getServicePackageRelatedProductOrBuilder(
+      int index) {
+    return servicePackageRelatedProduct_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (!getServiceTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceToken_);
     }
+    for (int i = 0; i < servicePackageRelatedProduct_.size(); i++) {
+      output.writeMessage(4, servicePackageRelatedProduct_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +275,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getServiceTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceToken_);
+    }
+    for (int i = 0; i < servicePackageRelatedProduct_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, servicePackageRelatedProduct_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -228,6 +304,8 @@ private static final long serialVersionUID = 0L;
             other.getMarketingAmount()));
     result = result && getServiceToken()
         .equals(other.getServiceToken());
+    result = result && getServicePackageRelatedProductList()
+        .equals(other.getServicePackageRelatedProductList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -246,6 +324,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getMarketingAmount()));
     hash = (37 * hash) + SERVICETOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getServiceToken().hashCode();
+    if (getServicePackageRelatedProductCount() > 0) {
+      hash = (37 * hash) + SERVICEPACKAGERELATEDPRODUCT_FIELD_NUMBER;
+      hash = (53 * hash) + getServicePackageRelatedProductList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -374,6 +456,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getServicePackageRelatedProductFieldBuilder();
       }
     }
     @java.lang.Override
@@ -385,6 +468,12 @@ private static final long serialVersionUID = 0L;
 
       serviceToken_ = "";
 
+      if (servicePackageRelatedProductBuilder_ == null) {
+        servicePackageRelatedProduct_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        servicePackageRelatedProductBuilder_.clear();
+      }
       return this;
     }
 
@@ -411,9 +500,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType result = new com.ctrip.flight.agg.shopping.contract.transportation.ProductFeeDetailType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.ageTypeGroup_ = ageTypeGroup_;
       result.marketingAmount_ = marketingAmount_;
       result.serviceToken_ = serviceToken_;
+      if (servicePackageRelatedProductBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          servicePackageRelatedProduct_ = java.util.Collections.unmodifiableList(servicePackageRelatedProduct_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.servicePackageRelatedProduct_ = servicePackageRelatedProduct_;
+      } else {
+        result.servicePackageRelatedProduct_ = servicePackageRelatedProductBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -472,6 +573,32 @@ private static final long serialVersionUID = 0L;
         serviceToken_ = other.serviceToken_;
         onChanged();
       }
+      if (servicePackageRelatedProductBuilder_ == null) {
+        if (!other.servicePackageRelatedProduct_.isEmpty()) {
+          if (servicePackageRelatedProduct_.isEmpty()) {
+            servicePackageRelatedProduct_ = other.servicePackageRelatedProduct_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureServicePackageRelatedProductIsMutable();
+            servicePackageRelatedProduct_.addAll(other.servicePackageRelatedProduct_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.servicePackageRelatedProduct_.isEmpty()) {
+          if (servicePackageRelatedProductBuilder_.isEmpty()) {
+            servicePackageRelatedProductBuilder_.dispose();
+            servicePackageRelatedProductBuilder_ = null;
+            servicePackageRelatedProduct_ = other.servicePackageRelatedProduct_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            servicePackageRelatedProductBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getServicePackageRelatedProductFieldBuilder() : null;
+          } else {
+            servicePackageRelatedProductBuilder_.addAllMessages(other.servicePackageRelatedProduct_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -500,6 +627,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int ageTypeGroup_ ;
     /**
@@ -664,6 +792,318 @@ private static final long serialVersionUID = 0L;
       serviceToken_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> servicePackageRelatedProduct_ =
+      java.util.Collections.emptyList();
+    private void ensureServicePackageRelatedProductIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        servicePackageRelatedProduct_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType>(servicePackageRelatedProduct_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder> servicePackageRelatedProductBuilder_;
+
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> getServicePackageRelatedProductList() {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(servicePackageRelatedProduct_);
+      } else {
+        return servicePackageRelatedProductBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public int getServicePackageRelatedProductCount() {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        return servicePackageRelatedProduct_.size();
+      } else {
+        return servicePackageRelatedProductBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType getServicePackageRelatedProduct(int index) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        return servicePackageRelatedProduct_.get(index);
+      } else {
+        return servicePackageRelatedProductBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder setServicePackageRelatedProduct(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType value) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.set(index, value);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder setServicePackageRelatedProduct(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder builderForValue) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder addServicePackageRelatedProduct(com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType value) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.add(value);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder addServicePackageRelatedProduct(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType value) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.add(index, value);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder addServicePackageRelatedProduct(
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder builderForValue) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.add(builderForValue.build());
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder addServicePackageRelatedProduct(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder builderForValue) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder addAllServicePackageRelatedProduct(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType> values) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        ensureServicePackageRelatedProductIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, servicePackageRelatedProduct_);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder clearServicePackageRelatedProduct() {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        servicePackageRelatedProduct_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public Builder removeServicePackageRelatedProduct(int index) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        ensureServicePackageRelatedProductIsMutable();
+        servicePackageRelatedProduct_.remove(index);
+        onChanged();
+      } else {
+        servicePackageRelatedProductBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder getServicePackageRelatedProductBuilder(
+        int index) {
+      return getServicePackageRelatedProductFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder getServicePackageRelatedProductOrBuilder(
+        int index) {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        return servicePackageRelatedProduct_.get(index);  } else {
+        return servicePackageRelatedProductBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder> 
+         getServicePackageRelatedProductOrBuilderList() {
+      if (servicePackageRelatedProductBuilder_ != null) {
+        return servicePackageRelatedProductBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(servicePackageRelatedProduct_);
+      }
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder addServicePackageRelatedProductBuilder() {
+      return getServicePackageRelatedProductFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder addServicePackageRelatedProductBuilder(
+        int index) {
+      return getServicePackageRelatedProductFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 服务包关联产品
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder> 
+         getServicePackageRelatedProductBuilderList() {
+      return getServicePackageRelatedProductFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder> 
+        getServicePackageRelatedProductFieldBuilder() {
+      if (servicePackageRelatedProductBuilder_ == null) {
+        servicePackageRelatedProductBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ServicePackageRelatedProductTypeOrBuilder>(
+                servicePackageRelatedProduct_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        servicePackageRelatedProduct_ = null;
+      }
+      return servicePackageRelatedProductBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

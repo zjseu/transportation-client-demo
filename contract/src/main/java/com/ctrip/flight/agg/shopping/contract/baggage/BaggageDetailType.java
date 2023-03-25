@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     amount_ = 0;
     unit_ = "";
     type_ = "";
+    exactAmount_ = 0D;
   }
 
   @java.lang.Override
@@ -60,6 +61,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             type_ = s;
+            break;
+          }
+          case 33: {
+
+            exactAmount_ = input.readDouble();
             break;
           }
           default: {
@@ -153,7 +159,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object type_;
   /**
    * <pre>
-   * Piece、Weight
+   * Piece、Weight、TotalWeight
    * </pre>
    *
    * <code>string Type = 3;</code>
@@ -172,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Piece、Weight
+   * Piece、Weight、TotalWeight
    * </pre>
    *
    * <code>string Type = 3;</code>
@@ -189,6 +195,19 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int EXACTAMOUNT_FIELD_NUMBER = 4;
+  private double exactAmount_;
+  /**
+   * <pre>
+   * 支持浮点的确切数量 -1表示不限制
+   * </pre>
+   *
+   * <code>double ExactAmount = 4;</code>
+   */
+  public double getExactAmount() {
+    return exactAmount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -214,6 +233,9 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
     }
+    if (exactAmount_ != 0D) {
+      output.writeDouble(4, exactAmount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -232,6 +254,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+    }
+    if (exactAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(4, exactAmount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -255,6 +281,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUnit());
     result = result && getType()
         .equals(other.getType());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getExactAmount())
+        == java.lang.Double.doubleToLongBits(
+            other.getExactAmount()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -272,6 +302,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUnit().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + EXACTAMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getExactAmount()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +444,8 @@ private static final long serialVersionUID = 0L;
 
       type_ = "";
 
+      exactAmount_ = 0D;
+
       return this;
     }
 
@@ -440,6 +475,7 @@ private static final long serialVersionUID = 0L;
       result.amount_ = amount_;
       result.unit_ = unit_;
       result.type_ = type_;
+      result.exactAmount_ = exactAmount_;
       onBuilt();
       return result;
     }
@@ -498,6 +534,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
         onChanged();
+      }
+      if (other.getExactAmount() != 0D) {
+        setExactAmount(other.getExactAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -658,7 +697,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object type_ = "";
     /**
      * <pre>
-     * Piece、Weight
+     * Piece、Weight、TotalWeight
      * </pre>
      *
      * <code>string Type = 3;</code>
@@ -677,7 +716,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Piece、Weight
+     * Piece、Weight、TotalWeight
      * </pre>
      *
      * <code>string Type = 3;</code>
@@ -697,7 +736,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Piece、Weight
+     * Piece、Weight、TotalWeight
      * </pre>
      *
      * <code>string Type = 3;</code>
@@ -714,7 +753,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Piece、Weight
+     * Piece、Weight、TotalWeight
      * </pre>
      *
      * <code>string Type = 3;</code>
@@ -727,7 +766,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Piece、Weight
+     * Piece、Weight、TotalWeight
      * </pre>
      *
      * <code>string Type = 3;</code>
@@ -740,6 +779,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       type_ = value;
+      onChanged();
+      return this;
+    }
+
+    private double exactAmount_ ;
+    /**
+     * <pre>
+     * 支持浮点的确切数量 -1表示不限制
+     * </pre>
+     *
+     * <code>double ExactAmount = 4;</code>
+     */
+    public double getExactAmount() {
+      return exactAmount_;
+    }
+    /**
+     * <pre>
+     * 支持浮点的确切数量 -1表示不限制
+     * </pre>
+     *
+     * <code>double ExactAmount = 4;</code>
+     */
+    public Builder setExactAmount(double value) {
+      
+      exactAmount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 支持浮点的确切数量 -1表示不限制
+     * </pre>
+     *
+     * <code>double ExactAmount = 4;</code>
+     */
+    public Builder clearExactAmount() {
+      
+      exactAmount_ = 0D;
       onChanged();
       return this;
     }

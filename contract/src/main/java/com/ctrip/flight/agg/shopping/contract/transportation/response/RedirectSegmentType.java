@@ -30,6 +30,8 @@ private static final long serialVersionUID = 0L;
     departDateTime_ = "";
     arriveDateTime_ = "";
     transportNo_ = "";
+    departTerminal_ = "";
+    arriveTerminal_ = "";
   }
 
   @java.lang.Override
@@ -109,6 +111,31 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             transportNo_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            departTerminal_ = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            arriveTerminal_ = s;
+            break;
+          }
+          case 106: {
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder subBuilder = null;
+            if (flight_ != null) {
+              subBuilder = flight_.toBuilder();
+            }
+            flight_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.FlightType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(flight_);
+              flight_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -418,6 +445,123 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DEPARTTERMINAL_FIELD_NUMBER = 11;
+  private volatile java.lang.Object departTerminal_;
+  /**
+   * <pre>
+   * 出发站台 可能为空
+   * </pre>
+   *
+   * <code>string DepartTerminal = 11;</code>
+   */
+  public java.lang.String getDepartTerminal() {
+    java.lang.Object ref = departTerminal_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      departTerminal_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 出发站台 可能为空
+   * </pre>
+   *
+   * <code>string DepartTerminal = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDepartTerminalBytes() {
+    java.lang.Object ref = departTerminal_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      departTerminal_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ARRIVETERMINAL_FIELD_NUMBER = 12;
+  private volatile java.lang.Object arriveTerminal_;
+  /**
+   * <pre>
+   * 到达站台 可能为空
+   * </pre>
+   *
+   * <code>string ArriveTerminal = 12;</code>
+   */
+  public java.lang.String getArriveTerminal() {
+    java.lang.Object ref = arriveTerminal_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      arriveTerminal_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 到达站台 可能为空
+   * </pre>
+   *
+   * <code>string ArriveTerminal = 12;</code>
+   */
+  public com.google.protobuf.ByteString
+      getArriveTerminalBytes() {
+    java.lang.Object ref = arriveTerminal_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      arriveTerminal_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FLIGHT_FIELD_NUMBER = 13;
+  private com.ctrip.flight.agg.shopping.contract.transportation.FlightType flight_;
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  public boolean hasFlight() {
+    return flight_ != null;
+  }
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FlightType getFlight() {
+    return flight_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FlightType.getDefaultInstance() : flight_;
+  }
+  /**
+   * <pre>
+   * 机票信息 可能为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder getFlightOrBuilder() {
+    return getFlight();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -461,6 +605,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTransportNoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, transportNo_);
+    }
+    if (!getDepartTerminalBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, departTerminal_);
+    }
+    if (!getArriveTerminalBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, arriveTerminal_);
+    }
+    if (flight_ != null) {
+      output.writeMessage(13, getFlight());
     }
     unknownFields.writeTo(output);
   }
@@ -506,6 +659,16 @@ private static final long serialVersionUID = 0L;
     if (!getTransportNoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, transportNo_);
     }
+    if (!getDepartTerminalBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, departTerminal_);
+    }
+    if (!getArriveTerminalBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, arriveTerminal_);
+    }
+    if (flight_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getFlight());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -542,6 +705,15 @@ private static final long serialVersionUID = 0L;
         .equals(other.getArriveDateTime());
     result = result && getTransportNo()
         .equals(other.getTransportNo());
+    result = result && getDepartTerminal()
+        .equals(other.getDepartTerminal());
+    result = result && getArriveTerminal()
+        .equals(other.getArriveTerminal());
+    result = result && (hasFlight() == other.hasFlight());
+    if (hasFlight()) {
+      result = result && getFlight()
+          .equals(other.getFlight());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -573,6 +745,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getArriveDateTime().hashCode();
     hash = (37 * hash) + TRANSPORTNO_FIELD_NUMBER;
     hash = (53 * hash) + getTransportNo().hashCode();
+    hash = (37 * hash) + DEPARTTERMINAL_FIELD_NUMBER;
+    hash = (53 * hash) + getDepartTerminal().hashCode();
+    hash = (37 * hash) + ARRIVETERMINAL_FIELD_NUMBER;
+    hash = (53 * hash) + getArriveTerminal().hashCode();
+    if (hasFlight()) {
+      hash = (37 * hash) + FLIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getFlight().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -730,6 +910,16 @@ private static final long serialVersionUID = 0L;
 
       transportNo_ = "";
 
+      departTerminal_ = "";
+
+      arriveTerminal_ = "";
+
+      if (flightBuilder_ == null) {
+        flight_ = null;
+      } else {
+        flight_ = null;
+        flightBuilder_ = null;
+      }
       return this;
     }
 
@@ -766,6 +956,13 @@ private static final long serialVersionUID = 0L;
       result.departDateTime_ = departDateTime_;
       result.arriveDateTime_ = arriveDateTime_;
       result.transportNo_ = transportNo_;
+      result.departTerminal_ = departTerminal_;
+      result.arriveTerminal_ = arriveTerminal_;
+      if (flightBuilder_ == null) {
+        result.flight_ = flight_;
+      } else {
+        result.flight_ = flightBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -848,6 +1045,17 @@ private static final long serialVersionUID = 0L;
       if (!other.getTransportNo().isEmpty()) {
         transportNo_ = other.transportNo_;
         onChanged();
+      }
+      if (!other.getDepartTerminal().isEmpty()) {
+        departTerminal_ = other.departTerminal_;
+        onChanged();
+      }
+      if (!other.getArriveTerminal().isEmpty()) {
+        arriveTerminal_ = other.arriveTerminal_;
+        onChanged();
+      }
+      if (other.hasFlight()) {
+        mergeFlight(other.getFlight());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1511,6 +1719,337 @@ private static final long serialVersionUID = 0L;
       transportNo_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object departTerminal_ = "";
+    /**
+     * <pre>
+     * 出发站台 可能为空
+     * </pre>
+     *
+     * <code>string DepartTerminal = 11;</code>
+     */
+    public java.lang.String getDepartTerminal() {
+      java.lang.Object ref = departTerminal_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        departTerminal_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 出发站台 可能为空
+     * </pre>
+     *
+     * <code>string DepartTerminal = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDepartTerminalBytes() {
+      java.lang.Object ref = departTerminal_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        departTerminal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 出发站台 可能为空
+     * </pre>
+     *
+     * <code>string DepartTerminal = 11;</code>
+     */
+    public Builder setDepartTerminal(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      departTerminal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 出发站台 可能为空
+     * </pre>
+     *
+     * <code>string DepartTerminal = 11;</code>
+     */
+    public Builder clearDepartTerminal() {
+      
+      departTerminal_ = getDefaultInstance().getDepartTerminal();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 出发站台 可能为空
+     * </pre>
+     *
+     * <code>string DepartTerminal = 11;</code>
+     */
+    public Builder setDepartTerminalBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      departTerminal_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object arriveTerminal_ = "";
+    /**
+     * <pre>
+     * 到达站台 可能为空
+     * </pre>
+     *
+     * <code>string ArriveTerminal = 12;</code>
+     */
+    public java.lang.String getArriveTerminal() {
+      java.lang.Object ref = arriveTerminal_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        arriveTerminal_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 到达站台 可能为空
+     * </pre>
+     *
+     * <code>string ArriveTerminal = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getArriveTerminalBytes() {
+      java.lang.Object ref = arriveTerminal_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        arriveTerminal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 到达站台 可能为空
+     * </pre>
+     *
+     * <code>string ArriveTerminal = 12;</code>
+     */
+    public Builder setArriveTerminal(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      arriveTerminal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 到达站台 可能为空
+     * </pre>
+     *
+     * <code>string ArriveTerminal = 12;</code>
+     */
+    public Builder clearArriveTerminal() {
+      
+      arriveTerminal_ = getDefaultInstance().getArriveTerminal();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 到达站台 可能为空
+     * </pre>
+     *
+     * <code>string ArriveTerminal = 12;</code>
+     */
+    public Builder setArriveTerminalBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      arriveTerminal_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.FlightType flight_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightType, com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder> flightBuilder_;
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public boolean hasFlight() {
+      return flightBuilder_ != null || flight_ != null;
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightType getFlight() {
+      if (flightBuilder_ == null) {
+        return flight_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FlightType.getDefaultInstance() : flight_;
+      } else {
+        return flightBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public Builder setFlight(com.ctrip.flight.agg.shopping.contract.transportation.FlightType value) {
+      if (flightBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flight_ = value;
+        onChanged();
+      } else {
+        flightBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public Builder setFlight(
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder builderForValue) {
+      if (flightBuilder_ == null) {
+        flight_ = builderForValue.build();
+        onChanged();
+      } else {
+        flightBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public Builder mergeFlight(com.ctrip.flight.agg.shopping.contract.transportation.FlightType value) {
+      if (flightBuilder_ == null) {
+        if (flight_ != null) {
+          flight_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightType.newBuilder(flight_).mergeFrom(value).buildPartial();
+        } else {
+          flight_ = value;
+        }
+        onChanged();
+      } else {
+        flightBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public Builder clearFlight() {
+      if (flightBuilder_ == null) {
+        flight_ = null;
+        onChanged();
+      } else {
+        flight_ = null;
+        flightBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder getFlightBuilder() {
+      
+      onChanged();
+      return getFlightFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder getFlightOrBuilder() {
+      if (flightBuilder_ != null) {
+        return flightBuilder_.getMessageOrBuilder();
+      } else {
+        return flight_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightType.getDefaultInstance() : flight_;
+      }
+    }
+    /**
+     * <pre>
+     * 机票信息 可能为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightType Flight = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightType, com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder> 
+        getFlightFieldBuilder() {
+      if (flightBuilder_ == null) {
+        flightBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightType, com.ctrip.flight.agg.shopping.contract.transportation.FlightType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightTypeOrBuilder>(
+                getFlight(),
+                getParentForChildren(),
+                isClean());
+        flight_ = null;
+      }
+      return flightBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

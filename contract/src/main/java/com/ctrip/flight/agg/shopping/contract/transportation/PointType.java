@@ -69,6 +69,19 @@ private static final long serialVersionUID = 0L;
             stationName_ = s;
             break;
           }
+          case 42: {
+            com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder subBuilder = null;
+            if (station_ != null) {
+              subBuilder = station_.toBuilder();
+            }
+            station_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.StationType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(station_);
+              station_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -202,12 +215,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object stationName_;
   /**
    * <pre>
-   * 站点名
+   * 站点名 待废弃属性，请使用StationType.StationName
    * </pre>
    *
-   * <code>string StationName = 4;</code>
+   * <code>string StationName = 4 [deprecated = true];</code>
    */
-  public java.lang.String getStationName() {
+  @java.lang.Deprecated public java.lang.String getStationName() {
     java.lang.Object ref = stationName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -221,12 +234,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 站点名
+   * 站点名 待废弃属性，请使用StationType.StationName
    * </pre>
    *
-   * <code>string StationName = 4;</code>
+   * <code>string StationName = 4 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getStationNameBytes() {
     java.lang.Object ref = stationName_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +251,39 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int STATION_FIELD_NUMBER = 5;
+  private com.ctrip.flight.agg.shopping.contract.transportation.StationType station_;
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  public boolean hasStation() {
+    return station_ != null;
+  }
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.StationType getStation() {
+    return station_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.StationType.getDefaultInstance() : station_;
+  }
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder getStationOrBuilder() {
+    return getStation();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -266,6 +312,9 @@ private static final long serialVersionUID = 0L;
     if (!getStationNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stationName_);
     }
+    if (station_ != null) {
+      output.writeMessage(5, getStation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -287,6 +336,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStationNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stationName_);
+    }
+    if (station_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getStation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -312,6 +365,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTerminalName());
     result = result && getStationName()
         .equals(other.getStationName());
+    result = result && (hasStation() == other.hasStation());
+    if (hasStation()) {
+      result = result && getStation()
+          .equals(other.getStation());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -331,6 +389,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTerminalName().hashCode();
     hash = (37 * hash) + STATIONNAME_FIELD_NUMBER;
     hash = (53 * hash) + getStationName().hashCode();
+    if (hasStation()) {
+      hash = (37 * hash) + STATION_FIELD_NUMBER;
+      hash = (53 * hash) + getStation().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -472,6 +534,12 @@ private static final long serialVersionUID = 0L;
 
       stationName_ = "";
 
+      if (stationBuilder_ == null) {
+        station_ = null;
+      } else {
+        station_ = null;
+        stationBuilder_ = null;
+      }
       return this;
     }
 
@@ -502,6 +570,11 @@ private static final long serialVersionUID = 0L;
       result.airportCode_ = airportCode_;
       result.terminalName_ = terminalName_;
       result.stationName_ = stationName_;
+      if (stationBuilder_ == null) {
+        result.station_ = station_;
+      } else {
+        result.station_ = stationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -564,6 +637,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getStationName().isEmpty()) {
         stationName_ = other.stationName_;
         onChanged();
+      }
+      if (other.hasStation()) {
+        mergeStation(other.getStation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -813,12 +889,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object stationName_ = "";
     /**
      * <pre>
-     * 站点名
+     * 站点名 待废弃属性，请使用StationType.StationName
      * </pre>
      *
-     * <code>string StationName = 4;</code>
+     * <code>string StationName = 4 [deprecated = true];</code>
      */
-    public java.lang.String getStationName() {
+    @java.lang.Deprecated public java.lang.String getStationName() {
       java.lang.Object ref = stationName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -832,12 +908,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 站点名
+     * 站点名 待废弃属性，请使用StationType.StationName
      * </pre>
      *
-     * <code>string StationName = 4;</code>
+     * <code>string StationName = 4 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getStationNameBytes() {
       java.lang.Object ref = stationName_;
       if (ref instanceof String) {
@@ -852,12 +928,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 站点名
+     * 站点名 待废弃属性，请使用StationType.StationName
      * </pre>
      *
-     * <code>string StationName = 4;</code>
+     * <code>string StationName = 4 [deprecated = true];</code>
      */
-    public Builder setStationName(
+    @java.lang.Deprecated public Builder setStationName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -869,12 +945,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 站点名
+     * 站点名 待废弃属性，请使用StationType.StationName
      * </pre>
      *
-     * <code>string StationName = 4;</code>
+     * <code>string StationName = 4 [deprecated = true];</code>
      */
-    public Builder clearStationName() {
+    @java.lang.Deprecated public Builder clearStationName() {
       
       stationName_ = getDefaultInstance().getStationName();
       onChanged();
@@ -882,12 +958,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 站点名
+     * 站点名 待废弃属性，请使用StationType.StationName
      * </pre>
      *
-     * <code>string StationName = 4;</code>
+     * <code>string StationName = 4 [deprecated = true];</code>
      */
-    public Builder setStationNameBytes(
+    @java.lang.Deprecated public Builder setStationNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -897,6 +973,159 @@ private static final long serialVersionUID = 0L;
       stationName_ = value;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.StationType station_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.StationType, com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder> stationBuilder_;
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public boolean hasStation() {
+      return stationBuilder_ != null || station_ != null;
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.StationType getStation() {
+      if (stationBuilder_ == null) {
+        return station_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.StationType.getDefaultInstance() : station_;
+      } else {
+        return stationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public Builder setStation(com.ctrip.flight.agg.shopping.contract.transportation.StationType value) {
+      if (stationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        station_ = value;
+        onChanged();
+      } else {
+        stationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public Builder setStation(
+        com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder builderForValue) {
+      if (stationBuilder_ == null) {
+        station_ = builderForValue.build();
+        onChanged();
+      } else {
+        stationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public Builder mergeStation(com.ctrip.flight.agg.shopping.contract.transportation.StationType value) {
+      if (stationBuilder_ == null) {
+        if (station_ != null) {
+          station_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.StationType.newBuilder(station_).mergeFrom(value).buildPartial();
+        } else {
+          station_ = value;
+        }
+        onChanged();
+      } else {
+        stationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public Builder clearStation() {
+      if (stationBuilder_ == null) {
+        station_ = null;
+        onChanged();
+      } else {
+        station_ = null;
+        stationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder getStationBuilder() {
+      
+      onChanged();
+      return getStationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder getStationOrBuilder() {
+      if (stationBuilder_ != null) {
+        return stationBuilder_.getMessageOrBuilder();
+      } else {
+        return station_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.StationType.getDefaultInstance() : station_;
+      }
+    }
+    /**
+     * <pre>
+     * 站点信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.StationType, com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder> 
+        getStationFieldBuilder() {
+      if (stationBuilder_ == null) {
+        stationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.StationType, com.ctrip.flight.agg.shopping.contract.transportation.StationType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder>(
+                getStation(),
+                getParentForChildren(),
+                isClean());
+        station_ = null;
+      }
+      return stationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

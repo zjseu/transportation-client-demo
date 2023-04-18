@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     currency_ = "";
     publishPrice_ = 0D;
     exchangeRate_ = 0D;
+    seatPrice_ = 0D;
   }
 
   @java.lang.Override
@@ -59,6 +60,11 @@ private static final long serialVersionUID = 0L;
           case 25: {
 
             exchangeRate_ = input.readDouble();
+            break;
+          }
+          case 33: {
+
+            seatPrice_ = input.readDouble();
             break;
           }
           default: {
@@ -161,6 +167,19 @@ private static final long serialVersionUID = 0L;
     return exchangeRate_;
   }
 
+  public static final int SEATPRICE_FIELD_NUMBER = 4;
+  private double seatPrice_;
+  /**
+   * <pre>
+   * 坐席价
+   * </pre>
+   *
+   * <code>double SeatPrice = 4;</code>
+   */
+  public double getSeatPrice() {
+    return seatPrice_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +203,9 @@ private static final long serialVersionUID = 0L;
     if (exchangeRate_ != 0D) {
       output.writeDouble(3, exchangeRate_);
     }
+    if (seatPrice_ != 0D) {
+      output.writeDouble(4, seatPrice_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +225,10 @@ private static final long serialVersionUID = 0L;
     if (exchangeRate_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, exchangeRate_);
+    }
+    if (seatPrice_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(4, seatPrice_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -230,6 +256,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getExchangeRate())
         == java.lang.Double.doubleToLongBits(
             other.getExchangeRate()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getSeatPrice())
+        == java.lang.Double.doubleToLongBits(
+            other.getSeatPrice()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -249,6 +279,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXCHANGERATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getExchangeRate()));
+    hash = (37 * hash) + SEATPRICE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSeatPrice()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -388,6 +421,8 @@ private static final long serialVersionUID = 0L;
 
       exchangeRate_ = 0D;
 
+      seatPrice_ = 0D;
+
       return this;
     }
 
@@ -417,6 +452,7 @@ private static final long serialVersionUID = 0L;
       result.currency_ = currency_;
       result.publishPrice_ = publishPrice_;
       result.exchangeRate_ = exchangeRate_;
+      result.seatPrice_ = seatPrice_;
       onBuilt();
       return result;
     }
@@ -474,6 +510,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getExchangeRate() != 0D) {
         setExchangeRate(other.getExchangeRate());
+      }
+      if (other.getSeatPrice() != 0D) {
+        setSeatPrice(other.getSeatPrice());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -665,6 +704,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearExchangeRate() {
       
       exchangeRate_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double seatPrice_ ;
+    /**
+     * <pre>
+     * 坐席价
+     * </pre>
+     *
+     * <code>double SeatPrice = 4;</code>
+     */
+    public double getSeatPrice() {
+      return seatPrice_;
+    }
+    /**
+     * <pre>
+     * 坐席价
+     * </pre>
+     *
+     * <code>double SeatPrice = 4;</code>
+     */
+    public Builder setSeatPrice(double value) {
+      
+      seatPrice_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 坐席价
+     * </pre>
+     *
+     * <code>double SeatPrice = 4;</code>
+     */
+    public Builder clearSeatPrice() {
+      
+      seatPrice_ = 0D;
       onChanged();
       return this;
     }

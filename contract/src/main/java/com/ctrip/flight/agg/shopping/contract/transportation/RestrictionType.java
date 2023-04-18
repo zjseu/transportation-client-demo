@@ -184,6 +184,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 138: {
+            com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder subBuilder = null;
+            if (extraPaxNumLimit_ != null) {
+              subBuilder = extraPaxNumLimit_.toBuilder();
+            }
+            extraPaxNumLimit_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(extraPaxNumLimit_);
+              extraPaxNumLimit_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -805,6 +818,39 @@ private static final long serialVersionUID = 0L;
     return getTakeChildInfantNumLimit();
   }
 
+  public static final int EXTRAPAXNUMLIMIT_FIELD_NUMBER = 17;
+  private com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType extraPaxNumLimit_;
+  /**
+   * <pre>
+   * 人数限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+   */
+  public boolean hasExtraPaxNumLimit() {
+    return extraPaxNumLimit_ != null;
+  }
+  /**
+   * <pre>
+   * 人数限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType getExtraPaxNumLimit() {
+    return extraPaxNumLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.getDefaultInstance() : extraPaxNumLimit_;
+  }
+  /**
+   * <pre>
+   * 人数限制信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder getExtraPaxNumLimitOrBuilder() {
+    return getExtraPaxNumLimit();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -866,6 +912,9 @@ private static final long serialVersionUID = 0L;
     }
     if (takeChildInfantNumLimit_ != null) {
       output.writeMessage(16, getTakeChildInfantNumLimit());
+    }
+    if (extraPaxNumLimit_ != null) {
+      output.writeMessage(17, getExtraPaxNumLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -955,6 +1004,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getTakeChildInfantNumLimit());
     }
+    if (extraPaxNumLimit_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getExtraPaxNumLimit());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1011,6 +1064,11 @@ private static final long serialVersionUID = 0L;
     if (hasTakeChildInfantNumLimit()) {
       result = result && getTakeChildInfantNumLimit()
           .equals(other.getTakeChildInfantNumLimit());
+    }
+    result = result && (hasExtraPaxNumLimit() == other.hasExtraPaxNumLimit());
+    if (hasExtraPaxNumLimit()) {
+      result = result && getExtraPaxNumLimit()
+          .equals(other.getExtraPaxNumLimit());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1070,6 +1128,10 @@ private static final long serialVersionUID = 0L;
     if (hasTakeChildInfantNumLimit()) {
       hash = (37 * hash) + TAKECHILDINFANTNUMLIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getTakeChildInfantNumLimit().hashCode();
+    }
+    if (hasExtraPaxNumLimit()) {
+      hash = (37 * hash) + EXTRAPAXNUMLIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getExtraPaxNumLimit().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1248,6 +1310,12 @@ private static final long serialVersionUID = 0L;
         takeChildInfantNumLimit_ = null;
         takeChildInfantNumLimitBuilder_ = null;
       }
+      if (extraPaxNumLimitBuilder_ == null) {
+        extraPaxNumLimit_ = null;
+      } else {
+        extraPaxNumLimit_ = null;
+        extraPaxNumLimitBuilder_ = null;
+      }
       return this;
     }
 
@@ -1323,6 +1391,11 @@ private static final long serialVersionUID = 0L;
         result.takeChildInfantNumLimit_ = takeChildInfantNumLimit_;
       } else {
         result.takeChildInfantNumLimit_ = takeChildInfantNumLimitBuilder_.build();
+      }
+      if (extraPaxNumLimitBuilder_ == null) {
+        result.extraPaxNumLimit_ = extraPaxNumLimit_;
+      } else {
+        result.extraPaxNumLimit_ = extraPaxNumLimitBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1460,6 +1533,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTakeChildInfantNumLimit()) {
         mergeTakeChildInfantNumLimit(other.getTakeChildInfantNumLimit());
+      }
+      if (other.hasExtraPaxNumLimit()) {
+        mergeExtraPaxNumLimit(other.getExtraPaxNumLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3157,6 +3233,159 @@ private static final long serialVersionUID = 0L;
         takeChildInfantNumLimit_ = null;
       }
       return takeChildInfantNumLimitBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType extraPaxNumLimit_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder> extraPaxNumLimitBuilder_;
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public boolean hasExtraPaxNumLimit() {
+      return extraPaxNumLimitBuilder_ != null || extraPaxNumLimit_ != null;
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType getExtraPaxNumLimit() {
+      if (extraPaxNumLimitBuilder_ == null) {
+        return extraPaxNumLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.getDefaultInstance() : extraPaxNumLimit_;
+      } else {
+        return extraPaxNumLimitBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public Builder setExtraPaxNumLimit(com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType value) {
+      if (extraPaxNumLimitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extraPaxNumLimit_ = value;
+        onChanged();
+      } else {
+        extraPaxNumLimitBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public Builder setExtraPaxNumLimit(
+        com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder builderForValue) {
+      if (extraPaxNumLimitBuilder_ == null) {
+        extraPaxNumLimit_ = builderForValue.build();
+        onChanged();
+      } else {
+        extraPaxNumLimitBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public Builder mergeExtraPaxNumLimit(com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType value) {
+      if (extraPaxNumLimitBuilder_ == null) {
+        if (extraPaxNumLimit_ != null) {
+          extraPaxNumLimit_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.newBuilder(extraPaxNumLimit_).mergeFrom(value).buildPartial();
+        } else {
+          extraPaxNumLimit_ = value;
+        }
+        onChanged();
+      } else {
+        extraPaxNumLimitBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public Builder clearExtraPaxNumLimit() {
+      if (extraPaxNumLimitBuilder_ == null) {
+        extraPaxNumLimit_ = null;
+        onChanged();
+      } else {
+        extraPaxNumLimit_ = null;
+        extraPaxNumLimitBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder getExtraPaxNumLimitBuilder() {
+      
+      onChanged();
+      return getExtraPaxNumLimitFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder getExtraPaxNumLimitOrBuilder() {
+      if (extraPaxNumLimitBuilder_ != null) {
+        return extraPaxNumLimitBuilder_.getMessageOrBuilder();
+      } else {
+        return extraPaxNumLimit_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.getDefaultInstance() : extraPaxNumLimit_;
+      }
+    }
+    /**
+     * <pre>
+     * 人数限制信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder> 
+        getExtraPaxNumLimitFieldBuilder() {
+      if (extraPaxNumLimitBuilder_ == null) {
+        extraPaxNumLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder>(
+                getExtraPaxNumLimit(),
+                getParentForChildren(),
+                isClean());
+        extraPaxNumLimit_ = null;
+      }
+      return extraPaxNumLimitBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

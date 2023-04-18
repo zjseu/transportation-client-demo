@@ -207,6 +207,8 @@ message SettlementCurrencyPriceDetailType {
     double PublishPrice = 2;
     // 结算币种到销售币种间的汇率
     double ExchangeRate = 3;
+    // 坐席价
+    double SeatPrice = 4;
 }
 
 message PaxSeatType {
@@ -388,6 +390,13 @@ message RestrictionType {
     string ApplySex = 15;
     // 成人携带婴童数量限制信息
     TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;
+    // 人数限制信息
+    ExtraPaxNumLimitType ExtraPaxNumLimit = 17;
+}
+
+message ExtraPaxNumLimitType {
+    // 性别人数限制, 1：包含X性, 其他：全部都是X性
+    int32 SexNumLimit = 1;
 }
 
 message TakeChildInfantNumLimitType {
@@ -502,8 +511,10 @@ message PointType {
     string AirportCode = 2;
     // 航站楼, 比如:T1
     string TerminalName = 3;
-    // 站点名
-    string StationName = 4;
+    // 站点名 待废弃属性，请使用StationType.StationName
+    string StationName = 4 [deprecated = true];
+    // 站点信息
+    StationType Station = 5;
 }
 
 message FlightType {
@@ -1125,4 +1136,14 @@ message AdvertDetailType {
     double SalePrice = 4;
     // 面价
     double PublishPrice = 5;
+}
+
+// 站点信息
+message StationType {
+    // 站点类型
+    string Type = 1;
+    // 站点id
+    string StationID = 2;
+    // 站点名称
+    string StationName = 3;
 }

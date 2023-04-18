@@ -877,4 +877,48 @@ public interface FlightProductTypeOrBuilder extends
    * <code>double ApplySuccessRate = 37;</code>
    */
   double getApplySuccessRate();
+
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> 
+      getMembershipChallengeList();
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType getMembershipChallenge(int index);
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  int getMembershipChallengeCount();
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder> 
+      getMembershipChallengeOrBuilderList();
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder getMembershipChallengeOrBuilder(
+      int index);
 }

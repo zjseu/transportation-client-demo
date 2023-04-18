@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
     mileageCredit_ = java.util.Collections.emptyList();
     memberRegisters_ = java.util.Collections.emptyList();
     applySuccessRate_ = 0D;
+    membershipChallenge_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -422,6 +423,15 @@ private static final long serialVersionUID = 0L;
             applySuccessRate_ = input.readDouble();
             break;
           }
+          case 306: {
+            if (!((mutable_bitField1_ & 0x00000020) == 0x00000020)) {
+              membershipChallenge_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType>();
+              mutable_bitField1_ |= 0x00000020;
+            }
+            membershipChallenge_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -460,6 +470,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField1_ & 0x00000008) == 0x00000008)) {
         memberRegisters_ = java.util.Collections.unmodifiableList(memberRegisters_);
+      }
+      if (((mutable_bitField1_ & 0x00000020) == 0x00000020)) {
+        membershipChallenge_ = java.util.Collections.unmodifiableList(membershipChallenge_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1691,6 +1704,61 @@ private static final long serialVersionUID = 0L;
     return applySuccessRate_;
   }
 
+  public static final int MEMBERSHIPCHALLENGE_FIELD_NUMBER = 38;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> membershipChallenge_;
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> getMembershipChallengeList() {
+    return membershipChallenge_;
+  }
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder> 
+      getMembershipChallengeOrBuilderList() {
+    return membershipChallenge_;
+  }
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  public int getMembershipChallengeCount() {
+    return membershipChallenge_.size();
+  }
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType getMembershipChallenge(int index) {
+    return membershipChallenge_.get(index);
+  }
+  /**
+   * <pre>
+   * 会员挑战赛信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder getMembershipChallengeOrBuilder(
+      int index) {
+    return membershipChallenge_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1820,6 +1888,9 @@ private static final long serialVersionUID = 0L;
     }
     if (applySuccessRate_ != 0D) {
       output.writeDouble(37, applySuccessRate_);
+    }
+    for (int i = 0; i < membershipChallenge_.size(); i++) {
+      output.writeMessage(38, membershipChallenge_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1992,6 +2063,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(37, applySuccessRate_);
     }
+    for (int i = 0; i < membershipChallenge_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(38, membershipChallenge_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2129,6 +2204,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getApplySuccessRate())
         == java.lang.Double.doubleToLongBits(
             other.getApplySuccessRate()));
+    result = result && getMembershipChallengeList()
+        .equals(other.getMembershipChallengeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2261,6 +2338,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + APPLYSUCCESSRATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getApplySuccessRate()));
+    if (getMembershipChallengeCount() > 0) {
+      hash = (37 * hash) + MEMBERSHIPCHALLENGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMembershipChallengeList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2398,6 +2479,7 @@ private static final long serialVersionUID = 0L;
         getTagFieldBuilder();
         getMileageCreditFieldBuilder();
         getMemberRegistersFieldBuilder();
+        getMembershipChallengeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -2557,6 +2639,12 @@ private static final long serialVersionUID = 0L;
       }
       applySuccessRate_ = 0D;
 
+      if (membershipChallengeBuilder_ == null) {
+        membershipChallenge_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000020);
+      } else {
+        membershipChallengeBuilder_.clear();
+      }
       return this;
     }
 
@@ -2735,6 +2823,15 @@ private static final long serialVersionUID = 0L;
         result.memberRegisters_ = memberRegistersBuilder_.build();
       }
       result.applySuccessRate_ = applySuccessRate_;
+      if (membershipChallengeBuilder_ == null) {
+        if (((bitField1_ & 0x00000020) == 0x00000020)) {
+          membershipChallenge_ = java.util.Collections.unmodifiableList(membershipChallenge_);
+          bitField1_ = (bitField1_ & ~0x00000020);
+        }
+        result.membershipChallenge_ = membershipChallenge_;
+      } else {
+        result.membershipChallenge_ = membershipChallengeBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -3034,6 +3131,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getApplySuccessRate() != 0D) {
         setApplySuccessRate(other.getApplySuccessRate());
+      }
+      if (membershipChallengeBuilder_ == null) {
+        if (!other.membershipChallenge_.isEmpty()) {
+          if (membershipChallenge_.isEmpty()) {
+            membershipChallenge_ = other.membershipChallenge_;
+            bitField1_ = (bitField1_ & ~0x00000020);
+          } else {
+            ensureMembershipChallengeIsMutable();
+            membershipChallenge_.addAll(other.membershipChallenge_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.membershipChallenge_.isEmpty()) {
+          if (membershipChallengeBuilder_.isEmpty()) {
+            membershipChallengeBuilder_.dispose();
+            membershipChallengeBuilder_ = null;
+            membershipChallenge_ = other.membershipChallenge_;
+            bitField1_ = (bitField1_ & ~0x00000020);
+            membershipChallengeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMembershipChallengeFieldBuilder() : null;
+          } else {
+            membershipChallengeBuilder_.addAllMessages(other.membershipChallenge_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8066,6 +8189,318 @@ private static final long serialVersionUID = 0L;
       applySuccessRate_ = 0D;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> membershipChallenge_ =
+      java.util.Collections.emptyList();
+    private void ensureMembershipChallengeIsMutable() {
+      if (!((bitField1_ & 0x00000020) == 0x00000020)) {
+        membershipChallenge_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType>(membershipChallenge_);
+        bitField1_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder> membershipChallengeBuilder_;
+
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> getMembershipChallengeList() {
+      if (membershipChallengeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(membershipChallenge_);
+      } else {
+        return membershipChallengeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public int getMembershipChallengeCount() {
+      if (membershipChallengeBuilder_ == null) {
+        return membershipChallenge_.size();
+      } else {
+        return membershipChallengeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType getMembershipChallenge(int index) {
+      if (membershipChallengeBuilder_ == null) {
+        return membershipChallenge_.get(index);
+      } else {
+        return membershipChallengeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder setMembershipChallenge(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType value) {
+      if (membershipChallengeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.set(index, value);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder setMembershipChallenge(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder builderForValue) {
+      if (membershipChallengeBuilder_ == null) {
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder addMembershipChallenge(com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType value) {
+      if (membershipChallengeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.add(value);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder addMembershipChallenge(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType value) {
+      if (membershipChallengeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.add(index, value);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder addMembershipChallenge(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder builderForValue) {
+      if (membershipChallengeBuilder_ == null) {
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.add(builderForValue.build());
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder addMembershipChallenge(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder builderForValue) {
+      if (membershipChallengeBuilder_ == null) {
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder addAllMembershipChallenge(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType> values) {
+      if (membershipChallengeBuilder_ == null) {
+        ensureMembershipChallengeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, membershipChallenge_);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder clearMembershipChallenge() {
+      if (membershipChallengeBuilder_ == null) {
+        membershipChallenge_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000020);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public Builder removeMembershipChallenge(int index) {
+      if (membershipChallengeBuilder_ == null) {
+        ensureMembershipChallengeIsMutable();
+        membershipChallenge_.remove(index);
+        onChanged();
+      } else {
+        membershipChallengeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder getMembershipChallengeBuilder(
+        int index) {
+      return getMembershipChallengeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder getMembershipChallengeOrBuilder(
+        int index) {
+      if (membershipChallengeBuilder_ == null) {
+        return membershipChallenge_.get(index);  } else {
+        return membershipChallengeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder> 
+         getMembershipChallengeOrBuilderList() {
+      if (membershipChallengeBuilder_ != null) {
+        return membershipChallengeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(membershipChallenge_);
+      }
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder addMembershipChallengeBuilder() {
+      return getMembershipChallengeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder addMembershipChallengeBuilder(
+        int index) {
+      return getMembershipChallengeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 会员挑战赛信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType MembershipChallenge = 38;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder> 
+         getMembershipChallengeBuilderList() {
+      return getMembershipChallengeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder> 
+        getMembershipChallengeFieldBuilder() {
+      if (membershipChallengeBuilder_ == null) {
+        membershipChallengeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder>(
+                membershipChallenge_,
+                ((bitField1_ & 0x00000020) == 0x00000020),
+                getParentForChildren(),
+                isClean());
+        membershipChallenge_ = null;
+      }
+      return membershipChallengeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

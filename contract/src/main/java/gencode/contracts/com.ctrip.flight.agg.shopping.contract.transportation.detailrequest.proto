@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package com.ctrip.flight.agg.shopping.contract.transportation.detailrequest;
 import "com.ctrip.flight.agg.shopping.contract.message.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.proto";
 option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.detailrequest";
 option java_multiple_files = true;
 
@@ -13,6 +14,8 @@ message DetailRequestType {
     string OfferToken = 3;
     // 国内佣金策略查询条件扩展 无特殊倒查需求的用户不需要关心
     CommissionStrategyExtensionType CommissionStrategyExtension = 4;
+    // 扩展结点
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType ExtensionOption = 5;
 }
 
 /**

@@ -94,4 +94,29 @@ public interface AdaptedOptionTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyTypeOrBuilder getCombinationPolicyOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  boolean hasTravixAdaptedOption();
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType getTravixAdaptedOption();
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder getTravixAdaptedOptionOrBuilder();
 }

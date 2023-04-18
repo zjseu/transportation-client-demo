@@ -113,6 +113,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 74: {
+            com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder subBuilder = null;
+            if (productDetailIndex_ != null) {
+              subBuilder = productDetailIndex_.toBuilder();
+            }
+            productDetailIndex_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productDetailIndex_);
+              productDetailIndex_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -367,6 +380,39 @@ private static final long serialVersionUID = 0L;
     return getArriveLocation();
   }
 
+  public static final int PRODUCTDETAILINDEX_FIELD_NUMBER = 9;
+  private com.ctrip.flight.agg.shopping.contract.transportation.IntegerType productDetailIndex_;
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  public boolean hasProductDetailIndex() {
+    return productDetailIndex_ != null;
+  }
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntegerType getProductDetailIndex() {
+    return productDetailIndex_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.getDefaultInstance() : productDetailIndex_;
+  }
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder getProductDetailIndexOrBuilder() {
+    return getProductDetailIndex();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -404,6 +450,9 @@ private static final long serialVersionUID = 0L;
     }
     if (arriveLocation_ != null) {
       output.writeMessage(8, getArriveLocation());
+    }
+    if (productDetailIndex_ != null) {
+      output.writeMessage(9, getProductDetailIndex());
     }
     unknownFields.writeTo(output);
   }
@@ -443,6 +492,10 @@ private static final long serialVersionUID = 0L;
     if (arriveLocation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getArriveLocation());
+    }
+    if (productDetailIndex_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getProductDetailIndex());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -485,6 +538,11 @@ private static final long serialVersionUID = 0L;
       result = result && getArriveLocation()
           .equals(other.getArriveLocation());
     }
+    result = result && (hasProductDetailIndex() == other.hasProductDetailIndex());
+    if (hasProductDetailIndex()) {
+      result = result && getProductDetailIndex()
+          .equals(other.getProductDetailIndex());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -517,6 +575,10 @@ private static final long serialVersionUID = 0L;
     if (hasArriveLocation()) {
       hash = (37 * hash) + ARRIVELOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getArriveLocation().hashCode();
+    }
+    if (hasProductDetailIndex()) {
+      hash = (37 * hash) + PRODUCTDETAILINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getProductDetailIndex().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -679,6 +741,12 @@ private static final long serialVersionUID = 0L;
         arriveLocation_ = null;
         arriveLocationBuilder_ = null;
       }
+      if (productDetailIndexBuilder_ == null) {
+        productDetailIndex_ = null;
+      } else {
+        productDetailIndex_ = null;
+        productDetailIndexBuilder_ = null;
+      }
       return this;
     }
 
@@ -724,6 +792,11 @@ private static final long serialVersionUID = 0L;
         result.arriveLocation_ = arriveLocation_;
       } else {
         result.arriveLocation_ = arriveLocationBuilder_.build();
+      }
+      if (productDetailIndexBuilder_ == null) {
+        result.productDetailIndex_ = productDetailIndex_;
+      } else {
+        result.productDetailIndex_ = productDetailIndexBuilder_.build();
       }
       onBuilt();
       return result;
@@ -798,6 +871,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasArriveLocation()) {
         mergeArriveLocation(other.getArriveLocation());
+      }
+      if (other.hasProductDetailIndex()) {
+        mergeProductDetailIndex(other.getProductDetailIndex());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1577,6 +1653,159 @@ private static final long serialVersionUID = 0L;
         arriveLocation_ = null;
       }
       return arriveLocationBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.IntegerType productDetailIndex_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntegerType, com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder> productDetailIndexBuilder_;
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public boolean hasProductDetailIndex() {
+      return productDetailIndexBuilder_ != null || productDetailIndex_ != null;
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntegerType getProductDetailIndex() {
+      if (productDetailIndexBuilder_ == null) {
+        return productDetailIndex_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.getDefaultInstance() : productDetailIndex_;
+      } else {
+        return productDetailIndexBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public Builder setProductDetailIndex(com.ctrip.flight.agg.shopping.contract.transportation.IntegerType value) {
+      if (productDetailIndexBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productDetailIndex_ = value;
+        onChanged();
+      } else {
+        productDetailIndexBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public Builder setProductDetailIndex(
+        com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder builderForValue) {
+      if (productDetailIndexBuilder_ == null) {
+        productDetailIndex_ = builderForValue.build();
+        onChanged();
+      } else {
+        productDetailIndexBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public Builder mergeProductDetailIndex(com.ctrip.flight.agg.shopping.contract.transportation.IntegerType value) {
+      if (productDetailIndexBuilder_ == null) {
+        if (productDetailIndex_ != null) {
+          productDetailIndex_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.newBuilder(productDetailIndex_).mergeFrom(value).buildPartial();
+        } else {
+          productDetailIndex_ = value;
+        }
+        onChanged();
+      } else {
+        productDetailIndexBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public Builder clearProductDetailIndex() {
+      if (productDetailIndexBuilder_ == null) {
+        productDetailIndex_ = null;
+        onChanged();
+      } else {
+        productDetailIndex_ = null;
+        productDetailIndexBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder getProductDetailIndexBuilder() {
+      
+      onChanged();
+      return getProductDetailIndexFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder getProductDetailIndexOrBuilder() {
+      if (productDetailIndexBuilder_ != null) {
+        return productDetailIndexBuilder_.getMessageOrBuilder();
+      } else {
+        return productDetailIndex_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.getDefaultInstance() : productDetailIndex_;
+      }
+    }
+    /**
+     * <pre>
+     * 票号,可以为空
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.IntegerType, com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder> 
+        getProductDetailIndexFieldBuilder() {
+      if (productDetailIndexBuilder_ == null) {
+        productDetailIndexBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.IntegerType, com.ctrip.flight.agg.shopping.contract.transportation.IntegerType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder>(
+                getProductDetailIndex(),
+                getParentForChildren(),
+                isClean());
+        productDetailIndex_ = null;
+      }
+      return productDetailIndexBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

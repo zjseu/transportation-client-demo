@@ -144,4 +144,29 @@ public interface SpecifiedJourneyOptionTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.LocationType ArriveLocation = 8;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.request.LocationTypeOrBuilder getArriveLocationOrBuilder();
+
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  boolean hasProductDetailIndex();
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntegerType getProductDetailIndex();
+  /**
+   * <pre>
+   * 票号,可以为空
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.IntegerType ProductDetailIndex = 9;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.IntegerTypeOrBuilder getProductDetailIndexOrBuilder();
 }

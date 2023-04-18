@@ -66,6 +66,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.CombinationPolicyType.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder subBuilder = null;
+            if (travixAdaptedOption_ != null) {
+              subBuilder = travixAdaptedOption_.toBuilder();
+            }
+            travixAdaptedOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(travixAdaptedOption_);
+              travixAdaptedOption_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -104,6 +117,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.class, com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int XPRODUCTAPPOINTED_FIELD_NUMBER = 1;
   private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.request.XProductAppointedType> xProductAppointed_;
   /**
@@ -214,6 +228,39 @@ private static final long serialVersionUID = 0L;
     return combinationPolicy_.get(index);
   }
 
+  public static final int TRAVIXADAPTEDOPTION_FIELD_NUMBER = 3;
+  private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType travixAdaptedOption_;
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  public boolean hasTravixAdaptedOption() {
+    return travixAdaptedOption_ != null;
+  }
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType getTravixAdaptedOption() {
+    return travixAdaptedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.getDefaultInstance() : travixAdaptedOption_;
+  }
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder getTravixAdaptedOptionOrBuilder() {
+    return getTravixAdaptedOption();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +281,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < combinationPolicy_.size(); i++) {
       output.writeMessage(2, combinationPolicy_.get(i));
     }
+    if (travixAdaptedOption_ != null) {
+      output.writeMessage(3, getTravixAdaptedOption());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -250,6 +300,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < combinationPolicy_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, combinationPolicy_.get(i));
+    }
+    if (travixAdaptedOption_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getTravixAdaptedOption());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -271,6 +325,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getXProductAppointedList());
     result = result && getCombinationPolicyList()
         .equals(other.getCombinationPolicyList());
+    result = result && (hasTravixAdaptedOption() == other.hasTravixAdaptedOption());
+    if (hasTravixAdaptedOption()) {
+      result = result && getTravixAdaptedOption()
+          .equals(other.getTravixAdaptedOption());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -289,6 +348,10 @@ private static final long serialVersionUID = 0L;
     if (getCombinationPolicyCount() > 0) {
       hash = (37 * hash) + COMBINATIONPOLICY_FIELD_NUMBER;
       hash = (53 * hash) + getCombinationPolicyList().hashCode();
+    }
+    if (hasTravixAdaptedOption()) {
+      hash = (37 * hash) + TRAVIXADAPTEDOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getTravixAdaptedOption().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -441,6 +504,12 @@ private static final long serialVersionUID = 0L;
       } else {
         combinationPolicyBuilder_.clear();
       }
+      if (travixAdaptedOptionBuilder_ == null) {
+        travixAdaptedOption_ = null;
+      } else {
+        travixAdaptedOption_ = null;
+        travixAdaptedOptionBuilder_ = null;
+      }
       return this;
     }
 
@@ -468,6 +537,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType result = new com.ctrip.flight.agg.shopping.contract.transportation.request.AdaptedOptionType(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (xProductAppointedBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           xProductAppointed_ = java.util.Collections.unmodifiableList(xProductAppointed_);
@@ -486,6 +556,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.combinationPolicy_ = combinationPolicyBuilder_.build();
       }
+      if (travixAdaptedOptionBuilder_ == null) {
+        result.travixAdaptedOption_ = travixAdaptedOption_;
+      } else {
+        result.travixAdaptedOption_ = travixAdaptedOptionBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -585,6 +661,9 @@ private static final long serialVersionUID = 0L;
             combinationPolicyBuilder_.addAllMessages(other.combinationPolicy_);
           }
         }
+      }
+      if (other.hasTravixAdaptedOption()) {
+        mergeTravixAdaptedOption(other.getTravixAdaptedOption());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1238,6 +1317,159 @@ private static final long serialVersionUID = 0L;
         combinationPolicy_ = null;
       }
       return combinationPolicyBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType travixAdaptedOption_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder> travixAdaptedOptionBuilder_;
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public boolean hasTravixAdaptedOption() {
+      return travixAdaptedOptionBuilder_ != null || travixAdaptedOption_ != null;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType getTravixAdaptedOption() {
+      if (travixAdaptedOptionBuilder_ == null) {
+        return travixAdaptedOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.getDefaultInstance() : travixAdaptedOption_;
+      } else {
+        return travixAdaptedOptionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public Builder setTravixAdaptedOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType value) {
+      if (travixAdaptedOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        travixAdaptedOption_ = value;
+        onChanged();
+      } else {
+        travixAdaptedOptionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public Builder setTravixAdaptedOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder builderForValue) {
+      if (travixAdaptedOptionBuilder_ == null) {
+        travixAdaptedOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        travixAdaptedOptionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public Builder mergeTravixAdaptedOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType value) {
+      if (travixAdaptedOptionBuilder_ == null) {
+        if (travixAdaptedOption_ != null) {
+          travixAdaptedOption_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.newBuilder(travixAdaptedOption_).mergeFrom(value).buildPartial();
+        } else {
+          travixAdaptedOption_ = value;
+        }
+        onChanged();
+      } else {
+        travixAdaptedOptionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public Builder clearTravixAdaptedOption() {
+      if (travixAdaptedOptionBuilder_ == null) {
+        travixAdaptedOption_ = null;
+        onChanged();
+      } else {
+        travixAdaptedOption_ = null;
+        travixAdaptedOptionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder getTravixAdaptedOptionBuilder() {
+      
+      onChanged();
+      return getTravixAdaptedOptionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder getTravixAdaptedOptionOrBuilder() {
+      if (travixAdaptedOptionBuilder_ != null) {
+        return travixAdaptedOptionBuilder_.getMessageOrBuilder();
+      } else {
+        return travixAdaptedOption_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.getDefaultInstance() : travixAdaptedOption_;
+      }
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder> 
+        getTravixAdaptedOptionFieldBuilder() {
+      if (travixAdaptedOptionBuilder_ == null) {
+        travixAdaptedOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder>(
+                getTravixAdaptedOption(),
+                getParentForChildren(),
+                isClean());
+        travixAdaptedOption_ = null;
+      }
+      return travixAdaptedOptionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

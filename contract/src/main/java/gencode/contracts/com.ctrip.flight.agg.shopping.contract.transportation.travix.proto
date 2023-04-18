@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.ctrip.flight.agg.shopping.contract.transportation.travix;
+option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.travix";
+option java_multiple_files = true;
+
+// for travix migration
+message TravixAdaptedOptionType {
+    string TrafficType = 1;
+    string HaulType = 2;
+    repeated JourneyOptionType JourneyOption = 3;
+}
+
+message JourneyOptionType {
+    string DepartRegion = 1;
+    string ArriveRegion = 2;
+}

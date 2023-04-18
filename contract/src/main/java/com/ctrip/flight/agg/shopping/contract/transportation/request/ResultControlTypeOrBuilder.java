@@ -68,4 +68,38 @@ public interface ResultControlTypeOrBuilder extends
    * <code>int32 SeparateJourneyType = 4;</code>
    */
   int getSeparateJourneyType();
+
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  boolean hasMultiTrafficControl();
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType getMultiTrafficControl();
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder getMultiTrafficControlOrBuilder();
+
+  /**
+   * <pre>
+   * 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+   * </pre>
+   *
+   * <code>int32 DirectControlType = 6;</code>
+   */
+  int getDirectControlType();
 }

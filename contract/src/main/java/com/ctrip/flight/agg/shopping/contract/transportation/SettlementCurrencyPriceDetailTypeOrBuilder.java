@@ -42,4 +42,13 @@ public interface SettlementCurrencyPriceDetailTypeOrBuilder extends
    * <code>double ExchangeRate = 3;</code>
    */
   double getExchangeRate();
+
+  /**
+   * <pre>
+   * 坐席价
+   * </pre>
+   *
+   * <code>double SeatPrice = 4;</code>
+   */
+  double getSeatPrice();
 }

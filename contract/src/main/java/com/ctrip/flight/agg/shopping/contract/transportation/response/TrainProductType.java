@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     paxProduct_ = java.util.Collections.emptyList();
     promotionTag_ = "";
     tag_ = java.util.Collections.emptyList();
+    trainToken_ = "";
+    ruleID_ = 0L;
   }
 
   @java.lang.Override
@@ -90,6 +92,17 @@ private static final long serialVersionUID = 0L;
               refundChange_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            trainToken_ = s;
+            break;
+          }
+          case 56: {
+
+            ruleID_ = input.readInt64();
             break;
           }
           default: {
@@ -329,6 +342,61 @@ private static final long serialVersionUID = 0L;
     return getRefundChange();
   }
 
+  public static final int TRAINTOKEN_FIELD_NUMBER = 6;
+  private volatile java.lang.Object trainToken_;
+  /**
+   * <pre>
+   * 火车票token
+   * </pre>
+   *
+   * <code>string TrainToken = 6;</code>
+   */
+  public java.lang.String getTrainToken() {
+    java.lang.Object ref = trainToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trainToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 火车票token
+   * </pre>
+   *
+   * <code>string TrainToken = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTrainTokenBytes() {
+    java.lang.Object ref = trainToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      trainToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RULEID_FIELD_NUMBER = 7;
+  private long ruleID_;
+  /**
+   * <pre>
+   * X铁组合规则ID
+   * </pre>
+   *
+   * <code>int64 RuleID = 7;</code>
+   */
+  public long getRuleID() {
+    return ruleID_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -358,6 +426,12 @@ private static final long serialVersionUID = 0L;
     if (refundChange_ != null) {
       output.writeMessage(5, getRefundChange());
     }
+    if (!getTrainTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, trainToken_);
+    }
+    if (ruleID_ != 0L) {
+      output.writeInt64(7, ruleID_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -385,6 +459,13 @@ private static final long serialVersionUID = 0L;
     if (refundChange_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getRefundChange());
+    }
+    if (!getTrainTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, trainToken_);
+    }
+    if (ruleID_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, ruleID_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -415,6 +496,10 @@ private static final long serialVersionUID = 0L;
       result = result && getRefundChange()
           .equals(other.getRefundChange());
     }
+    result = result && getTrainToken()
+        .equals(other.getTrainToken());
+    result = result && (getRuleID()
+        == other.getRuleID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -442,6 +527,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REFUNDCHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getRefundChange().hashCode();
     }
+    hash = (37 * hash) + TRAINTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getTrainToken().hashCode();
+    hash = (37 * hash) + RULEID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRuleID());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -603,6 +693,10 @@ private static final long serialVersionUID = 0L;
         refundChange_ = null;
         refundChangeBuilder_ = null;
       }
+      trainToken_ = "";
+
+      ruleID_ = 0L;
+
       return this;
     }
 
@@ -656,6 +750,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.refundChange_ = refundChangeBuilder_.build();
       }
+      result.trainToken_ = trainToken_;
+      result.ruleID_ = ruleID_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -766,6 +862,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRefundChange()) {
         mergeRefundChange(other.getRefundChange());
+      }
+      if (!other.getTrainToken().isEmpty()) {
+        trainToken_ = other.trainToken_;
+        onChanged();
+      }
+      if (other.getRuleID() != 0L) {
+        setRuleID(other.getRuleID());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1699,6 +1802,133 @@ private static final long serialVersionUID = 0L;
         refundChange_ = null;
       }
       return refundChangeBuilder_;
+    }
+
+    private java.lang.Object trainToken_ = "";
+    /**
+     * <pre>
+     * 火车票token
+     * </pre>
+     *
+     * <code>string TrainToken = 6;</code>
+     */
+    public java.lang.String getTrainToken() {
+      java.lang.Object ref = trainToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trainToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 火车票token
+     * </pre>
+     *
+     * <code>string TrainToken = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTrainTokenBytes() {
+      java.lang.Object ref = trainToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trainToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 火车票token
+     * </pre>
+     *
+     * <code>string TrainToken = 6;</code>
+     */
+    public Builder setTrainToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      trainToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 火车票token
+     * </pre>
+     *
+     * <code>string TrainToken = 6;</code>
+     */
+    public Builder clearTrainToken() {
+      
+      trainToken_ = getDefaultInstance().getTrainToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 火车票token
+     * </pre>
+     *
+     * <code>string TrainToken = 6;</code>
+     */
+    public Builder setTrainTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      trainToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long ruleID_ ;
+    /**
+     * <pre>
+     * X铁组合规则ID
+     * </pre>
+     *
+     * <code>int64 RuleID = 7;</code>
+     */
+    public long getRuleID() {
+      return ruleID_;
+    }
+    /**
+     * <pre>
+     * X铁组合规则ID
+     * </pre>
+     *
+     * <code>int64 RuleID = 7;</code>
+     */
+    public Builder setRuleID(long value) {
+      
+      ruleID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X铁组合规则ID
+     * </pre>
+     *
+     * <code>int64 RuleID = 7;</code>
+     */
+    public Builder clearRuleID() {
+      
+      ruleID_ = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

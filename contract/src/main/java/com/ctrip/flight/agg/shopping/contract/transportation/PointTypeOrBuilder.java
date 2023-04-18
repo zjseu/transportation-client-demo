@@ -54,19 +54,44 @@ public interface PointTypeOrBuilder extends
 
   /**
    * <pre>
-   * 站点名
+   * 站点名 待废弃属性，请使用StationType.StationName
    * </pre>
    *
-   * <code>string StationName = 4;</code>
+   * <code>string StationName = 4 [deprecated = true];</code>
    */
-  java.lang.String getStationName();
+  @java.lang.Deprecated java.lang.String getStationName();
   /**
    * <pre>
-   * 站点名
+   * 站点名 待废弃属性，请使用StationType.StationName
    * </pre>
    *
-   * <code>string StationName = 4;</code>
+   * <code>string StationName = 4 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getStationNameBytes();
+
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  boolean hasStation();
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.StationType getStation();
+  /**
+   * <pre>
+   * 站点信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.StationType Station = 5;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.StationTypeOrBuilder getStationOrBuilder();
 }

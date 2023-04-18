@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     validatingCarrier_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     nonMatchRequestAgeType_ = false;
     separateJourneyType_ = 0;
+    directControlType_ = 0;
   }
 
   @java.lang.Override
@@ -68,6 +69,24 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             separateJourneyType_ = input.readInt32();
+            break;
+          }
+          case 42: {
+            com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder subBuilder = null;
+            if (multiTrafficControl_ != null) {
+              subBuilder = multiTrafficControl_.toBuilder();
+            }
+            multiTrafficControl_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(multiTrafficControl_);
+              multiTrafficControl_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 48: {
+
+            directControlType_ = input.readInt32();
             break;
           }
           default: {
@@ -190,6 +209,52 @@ private static final long serialVersionUID = 0L;
     return separateJourneyType_;
   }
 
+  public static final int MULTITRAFFICCONTROL_FIELD_NUMBER = 5;
+  private com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType multiTrafficControl_;
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  public boolean hasMultiTrafficControl() {
+    return multiTrafficControl_ != null;
+  }
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType getMultiTrafficControl() {
+    return multiTrafficControl_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.getDefaultInstance() : multiTrafficControl_;
+  }
+  /**
+   * <pre>
+   * 多交通场景下查询控制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder getMultiTrafficControlOrBuilder() {
+    return getMultiTrafficControl();
+  }
+
+  public static final int DIRECTCONTROLTYPE_FIELD_NUMBER = 6;
+  private int directControlType_;
+  /**
+   * <pre>
+   * 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+   * </pre>
+   *
+   * <code>int32 DirectControlType = 6;</code>
+   */
+  public int getDirectControlType() {
+    return directControlType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +280,12 @@ private static final long serialVersionUID = 0L;
     }
     if (separateJourneyType_ != 0) {
       output.writeInt32(4, separateJourneyType_);
+    }
+    if (multiTrafficControl_ != null) {
+      output.writeMessage(5, getMultiTrafficControl());
+    }
+    if (directControlType_ != 0) {
+      output.writeInt32(6, directControlType_);
     }
     unknownFields.writeTo(output);
   }
@@ -245,6 +316,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, separateJourneyType_);
     }
+    if (multiTrafficControl_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getMultiTrafficControl());
+    }
+    if (directControlType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, directControlType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -269,6 +348,13 @@ private static final long serialVersionUID = 0L;
         == other.getNonMatchRequestAgeType());
     result = result && (getSeparateJourneyType()
         == other.getSeparateJourneyType());
+    result = result && (hasMultiTrafficControl() == other.hasMultiTrafficControl());
+    if (hasMultiTrafficControl()) {
+      result = result && getMultiTrafficControl()
+          .equals(other.getMultiTrafficControl());
+    }
+    result = result && (getDirectControlType()
+        == other.getDirectControlType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -292,6 +378,12 @@ private static final long serialVersionUID = 0L;
         getNonMatchRequestAgeType());
     hash = (37 * hash) + SEPARATEJOURNEYTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getSeparateJourneyType();
+    if (hasMultiTrafficControl()) {
+      hash = (37 * hash) + MULTITRAFFICCONTROL_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiTrafficControl().hashCode();
+    }
+    hash = (37 * hash) + DIRECTCONTROLTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDirectControlType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +525,14 @@ private static final long serialVersionUID = 0L;
 
       separateJourneyType_ = 0;
 
+      if (multiTrafficControlBuilder_ == null) {
+        multiTrafficControl_ = null;
+      } else {
+        multiTrafficControl_ = null;
+        multiTrafficControlBuilder_ = null;
+      }
+      directControlType_ = 0;
+
       return this;
     }
 
@@ -469,6 +569,12 @@ private static final long serialVersionUID = 0L;
       result.validatingCarrier_ = validatingCarrier_;
       result.nonMatchRequestAgeType_ = nonMatchRequestAgeType_;
       result.separateJourneyType_ = separateJourneyType_;
+      if (multiTrafficControlBuilder_ == null) {
+        result.multiTrafficControl_ = multiTrafficControl_;
+      } else {
+        result.multiTrafficControl_ = multiTrafficControlBuilder_.build();
+      }
+      result.directControlType_ = directControlType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -536,6 +642,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSeparateJourneyType() != 0) {
         setSeparateJourneyType(other.getSeparateJourneyType());
+      }
+      if (other.hasMultiTrafficControl()) {
+        mergeMultiTrafficControl(other.getMultiTrafficControl());
+      }
+      if (other.getDirectControlType() != 0) {
+        setDirectControlType(other.getDirectControlType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -807,6 +919,197 @@ private static final long serialVersionUID = 0L;
     public Builder clearSeparateJourneyType() {
       
       separateJourneyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType multiTrafficControl_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder> multiTrafficControlBuilder_;
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public boolean hasMultiTrafficControl() {
+      return multiTrafficControlBuilder_ != null || multiTrafficControl_ != null;
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType getMultiTrafficControl() {
+      if (multiTrafficControlBuilder_ == null) {
+        return multiTrafficControl_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.getDefaultInstance() : multiTrafficControl_;
+      } else {
+        return multiTrafficControlBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public Builder setMultiTrafficControl(com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType value) {
+      if (multiTrafficControlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiTrafficControl_ = value;
+        onChanged();
+      } else {
+        multiTrafficControlBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public Builder setMultiTrafficControl(
+        com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder builderForValue) {
+      if (multiTrafficControlBuilder_ == null) {
+        multiTrafficControl_ = builderForValue.build();
+        onChanged();
+      } else {
+        multiTrafficControlBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public Builder mergeMultiTrafficControl(com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType value) {
+      if (multiTrafficControlBuilder_ == null) {
+        if (multiTrafficControl_ != null) {
+          multiTrafficControl_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.newBuilder(multiTrafficControl_).mergeFrom(value).buildPartial();
+        } else {
+          multiTrafficControl_ = value;
+        }
+        onChanged();
+      } else {
+        multiTrafficControlBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public Builder clearMultiTrafficControl() {
+      if (multiTrafficControlBuilder_ == null) {
+        multiTrafficControl_ = null;
+        onChanged();
+      } else {
+        multiTrafficControl_ = null;
+        multiTrafficControlBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder getMultiTrafficControlBuilder() {
+      
+      onChanged();
+      return getMultiTrafficControlFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder getMultiTrafficControlOrBuilder() {
+      if (multiTrafficControlBuilder_ != null) {
+        return multiTrafficControlBuilder_.getMessageOrBuilder();
+      } else {
+        return multiTrafficControl_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.getDefaultInstance() : multiTrafficControl_;
+      }
+    }
+    /**
+     * <pre>
+     * 多交通场景下查询控制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType MultiTrafficControl = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder> 
+        getMultiTrafficControlFieldBuilder() {
+      if (multiTrafficControlBuilder_ == null) {
+        multiTrafficControlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.request.MultiTrafficControlTypeOrBuilder>(
+                getMultiTrafficControl(),
+                getParentForChildren(),
+                isClean());
+        multiTrafficControl_ = null;
+      }
+      return multiTrafficControlBuilder_;
+    }
+
+    private int directControlType_ ;
+    /**
+     * <pre>
+     * 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+     * </pre>
+     *
+     * <code>int32 DirectControlType = 6;</code>
+     */
+    public int getDirectControlType() {
+      return directControlType_;
+    }
+    /**
+     * <pre>
+     * 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+     * </pre>
+     *
+     * <code>int32 DirectControlType = 6;</code>
+     */
+    public Builder setDirectControlType(int value) {
+      
+      directControlType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+     * </pre>
+     *
+     * <code>int32 DirectControlType = 6;</code>
+     */
+    public Builder clearDirectControlType() {
+      
+      directControlType_ = 0;
       onChanged();
       return this;
     }

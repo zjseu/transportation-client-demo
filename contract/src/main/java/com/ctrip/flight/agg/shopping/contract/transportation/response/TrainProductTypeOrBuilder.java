@@ -146,4 +146,31 @@ public interface TrainProductTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeTypeOrBuilder getRefundChangeOrBuilder();
+
+  /**
+   * <pre>
+   * 火车票token
+   * </pre>
+   *
+   * <code>string TrainToken = 6;</code>
+   */
+  java.lang.String getTrainToken();
+  /**
+   * <pre>
+   * 火车票token
+   * </pre>
+   *
+   * <code>string TrainToken = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getTrainTokenBytes();
+
+  /**
+   * <pre>
+   * X铁组合规则ID
+   * </pre>
+   *
+   * <code>int64 RuleID = 7;</code>
+   */
+  long getRuleID();
 }

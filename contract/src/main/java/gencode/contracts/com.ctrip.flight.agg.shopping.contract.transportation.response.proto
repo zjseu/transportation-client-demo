@@ -281,6 +281,27 @@ message FlightProductType {
 
     // SuccessRate
     double ApplySuccessRate = 37;
+
+    // 会员挑战赛信息
+    repeated MembershipChallengeType MembershipChallenge = 38;
+}
+
+message MembershipChallengeType {
+    // 政策ID
+    int64 PolicyID = 1;
+    // 挑战赛报名开始时间, 格式yyyy-MM-dd HH:mm:ss
+    string ActivityEffectTime = 2;
+    // 挑战赛报名截止时间, 格式yyyy-MM-dd HH:mm:ss
+    string ActivityExpireTime = 3;
+    // 活动信息列表
+    repeated ActivityType Activity = 4;
+}
+
+message ActivityType {
+    // 活动Code
+    string ActivityCode = 1;
+    // 活动是否有体验卡
+    bool HaveExperienceCardInd = 2;
 }
 
 message BillingType {
@@ -338,6 +359,10 @@ message TrainProductType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;
     // 退改签简体信息
     com.ctrip.flight.agg.shopping.contract.transportation.RefundChangeType RefundChange = 5;
+    // 火车票token
+    string TrainToken = 6;
+    // X铁组合规则ID
+    int64 RuleID = 7;
 }
 
 // 巴士票信息

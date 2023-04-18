@@ -3,6 +3,7 @@ syntax = "proto3";
 package com.ctrip.flight.agg.shopping.contract.transportation.request;
 import "com.ctrip.flight.agg.shopping.contract.message.proto";
 import "com.ctrip.flight.agg.shopping.contract.transportation.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.travix.proto";
 option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.request";
 option java_multiple_files = true;
 
@@ -133,6 +134,10 @@ message ResultControlType {
     bool NonMatchRequestAgeType = 3;
     // 0:不进行行程拆分，1：按Journey拆分行程返回offer
     int32 SeparateJourneyType = 4;
+    // 多交通场景下查询控制
+    MultiTrafficControlType MultiTrafficControl = 5;
+    // 0:no control;    1:nonStop Direct result;     2:direct result(has stop);    4:only transfer result;
+    int32 DirectControlType = 6;
 }
 
 message CoordinateType {
@@ -222,6 +227,8 @@ message SpecifiedJourneyOptionType {
     LocationType DepartLocation = 7;
     // 到达地
     LocationType ArriveLocation = 8;
+    // 票号,可以为空
+    IntegerType ProductDetailIndex = 9;
 }
 
 message FlightSpecifiedOptionType {
@@ -239,6 +246,8 @@ message AdaptedOptionType {
     repeated XProductAppointedType XProductAppointed = 1;
     // 国内混政策严格反差回传token
     repeated CombinationPolicyType CombinationPolicy = 2;
+    // for travix
+    com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;
 }
 
 // 指定X产品查询
@@ -263,4 +272,13 @@ message SeparateJourneyOfferTokenType {
     int32 JourneyNo = 1;
     // 该行程的offertoken
     string OfferToken = 2;
+}
+
+// 多交通场景下查询控制
+message MultiTrafficControlType{
+    /*
+        机铁场景指定交通工具查询，目前仅支持指定机票查询
+        1：机票
+    */
+    int32 TransportType = 1;
 }

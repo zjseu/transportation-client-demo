@@ -24,6 +24,11 @@ public final class ComCtripFlightAggShoppingContractTransportationTravix {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_JourneyOptionType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,8 +47,10 @@ public final class ComCtripFlightAggShoppingContractTransportationTravix {
       "agg.shopping.contract.transportation.tra" +
       "vix.JourneyOptionType\"?\n\021JourneyOptionTy" +
       "pe\022\024\n\014DepartRegion\030\001 \001(\t\022\024\n\014ArriveRegion" +
-      "\030\002 \001(\tB@\n<com.ctrip.flight.agg.shopping." +
-      "contract.transportation.travixP\001b\006proto3"
+      "\030\002 \001(\t\"K\n\031TravixExclusiveOptionType\022\026\n\016S" +
+      "fdResponseRef\030\001 \001(\005\022\026\n\016SfdActionIndex\030\002 " +
+      "\001(\005B@\n<com.ctrip.flight.agg.shopping.con" +
+      "tract.transportation.travixP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -69,6 +76,12 @@ public final class ComCtripFlightAggShoppingContractTransportationTravix {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_JourneyOptionType_descriptor,
         new java.lang.String[] { "DepartRegion", "ArriveRegion", });
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_descriptor,
+        new java.lang.String[] { "SfdResponseRef", "SfdActionIndex", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

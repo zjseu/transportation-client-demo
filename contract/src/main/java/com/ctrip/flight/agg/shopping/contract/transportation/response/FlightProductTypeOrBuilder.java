@@ -921,4 +921,29 @@ public interface FlightProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeTypeOrBuilder getMembershipChallengeOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  boolean hasTravixExclusiveOption();
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption();
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder();
 }

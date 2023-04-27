@@ -4,19 +4,19 @@
 package com.ctrip.flight.agg.shopping.contract.transportation;
 
 /**
- * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType}
+ * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType}
  */
-public  final class TaxDetailType extends
+public  final class FareTaxFeeDetailType extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)
-    TaxDetailTypeOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)
+    FareTaxFeeDetailTypeOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use TaxDetailType.newBuilder() to construct.
-  private TaxDetailType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FareTaxFeeDetailType.newBuilder() to construct.
+  private FareTaxFeeDetailType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaxDetailType() {
-    type_ = 0;
+  private FareTaxFeeDetailType() {
+    type_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private TaxDetailType(
+  private FareTaxFeeDetailType(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -43,9 +43,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            type_ = input.readInt32();
+            type_ = s;
             break;
           }
           case 18: {
@@ -82,36 +83,63 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_descriptor;
+    return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareTaxFeeDetailType_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_fieldAccessorTable
+    return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareTaxFeeDetailType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.class, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder.class);
+            com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.class, com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.Builder.class);
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
-   * 类型,1:机建  2:燃油
-   * type,1:airport construction fee  2:fuel surcharge
+   * type such as:YQ、YR、E7、G8、TS
    * </pre>
    *
-   * <code>int32 Type = 1;</code>
+   * <code>string Type = 1;</code>
    */
-  public int getType() {
-    return type_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * type such as:YQ、YR、E7、G8、TS
+   * </pre>
+   *
+   * <code>string Type = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
   private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_;
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *
@@ -122,7 +150,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *
@@ -133,7 +160,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *
@@ -157,8 +183,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (type_ != 0) {
-      output.writeInt32(1, type_);
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
     if (amount_ != null) {
       output.writeMessage(2, getAmount());
@@ -172,9 +198,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, type_);
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
     if (amount_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -190,14 +215,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)) {
+    if (!(obj instanceof com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)) {
       return super.equals(obj);
     }
-    com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType other = (com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType) obj;
+    com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType other = (com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType) obj;
 
     boolean result = true;
-    result = result && (getType()
-        == other.getType());
+    result = result && getType()
+        .equals(other.getType());
     result = result && (hasAmount() == other.hasAmount());
     if (hasAmount()) {
       result = result && getAmount()
@@ -215,7 +240,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType();
+    hash = (53 * hash) + getType().hashCode();
     if (hasAmount()) {
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
@@ -225,69 +250,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(byte[] data)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(java.io.InputStream input)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseDelimitedFrom(java.io.InputStream input)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseDelimitedFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -300,7 +325,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType prototype) {
+  public static Builder newBuilder(com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -316,26 +341,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType}
+   * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)
-      com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailTypeOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)
+      com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailTypeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_descriptor;
+      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareTaxFeeDetailType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_fieldAccessorTable
+      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareTaxFeeDetailType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.class, com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.Builder.class);
+              com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.class, com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.Builder.class);
     }
 
-    // Construct using com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.newBuilder()
+    // Construct using com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -353,7 +378,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      type_ = 0;
+      type_ = "";
 
       if (amountBuilder_ == null) {
         amount_ = null;
@@ -367,17 +392,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_TaxDetailType_descriptor;
+      return com.ctrip.flight.agg.shopping.contract.transportation.ComCtripFlightAggShoppingContractTransportation.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_FareTaxFeeDetailType_descriptor;
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getDefaultInstanceForType() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.getDefaultInstance();
+    public com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType getDefaultInstanceForType() {
+      return com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType build() {
-      com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType result = buildPartial();
+    public com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType build() {
+      com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -385,8 +410,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType buildPartial() {
-      com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType result = new com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType(this);
+    public com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType buildPartial() {
+      com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType result = new com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType(this);
       result.type_ = type_;
       if (amountBuilder_ == null) {
         result.amount_ = amount_;
@@ -431,18 +456,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType) {
-        return mergeFrom((com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)other);
+      if (other instanceof com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType) {
+        return mergeFrom((com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType other) {
-      if (other == com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType.getDefaultInstance()) return this;
-      if (other.getType() != 0) {
-        setType(other.getType());
+    public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType other) {
+      if (other == com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.getDefaultInstance()) return this;
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
+        onChanged();
       }
       if (other.hasAmount()) {
         mergeAmount(other.getAmount());
@@ -462,11 +488,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType parsedMessage = null;
+      com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType) e.getUnfinishedMessage();
+        parsedMessage = (com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -476,43 +502,91 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ ;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
-     * 类型,1:机建  2:燃油
-     * type,1:airport construction fee  2:fuel surcharge
+     * type such as:YQ、YR、E7、G8、TS
      * </pre>
      *
-     * <code>int32 Type = 1;</code>
+     * <code>string Type = 1;</code>
      */
-    public int getType() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * 类型,1:机建  2:燃油
-     * type,1:airport construction fee  2:fuel surcharge
+     * type such as:YQ、YR、E7、G8、TS
      * </pre>
      *
-     * <code>int32 Type = 1;</code>
+     * <code>string Type = 1;</code>
      */
-    public Builder setType(int value) {
-      
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * type such as:YQ、YR、E7、G8、TS
+     * </pre>
+     *
+     * <code>string Type = 1;</code>
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       type_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 类型,1:机建  2:燃油
-     * type,1:airport construction fee  2:fuel surcharge
+     * type such as:YQ、YR、E7、G8、TS
      * </pre>
      *
-     * <code>int32 Type = 1;</code>
+     * <code>string Type = 1;</code>
      */
     public Builder clearType() {
       
-      type_ = 0;
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * type such as:YQ、YR、E7、G8、TS
+     * </pre>
+     *
+     * <code>string Type = 1;</code>
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
       onChanged();
       return this;
     }
@@ -522,7 +596,6 @@ private static final long serialVersionUID = 0L;
         com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder> amountBuilder_;
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -533,7 +606,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -548,7 +620,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -569,7 +640,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -588,7 +658,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -611,7 +680,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -630,7 +698,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -643,7 +710,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -659,7 +725,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 金额
      * amount
      * </pre>
      *
@@ -691,41 +756,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)
+    // @@protoc_insertion_point(builder_scope:com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)
   }
 
-  // @@protoc_insertion_point(class_scope:com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)
-  private static final com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)
+  private static final com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType();
+    DEFAULT_INSTANCE = new com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType();
   }
 
-  public static com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getDefaultInstance() {
+  public static com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaxDetailType>
-      PARSER = new com.google.protobuf.AbstractParser<TaxDetailType>() {
+  private static final com.google.protobuf.Parser<FareTaxFeeDetailType>
+      PARSER = new com.google.protobuf.AbstractParser<FareTaxFeeDetailType>() {
     @java.lang.Override
-    public TaxDetailType parsePartialFrom(
+    public FareTaxFeeDetailType parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TaxDetailType(input, extensionRegistry);
+      return new FareTaxFeeDetailType(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaxDetailType> parser() {
+  public static com.google.protobuf.Parser<FareTaxFeeDetailType> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaxDetailType> getParserForType() {
+  public com.google.protobuf.Parser<FareTaxFeeDetailType> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getDefaultInstanceForType() {
+  public com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

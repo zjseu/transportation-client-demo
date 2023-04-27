@@ -432,6 +432,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.parser(), extensionRegistry));
             break;
           }
+          case 314: {
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder subBuilder = null;
+            if (travixExclusiveOption_ != null) {
+              subBuilder = travixExclusiveOption_.toBuilder();
+            }
+            travixExclusiveOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(travixExclusiveOption_);
+              travixExclusiveOption_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1759,6 +1772,39 @@ private static final long serialVersionUID = 0L;
     return membershipChallenge_.get(index);
   }
 
+  public static final int TRAVIXEXCLUSIVEOPTION_FIELD_NUMBER = 39;
+  private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType travixExclusiveOption_;
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  public boolean hasTravixExclusiveOption() {
+    return travixExclusiveOption_ != null;
+  }
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption() {
+    return travixExclusiveOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
+  }
+  /**
+   * <pre>
+   * for travix
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder() {
+    return getTravixExclusiveOption();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1891,6 +1937,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < membershipChallenge_.size(); i++) {
       output.writeMessage(38, membershipChallenge_.get(i));
+    }
+    if (travixExclusiveOption_ != null) {
+      output.writeMessage(39, getTravixExclusiveOption());
     }
     unknownFields.writeTo(output);
   }
@@ -2067,6 +2116,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(38, membershipChallenge_.get(i));
     }
+    if (travixExclusiveOption_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(39, getTravixExclusiveOption());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2206,6 +2259,11 @@ private static final long serialVersionUID = 0L;
             other.getApplySuccessRate()));
     result = result && getMembershipChallengeList()
         .equals(other.getMembershipChallengeList());
+    result = result && (hasTravixExclusiveOption() == other.hasTravixExclusiveOption());
+    if (hasTravixExclusiveOption()) {
+      result = result && getTravixExclusiveOption()
+          .equals(other.getTravixExclusiveOption());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2341,6 +2399,10 @@ private static final long serialVersionUID = 0L;
     if (getMembershipChallengeCount() > 0) {
       hash = (37 * hash) + MEMBERSHIPCHALLENGE_FIELD_NUMBER;
       hash = (53 * hash) + getMembershipChallengeList().hashCode();
+    }
+    if (hasTravixExclusiveOption()) {
+      hash = (37 * hash) + TRAVIXEXCLUSIVEOPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getTravixExclusiveOption().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2645,6 +2707,12 @@ private static final long serialVersionUID = 0L;
       } else {
         membershipChallengeBuilder_.clear();
       }
+      if (travixExclusiveOptionBuilder_ == null) {
+        travixExclusiveOption_ = null;
+      } else {
+        travixExclusiveOption_ = null;
+        travixExclusiveOptionBuilder_ = null;
+      }
       return this;
     }
 
@@ -2831,6 +2899,11 @@ private static final long serialVersionUID = 0L;
         result.membershipChallenge_ = membershipChallenge_;
       } else {
         result.membershipChallenge_ = membershipChallengeBuilder_.build();
+      }
+      if (travixExclusiveOptionBuilder_ == null) {
+        result.travixExclusiveOption_ = travixExclusiveOption_;
+      } else {
+        result.travixExclusiveOption_ = travixExclusiveOptionBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -3157,6 +3230,9 @@ private static final long serialVersionUID = 0L;
             membershipChallengeBuilder_.addAllMessages(other.membershipChallenge_);
           }
         }
+      }
+      if (other.hasTravixExclusiveOption()) {
+        mergeTravixExclusiveOption(other.getTravixExclusiveOption());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8501,6 +8577,159 @@ private static final long serialVersionUID = 0L;
         membershipChallenge_ = null;
       }
       return membershipChallengeBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType travixExclusiveOption_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder> travixExclusiveOptionBuilder_;
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public boolean hasTravixExclusiveOption() {
+      return travixExclusiveOptionBuilder_ != null || travixExclusiveOption_ != null;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption() {
+      if (travixExclusiveOptionBuilder_ == null) {
+        return travixExclusiveOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
+      } else {
+        return travixExclusiveOptionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public Builder setTravixExclusiveOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType value) {
+      if (travixExclusiveOptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        travixExclusiveOption_ = value;
+        onChanged();
+      } else {
+        travixExclusiveOptionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public Builder setTravixExclusiveOption(
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder builderForValue) {
+      if (travixExclusiveOptionBuilder_ == null) {
+        travixExclusiveOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        travixExclusiveOptionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public Builder mergeTravixExclusiveOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType value) {
+      if (travixExclusiveOptionBuilder_ == null) {
+        if (travixExclusiveOption_ != null) {
+          travixExclusiveOption_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.newBuilder(travixExclusiveOption_).mergeFrom(value).buildPartial();
+        } else {
+          travixExclusiveOption_ = value;
+        }
+        onChanged();
+      } else {
+        travixExclusiveOptionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public Builder clearTravixExclusiveOption() {
+      if (travixExclusiveOptionBuilder_ == null) {
+        travixExclusiveOption_ = null;
+        onChanged();
+      } else {
+        travixExclusiveOption_ = null;
+        travixExclusiveOptionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder getTravixExclusiveOptionBuilder() {
+      
+      onChanged();
+      return getTravixExclusiveOptionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder() {
+      if (travixExclusiveOptionBuilder_ != null) {
+        return travixExclusiveOptionBuilder_.getMessageOrBuilder();
+      } else {
+        return travixExclusiveOption_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
+      }
+    }
+    /**
+     * <pre>
+     * for travix
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder> 
+        getTravixExclusiveOptionFieldBuilder() {
+      if (travixExclusiveOptionBuilder_ == null) {
+        travixExclusiveOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder>(
+                getTravixExclusiveOption(),
+                getParentForChildren(),
+                isClean());
+        travixExclusiveOption_ = null;
+      }
+      return travixExclusiveOptionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

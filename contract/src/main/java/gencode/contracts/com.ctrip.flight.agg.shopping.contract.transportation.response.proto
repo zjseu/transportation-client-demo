@@ -5,6 +5,7 @@ import "BaijiCommonTypes.proto";
 import "com.ctrip.flight.agg.shopping.contract.transportation.proto";
 import "com.ctrip.flight.agg.shopping.contract.message.proto";
 import "com.ctrip.flight.agg.shopping.contract.baggage.proto";
+import "com.ctrip.flight.agg.shopping.contract.transportation.travix.proto";
 option java_package = "com.ctrip.flight.agg.shopping.contract.transportation.response";
 option java_multiple_files = true;
 
@@ -66,6 +67,8 @@ message DataListsType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;
     // 下单用预订信息
     BookingReferenceType BookingReference = 12;
+    // AdditionalExtention,for travix sfd etc
+    repeated AdditionalExtentionType AdditionalExtention = 13;
 }
 
 message MetaDataType {
@@ -284,6 +287,9 @@ message FlightProductType {
 
     // 会员挑战赛信息
     repeated MembershipChallengeType MembershipChallenge = 38;
+
+    // for travix
+    com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;
 }
 
 message MembershipChallengeType {
@@ -708,4 +714,13 @@ message CombinationUnitType {
     int32 AgeType = 2;
     // 可用人数
     int32 Count = 3;
+}
+
+message AdditionalExtentionType {
+    // RefNum
+    int32 RefNum = 1;
+    // content
+    string Content = 2;
+    // SfdResponse etc
+    string Type = 3;
 }

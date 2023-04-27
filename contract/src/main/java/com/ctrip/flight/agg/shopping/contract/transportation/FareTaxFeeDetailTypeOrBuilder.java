@@ -3,23 +3,30 @@
 
 package com.ctrip.flight.agg.shopping.contract.transportation;
 
-public interface TaxDetailTypeOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType)
+public interface FareTaxFeeDetailTypeOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   * 类型,1:机建  2:燃油
-   * type,1:airport construction fee  2:fuel surcharge
+   * type such as:YQ、YR、E7、G8、TS
    * </pre>
    *
-   * <code>int32 Type = 1;</code>
+   * <code>string Type = 1;</code>
    */
-  int getType();
+  java.lang.String getType();
+  /**
+   * <pre>
+   * type such as:YQ、YR、E7、G8、TS
+   * </pre>
+   *
+   * <code>string Type = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
 
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *
@@ -28,7 +35,6 @@ public interface TaxDetailTypeOrBuilder extends
   boolean hasAmount();
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *
@@ -37,7 +43,6 @@ public interface TaxDetailTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount();
   /**
    * <pre>
-   * 金额
    * amount
    * </pre>
    *

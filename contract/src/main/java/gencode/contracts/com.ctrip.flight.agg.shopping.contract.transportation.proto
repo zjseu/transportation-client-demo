@@ -139,7 +139,7 @@ message FlightSaleCurrencyPriceDetailType {
     repeated ServiceFeeType ServiceFee = 7;
     // 机酒专享政策优惠金额（与外放最低价价差）
     double FlightHotelDiscountAmount = 8;
-    // 税费详情
+    // Tax detail for display
     repeated TaxDetailType TaxDetail = 9;
     // 结算底价，不含后返, 等于国内的SettlementCostPrice
     double AccountPrice = 10;
@@ -147,6 +147,8 @@ message FlightSaleCurrencyPriceDetailType {
     double NetPrice = 11;
     // 相对于基准运价的差价，用于权益卡等场景
     double SpecialOfferDiffAmount = 12;
+    // Tax fee detail based on fare
+    repeated FareTaxFeeDetailType FareTaxFeeDetail = 13;
 }
 
 // 结算币种的价格信息
@@ -167,8 +169,10 @@ message FlightSettlementCurrencyPriceDetailType {
     double ExchangeRate = 7;
     // 结算币种的服务费明细列表
     repeated ServiceFeeType ServiceFee = 8;
-    // 税费详情
+    // Tax detail for display
     repeated TaxDetailType TaxDetail = 9;
+    // Tax fee detail based on fare
+    repeated FareTaxFeeDetailType FareTaxFeeDetail = 10;
 }
 
 message RebateType {
@@ -1042,9 +1046,18 @@ message RoomType {
 }
 
 message TaxDetailType {
-    // 类型，1：机建 2：燃油
+    // 类型,1:机建  2:燃油
+    // type,1:airport construction fee  2:fuel surcharge
     int32 Type = 1;
     // 金额
+    // amount
+    AmountType Amount = 2;
+}
+
+message FareTaxFeeDetailType {
+    // type such as:YQ、YR、E7、G8、TS
+    string Type = 1;
+    // amount
     AmountType Amount = 2;
 }
 

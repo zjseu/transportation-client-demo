@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     creditCardPaymentLimit_ = java.util.Collections.emptyList();
     textRemark_ = java.util.Collections.emptyList();
     paymentDiscount_ = java.util.Collections.emptyList();
+    additionalExtention_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -168,6 +169,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              additionalExtention_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            additionalExtention_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -212,6 +222,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         paymentDiscount_ = java.util.Collections.unmodifiableList(paymentDiscount_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        additionalExtention_ = java.util.Collections.unmodifiableList(additionalExtention_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -847,6 +860,61 @@ private static final long serialVersionUID = 0L;
     return getBookingReference();
   }
 
+  public static final int ADDITIONALEXTENTION_FIELD_NUMBER = 13;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> additionalExtention_;
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> getAdditionalExtentionList() {
+    return additionalExtention_;
+  }
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> 
+      getAdditionalExtentionOrBuilderList() {
+    return additionalExtention_;
+  }
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  public int getAdditionalExtentionCount() {
+    return additionalExtention_.size();
+  }
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getAdditionalExtention(int index) {
+    return additionalExtention_.get(index);
+  }
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder getAdditionalExtentionOrBuilder(
+      int index) {
+    return additionalExtention_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -896,6 +964,9 @@ private static final long serialVersionUID = 0L;
     }
     if (bookingReference_ != null) {
       output.writeMessage(12, getBookingReference());
+    }
+    for (int i = 0; i < additionalExtention_.size(); i++) {
+      output.writeMessage(13, additionalExtention_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -954,6 +1025,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getBookingReference());
     }
+    for (int i = 0; i < additionalExtention_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, additionalExtention_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1000,6 +1075,8 @@ private static final long serialVersionUID = 0L;
       result = result && getBookingReference()
           .equals(other.getBookingReference());
     }
+    result = result && getAdditionalExtentionList()
+        .equals(other.getAdditionalExtentionList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1058,6 +1135,10 @@ private static final long serialVersionUID = 0L;
     if (hasBookingReference()) {
       hash = (37 * hash) + BOOKINGREFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getBookingReference().hashCode();
+    }
+    if (getAdditionalExtentionCount() > 0) {
+      hash = (37 * hash) + ADDITIONALEXTENTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalExtentionList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1197,6 +1278,7 @@ private static final long serialVersionUID = 0L;
         getCreditCardPaymentLimitFieldBuilder();
         getTextRemarkFieldBuilder();
         getPaymentDiscountFieldBuilder();
+        getAdditionalExtentionFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1273,6 +1355,12 @@ private static final long serialVersionUID = 0L;
       } else {
         bookingReference_ = null;
         bookingReferenceBuilder_ = null;
+      }
+      if (additionalExtentionBuilder_ == null) {
+        additionalExtention_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        additionalExtentionBuilder_.clear();
       }
       return this;
     }
@@ -1401,6 +1489,15 @@ private static final long serialVersionUID = 0L;
         result.bookingReference_ = bookingReference_;
       } else {
         result.bookingReference_ = bookingReferenceBuilder_.build();
+      }
+      if (additionalExtentionBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          additionalExtention_ = java.util.Collections.unmodifiableList(additionalExtention_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.additionalExtention_ = additionalExtention_;
+      } else {
+        result.additionalExtention_ = additionalExtentionBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1716,6 +1813,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBookingReference()) {
         mergeBookingReference(other.getBookingReference());
+      }
+      if (additionalExtentionBuilder_ == null) {
+        if (!other.additionalExtention_.isEmpty()) {
+          if (additionalExtention_.isEmpty()) {
+            additionalExtention_ = other.additionalExtention_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureAdditionalExtentionIsMutable();
+            additionalExtention_.addAll(other.additionalExtention_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalExtention_.isEmpty()) {
+          if (additionalExtentionBuilder_.isEmpty()) {
+            additionalExtentionBuilder_.dispose();
+            additionalExtentionBuilder_ = null;
+            additionalExtention_ = other.additionalExtention_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            additionalExtentionBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAdditionalExtentionFieldBuilder() : null;
+          } else {
+            additionalExtentionBuilder_.addAllMessages(other.additionalExtention_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5171,6 +5294,318 @@ private static final long serialVersionUID = 0L;
         bookingReference_ = null;
       }
       return bookingReferenceBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> additionalExtention_ =
+      java.util.Collections.emptyList();
+    private void ensureAdditionalExtentionIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        additionalExtention_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType>(additionalExtention_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> additionalExtentionBuilder_;
+
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> getAdditionalExtentionList() {
+      if (additionalExtentionBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalExtention_);
+      } else {
+        return additionalExtentionBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public int getAdditionalExtentionCount() {
+      if (additionalExtentionBuilder_ == null) {
+        return additionalExtention_.size();
+      } else {
+        return additionalExtentionBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getAdditionalExtention(int index) {
+      if (additionalExtentionBuilder_ == null) {
+        return additionalExtention_.get(index);
+      } else {
+        return additionalExtentionBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder setAdditionalExtention(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType value) {
+      if (additionalExtentionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.set(index, value);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder setAdditionalExtention(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder builderForValue) {
+      if (additionalExtentionBuilder_ == null) {
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder addAdditionalExtention(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType value) {
+      if (additionalExtentionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.add(value);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder addAdditionalExtention(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType value) {
+      if (additionalExtentionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.add(index, value);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder addAdditionalExtention(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder builderForValue) {
+      if (additionalExtentionBuilder_ == null) {
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder addAdditionalExtention(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder builderForValue) {
+      if (additionalExtentionBuilder_ == null) {
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder addAllAdditionalExtention(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> values) {
+      if (additionalExtentionBuilder_ == null) {
+        ensureAdditionalExtentionIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, additionalExtention_);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder clearAdditionalExtention() {
+      if (additionalExtentionBuilder_ == null) {
+        additionalExtention_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public Builder removeAdditionalExtention(int index) {
+      if (additionalExtentionBuilder_ == null) {
+        ensureAdditionalExtentionIsMutable();
+        additionalExtention_.remove(index);
+        onChanged();
+      } else {
+        additionalExtentionBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder getAdditionalExtentionBuilder(
+        int index) {
+      return getAdditionalExtentionFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder getAdditionalExtentionOrBuilder(
+        int index) {
+      if (additionalExtentionBuilder_ == null) {
+        return additionalExtention_.get(index);  } else {
+        return additionalExtentionBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> 
+         getAdditionalExtentionOrBuilderList() {
+      if (additionalExtentionBuilder_ != null) {
+        return additionalExtentionBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalExtention_);
+      }
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder addAdditionalExtentionBuilder() {
+      return getAdditionalExtentionFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder addAdditionalExtentionBuilder(
+        int index) {
+      return getAdditionalExtentionFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * AdditionalExtention,for travix sfd etc
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder> 
+         getAdditionalExtentionBuilderList() {
+      return getAdditionalExtentionFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> 
+        getAdditionalExtentionFieldBuilder() {
+      if (additionalExtentionBuilder_ == null) {
+        additionalExtentionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder>(
+                additionalExtention_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        additionalExtention_ = null;
+      }
+      return additionalExtentionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

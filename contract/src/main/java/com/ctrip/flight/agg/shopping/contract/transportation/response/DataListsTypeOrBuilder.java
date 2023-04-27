@@ -496,4 +496,48 @@ public interface DataListsTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceType BookingReference = 12;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.BookingReferenceTypeOrBuilder getBookingReferenceOrBuilder();
+
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> 
+      getAdditionalExtentionList();
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getAdditionalExtention(int index);
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  int getAdditionalExtentionCount();
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> 
+      getAdditionalExtentionOrBuilderList();
+  /**
+   * <pre>
+   * AdditionalExtention,for travix sfd etc
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder getAdditionalExtentionOrBuilder(
+      int index);
 }

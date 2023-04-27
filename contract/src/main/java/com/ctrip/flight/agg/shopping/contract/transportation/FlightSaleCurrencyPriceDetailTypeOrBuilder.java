@@ -183,7 +183,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
 
   /**
    * <pre>
-   * 税费详情
+   * Tax detail for display
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
@@ -192,7 +192,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
       getTaxDetailList();
   /**
    * <pre>
-   * 税费详情
+   * Tax detail for display
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
@@ -200,7 +200,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
   com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType getTaxDetail(int index);
   /**
    * <pre>
-   * 税费详情
+   * Tax detail for display
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
@@ -208,7 +208,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
   int getTaxDetailCount();
   /**
    * <pre>
-   * 税费详情
+   * Tax detail for display
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
@@ -217,7 +217,7 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
       getTaxDetailOrBuilderList();
   /**
    * <pre>
-   * 税费详情
+   * Tax detail for display
    * </pre>
    *
    * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType TaxDetail = 9;</code>
@@ -251,4 +251,48 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
    * <code>double SpecialOfferDiffAmount = 12;</code>
    */
   double getSpecialOfferDiffAmount();
+
+  /**
+   * <pre>
+   * Tax fee detail based on fare
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType FareTaxFeeDetail = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType> 
+      getFareTaxFeeDetailList();
+  /**
+   * <pre>
+   * Tax fee detail based on fare
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType FareTaxFeeDetail = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType getFareTaxFeeDetail(int index);
+  /**
+   * <pre>
+   * Tax fee detail based on fare
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType FareTaxFeeDetail = 13;</code>
+   */
+  int getFareTaxFeeDetailCount();
+  /**
+   * <pre>
+   * Tax fee detail based on fare
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType FareTaxFeeDetail = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailTypeOrBuilder> 
+      getFareTaxFeeDetailOrBuilderList();
+  /**
+   * <pre>
+   * Tax fee detail based on fare
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType FareTaxFeeDetail = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailTypeOrBuilder getFareTaxFeeDetailOrBuilder(
+      int index);
 }

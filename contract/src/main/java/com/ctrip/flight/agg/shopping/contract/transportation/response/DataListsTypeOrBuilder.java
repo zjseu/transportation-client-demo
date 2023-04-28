@@ -499,45 +499,45 @@ public interface DataListsTypeOrBuilder extends
 
   /**
    * <pre>
-   * AdditionalExtention,for travix sfd etc
+   * AdditionalExtension,for travix sfd etc
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType AdditionalExtension = 13;</code>
    */
-  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType> 
-      getAdditionalExtentionList();
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType> 
+      getAdditionalExtensionList();
   /**
    * <pre>
-   * AdditionalExtention,for travix sfd etc
+   * AdditionalExtension,for travix sfd etc
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType AdditionalExtension = 13;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getAdditionalExtention(int index);
+  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType getAdditionalExtension(int index);
   /**
    * <pre>
-   * AdditionalExtention,for travix sfd etc
+   * AdditionalExtension,for travix sfd etc
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType AdditionalExtension = 13;</code>
    */
-  int getAdditionalExtentionCount();
+  int getAdditionalExtensionCount();
   /**
    * <pre>
-   * AdditionalExtention,for travix sfd etc
+   * AdditionalExtension,for travix sfd etc
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType AdditionalExtension = 13;</code>
    */
-  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder> 
-      getAdditionalExtentionOrBuilderList();
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionTypeOrBuilder> 
+      getAdditionalExtensionOrBuilderList();
   /**
    * <pre>
-   * AdditionalExtention,for travix sfd etc
+   * AdditionalExtension,for travix sfd etc
    * </pre>
    *
-   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType AdditionalExtention = 13;</code>
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType AdditionalExtension = 13;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder getAdditionalExtentionOrBuilder(
+  com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionTypeOrBuilder getAdditionalExtensionOrBuilder(
       int index);
 }

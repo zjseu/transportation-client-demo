@@ -67,8 +67,8 @@ message DataListsType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.PaymentDiscountType PaymentDiscount = 11;
     // 下单用预订信息
     BookingReferenceType BookingReference = 12;
-    // AdditionalExtention,for travix sfd etc
-    repeated AdditionalExtentionType AdditionalExtention = 13;
+    // AdditionalExtension,for travix sfd etc
+    repeated AdditionalExtensionType AdditionalExtension = 13;
 }
 
 message MetaDataType {
@@ -716,7 +716,7 @@ message CombinationUnitType {
     int32 Count = 3;
 }
 
-message AdditionalExtentionType {
+message AdditionalExtensionType {
     // RefNum
     int32 RefNum = 1;
     // content

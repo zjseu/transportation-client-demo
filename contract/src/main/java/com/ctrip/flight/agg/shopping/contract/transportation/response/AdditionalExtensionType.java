@@ -4,18 +4,18 @@
 package com.ctrip.flight.agg.shopping.contract.transportation.response;
 
 /**
- * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType}
+ * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType}
  */
-public  final class AdditionalExtentionType extends
+public  final class AdditionalExtensionType extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)
-    AdditionalExtentionTypeOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)
+    AdditionalExtensionTypeOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use AdditionalExtentionType.newBuilder() to construct.
-  private AdditionalExtentionType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AdditionalExtensionType.newBuilder() to construct.
+  private AdditionalExtensionType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AdditionalExtentionType() {
+  private AdditionalExtensionType() {
     refNum_ = 0;
     content_ = "";
     type_ = "";
@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private AdditionalExtentionType(
+  private AdditionalExtensionType(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -83,15 +83,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtentionType_descriptor;
+    return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtensionType_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtentionType_fieldAccessorTable
+    return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtensionType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder.class);
+            com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.Builder.class);
   }
 
   public static final int REFNUM_FIELD_NUMBER = 1;
@@ -243,10 +243,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)) {
+    if (!(obj instanceof com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)) {
       return super.equals(obj);
     }
-    com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType other = (com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType) obj;
+    com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType other = (com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType) obj;
 
     boolean result = true;
     result = result && (getRefNum()
@@ -277,69 +277,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(byte[] data)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(java.io.InputStream input)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseDelimitedFrom(java.io.InputStream input)
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseDelimitedFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parseFrom(
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -352,7 +352,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType prototype) {
+  public static Builder newBuilder(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -368,26 +368,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType}
+   * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)
-      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionTypeOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)
+      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionTypeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtentionType_descriptor;
+      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtensionType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtentionType_fieldAccessorTable
+      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtensionType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.Builder.class);
+              com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.Builder.class);
     }
 
-    // Construct using com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.newBuilder()
+    // Construct using com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -417,17 +417,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtentionType_descriptor;
+      return com.ctrip.flight.agg.shopping.contract.transportation.response.ComCtripFlightAggShoppingContractTransportationResponse.internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_AdditionalExtensionType_descriptor;
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getDefaultInstanceForType() {
-      return com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.getDefaultInstance();
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType getDefaultInstanceForType() {
+      return com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType build() {
-      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType result = buildPartial();
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType build() {
+      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -435,8 +435,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType buildPartial() {
-      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType(this);
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType buildPartial() {
+      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType(this);
       result.refNum_ = refNum_;
       result.content_ = content_;
       result.type_ = type_;
@@ -478,16 +478,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType) {
-        return mergeFrom((com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)other);
+      if (other instanceof com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType) {
+        return mergeFrom((com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType other) {
-      if (other == com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType other) {
+      if (other == com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType.getDefaultInstance()) return this;
       if (other.getRefNum() != 0) {
         setRefNum(other.getRefNum());
       }
@@ -514,11 +514,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType parsedMessage = null;
+      com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType) e.getUnfinishedMessage();
+        parsedMessage = (com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -756,41 +756,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)
+    // @@protoc_insertion_point(builder_scope:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)
   }
 
-  // @@protoc_insertion_point(class_scope:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)
-  private static final com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)
+  private static final com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType();
+    DEFAULT_INSTANCE = new com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType();
   }
 
-  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getDefaultInstance() {
+  public static com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AdditionalExtentionType>
-      PARSER = new com.google.protobuf.AbstractParser<AdditionalExtentionType>() {
+  private static final com.google.protobuf.Parser<AdditionalExtensionType>
+      PARSER = new com.google.protobuf.AbstractParser<AdditionalExtensionType>() {
     @java.lang.Override
-    public AdditionalExtentionType parsePartialFrom(
+    public AdditionalExtensionType parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AdditionalExtentionType(input, extensionRegistry);
+      return new AdditionalExtensionType(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<AdditionalExtentionType> parser() {
+  public static com.google.protobuf.Parser<AdditionalExtensionType> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AdditionalExtentionType> getParserForType() {
+  public com.google.protobuf.Parser<AdditionalExtensionType> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType getDefaultInstanceForType() {
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

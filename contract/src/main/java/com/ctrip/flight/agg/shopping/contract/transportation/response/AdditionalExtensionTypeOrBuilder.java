@@ -3,8 +3,8 @@
 
 package com.ctrip.flight.agg.shopping.contract.transportation.response;
 
-public interface AdditionalExtentionTypeOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtentionType)
+public interface AdditionalExtensionTypeOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionType)
     com.google.protobuf.MessageOrBuilder {
 
   /**

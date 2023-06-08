@@ -43,6 +43,8 @@ private static final long serialVersionUID = 0L;
     memberRegisters_ = java.util.Collections.emptyList();
     applySuccessRate_ = 0D;
     membershipChallenge_ = java.util.Collections.emptyList();
+    travixSFDTokenRef_ = 0;
+    travixExclusiveOptionRef_ = 0;
   }
 
   @java.lang.Override
@@ -432,17 +434,14 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.MembershipChallengeType.parser(), extensionRegistry));
             break;
           }
-          case 314: {
-            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder subBuilder = null;
-            if (travixExclusiveOption_ != null) {
-              subBuilder = travixExclusiveOption_.toBuilder();
-            }
-            travixExclusiveOption_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(travixExclusiveOption_);
-              travixExclusiveOption_ = subBuilder.buildPartial();
-            }
+          case 312: {
 
+            travixSFDTokenRef_ = input.readInt32();
+            break;
+          }
+          case 320: {
+
+            travixExclusiveOptionRef_ = input.readInt32();
             break;
           }
           default: {
@@ -1772,37 +1771,30 @@ private static final long serialVersionUID = 0L;
     return membershipChallenge_.get(index);
   }
 
-  public static final int TRAVIXEXCLUSIVEOPTION_FIELD_NUMBER = 39;
-  private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType travixExclusiveOption_;
+  public static final int TRAVIXSFDTOKENREF_FIELD_NUMBER = 39;
+  private int travixSFDTokenRef_;
   /**
    * <pre>
-   * for travix
+   * ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   * <code>int32 TravixSFDTokenRef = 39;</code>
    */
-  public boolean hasTravixExclusiveOption() {
-    return travixExclusiveOption_ != null;
+  public int getTravixSFDTokenRef() {
+    return travixSFDTokenRef_;
   }
+
+  public static final int TRAVIXEXCLUSIVEOPTIONREF_FIELD_NUMBER = 40;
+  private int travixExclusiveOptionRef_;
   /**
    * <pre>
-   * for travix
+   *  ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   * <code>int32 TravixExclusiveOptionRef = 40;</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption() {
-    return travixExclusiveOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
-  }
-  /**
-   * <pre>
-   * for travix
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-   */
-  public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder() {
-    return getTravixExclusiveOption();
+  public int getTravixExclusiveOptionRef() {
+    return travixExclusiveOptionRef_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1938,8 +1930,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < membershipChallenge_.size(); i++) {
       output.writeMessage(38, membershipChallenge_.get(i));
     }
-    if (travixExclusiveOption_ != null) {
-      output.writeMessage(39, getTravixExclusiveOption());
+    if (travixSFDTokenRef_ != 0) {
+      output.writeInt32(39, travixSFDTokenRef_);
+    }
+    if (travixExclusiveOptionRef_ != 0) {
+      output.writeInt32(40, travixExclusiveOptionRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -2116,9 +2111,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(38, membershipChallenge_.get(i));
     }
-    if (travixExclusiveOption_ != null) {
+    if (travixSFDTokenRef_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(39, getTravixExclusiveOption());
+        .computeInt32Size(39, travixSFDTokenRef_);
+    }
+    if (travixExclusiveOptionRef_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(40, travixExclusiveOptionRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2259,11 +2258,10 @@ private static final long serialVersionUID = 0L;
             other.getApplySuccessRate()));
     result = result && getMembershipChallengeList()
         .equals(other.getMembershipChallengeList());
-    result = result && (hasTravixExclusiveOption() == other.hasTravixExclusiveOption());
-    if (hasTravixExclusiveOption()) {
-      result = result && getTravixExclusiveOption()
-          .equals(other.getTravixExclusiveOption());
-    }
+    result = result && (getTravixSFDTokenRef()
+        == other.getTravixSFDTokenRef());
+    result = result && (getTravixExclusiveOptionRef()
+        == other.getTravixExclusiveOptionRef());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2400,10 +2398,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MEMBERSHIPCHALLENGE_FIELD_NUMBER;
       hash = (53 * hash) + getMembershipChallengeList().hashCode();
     }
-    if (hasTravixExclusiveOption()) {
-      hash = (37 * hash) + TRAVIXEXCLUSIVEOPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getTravixExclusiveOption().hashCode();
-    }
+    hash = (37 * hash) + TRAVIXSFDTOKENREF_FIELD_NUMBER;
+    hash = (53 * hash) + getTravixSFDTokenRef();
+    hash = (37 * hash) + TRAVIXEXCLUSIVEOPTIONREF_FIELD_NUMBER;
+    hash = (53 * hash) + getTravixExclusiveOptionRef();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2707,12 +2705,10 @@ private static final long serialVersionUID = 0L;
       } else {
         membershipChallengeBuilder_.clear();
       }
-      if (travixExclusiveOptionBuilder_ == null) {
-        travixExclusiveOption_ = null;
-      } else {
-        travixExclusiveOption_ = null;
-        travixExclusiveOptionBuilder_ = null;
-      }
+      travixSFDTokenRef_ = 0;
+
+      travixExclusiveOptionRef_ = 0;
+
       return this;
     }
 
@@ -2900,11 +2896,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.membershipChallenge_ = membershipChallengeBuilder_.build();
       }
-      if (travixExclusiveOptionBuilder_ == null) {
-        result.travixExclusiveOption_ = travixExclusiveOption_;
-      } else {
-        result.travixExclusiveOption_ = travixExclusiveOptionBuilder_.build();
-      }
+      result.travixSFDTokenRef_ = travixSFDTokenRef_;
+      result.travixExclusiveOptionRef_ = travixExclusiveOptionRef_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -3231,8 +3224,11 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.hasTravixExclusiveOption()) {
-        mergeTravixExclusiveOption(other.getTravixExclusiveOption());
+      if (other.getTravixSFDTokenRef() != 0) {
+        setTravixSFDTokenRef(other.getTravixSFDTokenRef());
+      }
+      if (other.getTravixExclusiveOptionRef() != 0) {
+        setTravixExclusiveOptionRef(other.getTravixExclusiveOptionRef());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8579,157 +8575,80 @@ private static final long serialVersionUID = 0L;
       return membershipChallengeBuilder_;
     }
 
-    private com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType travixExclusiveOption_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder> travixExclusiveOptionBuilder_;
+    private int travixSFDTokenRef_ ;
     /**
      * <pre>
-     * for travix
+     * ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     * <code>int32 TravixSFDTokenRef = 39;</code>
      */
-    public boolean hasTravixExclusiveOption() {
-      return travixExclusiveOptionBuilder_ != null || travixExclusiveOption_ != null;
+    public int getTravixSFDTokenRef() {
+      return travixSFDTokenRef_;
     }
     /**
      * <pre>
-     * for travix
+     * ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     * <code>int32 TravixSFDTokenRef = 39;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption() {
-      if (travixExclusiveOptionBuilder_ == null) {
-        return travixExclusiveOption_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
-      } else {
-        return travixExclusiveOptionBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * for travix
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-     */
-    public Builder setTravixExclusiveOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType value) {
-      if (travixExclusiveOptionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        travixExclusiveOption_ = value;
-        onChanged();
-      } else {
-        travixExclusiveOptionBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * for travix
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-     */
-    public Builder setTravixExclusiveOption(
-        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder builderForValue) {
-      if (travixExclusiveOptionBuilder_ == null) {
-        travixExclusiveOption_ = builderForValue.build();
-        onChanged();
-      } else {
-        travixExclusiveOptionBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * for travix
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-     */
-    public Builder mergeTravixExclusiveOption(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType value) {
-      if (travixExclusiveOptionBuilder_ == null) {
-        if (travixExclusiveOption_ != null) {
-          travixExclusiveOption_ =
-            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.newBuilder(travixExclusiveOption_).mergeFrom(value).buildPartial();
-        } else {
-          travixExclusiveOption_ = value;
-        }
-        onChanged();
-      } else {
-        travixExclusiveOptionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * for travix
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-     */
-    public Builder clearTravixExclusiveOption() {
-      if (travixExclusiveOptionBuilder_ == null) {
-        travixExclusiveOption_ = null;
-        onChanged();
-      } else {
-        travixExclusiveOption_ = null;
-        travixExclusiveOptionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * for travix
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder getTravixExclusiveOptionBuilder() {
+    public Builder setTravixSFDTokenRef(int value) {
       
+      travixSFDTokenRef_ = value;
       onChanged();
-      return getTravixExclusiveOptionFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * for travix
+     * ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     * <code>int32 TravixSFDTokenRef = 39;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder() {
-      if (travixExclusiveOptionBuilder_ != null) {
-        return travixExclusiveOptionBuilder_.getMessageOrBuilder();
-      } else {
-        return travixExclusiveOption_ == null ?
-            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance() : travixExclusiveOption_;
-      }
+    public Builder clearTravixSFDTokenRef() {
+      
+      travixSFDTokenRef_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int travixExclusiveOptionRef_ ;
+    /**
+     * <pre>
+     *  ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
+     * </pre>
+     *
+     * <code>int32 TravixExclusiveOptionRef = 40;</code>
+     */
+    public int getTravixExclusiveOptionRef() {
+      return travixExclusiveOptionRef_;
     }
     /**
      * <pre>
-     * for travix
+     *  ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+     * <code>int32 TravixExclusiveOptionRef = 40;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder> 
-        getTravixExclusiveOptionFieldBuilder() {
-      if (travixExclusiveOptionBuilder_ == null) {
-        travixExclusiveOptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder>(
-                getTravixExclusiveOption(),
-                getParentForChildren(),
-                isClean());
-        travixExclusiveOption_ = null;
-      }
-      return travixExclusiveOptionBuilder_;
+    public Builder setTravixExclusiveOptionRef(int value) {
+      
+      travixExclusiveOptionRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *  ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
+     * </pre>
+     *
+     * <code>int32 TravixExclusiveOptionRef = 40;</code>
+     */
+    public Builder clearTravixExclusiveOptionRef() {
+      
+      travixExclusiveOptionRef_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

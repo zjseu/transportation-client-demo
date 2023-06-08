@@ -540,4 +540,48 @@ public interface DataListsTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.AdditionalExtensionTypeOrBuilder getAdditionalExtensionOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * TravixExclusiveOption, for travix fare information
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType> 
+      getTravixExclusiveOptionList();
+  /**
+   * <pre>
+   * TravixExclusiveOption, for travix fare information
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption(int index);
+  /**
+   * <pre>
+   * TravixExclusiveOption, for travix fare information
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;</code>
+   */
+  int getTravixExclusiveOptionCount();
+  /**
+   * <pre>
+   * TravixExclusiveOption, for travix fare information
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder> 
+      getTravixExclusiveOptionOrBuilderList();
+  /**
+   * <pre>
+   * TravixExclusiveOption, for travix fare information
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder(
+      int index);
 }

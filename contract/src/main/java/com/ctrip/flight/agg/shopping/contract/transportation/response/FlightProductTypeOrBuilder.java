@@ -924,26 +924,19 @@ public interface FlightProductTypeOrBuilder extends
 
   /**
    * <pre>
-   * for travix
+   * ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   * <code>int32 TravixSFDTokenRef = 39;</code>
    */
-  boolean hasTravixExclusiveOption();
+  int getTravixSFDTokenRef();
+
   /**
    * <pre>
-   * for travix
+   *  ref -&gt; SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
+   * <code>int32 TravixExclusiveOptionRef = 40;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType getTravixExclusiveOption();
-  /**
-   * <pre>
-   * for travix
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;</code>
-   */
-  com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder();
+  int getTravixExclusiveOptionRef();
 }

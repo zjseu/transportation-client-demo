@@ -9,8 +9,8 @@ public interface TaxDetailTypeOrBuilder extends
 
   /**
    * <pre>
-   * 类型,1:机建  2:燃油
-   * type,1:airport construction fee  2:fuel surcharge
+   * 类型: 0:其他 1:机建  2:燃油
+   * type： 0:others 1:airport construction fee  2:fuel surcharge
    * </pre>
    *
    * <code>int32 Type = 1;</code>

@@ -17,8 +17,33 @@ message JourneyOptionType {
 }
 
 message TravixExclusiveOptionType {
-    // Ref to SearchResponseType->ResponseBody->DataLists->AdditionalExtention->RefNum
-    int32 SfdResponseRef = 1;
-    // Index of sfd action
-    int32 SfdActionIndex = 2;
+    // Ref to SearchResponseType->ResponseBody->DataLists->TravixExclusiveOption->RefNum
+    /**
+    * ref num
+    */
+    int32 RefNum = 1;
+    /**
+     * Freight source, Currently only :1A TF
+     */
+    string Provider = 2;
+
+    /**
+     * acocunt Code
+     */
+    string GdsAccountCode = 3;
+
+    /**
+     * travix point of sale
+     */
+    string PointOfSale = 4;
+
+    /**
+     * supplier
+     */
+    string Consolidator = 5;
+
+    /**
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     */
+    string ContentType = 6;
 }

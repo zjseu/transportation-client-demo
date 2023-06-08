@@ -4,6 +4,10 @@
 package com.ctrip.flight.agg.shopping.contract.transportation.travix;
 
 /**
+ * <pre>
+ * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
+ * </pre>
+ *
  * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType}
  */
 public  final class TravixExclusiveOptionType extends
@@ -16,8 +20,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TravixExclusiveOptionType() {
-    sfdResponseRef_ = 0;
-    sfdActionIndex_ = 0;
+    refNum_ = 0;
+    provider_ = "";
+    gdsAccountCode_ = "";
+    pointOfSale_ = "";
+    consolidator_ = "";
+    contentType_ = "";
   }
 
   @java.lang.Override
@@ -46,12 +54,37 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            sfdResponseRef_ = input.readInt32();
+            refNum_ = input.readInt32();
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            sfdActionIndex_ = input.readInt32();
+            provider_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            gdsAccountCode_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pointOfSale_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            consolidator_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            contentType_ = s;
             break;
           }
           default: {
@@ -86,30 +119,238 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.class, com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.Builder.class);
   }
 
-  public static final int SFDRESPONSEREF_FIELD_NUMBER = 1;
-  private int sfdResponseRef_;
+  public static final int REFNUM_FIELD_NUMBER = 1;
+  private int refNum_;
   /**
    * <pre>
-   * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
+   **
+   * ref num
    * </pre>
    *
-   * <code>int32 SfdResponseRef = 1;</code>
+   * <code>int32 RefNum = 1;</code>
    */
-  public int getSfdResponseRef() {
-    return sfdResponseRef_;
+  public int getRefNum() {
+    return refNum_;
   }
 
-  public static final int SFDACTIONINDEX_FIELD_NUMBER = 2;
-  private int sfdActionIndex_;
+  public static final int PROVIDER_FIELD_NUMBER = 2;
+  private volatile java.lang.Object provider_;
   /**
    * <pre>
-   * Index of sfd action
+   **
+   * Freight source, Currently only :1A TF
    * </pre>
    *
-   * <code>int32 SfdActionIndex = 2;</code>
+   * <code>string Provider = 2;</code>
    */
-  public int getSfdActionIndex() {
-    return sfdActionIndex_;
+  public java.lang.String getProvider() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * Freight source, Currently only :1A TF
+   * </pre>
+   *
+   * <code>string Provider = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getProviderBytes() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      provider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GDSACCOUNTCODE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object gdsAccountCode_;
+  /**
+   * <pre>
+   **
+   * acocunt Code
+   * </pre>
+   *
+   * <code>string GdsAccountCode = 3;</code>
+   */
+  public java.lang.String getGdsAccountCode() {
+    java.lang.Object ref = gdsAccountCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gdsAccountCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * acocunt Code
+   * </pre>
+   *
+   * <code>string GdsAccountCode = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getGdsAccountCodeBytes() {
+    java.lang.Object ref = gdsAccountCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      gdsAccountCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int POINTOFSALE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object pointOfSale_;
+  /**
+   * <pre>
+   **
+   * travix point of sale
+   * </pre>
+   *
+   * <code>string PointOfSale = 4;</code>
+   */
+  public java.lang.String getPointOfSale() {
+    java.lang.Object ref = pointOfSale_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pointOfSale_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * travix point of sale
+   * </pre>
+   *
+   * <code>string PointOfSale = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPointOfSaleBytes() {
+    java.lang.Object ref = pointOfSale_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pointOfSale_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONSOLIDATOR_FIELD_NUMBER = 5;
+  private volatile java.lang.Object consolidator_;
+  /**
+   * <pre>
+   **
+   * supplier
+   * </pre>
+   *
+   * <code>string Consolidator = 5;</code>
+   */
+  public java.lang.String getConsolidator() {
+    java.lang.Object ref = consolidator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consolidator_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * supplier
+   * </pre>
+   *
+   * <code>string Consolidator = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getConsolidatorBytes() {
+    java.lang.Object ref = consolidator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      consolidator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTENTTYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object contentType_;
+  /**
+   * <pre>
+   **
+   * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+   * </pre>
+   *
+   * <code>string ContentType = 6;</code>
+   */
+  public java.lang.String getContentType() {
+    java.lang.Object ref = contentType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      contentType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   **
+   * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+   * </pre>
+   *
+   * <code>string ContentType = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getContentTypeBytes() {
+    java.lang.Object ref = contentType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      contentType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,11 +367,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (sfdResponseRef_ != 0) {
-      output.writeInt32(1, sfdResponseRef_);
+    if (refNum_ != 0) {
+      output.writeInt32(1, refNum_);
     }
-    if (sfdActionIndex_ != 0) {
-      output.writeInt32(2, sfdActionIndex_);
+    if (!getProviderBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, provider_);
+    }
+    if (!getGdsAccountCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gdsAccountCode_);
+    }
+    if (!getPointOfSaleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pointOfSale_);
+    }
+    if (!getConsolidatorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, consolidator_);
+    }
+    if (!getContentTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contentType_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,13 +394,24 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (sfdResponseRef_ != 0) {
+    if (refNum_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, sfdResponseRef_);
+        .computeInt32Size(1, refNum_);
     }
-    if (sfdActionIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, sfdActionIndex_);
+    if (!getProviderBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, provider_);
+    }
+    if (!getGdsAccountCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gdsAccountCode_);
+    }
+    if (!getPointOfSaleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pointOfSale_);
+    }
+    if (!getConsolidatorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, consolidator_);
+    }
+    if (!getContentTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contentType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -165,10 +429,18 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType other = (com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType) obj;
 
     boolean result = true;
-    result = result && (getSfdResponseRef()
-        == other.getSfdResponseRef());
-    result = result && (getSfdActionIndex()
-        == other.getSfdActionIndex());
+    result = result && (getRefNum()
+        == other.getRefNum());
+    result = result && getProvider()
+        .equals(other.getProvider());
+    result = result && getGdsAccountCode()
+        .equals(other.getGdsAccountCode());
+    result = result && getPointOfSale()
+        .equals(other.getPointOfSale());
+    result = result && getConsolidator()
+        .equals(other.getConsolidator());
+    result = result && getContentType()
+        .equals(other.getContentType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -180,10 +452,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SFDRESPONSEREF_FIELD_NUMBER;
-    hash = (53 * hash) + getSfdResponseRef();
-    hash = (37 * hash) + SFDACTIONINDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getSfdActionIndex();
+    hash = (37 * hash) + REFNUM_FIELD_NUMBER;
+    hash = (53 * hash) + getRefNum();
+    hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+    hash = (53 * hash) + getProvider().hashCode();
+    hash = (37 * hash) + GDSACCOUNTCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getGdsAccountCode().hashCode();
+    hash = (37 * hash) + POINTOFSALE_FIELD_NUMBER;
+    hash = (53 * hash) + getPointOfSale().hashCode();
+    hash = (37 * hash) + CONSOLIDATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getConsolidator().hashCode();
+    hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getContentType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -280,6 +560,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;TravixExclusiveOption-&gt;RefNum
+   * </pre>
+   *
    * Protobuf type {@code com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType}
    */
   public static final class Builder extends
@@ -317,9 +601,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sfdResponseRef_ = 0;
+      refNum_ = 0;
 
-      sfdActionIndex_ = 0;
+      provider_ = "";
+
+      gdsAccountCode_ = "";
+
+      pointOfSale_ = "";
+
+      consolidator_ = "";
+
+      contentType_ = "";
 
       return this;
     }
@@ -347,8 +639,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType result = new com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType(this);
-      result.sfdResponseRef_ = sfdResponseRef_;
-      result.sfdActionIndex_ = sfdActionIndex_;
+      result.refNum_ = refNum_;
+      result.provider_ = provider_;
+      result.gdsAccountCode_ = gdsAccountCode_;
+      result.pointOfSale_ = pointOfSale_;
+      result.consolidator_ = consolidator_;
+      result.contentType_ = contentType_;
       onBuilt();
       return result;
     }
@@ -397,11 +693,28 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType other) {
       if (other == com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.getDefaultInstance()) return this;
-      if (other.getSfdResponseRef() != 0) {
-        setSfdResponseRef(other.getSfdResponseRef());
+      if (other.getRefNum() != 0) {
+        setRefNum(other.getRefNum());
       }
-      if (other.getSfdActionIndex() != 0) {
-        setSfdActionIndex(other.getSfdActionIndex());
+      if (!other.getProvider().isEmpty()) {
+        provider_ = other.provider_;
+        onChanged();
+      }
+      if (!other.getGdsAccountCode().isEmpty()) {
+        gdsAccountCode_ = other.gdsAccountCode_;
+        onChanged();
+      }
+      if (!other.getPointOfSale().isEmpty()) {
+        pointOfSale_ = other.pointOfSale_;
+        onChanged();
+      }
+      if (!other.getConsolidator().isEmpty()) {
+        consolidator_ = other.consolidator_;
+        onChanged();
+      }
+      if (!other.getContentType().isEmpty()) {
+        contentType_ = other.contentType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -432,78 +745,513 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int sfdResponseRef_ ;
+    private int refNum_ ;
     /**
      * <pre>
-     * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
+     **
+     * ref num
      * </pre>
      *
-     * <code>int32 SfdResponseRef = 1;</code>
+     * <code>int32 RefNum = 1;</code>
      */
-    public int getSfdResponseRef() {
-      return sfdResponseRef_;
+    public int getRefNum() {
+      return refNum_;
     }
     /**
      * <pre>
-     * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
+     **
+     * ref num
      * </pre>
      *
-     * <code>int32 SfdResponseRef = 1;</code>
+     * <code>int32 RefNum = 1;</code>
      */
-    public Builder setSfdResponseRef(int value) {
+    public Builder setRefNum(int value) {
       
-      sfdResponseRef_ = value;
+      refNum_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
+     **
+     * ref num
      * </pre>
      *
-     * <code>int32 SfdResponseRef = 1;</code>
+     * <code>int32 RefNum = 1;</code>
      */
-    public Builder clearSfdResponseRef() {
+    public Builder clearRefNum() {
       
-      sfdResponseRef_ = 0;
+      refNum_ = 0;
       onChanged();
       return this;
     }
 
-    private int sfdActionIndex_ ;
+    private java.lang.Object provider_ = "";
     /**
      * <pre>
-     * Index of sfd action
+     **
+     * Freight source, Currently only :1A TF
      * </pre>
      *
-     * <code>int32 SfdActionIndex = 2;</code>
+     * <code>string Provider = 2;</code>
      */
-    public int getSfdActionIndex() {
-      return sfdActionIndex_;
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * Index of sfd action
+     **
+     * Freight source, Currently only :1A TF
      * </pre>
      *
-     * <code>int32 SfdActionIndex = 2;</code>
+     * <code>string Provider = 2;</code>
      */
-    public Builder setSfdActionIndex(int value) {
-      
-      sfdActionIndex_ = value;
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * Freight source, Currently only :1A TF
+     * </pre>
+     *
+     * <code>string Provider = 2;</code>
+     */
+    public Builder setProvider(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      provider_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Index of sfd action
+     **
+     * Freight source, Currently only :1A TF
      * </pre>
      *
-     * <code>int32 SfdActionIndex = 2;</code>
+     * <code>string Provider = 2;</code>
      */
-    public Builder clearSfdActionIndex() {
+    public Builder clearProvider() {
       
-      sfdActionIndex_ = 0;
+      provider_ = getDefaultInstance().getProvider();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * Freight source, Currently only :1A TF
+     * </pre>
+     *
+     * <code>string Provider = 2;</code>
+     */
+    public Builder setProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      provider_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gdsAccountCode_ = "";
+    /**
+     * <pre>
+     **
+     * acocunt Code
+     * </pre>
+     *
+     * <code>string GdsAccountCode = 3;</code>
+     */
+    public java.lang.String getGdsAccountCode() {
+      java.lang.Object ref = gdsAccountCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gdsAccountCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * acocunt Code
+     * </pre>
+     *
+     * <code>string GdsAccountCode = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGdsAccountCodeBytes() {
+      java.lang.Object ref = gdsAccountCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gdsAccountCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * acocunt Code
+     * </pre>
+     *
+     * <code>string GdsAccountCode = 3;</code>
+     */
+    public Builder setGdsAccountCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      gdsAccountCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * acocunt Code
+     * </pre>
+     *
+     * <code>string GdsAccountCode = 3;</code>
+     */
+    public Builder clearGdsAccountCode() {
+      
+      gdsAccountCode_ = getDefaultInstance().getGdsAccountCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * acocunt Code
+     * </pre>
+     *
+     * <code>string GdsAccountCode = 3;</code>
+     */
+    public Builder setGdsAccountCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      gdsAccountCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pointOfSale_ = "";
+    /**
+     * <pre>
+     **
+     * travix point of sale
+     * </pre>
+     *
+     * <code>string PointOfSale = 4;</code>
+     */
+    public java.lang.String getPointOfSale() {
+      java.lang.Object ref = pointOfSale_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pointOfSale_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * travix point of sale
+     * </pre>
+     *
+     * <code>string PointOfSale = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPointOfSaleBytes() {
+      java.lang.Object ref = pointOfSale_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pointOfSale_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * travix point of sale
+     * </pre>
+     *
+     * <code>string PointOfSale = 4;</code>
+     */
+    public Builder setPointOfSale(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      pointOfSale_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * travix point of sale
+     * </pre>
+     *
+     * <code>string PointOfSale = 4;</code>
+     */
+    public Builder clearPointOfSale() {
+      
+      pointOfSale_ = getDefaultInstance().getPointOfSale();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * travix point of sale
+     * </pre>
+     *
+     * <code>string PointOfSale = 4;</code>
+     */
+    public Builder setPointOfSaleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      pointOfSale_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object consolidator_ = "";
+    /**
+     * <pre>
+     **
+     * supplier
+     * </pre>
+     *
+     * <code>string Consolidator = 5;</code>
+     */
+    public java.lang.String getConsolidator() {
+      java.lang.Object ref = consolidator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consolidator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * supplier
+     * </pre>
+     *
+     * <code>string Consolidator = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getConsolidatorBytes() {
+      java.lang.Object ref = consolidator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consolidator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * supplier
+     * </pre>
+     *
+     * <code>string Consolidator = 5;</code>
+     */
+    public Builder setConsolidator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      consolidator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * supplier
+     * </pre>
+     *
+     * <code>string Consolidator = 5;</code>
+     */
+    public Builder clearConsolidator() {
+      
+      consolidator_ = getDefaultInstance().getConsolidator();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * supplier
+     * </pre>
+     *
+     * <code>string Consolidator = 5;</code>
+     */
+    public Builder setConsolidatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      consolidator_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object contentType_ = "";
+    /**
+     * <pre>
+     **
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     * </pre>
+     *
+     * <code>string ContentType = 6;</code>
+     */
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     * </pre>
+     *
+     * <code>string ContentType = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentTypeBytes() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     **
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     * </pre>
+     *
+     * <code>string ContentType = 6;</code>
+     */
+    public Builder setContentType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      contentType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     * </pre>
+     *
+     * <code>string ContentType = 6;</code>
+     */
+    public Builder clearContentType() {
+      
+      contentType_ = getDefaultInstance().getContentType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+     * </pre>
+     *
+     * <code>string ContentType = 6;</code>
+     */
+    public Builder setContentTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      contentType_ = value;
       onChanged();
       return this;
     }

@@ -32,6 +32,7 @@ private static final long serialVersionUID = 0L;
     fareClass_ = "";
     privateTariff_ = false;
     g16FareClassTariffNo_ = 0;
+    travixFareType_ = "";
   }
 
   @java.lang.Override
@@ -146,6 +147,12 @@ private static final long serialVersionUID = 0L;
           case 136: {
 
             g16FareClassTariffNo_ = input.readInt32();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            travixFareType_ = s;
             break;
           }
           default: {
@@ -654,6 +661,48 @@ private static final long serialVersionUID = 0L;
     return g16FareClassTariffNo_;
   }
 
+  public static final int TRAVIXFARETYPE_FIELD_NUMBER = 18;
+  private volatile java.lang.Object travixFareType_;
+  /**
+   * <pre>
+   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * </pre>
+   *
+   * <code>string TravixFareType = 18;</code>
+   */
+  public java.lang.String getTravixFareType() {
+    java.lang.Object ref = travixFareType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      travixFareType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * </pre>
+   *
+   * <code>string TravixFareType = 18;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTravixFareTypeBytes() {
+    java.lang.Object ref = travixFareType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      travixFareType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -715,6 +764,9 @@ private static final long serialVersionUID = 0L;
     }
     if (g16FareClassTariffNo_ != 0) {
       output.writeInt32(17, g16FareClassTariffNo_);
+    }
+    if (!getTravixFareTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, travixFareType_);
     }
     unknownFields.writeTo(output);
   }
@@ -779,6 +831,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(17, g16FareClassTariffNo_);
     }
+    if (!getTravixFareTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, travixFareType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -827,6 +882,8 @@ private static final long serialVersionUID = 0L;
         == other.getPrivateTariff());
     result = result && (getG16FareClassTariffNo()
         == other.getG16FareClassTariffNo());
+    result = result && getTravixFareType()
+        .equals(other.getTravixFareType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -871,6 +928,8 @@ private static final long serialVersionUID = 0L;
         getPrivateTariff());
     hash = (37 * hash) + G16FARECLASSTARIFFNO_FIELD_NUMBER;
     hash = (53 * hash) + getG16FareClassTariffNo();
+    hash = (37 * hash) + TRAVIXFARETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTravixFareType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1036,6 +1095,8 @@ private static final long serialVersionUID = 0L;
 
       g16FareClassTariffNo_ = 0;
 
+      travixFareType_ = "";
+
       return this;
     }
 
@@ -1078,6 +1139,7 @@ private static final long serialVersionUID = 0L;
       result.fareClass_ = fareClass_;
       result.privateTariff_ = privateTariff_;
       result.g16FareClassTariffNo_ = g16FareClassTariffNo_;
+      result.travixFareType_ = travixFareType_;
       onBuilt();
       return result;
     }
@@ -1183,6 +1245,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getG16FareClassTariffNo() != 0) {
         setG16FareClassTariffNo(other.getG16FareClassTariffNo());
+      }
+      if (!other.getTravixFareType().isEmpty()) {
+        travixFareType_ = other.travixFareType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2267,6 +2333,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearG16FareClassTariffNo() {
       
       g16FareClassTariffNo_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object travixFareType_ = "";
+    /**
+     * <pre>
+     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * </pre>
+     *
+     * <code>string TravixFareType = 18;</code>
+     */
+    public java.lang.String getTravixFareType() {
+      java.lang.Object ref = travixFareType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        travixFareType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * </pre>
+     *
+     * <code>string TravixFareType = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTravixFareTypeBytes() {
+      java.lang.Object ref = travixFareType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        travixFareType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * </pre>
+     *
+     * <code>string TravixFareType = 18;</code>
+     */
+    public Builder setTravixFareType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      travixFareType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * </pre>
+     *
+     * <code>string TravixFareType = 18;</code>
+     */
+    public Builder clearTravixFareType() {
+      
+      travixFareType_ = getDefaultInstance().getTravixFareType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * </pre>
+     *
+     * <code>string TravixFareType = 18;</code>
+     */
+    public Builder setTravixFareTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      travixFareType_ = value;
       onChanged();
       return this;
     }

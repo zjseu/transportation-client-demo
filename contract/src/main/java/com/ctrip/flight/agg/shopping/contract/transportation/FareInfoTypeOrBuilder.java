@@ -216,4 +216,22 @@ public interface FareInfoTypeOrBuilder extends
    * <code>int32 G16FareClassTariffNo = 17;</code>
    */
   int getG16FareClassTariffNo();
+
+  /**
+   * <pre>
+   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * </pre>
+   *
+   * <code>string TravixFareType = 18;</code>
+   */
+  java.lang.String getTravixFareType();
+  /**
+   * <pre>
+   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * </pre>
+   *
+   * <code>string TravixFareType = 18;</code>
+   */
+  com.google.protobuf.ByteString
+      getTravixFareTypeBytes();
 }

@@ -47,10 +47,12 @@ public final class ComCtripFlightAggShoppingContractTransportationTravix {
       "agg.shopping.contract.transportation.tra" +
       "vix.JourneyOptionType\"?\n\021JourneyOptionTy" +
       "pe\022\024\n\014DepartRegion\030\001 \001(\t\022\024\n\014ArriveRegion" +
-      "\030\002 \001(\t\"K\n\031TravixExclusiveOptionType\022\026\n\016S" +
-      "fdResponseRef\030\001 \001(\005\022\026\n\016SfdActionIndex\030\002 " +
-      "\001(\005B@\n<com.ctrip.flight.agg.shopping.con" +
-      "tract.transportation.travixP\001b\006proto3"
+      "\030\002 \001(\t\"\225\001\n\031TravixExclusiveOptionType\022\016\n\006" +
+      "RefNum\030\001 \001(\005\022\020\n\010Provider\030\002 \001(\t\022\026\n\016GdsAcc" +
+      "ountCode\030\003 \001(\t\022\023\n\013PointOfSale\030\004 \001(\t\022\024\n\014C" +
+      "onsolidator\030\005 \001(\t\022\023\n\013ContentType\030\006 \001(\tB@" +
+      "\n<com.ctrip.flight.agg.shopping.contract" +
+      ".transportation.travixP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -81,7 +83,7 @@ public final class ComCtripFlightAggShoppingContractTransportationTravix {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_travix_TravixExclusiveOptionType_descriptor,
-        new java.lang.String[] { "SfdResponseRef", "SfdActionIndex", });
+        new java.lang.String[] { "RefNum", "Provider", "GdsAccountCode", "PointOfSale", "Consolidator", "ContentType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

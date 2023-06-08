@@ -9,19 +9,111 @@ public interface TravixExclusiveOptionTypeOrBuilder extends
 
   /**
    * <pre>
-   * Ref to SearchResponseType-&gt;ResponseBody-&gt;DataLists-&gt;AdditionalExtention-&gt;RefNum
+   **
+   * ref num
    * </pre>
    *
-   * <code>int32 SfdResponseRef = 1;</code>
+   * <code>int32 RefNum = 1;</code>
    */
-  int getSfdResponseRef();
+  int getRefNum();
 
   /**
    * <pre>
-   * Index of sfd action
+   **
+   * Freight source, Currently only :1A TF
    * </pre>
    *
-   * <code>int32 SfdActionIndex = 2;</code>
+   * <code>string Provider = 2;</code>
    */
-  int getSfdActionIndex();
+  java.lang.String getProvider();
+  /**
+   * <pre>
+   **
+   * Freight source, Currently only :1A TF
+   * </pre>
+   *
+   * <code>string Provider = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getProviderBytes();
+
+  /**
+   * <pre>
+   **
+   * acocunt Code
+   * </pre>
+   *
+   * <code>string GdsAccountCode = 3;</code>
+   */
+  java.lang.String getGdsAccountCode();
+  /**
+   * <pre>
+   **
+   * acocunt Code
+   * </pre>
+   *
+   * <code>string GdsAccountCode = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getGdsAccountCodeBytes();
+
+  /**
+   * <pre>
+   **
+   * travix point of sale
+   * </pre>
+   *
+   * <code>string PointOfSale = 4;</code>
+   */
+  java.lang.String getPointOfSale();
+  /**
+   * <pre>
+   **
+   * travix point of sale
+   * </pre>
+   *
+   * <code>string PointOfSale = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getPointOfSaleBytes();
+
+  /**
+   * <pre>
+   **
+   * supplier
+   * </pre>
+   *
+   * <code>string Consolidator = 5;</code>
+   */
+  java.lang.String getConsolidator();
+  /**
+   * <pre>
+   **
+   * supplier
+   * </pre>
+   *
+   * <code>string Consolidator = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getConsolidatorBytes();
+
+  /**
+   * <pre>
+   **
+   * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+   * </pre>
+   *
+   * <code>string ContentType = 6;</code>
+   */
+  java.lang.String getContentType();
+  /**
+   * <pre>
+   **
+   * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
+   * </pre>
+   *
+   * <code>string ContentType = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getContentTypeBytes();
 }

@@ -69,6 +69,8 @@ message DataListsType {
     BookingReferenceType BookingReference = 12;
     // AdditionalExtension,for travix sfd etc
     repeated AdditionalExtensionType AdditionalExtension = 13;
+    // TravixExclusiveOption, for travix fare information
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;
 }
 
 message MetaDataType {
@@ -288,8 +290,11 @@ message FlightProductType {
     // 会员挑战赛信息
     repeated MembershipChallengeType MembershipChallenge = 38;
 
-    // for travix
-    com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 39;
+    // ref -> SearchResponseType->ResponseBody->DataLists->AdditionalExtention->RefNum
+    int32 TravixSFDTokenRef = 39;
+
+    //  ref -> SearchResponseType->ResponseBody->DataLists->TravixExclusiveOption->RefNum
+    int32 TravixExclusiveOptionRef = 40;
 }
 
 message MembershipChallengeType {

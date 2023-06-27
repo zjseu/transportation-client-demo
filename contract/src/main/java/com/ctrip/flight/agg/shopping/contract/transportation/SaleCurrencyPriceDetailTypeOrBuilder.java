@@ -31,4 +31,48 @@ public interface SaleCurrencyPriceDetailTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType SalePrice = 1;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getSalePriceOrBuilder();
+
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountType Discount = 2;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountType> 
+      getDiscountList();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountType Discount = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DiscountType getDiscount(int index);
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountType Discount = 2;</code>
+   */
+  int getDiscountCount();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountType Discount = 2;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.DiscountTypeOrBuilder> 
+      getDiscountOrBuilderList();
+  /**
+   * <pre>
+   * 让利信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountType Discount = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DiscountTypeOrBuilder getDiscountOrBuilder(
+      int index);
 }

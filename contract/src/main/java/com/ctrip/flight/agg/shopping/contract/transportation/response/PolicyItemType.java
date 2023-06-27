@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     supplierType_ = 0;
     policyType_ = "";
     policyGroup_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    underPriceFlag_ = 0;
   }
 
   @java.lang.Override
@@ -67,6 +68,11 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000004;
             }
             policyGroup_.add(s);
+            break;
+          }
+          case 32: {
+
+            underPriceFlag_ = input.readInt32();
             break;
           }
           default: {
@@ -295,6 +301,20 @@ private static final long serialVersionUID = 0L;
     return policyGroup_.getByteString(index);
   }
 
+  public static final int UNDERPRICEFLAG_FIELD_NUMBER = 4;
+  private int underPriceFlag_;
+  /**
+   * <pre>
+   **
+   *运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+   * </pre>
+   *
+   * <code>int32 UnderPriceFlag = 4;</code>
+   */
+  public int getUnderPriceFlag() {
+    return underPriceFlag_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -317,6 +337,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < policyGroup_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, policyGroup_.getRaw(i));
+    }
+    if (underPriceFlag_ != 0) {
+      output.writeInt32(4, underPriceFlag_);
     }
     unknownFields.writeTo(output);
   }
@@ -342,6 +365,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPolicyGroupList().size();
     }
+    if (underPriceFlag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, underPriceFlag_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -364,6 +391,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPolicyType());
     result = result && getPolicyGroupList()
         .equals(other.getPolicyGroupList());
+    result = result && (getUnderPriceFlag()
+        == other.getUnderPriceFlag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -383,6 +412,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + POLICYGROUP_FIELD_NUMBER;
       hash = (53 * hash) + getPolicyGroupList().hashCode();
     }
+    hash = (37 * hash) + UNDERPRICEFLAG_FIELD_NUMBER;
+    hash = (53 * hash) + getUnderPriceFlag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -526,6 +557,8 @@ private static final long serialVersionUID = 0L;
 
       policyGroup_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      underPriceFlag_ = 0;
+
       return this;
     }
 
@@ -561,6 +594,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.policyGroup_ = policyGroup_;
+      result.underPriceFlag_ = underPriceFlag_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -626,6 +660,9 @@ private static final long serialVersionUID = 0L;
           policyGroup_.addAll(other.policyGroup_);
         }
         onChanged();
+      }
+      if (other.getUnderPriceFlag() != 0) {
+        setUnderPriceFlag(other.getUnderPriceFlag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1133,6 +1170,47 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensurePolicyGroupIsMutable();
       policyGroup_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int underPriceFlag_ ;
+    /**
+     * <pre>
+     **
+     *运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+     * </pre>
+     *
+     * <code>int32 UnderPriceFlag = 4;</code>
+     */
+    public int getUnderPriceFlag() {
+      return underPriceFlag_;
+    }
+    /**
+     * <pre>
+     **
+     *运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+     * </pre>
+     *
+     * <code>int32 UnderPriceFlag = 4;</code>
+     */
+    public Builder setUnderPriceFlag(int value) {
+      
+      underPriceFlag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+     * </pre>
+     *
+     * <code>int32 UnderPriceFlag = 4;</code>
+     */
+    public Builder clearUnderPriceFlag() {
+      
+      underPriceFlag_ = 0;
       onChanged();
       return this;
     }

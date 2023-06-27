@@ -119,4 +119,48 @@ public interface AdaptedOptionTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionTypeOrBuilder getTravixAdaptedOptionOrBuilder();
+
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> 
+      getTagList();
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index);
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  int getTagCount();
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList();
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index);
 }

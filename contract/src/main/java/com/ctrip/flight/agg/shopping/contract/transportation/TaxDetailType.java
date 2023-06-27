@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private TaxDetailType() {
     type_ = 0;
+    amount_ = 0D;
   }
 
   @java.lang.Override
@@ -48,17 +49,9 @@ private static final long serialVersionUID = 0L;
             type_ = input.readInt32();
             break;
           }
-          case 18: {
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder subBuilder = null;
-            if (amount_ != null) {
-              subBuilder = amount_.toBuilder();
-            }
-            amount_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.AmountType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(amount_);
-              amount_ = subBuilder.buildPartial();
-            }
+          case 17: {
 
+            amount_ = input.readDouble();
             break;
           }
           default: {
@@ -108,39 +101,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
-  private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_;
+  private double amount_;
   /**
    * <pre>
    * 金额
    * amount
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>double Amount = 2;</code>
    */
-  public boolean hasAmount() {
-    return amount_ != null;
-  }
-  /**
-   * <pre>
-   * 金额
-   * amount
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-   */
-  public com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount() {
-    return amount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
-  }
-  /**
-   * <pre>
-   * 金额
-   * amount
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-   */
-  public com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder() {
-    return getAmount();
+  public double getAmount() {
+    return amount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -160,8 +131,8 @@ private static final long serialVersionUID = 0L;
     if (type_ != 0) {
       output.writeInt32(1, type_);
     }
-    if (amount_ != null) {
-      output.writeMessage(2, getAmount());
+    if (amount_ != 0D) {
+      output.writeDouble(2, amount_);
     }
     unknownFields.writeTo(output);
   }
@@ -176,9 +147,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, type_);
     }
-    if (amount_ != null) {
+    if (amount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAmount());
+        .computeDoubleSize(2, amount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -198,11 +169,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getType()
         == other.getType());
-    result = result && (hasAmount() == other.hasAmount());
-    if (hasAmount()) {
-      result = result && getAmount()
-          .equals(other.getAmount());
-    }
+    result = result && (
+        java.lang.Double.doubleToLongBits(getAmount())
+        == java.lang.Double.doubleToLongBits(
+            other.getAmount()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -216,10 +186,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType();
-    if (hasAmount()) {
-      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAmount().hashCode();
-    }
+    hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAmount()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,12 +324,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       type_ = 0;
 
-      if (amountBuilder_ == null) {
-        amount_ = null;
-      } else {
-        amount_ = null;
-        amountBuilder_ = null;
-      }
+      amount_ = 0D;
+
       return this;
     }
 
@@ -388,11 +353,7 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType result = new com.ctrip.flight.agg.shopping.contract.transportation.TaxDetailType(this);
       result.type_ = type_;
-      if (amountBuilder_ == null) {
-        result.amount_ = amount_;
-      } else {
-        result.amount_ = amountBuilder_.build();
-      }
+      result.amount_ = amount_;
       onBuilt();
       return result;
     }
@@ -444,8 +405,8 @@ private static final long serialVersionUID = 0L;
       if (other.getType() != 0) {
         setType(other.getType());
       }
-      if (other.hasAmount()) {
-        mergeAmount(other.getAmount());
+      if (other.getAmount() != 0D) {
+        setAmount(other.getAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -517,19 +478,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder> amountBuilder_;
+    private double amount_ ;
     /**
      * <pre>
      * 金额
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
-    public boolean hasAmount() {
-      return amountBuilder_ != null || amount_ != null;
+    public double getAmount() {
+      return amount_;
     }
     /**
      * <pre>
@@ -537,34 +496,12 @@ private static final long serialVersionUID = 0L;
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount() {
-      if (amountBuilder_ == null) {
-        return amount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
-      } else {
-        return amountBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder setAmount(com.ctrip.flight.agg.shopping.contract.transportation.AmountType value) {
-      if (amountBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        amount_ = value;
-        onChanged();
-      } else {
-        amountBuilder_.setMessage(value);
-      }
-
+    public Builder setAmount(double value) {
+      
+      amount_ = value;
+      onChanged();
       return this;
     }
     /**
@@ -573,110 +510,13 @@ private static final long serialVersionUID = 0L;
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder setAmount(
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder builderForValue) {
-      if (amountBuilder_ == null) {
-        amount_ = builderForValue.build();
-        onChanged();
-      } else {
-        amountBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder mergeAmount(com.ctrip.flight.agg.shopping.contract.transportation.AmountType value) {
-      if (amountBuilder_ == null) {
-        if (amount_ != null) {
-          amount_ =
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.newBuilder(amount_).mergeFrom(value).buildPartial();
-        } else {
-          amount_ = value;
-        }
-        onChanged();
-      } else {
-        amountBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
     public Builder clearAmount() {
-      if (amountBuilder_ == null) {
-        amount_ = null;
-        onChanged();
-      } else {
-        amount_ = null;
-        amountBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder getAmountBuilder() {
       
+      amount_ = 0D;
       onChanged();
-      return getAmountFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder() {
-      if (amountBuilder_ != null) {
-        return amountBuilder_.getMessageOrBuilder();
-      } else {
-        return amount_ == null ?
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
-      }
-    }
-    /**
-     * <pre>
-     * 金额
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder> 
-        getAmountFieldBuilder() {
-      if (amountBuilder_ == null) {
-        amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder>(
-                getAmount(),
-                getParentForChildren(),
-                isClean());
-        amount_ = null;
-      }
-      return amountBuilder_;
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

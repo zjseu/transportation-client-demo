@@ -45,6 +45,7 @@ message FareInfoType {
     bool PrivateTariff = 15;
     // G16运价区域
     int32 G16FareClassTariffNo = 17;
+
     // travix  sence FareType, different with trip's FareType，supported by adapter
     string TravixFareType = 18;
 }
@@ -151,6 +152,8 @@ message FlightSaleCurrencyPriceDetailType {
     double SpecialOfferDiffAmount = 12;
     // Tax fee detail based on fare
     repeated FareTaxFeeDetailType FareTaxFeeDetail = 13;
+    // travix surcharge
+    double Surcharge = 14;
 }
 
 // 结算币种的价格信息
@@ -204,6 +207,8 @@ message PaxProductType {
 message SaleCurrencyPriceDetailType {
     // 销售币种的卖价
     AmountType SalePrice = 1;
+    // 让利信息
+    repeated DiscountType Discount = 2;
 }
 
 message SettlementCurrencyPriceDetailType {
@@ -1053,14 +1058,18 @@ message TaxDetailType {
     int32 Type = 1;
     // 金额
     // amount
-    AmountType Amount = 2;
+    double Amount = 2;
 }
 
 message FareTaxFeeDetailType {
     // type such as:YQ、YR、E7、G8、TS
     string Type = 1;
     // amount
-    AmountType Amount = 2;
+    double Amount = 2;
+    // currency
+    string Currency = 3;
+    // name
+    string Name = 4;
 }
 
 message BusType {

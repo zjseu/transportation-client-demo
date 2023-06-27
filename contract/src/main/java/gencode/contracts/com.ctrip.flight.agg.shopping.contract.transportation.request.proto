@@ -248,6 +248,8 @@ message AdaptedOptionType {
     repeated CombinationPolicyType CombinationPolicy = 2;
     // for travix
     com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixAdaptedOptionType TravixAdaptedOption = 3;
+    // 标签列表
+    repeated com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;
 }
 
 // 指定X产品查询

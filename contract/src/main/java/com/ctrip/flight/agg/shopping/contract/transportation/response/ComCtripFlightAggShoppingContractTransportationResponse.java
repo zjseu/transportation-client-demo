@@ -522,54 +522,57 @@ public final class ComCtripFlightAggShoppingContractTransportationResponse {
       "riginalPolicyFlightAgency\030\003 \001(\005\022(\n Child" +
       "InfantChangeBackToDirectInd\030\004 \001(\010\";\n\021Tra" +
       "nsitPolicyType\022\022\n\nEffectDate\030\001 \001(\t\022\022\n\nEx" +
-      "pireDate\030\002 \001(\t\"s\n\rPolicyKeyType\022b\n\nPolic" +
-      "yItem\030\001 \001(\0132N.com.ctrip.flight.agg.shopp" +
-      "ing.contract.transportation.response.Pol" +
-      "icyItemType\"O\n\016PolicyItemType\022\024\n\014Supplie" +
-      "rType\030\001 \001(\005\022\022\n\nPolicyType\030\002 \001(\t\022\023\n\013Polic" +
-      "yGroup\030\003 \003(\t\"^\n\033MultiSegmentRestrictionT" +
-      "ype\022\037\n\027MultiSegmentBookingType\030\001 \001(\005\022\036\n\026" +
-      "MultiSegmentPolicyType\030\002 \001(\005\">\n\017GreenFly" +
-      "ingType\022\024\n\014ExchangeType\030\001 \001(\005\022\025\n\rExchang" +
-      "eValue\030\002 \001(\005\"\252\001\n\010PataType\022\021\n\tBasePrice\030\001" +
-      " \001(\001\022\027\n\017DownFloatOption\030\002 \001(\005\022\026\n\016DownFlo" +
-      "atValue\030\003 \001(\005\022\022\n\nPriceValue\030\004 \001(\005\022\031\n\021Ver" +
-      "ifyPriceOption\030\005 \001(\005\022\031\n\021VerifyOffsetValu" +
-      "e\030\006 \001(\001\022\020\n\010PataCode\030\007 \001(\t\"\216\001\n\021UpsellProd" +
-      "uctType\022\023\n\013BaseOfferID\030\001 \001(\005\022d\n\013DiffServ" +
-      "ice\030\002 \003(\0132O.com.ctrip.flight.agg.shoppin" +
-      "g.contract.transportation.response.DiffS" +
-      "erviceType\",\n\017DiffServiceType\022\031\n\021UpsellP" +
-      "roductType\030\001 \001(\t\",\n\022PremiumProductType\022\026" +
-      "\n\016BundleSaleType\030\001 \001(\005\"\255\002\n\022MemberRegiste" +
-      "rType\022\025\n\rMarketingCode\030\001 \001(\t\022\023\n\013ProductT" +
-      "ype\030\002 \001(\005\022\017\n\007VipType\030\003 \001(\t\022\026\n\016OnlineRegi" +
-      "ster\030\004 \001(\t\022\026\n\016RegisterSource\030\005 \001(\t\022\022\n\nGi" +
-      "veOption\030\006 \001(\t\022\020\n\010AgeLimit\030\007 \001(\t\022\023\n\013Prod" +
-      "uctRule\030\010 \001(\t\022\023\n\013RuleContent\030\t \001(\t\022Z\n\rAg" +
-      "eLimitRange\030\n \003(\0132C.com.ctrip.flight.agg" +
-      ".shopping.contract.transportation.IntRan" +
-      "geType\"6\n\010MealType\022\025\n\rMealTypeEterm\030\001 \001(" +
-      "\t\022\023\n\013DisplayType\030\002 \001(\005\"\200\001\n\022CFCabinFeatur" +
-      "eType\022j\n\016CFCabinBenefit\030\001 \001(\0132R.com.ctri" +
-      "p.flight.agg.shopping.contract.transport" +
-      "ation.response.CFCabinBenefitType\"5\n\022CFC" +
-      "abinBenefitType\022\016\n\006RuleID\030\001 \001(\003\022\017\n\007Benef" +
-      "it\030\002 \003(\t\"\336\002\n\024MultiCombinationType\022\023\n\013Pol" +
-      "icyToken\030\001 \001(\t\022l\n\017CombinationUnit\030\002 \003(\0132" +
-      "S.com.ctrip.flight.agg.shopping.contract" +
-      ".transportation.response.CombinationUnit" +
-      "Type\022T\n\003Tag\030\003 \003(\0132G.com.ctrip.flight.agg" +
-      ".shopping.contract.transportation.KeyVal" +
-      "uePairType\022m\n\024DisplayedOfferAmount\030\004 \001(\013" +
-      "2O.com.ctrip.flight.agg.shopping.contrac" +
-      "t.transportation.DisplayedOfferAmountTyp" +
-      "e\"G\n\023CombinationUnitType\022\020\n\010OfferRef\030\001 \001" +
-      "(\005\022\017\n\007AgeType\030\002 \001(\005\022\r\n\005Count\030\003 \001(\005\"H\n\027Ad" +
-      "ditionalExtensionType\022\016\n\006RefNum\030\001 \001(\005\022\017\n" +
-      "\007Content\030\002 \001(\t\022\014\n\004Type\030\003 \001(\tBB\n>com.ctri" +
-      "p.flight.agg.shopping.contract.transport" +
-      "ation.responseP\001b\006proto3"
+      "pireDate\030\002 \001(\t\"\335\001\n\rPolicyKeyType\022b\n\nPoli" +
+      "cyItem\030\001 \001(\0132N.com.ctrip.flight.agg.shop" +
+      "ping.contract.transportation.response.Po" +
+      "licyItemType\022h\n\020UnderlyingPolicy\030\002 \003(\0132N" +
+      ".com.ctrip.flight.agg.shopping.contract." +
+      "transportation.response.PolicyItemType\"g" +
+      "\n\016PolicyItemType\022\024\n\014SupplierType\030\001 \001(\005\022\022" +
+      "\n\nPolicyType\030\002 \001(\t\022\023\n\013PolicyGroup\030\003 \003(\t\022" +
+      "\026\n\016UnderPriceFlag\030\004 \001(\005\"^\n\033MultiSegmentR" +
+      "estrictionType\022\037\n\027MultiSegmentBookingTyp" +
+      "e\030\001 \001(\005\022\036\n\026MultiSegmentPolicyType\030\002 \001(\005\"" +
+      ">\n\017GreenFlyingType\022\024\n\014ExchangeType\030\001 \001(\005" +
+      "\022\025\n\rExchangeValue\030\002 \001(\005\"\252\001\n\010PataType\022\021\n\t" +
+      "BasePrice\030\001 \001(\001\022\027\n\017DownFloatOption\030\002 \001(\005" +
+      "\022\026\n\016DownFloatValue\030\003 \001(\005\022\022\n\nPriceValue\030\004" +
+      " \001(\005\022\031\n\021VerifyPriceOption\030\005 \001(\005\022\031\n\021Verif" +
+      "yOffsetValue\030\006 \001(\001\022\020\n\010PataCode\030\007 \001(\t\"\216\001\n" +
+      "\021UpsellProductType\022\023\n\013BaseOfferID\030\001 \001(\005\022" +
+      "d\n\013DiffService\030\002 \003(\0132O.com.ctrip.flight." +
+      "agg.shopping.contract.transportation.res" +
+      "ponse.DiffServiceType\",\n\017DiffServiceType" +
+      "\022\031\n\021UpsellProductType\030\001 \001(\t\",\n\022PremiumPr" +
+      "oductType\022\026\n\016BundleSaleType\030\001 \001(\005\"\255\002\n\022Me" +
+      "mberRegisterType\022\025\n\rMarketingCode\030\001 \001(\t\022" +
+      "\023\n\013ProductType\030\002 \001(\005\022\017\n\007VipType\030\003 \001(\t\022\026\n" +
+      "\016OnlineRegister\030\004 \001(\t\022\026\n\016RegisterSource\030" +
+      "\005 \001(\t\022\022\n\nGiveOption\030\006 \001(\t\022\020\n\010AgeLimit\030\007 " +
+      "\001(\t\022\023\n\013ProductRule\030\010 \001(\t\022\023\n\013RuleContent\030" +
+      "\t \001(\t\022Z\n\rAgeLimitRange\030\n \003(\0132C.com.ctrip" +
+      ".flight.agg.shopping.contract.transporta" +
+      "tion.IntRangeType\"6\n\010MealType\022\025\n\rMealTyp" +
+      "eEterm\030\001 \001(\t\022\023\n\013DisplayType\030\002 \001(\005\"\200\001\n\022CF" +
+      "CabinFeatureType\022j\n\016CFCabinBenefit\030\001 \001(\013" +
+      "2R.com.ctrip.flight.agg.shopping.contrac" +
+      "t.transportation.response.CFCabinBenefit" +
+      "Type\"5\n\022CFCabinBenefitType\022\016\n\006RuleID\030\001 \001" +
+      "(\003\022\017\n\007Benefit\030\002 \003(\t\"\336\002\n\024MultiCombination" +
+      "Type\022\023\n\013PolicyToken\030\001 \001(\t\022l\n\017Combination" +
+      "Unit\030\002 \003(\0132S.com.ctrip.flight.agg.shoppi" +
+      "ng.contract.transportation.response.Comb" +
+      "inationUnitType\022T\n\003Tag\030\003 \003(\0132G.com.ctrip" +
+      ".flight.agg.shopping.contract.transporta" +
+      "tion.KeyValuePairType\022m\n\024DisplayedOfferA" +
+      "mount\030\004 \001(\0132O.com.ctrip.flight.agg.shopp" +
+      "ing.contract.transportation.DisplayedOff" +
+      "erAmountType\"G\n\023CombinationUnitType\022\020\n\010O" +
+      "fferRef\030\001 \001(\005\022\017\n\007AgeType\030\002 \001(\005\022\r\n\005Count\030" +
+      "\003 \001(\005\"H\n\027AdditionalExtensionType\022\016\n\006RefN" +
+      "um\030\001 \001(\005\022\017\n\007Content\030\002 \001(\t\022\014\n\004Type\030\003 \001(\tB" +
+      "B\n>com.ctrip.flight.agg.shopping.contrac" +
+      "t.transportation.responseP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -761,13 +764,13 @@ public final class ComCtripFlightAggShoppingContractTransportationResponse {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_PolicyKeyType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_PolicyKeyType_descriptor,
-        new java.lang.String[] { "PolicyItem", });
+        new java.lang.String[] { "PolicyItem", "UnderlyingPolicy", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_PolicyItemType_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_PolicyItemType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_PolicyItemType_descriptor,
-        new java.lang.String[] { "SupplierType", "PolicyType", "PolicyGroup", });
+        new java.lang.String[] { "SupplierType", "PolicyType", "PolicyGroup", "UnderPriceFlag", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_MultiSegmentRestrictionType_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_response_MultiSegmentRestrictionType_fieldAccessorTable = new

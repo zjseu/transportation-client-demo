@@ -263,7 +263,7 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
       "\0132B.com.ctrip.flight.agg.shopping.contra" +
       "ct.transportation.IntegerType\"U\n\031FlightS" +
       "pecifiedOptionType\022\030\n\020OperatingCarrier\030\001" +
-      " \001(\t\022\021\n\tCabinCode\030\005 \003(\t\022\013\n\003RBD\030\006 \001(\t\"\351\002\n" +
+      " \001(\t\022\021\n\tCabinCode\030\005 \003(\t\022\013\n\003RBD\030\006 \001(\t\"\277\003\n" +
       "\021AdaptedOptionType\022o\n\021XProductAppointed\030" +
       "\001 \003(\0132T.com.ctrip.flight.agg.shopping.co" +
       "ntract.transportation.request.XProductAp" +
@@ -273,15 +273,17 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
       "Type\022r\n\023TravixAdaptedOption\030\003 \001(\0132U.com." +
       "ctrip.flight.agg.shopping.contract.trans" +
       "portation.travix.TravixAdaptedOptionType" +
-      "\"<\n\025XProductAppointedType\022\023\n\013ProductType" +
-      "\030\001 \001(\t\022\016\n\006XToken\030\002 \003(\t\"?\n\025CombinationPol" +
-      "icyType\022\021\n\tJourneyNo\030\001 \001(\005\022\023\n\013PolicyToke" +
-      "n\030\002 \001(\t\"F\n\035SeparateJourneyOfferTokenType" +
-      "\022\021\n\tJourneyNo\030\001 \001(\005\022\022\n\nOfferToken\030\002 \001(\t\"" +
-      "0\n\027MultiTrafficControlType\022\025\n\rTransportT" +
-      "ype\030\001 \001(\005BA\n=com.ctrip.flight.agg.shoppi" +
-      "ng.contract.transportation.requestP\001b\006pr" +
-      "oto3"
+      "\022T\n\003Tag\030\004 \003(\0132G.com.ctrip.flight.agg.sho" +
+      "pping.contract.transportation.KeyValuePa" +
+      "irType\"<\n\025XProductAppointedType\022\023\n\013Produ" +
+      "ctType\030\001 \001(\t\022\016\n\006XToken\030\002 \003(\t\"?\n\025Combinat" +
+      "ionPolicyType\022\021\n\tJourneyNo\030\001 \001(\005\022\023\n\013Poli" +
+      "cyToken\030\002 \001(\t\"F\n\035SeparateJourneyOfferTok" +
+      "enType\022\021\n\tJourneyNo\030\001 \001(\005\022\022\n\nOfferToken\030" +
+      "\002 \001(\t\"0\n\027MultiTrafficControlType\022\025\n\rTran" +
+      "sportType\030\001 \001(\005BA\n=com.ctrip.flight.agg." +
+      "shopping.contract.transportation.request" +
+      "P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -405,7 +407,7 @@ public final class ComCtripFlightAggShoppingContractTransportationRequest {
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_AdaptedOptionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_AdaptedOptionType_descriptor,
-        new java.lang.String[] { "XProductAppointed", "CombinationPolicy", "TravixAdaptedOption", });
+        new java.lang.String[] { "XProductAppointed", "CombinationPolicy", "TravixAdaptedOption", "Tag", });
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_XProductAppointedType_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_com_ctrip_flight_agg_shopping_contract_transportation_request_XProductAppointedType_fieldAccessorTable = new

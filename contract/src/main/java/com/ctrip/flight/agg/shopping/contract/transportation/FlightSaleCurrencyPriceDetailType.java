@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     netPrice_ = 0D;
     specialOfferDiffAmount_ = 0D;
     fareTaxFeeDetail_ = java.util.Collections.emptyList();
+    surcharge_ = 0D;
   }
 
   @java.lang.Override
@@ -152,6 +153,11 @@ private static final long serialVersionUID = 0L;
             }
             fareTaxFeeDetail_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType.parser(), extensionRegistry));
+            break;
+          }
+          case 113: {
+
+            surcharge_ = input.readDouble();
             break;
           }
           default: {
@@ -576,6 +582,19 @@ private static final long serialVersionUID = 0L;
     return fareTaxFeeDetail_.get(index);
   }
 
+  public static final int SURCHARGE_FIELD_NUMBER = 14;
+  private double surcharge_;
+  /**
+   * <pre>
+   * travix surcharge
+   * </pre>
+   *
+   * <code>double Surcharge = 14;</code>
+   */
+  public double getSurcharge() {
+    return surcharge_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -628,6 +647,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < fareTaxFeeDetail_.size(); i++) {
       output.writeMessage(13, fareTaxFeeDetail_.get(i));
+    }
+    if (surcharge_ != 0D) {
+      output.writeDouble(14, surcharge_);
     }
     unknownFields.writeTo(output);
   }
@@ -689,6 +711,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < fareTaxFeeDetail_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, fareTaxFeeDetail_.get(i));
+    }
+    if (surcharge_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(14, surcharge_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -752,6 +778,10 @@ private static final long serialVersionUID = 0L;
             other.getSpecialOfferDiffAmount()));
     result = result && getFareTaxFeeDetailList()
         .equals(other.getFareTaxFeeDetailList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getSurcharge())
+        == java.lang.Double.doubleToLongBits(
+            other.getSurcharge()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -808,6 +838,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FARETAXFEEDETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getFareTaxFeeDetailList().hashCode();
     }
+    hash = (37 * hash) + SURCHARGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSurcharge()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -999,6 +1032,8 @@ private static final long serialVersionUID = 0L;
       } else {
         fareTaxFeeDetailBuilder_.clear();
       }
+      surcharge_ = 0D;
+
       return this;
     }
 
@@ -1080,6 +1115,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.fareTaxFeeDetail_ = fareTaxFeeDetailBuilder_.build();
       }
+      result.surcharge_ = surcharge_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1259,6 +1295,9 @@ private static final long serialVersionUID = 0L;
             fareTaxFeeDetailBuilder_.addAllMessages(other.fareTaxFeeDetail_);
           }
         }
+      }
+      if (other.getSurcharge() != 0D) {
+        setSurcharge(other.getSurcharge());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3108,6 +3147,44 @@ private static final long serialVersionUID = 0L;
         fareTaxFeeDetail_ = null;
       }
       return fareTaxFeeDetailBuilder_;
+    }
+
+    private double surcharge_ ;
+    /**
+     * <pre>
+     * travix surcharge
+     * </pre>
+     *
+     * <code>double Surcharge = 14;</code>
+     */
+    public double getSurcharge() {
+      return surcharge_;
+    }
+    /**
+     * <pre>
+     * travix surcharge
+     * </pre>
+     *
+     * <code>double Surcharge = 14;</code>
+     */
+    public Builder setSurcharge(double value) {
+      
+      surcharge_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * travix surcharge
+     * </pre>
+     *
+     * <code>double Surcharge = 14;</code>
+     */
+    public Builder clearSurcharge() {
+      
+      surcharge_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private AdaptedOptionType() {
     xProductAppointed_ = java.util.Collections.emptyList();
     combinationPolicy_ = java.util.Collections.emptyList();
+    tag_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -79,6 +80,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            tag_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +109,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         combinationPolicy_ = java.util.Collections.unmodifiableList(combinationPolicy_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        tag_ = java.util.Collections.unmodifiableList(tag_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -261,6 +274,61 @@ private static final long serialVersionUID = 0L;
     return getTravixAdaptedOption();
   }
 
+  public static final int TAG_FIELD_NUMBER = 4;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_;
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
+    return tag_;
+  }
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList() {
+    return tag_;
+  }
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  public int getTagCount() {
+    return tag_.size();
+  }
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
+    return tag_.get(index);
+  }
+  /**
+   * <pre>
+   * 标签列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index) {
+    return tag_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -284,6 +352,9 @@ private static final long serialVersionUID = 0L;
     if (travixAdaptedOption_ != null) {
       output.writeMessage(3, getTravixAdaptedOption());
     }
+    for (int i = 0; i < tag_.size(); i++) {
+      output.writeMessage(4, tag_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -304,6 +375,10 @@ private static final long serialVersionUID = 0L;
     if (travixAdaptedOption_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getTravixAdaptedOption());
+    }
+    for (int i = 0; i < tag_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, tag_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +405,8 @@ private static final long serialVersionUID = 0L;
       result = result && getTravixAdaptedOption()
           .equals(other.getTravixAdaptedOption());
     }
+    result = result && getTagList()
+        .equals(other.getTagList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -352,6 +429,10 @@ private static final long serialVersionUID = 0L;
     if (hasTravixAdaptedOption()) {
       hash = (37 * hash) + TRAVIXADAPTEDOPTION_FIELD_NUMBER;
       hash = (53 * hash) + getTravixAdaptedOption().hashCode();
+    }
+    if (getTagCount() > 0) {
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTagList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -487,6 +568,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getXProductAppointedFieldBuilder();
         getCombinationPolicyFieldBuilder();
+        getTagFieldBuilder();
       }
     }
     @java.lang.Override
@@ -509,6 +591,12 @@ private static final long serialVersionUID = 0L;
       } else {
         travixAdaptedOption_ = null;
         travixAdaptedOptionBuilder_ = null;
+      }
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        tagBuilder_.clear();
       }
       return this;
     }
@@ -560,6 +648,15 @@ private static final long serialVersionUID = 0L;
         result.travixAdaptedOption_ = travixAdaptedOption_;
       } else {
         result.travixAdaptedOption_ = travixAdaptedOptionBuilder_.build();
+      }
+      if (tagBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          tag_ = java.util.Collections.unmodifiableList(tag_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.tag_ = tag_;
+      } else {
+        result.tag_ = tagBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -664,6 +761,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTravixAdaptedOption()) {
         mergeTravixAdaptedOption(other.getTravixAdaptedOption());
+      }
+      if (tagBuilder_ == null) {
+        if (!other.tag_.isEmpty()) {
+          if (tag_.isEmpty()) {
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureTagIsMutable();
+            tag_.addAll(other.tag_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tag_.isEmpty()) {
+          if (tagBuilder_.isEmpty()) {
+            tagBuilder_.dispose();
+            tagBuilder_ = null;
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            tagBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTagFieldBuilder() : null;
+          } else {
+            tagBuilder_.addAllMessages(other.tag_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1470,6 +1593,318 @@ private static final long serialVersionUID = 0L;
         travixAdaptedOption_ = null;
       }
       return travixAdaptedOptionBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> tag_ =
+      java.util.Collections.emptyList();
+    private void ensureTagIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        tag_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType>(tag_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> tagBuilder_;
+
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> getTagList() {
+      if (tagBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tag_);
+      } else {
+        return tagBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public int getTagCount() {
+      if (tagBuilder_ == null) {
+        return tag_.size();
+      } else {
+        return tagBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType getTag(int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);
+      } else {
+        return tagBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.set(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder addTag(com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder addTag(
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder addAllTag(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType> values) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tag_);
+        onChanged();
+      } else {
+        tagBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder clearTag() {
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        tagBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public Builder removeTag(int index) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.remove(index);
+        onChanged();
+      } else {
+        tagBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder getTagBuilder(
+        int index) {
+      return getTagFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder getTagOrBuilder(
+        int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);  } else {
+        return tagBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+         getTagOrBuilderList() {
+      if (tagBuilder_ != null) {
+        return tagBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tag_);
+      }
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder() {
+      return getTagFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder addTagBuilder(
+        int index) {
+      return getTagFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 标签列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType Tag = 4;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder> 
+         getTagBuilderList() {
+      return getTagFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder> 
+        getTagFieldBuilder() {
+      if (tagBuilder_ == null) {
+        tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.KeyValuePairTypeOrBuilder>(
+                tag_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        tag_ = null;
+      }
+      return tagBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

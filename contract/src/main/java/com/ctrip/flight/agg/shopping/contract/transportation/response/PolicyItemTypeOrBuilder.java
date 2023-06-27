@@ -158,4 +158,14 @@ public interface PolicyItemTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPolicyGroupBytes(int index);
+
+  /**
+   * <pre>
+   **
+   *运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+   * </pre>
+   *
+   * <code>int32 UnderPriceFlag = 4;</code>
+   */
+  int getUnderPriceFlag();
 }

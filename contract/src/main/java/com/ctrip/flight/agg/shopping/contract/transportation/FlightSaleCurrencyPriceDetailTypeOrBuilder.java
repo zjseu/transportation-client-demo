@@ -295,4 +295,13 @@ public interface FlightSaleCurrencyPriceDetailTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailTypeOrBuilder getFareTaxFeeDetailOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * travix surcharge
+   * </pre>
+   *
+   * <code>double Surcharge = 14;</code>
+   */
+  double getSurcharge();
 }

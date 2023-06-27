@@ -17,6 +17,9 @@ private static final long serialVersionUID = 0L;
   }
   private FareTaxFeeDetailType() {
     type_ = "";
+    amount_ = 0D;
+    currency_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,17 +52,21 @@ private static final long serialVersionUID = 0L;
             type_ = s;
             break;
           }
-          case 18: {
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder subBuilder = null;
-            if (amount_ != null) {
-              subBuilder = amount_.toBuilder();
-            }
-            amount_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.AmountType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(amount_);
-              amount_ = subBuilder.buildPartial();
-            }
+          case 17: {
 
+            amount_ = input.readDouble();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            currency_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           default: {
@@ -137,36 +144,100 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
-  private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_;
+  private double amount_;
   /**
    * <pre>
    * amount
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>double Amount = 2;</code>
    */
-  public boolean hasAmount() {
-    return amount_ != null;
+  public double getAmount() {
+    return amount_;
+  }
+
+  public static final int CURRENCY_FIELD_NUMBER = 3;
+  private volatile java.lang.Object currency_;
+  /**
+   * <pre>
+   * currency
+   * </pre>
+   *
+   * <code>string Currency = 3;</code>
+   */
+  public java.lang.String getCurrency() {
+    java.lang.Object ref = currency_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currency_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * amount
+   * currency
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>string Currency = 3;</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount() {
-    return amount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
+  public com.google.protobuf.ByteString
+      getCurrencyBytes() {
+    java.lang.Object ref = currency_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      currency_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * name
+   * </pre>
+   *
+   * <code>string Name = 4;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * amount
+   * name
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>string Name = 4;</code>
    */
-  public com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder() {
-    return getAmount();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -186,8 +257,14 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
-    if (amount_ != null) {
-      output.writeMessage(2, getAmount());
+    if (amount_ != 0D) {
+      output.writeDouble(2, amount_);
+    }
+    if (!getCurrencyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currency_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -201,9 +278,15 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
-    if (amount_ != null) {
+    if (amount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAmount());
+        .computeDoubleSize(2, amount_);
+    }
+    if (!getCurrencyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currency_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,11 +306,14 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getType()
         .equals(other.getType());
-    result = result && (hasAmount() == other.hasAmount());
-    if (hasAmount()) {
-      result = result && getAmount()
-          .equals(other.getAmount());
-    }
+    result = result && (
+        java.lang.Double.doubleToLongBits(getAmount())
+        == java.lang.Double.doubleToLongBits(
+            other.getAmount()));
+    result = result && getCurrency()
+        .equals(other.getCurrency());
+    result = result && getName()
+        .equals(other.getName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -241,10 +327,13 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
-    if (hasAmount()) {
-      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAmount().hashCode();
-    }
+    hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAmount()));
+    hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrency().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,12 +469,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       type_ = "";
 
-      if (amountBuilder_ == null) {
-        amount_ = null;
-      } else {
-        amount_ = null;
-        amountBuilder_ = null;
-      }
+      amount_ = 0D;
+
+      currency_ = "";
+
+      name_ = "";
+
       return this;
     }
 
@@ -413,11 +502,9 @@ private static final long serialVersionUID = 0L;
     public com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType result = new com.ctrip.flight.agg.shopping.contract.transportation.FareTaxFeeDetailType(this);
       result.type_ = type_;
-      if (amountBuilder_ == null) {
-        result.amount_ = amount_;
-      } else {
-        result.amount_ = amountBuilder_.build();
-      }
+      result.amount_ = amount_;
+      result.currency_ = currency_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -470,8 +557,16 @@ private static final long serialVersionUID = 0L;
         type_ = other.type_;
         onChanged();
       }
-      if (other.hasAmount()) {
-        mergeAmount(other.getAmount());
+      if (other.getAmount() != 0D) {
+        setAmount(other.getAmount());
+      }
+      if (!other.getCurrency().isEmpty()) {
+        currency_ = other.currency_;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -591,51 +686,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder> amountBuilder_;
+    private double amount_ ;
     /**
      * <pre>
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
-    public boolean hasAmount() {
-      return amountBuilder_ != null || amount_ != null;
+    public double getAmount() {
+      return amount_;
     }
     /**
      * <pre>
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount() {
-      if (amountBuilder_ == null) {
-        return amount_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
-      } else {
-        return amountBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder setAmount(com.ctrip.flight.agg.shopping.contract.transportation.AmountType value) {
-      if (amountBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        amount_ = value;
-        onChanged();
-      } else {
-        amountBuilder_.setMessage(value);
-      }
-
+    public Builder setAmount(double value) {
+      
+      amount_ = value;
+      onChanged();
       return this;
     }
     /**
@@ -643,105 +715,191 @@ private static final long serialVersionUID = 0L;
      * amount
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder setAmount(
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder builderForValue) {
-      if (amountBuilder_ == null) {
-        amount_ = builderForValue.build();
-        onChanged();
-      } else {
-        amountBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-     */
-    public Builder mergeAmount(com.ctrip.flight.agg.shopping.contract.transportation.AmountType value) {
-      if (amountBuilder_ == null) {
-        if (amount_ != null) {
-          amount_ =
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.newBuilder(amount_).mergeFrom(value).buildPartial();
-        } else {
-          amount_ = value;
-        }
-        onChanged();
-      } else {
-        amountBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * amount
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>double Amount = 2;</code>
      */
     public Builder clearAmount() {
-      if (amountBuilder_ == null) {
-        amount_ = null;
-        onChanged();
-      } else {
-        amount_ = null;
-        amountBuilder_ = null;
-      }
+      
+      amount_ = 0D;
+      onChanged();
+      return this;
+    }
 
+    private java.lang.Object currency_ = "";
+    /**
+     * <pre>
+     * currency
+     * </pre>
+     *
+     * <code>string Currency = 3;</code>
+     */
+    public java.lang.String getCurrency() {
+      java.lang.Object ref = currency_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currency_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * currency
+     * </pre>
+     *
+     * <code>string Currency = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCurrencyBytes() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currency_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * currency
+     * </pre>
+     *
+     * <code>string Currency = 3;</code>
+     */
+    public Builder setCurrency(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      currency_ = value;
+      onChanged();
       return this;
     }
     /**
      * <pre>
-     * amount
+     * currency
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>string Currency = 3;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder getAmountBuilder() {
+    public Builder clearCurrency() {
       
+      currency_ = getDefaultInstance().getCurrency();
       onChanged();
-      return getAmountFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * amount
+     * currency
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>string Currency = 3;</code>
      */
-    public com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder() {
-      if (amountBuilder_ != null) {
-        return amountBuilder_.getMessageOrBuilder();
+    public Builder setCurrencyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      currency_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string Name = 4;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return amount_ == null ?
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType.getDefaultInstance() : amount_;
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * amount
+     * name
      * </pre>
      *
-     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+     * <code>string Name = 4;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder> 
-        getAmountFieldBuilder() {
-      if (amountBuilder_ == null) {
-        amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.ctrip.flight.agg.shopping.contract.transportation.AmountType, com.ctrip.flight.agg.shopping.contract.transportation.AmountType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder>(
-                getAmount(),
-                getParentForChildren(),
-                isClean());
-        amount_ = null;
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return amountBuilder_;
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string Name = 4;</code>
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string Name = 4;</code>
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string Name = 4;</code>
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

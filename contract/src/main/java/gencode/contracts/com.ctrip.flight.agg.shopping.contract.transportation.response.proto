@@ -528,6 +528,8 @@ message TransitPolicyType {
 message PolicyKeyType {
     // 主政策信息
     PolicyItemType PolicyItem = 1;
+    // 政策属性列表
+    repeated PolicyItemType UnderlyingPolicy = 2;
 }
 
 // 主政策信息
@@ -586,6 +588,11 @@ message PolicyItemType {
     OJ	 :缺口程政策
      */
     repeated string PolicyGroup = 3;
+
+    /**
+    运价类型, 1: FD, 2: NFD, 3: Float, 0: null
+    */
+    int32 UnderPriceFlag = 4;
 }
 
 // 多程政策的限制信息

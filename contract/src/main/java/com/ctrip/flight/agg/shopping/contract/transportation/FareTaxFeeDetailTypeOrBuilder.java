@@ -30,23 +30,43 @@ public interface FareTaxFeeDetailTypeOrBuilder extends
    * amount
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>double Amount = 2;</code>
    */
-  boolean hasAmount();
+  double getAmount();
+
   /**
    * <pre>
-   * amount
+   * currency
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>string Currency = 3;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount();
+  java.lang.String getCurrency();
   /**
    * <pre>
-   * amount
+   * currency
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>string Currency = 3;</code>
    */
-  com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder();
+  com.google.protobuf.ByteString
+      getCurrencyBytes();
+
+  /**
+   * <pre>
+   * name
+   * </pre>
+   *
+   * <code>string Name = 4;</code>
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * name
+   * </pre>
+   *
+   * <code>string Name = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

@@ -31,4 +31,48 @@ public interface PolicyKeyTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType PolicyItem = 1;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder getPolicyItemOrBuilder();
+
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> 
+      getUnderlyingPolicyList();
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType getUnderlyingPolicy(int index);
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  int getUnderlyingPolicyCount();
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder> 
+      getUnderlyingPolicyOrBuilderList();
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder getUnderlyingPolicyOrBuilder(
+      int index);
 }

@@ -23,25 +23,7 @@ public interface TaxDetailTypeOrBuilder extends
    * amount
    * </pre>
    *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
+   * <code>double Amount = 2;</code>
    */
-  boolean hasAmount();
-  /**
-   * <pre>
-   * 金额
-   * amount
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-   */
-  com.ctrip.flight.agg.shopping.contract.transportation.AmountType getAmount();
-  /**
-   * <pre>
-   * 金额
-   * amount
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.AmountType Amount = 2;</code>
-   */
-  com.ctrip.flight.agg.shopping.contract.transportation.AmountTypeOrBuilder getAmountOrBuilder();
+  double getAmount();
 }

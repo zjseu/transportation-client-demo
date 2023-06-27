@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PolicyKeyType() {
+    underlyingPolicy_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -59,6 +60,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              underlyingPolicy_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            underlyingPolicy_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -74,6 +84,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        underlyingPolicy_ = java.util.Collections.unmodifiableList(underlyingPolicy_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -91,6 +104,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int POLICYITEM_FIELD_NUMBER = 1;
   private com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType policyItem_;
   /**
@@ -124,6 +138,61 @@ private static final long serialVersionUID = 0L;
     return getPolicyItem();
   }
 
+  public static final int UNDERLYINGPOLICY_FIELD_NUMBER = 2;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> underlyingPolicy_;
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> getUnderlyingPolicyList() {
+    return underlyingPolicy_;
+  }
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder> 
+      getUnderlyingPolicyOrBuilderList() {
+    return underlyingPolicy_;
+  }
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  public int getUnderlyingPolicyCount() {
+    return underlyingPolicy_.size();
+  }
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType getUnderlyingPolicy(int index) {
+    return underlyingPolicy_.get(index);
+  }
+  /**
+   * <pre>
+   * 政策属性列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder getUnderlyingPolicyOrBuilder(
+      int index) {
+    return underlyingPolicy_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -141,6 +210,9 @@ private static final long serialVersionUID = 0L;
     if (policyItem_ != null) {
       output.writeMessage(1, getPolicyItem());
     }
+    for (int i = 0; i < underlyingPolicy_.size(); i++) {
+      output.writeMessage(2, underlyingPolicy_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -153,6 +225,10 @@ private static final long serialVersionUID = 0L;
     if (policyItem_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getPolicyItem());
+    }
+    for (int i = 0; i < underlyingPolicy_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, underlyingPolicy_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,6 +251,8 @@ private static final long serialVersionUID = 0L;
       result = result && getPolicyItem()
           .equals(other.getPolicyItem());
     }
+    result = result && getUnderlyingPolicyList()
+        .equals(other.getUnderlyingPolicyList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -189,6 +267,10 @@ private static final long serialVersionUID = 0L;
     if (hasPolicyItem()) {
       hash = (37 * hash) + POLICYITEM_FIELD_NUMBER;
       hash = (53 * hash) + getPolicyItem().hashCode();
+    }
+    if (getUnderlyingPolicyCount() > 0) {
+      hash = (37 * hash) + UNDERLYINGPOLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getUnderlyingPolicyList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -322,6 +404,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getUnderlyingPolicyFieldBuilder();
       }
     }
     @java.lang.Override
@@ -332,6 +415,12 @@ private static final long serialVersionUID = 0L;
       } else {
         policyItem_ = null;
         policyItemBuilder_ = null;
+      }
+      if (underlyingPolicyBuilder_ == null) {
+        underlyingPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        underlyingPolicyBuilder_.clear();
       }
       return this;
     }
@@ -359,11 +448,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyKeyType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (policyItemBuilder_ == null) {
         result.policyItem_ = policyItem_;
       } else {
         result.policyItem_ = policyItemBuilder_.build();
       }
+      if (underlyingPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          underlyingPolicy_ = java.util.Collections.unmodifiableList(underlyingPolicy_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.underlyingPolicy_ = underlyingPolicy_;
+      } else {
+        result.underlyingPolicy_ = underlyingPolicyBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -415,6 +516,32 @@ private static final long serialVersionUID = 0L;
       if (other.hasPolicyItem()) {
         mergePolicyItem(other.getPolicyItem());
       }
+      if (underlyingPolicyBuilder_ == null) {
+        if (!other.underlyingPolicy_.isEmpty()) {
+          if (underlyingPolicy_.isEmpty()) {
+            underlyingPolicy_ = other.underlyingPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUnderlyingPolicyIsMutable();
+            underlyingPolicy_.addAll(other.underlyingPolicy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.underlyingPolicy_.isEmpty()) {
+          if (underlyingPolicyBuilder_.isEmpty()) {
+            underlyingPolicyBuilder_.dispose();
+            underlyingPolicyBuilder_ = null;
+            underlyingPolicy_ = other.underlyingPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            underlyingPolicyBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUnderlyingPolicyFieldBuilder() : null;
+          } else {
+            underlyingPolicyBuilder_.addAllMessages(other.underlyingPolicy_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -443,6 +570,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType policyItem_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -595,6 +723,318 @@ private static final long serialVersionUID = 0L;
         policyItem_ = null;
       }
       return policyItemBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> underlyingPolicy_ =
+      java.util.Collections.emptyList();
+    private void ensureUnderlyingPolicyIsMutable() {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        underlyingPolicy_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType>(underlyingPolicy_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder> underlyingPolicyBuilder_;
+
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> getUnderlyingPolicyList() {
+      if (underlyingPolicyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(underlyingPolicy_);
+      } else {
+        return underlyingPolicyBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public int getUnderlyingPolicyCount() {
+      if (underlyingPolicyBuilder_ == null) {
+        return underlyingPolicy_.size();
+      } else {
+        return underlyingPolicyBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType getUnderlyingPolicy(int index) {
+      if (underlyingPolicyBuilder_ == null) {
+        return underlyingPolicy_.get(index);
+      } else {
+        return underlyingPolicyBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder setUnderlyingPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType value) {
+      if (underlyingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.set(index, value);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder setUnderlyingPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder builderForValue) {
+      if (underlyingPolicyBuilder_ == null) {
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder addUnderlyingPolicy(com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType value) {
+      if (underlyingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.add(value);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder addUnderlyingPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType value) {
+      if (underlyingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.add(index, value);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder addUnderlyingPolicy(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder builderForValue) {
+      if (underlyingPolicyBuilder_ == null) {
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder addUnderlyingPolicy(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder builderForValue) {
+      if (underlyingPolicyBuilder_ == null) {
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder addAllUnderlyingPolicy(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType> values) {
+      if (underlyingPolicyBuilder_ == null) {
+        ensureUnderlyingPolicyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, underlyingPolicy_);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder clearUnderlyingPolicy() {
+      if (underlyingPolicyBuilder_ == null) {
+        underlyingPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public Builder removeUnderlyingPolicy(int index) {
+      if (underlyingPolicyBuilder_ == null) {
+        ensureUnderlyingPolicyIsMutable();
+        underlyingPolicy_.remove(index);
+        onChanged();
+      } else {
+        underlyingPolicyBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder getUnderlyingPolicyBuilder(
+        int index) {
+      return getUnderlyingPolicyFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder getUnderlyingPolicyOrBuilder(
+        int index) {
+      if (underlyingPolicyBuilder_ == null) {
+        return underlyingPolicy_.get(index);  } else {
+        return underlyingPolicyBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder> 
+         getUnderlyingPolicyOrBuilderList() {
+      if (underlyingPolicyBuilder_ != null) {
+        return underlyingPolicyBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(underlyingPolicy_);
+      }
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder addUnderlyingPolicyBuilder() {
+      return getUnderlyingPolicyFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder addUnderlyingPolicyBuilder(
+        int index) {
+      return getUnderlyingPolicyFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 政策属性列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType UnderlyingPolicy = 2;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder> 
+         getUnderlyingPolicyBuilderList() {
+      return getUnderlyingPolicyFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder> 
+        getUnderlyingPolicyFieldBuilder() {
+      if (underlyingPolicyBuilder_ == null) {
+        underlyingPolicyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.PolicyItemTypeOrBuilder>(
+                underlyingPolicy_,
+                ((bitField0_ & 0x00000002) == 0x00000002),
+                getParentForChildren(),
+                isClean());
+        underlyingPolicy_ = null;
+      }
+      return underlyingPolicyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

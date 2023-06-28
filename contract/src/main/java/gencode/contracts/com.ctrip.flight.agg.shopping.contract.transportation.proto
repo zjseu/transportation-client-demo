@@ -361,6 +361,17 @@ message DiscountType {
     int64 ruleId = 6;
     // 让利展示类型附加信息
     string ActivityMode = 7;
+    // 让利条件信息
+    repeated DiscountConstraintType DiscountConstraint = 8;
+}
+
+message DiscountConstraintType {
+    // 条件类型, 如身份证号段: IdentityCardNum, 人数: PassengerNum, 年龄: Age
+    string Type = 1;
+    // 条件信息, 配合条件类型实现对用户的定向约束, 如身份证号段具体信息
+    string Constraint = 2;
+    // 让利金额
+    AmountType Amount = 3;
 }
 
 message DiscountLabelType {
@@ -1058,7 +1069,7 @@ message TaxDetailType {
     int32 Type = 1;
     // 金额
     // amount
-    double Amount = 2;
+    AmountType Amount = 2;
 }
 
 message FareTaxFeeDetailType {

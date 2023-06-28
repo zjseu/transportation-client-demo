@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private MultiSegmentRestrictionType() {
     multiSegmentBookingType_ = 0;
     multiSegmentPolicyType_ = 0;
+    bindingProductRef_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -58,6 +59,27 @@ private static final long serialVersionUID = 0L;
             multiSegmentPolicyType_ = input.readInt32();
             break;
           }
+          case 24: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              bindingProductRef_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            bindingProductRef_.add(input.readInt32());
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+              bindingProductRef_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              bindingProductRef_.add(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -73,6 +95,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        bindingProductRef_ = java.util.Collections.unmodifiableList(bindingProductRef_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -90,6 +115,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.class, com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MULTISEGMENTBOOKINGTYPE_FIELD_NUMBER = 1;
   private int multiSegmentBookingType_;
   /**
@@ -118,6 +144,41 @@ private static final long serialVersionUID = 0L;
     return multiSegmentPolicyType_;
   }
 
+  public static final int BINDINGPRODUCTREF_FIELD_NUMBER = 3;
+  private java.util.List<java.lang.Integer> bindingProductRef_;
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  public java.util.List<java.lang.Integer>
+      getBindingProductRefList() {
+    return bindingProductRef_;
+  }
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  public int getBindingProductRefCount() {
+    return bindingProductRef_.size();
+  }
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  public int getBindingProductRef(int index) {
+    return bindingProductRef_.get(index);
+  }
+  private int bindingProductRefMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,11 +193,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (multiSegmentBookingType_ != 0) {
       output.writeInt32(1, multiSegmentBookingType_);
     }
     if (multiSegmentPolicyType_ != 0) {
       output.writeInt32(2, multiSegmentPolicyType_);
+    }
+    if (getBindingProductRefList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(bindingProductRefMemoizedSerializedSize);
+    }
+    for (int i = 0; i < bindingProductRef_.size(); i++) {
+      output.writeInt32NoTag(bindingProductRef_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -154,6 +223,20 @@ private static final long serialVersionUID = 0L;
     if (multiSegmentPolicyType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, multiSegmentPolicyType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < bindingProductRef_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(bindingProductRef_.get(i));
+      }
+      size += dataSize;
+      if (!getBindingProductRefList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      bindingProductRefMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,6 +258,8 @@ private static final long serialVersionUID = 0L;
         == other.getMultiSegmentBookingType());
     result = result && (getMultiSegmentPolicyType()
         == other.getMultiSegmentPolicyType());
+    result = result && getBindingProductRefList()
+        .equals(other.getBindingProductRefList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -190,6 +275,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMultiSegmentBookingType();
     hash = (37 * hash) + MULTISEGMENTPOLICYTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMultiSegmentPolicyType();
+    if (getBindingProductRefCount() > 0) {
+      hash = (37 * hash) + BINDINGPRODUCTREF_FIELD_NUMBER;
+      hash = (53 * hash) + getBindingProductRefList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -331,6 +420,8 @@ private static final long serialVersionUID = 0L;
 
       multiSegmentPolicyType_ = 0;
 
+      bindingProductRef_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -357,8 +448,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType result = new com.ctrip.flight.agg.shopping.contract.transportation.response.MultiSegmentRestrictionType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.multiSegmentBookingType_ = multiSegmentBookingType_;
       result.multiSegmentPolicyType_ = multiSegmentPolicyType_;
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        bindingProductRef_ = java.util.Collections.unmodifiableList(bindingProductRef_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.bindingProductRef_ = bindingProductRef_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -413,6 +512,16 @@ private static final long serialVersionUID = 0L;
       if (other.getMultiSegmentPolicyType() != 0) {
         setMultiSegmentPolicyType(other.getMultiSegmentPolicyType());
       }
+      if (!other.bindingProductRef_.isEmpty()) {
+        if (bindingProductRef_.isEmpty()) {
+          bindingProductRef_ = other.bindingProductRef_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureBindingProductRefIsMutable();
+          bindingProductRef_.addAll(other.bindingProductRef_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -441,6 +550,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int multiSegmentBookingType_ ;
     /**
@@ -520,6 +630,100 @@ private static final long serialVersionUID = 0L;
     public Builder clearMultiSegmentPolicyType() {
       
       multiSegmentPolicyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> bindingProductRef_ = java.util.Collections.emptyList();
+    private void ensureBindingProductRefIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        bindingProductRef_ = new java.util.ArrayList<java.lang.Integer>(bindingProductRef_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getBindingProductRefList() {
+      return java.util.Collections.unmodifiableList(bindingProductRef_);
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public int getBindingProductRefCount() {
+      return bindingProductRef_.size();
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public int getBindingProductRef(int index) {
+      return bindingProductRef_.get(index);
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public Builder setBindingProductRef(
+        int index, int value) {
+      ensureBindingProductRefIsMutable();
+      bindingProductRef_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public Builder addBindingProductRef(int value) {
+      ensureBindingProductRefIsMutable();
+      bindingProductRef_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public Builder addAllBindingProductRef(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureBindingProductRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, bindingProductRef_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 可以组合的产品id
+     * </pre>
+     *
+     * <code>repeated int32 BindingProductRef = 3;</code>
+     */
+    public Builder clearBindingProductRef() {
+      bindingProductRef_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

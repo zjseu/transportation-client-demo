@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     rebateType_ = "";
     ruleId_ = 0L;
     activityMode_ = "";
+    discountConstraint_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -104,6 +105,15 @@ private static final long serialVersionUID = 0L;
             activityMode_ = s;
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              discountConstraint_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            discountConstraint_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +129,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        discountConstraint_ = java.util.Collections.unmodifiableList(discountConstraint_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -136,6 +149,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.agg.shopping.contract.transportation.DiscountType.class, com.ctrip.flight.agg.shopping.contract.transportation.DiscountType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AMOUNT_FIELD_NUMBER = 1;
   private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_;
   /**
@@ -325,6 +339,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DISCOUNTCONSTRAINT_FIELD_NUMBER = 8;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> discountConstraint_;
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> getDiscountConstraintList() {
+    return discountConstraint_;
+  }
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder> 
+      getDiscountConstraintOrBuilderList() {
+    return discountConstraint_;
+  }
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  public int getDiscountConstraintCount() {
+    return discountConstraint_.size();
+  }
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType getDiscountConstraint(int index) {
+    return discountConstraint_.get(index);
+  }
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder getDiscountConstraintOrBuilder(
+      int index) {
+    return discountConstraint_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -360,6 +429,9 @@ private static final long serialVersionUID = 0L;
     if (!getActivityModeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, activityMode_);
     }
+    for (int i = 0; i < discountConstraint_.size(); i++) {
+      output.writeMessage(8, discountConstraint_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -394,6 +466,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getActivityModeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, activityMode_);
+    }
+    for (int i = 0; i < discountConstraint_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, discountConstraint_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -431,6 +507,8 @@ private static final long serialVersionUID = 0L;
         == other.getRuleId());
     result = result && getActivityMode()
         .equals(other.getActivityMode());
+    result = result && getDiscountConstraintList()
+        .equals(other.getDiscountConstraintList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -461,6 +539,10 @@ private static final long serialVersionUID = 0L;
         getRuleId());
     hash = (37 * hash) + ACTIVITYMODE_FIELD_NUMBER;
     hash = (53 * hash) + getActivityMode().hashCode();
+    if (getDiscountConstraintCount() > 0) {
+      hash = (37 * hash) + DISCOUNTCONSTRAINT_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscountConstraintList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -593,6 +675,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getDiscountConstraintFieldBuilder();
       }
     }
     @java.lang.Override
@@ -620,6 +703,12 @@ private static final long serialVersionUID = 0L;
 
       activityMode_ = "";
 
+      if (discountConstraintBuilder_ == null) {
+        discountConstraint_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        discountConstraintBuilder_.clear();
+      }
       return this;
     }
 
@@ -646,6 +735,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.agg.shopping.contract.transportation.DiscountType buildPartial() {
       com.ctrip.flight.agg.shopping.contract.transportation.DiscountType result = new com.ctrip.flight.agg.shopping.contract.transportation.DiscountType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (amountBuilder_ == null) {
         result.amount_ = amount_;
       } else {
@@ -661,6 +752,16 @@ private static final long serialVersionUID = 0L;
       result.rebateType_ = rebateType_;
       result.ruleId_ = ruleId_;
       result.activityMode_ = activityMode_;
+      if (discountConstraintBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          discountConstraint_ = java.util.Collections.unmodifiableList(discountConstraint_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.discountConstraint_ = discountConstraint_;
+      } else {
+        result.discountConstraint_ = discountConstraintBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -732,6 +833,32 @@ private static final long serialVersionUID = 0L;
         activityMode_ = other.activityMode_;
         onChanged();
       }
+      if (discountConstraintBuilder_ == null) {
+        if (!other.discountConstraint_.isEmpty()) {
+          if (discountConstraint_.isEmpty()) {
+            discountConstraint_ = other.discountConstraint_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureDiscountConstraintIsMutable();
+            discountConstraint_.addAll(other.discountConstraint_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.discountConstraint_.isEmpty()) {
+          if (discountConstraintBuilder_.isEmpty()) {
+            discountConstraintBuilder_.dispose();
+            discountConstraintBuilder_ = null;
+            discountConstraint_ = other.discountConstraint_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            discountConstraintBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getDiscountConstraintFieldBuilder() : null;
+          } else {
+            discountConstraintBuilder_.addAllMessages(other.discountConstraint_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -760,6 +887,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.ctrip.flight.agg.shopping.contract.transportation.AmountType amount_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1357,6 +1485,318 @@ private static final long serialVersionUID = 0L;
       activityMode_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> discountConstraint_ =
+      java.util.Collections.emptyList();
+    private void ensureDiscountConstraintIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        discountConstraint_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType>(discountConstraint_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder> discountConstraintBuilder_;
+
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> getDiscountConstraintList() {
+      if (discountConstraintBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(discountConstraint_);
+      } else {
+        return discountConstraintBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public int getDiscountConstraintCount() {
+      if (discountConstraintBuilder_ == null) {
+        return discountConstraint_.size();
+      } else {
+        return discountConstraintBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType getDiscountConstraint(int index) {
+      if (discountConstraintBuilder_ == null) {
+        return discountConstraint_.get(index);
+      } else {
+        return discountConstraintBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder setDiscountConstraint(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType value) {
+      if (discountConstraintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.set(index, value);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder setDiscountConstraint(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder builderForValue) {
+      if (discountConstraintBuilder_ == null) {
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        discountConstraintBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder addDiscountConstraint(com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType value) {
+      if (discountConstraintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.add(value);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder addDiscountConstraint(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType value) {
+      if (discountConstraintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.add(index, value);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder addDiscountConstraint(
+        com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder builderForValue) {
+      if (discountConstraintBuilder_ == null) {
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.add(builderForValue.build());
+        onChanged();
+      } else {
+        discountConstraintBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder addDiscountConstraint(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder builderForValue) {
+      if (discountConstraintBuilder_ == null) {
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        discountConstraintBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder addAllDiscountConstraint(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> values) {
+      if (discountConstraintBuilder_ == null) {
+        ensureDiscountConstraintIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, discountConstraint_);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder clearDiscountConstraint() {
+      if (discountConstraintBuilder_ == null) {
+        discountConstraint_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public Builder removeDiscountConstraint(int index) {
+      if (discountConstraintBuilder_ == null) {
+        ensureDiscountConstraintIsMutable();
+        discountConstraint_.remove(index);
+        onChanged();
+      } else {
+        discountConstraintBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder getDiscountConstraintBuilder(
+        int index) {
+      return getDiscountConstraintFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder getDiscountConstraintOrBuilder(
+        int index) {
+      if (discountConstraintBuilder_ == null) {
+        return discountConstraint_.get(index);  } else {
+        return discountConstraintBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder> 
+         getDiscountConstraintOrBuilderList() {
+      if (discountConstraintBuilder_ != null) {
+        return discountConstraintBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(discountConstraint_);
+      }
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder addDiscountConstraintBuilder() {
+      return getDiscountConstraintFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder addDiscountConstraintBuilder(
+        int index) {
+      return getDiscountConstraintFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 让利条件信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder> 
+         getDiscountConstraintBuilderList() {
+      return getDiscountConstraintFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder> 
+        getDiscountConstraintFieldBuilder() {
+      if (discountConstraintBuilder_ == null) {
+        discountConstraintBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder>(
+                discountConstraint_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        discountConstraint_ = null;
+      }
+      return discountConstraintBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

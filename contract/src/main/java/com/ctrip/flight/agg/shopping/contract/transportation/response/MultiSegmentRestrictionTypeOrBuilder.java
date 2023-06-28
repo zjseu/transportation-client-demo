@@ -26,4 +26,29 @@ public interface MultiSegmentRestrictionTypeOrBuilder extends
    * <code>int32 MultiSegmentPolicyType = 2;</code>
    */
   int getMultiSegmentPolicyType();
+
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  java.util.List<java.lang.Integer> getBindingProductRefList();
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  int getBindingProductRefCount();
+  /**
+   * <pre>
+   * 可以组合的产品id
+   * </pre>
+   *
+   * <code>repeated int32 BindingProductRef = 3;</code>
+   */
+  int getBindingProductRef(int index);
 }

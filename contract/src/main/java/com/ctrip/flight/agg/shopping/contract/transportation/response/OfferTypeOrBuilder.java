@@ -508,4 +508,13 @@ public interface OfferTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonTypeOrBuilder getOfferComparisonOrBuilder();
+
+  /**
+   * <pre>
+   * 平均含税底价 0表示未输出
+   * </pre>
+   *
+   * <code>double SortIndicator = 19;</code>
+   */
+  double getSortIndicator();
 }

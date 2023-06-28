@@ -119,4 +119,48 @@ public interface DiscountTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getActivityModeBytes();
+
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType> 
+      getDiscountConstraintList();
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType getDiscountConstraint(int index);
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  int getDiscountConstraintCount();
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder> 
+      getDiscountConstraintOrBuilderList();
+  /**
+   * <pre>
+   * 让利条件信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintType DiscountConstraint = 8;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.DiscountConstraintTypeOrBuilder getDiscountConstraintOrBuilder(
+      int index);
 }

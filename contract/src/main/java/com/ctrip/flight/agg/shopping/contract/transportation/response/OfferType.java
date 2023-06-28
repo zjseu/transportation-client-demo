@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     journeyAttachment_ = java.util.Collections.emptyList();
     offerID_ = 0;
     childStandardOfferRef_ = 0;
+    sortIndicator_ = 0D;
   }
 
   @java.lang.Override
@@ -222,6 +223,11 @@ private static final long serialVersionUID = 0L;
               offerComparison_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 153: {
+
+            sortIndicator_ = input.readDouble();
             break;
           }
           default: {
@@ -965,6 +971,19 @@ private static final long serialVersionUID = 0L;
     return getOfferComparison();
   }
 
+  public static final int SORTINDICATOR_FIELD_NUMBER = 19;
+  private double sortIndicator_;
+  /**
+   * <pre>
+   * 平均含税底价 0表示未输出
+   * </pre>
+   *
+   * <code>double SortIndicator = 19;</code>
+   */
+  public double getSortIndicator() {
+    return sortIndicator_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1037,6 +1056,9 @@ private static final long serialVersionUID = 0L;
     }
     if (offerComparison_ != null) {
       output.writeMessage(18, getOfferComparison());
+    }
+    if (sortIndicator_ != 0D) {
+      output.writeDouble(19, sortIndicator_);
     }
     unknownFields.writeTo(output);
   }
@@ -1131,6 +1153,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getOfferComparison());
     }
+    if (sortIndicator_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(19, sortIndicator_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1197,6 +1223,10 @@ private static final long serialVersionUID = 0L;
       result = result && getOfferComparison()
           .equals(other.getOfferComparison());
     }
+    result = result && (
+        java.lang.Double.doubleToLongBits(getSortIndicator())
+        == java.lang.Double.doubleToLongBits(
+            other.getSortIndicator()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1269,6 +1299,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OFFERCOMPARISON_FIELD_NUMBER;
       hash = (53 * hash) + getOfferComparison().hashCode();
     }
+    hash = (37 * hash) + SORTINDICATOR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSortIndicator()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1484,6 +1517,8 @@ private static final long serialVersionUID = 0L;
         offerComparison_ = null;
         offerComparisonBuilder_ = null;
       }
+      sortIndicator_ = 0D;
+
       return this;
     }
 
@@ -1602,6 +1637,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.offerComparison_ = offerComparisonBuilder_.build();
       }
+      result.sortIndicator_ = sortIndicator_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1858,6 +1894,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOfferComparison()) {
         mergeOfferComparison(other.getOfferComparison());
+      }
+      if (other.getSortIndicator() != 0D) {
+        setSortIndicator(other.getSortIndicator());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4943,6 +4982,44 @@ private static final long serialVersionUID = 0L;
         offerComparison_ = null;
       }
       return offerComparisonBuilder_;
+    }
+
+    private double sortIndicator_ ;
+    /**
+     * <pre>
+     * 平均含税底价 0表示未输出
+     * </pre>
+     *
+     * <code>double SortIndicator = 19;</code>
+     */
+    public double getSortIndicator() {
+      return sortIndicator_;
+    }
+    /**
+     * <pre>
+     * 平均含税底价 0表示未输出
+     * </pre>
+     *
+     * <code>double SortIndicator = 19;</code>
+     */
+    public Builder setSortIndicator(double value) {
+      
+      sortIndicator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 平均含税底价 0表示未输出
+     * </pre>
+     *
+     * <code>double SortIndicator = 19;</code>
+     */
+    public Builder clearSortIndicator() {
+      
+      sortIndicator_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -139,6 +139,8 @@ message OfferType {
     com.ctrip.flight.agg.shopping.contract.transportation.ProductCompositionType ProductComposition = 17;
     // 比价信息
     com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;
+    // 平均含税底价 0表示未输出
+    double SortIndicator = 19;
 }
 
 message TransportSegmentType {
@@ -604,6 +606,8 @@ message MultiSegmentRestrictionType {
     int32 MultiSegmentBookingType = 1;
     // 1：是多程/段的政策 0：非多程/段的政策
     int32 MultiSegmentPolicyType = 2;
+    // 可以组合的产品id
+    repeated int32 BindingProductRef = 3;
 }
 
 message GreenFlyingType {

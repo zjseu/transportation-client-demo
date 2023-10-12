@@ -219,7 +219,7 @@ public interface FareInfoTypeOrBuilder extends
 
   /**
    * <pre>
-   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * travix  sence FareType, different with trip's FareType
    * </pre>
    *
    * <code>string TravixFareType = 18;</code>
@@ -227,7 +227,7 @@ public interface FareInfoTypeOrBuilder extends
   java.lang.String getTravixFareType();
   /**
    * <pre>
-   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * travix  sence FareType, different with trip's FareType
    * </pre>
    *
    * <code>string TravixFareType = 18;</code>

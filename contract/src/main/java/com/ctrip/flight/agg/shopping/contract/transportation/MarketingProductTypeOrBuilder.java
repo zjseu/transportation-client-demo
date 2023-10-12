@@ -578,4 +578,48 @@ public interface MarketingProductTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.AdvertTypeOrBuilder getAdvertOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> 
+      getUpgradeList();
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType getUpgrade(int index);
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  int getUpgradeCount();
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder> 
+      getUpgradeOrBuilderList();
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder getUpgradeOrBuilder(
+      int index);
 }

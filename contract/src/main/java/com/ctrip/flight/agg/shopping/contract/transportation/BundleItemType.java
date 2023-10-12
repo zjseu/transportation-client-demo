@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-   *BrandAttribute
+   *BrandAttribute,Upgrade
    * </pre>
    *
    * <code>string BundleType = 1;</code>
@@ -164,7 +164,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    *产品类型, 目前支持的取值有：
    *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-   *BrandAttribute
+   *BrandAttribute,Upgrade
    * </pre>
    *
    * <code>string BundleType = 1;</code>
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-     *BrandAttribute
+     *BrandAttribute,Upgrade
      * </pre>
      *
      * <code>string BundleType = 1;</code>
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-     *BrandAttribute
+     *BrandAttribute,Upgrade
      * </pre>
      *
      * <code>string BundleType = 1;</code>
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-     *BrandAttribute
+     *BrandAttribute,Upgrade
      * </pre>
      *
      * <code>string BundleType = 1;</code>
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-     *BrandAttribute
+     *BrandAttribute,Upgrade
      * </pre>
      *
      * <code>string BundleType = 1;</code>
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      *产品类型, 目前支持的取值有：
      *GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-     *BrandAttribute
+     *BrandAttribute,Upgrade
      * </pre>
      *
      * <code>string BundleType = 1;</code>

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     points_ = 0;
     cashAmount_ = 0D;
     activityID_ = 0L;
+    pointsPayLaterInd_ = false;
   }
 
   @java.lang.Override
@@ -68,6 +69,11 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             activityID_ = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            pointsPayLaterInd_ = input.readBool();
             break;
           }
           default: {
@@ -154,6 +160,19 @@ private static final long serialVersionUID = 0L;
     return activityID_;
   }
 
+  public static final int POINTSPAYLATERIND_FIELD_NUMBER = 5;
+  private boolean pointsPayLaterInd_;
+  /**
+   * <pre>
+   * 是否是先享后付
+   * </pre>
+   *
+   * <code>bool PointsPayLaterInd = 5;</code>
+   */
+  public boolean getPointsPayLaterInd() {
+    return pointsPayLaterInd_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -180,6 +199,9 @@ private static final long serialVersionUID = 0L;
     if (activityID_ != 0L) {
       output.writeInt64(4, activityID_);
     }
+    if (pointsPayLaterInd_ != false) {
+      output.writeBool(5, pointsPayLaterInd_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -204,6 +226,10 @@ private static final long serialVersionUID = 0L;
     if (activityID_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, activityID_);
+    }
+    if (pointsPayLaterInd_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, pointsPayLaterInd_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,6 +257,8 @@ private static final long serialVersionUID = 0L;
             other.getCashAmount()));
     result = result && (getActivityID()
         == other.getActivityID());
+    result = result && (getPointsPayLaterInd()
+        == other.getPointsPayLaterInd());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -252,6 +280,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ACTIVITYID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getActivityID());
+    hash = (37 * hash) + POINTSPAYLATERIND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPointsPayLaterInd());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,6 +428,8 @@ private static final long serialVersionUID = 0L;
 
       activityID_ = 0L;
 
+      pointsPayLaterInd_ = false;
+
       return this;
     }
 
@@ -427,6 +460,7 @@ private static final long serialVersionUID = 0L;
       result.points_ = points_;
       result.cashAmount_ = cashAmount_;
       result.activityID_ = activityID_;
+      result.pointsPayLaterInd_ = pointsPayLaterInd_;
       onBuilt();
       return result;
     }
@@ -486,6 +520,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getActivityID() != 0L) {
         setActivityID(other.getActivityID());
+      }
+      if (other.getPointsPayLaterInd() != false) {
+        setPointsPayLaterInd(other.getPointsPayLaterInd());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -664,6 +701,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearActivityID() {
       
       activityID_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean pointsPayLaterInd_ ;
+    /**
+     * <pre>
+     * 是否是先享后付
+     * </pre>
+     *
+     * <code>bool PointsPayLaterInd = 5;</code>
+     */
+    public boolean getPointsPayLaterInd() {
+      return pointsPayLaterInd_;
+    }
+    /**
+     * <pre>
+     * 是否是先享后付
+     * </pre>
+     *
+     * <code>bool PointsPayLaterInd = 5;</code>
+     */
+    public Builder setPointsPayLaterInd(boolean value) {
+      
+      pointsPayLaterInd_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否是先享后付
+     * </pre>
+     *
+     * <code>bool PointsPayLaterInd = 5;</code>
+     */
+    public Builder clearPointsPayLaterInd() {
+      
+      pointsPayLaterInd_ = false;
       onChanged();
       return this;
     }

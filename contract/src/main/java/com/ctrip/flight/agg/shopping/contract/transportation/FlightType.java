@@ -148,6 +148,19 @@ private static final long serialVersionUID = 0L;
             stopoverCount_ = input.readInt32();
             break;
           }
+          case 106: {
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder subBuilder = null;
+            if (change_ != null) {
+              subBuilder = change_.toBuilder();
+            }
+            change_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(change_);
+              change_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -622,6 +635,39 @@ private static final long serialVersionUID = 0L;
     return stopoverCount_;
   }
 
+  public static final int CHANGE_FIELD_NUMBER = 13;
+  private com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType change_;
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  public boolean hasChange() {
+    return change_ != null;
+  }
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType getChange() {
+    return change_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.getDefaultInstance() : change_;
+  }
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder getChangeOrBuilder() {
+    return getChange();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -671,6 +717,9 @@ private static final long serialVersionUID = 0L;
     }
     if (stopoverCount_ != 0) {
       output.writeInt32(12, stopoverCount_);
+    }
+    if (change_ != null) {
+      output.writeMessage(13, getChange());
     }
     unknownFields.writeTo(output);
   }
@@ -728,6 +777,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(12, stopoverCount_);
     }
+    if (change_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getChange());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -777,6 +830,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFlightAttributeList());
     result = result && (getStopoverCount()
         == other.getStopoverCount());
+    result = result && (hasChange() == other.hasChange());
+    if (hasChange()) {
+      result = result && getChange()
+          .equals(other.getChange());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -822,6 +880,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STOPOVERCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStopoverCount();
+    if (hasChange()) {
+      hash = (37 * hash) + CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getChange().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -996,6 +1058,12 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000400);
       stopoverCount_ = 0;
 
+      if (changeBuilder_ == null) {
+        change_ = null;
+      } else {
+        change_ = null;
+        changeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1060,6 +1128,11 @@ private static final long serialVersionUID = 0L;
       }
       result.flightAttribute_ = flightAttribute_;
       result.stopoverCount_ = stopoverCount_;
+      if (changeBuilder_ == null) {
+        result.change_ = change_;
+      } else {
+        result.change_ = changeBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1179,6 +1252,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStopoverCount() != 0) {
         setStopoverCount(other.getStopoverCount());
+      }
+      if (other.hasChange()) {
+        mergeChange(other.getChange());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2630,6 +2706,159 @@ private static final long serialVersionUID = 0L;
       stopoverCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType change_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder> changeBuilder_;
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public boolean hasChange() {
+      return changeBuilder_ != null || change_ != null;
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType getChange() {
+      if (changeBuilder_ == null) {
+        return change_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.getDefaultInstance() : change_;
+      } else {
+        return changeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public Builder setChange(com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType value) {
+      if (changeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        change_ = value;
+        onChanged();
+      } else {
+        changeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public Builder setChange(
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder builderForValue) {
+      if (changeBuilder_ == null) {
+        change_ = builderForValue.build();
+        onChanged();
+      } else {
+        changeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public Builder mergeChange(com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType value) {
+      if (changeBuilder_ == null) {
+        if (change_ != null) {
+          change_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.newBuilder(change_).mergeFrom(value).buildPartial();
+        } else {
+          change_ = value;
+        }
+        onChanged();
+      } else {
+        changeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public Builder clearChange() {
+      if (changeBuilder_ == null) {
+        change_ = null;
+        onChanged();
+      } else {
+        change_ = null;
+        changeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder getChangeBuilder() {
+      
+      onChanged();
+      return getChangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder getChangeOrBuilder() {
+      if (changeBuilder_ != null) {
+        return changeBuilder_.getMessageOrBuilder();
+      } else {
+        return change_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.getDefaultInstance() : change_;
+      }
+    }
+    /**
+     * <pre>
+     * 航变后黑屏未变更时的航变信息
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder> 
+        getChangeFieldBuilder() {
+      if (changeBuilder_ == null) {
+        changeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder>(
+                getChange(),
+                getParentForChildren(),
+                isClean());
+        change_ = null;
+      }
+      return changeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

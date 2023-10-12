@@ -197,6 +197,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 146: {
+            com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder subBuilder = null;
+            if (familyAccountLimit_ != null) {
+              subBuilder = familyAccountLimit_.toBuilder();
+            }
+            familyAccountLimit_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(familyAccountLimit_);
+              familyAccountLimit_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -851,6 +864,39 @@ private static final long serialVersionUID = 0L;
     return getExtraPaxNumLimit();
   }
 
+  public static final int FAMILYACCOUNTLIMIT_FIELD_NUMBER = 18;
+  private com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType familyAccountLimit_;
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  public boolean hasFamilyAccountLimit() {
+    return familyAccountLimit_ != null;
+  }
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType getFamilyAccountLimit() {
+    return familyAccountLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.getDefaultInstance() : familyAccountLimit_;
+  }
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder getFamilyAccountLimitOrBuilder() {
+    return getFamilyAccountLimit();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -915,6 +961,9 @@ private static final long serialVersionUID = 0L;
     }
     if (extraPaxNumLimit_ != null) {
       output.writeMessage(17, getExtraPaxNumLimit());
+    }
+    if (familyAccountLimit_ != null) {
+      output.writeMessage(18, getFamilyAccountLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -1008,6 +1057,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getExtraPaxNumLimit());
     }
+    if (familyAccountLimit_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getFamilyAccountLimit());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1069,6 +1122,11 @@ private static final long serialVersionUID = 0L;
     if (hasExtraPaxNumLimit()) {
       result = result && getExtraPaxNumLimit()
           .equals(other.getExtraPaxNumLimit());
+    }
+    result = result && (hasFamilyAccountLimit() == other.hasFamilyAccountLimit());
+    if (hasFamilyAccountLimit()) {
+      result = result && getFamilyAccountLimit()
+          .equals(other.getFamilyAccountLimit());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1132,6 +1190,10 @@ private static final long serialVersionUID = 0L;
     if (hasExtraPaxNumLimit()) {
       hash = (37 * hash) + EXTRAPAXNUMLIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getExtraPaxNumLimit().hashCode();
+    }
+    if (hasFamilyAccountLimit()) {
+      hash = (37 * hash) + FAMILYACCOUNTLIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getFamilyAccountLimit().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1316,6 +1378,12 @@ private static final long serialVersionUID = 0L;
         extraPaxNumLimit_ = null;
         extraPaxNumLimitBuilder_ = null;
       }
+      if (familyAccountLimitBuilder_ == null) {
+        familyAccountLimit_ = null;
+      } else {
+        familyAccountLimit_ = null;
+        familyAccountLimitBuilder_ = null;
+      }
       return this;
     }
 
@@ -1396,6 +1464,11 @@ private static final long serialVersionUID = 0L;
         result.extraPaxNumLimit_ = extraPaxNumLimit_;
       } else {
         result.extraPaxNumLimit_ = extraPaxNumLimitBuilder_.build();
+      }
+      if (familyAccountLimitBuilder_ == null) {
+        result.familyAccountLimit_ = familyAccountLimit_;
+      } else {
+        result.familyAccountLimit_ = familyAccountLimitBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1536,6 +1609,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExtraPaxNumLimit()) {
         mergeExtraPaxNumLimit(other.getExtraPaxNumLimit());
+      }
+      if (other.hasFamilyAccountLimit()) {
+        mergeFamilyAccountLimit(other.getFamilyAccountLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3386,6 +3462,159 @@ private static final long serialVersionUID = 0L;
         extraPaxNumLimit_ = null;
       }
       return extraPaxNumLimitBuilder_;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType familyAccountLimit_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder> familyAccountLimitBuilder_;
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public boolean hasFamilyAccountLimit() {
+      return familyAccountLimitBuilder_ != null || familyAccountLimit_ != null;
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType getFamilyAccountLimit() {
+      if (familyAccountLimitBuilder_ == null) {
+        return familyAccountLimit_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.getDefaultInstance() : familyAccountLimit_;
+      } else {
+        return familyAccountLimitBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public Builder setFamilyAccountLimit(com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType value) {
+      if (familyAccountLimitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        familyAccountLimit_ = value;
+        onChanged();
+      } else {
+        familyAccountLimitBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public Builder setFamilyAccountLimit(
+        com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder builderForValue) {
+      if (familyAccountLimitBuilder_ == null) {
+        familyAccountLimit_ = builderForValue.build();
+        onChanged();
+      } else {
+        familyAccountLimitBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public Builder mergeFamilyAccountLimit(com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType value) {
+      if (familyAccountLimitBuilder_ == null) {
+        if (familyAccountLimit_ != null) {
+          familyAccountLimit_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.newBuilder(familyAccountLimit_).mergeFrom(value).buildPartial();
+        } else {
+          familyAccountLimit_ = value;
+        }
+        onChanged();
+      } else {
+        familyAccountLimitBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public Builder clearFamilyAccountLimit() {
+      if (familyAccountLimitBuilder_ == null) {
+        familyAccountLimit_ = null;
+        onChanged();
+      } else {
+        familyAccountLimit_ = null;
+        familyAccountLimitBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder getFamilyAccountLimitBuilder() {
+      
+      onChanged();
+      return getFamilyAccountLimitFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder getFamilyAccountLimitOrBuilder() {
+      if (familyAccountLimitBuilder_ != null) {
+        return familyAccountLimitBuilder_.getMessageOrBuilder();
+      } else {
+        return familyAccountLimit_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.getDefaultInstance() : familyAccountLimit_;
+      }
+    }
+    /**
+     * <pre>
+     * 家庭认证票限制信息，为空表示不做限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder> 
+        getFamilyAccountLimitFieldBuilder() {
+      if (familyAccountLimitBuilder_ == null) {
+        familyAccountLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder>(
+                getFamilyAccountLimit(),
+                getParentForChildren(),
+                isClean());
+        familyAccountLimit_ = null;
+      }
+      return familyAccountLimitBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

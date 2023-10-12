@@ -398,4 +398,29 @@ public interface RestrictionTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitType ExtraPaxNumLimit = 17;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.ExtraPaxNumLimitTypeOrBuilder getExtraPaxNumLimitOrBuilder();
+
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  boolean hasFamilyAccountLimit();
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType getFamilyAccountLimit();
+  /**
+   * <pre>
+   * 家庭认证票限制信息，为空表示不做限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitType FamilyAccountLimit = 18;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FamilyAccountLimitTypeOrBuilder getFamilyAccountLimitOrBuilder();
 }

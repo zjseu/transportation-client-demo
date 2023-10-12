@@ -230,6 +230,19 @@ private static final long serialVersionUID = 0L;
             sortIndicator_ = input.readDouble();
             break;
           }
+          case 162: {
+            com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder subBuilder = null;
+            if (orderRule_ != null) {
+              subBuilder = orderRule_.toBuilder();
+            }
+            orderRule_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(orderRule_);
+              orderRule_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -984,6 +997,39 @@ private static final long serialVersionUID = 0L;
     return sortIndicator_;
   }
 
+  public static final int ORDERRULE_FIELD_NUMBER = 20;
+  private com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType orderRule_;
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  public boolean hasOrderRule() {
+    return orderRule_ != null;
+  }
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType getOrderRule() {
+    return orderRule_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.getDefaultInstance() : orderRule_;
+  }
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder getOrderRuleOrBuilder() {
+    return getOrderRule();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1059,6 +1105,9 @@ private static final long serialVersionUID = 0L;
     }
     if (sortIndicator_ != 0D) {
       output.writeDouble(19, sortIndicator_);
+    }
+    if (orderRule_ != null) {
+      output.writeMessage(20, getOrderRule());
     }
     unknownFields.writeTo(output);
   }
@@ -1157,6 +1206,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(19, sortIndicator_);
     }
+    if (orderRule_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getOrderRule());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1227,6 +1280,11 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getSortIndicator())
         == java.lang.Double.doubleToLongBits(
             other.getSortIndicator()));
+    result = result && (hasOrderRule() == other.hasOrderRule());
+    if (hasOrderRule()) {
+      result = result && getOrderRule()
+          .equals(other.getOrderRule());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1302,6 +1360,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SORTINDICATOR_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getSortIndicator()));
+    if (hasOrderRule()) {
+      hash = (37 * hash) + ORDERRULE_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderRule().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1519,6 +1581,12 @@ private static final long serialVersionUID = 0L;
       }
       sortIndicator_ = 0D;
 
+      if (orderRuleBuilder_ == null) {
+        orderRule_ = null;
+      } else {
+        orderRule_ = null;
+        orderRuleBuilder_ = null;
+      }
       return this;
     }
 
@@ -1638,6 +1706,11 @@ private static final long serialVersionUID = 0L;
         result.offerComparison_ = offerComparisonBuilder_.build();
       }
       result.sortIndicator_ = sortIndicator_;
+      if (orderRuleBuilder_ == null) {
+        result.orderRule_ = orderRule_;
+      } else {
+        result.orderRule_ = orderRuleBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1897,6 +1970,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSortIndicator() != 0D) {
         setSortIndicator(other.getSortIndicator());
+      }
+      if (other.hasOrderRule()) {
+        mergeOrderRule(other.getOrderRule());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5020,6 +5096,159 @@ private static final long serialVersionUID = 0L;
       sortIndicator_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType orderRule_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder> orderRuleBuilder_;
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public boolean hasOrderRule() {
+      return orderRuleBuilder_ != null || orderRule_ != null;
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType getOrderRule() {
+      if (orderRuleBuilder_ == null) {
+        return orderRule_ == null ? com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.getDefaultInstance() : orderRule_;
+      } else {
+        return orderRuleBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public Builder setOrderRule(com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType value) {
+      if (orderRuleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        orderRule_ = value;
+        onChanged();
+      } else {
+        orderRuleBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public Builder setOrderRule(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder builderForValue) {
+      if (orderRuleBuilder_ == null) {
+        orderRule_ = builderForValue.build();
+        onChanged();
+      } else {
+        orderRuleBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public Builder mergeOrderRule(com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType value) {
+      if (orderRuleBuilder_ == null) {
+        if (orderRule_ != null) {
+          orderRule_ =
+            com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.newBuilder(orderRule_).mergeFrom(value).buildPartial();
+        } else {
+          orderRule_ = value;
+        }
+        onChanged();
+      } else {
+        orderRuleBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public Builder clearOrderRule() {
+      if (orderRuleBuilder_ == null) {
+        orderRule_ = null;
+        onChanged();
+      } else {
+        orderRule_ = null;
+        orderRuleBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder getOrderRuleBuilder() {
+      
+      onChanged();
+      return getOrderRuleFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder getOrderRuleOrBuilder() {
+      if (orderRuleBuilder_ != null) {
+        return orderRuleBuilder_.getMessageOrBuilder();
+      } else {
+        return orderRule_ == null ?
+            com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.getDefaultInstance() : orderRule_;
+      }
+    }
+    /**
+     * <pre>
+     * 运价展示顺序规则
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder> 
+        getOrderRuleFieldBuilder() {
+      if (orderRuleBuilder_ == null) {
+        orderRuleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder>(
+                getOrderRule(),
+                getParentForChildren(),
+                isClean());
+        orderRule_ = null;
+      }
+      return orderRuleBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

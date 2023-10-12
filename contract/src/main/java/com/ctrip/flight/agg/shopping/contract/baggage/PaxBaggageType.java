@@ -65,6 +65,19 @@ private static final long serialVersionUID = 0L;
             baggageSpecifiedDesc_ = s;
             break;
           }
+          case 34: {
+            com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder subBuilder = null;
+            if (paxBaggageExtension_ != null) {
+              subBuilder = paxBaggageExtension_.toBuilder();
+            }
+            paxBaggageExtension_ = input.readMessage(com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(paxBaggageExtension_);
+              paxBaggageExtension_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -211,6 +224,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PAXBAGGAGEEXTENSION_FIELD_NUMBER = 4;
+  private com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension paxBaggageExtension_;
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  public boolean hasPaxBaggageExtension() {
+    return paxBaggageExtension_ != null;
+  }
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension getPaxBaggageExtension() {
+    return paxBaggageExtension_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.getDefaultInstance() : paxBaggageExtension_;
+  }
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder getPaxBaggageExtensionOrBuilder() {
+    return getPaxBaggageExtension();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +280,9 @@ private static final long serialVersionUID = 0L;
     if (!getBaggageSpecifiedDescBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, baggageSpecifiedDesc_);
     }
+    if (paxBaggageExtension_ != null) {
+      output.writeMessage(4, getPaxBaggageExtension());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -253,6 +302,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBaggageSpecifiedDescBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, baggageSpecifiedDesc_);
+    }
+    if (paxBaggageExtension_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getPaxBaggageExtension());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,6 +329,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBaggageWayList());
     result = result && getBaggageSpecifiedDesc()
         .equals(other.getBaggageSpecifiedDesc());
+    result = result && (hasPaxBaggageExtension() == other.hasPaxBaggageExtension());
+    if (hasPaxBaggageExtension()) {
+      result = result && getPaxBaggageExtension()
+          .equals(other.getPaxBaggageExtension());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -295,6 +353,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + BAGGAGESPECIFIEDDESC_FIELD_NUMBER;
     hash = (53 * hash) + getBaggageSpecifiedDesc().hashCode();
+    if (hasPaxBaggageExtension()) {
+      hash = (37 * hash) + PAXBAGGAGEEXTENSION_FIELD_NUMBER;
+      hash = (53 * hash) + getPaxBaggageExtension().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,6 +501,12 @@ private static final long serialVersionUID = 0L;
       }
       baggageSpecifiedDesc_ = "";
 
+      if (paxBaggageExtensionBuilder_ == null) {
+        paxBaggageExtension_ = null;
+      } else {
+        paxBaggageExtension_ = null;
+        paxBaggageExtensionBuilder_ = null;
+      }
       return this;
     }
 
@@ -478,6 +546,11 @@ private static final long serialVersionUID = 0L;
         result.baggageWay_ = baggageWayBuilder_.build();
       }
       result.baggageSpecifiedDesc_ = baggageSpecifiedDesc_;
+      if (paxBaggageExtensionBuilder_ == null) {
+        result.paxBaggageExtension_ = paxBaggageExtension_;
+      } else {
+        result.paxBaggageExtension_ = paxBaggageExtensionBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -559,6 +632,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getBaggageSpecifiedDesc().isEmpty()) {
         baggageSpecifiedDesc_ = other.baggageSpecifiedDesc_;
         onChanged();
+      }
+      if (other.hasPaxBaggageExtension()) {
+        mergePaxBaggageExtension(other.getPaxBaggageExtension());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1027,6 +1103,159 @@ private static final long serialVersionUID = 0L;
       baggageSpecifiedDesc_ = value;
       onChanged();
       return this;
+    }
+
+    private com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension paxBaggageExtension_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder> paxBaggageExtensionBuilder_;
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public boolean hasPaxBaggageExtension() {
+      return paxBaggageExtensionBuilder_ != null || paxBaggageExtension_ != null;
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension getPaxBaggageExtension() {
+      if (paxBaggageExtensionBuilder_ == null) {
+        return paxBaggageExtension_ == null ? com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.getDefaultInstance() : paxBaggageExtension_;
+      } else {
+        return paxBaggageExtensionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public Builder setPaxBaggageExtension(com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension value) {
+      if (paxBaggageExtensionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        paxBaggageExtension_ = value;
+        onChanged();
+      } else {
+        paxBaggageExtensionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public Builder setPaxBaggageExtension(
+        com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder builderForValue) {
+      if (paxBaggageExtensionBuilder_ == null) {
+        paxBaggageExtension_ = builderForValue.build();
+        onChanged();
+      } else {
+        paxBaggageExtensionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public Builder mergePaxBaggageExtension(com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension value) {
+      if (paxBaggageExtensionBuilder_ == null) {
+        if (paxBaggageExtension_ != null) {
+          paxBaggageExtension_ =
+            com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.newBuilder(paxBaggageExtension_).mergeFrom(value).buildPartial();
+        } else {
+          paxBaggageExtension_ = value;
+        }
+        onChanged();
+      } else {
+        paxBaggageExtensionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public Builder clearPaxBaggageExtension() {
+      if (paxBaggageExtensionBuilder_ == null) {
+        paxBaggageExtension_ = null;
+        onChanged();
+      } else {
+        paxBaggageExtension_ = null;
+        paxBaggageExtensionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder getPaxBaggageExtensionBuilder() {
+      
+      onChanged();
+      return getPaxBaggageExtensionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder getPaxBaggageExtensionOrBuilder() {
+      if (paxBaggageExtensionBuilder_ != null) {
+        return paxBaggageExtensionBuilder_.getMessageOrBuilder();
+      } else {
+        return paxBaggageExtension_ == null ?
+            com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.getDefaultInstance() : paxBaggageExtension_;
+      }
+    }
+    /**
+     * <pre>
+     * 乘客行李信息扩展
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder> 
+        getPaxBaggageExtensionFieldBuilder() {
+      if (paxBaggageExtensionBuilder_ == null) {
+        paxBaggageExtensionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension.Builder, com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder>(
+                getPaxBaggageExtension(),
+                getParentForChildren(),
+                isClean());
+        paxBaggageExtension_ = null;
+      }
+      return paxBaggageExtensionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

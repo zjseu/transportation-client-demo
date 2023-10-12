@@ -77,4 +77,29 @@ public interface PaxBaggageTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBaggageSpecifiedDescBytes();
+
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  boolean hasPaxBaggageExtension();
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension getPaxBaggageExtension();
+  /**
+   * <pre>
+   * 乘客行李信息扩展
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtension PaxBaggageExtension = 4;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.baggage.PaxBaggageExtensionOrBuilder getPaxBaggageExtensionOrBuilder();
 }

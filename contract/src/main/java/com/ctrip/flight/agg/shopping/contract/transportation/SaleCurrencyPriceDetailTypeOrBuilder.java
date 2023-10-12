@@ -75,4 +75,13 @@ public interface SaleCurrencyPriceDetailTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.DiscountTypeOrBuilder getDiscountOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 票面价
+   * </pre>
+   *
+   * <code>double PublishPrice = 3;</code>
+   */
+  double getPublishPrice();
 }

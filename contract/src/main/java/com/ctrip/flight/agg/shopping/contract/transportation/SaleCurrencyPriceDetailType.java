@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SaleCurrencyPriceDetailType() {
     discount_ = java.util.Collections.emptyList();
+    publishPrice_ = 0D;
   }
 
   @java.lang.Override
@@ -63,6 +64,11 @@ private static final long serialVersionUID = 0L;
             }
             discount_.add(
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.DiscountType.parser(), extensionRegistry));
+            break;
+          }
+          case 25: {
+
+            publishPrice_ = input.readDouble();
             break;
           }
           default: {
@@ -189,6 +195,19 @@ private static final long serialVersionUID = 0L;
     return discount_.get(index);
   }
 
+  public static final int PUBLISHPRICE_FIELD_NUMBER = 3;
+  private double publishPrice_;
+  /**
+   * <pre>
+   * 票面价
+   * </pre>
+   *
+   * <code>double PublishPrice = 3;</code>
+   */
+  public double getPublishPrice() {
+    return publishPrice_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,6 +228,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < discount_.size(); i++) {
       output.writeMessage(2, discount_.get(i));
     }
+    if (publishPrice_ != 0D) {
+      output.writeDouble(3, publishPrice_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +247,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < discount_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, discount_.get(i));
+    }
+    if (publishPrice_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(3, publishPrice_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +275,10 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getDiscountList()
         .equals(other.getDiscountList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getPublishPrice())
+        == java.lang.Double.doubleToLongBits(
+            other.getPublishPrice()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -268,6 +298,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DISCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getDiscountList().hashCode();
     }
+    hash = (37 * hash) + PUBLISHPRICE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getPublishPrice()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +447,8 @@ private static final long serialVersionUID = 0L;
       } else {
         discountBuilder_.clear();
       }
+      publishPrice_ = 0D;
+
       return this;
     }
 
@@ -456,6 +491,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.discount_ = discountBuilder_.build();
       }
+      result.publishPrice_ = publishPrice_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -533,6 +569,9 @@ private static final long serialVersionUID = 0L;
             discountBuilder_.addAllMessages(other.discount_);
           }
         }
+      }
+      if (other.getPublishPrice() != 0D) {
+        setPublishPrice(other.getPublishPrice());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1027,6 +1066,44 @@ private static final long serialVersionUID = 0L;
         discount_ = null;
       }
       return discountBuilder_;
+    }
+
+    private double publishPrice_ ;
+    /**
+     * <pre>
+     * 票面价
+     * </pre>
+     *
+     * <code>double PublishPrice = 3;</code>
+     */
+    public double getPublishPrice() {
+      return publishPrice_;
+    }
+    /**
+     * <pre>
+     * 票面价
+     * </pre>
+     *
+     * <code>double PublishPrice = 3;</code>
+     */
+    public Builder setPublishPrice(double value) {
+      
+      publishPrice_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 票面价
+     * </pre>
+     *
+     * <code>double PublishPrice = 3;</code>
+     */
+    public Builder clearPublishPrice() {
+      
+      publishPrice_ = 0D;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

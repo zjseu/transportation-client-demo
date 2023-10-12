@@ -268,4 +268,29 @@ public interface FlightTypeOrBuilder extends
    * <code>int32 StopoverCount = 12;</code>
    */
   int getStopoverCount();
+
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  boolean hasChange();
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType getChange();
+  /**
+   * <pre>
+   * 航变后黑屏未变更时的航变信息
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeType Change = 13;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.FlightChangeTypeOrBuilder getChangeOrBuilder();
 }

@@ -584,4 +584,48 @@ public interface DataListsTypeOrBuilder extends
    */
   com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionTypeOrBuilder getTravixExclusiveOptionOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> 
+      getCabinDescList();
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType getCabinDesc(int index);
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  int getCabinDescCount();
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder> 
+      getCabinDescOrBuilderList();
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder getCabinDescOrBuilder(
+      int index);
 }

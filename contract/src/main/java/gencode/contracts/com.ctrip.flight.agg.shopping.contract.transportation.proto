@@ -46,7 +46,7 @@ message FareInfoType {
     // G16运价区域
     int32 G16FareClassTariffNo = 17;
 
-    // travix  sence FareType, different with trip's FareType，supported by adapter
+    // travix  sence FareType, different with trip's FareType
     string TravixFareType = 18;
 }
 
@@ -209,6 +209,8 @@ message SaleCurrencyPriceDetailType {
     AmountType SalePrice = 1;
     // 让利信息
     repeated DiscountType Discount = 2;
+    // 票面价
+    double PublishPrice = 3;
 }
 
 message SettlementCurrencyPriceDetailType {
@@ -254,6 +256,8 @@ message FlightSeatType {
     int32 MileageCredit = 8 [deprecated = true];
     // 国内特别舱位信息
     RBDDisclosureType RBDDisclosure = 9;
+    // 机票舱等信息索引
+    int64 CabinDescID = 11;
 }
 
 message TrainSeatType {
@@ -414,6 +418,15 @@ message RestrictionType {
     TakeChildInfantNumLimitType TakeChildInfantNumLimit = 16;
     // 人数限制信息
     ExtraPaxNumLimitType ExtraPaxNumLimit = 17;
+    // 家庭认证票限制信息，为空表示不做限制
+    FamilyAccountLimitType FamilyAccountLimit = 18;
+}
+
+message FamilyAccountLimitType {
+    // 限制类型 1: 限制认证乘机人
+    int32 LimitType = 1;
+    // 限制认证乘机人 1: 限制全部
+    int32 PassengerLimit = 2;
 }
 
 message ExtraPaxNumLimitType {
@@ -564,6 +577,8 @@ message FlightType {
     repeated string FlightAttribute = 11;
     // 经停数量
     int32 StopoverCount = 12;
+    // 航变后黑屏未变更时的航变信息
+    FlightChangeType Change = 13;
 }
 
 message ThroughFlightType {
@@ -638,7 +653,7 @@ message BundleItemType {
     /*
     产品类型, 目前支持的取值有：
     GiftProduct,CashBack,CouponProduct, FlightXComposition,Hotel,Ancillaries,MemberPrivilege,PriceReduction,
-    BrandAttribute
+    BrandAttribute,Upgrade
     */
     string BundleType = 1;
     // 绑定信息的索引
@@ -696,6 +711,8 @@ message MarketingProductType {
     repeated MileageCashType MileageCash = 12;
     // 广告x产品营销
     repeated AdvertType Advert = 13;
+    // 升舱
+    repeated UpgradeType Upgrade = 14;
 }
 
 message ServiceDefinitionType {
@@ -1077,10 +1094,8 @@ message FareTaxFeeDetailType {
     string Type = 1;
     // amount
     double Amount = 2;
-    // currency
-    string Currency = 3;
     // name
-    string Name = 4;
+    string Name = 3;
 }
 
 message BusType {
@@ -1120,6 +1135,8 @@ message CreditPointsType {
     double CashAmount = 3;
     // 活动ID
     int64 ActivityID = 4;
+    // 是否是先享后付
+    bool PointsPayLaterInd = 5;
 }
 
 
@@ -1181,4 +1198,58 @@ message StationType {
     string StationID = 2;
     // 站点名称
     string StationName = 3;
+}
+
+// 升舱信息
+message UpgradeType {
+    // 索引id
+    int32 RefNum = 1;
+    // 主政策ID
+    int64 PolicyID = 2;
+    // 舱等，YCF
+    string CabinCode = 3;
+    // 可升舱舱位
+    string RBD = 4;
+    // 特殊舱位
+    RBDDisclosureType RBDDisclosure = 5;
+    // 升舱价格
+    double SalePrice = 6;
+    // 原票面价
+    double OriginalPublishPrice = 7;
+    // 库存
+    int32 SeatCount = 8;
+    // 升舱后报销凭证
+    int32 InvoiceType = 9;
+    // 餐食标识 T/F
+    string MealFlag = 10;
+    // 行李额类型，1按两舱，2按经济舱
+    int32 BaggageType = 11;
+    // 里程类型，1按两舱，2按经济舱
+    int32 MileageType = 12;
+    // 升舱退改签RCKey
+    string CompatiblePenaltyKey = 13;
+    // 升舱处理类型 0. 1.
+    int32 ProcessType = 14;
+    // 升舱OfferToken。当UpgradeProcessType=2时有值，为直接预订升舱政策的查询的OfferToken
+    string UpgradeOfferToken = 15;
+    // 升舱结果答复规则；格式：A-0或者0-B；A-0，表示提交升舱后A小时告知升舱结果；0-B，表示起飞前B小时告知升舱结果
+    string ReplyRule = 16;
+    // 升舱成功率
+    double SuccessRate = 17;
+    // 标记位
+    int64 RestrictionFlag = 18;
+    // 展示升舱信息标识 T:展示 F: 不展示
+    string ShowFlag = 19;
+    // 定向展示 DirectDisplay
+    string DirectCode = 20;
+    // 定向隐藏 DirectBlackDisplay
+    string BlackDirectCode = 21;
+}
+
+// 航变后黑屏未变更时的航变信息
+message FlightChangeType {
+    // 航变后起飞时间，格式yyyy-MM-dd HH:mm:ss
+    string DepartDateTime = 1;
+    // 航变后到达时间，格式yyyy-MM-dd HH:mm:ss
+    string ArriveDateTime = 2;
 }

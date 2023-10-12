@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     paymentDiscount_ = java.util.Collections.emptyList();
     additionalExtension_ = java.util.Collections.emptyList();
     travixExclusiveOption_ = java.util.Collections.emptyList();
+    cabinDesc_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -188,6 +189,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType.parser(), extensionRegistry));
             break;
           }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              cabinDesc_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType>();
+              mutable_bitField0_ |= 0x00004000;
+            }
+            cabinDesc_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -238,6 +248,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
         travixExclusiveOption_ = java.util.Collections.unmodifiableList(travixExclusiveOption_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+        cabinDesc_ = java.util.Collections.unmodifiableList(cabinDesc_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -983,6 +996,61 @@ private static final long serialVersionUID = 0L;
     return travixExclusiveOption_.get(index);
   }
 
+  public static final int CABINDESC_FIELD_NUMBER = 15;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> cabinDesc_;
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> getCabinDescList() {
+    return cabinDesc_;
+  }
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder> 
+      getCabinDescOrBuilderList() {
+    return cabinDesc_;
+  }
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  public int getCabinDescCount() {
+    return cabinDesc_.size();
+  }
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType getCabinDesc(int index) {
+    return cabinDesc_.get(index);
+  }
+  /**
+   * <pre>
+   * 舱等信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder getCabinDescOrBuilder(
+      int index) {
+    return cabinDesc_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1038,6 +1106,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < travixExclusiveOption_.size(); i++) {
       output.writeMessage(14, travixExclusiveOption_.get(i));
+    }
+    for (int i = 0; i < cabinDesc_.size(); i++) {
+      output.writeMessage(15, cabinDesc_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1104,6 +1175,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, travixExclusiveOption_.get(i));
     }
+    for (int i = 0; i < cabinDesc_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, cabinDesc_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1154,6 +1229,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdditionalExtensionList());
     result = result && getTravixExclusiveOptionList()
         .equals(other.getTravixExclusiveOptionList());
+    result = result && getCabinDescList()
+        .equals(other.getCabinDescList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1220,6 +1297,10 @@ private static final long serialVersionUID = 0L;
     if (getTravixExclusiveOptionCount() > 0) {
       hash = (37 * hash) + TRAVIXEXCLUSIVEOPTION_FIELD_NUMBER;
       hash = (53 * hash) + getTravixExclusiveOptionList().hashCode();
+    }
+    if (getCabinDescCount() > 0) {
+      hash = (37 * hash) + CABINDESC_FIELD_NUMBER;
+      hash = (53 * hash) + getCabinDescList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1361,6 +1442,7 @@ private static final long serialVersionUID = 0L;
         getPaymentDiscountFieldBuilder();
         getAdditionalExtensionFieldBuilder();
         getTravixExclusiveOptionFieldBuilder();
+        getCabinDescFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1449,6 +1531,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         travixExclusiveOptionBuilder_.clear();
+      }
+      if (cabinDescBuilder_ == null) {
+        cabinDesc_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      } else {
+        cabinDescBuilder_.clear();
       }
       return this;
     }
@@ -1595,6 +1683,15 @@ private static final long serialVersionUID = 0L;
         result.travixExclusiveOption_ = travixExclusiveOption_;
       } else {
         result.travixExclusiveOption_ = travixExclusiveOptionBuilder_.build();
+      }
+      if (cabinDescBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          cabinDesc_ = java.util.Collections.unmodifiableList(cabinDesc_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.cabinDesc_ = cabinDesc_;
+      } else {
+        result.cabinDesc_ = cabinDescBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1960,6 +2057,32 @@ private static final long serialVersionUID = 0L;
                  getTravixExclusiveOptionFieldBuilder() : null;
           } else {
             travixExclusiveOptionBuilder_.addAllMessages(other.travixExclusiveOption_);
+          }
+        }
+      }
+      if (cabinDescBuilder_ == null) {
+        if (!other.cabinDesc_.isEmpty()) {
+          if (cabinDesc_.isEmpty()) {
+            cabinDesc_ = other.cabinDesc_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureCabinDescIsMutable();
+            cabinDesc_.addAll(other.cabinDesc_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cabinDesc_.isEmpty()) {
+          if (cabinDescBuilder_.isEmpty()) {
+            cabinDescBuilder_.dispose();
+            cabinDescBuilder_ = null;
+            cabinDesc_ = other.cabinDesc_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            cabinDescBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCabinDescFieldBuilder() : null;
+          } else {
+            cabinDescBuilder_.addAllMessages(other.cabinDesc_);
           }
         }
       }
@@ -6041,6 +6164,318 @@ private static final long serialVersionUID = 0L;
         travixExclusiveOption_ = null;
       }
       return travixExclusiveOptionBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> cabinDesc_ =
+      java.util.Collections.emptyList();
+    private void ensureCabinDescIsMutable() {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+        cabinDesc_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType>(cabinDesc_);
+        bitField0_ |= 0x00004000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder> cabinDescBuilder_;
+
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> getCabinDescList() {
+      if (cabinDescBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cabinDesc_);
+      } else {
+        return cabinDescBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public int getCabinDescCount() {
+      if (cabinDescBuilder_ == null) {
+        return cabinDesc_.size();
+      } else {
+        return cabinDescBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType getCabinDesc(int index) {
+      if (cabinDescBuilder_ == null) {
+        return cabinDesc_.get(index);
+      } else {
+        return cabinDescBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder setCabinDesc(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType value) {
+      if (cabinDescBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCabinDescIsMutable();
+        cabinDesc_.set(index, value);
+        onChanged();
+      } else {
+        cabinDescBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder setCabinDesc(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder builderForValue) {
+      if (cabinDescBuilder_ == null) {
+        ensureCabinDescIsMutable();
+        cabinDesc_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cabinDescBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder addCabinDesc(com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType value) {
+      if (cabinDescBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCabinDescIsMutable();
+        cabinDesc_.add(value);
+        onChanged();
+      } else {
+        cabinDescBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder addCabinDesc(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType value) {
+      if (cabinDescBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCabinDescIsMutable();
+        cabinDesc_.add(index, value);
+        onChanged();
+      } else {
+        cabinDescBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder addCabinDesc(
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder builderForValue) {
+      if (cabinDescBuilder_ == null) {
+        ensureCabinDescIsMutable();
+        cabinDesc_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cabinDescBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder addCabinDesc(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder builderForValue) {
+      if (cabinDescBuilder_ == null) {
+        ensureCabinDescIsMutable();
+        cabinDesc_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cabinDescBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder addAllCabinDesc(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType> values) {
+      if (cabinDescBuilder_ == null) {
+        ensureCabinDescIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cabinDesc_);
+        onChanged();
+      } else {
+        cabinDescBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder clearCabinDesc() {
+      if (cabinDescBuilder_ == null) {
+        cabinDesc_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        cabinDescBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public Builder removeCabinDesc(int index) {
+      if (cabinDescBuilder_ == null) {
+        ensureCabinDescIsMutable();
+        cabinDesc_.remove(index);
+        onChanged();
+      } else {
+        cabinDescBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder getCabinDescBuilder(
+        int index) {
+      return getCabinDescFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder getCabinDescOrBuilder(
+        int index) {
+      if (cabinDescBuilder_ == null) {
+        return cabinDesc_.get(index);  } else {
+        return cabinDescBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder> 
+         getCabinDescOrBuilderList() {
+      if (cabinDescBuilder_ != null) {
+        return cabinDescBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cabinDesc_);
+      }
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder addCabinDescBuilder() {
+      return getCabinDescFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder addCabinDescBuilder(
+        int index) {
+      return getCabinDescFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 舱等信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType CabinDesc = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder> 
+         getCabinDescBuilderList() {
+      return getCabinDescFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder> 
+        getCabinDescFieldBuilder() {
+      if (cabinDescBuilder_ == null) {
+        cabinDescBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.response.CabinDescTypeOrBuilder>(
+                cabinDesc_,
+                ((bitField0_ & 0x00004000) == 0x00004000),
+                getParentForChildren(),
+                isClean());
+        cabinDesc_ = null;
+      }
+      return cabinDescBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

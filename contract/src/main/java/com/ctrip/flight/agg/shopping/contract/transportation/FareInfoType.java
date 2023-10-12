@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object travixFareType_;
   /**
    * <pre>
-   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * travix  sence FareType, different with trip's FareType
    * </pre>
    *
    * <code>string TravixFareType = 18;</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * travix  sence FareType, different with trip's FareType，supported by adapter
+   * travix  sence FareType, different with trip's FareType
    * </pre>
    *
    * <code>string TravixFareType = 18;</code>
@@ -2340,7 +2340,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object travixFareType_ = "";
     /**
      * <pre>
-     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * travix  sence FareType, different with trip's FareType
      * </pre>
      *
      * <code>string TravixFareType = 18;</code>
@@ -2359,7 +2359,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * travix  sence FareType, different with trip's FareType
      * </pre>
      *
      * <code>string TravixFareType = 18;</code>
@@ -2379,7 +2379,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * travix  sence FareType, different with trip's FareType
      * </pre>
      *
      * <code>string TravixFareType = 18;</code>
@@ -2396,7 +2396,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * travix  sence FareType, different with trip's FareType
      * </pre>
      *
      * <code>string TravixFareType = 18;</code>
@@ -2409,7 +2409,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * travix  sence FareType, different with trip's FareType，supported by adapter
+     * travix  sence FareType, different with trip's FareType
      * </pre>
      *
      * <code>string TravixFareType = 18;</code>

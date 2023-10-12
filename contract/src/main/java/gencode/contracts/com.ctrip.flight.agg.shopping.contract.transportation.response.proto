@@ -71,6 +71,8 @@ message DataListsType {
     repeated AdditionalExtensionType AdditionalExtension = 13;
     // TravixExclusiveOption, for travix fare information
     repeated com.ctrip.flight.agg.shopping.contract.transportation.travix.TravixExclusiveOptionType TravixExclusiveOption = 14;
+    // 舱等信息
+    repeated CabinDescType CabinDesc = 15;
 }
 
 message MetaDataType {
@@ -141,6 +143,8 @@ message OfferType {
     com.ctrip.flight.agg.shopping.contract.transportation.OfferComparisonType OfferComparison = 18;
     // 平均含税底价 0表示未输出
     double SortIndicator = 19;
+    // 运价展示顺序规则
+    OrderRuleType OrderRule = 20;
 }
 
 message TransportSegmentType {
@@ -186,7 +190,7 @@ message FlightProductType {
     repeated com.ctrip.flight.agg.shopping.contract.transportation.FlightPaxProductType PaxProduct = 4;
     // 产品类型
     repeated string ProductType = 5;
-    // 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
+    // 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 16: 电子行程单, 按位相加可以表示多个值
     int32 InvoiceType = 6;
     // 限制类信息
     com.ctrip.flight.agg.shopping.contract.transportation.RestrictionType Restriction = 7;
@@ -351,6 +355,7 @@ message FlightSupplierType {
     string AgentDisclosure = 4;
     // 供应商资质信息
     string AgencyLicenseUrl = 5;
+    // 第6位已经被错误的使用了, 新增字段请从第7位开始
 }
 
 message CarrierPriceShowType {
@@ -739,4 +744,20 @@ message AdditionalExtensionType {
     string Content = 2;
     // SfdResponse etc
     string Type = 3;
+}
+
+message CabinDescType {
+    // 舱等名称（多语言）
+    string CabinName = 2;
+    // 舱等数据ID
+    int64 CabinDescID = 3;
+}
+
+message OrderRuleType {
+    // 类型 1：最低价 2:服务包裸价 3:旗舰店
+    int32 Type = 1;
+    // 优先级 1、2、3...
+    int32 Priority = 2;
+    // 展示类型 1：展示 2：折叠
+    int32 ShowType = 3;
 }

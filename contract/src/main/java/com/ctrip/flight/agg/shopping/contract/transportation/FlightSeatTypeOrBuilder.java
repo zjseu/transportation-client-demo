@@ -130,4 +130,13 @@ public interface FlightSeatTypeOrBuilder extends
    * <code>.com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureType RBDDisclosure = 9;</code>
    */
   com.ctrip.flight.agg.shopping.contract.transportation.RBDDisclosureTypeOrBuilder getRBDDisclosureOrBuilder();
+
+  /**
+   * <pre>
+   * 机票舱等信息索引
+   * </pre>
+   *
+   * <code>int64 CabinDescID = 11;</code>
+   */
+  long getCabinDescID();
 }

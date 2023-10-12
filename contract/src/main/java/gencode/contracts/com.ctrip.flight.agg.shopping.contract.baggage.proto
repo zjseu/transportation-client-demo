@@ -18,6 +18,13 @@ message PaxBaggageType {
     repeated BaggageWayType BaggageWay = 2;
     // 行李描述，根据请求的Language决定输出的语言类型
     string BaggageSpecifiedDesc = 3;
+    // 乘客行李信息扩展
+    PaxBaggageExtension PaxBaggageExtension = 4;
+}
+
+message PaxBaggageExtension {
+    // 手提行李、随身行李共享总重
+    double HandBagMaxWeight = 1;
 }
 
 message BaggageWayType {

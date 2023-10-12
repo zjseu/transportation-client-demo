@@ -517,4 +517,29 @@ public interface OfferTypeOrBuilder extends
    * <code>double SortIndicator = 19;</code>
    */
   double getSortIndicator();
+
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  boolean hasOrderRule();
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType getOrderRule();
+  /**
+   * <pre>
+   * 运价展示顺序规则
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleType OrderRule = 20;</code>
+   */
+  com.ctrip.flight.agg.shopping.contract.transportation.response.OrderRuleTypeOrBuilder getOrderRuleOrBuilder();
 }

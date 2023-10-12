@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
   private int invoiceType_;
   /**
    * <pre>
-   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
+   * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 16: 电子行程单, 按位相加可以表示多个值
    * </pre>
    *
    * <code>int32 InvoiceType = 6;</code>
@@ -3922,7 +3922,7 @@ private static final long serialVersionUID = 0L;
     private int invoiceType_ ;
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 16: 电子行程单, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>
@@ -3932,7 +3932,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 16: 电子行程单, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>
@@ -3945,7 +3945,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 按位相加可以表示多个值
+     * 提供行程单或发票选项：1: 发票, 2: 行程单, 4: 行+差, 8: 电子凭证, 16: 电子行程单, 按位相加可以表示多个值
      * </pre>
      *
      * <code>int32 InvoiceType = 6;</code>

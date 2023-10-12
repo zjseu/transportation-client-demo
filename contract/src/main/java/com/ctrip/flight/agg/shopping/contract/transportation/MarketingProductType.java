@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
     creditPoints_ = java.util.Collections.emptyList();
     mileageCash_ = java.util.Collections.emptyList();
     advert_ = java.util.Collections.emptyList();
+    upgrade_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -176,6 +177,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.AdvertType.parser(), extensionRegistry));
             break;
           }
+          case 114: {
+            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              upgrade_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType>();
+              mutable_bitField0_ |= 0x00002000;
+            }
+            upgrade_.add(
+                input.readMessage(com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -229,6 +239,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         advert_ = java.util.Collections.unmodifiableList(advert_);
+      }
+      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        upgrade_ = java.util.Collections.unmodifiableList(upgrade_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -962,6 +975,61 @@ private static final long serialVersionUID = 0L;
     return advert_.get(index);
   }
 
+  public static final int UPGRADE_FIELD_NUMBER = 14;
+  private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> upgrade_;
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> getUpgradeList() {
+    return upgrade_;
+  }
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder> 
+      getUpgradeOrBuilderList() {
+    return upgrade_;
+  }
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  public int getUpgradeCount() {
+    return upgrade_.size();
+  }
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType getUpgrade(int index) {
+    return upgrade_.get(index);
+  }
+  /**
+   * <pre>
+   * 升舱
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+   */
+  public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder getUpgradeOrBuilder(
+      int index) {
+    return upgrade_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1014,6 +1082,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < advert_.size(); i++) {
       output.writeMessage(13, advert_.get(i));
+    }
+    for (int i = 0; i < upgrade_.size(); i++) {
+      output.writeMessage(14, upgrade_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1076,6 +1147,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, advert_.get(i));
     }
+    for (int i = 0; i < upgrade_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, upgrade_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1118,6 +1193,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMileageCashList());
     result = result && getAdvertList()
         .equals(other.getAdvertList());
+    result = result && getUpgradeList()
+        .equals(other.getUpgradeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1180,6 +1257,10 @@ private static final long serialVersionUID = 0L;
     if (getAdvertCount() > 0) {
       hash = (37 * hash) + ADVERT_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertList().hashCode();
+    }
+    if (getUpgradeCount() > 0) {
+      hash = (37 * hash) + UPGRADE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1326,6 +1407,7 @@ private static final long serialVersionUID = 0L;
         getCreditPointsFieldBuilder();
         getMileageCashFieldBuilder();
         getAdvertFieldBuilder();
+        getUpgradeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1408,6 +1490,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         advertBuilder_.clear();
+      }
+      if (upgradeBuilder_ == null) {
+        upgrade_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      } else {
+        upgradeBuilder_.clear();
       }
       return this;
     }
@@ -1552,6 +1640,15 @@ private static final long serialVersionUID = 0L;
         result.advert_ = advert_;
       } else {
         result.advert_ = advertBuilder_.build();
+      }
+      if (upgradeBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          upgrade_ = java.util.Collections.unmodifiableList(upgrade_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.upgrade_ = upgrade_;
+      } else {
+        result.upgrade_ = upgradeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1936,6 +2033,32 @@ private static final long serialVersionUID = 0L;
                  getAdvertFieldBuilder() : null;
           } else {
             advertBuilder_.addAllMessages(other.advert_);
+          }
+        }
+      }
+      if (upgradeBuilder_ == null) {
+        if (!other.upgrade_.isEmpty()) {
+          if (upgrade_.isEmpty()) {
+            upgrade_ = other.upgrade_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureUpgradeIsMutable();
+            upgrade_.addAll(other.upgrade_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.upgrade_.isEmpty()) {
+          if (upgradeBuilder_.isEmpty()) {
+            upgradeBuilder_.dispose();
+            upgradeBuilder_ = null;
+            upgrade_ = other.upgrade_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            upgradeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUpgradeFieldBuilder() : null;
+          } else {
+            upgradeBuilder_.addAllMessages(other.upgrade_);
           }
         }
       }
@@ -6023,6 +6146,318 @@ private static final long serialVersionUID = 0L;
         advert_ = null;
       }
       return advertBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> upgrade_ =
+      java.util.Collections.emptyList();
+    private void ensureUpgradeIsMutable() {
+      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        upgrade_ = new java.util.ArrayList<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType>(upgrade_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder> upgradeBuilder_;
+
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> getUpgradeList() {
+      if (upgradeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(upgrade_);
+      } else {
+        return upgradeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public int getUpgradeCount() {
+      if (upgradeBuilder_ == null) {
+        return upgrade_.size();
+      } else {
+        return upgradeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType getUpgrade(int index) {
+      if (upgradeBuilder_ == null) {
+        return upgrade_.get(index);
+      } else {
+        return upgradeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder setUpgrade(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType value) {
+      if (upgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpgradeIsMutable();
+        upgrade_.set(index, value);
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder setUpgrade(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder builderForValue) {
+      if (upgradeBuilder_ == null) {
+        ensureUpgradeIsMutable();
+        upgrade_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder addUpgrade(com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType value) {
+      if (upgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpgradeIsMutable();
+        upgrade_.add(value);
+        onChanged();
+      } else {
+        upgradeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder addUpgrade(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType value) {
+      if (upgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpgradeIsMutable();
+        upgrade_.add(index, value);
+        onChanged();
+      } else {
+        upgradeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder addUpgrade(
+        com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder builderForValue) {
+      if (upgradeBuilder_ == null) {
+        ensureUpgradeIsMutable();
+        upgrade_.add(builderForValue.build());
+        onChanged();
+      } else {
+        upgradeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder addUpgrade(
+        int index, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder builderForValue) {
+      if (upgradeBuilder_ == null) {
+        ensureUpgradeIsMutable();
+        upgrade_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        upgradeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder addAllUpgrade(
+        java.lang.Iterable<? extends com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType> values) {
+      if (upgradeBuilder_ == null) {
+        ensureUpgradeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, upgrade_);
+        onChanged();
+      } else {
+        upgradeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder clearUpgrade() {
+      if (upgradeBuilder_ == null) {
+        upgrade_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        upgradeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public Builder removeUpgrade(int index) {
+      if (upgradeBuilder_ == null) {
+        ensureUpgradeIsMutable();
+        upgrade_.remove(index);
+        onChanged();
+      } else {
+        upgradeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder getUpgradeBuilder(
+        int index) {
+      return getUpgradeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder getUpgradeOrBuilder(
+        int index) {
+      if (upgradeBuilder_ == null) {
+        return upgrade_.get(index);  } else {
+        return upgradeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder> 
+         getUpgradeOrBuilderList() {
+      if (upgradeBuilder_ != null) {
+        return upgradeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(upgrade_);
+      }
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder addUpgradeBuilder() {
+      return getUpgradeFieldBuilder().addBuilder(
+          com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder addUpgradeBuilder(
+        int index) {
+      return getUpgradeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 升舱
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType Upgrade = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder> 
+         getUpgradeBuilderList() {
+      return getUpgradeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder> 
+        getUpgradeFieldBuilder() {
+      if (upgradeBuilder_ == null) {
+        upgradeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeType.Builder, com.ctrip.flight.agg.shopping.contract.transportation.UpgradeTypeOrBuilder>(
+                upgrade_,
+                ((bitField0_ & 0x00002000) == 0x00002000),
+                getParentForChildren(),
+                isClean());
+        upgrade_ = null;
+      }
+      return upgradeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

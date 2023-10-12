@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     seatSource_ = 0;
     stockID_ = 0L;
     mileageCredit_ = 0;
+    cabinDescID_ = 0L;
   }
 
   @java.lang.Override
@@ -104,6 +105,11 @@ private static final long serialVersionUID = 0L;
               rBDDisclosure_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 88: {
+
+            cabinDescID_ = input.readInt64();
             break;
           }
           default: {
@@ -362,6 +368,19 @@ private static final long serialVersionUID = 0L;
     return getRBDDisclosure();
   }
 
+  public static final int CABINDESCID_FIELD_NUMBER = 11;
+  private long cabinDescID_;
+  /**
+   * <pre>
+   * 机票舱等信息索引
+   * </pre>
+   *
+   * <code>int64 CabinDescID = 11;</code>
+   */
+  public long getCabinDescID() {
+    return cabinDescID_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -402,6 +421,9 @@ private static final long serialVersionUID = 0L;
     }
     if (rBDDisclosure_ != null) {
       output.writeMessage(9, getRBDDisclosure());
+    }
+    if (cabinDescID_ != 0L) {
+      output.writeInt64(11, cabinDescID_);
     }
     unknownFields.writeTo(output);
   }
@@ -445,6 +467,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getRBDDisclosure());
     }
+    if (cabinDescID_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, cabinDescID_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -482,6 +508,8 @@ private static final long serialVersionUID = 0L;
       result = result && getRBDDisclosure()
           .equals(other.getRBDDisclosure());
     }
+    result = result && (getCabinDescID()
+        == other.getCabinDescID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -514,6 +542,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RBDDISCLOSURE_FIELD_NUMBER;
       hash = (53 * hash) + getRBDDisclosure().hashCode();
     }
+    hash = (37 * hash) + CABINDESCID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCabinDescID());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -669,6 +700,8 @@ private static final long serialVersionUID = 0L;
         rBDDisclosure_ = null;
         rBDDisclosureBuilder_ = null;
       }
+      cabinDescID_ = 0L;
+
       return this;
     }
 
@@ -708,6 +741,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.rBDDisclosure_ = rBDDisclosureBuilder_.build();
       }
+      result.cabinDescID_ = cabinDescID_;
       onBuilt();
       return result;
     }
@@ -785,6 +819,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRBDDisclosure()) {
         mergeRBDDisclosure(other.getRBDDisclosure());
+      }
+      if (other.getCabinDescID() != 0L) {
+        setCabinDescID(other.getCabinDescID());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1423,6 +1460,44 @@ private static final long serialVersionUID = 0L;
         rBDDisclosure_ = null;
       }
       return rBDDisclosureBuilder_;
+    }
+
+    private long cabinDescID_ ;
+    /**
+     * <pre>
+     * 机票舱等信息索引
+     * </pre>
+     *
+     * <code>int64 CabinDescID = 11;</code>
+     */
+    public long getCabinDescID() {
+      return cabinDescID_;
+    }
+    /**
+     * <pre>
+     * 机票舱等信息索引
+     * </pre>
+     *
+     * <code>int64 CabinDescID = 11;</code>
+     */
+    public Builder setCabinDescID(long value) {
+      
+      cabinDescID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 机票舱等信息索引
+     * </pre>
+     *
+     * <code>int64 CabinDescID = 11;</code>
+     */
+    public Builder clearCabinDescID() {
+      
+      cabinDescID_ = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -42,4 +42,13 @@ public interface CreditPointsTypeOrBuilder extends
    * <code>int64 ActivityID = 4;</code>
    */
   long getActivityID();
+
+  /**
+   * <pre>
+   * 是否是先享后付
+   * </pre>
+   *
+   * <code>bool PointsPayLaterInd = 5;</code>
+   */
+  boolean getPointsPayLaterInd();
 }

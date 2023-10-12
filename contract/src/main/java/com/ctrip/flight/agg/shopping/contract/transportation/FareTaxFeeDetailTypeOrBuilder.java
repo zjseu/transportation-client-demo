@@ -36,28 +36,10 @@ public interface FareTaxFeeDetailTypeOrBuilder extends
 
   /**
    * <pre>
-   * currency
-   * </pre>
-   *
-   * <code>string Currency = 3;</code>
-   */
-  java.lang.String getCurrency();
-  /**
-   * <pre>
-   * currency
-   * </pre>
-   *
-   * <code>string Currency = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getCurrencyBytes();
-
-  /**
-   * <pre>
    * name
    * </pre>
    *
-   * <code>string Name = 4;</code>
+   * <code>string Name = 3;</code>
    */
   java.lang.String getName();
   /**
@@ -65,7 +47,7 @@ public interface FareTaxFeeDetailTypeOrBuilder extends
    * name
    * </pre>
    *
-   * <code>string Name = 4;</code>
+   * <code>string Name = 3;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();

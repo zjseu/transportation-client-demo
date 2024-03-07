@@ -144,4 +144,17 @@ public interface PaymentLimitTypeOrBuilder extends
    * <code>int32 CardHolderLimit = 5;</code>
    */
   int getCardHolderLimit();
+
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  java.util.List<java.lang.Integer> getCardFeesRefList();
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  int getCardFeesRefCount();
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  int getCardFeesRef(int index);
 }

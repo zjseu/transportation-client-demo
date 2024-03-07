@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     creditCardPaymentLimitRef_ = java.util.Collections.emptyList();
     paymentDiscountRefType_ = java.util.Collections.emptyList();
     cardHolderLimit_ = 0;
+    cardFeesRef_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -103,6 +104,27 @@ private static final long serialVersionUID = 0L;
             cardHolderLimit_ = input.readInt32();
             break;
           }
+          case 56: {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              cardFeesRef_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            cardFeesRef_.add(input.readInt32());
+            break;
+          }
+          case 58: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
+              cardFeesRef_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              cardFeesRef_.add(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -126,6 +148,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         paymentDiscountRefType_ = java.util.Collections.unmodifiableList(paymentDiscountRefType_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        cardFeesRef_ = java.util.Collections.unmodifiableList(cardFeesRef_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -326,6 +351,29 @@ private static final long serialVersionUID = 0L;
     return cardHolderLimit_;
   }
 
+  public static final int CARDFEESREF_FIELD_NUMBER = 7;
+  private java.util.List<java.lang.Integer> cardFeesRef_;
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  public java.util.List<java.lang.Integer>
+      getCardFeesRefList() {
+    return cardFeesRef_;
+  }
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  public int getCardFeesRefCount() {
+    return cardFeesRef_.size();
+  }
+  /**
+   * <code>repeated int32 CardFeesRef = 7;</code>
+   */
+  public int getCardFeesRef(int index) {
+    return cardFeesRef_.get(index);
+  }
+  private int cardFeesRefMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -359,6 +407,13 @@ private static final long serialVersionUID = 0L;
     }
     if (cardHolderLimit_ != 0) {
       output.writeInt32(5, cardHolderLimit_);
+    }
+    if (getCardFeesRefList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(cardFeesRefMemoizedSerializedSize);
+    }
+    for (int i = 0; i < cardFeesRef_.size(); i++) {
+      output.writeInt32NoTag(cardFeesRef_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -403,6 +458,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, cardHolderLimit_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < cardFeesRef_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(cardFeesRef_.get(i));
+      }
+      size += dataSize;
+      if (!getCardFeesRefList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      cardFeesRefMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -432,6 +501,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getCardHolderLimit()
         == other.getCardHolderLimit());
+    result = result && getCardFeesRefList()
+        .equals(other.getCardFeesRefList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -461,6 +532,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CARDHOLDERLIMIT_FIELD_NUMBER;
     hash = (53 * hash) + getCardHolderLimit();
+    if (getCardFeesRefCount() > 0) {
+      hash = (37 * hash) + CARDFEESREF_FIELD_NUMBER;
+      hash = (53 * hash) + getCardFeesRefList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -613,6 +688,8 @@ private static final long serialVersionUID = 0L;
       }
       cardHolderLimit_ = 0;
 
+      cardFeesRef_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -666,6 +743,11 @@ private static final long serialVersionUID = 0L;
         result.loanPayment_ = loanPaymentBuilder_.build();
       }
       result.cardHolderLimit_ = cardHolderLimit_;
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        cardFeesRef_ = java.util.Collections.unmodifiableList(cardFeesRef_);
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.cardFeesRef_ = cardFeesRef_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -766,6 +848,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCardHolderLimit() != 0) {
         setCardHolderLimit(other.getCardHolderLimit());
+      }
+      if (!other.cardFeesRef_.isEmpty()) {
+        if (cardFeesRef_.isEmpty()) {
+          cardFeesRef_ = other.cardFeesRef_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureCardFeesRefIsMutable();
+          cardFeesRef_.addAll(other.cardFeesRef_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1520,6 +1612,72 @@ private static final long serialVersionUID = 0L;
     public Builder clearCardHolderLimit() {
       
       cardHolderLimit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> cardFeesRef_ = java.util.Collections.emptyList();
+    private void ensureCardFeesRefIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        cardFeesRef_ = new java.util.ArrayList<java.lang.Integer>(cardFeesRef_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getCardFeesRefList() {
+      return java.util.Collections.unmodifiableList(cardFeesRef_);
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public int getCardFeesRefCount() {
+      return cardFeesRef_.size();
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public int getCardFeesRef(int index) {
+      return cardFeesRef_.get(index);
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public Builder setCardFeesRef(
+        int index, int value) {
+      ensureCardFeesRefIsMutable();
+      cardFeesRef_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public Builder addCardFeesRef(int value) {
+      ensureCardFeesRefIsMutable();
+      cardFeesRef_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public Builder addAllCardFeesRef(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureCardFeesRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, cardFeesRef_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 CardFeesRef = 7;</code>
+     */
+    public Builder clearCardFeesRef() {
+      cardFeesRef_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

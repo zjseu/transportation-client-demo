@@ -460,6 +460,7 @@ message PaymentLimitType {
     LoanPaymentType LoanPayment = 4;
     // 0：无限制 1：限制持卡人=乘机人
     int32 CardHolderLimit = 5;
+    repeated int32 CardFeesRef = 7;
 }
 
 message PaymentDiscountRefType {

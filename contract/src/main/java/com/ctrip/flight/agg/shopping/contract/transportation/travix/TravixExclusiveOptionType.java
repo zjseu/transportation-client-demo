@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     pointOfSale_ = "";
     consolidator_ = "";
     contentType_ = "";
+    searchActionIndex_ = 0;
   }
 
   @java.lang.Override
@@ -85,6 +86,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             contentType_ = s;
+            break;
+          }
+          case 56: {
+
+            searchActionIndex_ = input.readInt32();
             break;
           }
           default: {
@@ -353,6 +359,20 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SEARCHACTIONINDEX_FIELD_NUMBER = 7;
+  private int searchActionIndex_;
+  /**
+   * <pre>
+   **
+   * ref num
+   * </pre>
+   *
+   * <code>int32 SearchActionIndex = 7;</code>
+   */
+  public int getSearchActionIndex() {
+    return searchActionIndex_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -385,6 +405,9 @@ private static final long serialVersionUID = 0L;
     if (!getContentTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contentType_);
     }
+    if (searchActionIndex_ != 0) {
+      output.writeInt32(7, searchActionIndex_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -412,6 +435,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getContentTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contentType_);
+    }
+    if (searchActionIndex_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, searchActionIndex_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -441,6 +468,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConsolidator());
     result = result && getContentType()
         .equals(other.getContentType());
+    result = result && (getSearchActionIndex()
+        == other.getSearchActionIndex());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -464,6 +493,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getConsolidator().hashCode();
     hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getContentType().hashCode();
+    hash = (37 * hash) + SEARCHACTIONINDEX_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchActionIndex();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -613,6 +644,8 @@ private static final long serialVersionUID = 0L;
 
       contentType_ = "";
 
+      searchActionIndex_ = 0;
+
       return this;
     }
 
@@ -645,6 +678,7 @@ private static final long serialVersionUID = 0L;
       result.pointOfSale_ = pointOfSale_;
       result.consolidator_ = consolidator_;
       result.contentType_ = contentType_;
+      result.searchActionIndex_ = searchActionIndex_;
       onBuilt();
       return result;
     }
@@ -715,6 +749,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getContentType().isEmpty()) {
         contentType_ = other.contentType_;
         onChanged();
+      }
+      if (other.getSearchActionIndex() != 0) {
+        setSearchActionIndex(other.getSearchActionIndex());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1252,6 +1289,47 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       contentType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int searchActionIndex_ ;
+    /**
+     * <pre>
+     **
+     * ref num
+     * </pre>
+     *
+     * <code>int32 SearchActionIndex = 7;</code>
+     */
+    public int getSearchActionIndex() {
+      return searchActionIndex_;
+    }
+    /**
+     * <pre>
+     **
+     * ref num
+     * </pre>
+     *
+     * <code>int32 SearchActionIndex = 7;</code>
+     */
+    public Builder setSearchActionIndex(int value) {
+      
+      searchActionIndex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     * ref num
+     * </pre>
+     *
+     * <code>int32 SearchActionIndex = 7;</code>
+     */
+    public Builder clearSearchActionIndex() {
+      
+      searchActionIndex_ = 0;
       onChanged();
       return this;
     }

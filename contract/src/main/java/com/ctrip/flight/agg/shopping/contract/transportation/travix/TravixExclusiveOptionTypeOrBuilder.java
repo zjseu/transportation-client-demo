@@ -116,4 +116,14 @@ public interface TravixExclusiveOptionTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getContentTypeBytes();
+
+  /**
+   * <pre>
+   **
+   * ref num
+   * </pre>
+   *
+   * <code>int32 SearchActionIndex = 7;</code>
+   */
+  int getSearchActionIndex();
 }

@@ -46,4 +46,8 @@ message TravixExclusiveOptionType {
      * content type, so far known： LccContent NdcContent GdsContent ThirdPartyContent
      */
     string ContentType = 6;
+    /**
+     * ref num
+     */
+    int32 SearchActionIndex = 7;
 }
